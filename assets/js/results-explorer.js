@@ -51,8 +51,7 @@
     history.replaceState(null,"",location.pathname+"?"+q+location.hash);
   }
   function orderedPolicies(list,key,cid,direction="descending"){
-    const ordered=M.sorted(list,{key,direction},p=>M.aggregateMetric(p.id,key,cid));
-    return ordered.sort((a,b)=>Number(M.aggregateEligible(b.id,key,cid))-Number(M.aggregateEligible(a.id,key,cid)));
+    return R.overall.ordered(list,{rankMetric:key,rankChannel:cid,rankDir:direction});
   }
   function rankingPolicies(){
     const list=group();
@@ -92,7 +91,10 @@
     const key=state.metric,channels=key==="efficiency" ? ["mean"] : [...B.CHANNELS,"mean"];
     const heading=c=>c==="mean" ? labels[key]+(key==="efficiency" ? "" : " (%)") : B.CHANNEL_LABEL[c];
     const summaryTitle=key==="efficiency" ? "Success-conditioned efficiency" : `${labels[key]}: four-channel mean (%)`;
-    const ordered=M.sorted(policies,{key,direction:"descending"},p=>M.metric(p.id,t.id,key))
+    const value=p=>M.metric(p.id,t.id,key);
+    const scored=M.sorted(policies.filter(p=>value(p).value!==null),{key,direction:"descending"},value);
+    const unscored=M.sorted(policies.filter(p=>value(p).value===null),{key:"sr",direction:"descending"},p=>M.metric(p.id,t.id,"sr","full"));
+    const ordered=[...scored,...unscored]
       .sort((a,b)=>Number(M.comparable(b.id,t.id,key))-Number(M.comparable(a.id,t.id,key)));
     const headers=`<th scope="col" class="rank-cell" title="Rank within this task by ${summaryTitle}">Rank</th><th scope="col" class="policy-name">Model</th>`+channels.map(c=>`<th scope="col" class="${c==="mean" ? "detail-summary " : ""}${c===state.channel ? "detail-channel-active" : ""}"${c==="mean" ? ` title="${summaryTitle}" aria-label="${summaryTitle}" aria-sort="descending"` : ""}>${heading(c)}${c==="mean" ? ' <span class="sort-indicator" aria-hidden="true">↓</span>' : ""}</th>`).join("");
     const rows=ordered.map(p=>{

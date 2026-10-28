@@ -10,7 +10,11 @@
   ];
   const policyTitle=p=>esc(p.variantLabel ? p.modelVersion : p.label)+(p.variantLabel ? `<span class="policy-variant">${esc(p.variantLabel)}</span>` : "");
   function ordered(list,state){
-    return M.sorted(list,{key:state.rankMetric,direction:state.rankDir},p=>M.aggregateMetric(p.id,state.rankMetric,state.rankChannel))
+    const value=p=>M.aggregateMetric(p.id,state.rankMetric,state.rankChannel);
+    const scored=M.sorted(list.filter(p=>value(p).value!==null),{key:state.rankMetric,direction:state.rankDir},value);
+    // Missing selected metrics stay unranked; reported Full SR orders those rows.
+    const unscored=M.sorted(list.filter(p=>value(p).value===null),{key:"sr",direction:"descending"},p=>M.aggregateMetric(p.id,"sr","full"));
+    return [...scored,...unscored]
       .sort((a,b)=>Number(M.aggregateEligible(b.id,state.rankMetric,state.rankChannel))-Number(M.aggregateEligible(a.id,state.rankMetric,state.rankChannel)));
   }
   function aggregateCell(p,{id,key,cid},state){

@@ -285,7 +285,7 @@
 @media(max-width:600px){
   .section-toolbar{gap:10px;}
   .section-intro{flex-basis:100%;}
-  .section-meta{width:100%;flex-direction:row;justify-content:space-between;align-items:center;}
+  .section-meta{width:100%;flex-direction:row;flex-wrap:wrap;justify-content:space-between;align-items:center;}
   .section-meta .section-actions{margin-left:auto;}
   .table-updated{margin:0;font-size:10px;}
   .table-sort-status{margin-top:6px;font-size:11px;}

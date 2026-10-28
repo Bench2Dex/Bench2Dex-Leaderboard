@@ -1,26 +1,40 @@
-# Bench2Dex Leaderboard
+# 🏆 Bench2Dex Leaderboard
 
-Official policy rankings and per-task evaluation results for [Bench2Dex](https://bench2dex.github.io/).
+Official policy rankings and per-task results for Bench2Dex.
 
-- [Leaderboard](https://bench2dex.github.io/Bench2Dex-Leaderboard/)
-- [Benchmark source](https://github.com/Bench2Dex/Bench2Dex)
-- [Paper](https://arxiv.org/abs/2609.15726)
+[🌐 Leaderboard](https://bench2dex.github.io/Bench2Dex-Leaderboard/) · [🏠 Project](https://bench2dex.github.io/) · [💻 Code](https://github.com/Bench2Dex/Bench2Dex) · [📄 Paper](https://arxiv.org/abs/2609.15726)
 
-## Update results
+## 🤝 Contribute results
 
-Edit `assets/js/data.js`. GR00T evaluation details are also available in `assets/data/gr00t-evaluations.json`; keep the corresponding records consistent. Percent metrics use 0–100; efficiency is a ratio. Unreported metrics remain NR, and Full-only SR must not populate a four-channel mean.
+We welcome PRs with new policies, adaptations, and model variants evaluated on Bench2Dex.
 
-## Build and preview
+- **Encouraged:** SR, LSCR, Eff., and episode logs for all four channels: **None · Equi. · Inv. · Full**.
+- **Minimum:** Full-channel results and episode logs. List all 26 task settings and mark missing evaluations.
+- **Reference budget:** 50 episodes per task/channel (1,300 for Full; 5,200 for four channels). Report actual counts and protocol differences.
 
-Requires Node.js 22 or later. No package installation is needed.
+## 📦 Submit a policy
 
-```sh
-npm run build
-python -m http.server 8000 --directory dist
+1. Copy [policy/policy_template/](policy/policy_template/README.md) to `policy/<policy_id>/`.
+2. Rename the results file to `leaderboard_<policy_id>.json`, matching `model.id`, and complete the README, results, and logs.
+3. Open a PR against **main**, summarizing coverage and any protocol differences.
+
+```text
+policy/<policy_id>/
+├── README.md
+├── leaderboard_<policy_id>.json
+└── per_task_eval/
+    └── <task_id>_<task_name>/
+        └── <channel>/
+            ├── per_episode.jsonl
+            └── summary.json
 ```
 
-The build also generates `dist/assets/js/evaluations.js`, which supplies the project homepage's Overall Performance table. New results only need to be maintained in this repository.
+See the [submission requirements](policy/README.md) for required model information, data fields, and metrics, and the [log format](policy/policy_template/per_task_eval/README.md) for episode records. Every reported score must be traceable to the submitted logs.
 
-## Deploy
+## 🔓 Share weights and code
 
-Push to `main` to deploy through GitHub Actions. GitHub Pages uses the **GitHub Actions** publishing source.
+Open model weights and reproducible inference code are encouraged. Policy integrations and evaluation improvements are also welcome as PRs to [Bench2Dex](https://github.com/Bench2Dex/Bench2Dex); link related code PRs in your submission.
+
+## 🗂️ Published data
+
+[assets/data/leaderboard.json](assets/data/leaderboard.json) is the single maintained results file. Reviewed policy objects are merged into `policies[]`; both the leaderboard and project homepage load data generated from this registry.

@@ -1,0 +1,1382 @@
+{
+  "model": {
+    "id": "policy_template",
+    "label": "MODEL_NAME",
+    "variantLabel": "",
+    "family": "MODEL_NAME",
+    "modelVersion": "MODEL_VERSION",
+    "checkpoint": null,
+    "inputs": null,
+    "protocolId": "standard",
+    "displayOrder": 10,
+    "trainingSetting": null,
+    "resultVersion": null,
+    "updatedAt": null,
+    "evaluationSetting": null,
+    "sourceLabel": "Evaluation logs",
+    "sourceUrl": null,
+    "resultDetailsUrl": null,
+    "contributor": "CONTRIBUTING_ORGANIZATION",
+    "contributorUrl": null,
+    "type": "MODEL_TYPE",
+    "modelUrl": null,
+    "logoPath": null,
+    "logoAlt": null,
+    "weightsUrl": null,
+    "codeUrl": null
+  },
+  "overall": {
+    "taskCount": 26,
+    "scope": "task-macro",
+    "status": "not-reported",
+    "sr": null,
+    "lscr": null,
+    "efficiency": null,
+    "efficiencyStatus": "not-reported",
+    "efficiencyTaskCount": null,
+    "channelSr": {
+      "None": null,
+      "Equi.": null,
+      "Inv.": null,
+      "Full": null
+    },
+    "channelLscr": {
+      "None": null,
+      "Equi.": null,
+      "Inv.": null,
+      "Full": null
+    },
+    "channelTaskCounts": {
+      "None": 0,
+      "Equi.": 0,
+      "Inv.": 0,
+      "Full": 0
+    }
+  },
+  "per_task": {
+    "03": {
+      "channels": {
+        "None": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Equi.": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Inv.": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Full": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        }
+      },
+      "mean": {
+        "status": "not-reported",
+        "sr": null,
+        "srScope": "four-channel-mean",
+        "srEpisodes": null,
+        "lscr": null,
+        "lscrScope": "four-channel-mean",
+        "lscrEpisodes": null,
+        "efficiency": null,
+        "efficiencyStatus": "not-reported"
+      }
+    },
+    "06": {
+      "channels": {
+        "None": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Equi.": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Inv.": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Full": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        }
+      },
+      "mean": {
+        "status": "not-reported",
+        "sr": null,
+        "srScope": "four-channel-mean",
+        "srEpisodes": null,
+        "lscr": null,
+        "lscrScope": "four-channel-mean",
+        "lscrEpisodes": null,
+        "efficiency": null,
+        "efficiencyStatus": "not-reported"
+      }
+    },
+    "07": {
+      "channels": {
+        "None": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Equi.": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Inv.": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Full": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        }
+      },
+      "mean": {
+        "status": "not-reported",
+        "sr": null,
+        "srScope": "four-channel-mean",
+        "srEpisodes": null,
+        "lscr": null,
+        "lscrScope": "four-channel-mean",
+        "lscrEpisodes": null,
+        "efficiency": null,
+        "efficiencyStatus": "not-reported"
+      }
+    },
+    "08": {
+      "channels": {
+        "None": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Equi.": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Inv.": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Full": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        }
+      },
+      "mean": {
+        "status": "not-reported",
+        "sr": null,
+        "srScope": "four-channel-mean",
+        "srEpisodes": null,
+        "lscr": null,
+        "lscrScope": "four-channel-mean",
+        "lscrEpisodes": null,
+        "efficiency": null,
+        "efficiencyStatus": "not-reported"
+      }
+    },
+    "09": {
+      "channels": {
+        "None": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Equi.": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Inv.": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Full": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        }
+      },
+      "mean": {
+        "status": "not-reported",
+        "sr": null,
+        "srScope": "four-channel-mean",
+        "srEpisodes": null,
+        "lscr": null,
+        "lscrScope": "four-channel-mean",
+        "lscrEpisodes": null,
+        "efficiency": null,
+        "efficiencyStatus": "not-reported"
+      }
+    },
+    "12": {
+      "channels": {
+        "None": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Equi.": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Inv.": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Full": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        }
+      },
+      "mean": {
+        "status": "not-reported",
+        "sr": null,
+        "srScope": "four-channel-mean",
+        "srEpisodes": null,
+        "lscr": null,
+        "lscrScope": "four-channel-mean",
+        "lscrEpisodes": null,
+        "efficiency": null,
+        "efficiencyStatus": "not-reported"
+      }
+    },
+    "21": {
+      "channels": {
+        "None": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Equi.": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Inv.": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Full": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        }
+      },
+      "mean": {
+        "status": "not-reported",
+        "sr": null,
+        "srScope": "four-channel-mean",
+        "srEpisodes": null,
+        "lscr": null,
+        "lscrScope": "four-channel-mean",
+        "lscrEpisodes": null,
+        "efficiency": null,
+        "efficiencyStatus": "not-reported"
+      }
+    },
+    "22": {
+      "channels": {
+        "None": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Equi.": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Inv.": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Full": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        }
+      },
+      "mean": {
+        "status": "not-reported",
+        "sr": null,
+        "srScope": "four-channel-mean",
+        "srEpisodes": null,
+        "lscr": null,
+        "lscrScope": "four-channel-mean",
+        "lscrEpisodes": null,
+        "efficiency": null,
+        "efficiencyStatus": "not-reported"
+      }
+    },
+    "24": {
+      "channels": {
+        "None": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Equi.": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Inv.": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Full": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        }
+      },
+      "mean": {
+        "status": "not-reported",
+        "sr": null,
+        "srScope": "four-channel-mean",
+        "srEpisodes": null,
+        "lscr": null,
+        "lscrScope": "four-channel-mean",
+        "lscrEpisodes": null,
+        "efficiency": null,
+        "efficiencyStatus": "not-reported"
+      }
+    },
+    "26": {
+      "channels": {
+        "None": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Equi.": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Inv.": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Full": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        }
+      },
+      "mean": {
+        "status": "not-reported",
+        "sr": null,
+        "srScope": "four-channel-mean",
+        "srEpisodes": null,
+        "lscr": null,
+        "lscrScope": "four-channel-mean",
+        "lscrEpisodes": null,
+        "efficiency": null,
+        "efficiencyStatus": "not-reported"
+      }
+    },
+    "27": {
+      "channels": {
+        "None": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Equi.": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Inv.": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Full": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        }
+      },
+      "mean": {
+        "status": "not-reported",
+        "sr": null,
+        "srScope": "four-channel-mean",
+        "srEpisodes": null,
+        "lscr": null,
+        "lscrScope": "four-channel-mean",
+        "lscrEpisodes": null,
+        "efficiency": null,
+        "efficiencyStatus": "not-reported"
+      }
+    },
+    "32": {
+      "channels": {
+        "None": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Equi.": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Inv.": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Full": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        }
+      },
+      "mean": {
+        "status": "not-reported",
+        "sr": null,
+        "srScope": "four-channel-mean",
+        "srEpisodes": null,
+        "lscr": null,
+        "lscrScope": "four-channel-mean",
+        "lscrEpisodes": null,
+        "efficiency": null,
+        "efficiencyStatus": "not-reported"
+      }
+    },
+    "34": {
+      "channels": {
+        "None": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Equi.": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Inv.": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Full": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        }
+      },
+      "mean": {
+        "status": "not-reported",
+        "sr": null,
+        "srScope": "four-channel-mean",
+        "srEpisodes": null,
+        "lscr": null,
+        "lscrScope": "four-channel-mean",
+        "lscrEpisodes": null,
+        "efficiency": null,
+        "efficiencyStatus": "not-reported"
+      }
+    },
+    "42": {
+      "channels": {
+        "None": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Equi.": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Inv.": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Full": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        }
+      },
+      "mean": {
+        "status": "not-reported",
+        "sr": null,
+        "srScope": "four-channel-mean",
+        "srEpisodes": null,
+        "lscr": null,
+        "lscrScope": "four-channel-mean",
+        "lscrEpisodes": null,
+        "efficiency": null,
+        "efficiencyStatus": "not-reported"
+      }
+    },
+    "43": {
+      "channels": {
+        "None": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Equi.": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Inv.": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Full": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        }
+      },
+      "mean": {
+        "status": "not-reported",
+        "sr": null,
+        "srScope": "four-channel-mean",
+        "srEpisodes": null,
+        "lscr": null,
+        "lscrScope": "four-channel-mean",
+        "lscrEpisodes": null,
+        "efficiency": null,
+        "efficiencyStatus": "not-reported"
+      }
+    },
+    "44": {
+      "channels": {
+        "None": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Equi.": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Inv.": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Full": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        }
+      },
+      "mean": {
+        "status": "not-reported",
+        "sr": null,
+        "srScope": "four-channel-mean",
+        "srEpisodes": null,
+        "lscr": null,
+        "lscrScope": "four-channel-mean",
+        "lscrEpisodes": null,
+        "efficiency": null,
+        "efficiencyStatus": "not-reported"
+      }
+    },
+    "51": {
+      "channels": {
+        "None": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Equi.": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Inv.": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Full": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        }
+      },
+      "mean": {
+        "status": "not-reported",
+        "sr": null,
+        "srScope": "four-channel-mean",
+        "srEpisodes": null,
+        "lscr": null,
+        "lscrScope": "four-channel-mean",
+        "lscrEpisodes": null,
+        "efficiency": null,
+        "efficiencyStatus": "not-reported"
+      }
+    },
+    "60": {
+      "channels": {
+        "None": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Equi.": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Inv.": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Full": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        }
+      },
+      "mean": {
+        "status": "not-reported",
+        "sr": null,
+        "srScope": "four-channel-mean",
+        "srEpisodes": null,
+        "lscr": null,
+        "lscrScope": "four-channel-mean",
+        "lscrEpisodes": null,
+        "efficiency": null,
+        "efficiencyStatus": "not-reported"
+      }
+    },
+    "61": {
+      "channels": {
+        "None": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Equi.": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Inv.": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Full": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        }
+      },
+      "mean": {
+        "status": "not-reported",
+        "sr": null,
+        "srScope": "four-channel-mean",
+        "srEpisodes": null,
+        "lscr": null,
+        "lscrScope": "four-channel-mean",
+        "lscrEpisodes": null,
+        "efficiency": null,
+        "efficiencyStatus": "not-reported"
+      }
+    },
+    "62": {
+      "channels": {
+        "None": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Equi.": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Inv.": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Full": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        }
+      },
+      "mean": {
+        "status": "not-reported",
+        "sr": null,
+        "srScope": "four-channel-mean",
+        "srEpisodes": null,
+        "lscr": null,
+        "lscrScope": "four-channel-mean",
+        "lscrEpisodes": null,
+        "efficiency": null,
+        "efficiencyStatus": "not-reported"
+      }
+    },
+    "64": {
+      "channels": {
+        "None": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Equi.": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Inv.": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Full": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        }
+      },
+      "mean": {
+        "status": "not-reported",
+        "sr": null,
+        "srScope": "four-channel-mean",
+        "srEpisodes": null,
+        "lscr": null,
+        "lscrScope": "four-channel-mean",
+        "lscrEpisodes": null,
+        "efficiency": null,
+        "efficiencyStatus": "not-reported"
+      }
+    },
+    "67": {
+      "channels": {
+        "None": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Equi.": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Inv.": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Full": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        }
+      },
+      "mean": {
+        "status": "not-reported",
+        "sr": null,
+        "srScope": "four-channel-mean",
+        "srEpisodes": null,
+        "lscr": null,
+        "lscrScope": "four-channel-mean",
+        "lscrEpisodes": null,
+        "efficiency": null,
+        "efficiencyStatus": "not-reported"
+      }
+    },
+    "73": {
+      "channels": {
+        "None": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Equi.": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Inv.": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Full": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        }
+      },
+      "mean": {
+        "status": "not-reported",
+        "sr": null,
+        "srScope": "four-channel-mean",
+        "srEpisodes": null,
+        "lscr": null,
+        "lscrScope": "four-channel-mean",
+        "lscrEpisodes": null,
+        "efficiency": null,
+        "efficiencyStatus": "not-reported"
+      }
+    },
+    "76": {
+      "channels": {
+        "None": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Equi.": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Inv.": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Full": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        }
+      },
+      "mean": {
+        "status": "not-reported",
+        "sr": null,
+        "srScope": "four-channel-mean",
+        "srEpisodes": null,
+        "lscr": null,
+        "lscrScope": "four-channel-mean",
+        "lscrEpisodes": null,
+        "efficiency": null,
+        "efficiencyStatus": "not-reported"
+      }
+    },
+    "79": {
+      "channels": {
+        "None": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Equi.": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Inv.": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Full": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        }
+      },
+      "mean": {
+        "status": "not-reported",
+        "sr": null,
+        "srScope": "four-channel-mean",
+        "srEpisodes": null,
+        "lscr": null,
+        "lscrScope": "four-channel-mean",
+        "lscrEpisodes": null,
+        "efficiency": null,
+        "efficiencyStatus": "not-reported"
+      }
+    },
+    "80": {
+      "channels": {
+        "None": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Equi.": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Inv.": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        },
+        "Full": {
+          "status": "not-reported",
+          "episodes": null,
+          "successes": null,
+          "lscr": null,
+          "source": null
+        }
+      },
+      "mean": {
+        "status": "not-reported",
+        "sr": null,
+        "srScope": "four-channel-mean",
+        "srEpisodes": null,
+        "lscr": null,
+        "lscrScope": "four-channel-mean",
+        "lscrEpisodes": null,
+        "efficiency": null,
+        "efficiencyStatus": "not-reported"
+      }
+    }
+  },
+  "evaluation": {
+    "schemaVersion": "1.0",
+    "isTemplate": true,
+    "protocol": {
+      "benchmarkCommit": null,
+      "taskCount": 26,
+      "channels": [
+        "None",
+        "Equi.",
+        "Inv.",
+        "Full"
+      ],
+      "episodesPerChannel": 50,
+      "seeds": null,
+      "stepUnit": "physics_steps",
+      "physicsHz": null,
+      "controlHz": null,
+      "executionStepBudget": null,
+      "expertReference": null,
+      "protocolChanges": null
+    },
+    "coverage": {
+      "evaluatedTaskCount": 0,
+      "evaluatedEpisodeCount": 0,
+      "completedTaskCount": {
+        "None": 0,
+        "Equi.": 0,
+        "Inv.": 0,
+        "Full": 0,
+        "mean": 0
+      },
+      "expectedFullEpisodeCount": 1300,
+      "expectedFourChannelEpisodeCount": 5200,
+      "missingTaskChannels": {
+        "03": [
+          "None",
+          "Equi.",
+          "Inv.",
+          "Full"
+        ],
+        "06": [
+          "None",
+          "Equi.",
+          "Inv.",
+          "Full"
+        ],
+        "07": [
+          "None",
+          "Equi.",
+          "Inv.",
+          "Full"
+        ],
+        "08": [
+          "None",
+          "Equi.",
+          "Inv.",
+          "Full"
+        ],
+        "09": [
+          "None",
+          "Equi.",
+          "Inv.",
+          "Full"
+        ],
+        "12": [
+          "None",
+          "Equi.",
+          "Inv.",
+          "Full"
+        ],
+        "21": [
+          "None",
+          "Equi.",
+          "Inv.",
+          "Full"
+        ],
+        "22": [
+          "None",
+          "Equi.",
+          "Inv.",
+          "Full"
+        ],
+        "24": [
+          "None",
+          "Equi.",
+          "Inv.",
+          "Full"
+        ],
+        "26": [
+          "None",
+          "Equi.",
+          "Inv.",
+          "Full"
+        ],
+        "27": [
+          "None",
+          "Equi.",
+          "Inv.",
+          "Full"
+        ],
+        "32": [
+          "None",
+          "Equi.",
+          "Inv.",
+          "Full"
+        ],
+        "34": [
+          "None",
+          "Equi.",
+          "Inv.",
+          "Full"
+        ],
+        "42": [
+          "None",
+          "Equi.",
+          "Inv.",
+          "Full"
+        ],
+        "43": [
+          "None",
+          "Equi.",
+          "Inv.",
+          "Full"
+        ],
+        "44": [
+          "None",
+          "Equi.",
+          "Inv.",
+          "Full"
+        ],
+        "51": [
+          "None",
+          "Equi.",
+          "Inv.",
+          "Full"
+        ],
+        "60": [
+          "None",
+          "Equi.",
+          "Inv.",
+          "Full"
+        ],
+        "61": [
+          "None",
+          "Equi.",
+          "Inv.",
+          "Full"
+        ],
+        "62": [
+          "None",
+          "Equi.",
+          "Inv.",
+          "Full"
+        ],
+        "64": [
+          "None",
+          "Equi.",
+          "Inv.",
+          "Full"
+        ],
+        "67": [
+          "None",
+          "Equi.",
+          "Inv.",
+          "Full"
+        ],
+        "73": [
+          "None",
+          "Equi.",
+          "Inv.",
+          "Full"
+        ],
+        "76": [
+          "None",
+          "Equi.",
+          "Inv.",
+          "Full"
+        ],
+        "79": [
+          "None",
+          "Equi.",
+          "Inv.",
+          "Full"
+        ],
+        "80": [
+          "None",
+          "Equi.",
+          "Inv.",
+          "Full"
+        ]
+      }
+    },
+    "aggregation": {
+      "units": {
+        "sr": "percent",
+        "lscr": "percent",
+        "efficiency": "ratio",
+        "steps": "physics_steps"
+      },
+      "sr": "100 * successes / episodes per task/channel; equal channel mean per task; equal task mean over all 26 settings.",
+      "lscr": "100 * mean episode latched_stage_completion_rate, including failures; equal channel mean per task; equal task mean over all 26 settings.",
+      "efficiency": "expert_time_step / mean successful steps_to_stable_success. Pool successful episodes across all four channels before calculating task mean efficiency. Overall values average task efficiencies over tasks with success; report valid-task counts.",
+      "missing": "null means unreported (NR). Efficiency without successes is null with no-success status. Valid-task counts are null when unreported, and 0 for an evaluated scope without successes.",
+      "scope": "Overall channel aggregates require all 26 settings. Four-channel means require all four channels. Never substitute Full-only scores for means or include duplicate reruns."
+    }
+  }
+}
