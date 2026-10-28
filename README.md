@@ -11,6 +11,7 @@ We welcome PRs with new policies, adaptations, and model variants evaluated on B
 - **Encouraged:** SR, LSCR, Eff., and episode logs for all four channels: **None · Equi. · Inv. · Full**.
 - **Minimum:** Full-channel results and episode logs. List all 26 task settings and mark missing evaluations.
 - **Reference budget:** 50 episodes per task/channel (1,300 for Full; 5,200 for four channels). Report actual counts and protocol differences.
+- **Privacy and permissions:** sanitize PR descriptions and all submitted files, and confirm you are authorized to publish them. Follow the [privacy and permissions requirements](policy/README.md#-privacy-and-permissions).
 
 ## 📦 Submit a policy
 

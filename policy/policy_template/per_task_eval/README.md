@@ -2,6 +2,8 @@
 
 For each evaluated task/channel, submit `per_episode.jsonl` and `summary.json`. The Task 03 folders provide examples; copy them for the remaining evaluations and replace all placeholders.
 
+Sanitize logs before submission and confirm permission to publish them; preserve metric values and consistent run/source mappings. See [privacy and permissions](../../README.md#-privacy-and-permissions).
+
 Use JSON channel names **`None`, `Equi.`, `Inv.`, `Full`** with folders `None/`, `Equi/`, `Inv/`, `Full/`. Keep one selected run per task/channel and include both successful and failed episodes.
 
 ## per_episode.jsonl

@@ -4,6 +4,12 @@ Copy [policy_template/](policy_template/README.md) to `policy/<policy_id>/`. Nam
 
 **All four channels are encouraged; Full is the minimum.** Keep all 26 task entries and mark missing evaluations.
 
+## 🔒 Privacy and permissions
+
+- **Sanitize before submitting:** remove credentials/tokens, personal or confidential information, private file paths, and internal URLs from PR titles/descriptions, documentation, logs, and media. Check linked content as well.
+- **Confirm disclosure rights:** publish only content you are authorized to share, consistent with applicable privacy requirements, licenses, and data-use terms.
+- **Preserve evaluation integrity:** retain metric values, episode coverage, and source mappings. Use consistent anonymized run IDs or paths where needed so scores remain traceable to the submitted logs.
+
 ## 📝 Model README
 
 Include only these required items, in any layout:
