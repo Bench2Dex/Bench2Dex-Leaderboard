@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" class="leaderboard-root">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bench2Dex Leaderboard</title>
+<meta name="description" content="Compare Bench2Dex policy evaluations: stable success, latched stage progress, and success-conditioned efficiency across 26 tasks and four channels.">
+<link rel="canonical" href="https://bench2dex.github.io/Bench2Dex-Leaderboard/">
+<meta property="og:title" content="Bench2Dex Leaderboard">
+<meta property="og:description" content="Policy rankings, task-level comparisons, and complete evaluation results.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://bench2dex.github.io/Bench2Dex-Leaderboard/">
+<meta property="og:image" content="https://bench2dex.github.io/Bench2Dex-Leaderboard/assets/img/og-cover.png">
+<link rel="icon" href="assets/img/favicon.png" type="image/png">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/leaderboard.css">
+</head>
+<body class="leaderboard-page" id="top">
+<a class="skip-results" href="#results-explorer">Skip to Results</a>
+<header class="board-nav"><div class="board-container">
+  <div class="board-identity">
+    <a class="board-brand" href="https://bench2dex.github.io/" aria-label="Bench2Dex project homepage"><img src="assets/img/figures/overview_logo.png" alt="Bench2Dex" width="1774" height="887"></a>
+    <nav class="board-breadcrumb" aria-label="Breadcrumb"><a href="https://bench2dex.github.io/">Bench2Dex</a><span aria-hidden="true">/</span><span aria-current="page">Leaderboard</span></nav>
+  </div>
+  <div class="board-nav-tools">
+    <nav class="board-section-nav" aria-label="Leaderboard Sections"><a href="#policy-leaderboard">Overall Performance</a><a href="#per-task-scores">Per-Task Scores</a></nav>
+    <button type="button" class="btn btn-primary board-copy-bib" data-copy-bib>Copy BibTeX</button>
+  </div>
+</div></header>
+<main class="board-container">
+  <div class="board-heading"><h1>Policy Leaderboard</h1><div class="board-facts" aria-label="Evaluation scope"><span><b>26</b>Tasks</span><span><b>12</b>Embodiments</span><span><b>4</b>Channels</span></div></div>
+  <div id="results-explorer" class="results-explorer results-stack">
+    <div class="board-global-tools">
+      <label class="results-field" id="results-group-control" hidden>Evaluation Group<select id="results-group"></select></label>
+      <p class="results-protocol-note">Evaluation settings vary by method. <a href="#protocol-notes">Protocol &amp; metrics ↓</a></p>
+      <div class="results-downloads"><button type="button" id="results-share">Copy View Link</button><button type="button" id="results-export-all" title="Download all policies, tasks, four-channel scores and evaluation metadata">All Policies CSV ↓</button></div>
+    </div>
+
+    <section id="policy-leaderboard" class="board-section" aria-labelledby="ranking-title">
+      <div class="section-toolbar">
+        <div class="section-intro"><div class="section-heading"><h2 id="ranking-title">Overall Performance</h2><span class="section-count" id="ranking-count"></span></div><p id="ranking-label" class="table-sort-status" aria-live="polite"></p></div>
+        <div class="section-meta"><p class="table-updated" id="ranking-updated"></p><div class="section-actions"><button type="button" class="table-reset" id="ranking-reset" aria-label="Reset Overall Performance to defaults" hidden>Reset</button></div></div>
+      </div>
+      <div id="overview-table"></div>
+      <div class="table-footer"><p class="table-note" id="ranking-caption"></p><div class="table-legend-compact"><strong class="best-value" title="Highest reported SR, LSCR or efficiency, including ties">Best</strong><span class="heat-key" aria-label="Color scale: 0 to 100 percent"><span>0</span><span class="heat-swatch" aria-hidden="true"></span><span>100%</span></span></div></div>
+    </section>
+
+    <section id="per-task-scores" class="board-section" aria-labelledby="task-title">
+      <div class="section-toolbar">
+        <div class="section-intro"><div class="section-heading"><h2 id="task-title">Per-Task Scores</h2><span class="section-count" id="task-count"></span></div><p id="task-sort-label" class="table-sort-status" aria-live="polite"></p></div>
+        <div class="section-meta"><p class="table-updated" id="task-updated"></p><div class="section-actions"><button type="button" class="table-reset" id="task-reset" aria-label="Reset Per-Task Scores to defaults" hidden>Reset</button></div></div>
+      </div>
+      <div class="board-controls">
+        <div class="control-group"><span class="control-label">Metric</span><div class="metric-switch" role="group" aria-label="Per-Task Metric"><button type="button" data-task-metric="sr" aria-pressed="true" title="Stable Success Rate">SR</button><button type="button" data-task-metric="lscr" aria-pressed="false" title="Latched Stage Completion Rate">LSCR</button><button type="button" data-task-metric="efficiency" aria-pressed="false" title="Success-Conditioned Efficiency">Eff.</button></div></div>
+        <label class="results-field">Channel<select id="task-channel"><option value="mean">Four-channel mean</option><option value="none">None</option><option value="equi">Equi.</option><option value="inv">Inv.</option><option value="full">Full</option></select></label>
+        <label class="results-field">Embodiment<select id="task-embodiment"><option value="">All embodiments</option></select></label>
+        <div class="policy-control"><span class="control-label">Policies</span><details class="policy-picker"><summary id="policy-choice-count">All policies</summary><div class="policy-picker-body"><div class="picker-actions"><button type="button" id="policies-all">Select all</button><button type="button" id="policies-none">Clear</button></div><div id="policy-options"></div></div></details></div>
+      </div>
+      <div id="task-matrix"></div>
+      <div class="table-footer"><p class="table-note" id="task-caption"></p><div class="table-legend-compact"><span id="task-best-key"><strong class="best-value" id="task-best-label" title="Highest mean across all policies, including ties">Best mean</strong></span><span class="heat-key" id="task-heat-key" aria-label="Color scale: 0 to 100 percent"><span>0</span><span class="heat-swatch" aria-hidden="true"></span><span>100%</span></span></div></div>
+    </section>
+
+    <details class="table-notes results-notes" id="protocol-notes"><summary>Evaluation Protocol &amp; Metrics</summary>
+      <dl class="metric-definitions">
+        <div><dt>SR <span>Stable Success Rate</span></dt><dd>Episodes reaching stable success (%), averaged equally across tasks and four channels.</dd></div>
+        <div><dt>LSCR <span>Latched Stage Completion Rate</span></dt><dd>Dependency-valid task stages ever reached (%), averaged equally across tasks and four channels.</dd></div>
+        <div><dt>Eff. <span>Success-Conditioned Efficiency</span></dt><dd>Mean expert completion steps / mean policy steps to stable success, pooled across successful episodes. Averaged over tasks with success.</dd></div>
+      </dl>
+      <p>Bench2Dex evaluations use 50 episodes per task and channel. GPT-6-Astra uses ICL and 3 episodes per task on Full only; 1× / 10× denote execution-step budgets. Full SR is not a four-channel mean. <a href="https://openphoenix-team.github.io/Phoenix-pages/" target="_blank" rel="noopener noreferrer">Phoenix protocol ↗</a> · <a href="https://arxiv.org/html/2610.22471v1#S9.SS5" target="_blank" rel="noopener noreferrer">GPT-6-Astra protocol ↗</a></p>
+    </details>
+    <details class="table-notes results-notes" id="citation-fallback" hidden><summary>BibTeX Citation</summary><pre id="bibtex" tabindex="0"></pre></details>
+    <div id="share-fallback" hidden><label class="results-field">Copy This View URL<input id="share-url" readonly></label></div>
+    <p id="results-status" class="sr-only" role="status" aria-live="polite"></p>
+  </div>
+
+</main>
+<footer class="board-container board-footer"><a href="https://bench2dex.github.io/">← Bench2Dex Project</a></footer>
+<div class="copy-toast" id="copy-toast" role="status" aria-live="polite"></div>
+<script src="assets/js/citation.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/results-model.js"></script>
+<script src="assets/js/overall-table.js"></script>
+<script src="assets/js/results-explorer.js"></script>
+</body>
+</html>

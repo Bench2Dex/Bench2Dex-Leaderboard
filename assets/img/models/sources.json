@@ -1,0 +1,32 @@
+[
+  {
+    "file": "act.png",
+    "sourceUrl": "https://media.luminis-sim.com/media/shared/teams/act.png",
+    "bytes": 271798
+  },
+  {
+    "file": "nvidia.png",
+    "sourceUrl": "https://media.luminis-sim.com/media/shared/teams/NV.png",
+    "bytes": 22891
+  },
+  {
+    "file": "openai.svg",
+    "sourceUrl": "https://media.luminis-sim.com/media/shared/teams/openai.svg",
+    "bytes": 1894
+  },
+  {
+    "file": "pi.png",
+    "sourceUrl": "https://www.pi.website/icon.png",
+    "bytes": 494
+  },
+  {
+    "file": "phoenix.webp",
+    "sourceUrl": "https://openphoenix-team.github.io/Phoenix-pages/assets/openphoenix-team-logo.webp",
+    "bytes": 19606
+  },
+  {
+    "file": "diffusion-policy.svg",
+    "sourceUrl": "https://diffusion-policy.cs.columbia.edu/images/columbia_engineering_logo.svg",
+    "bytes": 36697
+  }
+]
