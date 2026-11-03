@@ -14,6 +14,7 @@
 <link rel="icon" href="assets/img/favicon.png" type="image/png">
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="stylesheet" href="assets/css/leaderboard.css">
+<link rel="stylesheet" href="assets/css/moonshot.css">
 </head>
 <body class="leaderboard-page" id="top">
 <a class="skip-results" href="#results-explorer">Skip to Results</a>
@@ -29,11 +30,20 @@
 </div></header>
 <main class="board-container">
   <div class="board-heading"><h1>Policy Leaderboard</h1><div class="board-facts" aria-label="Evaluation scope"><span><b>26</b>Tasks</span><span><b>12</b>Embodiments</span><span><b>4</b>Channels</span></div></div>
+  <section id="moonshot" class="moonshot" aria-labelledby="moonshot-title" hidden>
+    <div class="moonshot-header">
+      <a class="moonshot-brand" href="https://bench2dex.github.io/" aria-label="Bench2Dex project homepage"><img src="assets/img/figures/overview_logo.png" alt="Bench2Dex" width="1774" height="887"></a>
+      <div class="moonshot-tools"><h2 id="moonshot-title">The Moonshot of Dexterity</h2><p class="moonshot-updated" id="moonshot-updated"></p></div>
+    </div>
+    <div class="moonshot-stage"><div id="moonshot-chart"></div><div class="moonshot-inspector" id="moonshot-inspector" aria-live="polite" hidden></div><div class="moonshot-axis-tooltip" id="moonshot-axis-tooltip" role="tooltip" hidden></div></div>
+    <div class="moonshot-unplotted" id="moonshot-unplotted"></div>
+    <div class="moonshot-footer"><div class="moonshot-footer-info"><span class="moonshot-scope">Four-channel mean · Ranked by SR</span><span id="moonshot-coverage"></span></div><a href="#protocol-notes">Evaluation protocols ↗</a></div>
+  </section>
   <div id="results-explorer" class="results-explorer results-stack">
     <div class="board-global-tools">
       <label class="results-field" id="results-group-control" hidden>Evaluation Group<select id="results-group"></select></label>
       <p class="results-protocol-note">Evaluation settings vary by method. <a href="#protocol-notes">Protocol &amp; metrics ↓</a></p>
-      <div class="results-downloads"><button type="button" id="results-share">Copy View Link</button><button type="button" id="results-export-all" title="Download all policies, tasks, four-channel scores and evaluation metadata">All Policies CSV ↓</button></div>
+      <div class="results-downloads"><button type="button" id="results-export-all" title="Download all policies, tasks, four-channel scores and evaluation metadata">All Policies CSV ↓</button><a class="results-submit" href="https://github.com/Bench2Dex/Bench2Dex-Leaderboard#readme" target="_blank" rel="noopener noreferrer" aria-label="How to submit results via pull request">Submit Results <span aria-hidden="true">↗</span></a></div>
     </div>
 
     <section id="policy-leaderboard" class="board-section" aria-labelledby="ranking-title">
@@ -66,10 +76,9 @@
         <div><dt>LSCR <span>Latched Stage Completion Rate</span></dt><dd>Dependency-valid task stages ever reached (%), averaged equally across tasks and four channels.</dd></div>
         <div><dt>Eff. <span>Success-Conditioned Efficiency</span></dt><dd>Mean expert completion steps / mean policy steps to stable success, pooled across successful episodes. Averaged over tasks with success.</dd></div>
       </dl>
-      <p>Bench2Dex evaluations use 50 episodes per task and channel. GPT-6-Astra uses ICL and 3 episodes per task on Full only; 1× / 10× denote execution-step budgets. Full SR is not a four-channel mean. <a href="https://openphoenix-team.github.io/Phoenix-pages/" target="_blank" rel="noopener noreferrer">Phoenix protocol ↗</a> · <a href="https://arxiv.org/html/2610.22471v1#S9.SS5" target="_blank" rel="noopener noreferrer">GPT-6-Astra protocol ↗</a></p>
+      <p>The reference protocol uses 50 episodes per task and channel. Contributions must report actual episode counts, execution budgets, and protocol differences. <a href="https://github.com/Bench2Dex/Bench2Dex-Leaderboard#readme">Submit results ↗</a> · <a href="https://huggingface.co/datasets/Bench2Dex/Leaderboard">Evaluation logs ↗</a></p>
     </details>
     <details class="table-notes results-notes" id="citation-fallback" hidden><summary>BibTeX Citation</summary><pre id="bibtex" tabindex="0"></pre></details>
-    <div id="share-fallback" hidden><label class="results-field">Copy This View URL<input id="share-url" readonly></label></div>
     <p id="results-status" class="sr-only" role="status" aria-live="polite"></p>
   </div>
 
@@ -80,6 +89,8 @@
 <script src="assets/js/evaluations.js"></script>
 <script src="assets/js/results-model.js"></script>
 <script src="assets/js/overall-table.js"></script>
+<script src="assets/js/moonshot-model.js"></script>
+<script src="assets/js/moonshot.js"></script>
 <script src="assets/js/results-explorer.js"></script>
 </body>
 </html>

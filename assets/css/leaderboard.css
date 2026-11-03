@@ -34,7 +34,7 @@
 #results-explorer [hidden]{display:none!important;}
 .board-global-tools{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:0 0 18px;}
 .board-global-tools .results-protocol-note{margin:0;font-size:12px;line-height:1.6;color:var(--text-dim);}
-.results-downloads{display:flex;gap:8px;}
+.results-downloads{display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:8px;}
 .results-downloads button{font-size:11px;white-space:nowrap;}
 .board-section{background:var(--surface);border:1px solid #dce2e8;border-radius:12px;margin-bottom:24px;overflow:clip;box-shadow:0 4px 24px #20394e05;}
 .section-toolbar{display:flex;align-items:center;justify-content:space-between;min-height:72px;gap:14px;padding:18px 22px;}
@@ -150,7 +150,6 @@
 .picker-actions button{font-size:11px;padding:5px 9px;}
 #policy-options input{width:15px;height:15px;}
 .results-stack > .results-notes{margin:10px 0 24px;}
-#share-fallback{padding:16px 0;}
 .board-section .policy-table .policy-label{line-height:1.4;}
 @media(max-width:900px){
   .leaderboard-root{--board-nav-offset:126px;}
@@ -221,7 +220,7 @@
 .board-global-tools .results-protocol-note a:hover{text-decoration:underline;}
 .results-downloads button{min-height:36px;font-size:12px;border-radius:7px;}
 #results-export-all{background:var(--surface);border-color:#cad5e2;}
-#results-share:hover,#results-export-all:hover{background:#eaf0f7;}
+#results-export-all:hover{background:#eaf0f7;}
 .table-footer{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px 24px;padding:14px 22px;border-top:1px solid #e8edf2;}
 .table-note{margin:0;color:#6c7785;font-size:12px;line-height:1.5;}
 .table-legend-compact{display:flex;align-items:center;gap:18px;color:#6c7785;font-size:11px;margin-left:auto;white-space:nowrap;}
@@ -290,3 +289,8 @@
   .table-updated{margin:0;font-size:10px;}
   .table-sort-status{margin-top:6px;font-size:11px;}
 }
+
+/* Submission is the primary action; view/export tools remain secondary. */
+.results-downloads .results-submit{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:36px;padding:7px 13px;border:1px solid #244762;border-radius:7px;background:#284e70;color:#fff;font:600 12px/1.4 var(--body);white-space:nowrap;box-shadow:inset 0 1px 0 #ffffff1f;transition:background 150ms ease,border-color 150ms ease;}
+.results-downloads .results-submit:hover{background:#1e3f5c;border-color:#1e3f5c;color:#fff;}
+.results-downloads .results-submit:focus-visible{outline:2px solid #669dc6;outline-offset:3px;}

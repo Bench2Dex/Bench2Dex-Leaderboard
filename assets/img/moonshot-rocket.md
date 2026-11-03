@@ -1,0 +1,7 @@
+# Moonshot rocket
+
+`moonshot-rocket.webp` is an AI-generated transparent aerospace asset created with OpenAI's built-in image generation tool. The nose points right; the website rotates and positions it from the current leaderboard result.
+
+**Prompt:** Use case: product-mockup. Asset type: transparent cutout sprite for an elegant scientific website, displayed at small size on a dark starfield. Create one highly refined realistic aerospace rocket spacecraft, slender brushed silver-white titanium body with fine graphite-gray mechanical panels, crisp precise seams, restrained exquisite 3D product-render materials and cool studio rim lighting. Main axis perfectly horizontal: pointed nose strictly facing RIGHT, engine and tail strictly LEFT. Slight three-quarter side view for depth, but never diagonally tilted. Very small swept stabilizer fins; long aerodynamic silhouette. Clear readable shape at 76 pixels wide. Short, restrained pale ice-blue engine glow immediately behind the tail, no long exhaust. Genuine transparent alpha background, no ground or cast shadow backdrop. No text, symbols, logos, watermark, stars, planets, border, diagram or interface. No cartoon, toy, plump capsule, oversized fins or giant blue porthole. Center the complete single rocket with modest transparent margin, in a wide composition.
+
+Processing: transparent-margin crop, proportional resize, WebP encoding at quality 92; alpha preserved. Original generation: `exec-d62a6881-0ab9-4079-baf6-b16796ae3abe.png`.

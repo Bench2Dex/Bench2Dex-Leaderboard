@@ -1,3 +1,4 @@
+import {fullOnlyPolicy} from "./fixtures.mjs";
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
@@ -5,7 +6,7 @@ import vm from "node:vm";
 import { toRuntimeData, runtimeScript } from "../scripts/leaderboard-data.mjs";
 
 const registry = JSON.parse(await readFile(new URL("../assets/data/leaderboard.json", import.meta.url), "utf8"));
-const policyTemplate = JSON.parse(await readFile(new URL("../policy/policy_template/leaderboard_policy_template.json", import.meta.url), "utf8"));
+const policyTemplate = JSON.parse(await readFile(new URL("../leaderboard/policy_template/leaderboard_policy_template.json", import.meta.url), "utf8"));
 const modelSource = await readFile(new URL("../assets/js/results-model.js", import.meta.url), "utf8");
 const overallSource = await readFile(new URL("../assets/js/overall-table.js", import.meta.url), "utf8");
 function model(data) {
@@ -15,7 +16,7 @@ function model(data) {
 }
 function fullOnlyFixture() {
   const fixture = structuredClone(registry);
-  fixture.policies = [fixture.policies.find(entry => entry.model.id === "GPT6_ASTRA_10X")];
+  fixture.policies = [fullOnlyPolicy("TEST_FULL_HIGH",100)];
   return fixture;
 }
 
@@ -29,11 +30,11 @@ test("the registry supplies every policy, task, and named channel", () => {
 
 test("Full-only results keep their reported channel score and no four-channel rank", () => {
   const data = toRuntimeData(fullOnlyFixture()), M = model(data);
-  assert.equal(M.metric("GPT6_ASTRA_10X", "32", "sr", "full").value, 100);
-  assert.equal(M.metric("GPT6_ASTRA_10X", "32", "sr").value, null);
-  assert.equal(M.aggregateMetric("GPT6_ASTRA_10X", "sr", "mean").value, null);
-  assert.equal(M.aggregateEligible("GPT6_ASTRA_10X", "sr", "full"), true);
-  assert.equal(M.aggregateEligible("GPT6_ASTRA_10X", "sr", "mean"), false);
+  assert.equal(M.metric("TEST_FULL_HIGH", "32", "sr", "full").value, 100);
+  assert.equal(M.metric("TEST_FULL_HIGH", "32", "sr").value, null);
+  assert.equal(M.aggregateMetric("TEST_FULL_HIGH", "sr", "mean").value, null);
+  assert.equal(M.aggregateEligible("TEST_FULL_HIGH", "sr", "full"), true);
+  assert.equal(M.aggregateEligible("TEST_FULL_HIGH", "sr", "mean"), false);
 });
 
 test("missing optional tasks, channels, and summaries become NR rather than zero", () => {
@@ -51,9 +52,10 @@ test("missing optional tasks, channels, and summaries become NR rather than zero
 
 test("zero successes, no-success efficiency, and unreported metrics stay distinct", () => {
   const M = model(toRuntimeData(registry));
-  assert.equal(M.metric("GPT6_ASTRA_1X", "32", "sr", "full").value, 0);
+  assert.equal(M.metric("GR00T_N17", "24", "sr", "full").value, 0);
   assert.equal(M.metric("GR00T_N17", "24", "efficiency").status, "no-success");
-  assert.equal(M.metric("PHOENIX_MWA", "32", "efficiency").status, "not-reported");
+  const partial=model(toRuntimeData(fullOnlyFixture()));
+  assert.equal(partial.metric("TEST_FULL_HIGH", "32", "efficiency").status,"not-reported");
 });
 
 test("published channel records omit redundant efficiency while pooled results remain", () => {
@@ -126,7 +128,8 @@ test("the submission template fits policies[] directly, retaining percent units 
 });
 
 test("unscored policies follow Full SR descending without receiving a mean rank", () => {
-  const data = toRuntimeData(registry);
+  const fixture=structuredClone(registry);fixture.policies.push(fullOnlyPolicy("TEST_FULL_HIGH",80),fullOnlyPolicy("TEST_FULL_LOW",20));
+  const data = toRuntimeData(fixture);
   const context = vm.createContext({ window: { BENCH: data } });
   vm.runInContext(modelSource, context);
   vm.runInContext(overallSource, context);
@@ -134,29 +137,12 @@ test("unscored policies follow Full SR descending without receiving a mean rank"
   const group = M.group("standard"), state = { rankMetric: "sr", rankChannel: "mean", rankDir: "descending" };
   for (const rankDir of ["descending", "ascending"]) {
     const ids = Array.from(overall.ordered(group, { ...state, rankDir }), p => p.id);
-    assert.deepEqual(ids.slice(-2), ["GPT6_ASTRA_10X", "GPT6_ASTRA_1X"]);
+    assert.deepEqual(ids.slice(-2), ["TEST_FULL_HIGH", "TEST_FULL_LOW"]);
   }
-  for (const id of ["GPT6_ASTRA_1X", "GPT6_ASTRA_10X"]) {
+  for (const id of ["TEST_FULL_LOW", "TEST_FULL_HIGH"]) {
     assert.equal(M.aggregateMetric(id, "sr", "mean").value, null);
     assert.equal(M.aggregateRank(id, "sr", "mean"), null);
   }
   const fullAscending = Array.from(overall.ordered(group, { ...state, rankChannel: "full", rankDir: "ascending" }), p => p.id);
-  assert.ok(fullAscending.indexOf("GPT6_ASTRA_1X") < fullAscending.indexOf("GPT6_ASTRA_10X"));
-});
-
-test("channel log summaries use the same metric fields and units as policy records", async () => {
-  for (const [channel, directory] of [["None", "None"], ["Equi.", "Equi"], ["Inv.", "Inv"], ["Full", "Full"]]) {
-    const summary = JSON.parse(await readFile(new URL(`../policy/policy_template/per_task_eval/03_wine_glass_plate_balance/${directory}/summary.json`, import.meta.url), "utf8"));
-    assert.equal(summary.taskId, "03");
-    assert.equal(summary.channel, channel);
-    for (const key of ["status", "episodes", "successes", "lscr"]) {
-      assert.equal(summary[key], policyTemplate.per_task["03"].channels[channel][key]);
-    }
-    assert.equal(summary.efficiency, null);
-    assert.equal(summary.efficiencyStatus, "not-reported");
-    assert.equal(summary.stepUnit, "physics_steps");
-    assert.equal(summary.sr, null);
-    assert.equal("stable_successes" in summary, false);
-    assert.equal("efficiency_status" in summary, false);
-  }
+  assert.ok(fullAscending.indexOf("TEST_FULL_LOW") < fullAscending.indexOf("TEST_FULL_HIGH"));
 });

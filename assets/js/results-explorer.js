@@ -136,7 +136,7 @@
     const positions=new Map([...root.querySelectorAll('.explorer-table-wrap > table[id]')].map(t=>[t.id,{top:t.parentElement.scrollTop,left:t.parentElement.scrollLeft}]));
     const anchor=anchorSelector ? $(anchorSelector) : null;
     const anchorTop=anchor ? anchor.getBoundingClientRect().top-anchor.closest("table").parentElement.getBoundingClientRect().top : null;
-    syncControls();renderRanking();renderMatrix();saveLocation();
+    syncControls();renderRanking();renderMatrix();R.moonshot?.render(state.group);saveLocation();
     for(const [id,pos] of positions){
       const wrap=$("#"+id)?.parentElement;
       if(wrap){wrap.scrollTop=id===resetTable ? 0 : pos.top;wrap.scrollLeft=pos.left;}
@@ -199,7 +199,6 @@
     const url=URL.createObjectURL(new Blob([csv],{type:"text/csv;charset=utf-8"})),a=document.createElement("a");a.href=url;a.download=`bench2dex-${name}.csv`;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);announce("CSV exported.");
   }
   $("#results-export-all").addEventListener("click",()=>download(M.csv(),"all-policies"));
-  $("#results-share").addEventListener("click",async()=>{saveLocation();try{await navigator.clipboard.writeText(location.href);announce("View link copied.");}catch{$("#share-fallback").hidden=false;$("#share-url").value=location.href;$("#share-url").focus();$("#share-url").select();}});
   window.addEventListener("popstate",()=>{readLocation();render();});
   function revealSection(){const e=document.getElementById(location.hash.slice(1));if(e?.matches("details"))e.open=true;}
   document.querySelectorAll('a[href="#protocol-notes"]').forEach(a=>a.addEventListener("click",()=>{const e=document.getElementById(a.hash.slice(1));if(e?.matches("details"))e.open=true;}));

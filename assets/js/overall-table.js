@@ -55,5 +55,5 @@
     const text=new Intl.DateTimeFormat("en-US",{month:"long",day:"numeric",year:"numeric",timeZone:"Asia/Shanghai"}).format(date);
     return `Updated <time datetime="${latest}">${esc(text)}</time> <span>(UTC+8)</span>`;
   }
-  R.overall={columns,ordered,markup,sort,sortMetric,label,updated,caption:"NR: not reported · GPT-6-Astra: Full SR only"};
+  R.overall={columns,ordered,markup,sort,sortMetric,label,updated,caption:"NR: not reported"};
 })();

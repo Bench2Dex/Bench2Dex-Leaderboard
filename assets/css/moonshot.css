@@ -1,0 +1,94 @@
+/* Light observatory palette; sparse annotations keep the data in focus. */
+.moonshot{--space:#edf3f8;--ink:#17324b;--accent:#a46c1d;position:relative;margin-bottom:28px;overflow:hidden;border:1px solid #cadbe8;border-radius:20px;background:var(--space);color:var(--ink);color-scheme:light;box-shadow:inset 0 1px 0 #ffffffd9,0 3px 9px #264f6d06,0 24px 64px -38px #264f6d66;}
+.moonshot[hidden],.moonshot [hidden]{display:none!important;}
+.moonshot-header{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:28px;padding:26px 34px 10px;background:linear-gradient(180deg,#edf3f8d9 0,#edf3f8f0 72%,var(--space) 100%),url('../img/moonshot-space-natural.webp') center top/100% auto no-repeat;}
+.moonshot-brand{display:flex;align-items:center;flex-shrink:0;}
+.moonshot-brand img{width:170px;height:85px;object-fit:contain;}
+.moonshot h2{margin:0;color:#19334a;font:600 clamp(19px,2.3vw,28px)/1.18 var(--display);letter-spacing:-.028em;text-wrap:balance;text-align:right;}
+.moonshot-tools{display:flex;flex-direction:column;align-items:flex-end;gap:10px;}
+.moonshot-scope,.moonshot-updated{color:#667f94;font:11px/1.5 var(--body);letter-spacing:.015em;}
+.moonshot-updated{margin:0;}
+.moonshot-updated span{white-space:nowrap;}
+.moonshot-stage{position:relative;isolation:isolate;}
+.moonshot-stage::before{position:absolute;z-index:-2;content:"";inset:0;background:url('../img/moonshot-space-natural.webp') center/cover no-repeat;opacity:.8;}
+.moonshot-stage::after{position:absolute;z-index:-1;content:"";inset:0;background:linear-gradient(180deg,#edf3f8 0,#edf3f8ed 16px,#edf3f8c2 32px,#edf3f86b 56px,#edf3f81c 88px,transparent 124px);-webkit-mask-image:linear-gradient(90deg,#000 0,#000 64%,#000000c4 75%,transparent 88%);mask-image:linear-gradient(90deg,#000 0,#000 64%,#000000c4 75%,transparent 88%);pointer-events:none;}
+#moonshot-chart{background:linear-gradient(180deg,var(--space) 0,#edf3f899 1.5%,transparent 3.5%),linear-gradient(0deg,var(--space) 0,transparent 64px);}
+.moonshot-stage svg{display:block;width:100%;height:auto;font-family:var(--body);overflow:visible;}
+.moonshot-grid line{stroke:#53748e;stroke-opacity:.18;stroke-width:.65;stroke-dasharray:1 6;}
+.moonshot-grid text{fill:#294c68;font:600 11px var(--body);font-variant-numeric:tabular-nums;paint-order:stroke;stroke:#f6faffed;stroke-width:2.5px;stroke-linejoin:round;}
+.moonshot-axis{fill:none;stroke:#315571;stroke-opacity:.95;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke;filter:drop-shadow(0 0 1px #f8fcffe6);}
+.moonshot-axis-label{fill:#1e405b;font-size:14px;font-weight:650;letter-spacing:.015em;paint-order:stroke;stroke:#edf3f8e6;stroke-width:2.2px;cursor:help;}
+.moonshot-axis-label:focus-visible{outline:1px solid #387997;outline-offset:4px;}
+.moonshot-axis-label tspan{fill:#637b90;font-size:11px;font-weight:450;letter-spacing:.01em;}
+.moonshot-target text{fill:#8b6224;font:700 10px var(--body);letter-spacing:.14em;paint-order:stroke;stroke:#fff8e8ed;stroke-width:2.8px;stroke-linejoin:round;}
+.moonshot-target .target-value{fill:#76501a;font-size:14px;font-weight:700;letter-spacing:.02em;}
+.moonshot-path{fill:none;stroke:url(#moonshot-trail);stroke-width:2.5;stroke-linecap:round;vector-effect:non-scaling-stroke;filter:drop-shadow(0 0 2px #fff0cdb3) drop-shadow(0 0 6px #d5a34c66);}
+.moonshot-path-future{fill:none;stroke:#906a2e;stroke-opacity:.9;stroke-width:1.6;stroke-dasharray:5 6;stroke-linecap:round;vector-effect:non-scaling-stroke;filter:drop-shadow(0 0 2px #ffebbc80);}
+.moonshot-path,.moonshot-path-future,.moonshot-target{pointer-events:none;}
+.moonshot-rocket{filter:drop-shadow(0 3px 3px #193b5b40);pointer-events:none;}
+.moonshot-label{cursor:pointer;outline:none;transition:opacity 150ms ease;}
+.moonshot-label .label-rank{fill:#5d7589;font-size:12px;font-weight:650;font-variant-numeric:tabular-nums;paint-order:stroke;stroke:#f2f7fbe6;stroke-width:2px;stroke-linejoin:round;}
+.moonshot-label.is-podium .label-rank{fill:#7b551e;}
+.moonshot-label .label-hit{fill:transparent;}
+.moonshot-label .label-logo-bg{fill:#fbfdfff5;stroke:#93afc5;stroke-width:1.1;filter:drop-shadow(0 1px 1.5px #173a5526);transition:stroke 150ms ease,fill 150ms ease,filter 150ms ease;}
+.moonshot-label .label-logo-image{pointer-events:none;}
+.moonshot-label .label-name{fill:#213c54;font-size:12px;font-weight:600;letter-spacing:-.01em;paint-order:stroke;stroke:#f2f7fbe6;stroke-width:2.2px;stroke-linejoin:round;}
+.moonshot-label .label-variant{fill:#4d697f;font-size:10.5px;font-weight:450;letter-spacing:0;}
+.moonshot-label.is-podium .label-name{fill:#7b551e;font-weight:700;}
+.moonshot-label.is-podium .label-variant{fill:#89652e;}
+.moonshot-label.is-podium .label-logo-bg{stroke:#b99a61;}
+.moonshot-label.is-active .label-name,.moonshot-label:has(a:focus-visible) .label-name{fill:#0a5d86;}
+.moonshot-label a:focus-visible{outline:none!important;}
+.moonshot-label:has(a:focus-visible) .label-name{text-decoration:underline;text-underline-offset:3px;}
+.moonshot-label:is(.is-active,:has(a:focus-visible)) .label-logo-bg{fill:#ffffff;stroke:#477da7;stroke-width:1.3;filter:drop-shadow(0 2px 3px #173a5538);}
+.moonshot-chart-empty{fill:#526a80;font-size:14px;text-anchor:middle;}
+.moonshot-inspector{position:absolute;z-index:3;width:170px;padding:8px 10px;border:1px solid #c1d6e6;border-radius:9px;background:linear-gradient(145deg,#fffffffa,#f1f8fdf5);box-shadow:inset 0 1px 0 #fff,0 4px 8px #234b6c08,0 12px 28px -8px #234b6c26;backdrop-filter:blur(12px);font-size:10px;}
+.moonshot-inspector a{display:block;color:#23465f;font-size:10px;line-height:1.4;font-weight:650;}
+.moonshot-inspector a:hover{color:#9b681f;}
+.moonshot-inspector dl{display:flex;justify-content:space-between;gap:10px;margin:6px 0 0;}
+.moonshot-inspector dl > div{display:flex;align-items:baseline;gap:4px;}
+.moonshot-inspector dt{font:600 8px var(--body);color:#678094;letter-spacing:.02em;}
+.moonshot-inspector dd{margin:0;color:#1b3c56;font:600 14px/1.2 var(--body);font-variant-numeric:tabular-nums;letter-spacing:-.03em;}
+.moonshot-axis-tooltip{position:absolute;z-index:3;width:220px;padding:9px 11px;border:1px solid #bdcedc;border-radius:7px;background:#f9fcfff5;box-shadow:0 8px 24px #143a5b20;color:#526b80;font:10px/1.5 var(--body);pointer-events:none;}
+.moonshot-axis-tooltip strong{display:block;color:#25465f;font-size:10px;font-weight:650;}
+.moonshot-axis-tooltip p{margin:4px 0 0;}
+.moonshot-unplotted{display:grid;grid-template-columns:minmax(156px,.8fr) minmax(0,2fr);align-items:center;gap:26px;margin:0 32px;padding:18px 0 16px;border-top:1px solid #cbdce8;font-size:11px;}
+.moonshot-unplotted-intro{display:flex;flex-direction:column;align-items:flex-start;gap:3px;}
+.moonshot-unplotted-intro h3{margin:0;color:#385c77;font-size:11px;font-weight:600;letter-spacing:.015em;}
+.moonshot-unplotted-intro p{margin:0;color:#71889b;font-size:10px;}
+.moonshot-unplotted-models{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:center;gap:24px;}
+.moonshot-incomplete{display:grid;grid-template-columns:20px minmax(0,1fr) auto;align-items:center;gap:9px;color:#3e5c76;}
+.moonshot-incomplete+.moonshot-incomplete{border-left:1px solid #ccdce8;padding-left:24px;}
+.moonshot-incomplete img{width:20px;height:20px;padding:2px;background:#ffffffbf;border:1px solid #c2d9e9;border-radius:50%;}
+.moonshot-incomplete a{color:#324f69;font-size:11px;white-space:nowrap;}
+.moonshot-incomplete a:hover{color:#895915;}
+.moonshot-incomplete .incomplete-variant{margin-left:5px;color:#60788e;font-size:10px;}
+.moonshot-incomplete .incomplete-value{display:flex;flex-direction:column;align-items:flex-end;gap:3px;color:#71879a;font:9px var(--body);white-space:nowrap;}
+.moonshot-incomplete strong{color:#294e6b;font:600 14px/1.2 var(--body);font-variant-numeric:tabular-nums;}
+.moonshot-footer{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px 16px;padding:0 32px 19px;color:#6c8396;font:10px/1.5 var(--body);}
+.moonshot-footer-info{display:flex;align-items:center;flex-wrap:wrap;gap:8px 12px;}
+.moonshot-footer-info > span+span{border-left:1px solid #cfdee9;padding-left:12px;}
+.moonshot-footer a{color:#526e85;}
+.moonshot-footer a:hover{color:#173d5d;}
+.moonshot :is(button,a):focus-visible{outline:2px solid #387997;outline-offset:4px;}
+@media(max-width:800px){.moonshot-header{padding:22px 24px 12px;}.moonshot-unplotted{grid-template-columns:1fr;gap:14px;margin-inline:24px;}.moonshot-unplotted-intro{flex-direction:row;align-items:baseline;gap:10px;}.moonshot-unplotted-models{gap:20px;}.moonshot-footer{padding-inline:24px;}}
+@media(max-width:600px){
+  .moonshot-header{display:grid;grid-template-columns:112px 1fr;align-items:center;padding:20px 18px 10px;gap:12px;}.moonshot-brand img{width:112px;height:56px;}.moonshot h2{font-size:16px;letter-spacing:-.02em;}.moonshot-tools{min-width:0;gap:7px;}.moonshot-scope,.moonshot-updated{font-size:9px;}.moonshot-updated{text-align:right;}
+  .moonshot-grid text{font-size:23px;}.moonshot-axis-label{font-size:26px;}.moonshot-axis-label tspan{font-size:20px;}.moonshot-target text{font-size:18px;transform:translateY(-5px);}.moonshot-target .target-value{font-size:23px;transform:translateY(10px);}
+  .moonshot-inspector{width:164px;padding:8px 9px;}.moonshot-inspector a{font-size:10px;}.moonshot-inspector dl{margin-top:5px;}.moonshot-inspector dd{font-size:13px;}
+  .moonshot-axis-tooltip{width:200px;left:50%!important;top:18%!important;transform:translateX(-50%);}
+  .moonshot-unplotted{margin-inline:18px;padding:15px 0;gap:13px;}.moonshot-unplotted-intro{width:100%;flex-wrap:wrap;gap:4px 10px;}.moonshot-unplotted-models{grid-template-columns:1fr;width:100%;gap:12px;}.moonshot-incomplete{width:100%;}.moonshot-incomplete+.moonshot-incomplete{border-left:0;padding-left:0;}.moonshot-incomplete .incomplete-value{flex-direction:row;align-items:baseline;gap:7px;}.moonshot-incomplete strong{font-size:13px;}.moonshot-footer{padding:0 18px 16px;font-size:9px;}.moonshot-chart-empty{font-size:24px;}
+}
+@media(prefers-reduced-motion:reduce){.moonshot *{transition:none!important;}}
+
+/* Exact score anchors; annotations resolve nearby collisions with short straight leaders. */
+.moonshot-connector{fill:none;stroke:#527b9b;stroke-opacity:.72;stroke-width:1;vector-effect:non-scaling-stroke;pointer-events:none;}
+.moonshot-point circle{fill:#477b9b;stroke:#f6fbff;stroke-width:1.4;vector-effect:non-scaling-stroke;cursor:pointer;}
+.moonshot-point.is-podium circle{fill:#a47d37;stroke:#fff8e7;}
+
+.moonshot-connector.is-active{stroke:#2c668f;stroke-opacity:1;stroke-width:1.5;}
+.moonshot-point.is-active circle{fill:#2c668f;stroke-width:2;}
+
+/* Focus a model without adding permanent score labels to the figure. */
+.moonshot.is-inspecting .moonshot-label:not(.is-active),.moonshot.is-inspecting .moonshot-point:not(.is-active){opacity:.36;}
+.moonshot.is-inspecting .moonshot-connector:not(.is-active){opacity:.2;}
