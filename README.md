@@ -44,3 +44,14 @@ Replace private absolute paths with relative paths or consistent anonymized iden
 Open weights and inference code are encouraged; policy integration PRs are welcome in [Bench2Dex](https://github.com/Bench2Dex/Bench2Dex).
 
 The existing Bench2Dex Team reference entries are maintained in [leaderboard/](leaderboard/). [assets/data/leaderboard.json](assets/data/leaderboard.json) supplies the published leaderboard and project homepage.
+
+## 📝 Citation
+
+```bibtex
+@article{yang2026bench2dex,
+  title={Bench2Dex: Benchmarking Visuo-Tactile Bimanual Dexterous Manipulation Across Dexterous Hands},
+  author={Yang, Zhenjie and Zhang, Yideng and Zhang, Dongjie and Jiang, Chenyu and Liu, Xianshuai and Li, Yufeng and Ge, Zuhao and Jiao, Xingyu and Zhang, Zheng and He, Kaiyu and others},
+  journal={arXiv preprint arXiv:2609.15726},
+  year={2026}
+}
+```
