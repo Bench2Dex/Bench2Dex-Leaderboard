@@ -211,7 +211,10 @@ class Audit:
                 self.check(seed == row['base_seed'] + index - 1, loc, "seed sequence mismatch")
         self.check(len(set(indices)) == len(indices), label, "duplicate episode indices")
         self.check(len(set(seeds)) == len(seeds), label, "duplicate episode seeds")
-        self.check(sorted(indices) == list(range(1, len(rows) + 1)), label, "indices must cover 1..N")
+        expected_indices = (list(range(min(indices), min(indices) + len(rows)))
+                            if native and indices else list(range(1, len(rows) + 1)))
+        self.check(sorted(indices) == expected_indices, label,
+                   "native indices must be contiguous" if native else "indices must cover 1..N")
         self.check(len(set(experts)) <= 1, label, "expert reference varies within task/channel")
         if len(rows) != 50:
             self.warnings.append(f"{label}: {len(rows)} episodes; standard reference budget is 50")

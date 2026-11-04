@@ -91,6 +91,16 @@ class SourceTests(unittest.TestCase):
         self.assertFalse({'task_id', 'run_id', 'is_template'} & row.keys())
         self.assertNotIn('isTemplate', json.loads(paths[1].read_text(encoding='utf-8')))
 
+    def test_accepts_native_subset_with_original_episode_index(self):
+        paths = self.native_logs()
+        row = json.loads(paths[0].read_text(encoding='utf-8'))
+        row['episode_index'] = 5
+        row['episode_seed'] = 104
+        paths[0].write_text(json.dumps(row) + '\n', encoding='utf-8')
+        audit = Audit()
+        audit.submission(self.github, self.registry, self.hf)
+        self.assertEqual(audit.errors, [])
+
     def test_rejects_native_channel_mislabeled_as_full(self):
         self.native_logs(axis='cov')
         audit = Audit()
