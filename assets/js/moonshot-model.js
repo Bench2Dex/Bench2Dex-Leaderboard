@@ -21,6 +21,7 @@
       return {
         policy,sr,lscr,
         fullSr:M.aggregateMetric(policy.id,"sr","full").value,
+        fullLscr:M.aggregateMetric(policy.id,"lscr","full").value,
         srCoverage:M.aggregateCoverage(policy.id,"sr",channel),
         lscrCoverage:M.aggregateCoverage(policy.id,"lscr",channel),
         reason

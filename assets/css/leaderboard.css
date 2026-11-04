@@ -34,6 +34,7 @@
 #results-explorer [hidden]{display:none!important;}
 .board-global-tools{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:0 0 18px;}
 .board-global-tools .results-protocol-note{margin:0;font-size:12px;line-height:1.6;color:var(--text-dim);}
+.board-global-tools .results-downloads{margin-left:auto;}
 .results-downloads{display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:8px;}
 .results-downloads button{font-size:11px;white-space:nowrap;}
 .board-section{background:var(--surface);border:1px solid #dce2e8;border-radius:12px;margin-bottom:24px;overflow:clip;box-shadow:0 4px 24px #20394e05;}

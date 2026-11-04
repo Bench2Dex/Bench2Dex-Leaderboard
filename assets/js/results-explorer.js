@@ -12,7 +12,7 @@
   // Keep every policy visible so unavailable metrics remain explicit NR cells.
   const metricPolicies=()=>group();
   const channelLabel=c=>c==="mean" ? "Average" : B.CHANNEL_LABEL[c];
-  const policyTitle=(p,indicator="")=>esc(p.variantLabel ? p.modelVersion : p.label)+indicator+(p.variantLabel ? `<span class="policy-variant">${esc(p.variantLabel)}</span>` : "");
+  const policyTitle=(p,indicator="")=>esc(R.policyName(p))+indicator+(p.variantLabel ? `<span class="policy-variant">${esc(p.variantLabel)}</span>` : "");
   const cellValue=(r,key,cid)=>esc(R.format(r,key,cid!=="mean"));
   const announce=s=>{$("#results-status").textContent=s;};
   const enumValue=(value,options,fallback)=>options.includes(value) ? value : fallback;

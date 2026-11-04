@@ -10,7 +10,7 @@
   const rocketShape={width:100,height:28.125,noseY:16.09375};
   const x=value=>bounds.left+(bounds.right-bounds.left)*value/100,y=value=>bounds.bottom-(bounds.bottom-bounds.top)*value/100;
   const fmt=value=>Number.isFinite(value) ? `${value.toFixed(1)}%` : "NR";
-  const name=p=>p.modelVersion||p.label;
+  const name=R.policyName;
   const title=p=>`${name(p)}${p.variantLabel ? " · "+p.variantLabel : ""}`;
   let current=null,leader=null,groupKey="",activeId=null,labelBoxes=new Map();
 
@@ -225,11 +225,12 @@
     root.hidden=false;$("moonshot-updated").innerHTML=R.overall.updated(M.group(group));
     $("moonshot-chart").innerHTML=scene(current.plotted);
     const unplotted=$("moonshot-unplotted");unplotted.hidden=!current.unplotted.length;
-    const allMeansMissing=current.unplotted.every(e=>e.sr===null && e.lscr===null);
-    unplotted.innerHTML=`<div class="moonshot-unplotted-intro"><h3>Partial reports</h3>${allMeansMissing ? '<p>Mean SR / LSCR: NR</p>' : ''}</div><div class="moonshot-unplotted-models">${current.unplotted.map(e=>{
+    const reports=[...current.unplotted].sort((a,b)=>title(a.policy).localeCompare(title(b.policy),"en",{numeric:true}));
+    const allMeansMissing=reports.every(e=>e.sr===null && e.lscr===null);
+    unplotted.innerHTML=`<div class="moonshot-unplotted-intro"><h3>Partial reports</h3>${allMeansMissing ? '<p>Mean SR / LSCR: NR</p>' : ''}</div><div class="moonshot-unplotted-models">${reports.map(e=>{
       const p=e.policy,fallback=e.sr===null && e.fullSr!==null;
       const context=e.reason==="Incomplete task coverage" ? `Mean · SR ${e.srCoverage}/${current.totalTasks}, LSCR ${e.lscrCoverage}/${current.totalTasks} tasks` : `Mean SR: ${fmt(e.sr)}; Mean LSCR: ${fmt(e.lscr)}`;
-      return `<article class="moonshot-incomplete" title="${esc(context)}"><img src="${esc(p.logoPath)}" alt="" width="18" height="18"><a href="${esc(p.modelUrl)}" target="_blank" rel="noopener noreferrer">${esc(name(p))}<span class="incomplete-variant">${esc((p.variantLabel||"").replace(" + ICL",""))}</span></a><span class="incomplete-value">${fallback ? "Full SR" : "Mean SR"}<strong>${fmt(fallback ? e.fullSr : e.sr)}</strong></span><span class="sr-only">${esc(context)}</span></article>`;
+      return `<article class="moonshot-incomplete" data-report-policy="${esc(p.id)}" aria-label="${esc(title(p))}"><img src="${esc(p.logoPath)}" alt="" width="32" height="32"><a href="${esc(p.modelUrl)}" target="_blank" rel="noopener noreferrer">${esc(name(p))} <span class="incomplete-variant">${esc(p.variantLabel||"")}</span></a><div class="incomplete-metrics"><span class="incomplete-value">${fallback ? "Full SR" : "Mean SR"}<strong>${fmt(fallback ? e.fullSr : e.sr)}</strong></span>${fallback && e.fullLscr!==null ? `<span class="incomplete-value">Full LSCR<strong>${fmt(e.fullLscr)}</strong></span>` : ""}</div><span class="sr-only">${esc(context)}</span></article>`;
     }).join("")}</div>`;
     $("moonshot-coverage").textContent=`${current.plotted.length} models · ${current.totalTasks} tasks`;
     inspect(null);

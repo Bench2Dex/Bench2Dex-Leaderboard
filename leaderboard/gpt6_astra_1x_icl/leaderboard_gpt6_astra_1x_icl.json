@@ -1848,8 +1848,9 @@
     "logs": {
       "repository": "Bench2Dex/Leaderboard",
       "policyPath": "gpt6_astra_1x_icl",
-      "revision": null,
-      "status": "not-archived"
-    }
+      "revision": "cf97cb8a32fe699dc29c9aa6a822e58aae1500dc",
+      "status": "archived"
+    },
+    "publishedAt": "2026-11-04"
   }
 }

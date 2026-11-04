@@ -54,6 +54,7 @@ export function toRuntimeData(registry) {
   };
   for (const entry of registry.policies) {
     const model = structuredClone(entry.model);
+    model.updatedAt ||= entry.evaluation?.publishedAt ?? null;
     requireValue(protocolIds.has(model.protocolId), `unknown protocol for ${model.id}`);
     requireValue(isObject(entry.per_task), `per_task must be an object for ${model.id}`);
     requireValue(Object.keys(entry.per_task).every(id => taskIds.has(id)), `unknown task for ${model.id}`);

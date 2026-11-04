@@ -32,8 +32,12 @@ function futurePolicy(id="FUTURE_POLICY",sr=22,lscr=40){
   return policy;
 }
 
-test("the mean plot contains seven maintained policies and the new leader",()=>{
- const result=plot()("standard");assert.equal(result.totalTasks,26);assert.equal(result.plotted.length,7);assert.equal(result.unplotted.length,0);
+test("the mean plot keeps maintained policies and orders Full-only reports by Full SR",()=>{
+ const result=plot()("standard");assert.equal(result.totalTasks,26);assert.equal(result.plotted.length,7);assert.equal(result.unplotted.length,2);
+ assert.deepEqual(Array.from(result.unplotted,e=>e.policy.id),["gpt6_astra_10x_icl","gpt6_astra_1x_icl"]);
+ for(const [id,sr,lscr] of [["gpt6_astra_10x_icl",100*48/78,72.45726495726495],["gpt6_astra_1x_icl",100*68/260,48.76923076923077]]){
+  const partial=result.unplotted.find(e=>e.policy.id===id);assert.ok(partial);assert.equal(partial.sr,null);assert.equal(partial.lscr,null);assert.equal(partial.fullSr,sr);assert.ok(Math.abs(partial.fullLscr-lscr)<1e-10);
+ }
  assert.equal(result.plotted[0].policy.id,"GR00T_N17_TACTILE");assert.equal(result.plotted[0].sr,29.653846153846153);assert.equal(result.plotted[0].lscr,48.36528846153846);
  for(let i=1;i<result.plotted.length;i++)assert.ok(result.plotted[i-1].sr>=result.plotted[i].sr);
 });

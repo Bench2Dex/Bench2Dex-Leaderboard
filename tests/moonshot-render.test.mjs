@@ -391,3 +391,15 @@ test("very narrow containers retain every model and strict SR order",()=>{
     for(let i=1;i<view.models.length;i++)assert.ok(Number(attr(view.models[i-1],"data-logo-x"))>Number(attr(view.models[i],"data-logo-x")));
   }
 });
+
+test("both GPT-6 Astra settings appear below the chart without changing its mean leader",()=>{
+  const render=renderer()();
+  for(const [variant,sr,lscr] of [["10×","61.5%","72.5%"],["1×","26.2%","48.8%"]]){
+    const card=render.card("GPT-6 Astra",variant);
+    assert.ok(card.includes(`Full SR ${sr}`));
+    assert.ok(card.includes(`Full LSCR ${lscr}`));
+    assert.ok(card.includes(`${variant} + ICL`));
+  }
+  assert.doesNotMatch(render.chart,/data-plot-policy="gpt6_astra_(?:1|10)x_icl"/);
+  assert.equal(attr(render.rocket,"data-rocket-policy"),"GR00T_N17_TACTILE");
+});

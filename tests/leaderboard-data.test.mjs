@@ -137,7 +137,7 @@ test("unscored policies follow Full SR descending without receiving a mean rank"
   const group = M.group("standard"), state = { rankMetric: "sr", rankChannel: "mean", rankDir: "descending" };
   for (const rankDir of ["descending", "ascending"]) {
     const ids = Array.from(overall.ordered(group, { ...state, rankDir }), p => p.id);
-    assert.deepEqual(ids.slice(-2), ["TEST_FULL_HIGH", "TEST_FULL_LOW"]);
+    assert.deepEqual(ids.filter(id=>id.startsWith("TEST_FULL_")), ["TEST_FULL_HIGH", "TEST_FULL_LOW"]);
   }
   for (const id of ["TEST_FULL_LOW", "TEST_FULL_HIGH"]) {
     assert.equal(M.aggregateMetric(id, "sr", "mean").value, null);
@@ -145,4 +145,25 @@ test("unscored policies follow Full SR descending without receiving a mean rank"
   }
   const fullAscending = Array.from(overall.ordered(group, { ...state, rankChannel: "full", rankDir: "ascending" }), p => p.id);
   assert.ok(fullAscending.indexOf("TEST_FULL_LOW") < fullAscending.indexOf("TEST_FULL_HIGH"));
+});
+
+test("the 1× ICL cohort retains Full-only scores, counts and NR means in the leaderboard", () => {
+  const entry=registry.policies.find(p=>p.model.id==="gpt6_astra_1x_icl");
+  assert.equal(entry.model.stepBudgetMultiplier,1);
+  assert.equal(entry.evaluation.coverage.evaluatedEpisodeCount,260);
+  assert.equal(Object.values(entry.per_task).reduce((n,t)=>n+t.channels.Full.successes,0),68);
+  const data=toRuntimeData(registry),M=model(data);
+  for(const task of registry.tasks){
+    assert.equal(M.channel(entry.model.id,task.id,"full").episodes,10);
+    for(const metric of ["sr","lscr","efficiency"])assert.equal(M.metric(entry.model.id,task.id,metric).value,null);
+  }
+  assert.equal(M.aggregateMetric(entry.model.id,"sr","full").value,100*68/260);
+  assert.equal(M.aggregateMetric(entry.model.id,"lscr","full").value,48.76923076923077);
+  assert.equal(M.aggregateRank(entry.model.id,"sr","mean"),null);
+  const context=vm.createContext({window:{BENCH:data}});
+  vm.runInContext(modelSource,context);vm.runInContext(overallSource,context);
+  const state={rankMetric:"sr",rankChannel:"mean",rankDir:"descending"};
+  const rows=context.window.BenchResults.overall.ordered(context.window.BenchResults.model.group("standard"),state);
+  assert.deepEqual(Array.from(rows.slice(-2),p=>p.id),["gpt6_astra_10x_icl","gpt6_astra_1x_icl"]);
+  assert.ok(context.window.BenchResults.overall.markup(rows,state).includes("26.2%"));
 });

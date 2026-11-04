@@ -7528,6 +7528,3529 @@
           "status": "not-submitted"
         }
       }
+    },
+    {
+      "model": {
+        "id": "gpt6_astra_10x_icl",
+        "label": "GPT-6 Astra",
+        "variantLabel": "10× + ICL",
+        "family": "GPT-6 Astra",
+        "modelVersion": "gpt-6-astra",
+        "checkpoint": null,
+        "inputs": "RGB vision + proprioception + task description",
+        "protocolId": "standard",
+        "displayOrder": 101,
+        "trainingSetting": "Frozen per-task in-context preparation; no weight updates",
+        "resultVersion": "Fixed 78, 10× budget",
+        "updatedAt": null,
+        "evaluationSetting": "task_icl_v3_replay_extension_10x_v1",
+        "sourceLabel": "Has GPT-6-Astra Achieved Embodied Intelligence?",
+        "sourceUrl": "https://www.sensenova.ai/has-gpt-6-astra-achieved-embodied-intelligence",
+        "resultDetailsUrl": null,
+        "contributor": "SenseNova-RoboRSI",
+        "contributorUrl": "https://github.com/OpenSenseNova/SenseNova-RoboRSI",
+        "type": "Agent",
+        "modelUrl": "https://www.sensenova.ai/has-gpt-6-astra-achieved-embodied-intelligence",
+        "logoPath": "leaderboard/gpt6_astra_10x_icl/logo.png",
+        "logoAlt": "SenseNova logo",
+        "weightsUrl": null,
+        "codeUrl": "https://github.com/OpenSenseNova/SenseNova-RoboRSI",
+        "externalReport": true,
+        "episodesPerChannel": 3,
+        "stepBudgetMultiplier": 10
+      },
+      "overall": {
+        "taskCount": 26,
+        "scope": "task-macro",
+        "status": "not-reported",
+        "sr": null,
+        "lscr": null,
+        "efficiency": null,
+        "efficiencyStatus": "not-reported",
+        "efficiencyTaskCount": null,
+        "channelSr": {
+          "None": null,
+          "Equi.": null,
+          "Inv.": null,
+          "Full": 61.53846153846154
+        },
+        "channelLscr": {
+          "None": null,
+          "Equi.": null,
+          "Inv.": null,
+          "Full": 72.45726495726495
+        },
+        "channelTaskCounts": {
+          "None": 0,
+          "Equi.": 0,
+          "Inv.": 0,
+          "Full": 26
+        }
+      },
+      "per_task": {
+        "12": {
+          "channels": {
+            "None": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Equi.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Inv.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 3,
+              "successes": 3,
+              "lscr": 100.0,
+              "source": {
+                "runId": "all_tasks_step_limit10x_20261001_01-fixed78-index05-07",
+                "perEpisodeFile": "per_task_eval/12_screwdriver_box_and_hammer/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/12_screwdriver_box_and_hammer/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "not-reported",
+            "sr": null,
+            "srScope": "four-channel-mean",
+            "srEpisodes": null,
+            "lscr": null,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": null,
+            "efficiency": null,
+            "efficiencyStatus": "not-reported"
+          }
+        },
+        "21": {
+          "channels": {
+            "None": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Equi.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Inv.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 3,
+              "successes": 2,
+              "lscr": 66.66666666666666,
+              "source": {
+                "runId": "all_tasks_step_limit10x_20261001_01-fixed78-index05-07",
+                "perEpisodeFile": "per_task_eval/21_condiment_box_loading/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/21_condiment_box_loading/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "not-reported",
+            "sr": null,
+            "srScope": "four-channel-mean",
+            "srEpisodes": null,
+            "lscr": null,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": null,
+            "efficiency": null,
+            "efficiencyStatus": "not-reported"
+          }
+        },
+        "22": {
+          "channels": {
+            "None": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Equi.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Inv.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 3,
+              "successes": 3,
+              "lscr": 100.0,
+              "source": {
+                "runId": "all_tasks_step_limit10x_20261001_01-fixed78-index05-07",
+                "perEpisodeFile": "per_task_eval/22_tool_box_loading/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/22_tool_box_loading/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "not-reported",
+            "sr": null,
+            "srScope": "four-channel-mean",
+            "srEpisodes": null,
+            "lscr": null,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": null,
+            "efficiency": null,
+            "efficiencyStatus": "not-reported"
+          }
+        },
+        "24": {
+          "channels": {
+            "None": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Equi.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Inv.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 3,
+              "successes": 2,
+              "lscr": 75.0,
+              "source": {
+                "runId": "all_tasks_step_limit10x_20261001_01-fixed78-index05-07",
+                "perEpisodeFile": "per_task_eval/24_stationery_category_sorting/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/24_stationery_category_sorting/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "not-reported",
+            "sr": null,
+            "srScope": "four-channel-mean",
+            "srEpisodes": null,
+            "lscr": null,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": null,
+            "efficiency": null,
+            "efficiencyStatus": "not-reported"
+          }
+        },
+        "26": {
+          "channels": {
+            "None": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Equi.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Inv.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 3,
+              "successes": 1,
+              "lscr": 75.0,
+              "source": {
+                "runId": "all_tasks_step_limit10x_20261001_01-fixed78-index05-07",
+                "perEpisodeFile": "per_task_eval/26_canned_food_tray_line_arrangement/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/26_canned_food_tray_line_arrangement/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "not-reported",
+            "sr": null,
+            "srScope": "four-channel-mean",
+            "srEpisodes": null,
+            "lscr": null,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": null,
+            "efficiency": null,
+            "efficiencyStatus": "not-reported"
+          }
+        },
+        "27": {
+          "channels": {
+            "None": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Equi.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Inv.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 3,
+              "successes": 3,
+              "lscr": 100.0,
+              "source": {
+                "runId": "all_tasks_step_limit10x_20261001_01-fixed78-index05-07",
+                "perEpisodeFile": "per_task_eval/27_ball_box_loading/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/27_ball_box_loading/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "not-reported",
+            "sr": null,
+            "srScope": "four-channel-mean",
+            "srEpisodes": null,
+            "lscr": null,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": null,
+            "efficiency": null,
+            "efficiencyStatus": "not-reported"
+          }
+        },
+        "32": {
+          "channels": {
+            "None": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Equi.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Inv.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 3,
+              "successes": 3,
+              "lscr": 100.0,
+              "source": {
+                "runId": "all_tasks_step_limit10x_20261001_01-fixed78-index05-07",
+                "perEpisodeFile": "per_task_eval/32_baking_tray_prep_with_tools/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/32_baking_tray_prep_with_tools/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "not-reported",
+            "sr": null,
+            "srScope": "four-channel-mean",
+            "srEpisodes": null,
+            "lscr": null,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": null,
+            "efficiency": null,
+            "efficiencyStatus": "not-reported"
+          }
+        },
+        "34": {
+          "channels": {
+            "None": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Equi.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Inv.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 3,
+              "successes": 2,
+              "lscr": 86.66666666666667,
+              "source": {
+                "runId": "all_tasks_step_limit10x_20261001_01-fixed78-index05-07",
+                "perEpisodeFile": "per_task_eval/34_fridge_wine_interhand_pour/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/34_fridge_wine_interhand_pour/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "not-reported",
+            "sr": null,
+            "srScope": "four-channel-mean",
+            "srEpisodes": null,
+            "lscr": null,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": null,
+            "efficiency": null,
+            "efficiencyStatus": "not-reported"
+          }
+        },
+        "42": {
+          "channels": {
+            "None": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Equi.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Inv.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 3,
+              "successes": 3,
+              "lscr": 100.0,
+              "source": {
+                "runId": "all_tasks_step_limit10x_20261001_01-fixed78-index05-07",
+                "perEpisodeFile": "per_task_eval/42_trash_disposal/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/42_trash_disposal/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "not-reported",
+            "sr": null,
+            "srScope": "four-channel-mean",
+            "srEpisodes": null,
+            "lscr": null,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": null,
+            "efficiency": null,
+            "efficiencyStatus": "not-reported"
+          }
+        },
+        "43": {
+          "channels": {
+            "None": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Equi.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Inv.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 3,
+              "successes": 2,
+              "lscr": 83.33333333333334,
+              "source": {
+                "runId": "all_tasks_step_limit10x_20261001_01-fixed78-index05-07",
+                "perEpisodeFile": "per_task_eval/43_fridge_fruit_shelf_sorting/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/43_fridge_fruit_shelf_sorting/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "not-reported",
+            "sr": null,
+            "srScope": "four-channel-mean",
+            "srEpisodes": null,
+            "lscr": null,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": null,
+            "efficiency": null,
+            "efficiencyStatus": "not-reported"
+          }
+        },
+        "44": {
+          "channels": {
+            "None": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Equi.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Inv.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 3,
+              "successes": 3,
+              "lscr": 100.0,
+              "source": {
+                "runId": "all_tasks_step_limit10x_20261001_01-fixed78-index05-07",
+                "perEpisodeFile": "per_task_eval/44_microwave_bowl_loading/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/44_microwave_bowl_loading/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "not-reported",
+            "sr": null,
+            "srScope": "four-channel-mean",
+            "srEpisodes": null,
+            "lscr": null,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": null,
+            "efficiency": null,
+            "efficiencyStatus": "not-reported"
+          }
+        },
+        "51": {
+          "channels": {
+            "None": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Equi.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Inv.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 3,
+              "successes": 2,
+              "lscr": 77.77777777777779,
+              "source": {
+                "runId": "all_tasks_step_limit10x_20261001_01-fixed78-index05-07",
+                "perEpisodeFile": "per_task_eval/51_toilet_lid_cleaner_pour/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/51_toilet_lid_cleaner_pour/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "not-reported",
+            "sr": null,
+            "srScope": "four-channel-mean",
+            "srEpisodes": null,
+            "lscr": null,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": null,
+            "efficiency": null,
+            "efficiencyStatus": "not-reported"
+          }
+        },
+        "60": {
+          "channels": {
+            "None": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Equi.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Inv.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 3,
+              "successes": 2,
+              "lscr": 66.66666666666666,
+              "source": {
+                "runId": "all_tasks_step_limit10x_20261001_01-fixed78-index05-07",
+                "perEpisodeFile": "per_task_eval/60_breadbasket_fast_food_loading/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/60_breadbasket_fast_food_loading/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "not-reported",
+            "sr": null,
+            "srScope": "four-channel-mean",
+            "srEpisodes": null,
+            "lscr": null,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": null,
+            "efficiency": null,
+            "efficiencyStatus": "not-reported"
+          }
+        },
+        "61": {
+          "channels": {
+            "None": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Equi.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Inv.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 3,
+              "successes": 3,
+              "lscr": 100.0,
+              "source": {
+                "runId": "all_tasks_step_limit10x_20261001_01-fixed78-index05-07",
+                "perEpisodeFile": "per_task_eval/61_medicine_shoebox_pack/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/61_medicine_shoebox_pack/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "not-reported",
+            "sr": null,
+            "srScope": "four-channel-mean",
+            "srEpisodes": null,
+            "lscr": null,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": null,
+            "efficiency": null,
+            "efficiencyStatus": "not-reported"
+          }
+        },
+        "62": {
+          "channels": {
+            "None": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Equi.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Inv.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 3,
+              "successes": 0,
+              "lscr": 33.33333333333333,
+              "source": {
+                "runId": "all_tasks_step_limit10x_20261001_01-fixed78-index05-07",
+                "perEpisodeFile": "per_task_eval/62_shoebox_accessory_pack/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/62_shoebox_accessory_pack/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "not-reported",
+            "sr": null,
+            "srScope": "four-channel-mean",
+            "srEpisodes": null,
+            "lscr": null,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": null,
+            "efficiency": null,
+            "efficiencyStatus": "not-reported"
+          }
+        },
+        "64": {
+          "channels": {
+            "None": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Equi.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Inv.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 3,
+              "successes": 3,
+              "lscr": 100.0,
+              "source": {
+                "runId": "all_tasks_step_limit10x_20261001_01-fixed78-index05-07",
+                "perEpisodeFile": "per_task_eval/64_sports_ball_cup_sort/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/64_sports_ball_cup_sort/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "not-reported",
+            "sr": null,
+            "srScope": "four-channel-mean",
+            "srEpisodes": null,
+            "lscr": null,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": null,
+            "efficiency": null,
+            "efficiencyStatus": "not-reported"
+          }
+        },
+        "67": {
+          "channels": {
+            "None": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Equi.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Inv.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 3,
+              "successes": 3,
+              "lscr": 100.0,
+              "source": {
+                "runId": "all_tasks_step_limit10x_20261001_01-fixed78-index05-07",
+                "perEpisodeFile": "per_task_eval/67_faucet_cup_water_fill/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/67_faucet_cup_water_fill/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "not-reported",
+            "sr": null,
+            "srScope": "four-channel-mean",
+            "srEpisodes": null,
+            "lscr": null,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": null,
+            "efficiency": null,
+            "efficiencyStatus": "not-reported"
+          }
+        },
+        "73": {
+          "channels": {
+            "None": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Equi.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Inv.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 3,
+              "successes": 0,
+              "lscr": 58.333333333333336,
+              "source": {
+                "runId": "all_tasks_step_limit10x_20261001_01-fixed78-index05-07",
+                "perEpisodeFile": "per_task_eval/73_jigsaw_puzzle_assembly/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/73_jigsaw_puzzle_assembly/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "not-reported",
+            "sr": null,
+            "srScope": "four-channel-mean",
+            "srEpisodes": null,
+            "lscr": null,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": null,
+            "efficiency": null,
+            "efficiencyStatus": "not-reported"
+          }
+        },
+        "76": {
+          "channels": {
+            "None": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Equi.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Inv.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 3,
+              "successes": 0,
+              "lscr": 33.33333333333333,
+              "source": {
+                "runId": "all_tasks_step_limit10x_20261001_01-fixed78-index05-07",
+                "perEpisodeFile": "per_task_eval/76_soup_serving/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/76_soup_serving/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "not-reported",
+            "sr": null,
+            "srScope": "four-channel-mean",
+            "srEpisodes": null,
+            "lscr": null,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": null,
+            "efficiency": null,
+            "efficiencyStatus": "not-reported"
+          }
+        },
+        "79": {
+          "channels": {
+            "None": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Equi.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Inv.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 3,
+              "successes": 3,
+              "lscr": 100.0,
+              "source": {
+                "runId": "all_tasks_step_limit10x_20261001_01-fixed78-index05-07",
+                "perEpisodeFile": "per_task_eval/79_bimanual_piano_melody/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/79_bimanual_piano_melody/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "not-reported",
+            "sr": null,
+            "srScope": "four-channel-mean",
+            "srEpisodes": null,
+            "lscr": null,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": null,
+            "efficiency": null,
+            "efficiencyStatus": "not-reported"
+          }
+        },
+        "80": {
+          "channels": {
+            "None": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Equi.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Inv.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 3,
+              "successes": 0,
+              "lscr": 0.0,
+              "source": {
+                "runId": "all_tasks_step_limit10x_20261001_01-fixed78-index05-07",
+                "perEpisodeFile": "per_task_eval/80_gaming_desk_setup/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/80_gaming_desk_setup/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "not-reported",
+            "sr": null,
+            "srScope": "four-channel-mean",
+            "srEpisodes": null,
+            "lscr": null,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": null,
+            "efficiency": null,
+            "efficiencyStatus": "not-reported"
+          }
+        },
+        "03": {
+          "channels": {
+            "None": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Equi.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Inv.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 3,
+              "successes": 0,
+              "lscr": 44.44444444444444,
+              "source": {
+                "runId": "all_tasks_step_limit10x_20261001_01-fixed78-index05-07",
+                "perEpisodeFile": "per_task_eval/03_wine_glass_plate_balance/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/03_wine_glass_plate_balance/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "not-reported",
+            "sr": null,
+            "srScope": "four-channel-mean",
+            "srEpisodes": null,
+            "lscr": null,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": null,
+            "efficiency": null,
+            "efficiencyStatus": "not-reported"
+          }
+        },
+        "06": {
+          "channels": {
+            "None": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Equi.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Inv.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 3,
+              "successes": 1,
+              "lscr": 66.66666666666666,
+              "source": {
+                "runId": "all_tasks_step_limit10x_20261001_01-fixed78-index05-07",
+                "perEpisodeFile": "per_task_eval/06_fruit_bowl_loading/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/06_fruit_bowl_loading/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "not-reported",
+            "sr": null,
+            "srScope": "four-channel-mean",
+            "srEpisodes": null,
+            "lscr": null,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": null,
+            "efficiency": null,
+            "efficiencyStatus": "not-reported"
+          }
+        },
+        "07": {
+          "channels": {
+            "None": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Equi.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Inv.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 3,
+              "successes": 1,
+              "lscr": 50.0,
+              "source": {
+                "runId": "all_tasks_step_limit10x_20261001_01-fixed78-index05-07",
+                "perEpisodeFile": "per_task_eval/07_citrus_plate_loading/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/07_citrus_plate_loading/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "not-reported",
+            "sr": null,
+            "srScope": "four-channel-mean",
+            "srEpisodes": null,
+            "lscr": null,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": null,
+            "efficiency": null,
+            "efficiencyStatus": "not-reported"
+          }
+        },
+        "08": {
+          "channels": {
+            "None": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Equi.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Inv.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 3,
+              "successes": 0,
+              "lscr": 66.66666666666666,
+              "source": {
+                "runId": "all_tasks_step_limit10x_20261001_01-fixed78-index05-07",
+                "perEpisodeFile": "per_task_eval/08_frypan_stand_pour/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/08_frypan_stand_pour/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "not-reported",
+            "sr": null,
+            "srScope": "four-channel-mean",
+            "srEpisodes": null,
+            "lscr": null,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": null,
+            "efficiency": null,
+            "efficiencyStatus": "not-reported"
+          }
+        },
+        "09": {
+          "channels": {
+            "None": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Equi.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Inv.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 3,
+              "successes": 3,
+              "lscr": 0.0,
+              "source": {
+                "runId": "all_tasks_step_limit10x_20261001_01-fixed78-index05-07",
+                "perEpisodeFile": "per_task_eval/09_cleaner_moisturizer_box_loading/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/09_cleaner_moisturizer_box_loading/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "not-reported",
+            "sr": null,
+            "srScope": "four-channel-mean",
+            "srEpisodes": null,
+            "lscr": null,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": null,
+            "efficiency": null,
+            "efficiencyStatus": "not-reported"
+          }
+        }
+      },
+      "evaluation": {
+        "schemaVersion": "1.0",
+        "isTemplate": false,
+        "protocol": {
+          "benchmarkCommit": "f96a8b2b4eb475483af66e9e03916b35bc43f1be",
+          "taskCount": 26,
+          "channels": [
+            "Full"
+          ],
+          "episodesPerChannel": 3,
+          "seeds": {
+            "episodeIndices": [
+              5,
+              6,
+              7
+            ],
+            "byTask": {
+              "03": [
+                200300004,
+                200300005,
+                200300006
+              ],
+              "06": [
+                200600004,
+                200600005,
+                200600006
+              ],
+              "07": [
+                200700004,
+                200700005,
+                200700006
+              ],
+              "08": [
+                200800004,
+                200800005,
+                200800006
+              ],
+              "09": [
+                200900004,
+                200900005,
+                200900006
+              ],
+              "12": [
+                201200004,
+                201200005,
+                201200006
+              ],
+              "21": [
+                202100004,
+                202100005,
+                202100006
+              ],
+              "22": [
+                202200004,
+                202200005,
+                202200006
+              ],
+              "24": [
+                202400004,
+                202400005,
+                202400006
+              ],
+              "26": [
+                202600004,
+                202600005,
+                202600006
+              ],
+              "27": [
+                202700004,
+                202700005,
+                202700006
+              ],
+              "32": [
+                203200004,
+                203200005,
+                203200006
+              ],
+              "34": [
+                203400004,
+                203400005,
+                203400006
+              ],
+              "42": [
+                204200004,
+                204200005,
+                204200006
+              ],
+              "43": [
+                204300004,
+                204300005,
+                204300006
+              ],
+              "44": [
+                204400004,
+                204400005,
+                204400006
+              ],
+              "51": [
+                205100004,
+                205100005,
+                205100006
+              ],
+              "60": [
+                206000004,
+                206000005,
+                206000006
+              ],
+              "61": [
+                206100004,
+                206100005,
+                206100006
+              ],
+              "62": [
+                206200004,
+                206200005,
+                206200006
+              ],
+              "64": [
+                206400004,
+                206400005,
+                206400006
+              ],
+              "67": [
+                206700004,
+                206700005,
+                206700006
+              ],
+              "73": [
+                207300004,
+                207300005,
+                207300006
+              ],
+              "76": [
+                207600004,
+                207600005,
+                207600006
+              ],
+              "79": [
+                207900004,
+                207900005,
+                207900006
+              ],
+              "80": [
+                208000004,
+                208000005,
+                208000006
+              ]
+            }
+          },
+          "stepUnit": "physics_steps",
+          "physicsHz": 60,
+          "controlHz": 20,
+          "executionStepBudget": {
+            "rule": "10 × official 1× budget",
+            "perTaskPolicySteps": {
+              "03": 10820,
+              "06": 6400,
+              "07": 6020,
+              "08": 11440,
+              "09": 6420,
+              "12": 11490,
+              "21": 8270,
+              "22": 6810,
+              "24": 15420,
+              "26": 8710,
+              "27": 11900,
+              "32": 8520,
+              "34": 10800,
+              "42": 6680,
+              "43": 13750,
+              "44": 10610,
+              "51": 10230,
+              "60": 9950,
+              "61": 10340,
+              "62": 10770,
+              "64": 6650,
+              "67": 9640,
+              "73": 12130,
+              "76": 9860,
+              "79": 6810,
+              "80": 5930
+            },
+            "perTaskPhysicsSteps": {
+              "03": 32460,
+              "06": 19200,
+              "07": 18060,
+              "08": 34320,
+              "09": 19260,
+              "12": 34470,
+              "21": 24810,
+              "22": 20430,
+              "24": 46260,
+              "26": 26130,
+              "27": 35700,
+              "32": 25560,
+              "34": 32400,
+              "42": 20040,
+              "43": 41250,
+              "44": 31830,
+              "51": 30690,
+              "60": 29850,
+              "61": 31020,
+              "62": 32310,
+              "64": 19950,
+              "67": 28920,
+              "73": 36390,
+              "76": 29580,
+              "79": 20430,
+              "80": 17790
+            }
+          },
+          "expertReference": "Bench2Dex scene expert_time_step at benchmarkCommit",
+          "protocolChanges": [
+            "Full/unseen only; 3 episodes per task rather than the 50-episode reference.",
+            "Fixed indices 5–7 are nested within the 1× cohort; 23 valid original outcomes were carried forward and 55 timeout failures were extended.",
+            "Extensions replay the original action prefix in a reinitialized simulator; endpoint restoration is approximate, with documented boundary validation."
+          ]
+        },
+        "coverage": {
+          "evaluatedTaskCount": 26,
+          "evaluatedEpisodeCount": 78,
+          "completedTaskCount": {
+            "None": 0,
+            "Equi.": 0,
+            "Inv.": 0,
+            "Full": 26,
+            "mean": 0
+          },
+          "expectedFullEpisodeCount": 1300,
+          "expectedFourChannelEpisodeCount": 5200,
+          "missingTaskChannels": {
+            "03": [
+              "None",
+              "Equi.",
+              "Inv."
+            ],
+            "06": [
+              "None",
+              "Equi.",
+              "Inv."
+            ],
+            "07": [
+              "None",
+              "Equi.",
+              "Inv."
+            ],
+            "08": [
+              "None",
+              "Equi.",
+              "Inv."
+            ],
+            "09": [
+              "None",
+              "Equi.",
+              "Inv."
+            ],
+            "12": [
+              "None",
+              "Equi.",
+              "Inv."
+            ],
+            "21": [
+              "None",
+              "Equi.",
+              "Inv."
+            ],
+            "22": [
+              "None",
+              "Equi.",
+              "Inv."
+            ],
+            "24": [
+              "None",
+              "Equi.",
+              "Inv."
+            ],
+            "26": [
+              "None",
+              "Equi.",
+              "Inv."
+            ],
+            "27": [
+              "None",
+              "Equi.",
+              "Inv."
+            ],
+            "32": [
+              "None",
+              "Equi.",
+              "Inv."
+            ],
+            "34": [
+              "None",
+              "Equi.",
+              "Inv."
+            ],
+            "42": [
+              "None",
+              "Equi.",
+              "Inv."
+            ],
+            "43": [
+              "None",
+              "Equi.",
+              "Inv."
+            ],
+            "44": [
+              "None",
+              "Equi.",
+              "Inv."
+            ],
+            "51": [
+              "None",
+              "Equi.",
+              "Inv."
+            ],
+            "60": [
+              "None",
+              "Equi.",
+              "Inv."
+            ],
+            "61": [
+              "None",
+              "Equi.",
+              "Inv."
+            ],
+            "62": [
+              "None",
+              "Equi.",
+              "Inv."
+            ],
+            "64": [
+              "None",
+              "Equi.",
+              "Inv."
+            ],
+            "67": [
+              "None",
+              "Equi.",
+              "Inv."
+            ],
+            "73": [
+              "None",
+              "Equi.",
+              "Inv."
+            ],
+            "76": [
+              "None",
+              "Equi.",
+              "Inv."
+            ],
+            "79": [
+              "None",
+              "Equi.",
+              "Inv."
+            ],
+            "80": [
+              "None",
+              "Equi.",
+              "Inv."
+            ]
+          }
+        },
+        "aggregation": {
+          "units": {
+            "sr": "percent",
+            "lscr": "percent",
+            "efficiency": "ratio",
+            "steps": "physics_steps"
+          },
+          "sr": "100 * successes / episodes per task/channel; equal channel mean per task; equal task mean over all 26 settings.",
+          "lscr": "100 * mean episode latched_stage_completion_rate, including failures; equal channel mean per task; equal task mean over all 26 settings.",
+          "efficiency": "expert_time_step / mean successful steps_to_stable_success. Pool successful episodes across all four channels before calculating task mean efficiency. Overall values average task efficiencies over tasks with success; report valid-task counts.",
+          "missing": "null means unreported (NR). Efficiency without successes is null with no-success status. Valid-task counts are null when unreported, and 0 for an evaluated scope without successes.",
+          "scope": "Overall channel aggregates require all 26 settings. Four-channel means require all four channels. Never substitute Full-only scores for means or include duplicate reruns."
+        },
+        "logs": {
+          "repository": "Bench2Dex/Leaderboard",
+          "policyPath": "gpt6_astra_10x_icl",
+          "revision": "435ed4e6a2d452e39dc3c4990792d62fa819c4e8",
+          "status": "archived"
+        },
+        "publishedAt": "2026-11-04"
+      }
+    },
+    {
+      "model": {
+        "id": "gpt6_astra_1x_icl",
+        "label": "GPT-6 Astra",
+        "variantLabel": "1× + ICL",
+        "family": "GPT-6 Astra",
+        "modelVersion": "gpt-6-astra",
+        "checkpoint": null,
+        "inputs": "RGB vision + proprioception + task description",
+        "protocolId": "standard",
+        "displayOrder": 100,
+        "trainingSetting": "Frozen per-task in-context preparation; no weight updates",
+        "resultVersion": "Amended 260, 1× budget",
+        "updatedAt": null,
+        "evaluationSetting": "task_icl_v3",
+        "sourceLabel": "Has GPT-6-Astra Achieved Embodied Intelligence?",
+        "sourceUrl": "https://www.sensenova.ai/has-gpt-6-astra-achieved-embodied-intelligence",
+        "resultDetailsUrl": null,
+        "contributor": "SenseNova-RoboRSI",
+        "contributorUrl": "https://github.com/OpenSenseNova/SenseNova-RoboRSI",
+        "type": "Agent",
+        "modelUrl": "https://www.sensenova.ai/has-gpt-6-astra-achieved-embodied-intelligence",
+        "logoPath": "leaderboard/gpt6_astra_1x_icl/logo.png",
+        "logoAlt": "SenseNova logo",
+        "weightsUrl": null,
+        "codeUrl": "https://github.com/OpenSenseNova/SenseNova-RoboRSI",
+        "externalReport": true,
+        "episodesPerChannel": 10,
+        "stepBudgetMultiplier": 1
+      },
+      "overall": {
+        "taskCount": 26,
+        "scope": "task-macro",
+        "status": "not-reported",
+        "sr": null,
+        "lscr": null,
+        "efficiency": null,
+        "efficiencyStatus": "not-reported",
+        "efficiencyTaskCount": null,
+        "channelSr": {
+          "None": null,
+          "Equi.": null,
+          "Inv.": null,
+          "Full": 26.153846153846153
+        },
+        "channelLscr": {
+          "None": null,
+          "Equi.": null,
+          "Inv.": null,
+          "Full": 48.76923076923077
+        },
+        "channelTaskCounts": {
+          "None": 0,
+          "Equi.": 0,
+          "Inv.": 0,
+          "Full": 26
+        }
+      },
+      "per_task": {
+        "12": {
+          "channels": {
+            "None": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Equi.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Inv.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 10,
+              "successes": 4,
+              "lscr": 85.0,
+              "source": {
+                "runId": "task_icl_v3-amended260-index05-14-task61_08-rerun",
+                "perEpisodeFile": "per_task_eval/12_screwdriver_box_and_hammer/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/12_screwdriver_box_and_hammer/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "not-reported",
+            "sr": null,
+            "srScope": "four-channel-mean",
+            "srEpisodes": null,
+            "lscr": null,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": null,
+            "efficiency": null,
+            "efficiencyStatus": "not-reported"
+          }
+        },
+        "21": {
+          "channels": {
+            "None": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Equi.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Inv.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 10,
+              "successes": 2,
+              "lscr": 23.333333333333332,
+              "source": {
+                "runId": "task_icl_v3-amended260-index05-14-task61_08-rerun",
+                "perEpisodeFile": "per_task_eval/21_condiment_box_loading/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/21_condiment_box_loading/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "not-reported",
+            "sr": null,
+            "srScope": "four-channel-mean",
+            "srEpisodes": null,
+            "lscr": null,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": null,
+            "efficiency": null,
+            "efficiencyStatus": "not-reported"
+          }
+        },
+        "22": {
+          "channels": {
+            "None": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Equi.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Inv.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 10,
+              "successes": 5,
+              "lscr": 72.5,
+              "source": {
+                "runId": "task_icl_v3-amended260-index05-14-task61_08-rerun",
+                "perEpisodeFile": "per_task_eval/22_tool_box_loading/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/22_tool_box_loading/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "not-reported",
+            "sr": null,
+            "srScope": "four-channel-mean",
+            "srEpisodes": null,
+            "lscr": null,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": null,
+            "efficiency": null,
+            "efficiencyStatus": "not-reported"
+          }
+        },
+        "24": {
+          "channels": {
+            "None": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Equi.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Inv.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 10,
+              "successes": 0,
+              "lscr": 25.0,
+              "source": {
+                "runId": "task_icl_v3-amended260-index05-14-task61_08-rerun",
+                "perEpisodeFile": "per_task_eval/24_stationery_category_sorting/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/24_stationery_category_sorting/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "not-reported",
+            "sr": null,
+            "srScope": "four-channel-mean",
+            "srEpisodes": null,
+            "lscr": null,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": null,
+            "efficiency": null,
+            "efficiencyStatus": "not-reported"
+          }
+        },
+        "26": {
+          "channels": {
+            "None": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Equi.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Inv.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 10,
+              "successes": 0,
+              "lscr": 57.49999999999999,
+              "source": {
+                "runId": "task_icl_v3-amended260-index05-14-task61_08-rerun",
+                "perEpisodeFile": "per_task_eval/26_canned_food_tray_line_arrangement/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/26_canned_food_tray_line_arrangement/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "not-reported",
+            "sr": null,
+            "srScope": "four-channel-mean",
+            "srEpisodes": null,
+            "lscr": null,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": null,
+            "efficiency": null,
+            "efficiencyStatus": "not-reported"
+          }
+        },
+        "27": {
+          "channels": {
+            "None": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Equi.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Inv.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 10,
+              "successes": 10,
+              "lscr": 100.0,
+              "source": {
+                "runId": "task_icl_v3-amended260-index05-14-task61_08-rerun",
+                "perEpisodeFile": "per_task_eval/27_ball_box_loading/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/27_ball_box_loading/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "not-reported",
+            "sr": null,
+            "srScope": "four-channel-mean",
+            "srEpisodes": null,
+            "lscr": null,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": null,
+            "efficiency": null,
+            "efficiencyStatus": "not-reported"
+          }
+        },
+        "32": {
+          "channels": {
+            "None": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Equi.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Inv.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 10,
+              "successes": 0,
+              "lscr": 7.5,
+              "source": {
+                "runId": "task_icl_v3-amended260-index05-14-task61_08-rerun",
+                "perEpisodeFile": "per_task_eval/32_baking_tray_prep_with_tools/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/32_baking_tray_prep_with_tools/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "not-reported",
+            "sr": null,
+            "srScope": "four-channel-mean",
+            "srEpisodes": null,
+            "lscr": null,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": null,
+            "efficiency": null,
+            "efficiencyStatus": "not-reported"
+          }
+        },
+        "34": {
+          "channels": {
+            "None": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Equi.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Inv.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 10,
+              "successes": 3,
+              "lscr": 68.0,
+              "source": {
+                "runId": "task_icl_v3-amended260-index05-14-task61_08-rerun",
+                "perEpisodeFile": "per_task_eval/34_fridge_wine_interhand_pour/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/34_fridge_wine_interhand_pour/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "not-reported",
+            "sr": null,
+            "srScope": "four-channel-mean",
+            "srEpisodes": null,
+            "lscr": null,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": null,
+            "efficiency": null,
+            "efficiencyStatus": "not-reported"
+          }
+        },
+        "42": {
+          "channels": {
+            "None": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Equi.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Inv.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 10,
+              "successes": 5,
+              "lscr": 70.0,
+              "source": {
+                "runId": "task_icl_v3-amended260-index05-14-task61_08-rerun",
+                "perEpisodeFile": "per_task_eval/42_trash_disposal/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/42_trash_disposal/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "not-reported",
+            "sr": null,
+            "srScope": "four-channel-mean",
+            "srEpisodes": null,
+            "lscr": null,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": null,
+            "efficiency": null,
+            "efficiencyStatus": "not-reported"
+          }
+        },
+        "43": {
+          "channels": {
+            "None": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Equi.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Inv.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 10,
+              "successes": 3,
+              "lscr": 55.00000000000001,
+              "source": {
+                "runId": "task_icl_v3-amended260-index05-14-task61_08-rerun",
+                "perEpisodeFile": "per_task_eval/43_fridge_fruit_shelf_sorting/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/43_fridge_fruit_shelf_sorting/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "not-reported",
+            "sr": null,
+            "srScope": "four-channel-mean",
+            "srEpisodes": null,
+            "lscr": null,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": null,
+            "efficiency": null,
+            "efficiencyStatus": "not-reported"
+          }
+        },
+        "44": {
+          "channels": {
+            "None": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Equi.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Inv.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 10,
+              "successes": 4,
+              "lscr": 62.5,
+              "source": {
+                "runId": "task_icl_v3-amended260-index05-14-task61_08-rerun",
+                "perEpisodeFile": "per_task_eval/44_microwave_bowl_loading/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/44_microwave_bowl_loading/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "not-reported",
+            "sr": null,
+            "srScope": "four-channel-mean",
+            "srEpisodes": null,
+            "lscr": null,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": null,
+            "efficiency": null,
+            "efficiencyStatus": "not-reported"
+          }
+        },
+        "51": {
+          "channels": {
+            "None": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Equi.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Inv.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 10,
+              "successes": 6,
+              "lscr": 83.33333333333334,
+              "source": {
+                "runId": "task_icl_v3-amended260-index05-14-task61_08-rerun",
+                "perEpisodeFile": "per_task_eval/51_toilet_lid_cleaner_pour/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/51_toilet_lid_cleaner_pour/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "not-reported",
+            "sr": null,
+            "srScope": "four-channel-mean",
+            "srEpisodes": null,
+            "lscr": null,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": null,
+            "efficiency": null,
+            "efficiencyStatus": "not-reported"
+          }
+        },
+        "60": {
+          "channels": {
+            "None": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Equi.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Inv.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 10,
+              "successes": 0,
+              "lscr": 0.0,
+              "source": {
+                "runId": "task_icl_v3-amended260-index05-14-task61_08-rerun",
+                "perEpisodeFile": "per_task_eval/60_breadbasket_fast_food_loading/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/60_breadbasket_fast_food_loading/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "not-reported",
+            "sr": null,
+            "srScope": "four-channel-mean",
+            "srEpisodes": null,
+            "lscr": null,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": null,
+            "efficiency": null,
+            "efficiencyStatus": "not-reported"
+          }
+        },
+        "61": {
+          "channels": {
+            "None": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Equi.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Inv.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 10,
+              "successes": 8,
+              "lscr": 83.33333333333334,
+              "source": {
+                "runId": "task_icl_v3-amended260-index05-14-task61_08-rerun",
+                "perEpisodeFile": "per_task_eval/61_medicine_shoebox_pack/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/61_medicine_shoebox_pack/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "not-reported",
+            "sr": null,
+            "srScope": "four-channel-mean",
+            "srEpisodes": null,
+            "lscr": null,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": null,
+            "efficiency": null,
+            "efficiencyStatus": "not-reported"
+          }
+        },
+        "62": {
+          "channels": {
+            "None": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Equi.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Inv.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 10,
+              "successes": 1,
+              "lscr": 50.0,
+              "source": {
+                "runId": "task_icl_v3-amended260-index05-14-task61_08-rerun",
+                "perEpisodeFile": "per_task_eval/62_shoebox_accessory_pack/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/62_shoebox_accessory_pack/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "not-reported",
+            "sr": null,
+            "srScope": "four-channel-mean",
+            "srEpisodes": null,
+            "lscr": null,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": null,
+            "efficiency": null,
+            "efficiencyStatus": "not-reported"
+          }
+        },
+        "64": {
+          "channels": {
+            "None": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Equi.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Inv.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 10,
+              "successes": 6,
+              "lscr": 72.5,
+              "source": {
+                "runId": "task_icl_v3-amended260-index05-14-task61_08-rerun",
+                "perEpisodeFile": "per_task_eval/64_sports_ball_cup_sort/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/64_sports_ball_cup_sort/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "not-reported",
+            "sr": null,
+            "srScope": "four-channel-mean",
+            "srEpisodes": null,
+            "lscr": null,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": null,
+            "efficiency": null,
+            "efficiencyStatus": "not-reported"
+          }
+        },
+        "67": {
+          "channels": {
+            "None": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Equi.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Inv.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 10,
+              "successes": 1,
+              "lscr": 40.0,
+              "source": {
+                "runId": "task_icl_v3-amended260-index05-14-task61_08-rerun",
+                "perEpisodeFile": "per_task_eval/67_faucet_cup_water_fill/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/67_faucet_cup_water_fill/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "not-reported",
+            "sr": null,
+            "srScope": "four-channel-mean",
+            "srEpisodes": null,
+            "lscr": null,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": null,
+            "efficiency": null,
+            "efficiencyStatus": "not-reported"
+          }
+        },
+        "73": {
+          "channels": {
+            "None": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Equi.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Inv.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 10,
+              "successes": 0,
+              "lscr": 20.0,
+              "source": {
+                "runId": "task_icl_v3-amended260-index05-14-task61_08-rerun",
+                "perEpisodeFile": "per_task_eval/73_jigsaw_puzzle_assembly/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/73_jigsaw_puzzle_assembly/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "not-reported",
+            "sr": null,
+            "srScope": "four-channel-mean",
+            "srEpisodes": null,
+            "lscr": null,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": null,
+            "efficiency": null,
+            "efficiencyStatus": "not-reported"
+          }
+        },
+        "76": {
+          "channels": {
+            "None": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Equi.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Inv.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 10,
+              "successes": 0,
+              "lscr": 42.5,
+              "source": {
+                "runId": "task_icl_v3-amended260-index05-14-task61_08-rerun",
+                "perEpisodeFile": "per_task_eval/76_soup_serving/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/76_soup_serving/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "not-reported",
+            "sr": null,
+            "srScope": "four-channel-mean",
+            "srEpisodes": null,
+            "lscr": null,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": null,
+            "efficiency": null,
+            "efficiencyStatus": "not-reported"
+          }
+        },
+        "79": {
+          "channels": {
+            "None": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Equi.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Inv.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 10,
+              "successes": 7,
+              "lscr": 85.0,
+              "source": {
+                "runId": "task_icl_v3-amended260-index05-14-task61_08-rerun",
+                "perEpisodeFile": "per_task_eval/79_bimanual_piano_melody/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/79_bimanual_piano_melody/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "not-reported",
+            "sr": null,
+            "srScope": "four-channel-mean",
+            "srEpisodes": null,
+            "lscr": null,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": null,
+            "efficiency": null,
+            "efficiencyStatus": "not-reported"
+          }
+        },
+        "80": {
+          "channels": {
+            "None": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Equi.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Inv.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 10,
+              "successes": 0,
+              "lscr": 0.0,
+              "source": {
+                "runId": "task_icl_v3-amended260-index05-14-task61_08-rerun",
+                "perEpisodeFile": "per_task_eval/80_gaming_desk_setup/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/80_gaming_desk_setup/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "not-reported",
+            "sr": null,
+            "srScope": "four-channel-mean",
+            "srEpisodes": null,
+            "lscr": null,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": null,
+            "efficiency": null,
+            "efficiencyStatus": "not-reported"
+          }
+        },
+        "03": {
+          "channels": {
+            "None": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Equi.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Inv.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 10,
+              "successes": 0,
+              "lscr": 40.0,
+              "source": {
+                "runId": "task_icl_v3-amended260-index05-14-task61_08-rerun",
+                "perEpisodeFile": "per_task_eval/03_wine_glass_plate_balance/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/03_wine_glass_plate_balance/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "not-reported",
+            "sr": null,
+            "srScope": "four-channel-mean",
+            "srEpisodes": null,
+            "lscr": null,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": null,
+            "efficiency": null,
+            "efficiencyStatus": "not-reported"
+          }
+        },
+        "06": {
+          "channels": {
+            "None": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Equi.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Inv.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 10,
+              "successes": 1,
+              "lscr": 52.5,
+              "source": {
+                "runId": "task_icl_v3-amended260-index05-14-task61_08-rerun",
+                "perEpisodeFile": "per_task_eval/06_fruit_bowl_loading/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/06_fruit_bowl_loading/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "not-reported",
+            "sr": null,
+            "srScope": "four-channel-mean",
+            "srEpisodes": null,
+            "lscr": null,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": null,
+            "efficiency": null,
+            "efficiencyStatus": "not-reported"
+          }
+        },
+        "07": {
+          "channels": {
+            "None": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Equi.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Inv.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 10,
+              "successes": 0,
+              "lscr": 57.49999999999999,
+              "source": {
+                "runId": "task_icl_v3-amended260-index05-14-task61_08-rerun",
+                "perEpisodeFile": "per_task_eval/07_citrus_plate_loading/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/07_citrus_plate_loading/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "not-reported",
+            "sr": null,
+            "srScope": "four-channel-mean",
+            "srEpisodes": null,
+            "lscr": null,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": null,
+            "efficiency": null,
+            "efficiencyStatus": "not-reported"
+          }
+        },
+        "08": {
+          "channels": {
+            "None": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Equi.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Inv.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 10,
+              "successes": 0,
+              "lscr": 15.0,
+              "source": {
+                "runId": "task_icl_v3-amended260-index05-14-task61_08-rerun",
+                "perEpisodeFile": "per_task_eval/08_frypan_stand_pour/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/08_frypan_stand_pour/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "not-reported",
+            "sr": null,
+            "srScope": "four-channel-mean",
+            "srEpisodes": null,
+            "lscr": null,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": null,
+            "efficiency": null,
+            "efficiencyStatus": "not-reported"
+          }
+        },
+        "09": {
+          "channels": {
+            "None": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Equi.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Inv.": {
+              "status": "not-reported",
+              "episodes": null,
+              "successes": null,
+              "lscr": null,
+              "source": null
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 10,
+              "successes": 2,
+              "lscr": 0.0,
+              "source": {
+                "runId": "task_icl_v3-amended260-index05-14-task61_08-rerun",
+                "perEpisodeFile": "per_task_eval/09_cleaner_moisturizer_box_loading/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/09_cleaner_moisturizer_box_loading/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "not-reported",
+            "sr": null,
+            "srScope": "four-channel-mean",
+            "srEpisodes": null,
+            "lscr": null,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": null,
+            "efficiency": null,
+            "efficiencyStatus": "not-reported"
+          }
+        }
+      },
+      "evaluation": {
+        "schemaVersion": "1.0",
+        "isTemplate": false,
+        "protocol": {
+          "benchmarkCommit": "f96a8b2b4eb475483af66e9e03916b35bc43f1be",
+          "taskCount": 26,
+          "channels": [
+            "Full"
+          ],
+          "episodesPerChannel": 10,
+          "seeds": {
+            "episodeIndices": [
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14
+            ],
+            "byTask": {
+              "03": [
+                200300004,
+                200300005,
+                200300006,
+                200300007,
+                200300008,
+                200300009,
+                200300010,
+                200300011,
+                200300012,
+                200300013
+              ],
+              "06": [
+                200600004,
+                200600005,
+                200600006,
+                200600007,
+                200600008,
+                200600009,
+                200600010,
+                200600011,
+                200600012,
+                200600013
+              ],
+              "07": [
+                200700004,
+                200700005,
+                200700006,
+                200700007,
+                200700008,
+                200700009,
+                200700010,
+                200700011,
+                200700012,
+                200700013
+              ],
+              "08": [
+                200800004,
+                200800005,
+                200800006,
+                200800007,
+                200800008,
+                200800009,
+                200800010,
+                200800011,
+                200800012,
+                200800013
+              ],
+              "09": [
+                200900004,
+                200900005,
+                200900006,
+                200900007,
+                200900008,
+                200900009,
+                200900010,
+                200900011,
+                200900012,
+                200900013
+              ],
+              "12": [
+                201200004,
+                201200005,
+                201200006,
+                201200007,
+                201200008,
+                201200009,
+                201200010,
+                201200011,
+                201200012,
+                201200013
+              ],
+              "21": [
+                202100004,
+                202100005,
+                202100006,
+                202100007,
+                202100008,
+                202100009,
+                202100010,
+                202100011,
+                202100012,
+                202100013
+              ],
+              "22": [
+                202200004,
+                202200005,
+                202200006,
+                202200007,
+                202200008,
+                202200009,
+                202200010,
+                202200011,
+                202200012,
+                202200013
+              ],
+              "24": [
+                202400004,
+                202400005,
+                202400006,
+                202400007,
+                202400008,
+                202400009,
+                202400010,
+                202400011,
+                202400012,
+                202400013
+              ],
+              "26": [
+                202600004,
+                202600005,
+                202600006,
+                202600007,
+                202600008,
+                202600009,
+                202600010,
+                202600011,
+                202600012,
+                202600013
+              ],
+              "27": [
+                202700004,
+                202700005,
+                202700006,
+                202700007,
+                202700008,
+                202700009,
+                202700010,
+                202700011,
+                202700012,
+                202700013
+              ],
+              "32": [
+                203200004,
+                203200005,
+                203200006,
+                203200007,
+                203200008,
+                203200009,
+                203200010,
+                203200011,
+                203200012,
+                203200013
+              ],
+              "34": [
+                203400004,
+                203400005,
+                203400006,
+                203400007,
+                203400008,
+                203400009,
+                203400010,
+                203400011,
+                203400012,
+                203400013
+              ],
+              "42": [
+                204200004,
+                204200005,
+                204200006,
+                204200007,
+                204200008,
+                204200009,
+                204200010,
+                204200011,
+                204200012,
+                204200013
+              ],
+              "43": [
+                204300004,
+                204300005,
+                204300006,
+                204300007,
+                204300008,
+                204300009,
+                204300010,
+                204300011,
+                204300012,
+                204300013
+              ],
+              "44": [
+                204400004,
+                204400005,
+                204400006,
+                204400007,
+                204400008,
+                204400009,
+                204400010,
+                204400011,
+                204400012,
+                204400013
+              ],
+              "51": [
+                205100004,
+                205100005,
+                205100006,
+                205100007,
+                205100008,
+                205100009,
+                205100010,
+                205100011,
+                205100012,
+                205100013
+              ],
+              "60": [
+                206000004,
+                206000005,
+                206000006,
+                206000007,
+                206000008,
+                206000009,
+                206000010,
+                206000011,
+                206000012,
+                206000013
+              ],
+              "61": [
+                206100004,
+                206100005,
+                206100006,
+                206100007,
+                206100008,
+                206100009,
+                206100010,
+                206100011,
+                206100012,
+                206100013
+              ],
+              "62": [
+                206200004,
+                206200005,
+                206200006,
+                206200007,
+                206200008,
+                206200009,
+                206200010,
+                206200011,
+                206200012,
+                206200013
+              ],
+              "64": [
+                206400004,
+                206400005,
+                206400006,
+                206400007,
+                206400008,
+                206400009,
+                206400010,
+                206400011,
+                206400012,
+                206400013
+              ],
+              "67": [
+                206700004,
+                206700005,
+                206700006,
+                206700007,
+                206700008,
+                206700009,
+                206700010,
+                206700011,
+                206700012,
+                206700013
+              ],
+              "73": [
+                207300004,
+                207300005,
+                207300006,
+                207300007,
+                207300008,
+                207300009,
+                207300010,
+                207300011,
+                207300012,
+                207300013
+              ],
+              "76": [
+                207600004,
+                207600005,
+                207600006,
+                207600007,
+                207600008,
+                207600009,
+                207600010,
+                207600011,
+                207600012,
+                207600013
+              ],
+              "79": [
+                207900004,
+                207900005,
+                207900006,
+                207900007,
+                207900008,
+                207900009,
+                207900010,
+                207900011,
+                207900012,
+                207900013
+              ],
+              "80": [
+                208000004,
+                208000005,
+                208000006,
+                208000007,
+                208000008,
+                208000009,
+                208000010,
+                208000011,
+                208000012,
+                208000013
+              ]
+            }
+          },
+          "stepUnit": "physics_steps",
+          "physicsHz": 60,
+          "controlHz": 20,
+          "executionStepBudget": {
+            "rule": "ceil(1.5 × expert_time_step / 3) policy steps",
+            "perTaskPolicySteps": {
+              "03": 1082,
+              "06": 640,
+              "07": 602,
+              "08": 1144,
+              "09": 642,
+              "12": 1149,
+              "21": 827,
+              "22": 681,
+              "24": 1542,
+              "26": 871,
+              "27": 1190,
+              "32": 852,
+              "34": 1080,
+              "42": 668,
+              "43": 1375,
+              "44": 1061,
+              "51": 1023,
+              "60": 995,
+              "61": 1034,
+              "62": 1077,
+              "64": 665,
+              "67": 964,
+              "73": 1213,
+              "76": 986,
+              "79": 681,
+              "80": 593
+            },
+            "perTaskPhysicsSteps": {
+              "03": 3246,
+              "06": 1920,
+              "07": 1806,
+              "08": 3432,
+              "09": 1926,
+              "12": 3447,
+              "21": 2481,
+              "22": 2043,
+              "24": 4626,
+              "26": 2613,
+              "27": 3570,
+              "32": 2556,
+              "34": 3240,
+              "42": 2004,
+              "43": 4125,
+              "44": 3183,
+              "51": 3069,
+              "60": 2985,
+              "61": 3102,
+              "62": 3231,
+              "64": 1995,
+              "67": 2892,
+              "73": 3639,
+              "76": 2958,
+              "79": 2043,
+              "80": 1779
+            }
+          },
+          "expertReference": "Bench2Dex scene expert_time_step at benchmarkCommit",
+          "protocolChanges": [
+            "Full/unseen only; 10 episodes per task rather than the 50-episode reference.",
+            "17 same-index damage-recovery replacements were selected by provenance, not outcome.",
+            "Task 61 episode 8 was rerun at its original index/seed because its original native evaluator log was lost; the new valid outcome replaces that reporting slot."
+          ]
+        },
+        "coverage": {
+          "evaluatedTaskCount": 26,
+          "evaluatedEpisodeCount": 260,
+          "completedTaskCount": {
+            "None": 0,
+            "Equi.": 0,
+            "Inv.": 0,
+            "Full": 26,
+            "mean": 0
+          },
+          "expectedFullEpisodeCount": 1300,
+          "expectedFourChannelEpisodeCount": 5200,
+          "missingTaskChannels": {
+            "03": [
+              "None",
+              "Equi.",
+              "Inv."
+            ],
+            "06": [
+              "None",
+              "Equi.",
+              "Inv."
+            ],
+            "07": [
+              "None",
+              "Equi.",
+              "Inv."
+            ],
+            "08": [
+              "None",
+              "Equi.",
+              "Inv."
+            ],
+            "09": [
+              "None",
+              "Equi.",
+              "Inv."
+            ],
+            "12": [
+              "None",
+              "Equi.",
+              "Inv."
+            ],
+            "21": [
+              "None",
+              "Equi.",
+              "Inv."
+            ],
+            "22": [
+              "None",
+              "Equi.",
+              "Inv."
+            ],
+            "24": [
+              "None",
+              "Equi.",
+              "Inv."
+            ],
+            "26": [
+              "None",
+              "Equi.",
+              "Inv."
+            ],
+            "27": [
+              "None",
+              "Equi.",
+              "Inv."
+            ],
+            "32": [
+              "None",
+              "Equi.",
+              "Inv."
+            ],
+            "34": [
+              "None",
+              "Equi.",
+              "Inv."
+            ],
+            "42": [
+              "None",
+              "Equi.",
+              "Inv."
+            ],
+            "43": [
+              "None",
+              "Equi.",
+              "Inv."
+            ],
+            "44": [
+              "None",
+              "Equi.",
+              "Inv."
+            ],
+            "51": [
+              "None",
+              "Equi.",
+              "Inv."
+            ],
+            "60": [
+              "None",
+              "Equi.",
+              "Inv."
+            ],
+            "61": [
+              "None",
+              "Equi.",
+              "Inv."
+            ],
+            "62": [
+              "None",
+              "Equi.",
+              "Inv."
+            ],
+            "64": [
+              "None",
+              "Equi.",
+              "Inv."
+            ],
+            "67": [
+              "None",
+              "Equi.",
+              "Inv."
+            ],
+            "73": [
+              "None",
+              "Equi.",
+              "Inv."
+            ],
+            "76": [
+              "None",
+              "Equi.",
+              "Inv."
+            ],
+            "79": [
+              "None",
+              "Equi.",
+              "Inv."
+            ],
+            "80": [
+              "None",
+              "Equi.",
+              "Inv."
+            ]
+          }
+        },
+        "aggregation": {
+          "units": {
+            "sr": "percent",
+            "lscr": "percent",
+            "efficiency": "ratio",
+            "steps": "physics_steps"
+          },
+          "sr": "100 * successes / episodes per task/channel; equal channel mean per task; equal task mean over all 26 settings.",
+          "lscr": "100 * mean episode latched_stage_completion_rate, including failures; equal channel mean per task; equal task mean over all 26 settings.",
+          "efficiency": "expert_time_step / mean successful steps_to_stable_success. Pool successful episodes across all four channels before calculating task mean efficiency. Overall values average task efficiencies over tasks with success; report valid-task counts.",
+          "missing": "null means unreported (NR). Efficiency without successes is null with no-success status. Valid-task counts are null when unreported, and 0 for an evaluated scope without successes.",
+          "scope": "Overall channel aggregates require all 26 settings. Four-channel means require all four channels. Never substitute Full-only scores for means or include duplicate reruns."
+        },
+        "logs": {
+          "repository": "Bench2Dex/Leaderboard",
+          "policyPath": "gpt6_astra_1x_icl",
+          "revision": "cf97cb8a32fe699dc29c9aa6a822e58aae1500dc",
+          "status": "archived"
+        },
+        "publishedAt": "2026-11-04"
+      }
     }
   ]
 }

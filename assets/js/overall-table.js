@@ -8,7 +8,7 @@
     {id:"lscr",key:"lscr",cid:"mean",label:"LSCR",unit:"Mean (%)"},
     {id:"efficiency",key:"efficiency",cid:"mean",label:"Eff.",unit:"Ratio"}
   ];
-  const policyTitle=p=>esc(p.variantLabel ? p.modelVersion : p.label)+(p.variantLabel ? `<span class="policy-variant">${esc(p.variantLabel)}</span>` : "");
+  const policyTitle=p=>esc(R.policyName(p))+(p.variantLabel ? `<span class="policy-variant">${esc(p.variantLabel)}</span>` : "");
   function ordered(list,state){
     const value=p=>M.aggregateMetric(p.id,state.rankMetric,state.rankChannel);
     const scored=M.sorted(list.filter(p=>value(p).value!==null),{key:state.rankMetric,direction:state.rankDir},value);

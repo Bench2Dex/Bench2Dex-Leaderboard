@@ -2,6 +2,7 @@
 (function(){
   "use strict";
   const finite = Number.isFinite;
+  const policyName=p=>p.externalReport && p.label && (!p.variantLabel || !p.label.includes(p.variantLabel)) ? p.label : p.modelVersion||p.label;
   const statusLabels = { "not-evaluated":"Not evaluated", "not-reported":"NR", "not-applicable":"N/A", "no-success":"—" };
   const reading = (record,key)=>{
     const status=record?.[`${key}Status`] || (record?.status && record.status!=="reported" ? record.status : finite(record?.[key]) ? "reported" : record ? "not-reported" : "not-evaluated");
@@ -186,6 +187,6 @@
     return { policies,protocols,group,tasks,channel,task,summary,metric,coverage,peers,eligible,comparable,rank,taskRank,aggregateMetric,aggregateCoverage,aggregateEligible,aggregateRank,sorted,csv,
       totalEpisodes:data.EVALUATION_CHANNELS.reduce((sum,r)=>sum+(reading(r,"episodes").value||0),0) };
   }
-  window.BenchResults={create,reading,format,heat,escape,best,marked};
+  window.BenchResults={create,reading,format,heat,escape,best,marked,policyName};
   window.BenchResults.model=create(window.BenchLeaderboardData||window.BENCH);
 })();

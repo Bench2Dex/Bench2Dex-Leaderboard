@@ -18,7 +18,10 @@ await mkdir(output, { recursive: true });
 for (const name of ["index.html", ".nojekyll", "assets", "leaderboard"]) {
   await cp(join(root, name), join(output, name), { recursive: true });
 }
-await writeFile(join(output, "assets/js/evaluations.js"), runtimeScript(data));
+const sharedAssetVersions = Object.fromEntries(await Promise.all(["results-model", "overall-table"].map(async name => [
+  name, createHash("sha256").update(await readFile(join(root, `assets/js/${name}.js`))).digest("hex").slice(0,12)
+])));
+await writeFile(join(output, "assets/js/evaluations.js"), runtimeScript(data)+"window.BenchLeaderboardAssetVersions="+JSON.stringify(sharedAssetVersions)+";\n");
 // Version local assets by content so a publication update cannot reuse stale scripts.
 let html = await readFile(join(output, "index.html"), "utf8");
 const urls = [...new Set([...html.matchAll(/(?:src|href)="(assets\/(?:js|css)\/[^"?]+\.(?:js|css))"/g)].map(match => match[1]))];

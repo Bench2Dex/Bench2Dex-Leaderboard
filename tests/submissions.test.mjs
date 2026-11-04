@@ -3,10 +3,9 @@ import assert from 'node:assert/strict';
 import {readFile,readdir} from 'node:fs/promises';
 import {registry} from './fixtures.mjs';
 
-test('all seven maintained entries have matching model directories, results and logos',async()=>{
-  assert.equal(registry.policies.length,7);
+test('registered entries have matching model directories, results and logos',async()=>{
+  assert.equal(registry.policies.filter(p=>p.evaluation.recordType==='maintained-reference').length,7);
   for(const p of registry.policies){
-    assert.equal(p.model.contributor,'Bench2Dex Team');
     const dir=new URL('../leaderboard/'+p.model.id+'/',import.meta.url);
     const files=await readdir(dir);
     assert.equal(files.length,3);
@@ -15,10 +14,19 @@ test('all seven maintained entries have matching model directories, results and 
     assert.deepEqual(saved,p);
     assert.match(p.model.logoPath,new RegExp('^leaderboard/'+p.model.id+'/logo\\.(png|svg|webp)$'));
     assert.ok((await readFile(new URL('../'+p.model.logoPath,import.meta.url))).length>0);
-    assert.equal(p.evaluation.logs.status,'not-submitted');
-    assert.equal(p.evaluation.logs.revision,null);
-    assert.equal(p.evaluation.logs.repository,null);
-    assert.equal(p.evaluation.logs.policyPath,null);
+    if(p.evaluation.recordType==='maintained-reference'){
+      assert.equal(p.model.contributor,'Bench2Dex Team');
+      assert.equal(p.evaluation.logs.status,'not-submitted');
+      assert.equal(p.evaluation.logs.revision,null);
+      assert.equal(p.evaluation.logs.repository,null);
+      assert.equal(p.evaluation.logs.policyPath,null);
+    }else{
+      assert.equal(p.model.externalReport,true);
+      assert.equal(p.evaluation.logs.status,'archived');
+      assert.match(p.evaluation.logs.revision,/^[a-f0-9]{40}$/);
+      assert.equal(p.evaluation.logs.repository,'Bench2Dex/Leaderboard');
+      assert.equal(p.evaluation.logs.policyPath,p.model.id);
+    }
   }
 });
 
