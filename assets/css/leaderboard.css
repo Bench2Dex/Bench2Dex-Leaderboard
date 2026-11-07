@@ -67,7 +67,7 @@
 .board-section .policy-table small{display:block;font-size:10px;color:var(--text-faint);font-weight:400;margin-top:3px;}
 .board-section .policy-table tbody tr{cursor:default;}
 .board-section .policy-table .missing{font-size:10px;color:var(--text-faint);}
-.ranking-table{min-width:1080px;table-layout:fixed;}
+.ranking-table{min-width:1160px;table-layout:fixed;}
 .board-section .ranking-table th,.board-section .ranking-table td{padding:8px 9px;line-height:1.35;vertical-align:middle;}
 .board-section .ranking-table tbody tr{height:44px;}
 .ranking-table thead small{margin-top:2px;}
@@ -188,7 +188,7 @@
   .board-controls .results-field select{font-size:11px;}
   .policy-picker-body{left:0;right:auto;width:min(300px,calc(100vw - 60px));}
   .board-section .policy-table th,.board-section .policy-table td{padding:7px 10px;}
-  .ranking-table{min-width:1080px;}
+  .ranking-table{min-width:1160px;}
   .ranking-table .policy-name{min-width:224px;width:224px;left:40px;}
   .ranking-table .policy-label{font-size:12px;}
   .ranking-table .policy-meta{font-size:9px;}

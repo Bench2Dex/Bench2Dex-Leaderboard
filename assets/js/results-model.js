@@ -10,7 +10,7 @@
       status: status==="reported" && !finite(record?.[key]) ? "not-reported" : status };
   };
   const format = (r,metric,channel=false)=>r.value===null ? (statusLabels[r.status] || "NR")
-    : metric==="successes" ? String(r.value) : metric==="efficiency" ? r.value.toFixed(3) : `${r.value.toFixed(channel && metric==="lscr" ? 2 : 1)}%`;
+    : metric==="successes" ? String(r.value) : metric==="score" ? r.value.toFixed(2) : metric==="efficiency" ? r.value.toFixed(3) : `${r.value.toFixed(channel && metric==="lscr" ? 2 : 1)}%`;
   const heat = fraction=>{
     const t=Math.max(0,Math.min(1,fraction));
     return `rgb(${Math.round(234-204*t)},${Math.round(243-95*t)},${Math.round(244-78*t)})`;
@@ -39,6 +39,7 @@
     const task = (pid,tid)=>taskMap.get(JSON.stringify([pid,tid]));
     const summary = pid=>summaries.get(pid) || {status:"not-reported"};
     function metric(pid,tid,key,cid="mean"){
+      if(key==="score")return tid===null && cid==="mean" ? score(pid) : {value:null,status:"not-reported"};
       if(tid===null) return reading(summary(pid),key);
       if(cid==="mean" || key==="efficiency") return reading(task(pid,tid) || (data.CHANNELS.some(c=>channel(pid,tid,c)?.status==="reported") ? {status:"not-reported"} : undefined),key);
       const record=channel(pid,tid,cid);
@@ -92,17 +93,24 @@
     }
     const coverageCache=new Map(),eligibleCache=new Map();
     const coverage=(pid,key="sr")=>{
+      if(key==="score")return Math.min(...["sr","lscr","efficiency"].map(k=>coverage(pid,k)));
       const cacheKey=JSON.stringify([pid,key]);
       if(!coverageCache.has(cacheKey)) coverageCache.set(cacheKey,tasks(protocolFor(pid).id).filter(t=>completeTask(pid,t.id,key)).length);
       return coverageCache.get(cacheKey);
     };
     function eligible(pid,key="sr"){
+      if(key==="score")return score(pid).value!==null;
       const cacheKey=JSON.stringify([pid,key]);
       if(eligibleCache.has(cacheKey)) return eligibleCache.get(cacheKey);
       const s=summary(pid),all=tasks(protocolFor(pid).id),r=metric(pid,null,key);
       let ok=protocolReady(pid) && s.taskCount===all.length && s.scope==="task-macro" && coverage(pid,key)===all.length && r.value!==null;
       if(ok) ok=key==="efficiency" ? r.value>0 && s.efficiencyTaskCount===all.filter(t=>metric(pid,t.id,"efficiency").value!==null).length : r.value>=0 && r.value<=100;
       eligibleCache.set(cacheKey,ok);return ok;
+    }
+    // Score uses published Overall metrics; unavailable inputs never become zero.
+    function score(pid){
+      if(!["sr","lscr","efficiency"].every(key=>eligible(pid,key)))return {value:null,status:"not-reported"};
+      return {value:.45*metric(pid,null,"sr").value+.45*metric(pid,null,"lscr").value+10*metric(pid,null,"efficiency").value,status:"reported"};
     }
     const comparable=(pid,tid,key,cid="mean")=>tid===null ? eligible(pid,key) : cid==="mean" || key==="efficiency" ? completeTask(pid,tid,key) : completeChannel(pid,tid,cid,key);
     function peers(protocolId,tid,key,cid="mean"){
@@ -145,7 +153,7 @@
     }
     function csv({policyIds=policies.map(p=>p.id),taskIds=null,summaryOnly=false,metricKey=null,channelId=null}={}){
       const header=["scope","policy_id","policy","inputs","protocol","task_id","task","embodiment","channel","status","successes","successes_status","episodes","episodes_status","sr_percent","sr_status","lscr_percent","lscr_status","efficiency","efficiency_status","task_count","efficiency_task_count","model_version","checkpoint","training_setting","result_version","source_url","updated_at","task_set_version","termination_version","expert_reference_version","lscr_scope","lscr_episodes","sr_scope","sr_episodes","evaluation_setting","episodes_per_reported_channel","step_budget_multiplier","type","contributor","model_url","model_logo"];
-      header.push(...data.CHANNELS.map(c=>`summary_sr_${c}_percent`),...data.CHANNELS.map(c=>`summary_lscr_${c}_percent`));
+      header.push(...data.CHANNELS.map(c=>`summary_sr_${c}_percent`),...data.CHANNELS.map(c=>`summary_lscr_${c}_percent`),"score","score_status");
       const rows=[header];
       const number=(r,key,isChannel=false)=>r.value===null ? "" : key==="successes" || key==="episodes" ? r.value : r.value.toFixed(key==="efficiency" ? 3 : key==="lscr" && isChannel ? 2 : 1);
       for(const p of policyIds.map(id=>policies.find(p=>p.id===id)).filter(Boolean)){
@@ -170,7 +178,8 @@
             p.evaluationSetting||protocolFor(p.id).description,p.externalReport ? p.episodesPerChannel??"" : protocolFor(p.id).episodesPerChannel,
             p.externalReport ? p.stepBudgetMultiplier??"" : 1,p.type||"",p.contributor||"",p.modelUrl||"",p.logoPath||"",
             ...data.CHANNELS.map((_,i)=>!t && finite(r?.channelSr?.[i]) ? r.channelSr[i].toFixed(1) : ""),
-            ...data.CHANNELS.map((_,i)=>!t && finite(r?.channelLscr?.[i]) ? r.channelLscr[i].toFixed(2) : "")]);
+            ...data.CHANNELS.map((_,i)=>!t && finite(r?.channelLscr?.[i]) ? r.channelLscr[i].toFixed(2) : ""),
+            !t && score(p.id).value!==null ? score(p.id).value.toFixed(6) : "",!t ? score(p.id).status : ""]);
         };
         if(!summaryOnly){
           for(const t of tasks(p.protocolId).filter(t=>!taskIds || taskIds.includes(t.id))){
@@ -185,8 +194,9 @@
       return "\uFEFF"+rows.map(row=>row.map(quote).join(",")).join("\r\n")+"\r\n";
     }
     return { policies,protocols,group,tasks,channel,task,summary,metric,coverage,peers,eligible,comparable,rank,taskRank,aggregateMetric,aggregateCoverage,aggregateEligible,aggregateRank,sorted,csv,
-      totalEpisodes:data.EVALUATION_CHANNELS.reduce((sum,r)=>sum+(reading(r,"episodes").value||0),0) };
+      score,totalEpisodes:data.EVALUATION_CHANNELS.reduce((sum,r)=>sum+(reading(r,"episodes").value||0),0) };
   }
-  window.BenchResults={create,reading,format,heat,escape,best,marked,policyName};
+  const scoreFormula="Score = 0.45×SR + 0.45×LSCR + 10×Eff.";
+  window.BenchResults={create,reading,format,heat,escape,best,marked,policyName,scoreFormula};
   window.BenchResults.model=create(window.BenchLeaderboardData||window.BENCH);
 })();

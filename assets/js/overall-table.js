@@ -6,16 +6,23 @@
     ...B.CHANNELS.map(cid=>({id:cid,key:"sr",cid,label:B.CHANNEL_LABEL[cid],unit:"SR (%)"})),
     {id:"sr",key:"sr",cid:"mean",label:"SR",unit:"Mean (%)"},
     {id:"lscr",key:"lscr",cid:"mean",label:"LSCR",unit:"Mean (%)"},
-    {id:"efficiency",key:"efficiency",cid:"mean",label:"Eff.",unit:"Ratio"}
+    {id:"efficiency",key:"efficiency",cid:"mean",label:"Eff.",unit:"Ratio"},
+    {id:"score",key:"score",cid:"mean",label:"Score",unit:"Composite"}
   ];
   const policyTitle=p=>esc(R.policyName(p))+(p.variantLabel ? `<span class="policy-variant">${esc(p.variantLabel)}</span>` : "");
+  const rankable=(p,state)=>M.eligible(p.id,"score") && M.aggregateEligible(p.id,state.rankMetric,state.rankChannel);
   function ordered(list,state){
     const value=p=>M.aggregateMetric(p.id,state.rankMetric,state.rankChannel);
-    const scored=M.sorted(list.filter(p=>value(p).value!==null),{key:state.rankMetric,direction:state.rankDir},value);
-    // Missing selected metrics stay unranked; reported Full SR orders those rows.
-    const unscored=M.sorted(list.filter(p=>value(p).value===null),{key:"sr",direction:"descending"},p=>M.aggregateMetric(p.id,"sr","full"));
-    return [...scored,...unscored]
-      .sort((a,b)=>Number(M.aggregateEligible(b.id,state.rankMetric,state.rankChannel))-Number(M.aggregateEligible(a.id,state.rankMetric,state.rankChannel)));
+    const scored=M.sorted(list.filter(p=>rankable(p,state)),{key:state.rankMetric,direction:state.rankDir},value);
+    const unranked=list.filter(p=>!rankable(p,state));
+    const reported=M.sorted(unranked.filter(p=>value(p).value!==null),{key:state.rankMetric,direction:state.rankDir},value);
+    const missing=M.sorted(unranked.filter(p=>value(p).value===null),{key:"sr",direction:"descending"},p=>M.aggregateMetric(p.id,"sr","full"));
+    return [...scored,...reported,...missing];
+  }
+  function rank(p,state){
+    if(!rankable(p,state))return null;
+    const value=M.aggregateMetric(p.id,state.rankMetric,state.rankChannel).value;
+    return 1+M.group(state.group).filter(q=>rankable(q,state) && M.aggregateMetric(q.id,state.rankMetric,state.rankChannel).value>value).length;
   }
   function aggregateCell(p,{id,key,cid},state){
     const r=M.aggregateMetric(p.id,key,cid),active=key===state.rankMetric && cid===state.rankChannel;
@@ -28,25 +35,25 @@
     const identity='<th scope="col" rowspan="2" class="rank-cell">Rank</th><th scope="col" rowspan="2" class="policy-name">Model</th><th scope="col" rowspan="2" class="type-cell">Type</th><th scope="col" rowspan="2" class="contributor-cell">Contributor</th>';
     const headers=columns.map(c=>{
       const active=c.key===state.rankMetric && c.cid===state.rankChannel;
-      const title=c.cid!=="mean" ? `${c.label} channel SR (%)` : c.key==="efficiency" ? "Success-conditioned efficiency" : `${c.label}: four-channel mean (%)`;
-      const label=c.cid==="mean" && c.key!=="efficiency" ? `${c.label} (%)` : c.label;
+      const title=c.key==="score" ? R.scoreFormula : c.cid!=="mean" ? `${c.label} channel SR (%)` : c.key==="efficiency" ? "Success-conditioned efficiency" : `${c.label}: four-channel mean (%)`;
+      const label=c.cid==="mean" && !["efficiency","score"].includes(c.key) ? `${c.label} (%)` : c.label;
       return `<th scope="col"${c.id==="sr" ? ' class="summary-start"' : c.id==="none" ? ' class="channel-start"' : ""} aria-sort="${active ? state.rankDir : "none"}"><button type="button" data-rank-column="${c.id}" title="${title}" aria-label="Sort by ${title}">${label}<span class="sort-indicator" aria-hidden="true">${active ? state.rankDir==="descending" ? "↓" : "↑" : "↕"}</span></button></th>`;
     }).join("");
     const rows=policies.map(p=>{
-      const rank=M.aggregateRank(p.id,state.rankMetric,state.rankChannel);
-      const medals=["🥇","🥈","🥉"],metal=["gold","silver","bronze"],medal=rank!==null && rank<=3;
-      const rankLabel=rank===null ? "Unranked: selected metric not reported" : `Rank ${rank}${medal ? ": "+metal[rank-1]+" medal" : ""}`;
-      return `<tr data-policy-row="${esc(p.id)}"><td class="rank-cell"><span class="rank-number${medal ? " rank-medal" : ""}" aria-label="${esc(rankLabel)}">${rank===null ? "—" : medal ? medals[rank-1] : rank}</span></td><th scope="row" class="policy-name"><div class="model-identity"><img class="model-logo" src="${esc(assetPrefix+p.logoPath)}" alt="${esc(p.logoAlt)}" width="26" height="26" decoding="async"><div><a class="model-name policy-label" href="${esc(p.modelUrl)}" target="_blank" rel="noopener noreferrer">${policyTitle(p)}</a></div></div></th><td class="type-cell"><span class="policy-type type-${esc(p.type.toLowerCase())}">${esc(p.type)}</span></td><td class="contributor-cell"><a href="${esc(p.contributorUrl)}" target="_blank" rel="noopener noreferrer">${esc(p.contributor)}</a></td>${columns.map(c=>aggregateCell(p,c,state)).join("")}</tr>`;
+      const position=rank(p,state);
+      const medals=["🥇","🥈","🥉"],metal=["gold","silver","bronze"],medal=position!==null && position<=3;
+      const rankLabel=position===null ? "Unranked: complete SR, LSCR and efficiency required" : `Rank ${position}${medal ? ": "+metal[position-1]+" medal" : ""}`;
+      return `<tr data-policy-row="${esc(p.id)}"><td class="rank-cell"><span class="rank-number${medal ? " rank-medal" : ""}" aria-label="${esc(rankLabel)}">${position===null ? "—" : medal ? medals[position-1] : position}</span></td><th scope="row" class="policy-name"><div class="model-identity"><img class="model-logo" src="${esc(assetPrefix+p.logoPath)}" alt="${esc(p.logoAlt)}" width="26" height="26" decoding="async"><div><a class="model-name policy-label" href="${esc(p.modelUrl)}" target="_blank" rel="noopener noreferrer">${policyTitle(p)}</a></div></div></th><td class="type-cell"><span class="policy-type type-${esc(p.type.toLowerCase())}">${esc(p.type)}</span></td><td class="contributor-cell"><a href="${esc(p.contributorUrl)}" target="_blank" rel="noopener noreferrer">${esc(p.contributor)}</a></td>${columns.map(c=>aggregateCell(p,c,state)).join("")}</tr>`;
     }).join("");
-    return `<caption class="sr-only">Policy Leaderboard</caption><thead><tr class="ranking-groups">${identity}<th scope="colgroup" colspan="4" class="channel-group">SR by channel (%)</th><th scope="colgroup" colspan="3" class="summary-group">Overall</th></tr><tr class="ranking-columns">${headers}</tr></thead><tbody>${rows}</tbody>`;
+    return `<caption class="sr-only">Policy Leaderboard</caption><thead><tr class="ranking-groups">${identity}<th scope="colgroup" colspan="4" class="channel-group">SR by channel (%)</th><th scope="colgroup" colspan="4" class="summary-group">Overall</th></tr><tr class="ranking-columns">${headers}</tr></thead><tbody>${rows}</tbody>`;
   }
   function sort(state,id){
     const column=columns.find(c=>c.id===id);if(!column)return;
     state.rankDir=state.rankMetric===column.key && state.rankChannel===column.cid && state.rankDir==="descending" ? "ascending" : "descending";
     state.rankMetric=column.key;state.rankChannel=column.cid;
   }
-  const sortMetric=state=>`${state.rankChannel==="mean" ? "" : B.CHANNEL_LABEL[state.rankChannel]+" "}${{sr:"SR",lscr:"LSCR",efficiency:"Eff."}[state.rankMetric]} ${state.rankDir==="descending" ? "↓" : "↑"}`;
-  const label=state=>`Sorted by ${sortMetric(state)}${state.rankChannel==="mean" && state.rankMetric!=="efficiency" ? " · Four-channel mean" : ""}`;
+  const sortMetric=state=>`${state.rankChannel==="mean" ? "" : B.CHANNEL_LABEL[state.rankChannel]+" "}${{sr:"SR",lscr:"LSCR",efficiency:"Eff.",score:"Score"}[state.rankMetric]} ${state.rankDir==="descending" ? "↓" : "↑"}`;
+  const label=state=>`Sorted by ${sortMetric(state)}${state.rankChannel==="mean" && !["efficiency","score"].includes(state.rankMetric) ? " · Four-channel mean" : ""}`;
   function updated(policies){
     // Use the recorded result update, never the visitor's current date.
     const latest=policies.map(p=>p.updatedAt).filter(d=>/^\d{4}-\d{2}-\d{2}$/.test(d||"")).sort().at(-1);
@@ -55,5 +62,5 @@
     const text=new Intl.DateTimeFormat("en-US",{month:"long",day:"numeric",year:"numeric",timeZone:"Asia/Shanghai"}).format(date);
     return `Updated <time datetime="${latest}">${esc(text)}</time> <span>(UTC+8)</span>`;
   }
-  R.overall={columns,ordered,markup,sort,sortMetric,label,updated,caption:"NR: not reported"};
+  R.overall={columns,ordered,rank,markup,sort,sortMetric,label,updated,caption:R.scoreFormula+" · NR: not reported"};
 })();

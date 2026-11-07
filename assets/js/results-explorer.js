@@ -19,7 +19,7 @@
   function readLocation(){
     const q=new URLSearchParams(location.search);
     state.group=enumValue(q.get("group"),M.protocols.map(p=>p.id),M.protocols[0].id);
-    state.rankMetric=enumValue(q.get("rank_metric")||q.get("sort"),Object.keys(labels),"sr");
+    state.rankMetric=enumValue(q.get("rank_metric")||q.get("sort"),[...Object.keys(labels),"score"],"score");
     state.rankChannel=state.rankMetric==="sr" ? enumValue(q.get("rank_channel"),["mean",...B.CHANNELS],"mean") : "mean";
     state.rankDir=enumValue(q.get("rank_dir"),["ascending","descending"],"descending");
     state.metric=enumValue(q.get("metric"),Object.keys(labels),"sr");
@@ -41,7 +41,7 @@
     if(state.policyShow==="custom" && state.policies.length && !taskPolicies.some(p=>state.policies.includes(p.id))) state.policyShow="all";
     for(const [id,key] of [["results-group","group"],["task-channel","channel"],["task-embodiment","emb"]]) $("#"+id).value=state[key];
     $("#task-channel").closest("label").hidden=state.metric==="efficiency";
-    $("#ranking-reset").hidden=state.rankMetric==="sr" && state.rankChannel==="mean" && state.rankDir==="descending";
+    $("#ranking-reset").hidden=state.rankMetric==="score" && state.rankChannel==="mean" && state.rankDir==="descending";
     $("#task-reset").hidden=state.metric==="sr" && state.channel==="mean" && !state.emb && state.taskSort==="paper" && state.policyShow==="all" && !state.taskDetail;
     root.querySelectorAll('[data-task-metric]').forEach(b=>b.setAttribute("aria-pressed",b.dataset.taskMetric===state.metric));
   }
@@ -186,7 +186,7 @@
   $("#policies-all").addEventListener("click",()=>{state.policies=[];state.policyShow="all";$(".policy-picker").open=false;render();});
   $("#policies-none").addEventListener("click",()=>{state.policies=[];state.policyShow="custom";render();});
   $("#ranking-reset").addEventListener("click",()=>{
-    Object.assign(state,{rankMetric:"sr",rankChannel:"mean",rankDir:"descending"});
+    Object.assign(state,{rankMetric:"score",rankChannel:"mean",rankDir:"descending"});
     resetTable("overview-results","Overall Performance reset to defaults.");
   });
   $("#task-reset").addEventListener("click",()=>{

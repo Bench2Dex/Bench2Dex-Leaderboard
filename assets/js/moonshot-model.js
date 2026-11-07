@@ -1,42 +1,20 @@
-/* Data rules for the SR × LSCR plot; shared with its nonvisual tests. */
+/* One score, one Earth-to-Moon axis. Missing inputs are never imputed. */
 (function(){
   "use strict";
   const R=window.BenchResults,M=R.model;
-  const channels=["mean","none","equi","inv","full"];
-  const valid=value=>Number.isFinite(value) && value>=0 && value<=100;
-  const name=entry=>entry.policy.label || entry.policy.modelVersion || entry.policy.id;
-  const byName=(a,b)=>name(a).localeCompare(name(b)) || a.policy.id.localeCompare(b.policy.id);
-  function data(groupId,channel="mean"){
-    if(!M.protocols.some(protocol=>protocol.id===groupId)) throw new RangeError("Unknown moonshot evaluation group");
-    if(!channels.includes(channel)) throw new RangeError("Unknown moonshot channel");
-    const totalTasks=M.tasks(groupId).length;
+  const byName=(a,b)=>R.policyName(a.policy).localeCompare(R.policyName(b.policy))||a.policy.id.localeCompare(b.policy.id);
+  function data(groupId){
+    if(!M.protocols.some(p=>p.id===groupId))throw new RangeError("Unknown moonshot evaluation group");
     const entries=M.group(groupId).map(policy=>{
-      const sr=M.aggregateMetric(policy.id,"sr",channel).value;
-      const lscr=M.aggregateMetric(policy.id,"lscr",channel).value;
-      const missing=[...(sr===null ? ["SR"] : []),...(lscr===null ? ["LSCR"] : [])];
-      const eligible=valid(sr) && valid(lscr) && M.aggregateEligible(policy.id,"sr",channel) && M.aggregateEligible(policy.id,"lscr",channel);
-      const reason=missing.length ? `${missing.join(" and ")} not reported`
-        : !valid(sr) || !valid(lscr) ? "Scores outside 0–100%"
-        : eligible ? "" : "Incomplete task coverage";
-      return {
-        policy,sr,lscr,
-        fullSr:M.aggregateMetric(policy.id,"sr","full").value,
-        fullLscr:M.aggregateMetric(policy.id,"lscr","full").value,
-        srCoverage:M.aggregateCoverage(policy.id,"sr",channel),
-        lscrCoverage:M.aggregateCoverage(policy.id,"lscr",channel),
-        reason
-      };
+      const sr=M.aggregateMetric(policy.id,"sr").value,lscr=M.aggregateMetric(policy.id,"lscr").value,efficiency=M.aggregateMetric(policy.id,"efficiency").value;
+      const score=M.score(policy.id).value;
+      const missing=[["SR",sr],["LSCR",lscr],["Eff.",efficiency]].filter(([,v])=>v===null).map(([key])=>key);
+      return {policy,sr,lscr,efficiency,score,fullSr:M.aggregateMetric(policy.id,"sr","full").value,fullLscr:M.aggregateMetric(policy.id,"lscr","full").value,reason:score!==null ? "" : missing.length ? `${missing.join(", ")} not reported` : "Incomplete task coverage"};
     });
-    const plotted=entries.filter(entry=>!entry.reason).sort((a,b)=>b.sr-a.sr || b.lscr-a.lscr || byName(a,b));
-    const unplotted=entries.filter(entry=>entry.reason).sort((a,b)=>{
-      const av=valid(a.fullSr) ? a.fullSr : null,bv=valid(b.fullSr) ? b.fullSr : null;
-      if(av===null || bv===null) return av===bv ? byName(a,b) : av===null ? 1 : -1;
-      return bv-av || byName(a,b);
-    });
-    return {plotted,unplotted,totalTasks};
+    const plotted=entries.filter(e=>e.score!==null).sort((a,b)=>b.score-a.score||byName(a,b));
+    const unplotted=entries.filter(e=>e.score===null).sort((a,b)=>(b.fullSr??-1)-(a.fullSr??-1)||byName(a,b));
+    return {plotted,unplotted,totalTasks:M.tasks(groupId).length};
   }
-  // The rocket follows the highest eligible four-channel mean SR, with LSCR
-  // breaking score ties. Its position depends on published results, not UI state.
-  const leader=groupId=>data(groupId,"mean").plotted[0] || null;
+  const leader=group=>data(group).plotted[0]||null;
   R.moonshot={data,leader};
 })();

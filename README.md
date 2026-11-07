@@ -33,7 +33,10 @@ Target **main** in both repositories and cross-link the PRs. Policy IDs, scores,
 
 ## 📋 Result requirements
 
-- Submit at least **Full** results and logs; **None · Equi. · Inv. · Full**, including SR, LSCR, and Eff., are encouraged.
+- **Ranking requires all three Overall metrics:** four-channel mean SR and LSCR, and pooled Eff., with complete results for all 26 tasks. Partial submissions remain visible with Score NR and no rank.
+- **Score** = 0.45×SR + 0.45×LSCR + 10×Eff., on a 0–100 reference scale. SR/LSCR use percentages; Eff. is the raw, uncapped ratio. Higher is better. The leaderboard computes Score from the submitted metrics.
+
+- At least **Full** results and logs are required for submission; **None · Equi. · Inv. · Full** are encouraged. Ranking requires the complete three-metric results described above.
 - List all 26 tasks in the results JSON. Its SR/LSCR values use **0–100** percentages and Eff. is a ratio; missing values are `null` (NR). Full-only scores are not four-channel means. Keep native log units unchanged.
 - Report actual episode counts, execution budgets, and deviations from the 50-episode/task/channel reference. Follow the [metric definitions](https://bench2dex.github.io/Bench2Dex-Leaderboard/#protocol-notes).
 

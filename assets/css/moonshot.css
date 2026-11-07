@@ -83,13 +83,25 @@
 @media(prefers-reduced-motion:reduce){.moonshot *{transition:none!important;}}
 
 /* Exact score anchors; annotations resolve nearby collisions with short straight leaders. */
-.moonshot-connector{fill:none;stroke:#527b9b;stroke-opacity:.72;stroke-width:1;vector-effect:non-scaling-stroke;pointer-events:none;}
+.moonshot-connector{fill:none;stroke:#7896ad;stroke-opacity:.32;stroke-width:.8;vector-effect:non-scaling-stroke;pointer-events:none;}
 .moonshot-point circle{fill:#477b9b;stroke:#f6fbff;stroke-width:1.4;vector-effect:non-scaling-stroke;cursor:pointer;}
 .moonshot-point.is-podium circle{fill:#a47d37;stroke:#fff8e7;}
 
-.moonshot-connector.is-active{stroke:#2c668f;stroke-opacity:1;stroke-width:1.5;}
+.moonshot-connector.is-active{stroke:#527b9b;stroke-opacity:.65;stroke-width:1.1;}
 .moonshot-point.is-active circle{fill:#2c668f;stroke-width:2;}
 
 /* Focus a model without adding permanent score labels to the figure. */
 .moonshot.is-inspecting .moonshot-label:not(.is-active),.moonshot.is-inspecting .moonshot-point:not(.is-active){opacity:.36;}
 .moonshot.is-inspecting .moonshot-connector:not(.is-active){opacity:.2;}
+
+/* One-dimensional Score orbit; values remain linear along the trajectory. */
+.moonshot-score-axis{fill:none;stroke:#9a7745;stroke-width:1.2;stroke-opacity:.8;vector-effect:non-scaling-stroke;pointer-events:none;}
+.moonshot-score-tick line{stroke:#856943;stroke-width:1;stroke-opacity:.85;vector-effect:non-scaling-stroke;}
+.moonshot-score-tick text{fill:#4a6172;font:600 11px var(--body);font-variant-numeric:tabular-nums;paint-order:stroke;stroke:#f4f8fce8;stroke-width:2.5px;stroke-linejoin:round;}
+.moonshot-score-axis-label{fill:#74552b;font:650 14px var(--body);letter-spacing:.02em;paint-order:stroke;stroke:#f6f9fbea;stroke-width:3px;}
+.moonshot-label .label-score{fill:#53718a;font:600 10px var(--body);font-variant-numeric:tabular-nums;paint-order:stroke;stroke:#f2f7fbe6;stroke-width:2px;stroke-linejoin:round;}
+.moonshot-label.is-podium .label-score{fill:#89652e;}
+.moonshot-inspector{width:190px;}
+.moonshot-inspector dl{display:grid;grid-template-columns:1fr 1fr;gap:7px 10px;}
+.moonshot-inspector dl>div{justify-content:space-between;}
+@media(max-width:600px){.moonshot-score-tick text{font-size:21px;}.moonshot-score-axis-label{font-size:25px;}.moonshot-inspector{width:172px;}}

@@ -35,9 +35,9 @@
       <a class="moonshot-brand" href="https://bench2dex.github.io/" aria-label="Bench2Dex project homepage"><img src="assets/img/figures/overview_logo.png" alt="Bench2Dex" width="1774" height="887"></a>
       <div class="moonshot-tools"><h2 id="moonshot-title">The Moonshot of Dexterity</h2><p class="moonshot-updated" id="moonshot-updated"></p></div>
     </div>
-    <div class="moonshot-stage"><div id="moonshot-chart"></div><div class="moonshot-inspector" id="moonshot-inspector" aria-live="polite" hidden></div><div class="moonshot-axis-tooltip" id="moonshot-axis-tooltip" role="tooltip" hidden></div></div>
+    <div class="moonshot-stage"><div id="moonshot-chart"></div><div class="moonshot-inspector" id="moonshot-inspector" aria-live="polite" hidden></div></div>
     <div class="moonshot-unplotted" id="moonshot-unplotted"></div>
-    <div class="moonshot-footer"><div class="moonshot-footer-info"><span class="moonshot-scope">Four-channel mean · Ranked by SR</span><span id="moonshot-coverage"></span></div><a href="#protocol-notes">Protocol &amp; metrics ↗</a></div>
+    <div class="moonshot-footer"><div class="moonshot-footer-info"><span class="moonshot-scope">Ranked by Score</span><span id="moonshot-coverage"></span></div><a href="#protocol-notes">Protocol &amp; metrics ↗</a></div>
   </section>
   <div id="results-explorer" class="results-explorer results-stack">
     <div class="board-global-tools">
@@ -51,7 +51,7 @@
         <div class="section-meta"><p class="table-updated" id="ranking-updated"></p><div class="section-actions"><button type="button" class="table-reset" id="ranking-reset" aria-label="Reset Overall Performance to defaults" hidden>Reset</button></div></div>
       </div>
       <div id="overview-table"></div>
-      <div class="table-footer"><p class="table-note" id="ranking-caption"></p><div class="table-legend-compact"><strong class="best-value" title="Highest reported SR, LSCR or efficiency, including ties">Best</strong><span class="heat-key" aria-label="Color scale: 0 to 100 percent"><span>0</span><span class="heat-swatch" aria-hidden="true"></span><span>100%</span></span></div></div>
+      <div class="table-footer"><p class="table-note" id="ranking-caption"></p><div class="table-legend-compact"><strong class="best-value" title="Highest reported SR, LSCR, efficiency or Score, including ties">Best</strong><span class="heat-key" aria-label="Color scale: 0 to 100 percent"><span>0</span><span class="heat-swatch" aria-hidden="true"></span><span>100%</span></span></div></div>
     </section>
 
     <section id="per-task-scores" class="board-section" aria-labelledby="task-title">
@@ -75,6 +75,7 @@
         <div><dt>LSCR <span>Latched Stage Completion Rate</span></dt><dd>Dependency-valid task stages ever reached (%), averaged equally across tasks and four channels.</dd></div>
         <div><dt>Eff. <span>Success-Conditioned Efficiency</span></dt><dd>Mean expert completion steps / mean policy steps to stable success, pooled across successful episodes. Averaged over tasks with success.</dd></div>
       </dl>
+      <p>Ranking requires complete Overall SR, LSCR and Eff.; Eff. is uncapped.</p>
       <p>The reference protocol uses 50 episodes per task and channel. Contributions must report actual episode counts, execution budgets, and protocol differences. GPT-6 Astra reports Full only: 1× + ICL uses 10 episodes/task with disclosed replacements and a same-seed rerun; 10× + ICL uses 3 episodes/task with replay extensions. Four-channel means are NR. <a href="https://github.com/Bench2Dex/Bench2Dex-Leaderboard#readme">Submit results ↗</a> · <a href="https://huggingface.co/datasets/Bench2Dex/Leaderboard">Evaluation logs ↗</a></p>
     </details>
     <details class="table-notes results-notes" id="citation-fallback" hidden><summary>BibTeX Citation</summary><pre id="bibtex" tabindex="0"></pre></details>
