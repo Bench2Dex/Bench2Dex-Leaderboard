@@ -21,7 +21,6 @@ test('registered entries have matching model directories, results and logos',asy
       assert.equal(p.evaluation.logs.repository,null);
       assert.equal(p.evaluation.logs.policyPath,null);
     }else{
-      assert.equal(p.model.externalReport,true);
       assert.equal(p.evaluation.logs.status,'archived');
       assert.match(p.evaluation.logs.revision,/^[a-f0-9]{40}$/);
       assert.equal(p.evaluation.logs.repository,'Bench2Dex/Leaderboard');

@@ -34,14 +34,17 @@
       const scale=initialScale*.94**attempt,gap=4*scale,h=36*scale;
       const overlapsX=(a,b)=>a.x<b.x+b.w+gap&&b.x<a.x+a.w+gap;
       const ship=rocket?pad(rocket.box,6*scale):null;
+      const labelTopLimit=(p,x,w)=>{
+        const axisY=start.y+(x+w-start.x)*tangent.y/tangent.x;
+        return Math.min(p.y-26*scale,axisY-8*scale)-h;
+      };
       placed=[];
       for(const p of points){
         const w=(70+R.policyName(p.policy).length*6.8+p.variant.length*5.3)*scale;
         // Keep the logo directly over its Score point; only boundary scores
         // can shift left to keep the entire name inside the figure.
         const x=Math.max(14,Math.min(p.x-35*scale,end.x-80-w));
-        const axisY=start.y-(x+w-start.x)*(start.y-end.y)/(end.x-start.x);
-        const maxY=Math.min(p.y-26*scale,axisY-8*scale)-h;
+        const maxY=labelTopLimit(p,x,w);
         let y=14,box={x,y,w,h};
         for(let step=0;step<points.length+3;step++){
           box={x,y,w,h};
@@ -58,10 +61,22 @@
       // close scores, while their horizontal positions remain the true values.
       for(let i=placed.length-1;i>=0;i--){
         const p=placed[i];let y=p.maxY;
-        for(let j=i+1;j<placed.length;j++)if(overlapsX(p.box,placed[j].box))y=Math.min(y,placed[j].box.y-h-gap);
+        for(const {box} of placed){
+          if(box.y>=p.box.y+h&&overlapsX(p.box,box))y=Math.min(y,box.y-h-gap);
+        }
         const candidate={...p.box,y};
         if(ship&&overlap(candidate,ship))y=Math.min(y,ship.y-h-gap);
         if(y>=p.box.y)p.box.y=y;
+      }
+      // Keep ACT as close to its point as DP. Shift it just left of the
+      // rocket when the straight vertical placement would hit the ship.
+      const act=placed.find(p=>p.policy.id==="ACT"),dp=placed.find(p=>p.policy.id==="DPC");
+      if(act&&dp){
+        const box={...act.box,y:act.y-(dp.y-dp.box.y)};
+        if(ship&&overlap(box,ship))box.x=ship.x-box.w-1;
+        box.y=Math.min(box.y,labelTopLimit(act,box.x,box.w));
+        if(box.x>=14&&box.y>act.box.y&&!(ship&&overlap(box,ship))
+          &&!placed.some(p=>p!==act&&overlap(box,pad(p.box,gap))))act.box=box;
       }
       break;
     }

@@ -16,7 +16,7 @@ export function renderer(fixture=registry,width=1200){
  return {R,nodes,chart,geometry:R.moonshot.layout(R.moonshot.data('standard').plotted,width),models:Array.from(chart.matchAll(/<g class="moonshot-label\b[^>]*>/g),m=>m[0]),rocket:chart.match(/<g class="moonshot-rocket"[^>]*>/)?.[0],reports:document.getElementById('moonshot-unplotted').innerHTML};
 }
 test('the figure has one Score axis and no Cartesian axes or grid',()=>{
- const r=renderer();assert.equal(r.models.length,7);assert.match(r.chart,/One diagonal Score axis/);
+ const r=renderer();assert.equal(r.models.length,8);assert.match(r.chart,/One diagonal Score axis/);
  assert.equal(Array.from(r.chart.matchAll(/class="moonshot-score-axis"/g)).length,1);
  assert.doesNotMatch(r.chart,/class="moonshot-axis"|class="moonshot-grid"|data-plot-axis=/);
  assert.match(r.chart,/aria-label="Policy ranking along the Score orbit"/);assert.match(r.chart,/Efficiency is uncapped/);
@@ -36,7 +36,7 @@ test('the rocket nose is exactly at the highest Score point and remains inside t
 });
 test('labels stay visible, clear of each other and the rocket at narrow and wide widths',()=>{
  for(const width of [320,390,645,840,1200]){
-  const r=renderer(registry,width),g=r.geometry;assert.equal(g.labels.length,7,`missing labels at ${width}`);
+  const r=renderer(registry,width),g=r.geometry;assert.equal(g.labels.length,8,`missing labels at ${width}`);
   for(let i=0;i<g.labels.length;i++){
    const a=g.labels[i].box;assert.ok(a.x>=14&&a.y>=12&&a.x+a.w<=1186&&a.y+a.h<=668);
    assert.equal(overlap(a,g.rocket.box),0);
@@ -47,7 +47,7 @@ test('labels stay visible, clear of each other and the rocket at narrow and wide
 test('scores above 100 remain uncapped and the orbit expands its numeric scale',()=>{
  const fixture=structuredClone(registry),p=fixture.policies.find(p=>p.model.id==='ACT');Object.assign(p.overall,{sr:100,lscr:100,efficiency:3});
  const r=renderer(fixture);assert.equal(attr(r.rocket,'data-rocket-policy'),'ACT');close(Number(attr(r.rocket,'data-rocket-score')),120);
- assert.ok(r.geometry.maximum>=120);assert.equal(r.geometry.labels.length,7);assert.doesNotMatch(r.chart,/NaN|undefined|Infinity/);
+ assert.ok(r.geometry.maximum>=120);assert.equal(r.geometry.labels.length,8);assert.doesNotMatch(r.chart,/NaN|undefined|Infinity/);
 });
 test('top three Score labels share podium treatment and model links remain accessible',()=>{
  const r=renderer();assert.equal(r.models.filter(t=>t.includes('is-podium')).length,3);
@@ -76,10 +76,15 @@ test('every policy label is above the track and each straight leader ends at its
   }
  }
 });
-test('close scores use distinct label heights and vertical leaders, without horizontal fan-out',()=>{
- for(const width of [390,645,1200]){
+test('close scores use distinct label heights and ACT stays close to its Score point',()=>{
+ for(const width of [320,390,464,645,840,1200]){
   const g=renderer(registry,width).geometry;
-  for(const p of g.labels){close(p.logo.x,p.x);close(p.anchor.x,p.x);assert.ok(p.anchor.y<p.y);}
+  const act=g.labels.find(p=>p.policy.id==='ACT'),dp=g.labels.find(p=>p.policy.id==='DPC');
+  assert.ok(Math.hypot(act.x-act.anchor.x,act.y-act.anchor.y)<1.25*(dp.y-dp.anchor.y));
+  for(const p of g.labels){
+   if(p!==act)close(p.logo.x,p.x);
+   close(p.anchor.x,p.logo.x);assert.ok(p.anchor.y<p.y);
+  }
   const second=g.labels[1],third=g.labels[2];
   assert.ok(third.box.y>=second.box.y+second.box.h);assert.ok(second.x>third.x);
  }

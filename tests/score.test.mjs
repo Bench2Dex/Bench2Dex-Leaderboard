@@ -34,11 +34,11 @@ test('finite summaries cannot hide incomplete task evidence',()=>{
 });
 test('default composite order, ranks, best cell and table column agree',()=>{
  const R=api(),M=R.model,rows=R.overall.ordered(M.group('standard'),state);
- assert.deepEqual(Array.from(rows.slice(0,7),p=>p.id),['GR00T_N17_TACTILE','GR00T_N17','PI05','GR00T_N15_TACTILE','GR00T_N15','ACT','DPC']);
- assert.equal(M.aggregateRank('GR00T_N17','score'),2);assert.equal(M.aggregateRank('PI05','score'),3);
+ assert.deepEqual(Array.from(rows.slice(0,8),p=>p.id),['mora_v0','GR00T_N17_TACTILE','GR00T_N17','PI05','GR00T_N15_TACTILE','GR00T_N15','ACT','DPC']);
+ assert.equal(M.aggregateRank('mora_v0','score'),1);assert.equal(M.aggregateRank('PI05','score'),4);
  const html=R.overall.markup(rows,state);
  assert.equal(R.overall.columns.at(-1).id,'score');assert.match(html,/colspan="4" class="summary-group"/);
- assert.match(html,/data-rank-column="score"/);assert.match(html,/<strong class="best-value">44\.60<\/strong>/);
+ assert.match(html,/data-rank-column="score"/);assert.match(html,/<strong class="best-value">48\.23<\/strong>/);
  assert.equal(R.overall.label(state),'Sorted by Score ↓');
  assert.match(R.overall.caption,/0\.45×SR.*0\.45×LSCR.*10×Eff/);
 });
@@ -48,7 +48,7 @@ test('partial submissions stay unranked even while sorting a reported channel',(
  const channelState={...state,rankMetric:'sr',rankChannel:'full'};
  assert.equal(R.overall.rank(p,channelState),null);
  const rows=R.overall.ordered(M.group('standard'),channelState);
- assert.ok(rows.findIndex(p=>p.id==='PARTIAL')>=7);
+ assert.ok(rows.findIndex(p=>p.id==='PARTIAL')>=8);
  assert.equal(M.score('gpt6_astra_1x_icl').value,null);assert.equal(M.score('gpt6_astra_10x_icl').value,null);
 });
 test('ties share an exact Score rank, while sorting never uses rounded display strings',()=>{

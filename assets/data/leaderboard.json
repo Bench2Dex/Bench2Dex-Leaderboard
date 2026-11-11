@@ -11051,6 +11051,2584 @@
         },
         "publishedAt": "2026-11-04"
       }
+    },
+    {
+      "model": {
+        "id": "mora_v0",
+        "label": "Mora V0",
+        "variantLabel": "",
+        "family": "Mora",
+        "modelVersion": "Mora V0",
+        "checkpoint": null,
+        "inputs": "RGB, proprioception, task instruction",
+        "protocolId": "standard",
+        "displayOrder": 110,
+        "trainingSetting": "EgoDex mid-training followed by task-specific robot post-training",
+        "resultVersion": "2026-11-09",
+        "updatedAt": "2026-11-09",
+        "evaluationSetting": "One selected Mora V0 checkpoint per official embodiment/task; all four channels",
+        "sourceLabel": "Evaluation logs",
+        "sourceUrl": null,
+        "resultDetailsUrl": null,
+        "contributor": "Morphi Robot",
+        "contributorUrl": "https://www.morphi.com/",
+        "type": "VLA",
+        "modelUrl": "https://www.morphi.com/",
+        "logoPath": "leaderboard/mora_v0/logo.png",
+        "logoAlt": "Morphi Robot",
+        "weightsUrl": null,
+        "codeUrl": null
+      },
+      "overall": {
+        "taskCount": 26,
+        "scope": "task-macro",
+        "sr": 33.23076923076923,
+        "lscr": 52.30833333333333,
+        "efficiency": 0.9736822617743787,
+        "efficiencyStatus": "reported",
+        "efficiencyTaskCount": 25,
+        "channelSr": {
+          "None": 38.84615384615385,
+          "Equi.": 29.53846153846154,
+          "Inv.": 32.46153846153846,
+          "Full": 32.07692307692308
+        },
+        "channelLscr": {
+          "None": 56.276923076923076,
+          "Equi.": 49.19102564102564,
+          "Inv.": 51.9025641025641,
+          "Full": 51.86282051282051
+        },
+        "channelTaskCounts": {
+          "None": 26,
+          "Equi.": 26,
+          "Inv.": 26,
+          "Full": 26
+        },
+        "status": "reported"
+      },
+      "per_task": {
+        "12": {
+          "channels": {
+            "None": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 26,
+              "lscr": 76.5,
+              "source": {
+                "runId": "mora_v0_12_a7e364578da1",
+                "perEpisodeFile": "per_task_eval/12_screwdriver_box_and_hammer/None/per_episode.jsonl",
+                "summaryFile": "per_task_eval/12_screwdriver_box_and_hammer/None/summary.json"
+              }
+            },
+            "Equi.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 23,
+              "lscr": 63.5,
+              "source": {
+                "runId": "mora_v0_12_a7e364578da1",
+                "perEpisodeFile": "per_task_eval/12_screwdriver_box_and_hammer/Equi/per_episode.jsonl",
+                "summaryFile": "per_task_eval/12_screwdriver_box_and_hammer/Equi/summary.json"
+              }
+            },
+            "Inv.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 11,
+              "lscr": 55.50000000000001,
+              "source": {
+                "runId": "mora_v0_12_a7e364578da1",
+                "perEpisodeFile": "per_task_eval/12_screwdriver_box_and_hammer/Inv/per_episode.jsonl",
+                "summaryFile": "per_task_eval/12_screwdriver_box_and_hammer/Inv/summary.json"
+              }
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 21,
+              "lscr": 57.49999999999999,
+              "source": {
+                "runId": "mora_v0_12_a7e364578da1",
+                "perEpisodeFile": "per_task_eval/12_screwdriver_box_and_hammer/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/12_screwdriver_box_and_hammer/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "reported",
+            "sr": 40.5,
+            "srScope": "four-channel-mean",
+            "srEpisodes": 200,
+            "lscr": 63.25,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": 200,
+            "efficiency": 1.0374250745769327,
+            "efficiencyStatus": "reported"
+          }
+        },
+        "21": {
+          "channels": {
+            "None": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 17,
+              "lscr": 70.0,
+              "source": {
+                "runId": "mora_v0_21_b1d200c9f34f",
+                "perEpisodeFile": "per_task_eval/21_condiment_box_loading/None/per_episode.jsonl",
+                "summaryFile": "per_task_eval/21_condiment_box_loading/None/summary.json"
+              }
+            },
+            "Equi.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 13,
+              "lscr": 59.33333333333333,
+              "source": {
+                "runId": "mora_v0_21_b1d200c9f34f",
+                "perEpisodeFile": "per_task_eval/21_condiment_box_loading/Equi/per_episode.jsonl",
+                "summaryFile": "per_task_eval/21_condiment_box_loading/Equi/summary.json"
+              }
+            },
+            "Inv.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 19,
+              "lscr": 68.0,
+              "source": {
+                "runId": "mora_v0_21_b1d200c9f34f",
+                "perEpisodeFile": "per_task_eval/21_condiment_box_loading/Inv/per_episode.jsonl",
+                "summaryFile": "per_task_eval/21_condiment_box_loading/Inv/summary.json"
+              }
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 13,
+              "lscr": 65.33333333333333,
+              "source": {
+                "runId": "mora_v0_21_b1d200c9f34f",
+                "perEpisodeFile": "per_task_eval/21_condiment_box_loading/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/21_condiment_box_loading/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "reported",
+            "sr": 31.0,
+            "srScope": "four-channel-mean",
+            "srEpisodes": 200,
+            "lscr": 65.66666666666666,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": 200,
+            "efficiency": 0.9049577295751778,
+            "efficiencyStatus": "reported"
+          }
+        },
+        "22": {
+          "channels": {
+            "None": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 38,
+              "lscr": 90.0,
+              "source": {
+                "runId": "mora_v0_22_7ad5f3956e12",
+                "perEpisodeFile": "per_task_eval/22_tool_box_loading/None/per_episode.jsonl",
+                "summaryFile": "per_task_eval/22_tool_box_loading/None/summary.json"
+              }
+            },
+            "Equi.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 31,
+              "lscr": 81.0,
+              "source": {
+                "runId": "mora_v0_22_7ad5f3956e12",
+                "perEpisodeFile": "per_task_eval/22_tool_box_loading/Equi/per_episode.jsonl",
+                "summaryFile": "per_task_eval/22_tool_box_loading/Equi/summary.json"
+              }
+            },
+            "Inv.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 37,
+              "lscr": 88.0,
+              "source": {
+                "runId": "mora_v0_22_7ad5f3956e12",
+                "perEpisodeFile": "per_task_eval/22_tool_box_loading/Inv/per_episode.jsonl",
+                "summaryFile": "per_task_eval/22_tool_box_loading/Inv/summary.json"
+              }
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 28,
+              "lscr": 79.0,
+              "source": {
+                "runId": "mora_v0_22_7ad5f3956e12",
+                "perEpisodeFile": "per_task_eval/22_tool_box_loading/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/22_tool_box_loading/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "reported",
+            "sr": 67.0,
+            "srScope": "four-channel-mean",
+            "srEpisodes": 200,
+            "lscr": 84.5,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": 200,
+            "efficiency": 0.9425646167442774,
+            "efficiencyStatus": "reported"
+          }
+        },
+        "24": {
+          "channels": {
+            "None": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 3,
+              "lscr": 31.0,
+              "source": {
+                "runId": "mora_v0_24_923879d5d0cf",
+                "perEpisodeFile": "per_task_eval/24_stationery_category_sorting/None/per_episode.jsonl",
+                "summaryFile": "per_task_eval/24_stationery_category_sorting/None/summary.json"
+              }
+            },
+            "Equi.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 1,
+              "lscr": 35.0,
+              "source": {
+                "runId": "mora_v0_24_923879d5d0cf",
+                "perEpisodeFile": "per_task_eval/24_stationery_category_sorting/Equi/per_episode.jsonl",
+                "summaryFile": "per_task_eval/24_stationery_category_sorting/Equi/summary.json"
+              }
+            },
+            "Inv.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 3,
+              "lscr": 32.5,
+              "source": {
+                "runId": "mora_v0_24_923879d5d0cf",
+                "perEpisodeFile": "per_task_eval/24_stationery_category_sorting/Inv/per_episode.jsonl",
+                "summaryFile": "per_task_eval/24_stationery_category_sorting/Inv/summary.json"
+              }
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 4,
+              "lscr": 30.5,
+              "source": {
+                "runId": "mora_v0_24_923879d5d0cf",
+                "perEpisodeFile": "per_task_eval/24_stationery_category_sorting/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/24_stationery_category_sorting/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "reported",
+            "sr": 5.5,
+            "srScope": "four-channel-mean",
+            "srEpisodes": 200,
+            "lscr": 32.25,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": 200,
+            "efficiency": 1.128777792570896,
+            "efficiencyStatus": "reported"
+          }
+        },
+        "26": {
+          "channels": {
+            "None": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 20,
+              "lscr": 70.0,
+              "source": {
+                "runId": "mora_v0_26_b7f8e9b7a64f",
+                "perEpisodeFile": "per_task_eval/26_canned_food_tray_line_arrangement/None/per_episode.jsonl",
+                "summaryFile": "per_task_eval/26_canned_food_tray_line_arrangement/None/summary.json"
+              }
+            },
+            "Equi.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 9,
+              "lscr": 52.5,
+              "source": {
+                "runId": "mora_v0_26_b7f8e9b7a64f",
+                "perEpisodeFile": "per_task_eval/26_canned_food_tray_line_arrangement/Equi/per_episode.jsonl",
+                "summaryFile": "per_task_eval/26_canned_food_tray_line_arrangement/Equi/summary.json"
+              }
+            },
+            "Inv.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 12,
+              "lscr": 54.0,
+              "source": {
+                "runId": "mora_v0_26_b7f8e9b7a64f",
+                "perEpisodeFile": "per_task_eval/26_canned_food_tray_line_arrangement/Inv/per_episode.jsonl",
+                "summaryFile": "per_task_eval/26_canned_food_tray_line_arrangement/Inv/summary.json"
+              }
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 17,
+              "lscr": 60.5,
+              "source": {
+                "runId": "mora_v0_26_b7f8e9b7a64f",
+                "perEpisodeFile": "per_task_eval/26_canned_food_tray_line_arrangement/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/26_canned_food_tray_line_arrangement/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "reported",
+            "sr": 29.0,
+            "srScope": "four-channel-mean",
+            "srEpisodes": 200,
+            "lscr": 59.25,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": 200,
+            "efficiency": 0.9530798981228186,
+            "efficiencyStatus": "reported"
+          }
+        },
+        "27": {
+          "channels": {
+            "None": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 0,
+              "lscr": 17.0,
+              "source": {
+                "runId": "mora_v0_27_0e0aafb7f407",
+                "perEpisodeFile": "per_task_eval/27_ball_box_loading/None/per_episode.jsonl",
+                "summaryFile": "per_task_eval/27_ball_box_loading/None/summary.json"
+              }
+            },
+            "Equi.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 0,
+              "lscr": 15.5,
+              "source": {
+                "runId": "mora_v0_27_0e0aafb7f407",
+                "perEpisodeFile": "per_task_eval/27_ball_box_loading/Equi/per_episode.jsonl",
+                "summaryFile": "per_task_eval/27_ball_box_loading/Equi/summary.json"
+              }
+            },
+            "Inv.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 0,
+              "lscr": 23.5,
+              "source": {
+                "runId": "mora_v0_27_0e0aafb7f407",
+                "perEpisodeFile": "per_task_eval/27_ball_box_loading/Inv/per_episode.jsonl",
+                "summaryFile": "per_task_eval/27_ball_box_loading/Inv/summary.json"
+              }
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 0,
+              "lscr": 26.0,
+              "source": {
+                "runId": "mora_v0_27_0e0aafb7f407",
+                "perEpisodeFile": "per_task_eval/27_ball_box_loading/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/27_ball_box_loading/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "reported",
+            "sr": 0.0,
+            "srScope": "four-channel-mean",
+            "srEpisodes": 200,
+            "lscr": 20.5,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": 200,
+            "efficiency": null,
+            "efficiencyStatus": "no-success"
+          }
+        },
+        "32": {
+          "channels": {
+            "None": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 15,
+              "lscr": 75.0,
+              "source": {
+                "runId": "mora_v0_32_a13ca410c29e",
+                "perEpisodeFile": "per_task_eval/32_baking_tray_prep_with_tools/None/per_episode.jsonl",
+                "summaryFile": "per_task_eval/32_baking_tray_prep_with_tools/None/summary.json"
+              }
+            },
+            "Equi.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 15,
+              "lscr": 66.5,
+              "source": {
+                "runId": "mora_v0_32_a13ca410c29e",
+                "perEpisodeFile": "per_task_eval/32_baking_tray_prep_with_tools/Equi/per_episode.jsonl",
+                "summaryFile": "per_task_eval/32_baking_tray_prep_with_tools/Equi/summary.json"
+              }
+            },
+            "Inv.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 10,
+              "lscr": 69.0,
+              "source": {
+                "runId": "mora_v0_32_a13ca410c29e",
+                "perEpisodeFile": "per_task_eval/32_baking_tray_prep_with_tools/Inv/per_episode.jsonl",
+                "summaryFile": "per_task_eval/32_baking_tray_prep_with_tools/Inv/summary.json"
+              }
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 3,
+              "lscr": 55.00000000000001,
+              "source": {
+                "runId": "mora_v0_32_a13ca410c29e",
+                "perEpisodeFile": "per_task_eval/32_baking_tray_prep_with_tools/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/32_baking_tray_prep_with_tools/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "reported",
+            "sr": 21.5,
+            "srScope": "four-channel-mean",
+            "srEpisodes": 200,
+            "lscr": 66.375,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": 200,
+            "efficiency": 0.9769207166584399,
+            "efficiencyStatus": "reported"
+          }
+        },
+        "34": {
+          "channels": {
+            "None": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 9,
+              "lscr": 55.2,
+              "source": {
+                "runId": "mora_v0_34_f4d6423dad86",
+                "perEpisodeFile": "per_task_eval/34_fridge_wine_interhand_pour/None/per_episode.jsonl",
+                "summaryFile": "per_task_eval/34_fridge_wine_interhand_pour/None/summary.json"
+              }
+            },
+            "Equi.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 9,
+              "lscr": 52.800000000000004,
+              "source": {
+                "runId": "mora_v0_34_f4d6423dad86",
+                "perEpisodeFile": "per_task_eval/34_fridge_wine_interhand_pour/Equi/per_episode.jsonl",
+                "summaryFile": "per_task_eval/34_fridge_wine_interhand_pour/Equi/summary.json"
+              }
+            },
+            "Inv.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 6,
+              "lscr": 48.8,
+              "source": {
+                "runId": "mora_v0_34_f4d6423dad86",
+                "perEpisodeFile": "per_task_eval/34_fridge_wine_interhand_pour/Inv/per_episode.jsonl",
+                "summaryFile": "per_task_eval/34_fridge_wine_interhand_pour/Inv/summary.json"
+              }
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 5,
+              "lscr": 45.6,
+              "source": {
+                "runId": "mora_v0_34_f4d6423dad86",
+                "perEpisodeFile": "per_task_eval/34_fridge_wine_interhand_pour/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/34_fridge_wine_interhand_pour/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "reported",
+            "sr": 14.5,
+            "srScope": "four-channel-mean",
+            "srEpisodes": 200,
+            "lscr": 50.6,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": 200,
+            "efficiency": 1.0490880771742954,
+            "efficiencyStatus": "reported"
+          }
+        },
+        "42": {
+          "channels": {
+            "None": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 16,
+              "lscr": 58.666666666666664,
+              "source": {
+                "runId": "mora_v0_42_f7fb5f6fc3fb",
+                "perEpisodeFile": "per_task_eval/42_trash_disposal/None/per_episode.jsonl",
+                "summaryFile": "per_task_eval/42_trash_disposal/None/summary.json"
+              }
+            },
+            "Equi.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 12,
+              "lscr": 46.0,
+              "source": {
+                "runId": "mora_v0_42_f7fb5f6fc3fb",
+                "perEpisodeFile": "per_task_eval/42_trash_disposal/Equi/per_episode.jsonl",
+                "summaryFile": "per_task_eval/42_trash_disposal/Equi/summary.json"
+              }
+            },
+            "Inv.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 19,
+              "lscr": 55.99999999999999,
+              "source": {
+                "runId": "mora_v0_42_f7fb5f6fc3fb",
+                "perEpisodeFile": "per_task_eval/42_trash_disposal/Inv/per_episode.jsonl",
+                "summaryFile": "per_task_eval/42_trash_disposal/Inv/summary.json"
+              }
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 17,
+              "lscr": 55.99999999999999,
+              "source": {
+                "runId": "mora_v0_42_f7fb5f6fc3fb",
+                "perEpisodeFile": "per_task_eval/42_trash_disposal/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/42_trash_disposal/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "reported",
+            "sr": 32.0,
+            "srScope": "four-channel-mean",
+            "srEpisodes": 200,
+            "lscr": 54.166666666666664,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": 200,
+            "efficiency": 0.9627311009525525,
+            "efficiencyStatus": "reported"
+          }
+        },
+        "43": {
+          "channels": {
+            "None": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 3,
+              "lscr": 27.500000000000004,
+              "source": {
+                "runId": "mora_v0_43_6aa35c9de9ab",
+                "perEpisodeFile": "per_task_eval/43_fridge_fruit_shelf_sorting/None/per_episode.jsonl",
+                "summaryFile": "per_task_eval/43_fridge_fruit_shelf_sorting/None/summary.json"
+              }
+            },
+            "Equi.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 1,
+              "lscr": 23.5,
+              "source": {
+                "runId": "mora_v0_43_6aa35c9de9ab",
+                "perEpisodeFile": "per_task_eval/43_fridge_fruit_shelf_sorting/Equi/per_episode.jsonl",
+                "summaryFile": "per_task_eval/43_fridge_fruit_shelf_sorting/Equi/summary.json"
+              }
+            },
+            "Inv.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 3,
+              "lscr": 35.0,
+              "source": {
+                "runId": "mora_v0_43_6aa35c9de9ab",
+                "perEpisodeFile": "per_task_eval/43_fridge_fruit_shelf_sorting/Inv/per_episode.jsonl",
+                "summaryFile": "per_task_eval/43_fridge_fruit_shelf_sorting/Inv/summary.json"
+              }
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 2,
+              "lscr": 30.5,
+              "source": {
+                "runId": "mora_v0_43_6aa35c9de9ab",
+                "perEpisodeFile": "per_task_eval/43_fridge_fruit_shelf_sorting/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/43_fridge_fruit_shelf_sorting/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "reported",
+            "sr": 4.5,
+            "srScope": "four-channel-mean",
+            "srEpisodes": 200,
+            "lscr": 29.125,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": 200,
+            "efficiency": 0.9532429517793869,
+            "efficiencyStatus": "reported"
+          }
+        },
+        "44": {
+          "channels": {
+            "None": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 33,
+              "lscr": 73.5,
+              "source": {
+                "runId": "mora_v0_44_606362923423",
+                "perEpisodeFile": "per_task_eval/44_microwave_bowl_loading/None/per_episode.jsonl",
+                "summaryFile": "per_task_eval/44_microwave_bowl_loading/None/summary.json"
+              }
+            },
+            "Equi.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 29,
+              "lscr": 70.0,
+              "source": {
+                "runId": "mora_v0_44_606362923423",
+                "perEpisodeFile": "per_task_eval/44_microwave_bowl_loading/Equi/per_episode.jsonl",
+                "summaryFile": "per_task_eval/44_microwave_bowl_loading/Equi/summary.json"
+              }
+            },
+            "Inv.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 25,
+              "lscr": 62.5,
+              "source": {
+                "runId": "mora_v0_44_606362923423",
+                "perEpisodeFile": "per_task_eval/44_microwave_bowl_loading/Inv/per_episode.jsonl",
+                "summaryFile": "per_task_eval/44_microwave_bowl_loading/Inv/summary.json"
+              }
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 29,
+              "lscr": 72.0,
+              "source": {
+                "runId": "mora_v0_44_606362923423",
+                "perEpisodeFile": "per_task_eval/44_microwave_bowl_loading/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/44_microwave_bowl_loading/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "reported",
+            "sr": 58.0,
+            "srScope": "four-channel-mean",
+            "srEpisodes": 200,
+            "lscr": 69.5,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": 200,
+            "efficiency": 1.0178552230042095,
+            "efficiencyStatus": "reported"
+          }
+        },
+        "51": {
+          "channels": {
+            "None": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 18,
+              "lscr": 43.333333333333336,
+              "source": {
+                "runId": "mora_v0_51_930eadc35cc0",
+                "perEpisodeFile": "per_task_eval/51_toilet_lid_cleaner_pour/None/per_episode.jsonl",
+                "summaryFile": "per_task_eval/51_toilet_lid_cleaner_pour/None/summary.json"
+              }
+            },
+            "Equi.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 25,
+              "lscr": 59.333333333333336,
+              "source": {
+                "runId": "mora_v0_51_930eadc35cc0",
+                "perEpisodeFile": "per_task_eval/51_toilet_lid_cleaner_pour/Equi/per_episode.jsonl",
+                "summaryFile": "per_task_eval/51_toilet_lid_cleaner_pour/Equi/summary.json"
+              }
+            },
+            "Inv.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 25,
+              "lscr": 58.666666666666664,
+              "source": {
+                "runId": "mora_v0_51_930eadc35cc0",
+                "perEpisodeFile": "per_task_eval/51_toilet_lid_cleaner_pour/Inv/per_episode.jsonl",
+                "summaryFile": "per_task_eval/51_toilet_lid_cleaner_pour/Inv/summary.json"
+              }
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 23,
+              "lscr": 52.0,
+              "source": {
+                "runId": "mora_v0_51_930eadc35cc0",
+                "perEpisodeFile": "per_task_eval/51_toilet_lid_cleaner_pour/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/51_toilet_lid_cleaner_pour/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "reported",
+            "sr": 45.5,
+            "srScope": "four-channel-mean",
+            "srEpisodes": 200,
+            "lscr": 53.333333333333336,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": 200,
+            "efficiency": 1.0515418502202643,
+            "efficiencyStatus": "reported"
+          }
+        },
+        "60": {
+          "channels": {
+            "None": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 12,
+              "lscr": 32.5,
+              "source": {
+                "runId": "mora_v0_60_648585ddfe8f",
+                "perEpisodeFile": "per_task_eval/60_breadbasket_fast_food_loading/None/per_episode.jsonl",
+                "summaryFile": "per_task_eval/60_breadbasket_fast_food_loading/None/summary.json"
+              }
+            },
+            "Equi.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 12,
+              "lscr": 36.5,
+              "source": {
+                "runId": "mora_v0_60_648585ddfe8f",
+                "perEpisodeFile": "per_task_eval/60_breadbasket_fast_food_loading/Equi/per_episode.jsonl",
+                "summaryFile": "per_task_eval/60_breadbasket_fast_food_loading/Equi/summary.json"
+              }
+            },
+            "Inv.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 12,
+              "lscr": 28.999999999999996,
+              "source": {
+                "runId": "mora_v0_60_648585ddfe8f",
+                "perEpisodeFile": "per_task_eval/60_breadbasket_fast_food_loading/Inv/per_episode.jsonl",
+                "summaryFile": "per_task_eval/60_breadbasket_fast_food_loading/Inv/summary.json"
+              }
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 17,
+              "lscr": 49.0,
+              "source": {
+                "runId": "mora_v0_60_648585ddfe8f",
+                "perEpisodeFile": "per_task_eval/60_breadbasket_fast_food_loading/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/60_breadbasket_fast_food_loading/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "reported",
+            "sr": 26.5,
+            "srScope": "four-channel-mean",
+            "srEpisodes": 200,
+            "lscr": 36.75,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": 200,
+            "efficiency": 0.9389847417317645,
+            "efficiencyStatus": "reported"
+          }
+        },
+        "61": {
+          "channels": {
+            "None": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 23,
+              "lscr": 68.0,
+              "source": {
+                "runId": "mora_v0_61_bb96fa88d33c",
+                "perEpisodeFile": "per_task_eval/61_medicine_shoebox_pack/None/per_episode.jsonl",
+                "summaryFile": "per_task_eval/61_medicine_shoebox_pack/None/summary.json"
+              }
+            },
+            "Equi.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 11,
+              "lscr": 45.33333333333333,
+              "source": {
+                "runId": "mora_v0_61_bb96fa88d33c",
+                "perEpisodeFile": "per_task_eval/61_medicine_shoebox_pack/Equi/per_episode.jsonl",
+                "summaryFile": "per_task_eval/61_medicine_shoebox_pack/Equi/summary.json"
+              }
+            },
+            "Inv.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 24,
+              "lscr": 66.66666666666666,
+              "source": {
+                "runId": "mora_v0_61_bb96fa88d33c",
+                "perEpisodeFile": "per_task_eval/61_medicine_shoebox_pack/Inv/per_episode.jsonl",
+                "summaryFile": "per_task_eval/61_medicine_shoebox_pack/Inv/summary.json"
+              }
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 20,
+              "lscr": 59.33333333333333,
+              "source": {
+                "runId": "mora_v0_61_bb96fa88d33c",
+                "perEpisodeFile": "per_task_eval/61_medicine_shoebox_pack/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/61_medicine_shoebox_pack/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "reported",
+            "sr": 39.0,
+            "srScope": "four-channel-mean",
+            "srEpisodes": 200,
+            "lscr": 59.83333333333333,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": 200,
+            "efficiency": 0.9715745768125199,
+            "efficiencyStatus": "reported"
+          }
+        },
+        "62": {
+          "channels": {
+            "None": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 33,
+              "lscr": 82.0,
+              "source": {
+                "runId": "mora_v0_62_67bb9aa3551f",
+                "perEpisodeFile": "per_task_eval/62_shoebox_accessory_pack/None/per_episode.jsonl",
+                "summaryFile": "per_task_eval/62_shoebox_accessory_pack/None/summary.json"
+              }
+            },
+            "Equi.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 27,
+              "lscr": 64.0,
+              "source": {
+                "runId": "mora_v0_62_67bb9aa3551f",
+                "perEpisodeFile": "per_task_eval/62_shoebox_accessory_pack/Equi/per_episode.jsonl",
+                "summaryFile": "per_task_eval/62_shoebox_accessory_pack/Equi/summary.json"
+              }
+            },
+            "Inv.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 23,
+              "lscr": 61.33333333333333,
+              "source": {
+                "runId": "mora_v0_62_67bb9aa3551f",
+                "perEpisodeFile": "per_task_eval/62_shoebox_accessory_pack/Inv/per_episode.jsonl",
+                "summaryFile": "per_task_eval/62_shoebox_accessory_pack/Inv/summary.json"
+              }
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 28,
+              "lscr": 76.0,
+              "source": {
+                "runId": "mora_v0_62_67bb9aa3551f",
+                "perEpisodeFile": "per_task_eval/62_shoebox_accessory_pack/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/62_shoebox_accessory_pack/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "reported",
+            "sr": 55.5,
+            "srScope": "four-channel-mean",
+            "srEpisodes": 200,
+            "lscr": 70.83333333333333,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": 200,
+            "efficiency": 0.955844550429961,
+            "efficiencyStatus": "reported"
+          }
+        },
+        "64": {
+          "channels": {
+            "None": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 16,
+              "lscr": 50.0,
+              "source": {
+                "runId": "mora_v0_64_dcaf852fdbc3",
+                "perEpisodeFile": "per_task_eval/64_sports_ball_cup_sort/None/per_episode.jsonl",
+                "summaryFile": "per_task_eval/64_sports_ball_cup_sort/None/summary.json"
+              }
+            },
+            "Equi.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 7,
+              "lscr": 36.0,
+              "source": {
+                "runId": "mora_v0_64_dcaf852fdbc3",
+                "perEpisodeFile": "per_task_eval/64_sports_ball_cup_sort/Equi/per_episode.jsonl",
+                "summaryFile": "per_task_eval/64_sports_ball_cup_sort/Equi/summary.json"
+              }
+            },
+            "Inv.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 8,
+              "lscr": 35.0,
+              "source": {
+                "runId": "mora_v0_64_dcaf852fdbc3",
+                "perEpisodeFile": "per_task_eval/64_sports_ball_cup_sort/Inv/per_episode.jsonl",
+                "summaryFile": "per_task_eval/64_sports_ball_cup_sort/Inv/summary.json"
+              }
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 8,
+              "lscr": 26.0,
+              "source": {
+                "runId": "mora_v0_64_dcaf852fdbc3",
+                "perEpisodeFile": "per_task_eval/64_sports_ball_cup_sort/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/64_sports_ball_cup_sort/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "reported",
+            "sr": 19.5,
+            "srScope": "four-channel-mean",
+            "srEpisodes": 200,
+            "lscr": 36.75,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": 200,
+            "efficiency": 0.7815053828292271,
+            "efficiencyStatus": "reported"
+          }
+        },
+        "67": {
+          "channels": {
+            "None": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 14,
+              "lscr": 45.5,
+              "source": {
+                "runId": "mora_v0_67_ff2e261104ed",
+                "perEpisodeFile": "per_task_eval/67_faucet_cup_water_fill/None/per_episode.jsonl",
+                "summaryFile": "per_task_eval/67_faucet_cup_water_fill/None/summary.json"
+              }
+            },
+            "Equi.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 15,
+              "lscr": 47.5,
+              "source": {
+                "runId": "mora_v0_67_ff2e261104ed",
+                "perEpisodeFile": "per_task_eval/67_faucet_cup_water_fill/Equi/per_episode.jsonl",
+                "summaryFile": "per_task_eval/67_faucet_cup_water_fill/Equi/summary.json"
+              }
+            },
+            "Inv.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 18,
+              "lscr": 51.0,
+              "source": {
+                "runId": "mora_v0_67_ff2e261104ed",
+                "perEpisodeFile": "per_task_eval/67_faucet_cup_water_fill/Inv/per_episode.jsonl",
+                "summaryFile": "per_task_eval/67_faucet_cup_water_fill/Inv/summary.json"
+              }
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 8,
+              "lscr": 39.5,
+              "source": {
+                "runId": "mora_v0_67_ff2e261104ed",
+                "perEpisodeFile": "per_task_eval/67_faucet_cup_water_fill/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/67_faucet_cup_water_fill/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "reported",
+            "sr": 27.5,
+            "srScope": "four-channel-mean",
+            "srEpisodes": 200,
+            "lscr": 45.875,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": 200,
+            "efficiency": 0.9459495624403429,
+            "efficiencyStatus": "reported"
+          }
+        },
+        "73": {
+          "channels": {
+            "None": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 1,
+              "lscr": 52.0,
+              "source": {
+                "runId": "mora_v0_73_5525c14a4fae",
+                "perEpisodeFile": "per_task_eval/73_jigsaw_puzzle_assembly/None/per_episode.jsonl",
+                "summaryFile": "per_task_eval/73_jigsaw_puzzle_assembly/None/summary.json"
+              }
+            },
+            "Equi.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 0,
+              "lscr": 25.5,
+              "source": {
+                "runId": "mora_v0_73_5525c14a4fae",
+                "perEpisodeFile": "per_task_eval/73_jigsaw_puzzle_assembly/Equi/per_episode.jsonl",
+                "summaryFile": "per_task_eval/73_jigsaw_puzzle_assembly/Equi/summary.json"
+              }
+            },
+            "Inv.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 0,
+              "lscr": 34.5,
+              "source": {
+                "runId": "mora_v0_73_5525c14a4fae",
+                "perEpisodeFile": "per_task_eval/73_jigsaw_puzzle_assembly/Inv/per_episode.jsonl",
+                "summaryFile": "per_task_eval/73_jigsaw_puzzle_assembly/Inv/summary.json"
+              }
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 0,
+              "lscr": 30.0,
+              "source": {
+                "runId": "mora_v0_73_5525c14a4fae",
+                "perEpisodeFile": "per_task_eval/73_jigsaw_puzzle_assembly/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/73_jigsaw_puzzle_assembly/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "reported",
+            "sr": 0.5,
+            "srScope": "four-channel-mean",
+            "srEpisodes": 200,
+            "lscr": 35.5,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": 200,
+            "efficiency": 0.9113448534936138,
+            "efficiencyStatus": "reported"
+          }
+        },
+        "76": {
+          "channels": {
+            "None": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 1,
+              "lscr": 21.0,
+              "source": {
+                "runId": "mora_v0_76_adab38bae3cc",
+                "perEpisodeFile": "per_task_eval/76_soup_serving/None/per_episode.jsonl",
+                "summaryFile": "per_task_eval/76_soup_serving/None/summary.json"
+              }
+            },
+            "Equi.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 0,
+              "lscr": 24.5,
+              "source": {
+                "runId": "mora_v0_76_adab38bae3cc",
+                "perEpisodeFile": "per_task_eval/76_soup_serving/Equi/per_episode.jsonl",
+                "summaryFile": "per_task_eval/76_soup_serving/Equi/summary.json"
+              }
+            },
+            "Inv.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 7,
+              "lscr": 28.499999999999996,
+              "source": {
+                "runId": "mora_v0_76_adab38bae3cc",
+                "perEpisodeFile": "per_task_eval/76_soup_serving/Inv/per_episode.jsonl",
+                "summaryFile": "per_task_eval/76_soup_serving/Inv/summary.json"
+              }
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 1,
+              "lscr": 18.0,
+              "source": {
+                "runId": "mora_v0_76_adab38bae3cc",
+                "perEpisodeFile": "per_task_eval/76_soup_serving/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/76_soup_serving/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "reported",
+            "sr": 4.5,
+            "srScope": "four-channel-mean",
+            "srEpisodes": 200,
+            "lscr": 23.0,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": 200,
+            "efficiency": 0.9461058691827923,
+            "efficiencyStatus": "reported"
+          }
+        },
+        "79": {
+          "channels": {
+            "None": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 3,
+              "lscr": 16.0,
+              "source": {
+                "runId": "mora_v0_79_3ca6b6de9ea7",
+                "perEpisodeFile": "per_task_eval/79_bimanual_piano_melody/None/per_episode.jsonl",
+                "summaryFile": "per_task_eval/79_bimanual_piano_melody/None/summary.json"
+              }
+            },
+            "Equi.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 7,
+              "lscr": 20.0,
+              "source": {
+                "runId": "mora_v0_79_3ca6b6de9ea7",
+                "perEpisodeFile": "per_task_eval/79_bimanual_piano_melody/Equi/per_episode.jsonl",
+                "summaryFile": "per_task_eval/79_bimanual_piano_melody/Equi/summary.json"
+              }
+            },
+            "Inv.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 3,
+              "lscr": 12.0,
+              "source": {
+                "runId": "mora_v0_79_3ca6b6de9ea7",
+                "perEpisodeFile": "per_task_eval/79_bimanual_piano_melody/Inv/per_episode.jsonl",
+                "summaryFile": "per_task_eval/79_bimanual_piano_melody/Inv/summary.json"
+              }
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 14,
+              "lscr": 34.0,
+              "source": {
+                "runId": "mora_v0_79_3ca6b6de9ea7",
+                "perEpisodeFile": "per_task_eval/79_bimanual_piano_melody/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/79_bimanual_piano_melody/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "reported",
+            "sr": 13.5,
+            "srScope": "four-channel-mean",
+            "srEpisodes": 200,
+            "lscr": 20.5,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": 200,
+            "efficiency": 0.9060536625027719,
+            "efficiencyStatus": "reported"
+          }
+        },
+        "80": {
+          "channels": {
+            "None": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 41,
+              "lscr": 87.33333333333333,
+              "source": {
+                "runId": "mora_v0_80_f1166cc6864b",
+                "perEpisodeFile": "per_task_eval/80_gaming_desk_setup/None/per_episode.jsonl",
+                "summaryFile": "per_task_eval/80_gaming_desk_setup/None/summary.json"
+              }
+            },
+            "Equi.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 31,
+              "lscr": 70.0,
+              "source": {
+                "runId": "mora_v0_80_f1166cc6864b",
+                "perEpisodeFile": "per_task_eval/80_gaming_desk_setup/Equi/per_episode.jsonl",
+                "summaryFile": "per_task_eval/80_gaming_desk_setup/Equi/summary.json"
+              }
+            },
+            "Inv.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 25,
+              "lscr": 60.66666666666667,
+              "source": {
+                "runId": "mora_v0_80_f1166cc6864b",
+                "perEpisodeFile": "per_task_eval/80_gaming_desk_setup/Inv/per_episode.jsonl",
+                "summaryFile": "per_task_eval/80_gaming_desk_setup/Inv/summary.json"
+              }
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 31,
+              "lscr": 76.0,
+              "source": {
+                "runId": "mora_v0_80_f1166cc6864b",
+                "perEpisodeFile": "per_task_eval/80_gaming_desk_setup/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/80_gaming_desk_setup/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "reported",
+            "sr": 64.0,
+            "srScope": "four-channel-mean",
+            "srEpisodes": 200,
+            "lscr": 73.5,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": 200,
+            "efficiency": 1.0431624989683914,
+            "efficiencyStatus": "reported"
+          }
+        },
+        "03": {
+          "channels": {
+            "None": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 18,
+              "lscr": 72.66666666666667,
+              "source": {
+                "runId": "mora_v0_03_ec7d439e3746",
+                "perEpisodeFile": "per_task_eval/03_wine_glass_plate_balance/None/per_episode.jsonl",
+                "summaryFile": "per_task_eval/03_wine_glass_plate_balance/None/summary.json"
+              }
+            },
+            "Equi.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 13,
+              "lscr": 74.66666666666667,
+              "source": {
+                "runId": "mora_v0_03_ec7d439e3746",
+                "perEpisodeFile": "per_task_eval/03_wine_glass_plate_balance/Equi/per_episode.jsonl",
+                "summaryFile": "per_task_eval/03_wine_glass_plate_balance/Equi/summary.json"
+              }
+            },
+            "Inv.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 13,
+              "lscr": 73.33333333333333,
+              "source": {
+                "runId": "mora_v0_03_ec7d439e3746",
+                "perEpisodeFile": "per_task_eval/03_wine_glass_plate_balance/Inv/per_episode.jsonl",
+                "summaryFile": "per_task_eval/03_wine_glass_plate_balance/Inv/summary.json"
+              }
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 12,
+              "lscr": 80.66666666666666,
+              "source": {
+                "runId": "mora_v0_03_ec7d439e3746",
+                "perEpisodeFile": "per_task_eval/03_wine_glass_plate_balance/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/03_wine_glass_plate_balance/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "reported",
+            "sr": 28.0,
+            "srScope": "four-channel-mean",
+            "srEpisodes": 200,
+            "lscr": 75.33333333333333,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": 200,
+            "efficiency": 0.987934520315659,
+            "efficiencyStatus": "reported"
+          }
+        },
+        "06": {
+          "channels": {
+            "None": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 36,
+              "lscr": 88.0,
+              "source": {
+                "runId": "mora_v0_06_04465b5911a4",
+                "perEpisodeFile": "per_task_eval/06_fruit_bowl_loading/None/per_episode.jsonl",
+                "summaryFile": "per_task_eval/06_fruit_bowl_loading/None/summary.json"
+              }
+            },
+            "Equi.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 17,
+              "lscr": 72.5,
+              "source": {
+                "runId": "mora_v0_06_04465b5911a4",
+                "perEpisodeFile": "per_task_eval/06_fruit_bowl_loading/Equi/per_episode.jsonl",
+                "summaryFile": "per_task_eval/06_fruit_bowl_loading/Equi/summary.json"
+              }
+            },
+            "Inv.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 31,
+              "lscr": 83.5,
+              "source": {
+                "runId": "mora_v0_06_04465b5911a4",
+                "perEpisodeFile": "per_task_eval/06_fruit_bowl_loading/Inv/per_episode.jsonl",
+                "summaryFile": "per_task_eval/06_fruit_bowl_loading/Inv/summary.json"
+              }
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 31,
+              "lscr": 82.5,
+              "source": {
+                "runId": "mora_v0_06_04465b5911a4",
+                "perEpisodeFile": "per_task_eval/06_fruit_bowl_loading/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/06_fruit_bowl_loading/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "reported",
+            "sr": 57.5,
+            "srScope": "four-channel-mean",
+            "srEpisodes": 200,
+            "lscr": 81.625,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": 200,
+            "efficiency": 0.9356844099213059,
+            "efficiencyStatus": "reported"
+          }
+        },
+        "07": {
+          "channels": {
+            "None": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 33,
+              "lscr": 77.5,
+              "source": {
+                "runId": "mora_v0_07_0a15bbe47bcb",
+                "perEpisodeFile": "per_task_eval/07_citrus_plate_loading/None/per_episode.jsonl",
+                "summaryFile": "per_task_eval/07_citrus_plate_loading/None/summary.json"
+              }
+            },
+            "Equi.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 27,
+              "lscr": 68.5,
+              "source": {
+                "runId": "mora_v0_07_0a15bbe47bcb",
+                "perEpisodeFile": "per_task_eval/07_citrus_plate_loading/Equi/per_episode.jsonl",
+                "summaryFile": "per_task_eval/07_citrus_plate_loading/Equi/summary.json"
+              }
+            },
+            "Inv.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 31,
+              "lscr": 80.5,
+              "source": {
+                "runId": "mora_v0_07_0a15bbe47bcb",
+                "perEpisodeFile": "per_task_eval/07_citrus_plate_loading/Inv/per_episode.jsonl",
+                "summaryFile": "per_task_eval/07_citrus_plate_loading/Inv/summary.json"
+              }
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 25,
+              "lscr": 68.5,
+              "source": {
+                "runId": "mora_v0_07_0a15bbe47bcb",
+                "perEpisodeFile": "per_task_eval/07_citrus_plate_loading/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/07_citrus_plate_loading/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "reported",
+            "sr": 58.0,
+            "srScope": "four-channel-mean",
+            "srEpisodes": 200,
+            "lscr": 73.75,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": 200,
+            "efficiency": 0.8367441163243892,
+            "efficiencyStatus": "reported"
+          }
+        },
+        "08": {
+          "channels": {
+            "None": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 35,
+              "lscr": 82.0,
+              "source": {
+                "runId": "mora_v0_08_071ef9e79da9",
+                "perEpisodeFile": "per_task_eval/08_frypan_stand_pour/None/per_episode.jsonl",
+                "summaryFile": "per_task_eval/08_frypan_stand_pour/None/summary.json"
+              }
+            },
+            "Equi.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 23,
+              "lscr": 69.0,
+              "source": {
+                "runId": "mora_v0_08_071ef9e79da9",
+                "perEpisodeFile": "per_task_eval/08_frypan_stand_pour/Equi/per_episode.jsonl",
+                "summaryFile": "per_task_eval/08_frypan_stand_pour/Equi/summary.json"
+              }
+            },
+            "Inv.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 27,
+              "lscr": 80.0,
+              "source": {
+                "runId": "mora_v0_08_071ef9e79da9",
+                "perEpisodeFile": "per_task_eval/08_frypan_stand_pour/Inv/per_episode.jsonl",
+                "summaryFile": "per_task_eval/08_frypan_stand_pour/Inv/summary.json"
+              }
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 34,
+              "lscr": 77.0,
+              "source": {
+                "runId": "mora_v0_08_071ef9e79da9",
+                "perEpisodeFile": "per_task_eval/08_frypan_stand_pour/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/08_frypan_stand_pour/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "reported",
+            "sr": 59.5,
+            "srScope": "four-channel-mean",
+            "srEpisodes": 200,
+            "lscr": 77.0,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": 200,
+            "efficiency": 1.2646990514942913,
+            "efficiencyStatus": "reported"
+          }
+        },
+        "09": {
+          "channels": {
+            "None": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 41,
+              "lscr": 1.0,
+              "source": {
+                "runId": "mora_v0_09_12606d72d3f9",
+                "perEpisodeFile": "per_task_eval/09_cleaner_moisturizer_box_loading/None/per_episode.jsonl",
+                "summaryFile": "per_task_eval/09_cleaner_moisturizer_box_loading/None/summary.json"
+              }
+            },
+            "Equi.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 26,
+              "lscr": 0.0,
+              "source": {
+                "runId": "mora_v0_09_12606d72d3f9",
+                "perEpisodeFile": "per_task_eval/09_cleaner_moisturizer_box_loading/Equi/per_episode.jsonl",
+                "summaryFile": "per_task_eval/09_cleaner_moisturizer_box_loading/Equi/summary.json"
+              }
+            },
+            "Inv.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 30,
+              "lscr": 2.0,
+              "source": {
+                "runId": "mora_v0_09_12606d72d3f9",
+                "perEpisodeFile": "per_task_eval/09_cleaner_moisturizer_box_loading/Inv/per_episode.jsonl",
+                "summaryFile": "per_task_eval/09_cleaner_moisturizer_box_loading/Inv/summary.json"
+              }
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 26,
+              "lscr": 2.0,
+              "source": {
+                "runId": "mora_v0_09_12606d72d3f9",
+                "perEpisodeFile": "per_task_eval/09_cleaner_moisturizer_box_loading/Full/per_episode.jsonl",
+                "summaryFile": "per_task_eval/09_cleaner_moisturizer_box_loading/Full/summary.json"
+              }
+            }
+          },
+          "mean": {
+            "status": "reported",
+            "sr": 61.5,
+            "srScope": "four-channel-mean",
+            "srEpisodes": 200,
+            "lscr": 1.25,
+            "lscrScope": "four-channel-mean",
+            "lscrEpisodes": 200,
+            "efficiency": 0.9382837165331859,
+            "efficiencyStatus": "reported"
+          }
+        }
+      },
+      "evaluation": {
+        "schemaVersion": "1.0",
+        "isTemplate": false,
+        "protocol": {
+          "benchmarkCommit": null,
+          "taskCount": 26,
+          "channels": [
+            "None",
+            "Equi.",
+            "Inv.",
+            "Full"
+          ],
+          "episodesPerChannel": 50,
+          "seeds": {
+            "03": {
+              "None": {
+                "base": 100300000,
+                "first": 1,
+                "last": 50
+              },
+              "Equi.": {
+                "base": 100300000,
+                "first": 1,
+                "last": 50
+              },
+              "Inv.": {
+                "base": 100300000,
+                "first": 1,
+                "last": 50
+              },
+              "Full": {
+                "base": 200300000,
+                "first": 1,
+                "last": 50
+              }
+            },
+            "06": {
+              "None": {
+                "base": 100600000,
+                "first": 1,
+                "last": 50
+              },
+              "Equi.": {
+                "base": 100600000,
+                "first": 1,
+                "last": 50
+              },
+              "Inv.": {
+                "base": 100600000,
+                "first": 1,
+                "last": 50
+              },
+              "Full": {
+                "base": 200600000,
+                "first": 1,
+                "last": 50
+              }
+            },
+            "07": {
+              "None": {
+                "base": 100700000,
+                "first": 1,
+                "last": 50
+              },
+              "Equi.": {
+                "base": 100700000,
+                "first": 1,
+                "last": 50
+              },
+              "Inv.": {
+                "base": 100700000,
+                "first": 1,
+                "last": 50
+              },
+              "Full": {
+                "base": 200700000,
+                "first": 1,
+                "last": 50
+              }
+            },
+            "08": {
+              "None": {
+                "base": 100800000,
+                "first": 1,
+                "last": 50
+              },
+              "Equi.": {
+                "base": 100800000,
+                "first": 1,
+                "last": 50
+              },
+              "Inv.": {
+                "base": 100800000,
+                "first": 1,
+                "last": 50
+              },
+              "Full": {
+                "base": 200800000,
+                "first": 1,
+                "last": 50
+              }
+            },
+            "09": {
+              "None": {
+                "base": 100900000,
+                "first": 1,
+                "last": 50
+              },
+              "Equi.": {
+                "base": 100900000,
+                "first": 1,
+                "last": 50
+              },
+              "Inv.": {
+                "base": 100900000,
+                "first": 1,
+                "last": 50
+              },
+              "Full": {
+                "base": 200900000,
+                "first": 1,
+                "last": 50
+              }
+            },
+            "12": {
+              "None": {
+                "base": 101200000,
+                "first": 1,
+                "last": 50
+              },
+              "Equi.": {
+                "base": 101200000,
+                "first": 1,
+                "last": 50
+              },
+              "Inv.": {
+                "base": 101200000,
+                "first": 1,
+                "last": 50
+              },
+              "Full": {
+                "base": 201200000,
+                "first": 1,
+                "last": 50
+              }
+            },
+            "21": {
+              "None": {
+                "base": 102100000,
+                "first": 1,
+                "last": 50
+              },
+              "Equi.": {
+                "base": 102100000,
+                "first": 1,
+                "last": 50
+              },
+              "Inv.": {
+                "base": 102100000,
+                "first": 1,
+                "last": 50
+              },
+              "Full": {
+                "base": 202100000,
+                "first": 1,
+                "last": 50
+              }
+            },
+            "22": {
+              "None": {
+                "base": 102200000,
+                "first": 1,
+                "last": 50
+              },
+              "Equi.": {
+                "base": 102200000,
+                "first": 1,
+                "last": 50
+              },
+              "Inv.": {
+                "base": 102200000,
+                "first": 1,
+                "last": 50
+              },
+              "Full": {
+                "base": 202200000,
+                "first": 1,
+                "last": 50
+              }
+            },
+            "24": {
+              "None": {
+                "base": 102400000,
+                "first": 1,
+                "last": 50
+              },
+              "Equi.": {
+                "base": 102400000,
+                "first": 1,
+                "last": 50
+              },
+              "Inv.": {
+                "base": 102400000,
+                "first": 1,
+                "last": 50
+              },
+              "Full": {
+                "base": 202400000,
+                "first": 1,
+                "last": 50
+              }
+            },
+            "26": {
+              "None": {
+                "base": 102600000,
+                "first": 1,
+                "last": 50
+              },
+              "Equi.": {
+                "base": 102600000,
+                "first": 1,
+                "last": 50
+              },
+              "Inv.": {
+                "base": 102600000,
+                "first": 1,
+                "last": 50
+              },
+              "Full": {
+                "base": 202600000,
+                "first": 1,
+                "last": 50
+              }
+            },
+            "27": {
+              "None": {
+                "base": 102700000,
+                "first": 1,
+                "last": 50
+              },
+              "Equi.": {
+                "base": 102700000,
+                "first": 1,
+                "last": 50
+              },
+              "Inv.": {
+                "base": 102700000,
+                "first": 1,
+                "last": 50
+              },
+              "Full": {
+                "base": 202700000,
+                "first": 1,
+                "last": 50
+              }
+            },
+            "32": {
+              "None": {
+                "base": 103200000,
+                "first": 1,
+                "last": 50
+              },
+              "Equi.": {
+                "base": 103200000,
+                "first": 1,
+                "last": 50
+              },
+              "Inv.": {
+                "base": 103200000,
+                "first": 1,
+                "last": 50
+              },
+              "Full": {
+                "base": 203200000,
+                "first": 1,
+                "last": 50
+              }
+            },
+            "34": {
+              "None": {
+                "base": 103400000,
+                "first": 1,
+                "last": 50
+              },
+              "Equi.": {
+                "base": 103400000,
+                "first": 1,
+                "last": 50
+              },
+              "Inv.": {
+                "base": 103400000,
+                "first": 1,
+                "last": 50
+              },
+              "Full": {
+                "base": 203400000,
+                "first": 1,
+                "last": 50
+              }
+            },
+            "42": {
+              "None": {
+                "base": 104200000,
+                "first": 1,
+                "last": 50
+              },
+              "Equi.": {
+                "base": 104200000,
+                "first": 1,
+                "last": 50
+              },
+              "Inv.": {
+                "base": 104200000,
+                "first": 1,
+                "last": 50
+              },
+              "Full": {
+                "base": 204200000,
+                "first": 1,
+                "last": 50
+              }
+            },
+            "43": {
+              "None": {
+                "base": 104300000,
+                "first": 1,
+                "last": 50
+              },
+              "Equi.": {
+                "base": 104300000,
+                "first": 1,
+                "last": 50
+              },
+              "Inv.": {
+                "base": 104300000,
+                "first": 1,
+                "last": 50
+              },
+              "Full": {
+                "base": 204300000,
+                "first": 1,
+                "last": 50
+              }
+            },
+            "44": {
+              "None": {
+                "base": 104400000,
+                "first": 1,
+                "last": 50
+              },
+              "Equi.": {
+                "base": 104400000,
+                "first": 1,
+                "last": 50
+              },
+              "Inv.": {
+                "base": 104400000,
+                "first": 1,
+                "last": 50
+              },
+              "Full": {
+                "base": 204400000,
+                "first": 1,
+                "last": 50
+              }
+            },
+            "51": {
+              "None": {
+                "base": 105100000,
+                "first": 1,
+                "last": 50
+              },
+              "Equi.": {
+                "base": 105100000,
+                "first": 1,
+                "last": 50
+              },
+              "Inv.": {
+                "base": 105100000,
+                "first": 1,
+                "last": 50
+              },
+              "Full": {
+                "base": 205100000,
+                "first": 1,
+                "last": 50
+              }
+            },
+            "60": {
+              "None": {
+                "base": 106000000,
+                "first": 1,
+                "last": 50
+              },
+              "Equi.": {
+                "base": 106000000,
+                "first": 1,
+                "last": 50
+              },
+              "Inv.": {
+                "base": 106000000,
+                "first": 1,
+                "last": 50
+              },
+              "Full": {
+                "base": 206000000,
+                "first": 1,
+                "last": 50
+              }
+            },
+            "61": {
+              "None": {
+                "base": 106100000,
+                "first": 1,
+                "last": 50
+              },
+              "Equi.": {
+                "base": 106100000,
+                "first": 1,
+                "last": 50
+              },
+              "Inv.": {
+                "base": 106100000,
+                "first": 1,
+                "last": 50
+              },
+              "Full": {
+                "base": 206100000,
+                "first": 1,
+                "last": 50
+              }
+            },
+            "62": {
+              "None": {
+                "base": 106200000,
+                "first": 1,
+                "last": 50
+              },
+              "Equi.": {
+                "base": 106200000,
+                "first": 1,
+                "last": 50
+              },
+              "Inv.": {
+                "base": 106200000,
+                "first": 1,
+                "last": 50
+              },
+              "Full": {
+                "base": 206200000,
+                "first": 1,
+                "last": 50
+              }
+            },
+            "64": {
+              "None": {
+                "base": 106400000,
+                "first": 1,
+                "last": 50
+              },
+              "Equi.": {
+                "base": 106400000,
+                "first": 1,
+                "last": 50
+              },
+              "Inv.": {
+                "base": 106400000,
+                "first": 1,
+                "last": 50
+              },
+              "Full": {
+                "base": 206400000,
+                "first": 1,
+                "last": 50
+              }
+            },
+            "67": {
+              "None": {
+                "base": 106700000,
+                "first": 1,
+                "last": 50
+              },
+              "Equi.": {
+                "base": 106700000,
+                "first": 1,
+                "last": 50
+              },
+              "Inv.": {
+                "base": 106700000,
+                "first": 1,
+                "last": 50
+              },
+              "Full": {
+                "base": 206700000,
+                "first": 1,
+                "last": 50
+              }
+            },
+            "73": {
+              "None": {
+                "base": 107300000,
+                "first": 1,
+                "last": 50
+              },
+              "Equi.": {
+                "base": 107300000,
+                "first": 1,
+                "last": 50
+              },
+              "Inv.": {
+                "base": 107300000,
+                "first": 1,
+                "last": 50
+              },
+              "Full": {
+                "base": 207300000,
+                "first": 1,
+                "last": 50
+              }
+            },
+            "76": {
+              "None": {
+                "base": 107600000,
+                "first": 1,
+                "last": 50
+              },
+              "Equi.": {
+                "base": 107600000,
+                "first": 1,
+                "last": 50
+              },
+              "Inv.": {
+                "base": 107600000,
+                "first": 1,
+                "last": 50
+              },
+              "Full": {
+                "base": 207600000,
+                "first": 1,
+                "last": 50
+              }
+            },
+            "79": {
+              "None": {
+                "base": 107900000,
+                "first": 1,
+                "last": 50
+              },
+              "Equi.": {
+                "base": 107900000,
+                "first": 1,
+                "last": 50
+              },
+              "Inv.": {
+                "base": 107900000,
+                "first": 1,
+                "last": 50
+              },
+              "Full": {
+                "base": 207900000,
+                "first": 1,
+                "last": 50
+              }
+            },
+            "80": {
+              "None": {
+                "base": 108000000,
+                "first": 1,
+                "last": 50
+              },
+              "Equi.": {
+                "base": 108000000,
+                "first": 1,
+                "last": 50
+              },
+              "Inv.": {
+                "base": 108000000,
+                "first": 1,
+                "last": 50
+              },
+              "Full": {
+                "base": 208000000,
+                "first": 1,
+                "last": 50
+              }
+            }
+          },
+          "stepUnit": "physics_steps",
+          "physicsHz": 60,
+          "controlHz": 20,
+          "executionStepBudget": {
+            "03": {
+              "None": 3246,
+              "Equi.": 3246,
+              "Inv.": 3246,
+              "Full": 3246
+            },
+            "06": {
+              "None": 1920,
+              "Equi.": 1920,
+              "Inv.": 1920,
+              "Full": 1920
+            },
+            "07": {
+              "None": 1806,
+              "Equi.": 1806,
+              "Inv.": 1806,
+              "Full": 1806
+            },
+            "08": {
+              "None": 3432,
+              "Equi.": 3432,
+              "Inv.": 3432,
+              "Full": 3432
+            },
+            "09": {
+              "None": 1926,
+              "Equi.": 1926,
+              "Inv.": 1926,
+              "Full": 1926
+            },
+            "12": {
+              "None": 3447,
+              "Equi.": 3447,
+              "Inv.": 3447,
+              "Full": 3447
+            },
+            "21": {
+              "None": 2481,
+              "Equi.": 2481,
+              "Inv.": 2481,
+              "Full": 2481
+            },
+            "22": {
+              "None": 2043,
+              "Equi.": 2043,
+              "Inv.": 2043,
+              "Full": 2043
+            },
+            "24": {
+              "None": 4626,
+              "Equi.": 4626,
+              "Inv.": 4626,
+              "Full": 4626
+            },
+            "26": {
+              "None": 2613,
+              "Equi.": 2613,
+              "Inv.": 2613,
+              "Full": 2613
+            },
+            "27": {
+              "None": 3570,
+              "Equi.": 3570,
+              "Inv.": 3570,
+              "Full": 3570
+            },
+            "32": {
+              "None": 2556,
+              "Equi.": 2556,
+              "Inv.": 2556,
+              "Full": 2556
+            },
+            "34": {
+              "None": 3240,
+              "Equi.": 3240,
+              "Inv.": 3240,
+              "Full": 3240
+            },
+            "42": {
+              "None": 2004,
+              "Equi.": 2004,
+              "Inv.": 2004,
+              "Full": 2004
+            },
+            "43": {
+              "None": 4125,
+              "Equi.": 4125,
+              "Inv.": 4125,
+              "Full": 4125
+            },
+            "44": {
+              "None": 3183,
+              "Equi.": 3183,
+              "Inv.": 3183,
+              "Full": 3183
+            },
+            "51": {
+              "None": 3069,
+              "Equi.": 3069,
+              "Inv.": 3069,
+              "Full": 3069
+            },
+            "60": {
+              "None": 2985,
+              "Equi.": 2985,
+              "Inv.": 2985,
+              "Full": 2985
+            },
+            "61": {
+              "None": 3102,
+              "Equi.": 3102,
+              "Inv.": 3102,
+              "Full": 3102
+            },
+            "62": {
+              "None": 3231,
+              "Equi.": 3231,
+              "Inv.": 3231,
+              "Full": 3231
+            },
+            "64": {
+              "None": 1995,
+              "Equi.": 1995,
+              "Inv.": 1995,
+              "Full": 1995
+            },
+            "67": {
+              "None": 2892,
+              "Equi.": 2892,
+              "Inv.": 2892,
+              "Full": 2892
+            },
+            "73": {
+              "None": 3639,
+              "Equi.": 3639,
+              "Inv.": 3639,
+              "Full": 3639
+            },
+            "76": {
+              "None": 2958,
+              "Equi.": 2958,
+              "Inv.": 2958,
+              "Full": 2958
+            },
+            "79": {
+              "None": 2043,
+              "Equi.": 2043,
+              "Inv.": 2043,
+              "Full": 2043
+            },
+            "80": {
+              "None": 1779,
+              "Equi.": 1779,
+              "Inv.": 1779,
+              "Full": 1779
+            }
+          },
+          "expertReference": "Per-task expert_time_step in the released scenes; validated against commit a06ee3e986df72e7faa846d3eb2afe6d5a88b48a.",
+          "protocolChanges": "Task-specific Mora V0 checkpoints chosen retrospectively on recorded evaluation success. All four channels use the same selected checkpoint per task. Accepted episode indices 1–50 per channel. Reach-and-stop, 0.5 s dwell, execute 20 policy action steps per query. The native perturbation profiles and anchor selections are retained in the episode logs. The exact simulator checkout has not been independently attested for every worker."
+        },
+        "coverage": {
+          "evaluatedTaskCount": 26,
+          "evaluatedEpisodeCount": 5200,
+          "completedTaskCount": {
+            "None": 26,
+            "Equi.": 26,
+            "Inv.": 26,
+            "Full": 26,
+            "mean": 26
+          },
+          "expectedFullEpisodeCount": 1300,
+          "expectedFourChannelEpisodeCount": 5200,
+          "missingTaskChannels": {}
+        },
+        "aggregation": {
+          "units": {
+            "sr": "percent",
+            "lscr": "percent",
+            "efficiency": "ratio",
+            "steps": "physics_steps"
+          },
+          "sr": "100 * successes / episodes per task/channel; equal channel mean per task; equal task mean over all 26 settings.",
+          "lscr": "100 * mean episode latched_stage_completion_rate, including failures; equal channel mean per task; equal task mean over all 26 settings.",
+          "efficiency": "expert_time_step / mean successful steps_to_stable_success. Pool successful episodes across all four channels before calculating task mean efficiency. Overall values average task efficiencies over tasks with success; report valid-task counts.",
+          "missing": "null means unreported (NR). Efficiency without successes is null with no-success status. Valid-task counts are null when unreported, and 0 for an evaluated scope without successes.",
+          "scope": "Overall channel aggregates require all 26 settings. Four-channel means require all four channels. Never substitute Full-only scores for means or include duplicate reruns."
+        },
+        "logs": {
+          "repository": "Bench2Dex/Leaderboard",
+          "policyPath": "mora_v0",
+          "revision": "4fab3b7a55bf81a83ac1a1c268dc0775fc4cb8a6",
+          "status": "archived"
+        },
+        "publishedAt": "2026-11-11",
+        "selectedCheckpoints": {
+          "03": {
+            "checkpointSha256": "ec7d439e37462bc3c60c4cd62a344639b81e41dfce05ed24133dccbb089348a0",
+            "recipe": "raw v3, 2k",
+            "embodiment": "multi_xarm7_with_ability"
+          },
+          "06": {
+            "checkpointSha256": "04465b5911a47461d8808eeda7e7e3524a7be53be98cafd53a8d45f03bc80a13",
+            "recipe": "hand24-clip, original split, 2k",
+            "embodiment": "multi_ur5_rh56dfx_with_flange"
+          },
+          "07": {
+            "checkpointSha256": "0a15bbe47bcb04b0fda16fb74cb1422ee357d0b9f24d7d4add9289e3b75ea1c8",
+            "recipe": "all 50 demonstrations, GB256, 2k",
+            "embodiment": "multi_ur5_rh5dg2_with_flange"
+          },
+          "08": {
+            "checkpointSha256": "071ef9e79da9a1d215ef55f77a198c98bcfddb6211485d348b6a572c284fc4c6",
+            "recipe": "all 50 demonstrations, GB256, 2k",
+            "embodiment": "multi_ur5_schunk_hand_with_flange"
+          },
+          "09": {
+            "checkpointSha256": "12606d72d3f9086389e403d5e1d3b2a665ad853f6d924338c4b232e728601ff4",
+            "recipe": "all 50 demonstrations, GB512, 2.5k",
+            "embodiment": "multi_xarm7_with_leap"
+          },
+          "12": {
+            "checkpointSha256": "a7e364578da1e21d7b434f5171e19b7880fefc9516c7ac655aba67b6bfe292be",
+            "recipe": "hand24-clip, all 50, left MANO aligned to EgoDex, GB512, 2.5k",
+            "embodiment": "multi_ur5_rh56dfx_with_flange"
+          },
+          "21": {
+            "checkpointSha256": "b1d200c9f34faa066c362d87613ab05bb4ac333f1805ad780c17e03001f99e21",
+            "recipe": "left stereo, raw, 2k",
+            "embodiment": "multi_ur5_wuji_with_flange"
+          },
+          "22": {
+            "checkpointSha256": "7ad5f3956e12b0b138bf6fd58068553d6596c968ebf3683f13e8b2a6c99018a5",
+            "recipe": "all 50 demonstrations, GB512, 2.5k",
+            "embodiment": "multi_panda_with_orca"
+          },
+          "24": {
+            "checkpointSha256": "923879d5d0cf19b98d43ca40094637cb51be72d9b6f6344d7ece9e074f977113",
+            "recipe": "raw, 2k",
+            "embodiment": "multi_rm_65_with_revo2"
+          },
+          "26": {
+            "checkpointSha256": "b7f8e9b7a64f9c30ccd60f6ce330f92661c00181af3a64d4eb1f248b43c0414c",
+            "recipe": "all 50 demonstrations, GB512, 2.5k",
+            "embodiment": "multi_iiwa7_with_sharpa"
+          },
+          "27": {
+            "checkpointSha256": "0e0aafb7f40796576b692b20c62383eb49229df22662590319897acc5a2c48e9",
+            "recipe": "left stereo, raw, 2k",
+            "embodiment": "multi_ur5_wuji_with_flange"
+          },
+          "32": {
+            "checkpointSha256": "a13ca410c29e9419c2c0ce2e9ccc9f1563a9ea9bdc71f2b2436aeadeeda24404",
+            "recipe": "all 50 demonstrations, GB512, 2.5k",
+            "embodiment": "multi_iiwa7_with_sharpa"
+          },
+          "34": {
+            "checkpointSha256": "f4d6423dad867f8ff89225c48286b2af6f73c5f9d16644614f8ac9607d8a0fb9",
+            "recipe": "full18 training labels, active13 execution, 2k",
+            "embodiment": "multi_ur5_rh5dg2_with_flange"
+          },
+          "42": {
+            "checkpointSha256": "f7fb5f6fc3fb410901a5c2505051ab66f47ae48ac248c5de075f76413e61e933",
+            "recipe": "raw, original split, 2k",
+            "embodiment": "multi_ur5_rh56dfx_with_flange"
+          },
+          "43": {
+            "checkpointSha256": "6aa35c9de9abdc18efadd725b70beceae8e3677e80991730ba95cd15700eda99",
+            "recipe": "all 50 demonstrations, GB256, 2k",
+            "embodiment": "multi_ur5_shadow_hand_with_flange"
+          },
+          "44": {
+            "checkpointSha256": "60636292342382254dd1f63bcf7fc6ce0fc70490da550e9019769d8649d2cf36",
+            "recipe": "all 50 demonstrations, GB256, 2k",
+            "embodiment": "multi_ur5_schunk_hand_with_flange"
+          },
+          "51": {
+            "checkpointSha256": "930eadc35cc098ef5f034e988464dc2be9a06dc7f0bcc26c9372b827469e9e06",
+            "recipe": "all 50 demonstrations, GB512, 2.5k",
+            "embodiment": "multi_xarm7_with_leap"
+          },
+          "60": {
+            "checkpointSha256": "648585ddfe8f95e84b1744c86e14fd131f313b263967ed21eb5e091c20d3f57c",
+            "recipe": "all 50 demonstrations, GB256, 2k",
+            "embodiment": "multi_ur5_rh5dg2_with_flange"
+          },
+          "61": {
+            "checkpointSha256": "bb96fa88d33c16ed524ce2cbbd23ab2c6d5fac9b761f775119932ca34ff9ec54",
+            "recipe": "all 50 demonstrations, GB512, 2.5k",
+            "embodiment": "multi_panda_with_orca"
+          },
+          "62": {
+            "checkpointSha256": "67bb9aa3551f9c6a709773e4e08981abfbd2d563230043af7c6bdc9020901004",
+            "recipe": "all 50 demonstrations, GB512, 2.5k",
+            "embodiment": "multi_xarm7_with_leap"
+          },
+          "64": {
+            "checkpointSha256": "dcaf852fdbc3d9f73ca916f61ce83398446abde23affed5f3144da93b2451bfc",
+            "recipe": "arm14-clip, left stereo, 2k",
+            "embodiment": "multi_panda_with_allegro"
+          },
+          "67": {
+            "checkpointSha256": "ff2e261104ed4e927dfb9f71ab57b11c93a8bd32694c1b22250043236e58db4a",
+            "recipe": "arm12-clip, 2k",
+            "embodiment": "multi_rm_65_with_revo2"
+          },
+          "73": {
+            "checkpointSha256": "5525c14a4fae8c50651c1f2823ff19828e9da28d5b0fa6fb942f194373849338",
+            "recipe": "all 50 demonstrations, GB512, 2.5k",
+            "embodiment": "multi_iiwa7_with_sharpa"
+          },
+          "76": {
+            "checkpointSha256": "adab38bae3cc29bb3572b0748a3eb5bbd7b00a68ca94a58b12aea5e62fb597b5",
+            "recipe": "all 50 demonstrations, GB256, 2k",
+            "embodiment": "multi_ur5_shadow_hand_with_flange"
+          },
+          "79": {
+            "checkpointSha256": "3ca6b6de9ea781832fdba3020256a1effe72c0f86112f60ee360ea9499615f31",
+            "recipe": "all 50 demonstrations, GB256, 2k",
+            "embodiment": "multi_xarm7_with_ability"
+          },
+          "80": {
+            "checkpointSha256": "f1166cc6864bd50a416920c77ed38818e7d70fdf958608bcc20f07012fbcd502",
+            "recipe": "all 50 demonstrations, GB512, 2.5k",
+            "embodiment": "multi_jaka_zu7_dexhand021_with_flange"
+          }
+        },
+        "recoveryDisclosure": {
+          "initialErrors": 7,
+          "tasks": [
+            "34",
+            "60"
+          ],
+          "successfulRetries": 3,
+          "failedRetries": 4,
+          "originalErrorsPreserved": true,
+          "indices": [
+            {
+              "task": "34",
+              "channel": "Equi",
+              "index": 8,
+              "seed": 103400007,
+              "first_error": "ValueError: Ambiguous angle outside (-pi,pi); preserve source and exclude affected windows",
+              "final_success": false
+            },
+            {
+              "task": "34",
+              "channel": "Inv",
+              "index": 35,
+              "seed": 103400034,
+              "first_error": "ValueError: Ambiguous angle outside (-pi,pi); preserve source and exclude affected windows",
+              "final_success": true
+            },
+            {
+              "task": "34",
+              "channel": "None",
+              "index": 2,
+              "seed": 103400001,
+              "first_error": "ValueError: Ambiguous angle outside (-pi,pi); preserve source and exclude affected windows",
+              "final_success": false
+            },
+            {
+              "task": "60",
+              "channel": "Equi",
+              "index": 15,
+              "seed": 106000014,
+              "first_error": "ValueError: Ambiguous angle outside (-pi,pi); preserve source and exclude affected windows",
+              "final_success": true
+            },
+            {
+              "task": "60",
+              "channel": "Equi",
+              "index": 25,
+              "seed": 106000024,
+              "first_error": "ValueError: Ambiguous angle outside (-pi,pi); preserve source and exclude affected windows",
+              "final_success": false
+            },
+            {
+              "task": "60",
+              "channel": "Equi",
+              "index": 47,
+              "seed": 106000046,
+              "first_error": "ValueError: Ambiguous angle outside (-pi,pi); preserve source and exclude affected windows",
+              "final_success": false
+            },
+            {
+              "task": "60",
+              "channel": "Inv",
+              "index": 22,
+              "seed": 106000021,
+              "first_error": "ValueError: Ambiguous angle outside (-pi,pi); preserve source and exclude affected windows",
+              "final_success": true
+            }
+          ]
+        }
+      }
     }
   ]
 }

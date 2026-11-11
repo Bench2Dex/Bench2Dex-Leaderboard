@@ -6,19 +6,19 @@ import {registry} from './fixtures.mjs';
 import {toRuntimeData} from '../scripts/leaderboard-data.mjs';
 const sources=await Promise.all(['results-model','moonshot-model'].map(n=>readFile(new URL('../assets/js/'+n+'.js',import.meta.url),'utf8')));
 function api(fixture=registry){const context=vm.createContext({window:{BENCH:toRuntimeData(fixture)}});for(const source of sources)vm.runInContext(source,context);return context.window.BenchResults;}
-test('the orbit uses the same seven complete Score results as the table',()=>{
- const R=api(),r=R.moonshot.data('standard');assert.equal(r.totalTasks,26);assert.equal(r.plotted.length,7);assert.equal(r.unplotted.length,2);
+test('the orbit uses the same eight complete Score results as the table',()=>{
+ const R=api(),r=R.moonshot.data('standard');assert.equal(r.totalTasks,26);assert.equal(r.plotted.length,8);assert.equal(r.unplotted.length,2);
  for(let i=0;i<r.plotted.length;i++){
   const e=r.plotted[i];assert.equal(e.score,R.model.score(e.policy.id).value);assert.equal(R.model.aggregateRank(e.policy.id,'score'),i+1);
   if(i)assert.ok(r.plotted[i-1].score>=e.score);
  }
- assert.equal(r.plotted[1].policy.id,'GR00T_N17');assert.equal(r.plotted[2].policy.id,'PI05');
+ assert.equal(r.plotted[0].policy.id,'mora_v0');assert.equal(r.plotted[1].policy.id,'GR00T_N17_TACTILE');
 });
 test('Full-only reports remain separate and cannot move the rocket',()=>{
  const R=api(),r=R.moonshot.data('standard');
  assert.deepEqual(Array.from(r.unplotted,e=>e.policy.id),['gpt6_astra_10x_icl','gpt6_astra_1x_icl']);
  for(const e of r.unplotted){assert.equal(e.score,null);assert.equal(e.sr,null);assert.ok(e.fullSr>0);}
- assert.equal(R.moonshot.leader('standard').policy.id,'GR00T_N17_TACTILE');
+ assert.equal(R.moonshot.leader('standard').policy.id,'mora_v0');
 });
 test('high SR and LSCR cannot rank without Eff., while a complete higher Score advances the rocket',()=>{
  const fixture=structuredClone(registry),p=fixture.policies.find(p=>p.model.id==='ACT');p.overall.sr=90;p.overall.lscr=90;p.overall.efficiency=null;

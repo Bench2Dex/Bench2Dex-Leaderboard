@@ -2370,9 +2370,10 @@
     "logs": {
       "repository": "Bench2Dex/Leaderboard",
       "policyPath": "mora_v0",
-      "revision": null,
-      "status": "not-archived"
+      "revision": "4fab3b7a55bf81a83ac1a1c268dc0775fc4cb8a6",
+      "status": "archived"
     },
+    "publishedAt": "2026-11-11",
     "selectedCheckpoints": {
       "03": {
         "checkpointSha256": "ec7d439e37462bc3c60c4cd62a344639b81e41dfce05ed24133dccbb089348a0",
