@@ -13,9 +13,9 @@
     "evaluationSetting": "One fixed selected checkpoint per task/embodiment across all four native channels; 50 episodes per channel. Original JAX backend for 7 official routes and PyTorch for 19 self-trained routes.",
     "resultVersion": "2026-11-13",
     "updatedAt": "2026-11-13",
-    "sourceLabel": "Native evaluation logs; retrospective composite; not submitted or reviewed",
+    "sourceLabel": "Native evaluation logs; disclosed retrospective composition; submitted for maintainer review",
     "sourceUrl": "https://github.com/Bench2Dex/Bench2Dex",
-    "resultDetailsUrl": null,
+    "resultDetailsUrl": "https://github.com/Bench2Dex/Bench2Dex-Leaderboard/pull/6",
     "contributor": "1011.ai",
     "contributorUrl": null,
     "contactEmail": "lizhehan@1011ai.cn",
@@ -2114,8 +2114,8 @@
   "evaluation": {
     "schemaVersion": "1.0",
     "isTemplate": false,
-    "status": "submission_ready",
-    "reviewStatus": "not_submitted",
+    "status": "submitted",
+    "reviewStatus": "pending_review",
     "contact": {
       "email": "lizhehan@1011ai.cn"
     },
@@ -2931,7 +2931,8 @@
       "repository": "Bench2Dex/Leaderboard",
       "policyPath": "MXI",
       "revision": null,
-      "status": "prepared"
+      "status": "submitted",
+      "pullRequestUrl": "https://huggingface.co/datasets/Bench2Dex/Leaderboard/discussions/6"
     },
     "publishedAt": null,
     "preparedAt": "2026-11-13T12:52:23.840921+00:00",
@@ -5064,6 +5065,11 @@
       "selfTrainedSelection": "45e9a2550c6a243f4d6adf7295f677572d92c5a4fab7eb32206c77dd3fe554aa",
       "officialFallbackSelection": "fe9be430996c516b4a9316a655d95bdd976597b168a44851a4505d633f6d5707",
       "officialLeaderboardSnapshot": "a6b5a0db40df817edcdece5b5c67e61df15a62fb31400fc2731d7f1e921f09c7"
+    },
+    "submission": {
+      "githubPullRequestUrl": "https://github.com/Bench2Dex/Bench2Dex-Leaderboard/pull/6",
+      "huggingFacePullRequestUrl": "https://huggingface.co/datasets/Bench2Dex/Leaderboard/discussions/6",
+      "status": "pending_review"
     }
   }
 }
