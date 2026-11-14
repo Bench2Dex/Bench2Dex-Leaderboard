@@ -8,6 +8,12 @@ This update provides the standalone results requested by the Bench2Dex reviewer.
 
 Different tasks use their respective fine-tuned checkpoints; one fixed checkpoint serves all four channels for each task. The policies include single-task flow-matching/RTC fine-tunes and 26-task joint fine-tunes. The results were computed from independently executed native evaluations, not copied from published scoreboard entries. Existing complete evaluation runs are reported here; this is **not** a fresh held-out confirmation experiment or a single-checkpoint claim. Checkpoint identities and execution horizons are recorded in `leaderboard_MXI.json`.
 
+## Revision note
+
+The complete evaluations of the replacement fine-tuned checkpoints for Tasks 12, 42, 44, 51, 60, 61, and 64 were completed progressively after the initial submission. We updated these tasks individually as the results became available. For the revised entry, we selected one fine-tuned checkpoint per task based on its contribution to the overall Score/MR, keeping that checkpoint fixed across all four evaluation channels.
+
+<!-- MXI-brief-review-note-20261114 -->
+
 ## Results
 
 All 26 tasks × four channels ×50 episodes = **5,200 complete episodes**, including every success and failure. SR **36.865385%**; LSCR **54.783654%**; efficiency **0.970366548** over 24 tasks with successful episodes; Score/MR **50.945733**.
