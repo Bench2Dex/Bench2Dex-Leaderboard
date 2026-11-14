@@ -33,3 +33,5 @@ Core contributors: Yupeng Zheng, Chaoyue Li, Linbo Wang, Xiang Li, Secant, Zebin
 The complete contribution roles and ordering are listed on the [project page](https://openphoenix-team.github.io/Phoenix-pages/#contributions-heading).
 
 Correspondence: zhengyupeng18@mails.ucas.ac.cn.
+
+Task 09 LSCR was recomputed offline from saved 20 Hz states. Task 27 and Task 42 retain the original ball-in-box criterion and stage order, respectively.

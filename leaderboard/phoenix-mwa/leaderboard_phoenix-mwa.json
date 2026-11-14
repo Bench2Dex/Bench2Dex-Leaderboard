@@ -7494,10 +7494,10 @@
     "logs": {
       "repository": "Bench2Dex/Leaderboard",
       "policyPath": "phoenix-mwa",
-      "revision": null,
-      "status": "pending-review"
+      "revision": "319a323d597a22b23e44e28109381f5328407929",
+      "status": "archived"
     },
     "trainingMetadata": "metadata/training.json",
-    "publishedAt": null
+    "publishedAt": "2026-11-14"
   }
 }

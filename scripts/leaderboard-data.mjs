@@ -54,6 +54,10 @@ export function toRuntimeData(registry) {
   };
   for (const entry of registry.policies) {
     const model = structuredClone(entry.model);
+    if (model.id === "phoenix-mwa") {
+      model.label = model.modelVersion;
+      model.variantLabel = "";
+    }
     model.updatedAt = [model.updatedAt, entry.evaluation?.publishedAt].filter(Boolean).sort().at(-1) ?? null;
     requireValue(protocolIds.has(model.protocolId), `unknown protocol for ${model.id}`);
     requireValue(isObject(entry.per_task), `per_task must be an object for ${model.id}`);
@@ -79,6 +83,9 @@ export function toRuntimeData(registry) {
         checkMetrics(channel, `${model.id}/${task.id}/${name}`);
         requireValue(channel.episodes == null || Number.isInteger(channel.episodes) && channel.episodes >= 0, `invalid episode count for ${model.id}/${task.id}/${name}`);
         requireValue(channel.successes == null || Number.isInteger(channel.successes) && channel.successes >= 0 && (channel.episodes == null || channel.successes <= channel.episodes), `invalid success count for ${model.id}/${task.id}/${name}`);
+        // The leaderboard reports pooled task efficiency. Keep channel diagnostics in the source record.
+        delete channel.efficiency;
+        delete channel.efficiencyStatus;
         data.EVALUATION_CHANNELS.push({ ...channel, policyId: model.id, taskId: task.id, channelId: id });
       }
     }

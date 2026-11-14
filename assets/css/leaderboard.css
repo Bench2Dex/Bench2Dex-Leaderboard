@@ -90,7 +90,7 @@
 .model-name{display:flex;align-items:baseline;gap:6px;color:var(--text);line-height:1.4;white-space:nowrap;}
 .model-name:hover,.model-name:focus-visible{color:var(--cyan);text-decoration:underline;text-underline-offset:3px;}
 .ranking-table .type-cell{width:64px;}
-.ranking-table .contributor-cell{width:128px;font-size:11px;white-space:nowrap;}
+.ranking-table .contributor-cell{width:128px;font-size:11px;white-space:normal;overflow-wrap:anywhere;text-wrap:balance;}
 .contributor-cell a{color:var(--text-dim);}
 .contributor-cell a:hover{color:var(--cyan);text-decoration:underline;}
 .policy-type{display:inline-flex;align-items:center;justify-content:center;padding:3px 8px;border-radius:5px;border:1px solid #d6dee8;background:#f1f4f8;color:#52637b;font:10px var(--mono);}
