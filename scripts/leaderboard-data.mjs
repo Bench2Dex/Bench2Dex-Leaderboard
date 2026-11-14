@@ -58,6 +58,8 @@ export function toRuntimeData(registry) {
       model.label = model.modelVersion;
       model.variantLabel = "";
     }
+    model.modelUrl ??= model.resultDetailsUrl ?? model.sourceUrl;
+    model.contributorUrl ??= entry.evaluation?.submission?.githubPullRequestUrl ?? model.modelUrl;
     model.updatedAt = [model.updatedAt, entry.evaluation?.publishedAt].filter(Boolean).sort().at(-1) ?? null;
     requireValue(protocolIds.has(model.protocolId), `unknown protocol for ${model.id}`);
     requireValue(isObject(entry.per_task), `per_task must be an object for ${model.id}`);

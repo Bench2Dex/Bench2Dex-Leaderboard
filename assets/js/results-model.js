@@ -2,7 +2,7 @@
 (function(){
   "use strict";
   const finite = Number.isFinite;
-  const policyName=p=>p.externalReport && p.label && (!p.variantLabel || !p.label.includes(p.variantLabel)) ? p.label : p.modelVersion||p.label;
+  const policyName=p=>p.label && (!p.variantLabel || p.externalReport && !p.label.includes(p.variantLabel)) ? p.label : p.modelVersion||p.label;
   const statusLabels = { "not-evaluated":"Not evaluated", "not-reported":"NR", "not-applicable":"N/A", "no-success":"—" };
   const reading = (record,key)=>{
     const status=record?.[`${key}Status`] || (record?.status && record.status!=="reported" ? record.status : finite(record?.[key]) ? "reported" : record ? "not-reported" : "not-evaluated");

@@ -2114,8 +2114,8 @@
   "evaluation": {
     "schemaVersion": "1.0",
     "isTemplate": false,
-    "status": "submitted",
-    "reviewStatus": "pending_review",
+    "status": "published",
+    "reviewStatus": "accepted",
     "contact": {
       "email": "lizhehan@1011ai.cn"
     },
@@ -2930,11 +2930,11 @@
     "logs": {
       "repository": "Bench2Dex/Leaderboard",
       "policyPath": "MXI",
-      "revision": null,
-      "status": "submitted",
+      "revision": "6c8921f606c6dc03fc3b5dc04e282fcba386c9da",
+      "status": "archived",
       "pullRequestUrl": "https://huggingface.co/datasets/Bench2Dex/Leaderboard/discussions/6"
     },
-    "publishedAt": null,
+    "publishedAt": "2026-11-14",
     "preparedAt": "2026-11-14T07:33:13.334583+00:00",
     "selectedCheckpoints": {
       "03": {
@@ -3739,7 +3739,7 @@
     "submission": {
       "githubPullRequestUrl": "https://github.com/Bench2Dex/Bench2Dex-Leaderboard/pull/6",
       "huggingFacePullRequestUrl": "https://huggingface.co/datasets/Bench2Dex/Leaderboard/discussions/6",
-      "status": "pending_review"
+      "status": "accepted"
     }
   }
 }

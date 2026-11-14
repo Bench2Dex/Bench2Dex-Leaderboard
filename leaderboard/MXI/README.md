@@ -51,7 +51,7 @@ All 26 tasks × four channels ×50 episodes = **5,200 complete episodes**, inclu
 
 Native unseen split, reach-and-stop success checking,fixed episode seeds and budgets,60 Hz physics/20 Hz control. Model horizon 20; RTC executes 16 with prefix 4; other policies execute 20; 10 denoising steps. Task 67 requires 3.0 s success dwell; the other 25 tasks use 0.5 s. Task SR/LSCR are averaged equally; efficiency pools successful episodes across channels within each task,then averages over tasks with success. Score =0.45×SR+0.45×LSCR+10×efficiency. The recorded source-comparability limits remain disclosed in the metadata.
 
-The companion Hugging Face PR contains native-format per-episode logs,summaries,accepted episode indices,and source shards. Only private filesystem roots and service addresses are anonymized; numeric outcomes are unchanged. Each task has all 50 fixed episode indices in every channel. Review acceptance and a merged log revision remain pending.
+The companion Hugging Face PR contains native-format per-episode logs,summaries,accepted episode indices,and source shards. Only private filesystem roots and service addresses are anonymized; numeric outcomes are unchanged. Each task has all 50 fixed episode indices in every channel. The reviewed logs are available in the [Hugging Face archive](https://huggingface.co/datasets/Bench2Dex/Leaderboard/tree/6c8921f606c6dc03fc3b5dc04e282fcba386c9da/MXI).
 
 GitHub metadata PR: https://github.com/Bench2Dex/Bench2Dex-Leaderboard/pull/6
 
