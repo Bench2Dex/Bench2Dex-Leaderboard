@@ -2333,9 +2333,10 @@
   "logs": {
    "repository": "Bench2Dex/Leaderboard",
    "policyPath": "pyrua-dex",
-   "revision": null,
-   "status": "not-archived"
+   "revision": "b9796c224a84f3a860e2e0c205655c27a72b5b6f",
+   "status": "archived"
   },
+  "publishedAt": "2026-11-16",
   "selectedPrograms": {
    "03": {
     "program": "wine_fast-e9124b6af8",
