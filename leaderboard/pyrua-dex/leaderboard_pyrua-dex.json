@@ -1,0 +1,2446 @@
+{
+ "model": {
+  "id": "pyrua-dex",
+  "label": "PyRUA-Dex",
+  "variantLabel": "",
+  "family": "PyRUA",
+  "modelVersion": "PyRUA-Dex round 1 (coding agents: GPT-6 Astra)",
+  "checkpoint": null,
+  "inputs": "RGB cameras + proprioception + tactile + camera calibration + task description with goal text",
+  "protocolId": "standard",
+  "displayOrder": 130,
+  "trainingSetting": "No human demonstration data and no weight updates: coding agents write and test controller programs on development layouts (seeds disjoint from the evaluation seeds); the best program per task is frozen",
+  "resultVersion": "Round 1 (2026-11-15)",
+  "updatedAt": "2026-11-16",
+  "evaluationSetting": "One frozen program per task; 26 tasks x 4 channels x 50 episodes; no language-model calls during evaluation",
+  "sourceLabel": "PyRUA-Dex project",
+  "sourceUrl": "https://vme0522.github.io/PyRUA-Dex/",
+  "resultDetailsUrl": "https://huggingface.co/datasets/Bench2Dex/Leaderboard/tree/main/pyrua-dex",
+  "contributor": "PKU DAGroup",
+  "contributorUrl": "https://github.com/DAGroup-PKU",
+  "type": "Agent",
+  "modelUrl": "https://vme0522.github.io/PyRUA-Dex/",
+  "logoPath": "leaderboard/pyrua-dex/logo.svg",
+  "logoAlt": "Peking University",
+  "weightsUrl": null,
+  "codeUrl": "https://github.com/DAGroup-PKU/PyRUA-Lean/tree/dex"
+ },
+ "overall": {
+  "taskCount": 26,
+  "scope": "task-macro",
+  "sr": 44.61538461538461,
+  "lscr": 67.02115384615385,
+  "efficiency": 0.8889243062360126,
+  "efficiencyStatus": "reported",
+  "efficiencyTaskCount": 22,
+  "channelSr": {
+   "None": 44.92307692307692,
+   "Equi.": 45.84615384615385,
+   "Inv.": 44.30769230769231,
+   "Full": 43.38461538461539
+  },
+  "channelLscr": {
+   "None": 67.6525641025641,
+   "Equi.": 67.85128205128206,
+   "Inv.": 66.68589743589743,
+   "Full": 65.89487179487179
+  },
+  "channelTaskCounts": {
+   "None": 26,
+   "Equi.": 26,
+   "Inv.": 26,
+   "Full": 26
+  },
+  "status": "reported"
+ },
+ "per_task": {
+  "03": {
+   "channels": {
+    "None": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 39,
+     "lscr": 94.66666666666667,
+     "source": {
+      "runId": "pyrua-dex_r01_03_wine_fast-e9124b6af8",
+      "perEpisodeFile": "per_task_eval/03_wine_glass_plate_balance/None/per_episode.jsonl",
+      "summaryFile": "per_task_eval/03_wine_glass_plate_balance/None/summary.json"
+     }
+    },
+    "Equi.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 38,
+     "lscr": 90.66666666666666,
+     "source": {
+      "runId": "pyrua-dex_r01_03_wine_fast-e9124b6af8",
+      "perEpisodeFile": "per_task_eval/03_wine_glass_plate_balance/Equi/per_episode.jsonl",
+      "summaryFile": "per_task_eval/03_wine_glass_plate_balance/Equi/summary.json"
+     }
+    },
+    "Inv.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 37,
+     "lscr": 92.0,
+     "source": {
+      "runId": "pyrua-dex_r01_03_wine_fast-e9124b6af8",
+      "perEpisodeFile": "per_task_eval/03_wine_glass_plate_balance/Inv/per_episode.jsonl",
+      "summaryFile": "per_task_eval/03_wine_glass_plate_balance/Inv/summary.json"
+     }
+    },
+    "Full": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 40,
+     "lscr": 92.66666666666666,
+     "source": {
+      "runId": "pyrua-dex_r01_03_wine_fast-e9124b6af8",
+      "perEpisodeFile": "per_task_eval/03_wine_glass_plate_balance/Full/per_episode.jsonl",
+      "summaryFile": "per_task_eval/03_wine_glass_plate_balance/Full/summary.json"
+     }
+    }
+   },
+   "mean": {
+    "status": "reported",
+    "sr": 77.0,
+    "srScope": "four-channel-mean",
+    "srEpisodes": 200,
+    "lscr": 92.5,
+    "lscrScope": "four-channel-mean",
+    "lscrEpisodes": 200,
+    "efficiency": 1.0444244564859706,
+    "efficiencyStatus": "reported"
+   }
+  },
+  "06": {
+   "channels": {
+    "None": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 26,
+     "lscr": 87.0,
+     "source": {
+      "runId": "pyrua-dex_r01_06_fruit_controller-429ffea065",
+      "perEpisodeFile": "per_task_eval/06_fruit_bowl_loading/None/per_episode.jsonl",
+      "summaryFile": "per_task_eval/06_fruit_bowl_loading/None/summary.json"
+     }
+    },
+    "Equi.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 29,
+     "lscr": 80.5,
+     "source": {
+      "runId": "pyrua-dex_r01_06_fruit_controller-429ffea065",
+      "perEpisodeFile": "per_task_eval/06_fruit_bowl_loading/Equi/per_episode.jsonl",
+      "summaryFile": "per_task_eval/06_fruit_bowl_loading/Equi/summary.json"
+     }
+    },
+    "Inv.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 21,
+     "lscr": 78.5,
+     "source": {
+      "runId": "pyrua-dex_r01_06_fruit_controller-429ffea065",
+      "perEpisodeFile": "per_task_eval/06_fruit_bowl_loading/Inv/per_episode.jsonl",
+      "summaryFile": "per_task_eval/06_fruit_bowl_loading/Inv/summary.json"
+     }
+    },
+    "Full": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 26,
+     "lscr": 79.5,
+     "source": {
+      "runId": "pyrua-dex_r01_06_fruit_controller-429ffea065",
+      "perEpisodeFile": "per_task_eval/06_fruit_bowl_loading/Full/per_episode.jsonl",
+      "summaryFile": "per_task_eval/06_fruit_bowl_loading/Full/summary.json"
+     }
+    }
+   },
+   "mean": {
+    "status": "reported",
+    "sr": 51.0,
+    "srScope": "four-channel-mean",
+    "srEpisodes": 200,
+    "lscr": 81.375,
+    "lscrScope": "four-channel-mean",
+    "lscrEpisodes": 200,
+    "efficiency": 0.7053789466859723,
+    "efficiencyStatus": "reported"
+   }
+  },
+  "07": {
+   "channels": {
+    "None": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 35,
+     "lscr": 82.5,
+     "source": {
+      "runId": "pyrua-dex_r01_07_citrus_policy-3695867c40",
+      "perEpisodeFile": "per_task_eval/07_citrus_plate_loading/None/per_episode.jsonl",
+      "summaryFile": "per_task_eval/07_citrus_plate_loading/None/summary.json"
+     }
+    },
+    "Equi.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 41,
+     "lscr": 90.0,
+     "source": {
+      "runId": "pyrua-dex_r01_07_citrus_policy-3695867c40",
+      "perEpisodeFile": "per_task_eval/07_citrus_plate_loading/Equi/per_episode.jsonl",
+      "summaryFile": "per_task_eval/07_citrus_plate_loading/Equi/summary.json"
+     }
+    },
+    "Inv.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 38,
+     "lscr": 81.5,
+     "source": {
+      "runId": "pyrua-dex_r01_07_citrus_policy-3695867c40",
+      "perEpisodeFile": "per_task_eval/07_citrus_plate_loading/Inv/per_episode.jsonl",
+      "summaryFile": "per_task_eval/07_citrus_plate_loading/Inv/summary.json"
+     }
+    },
+    "Full": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 41,
+     "lscr": 90.5,
+     "source": {
+      "runId": "pyrua-dex_r01_07_citrus_policy-3695867c40",
+      "perEpisodeFile": "per_task_eval/07_citrus_plate_loading/Full/per_episode.jsonl",
+      "summaryFile": "per_task_eval/07_citrus_plate_loading/Full/summary.json"
+     }
+    }
+   },
+   "mean": {
+    "status": "reported",
+    "sr": 77.5,
+    "srScope": "four-channel-mean",
+    "srEpisodes": 200,
+    "lscr": 86.125,
+    "lscrScope": "four-channel-mean",
+    "lscrEpisodes": 200,
+    "efficiency": 0.8214063883492579,
+    "efficiencyStatus": "reported"
+   }
+  },
+  "08": {
+   "channels": {
+    "None": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 0,
+     "lscr": 51.0,
+     "source": {
+      "runId": "pyrua-dex_r01_08_soy_fixed-cdfd94bffc",
+      "perEpisodeFile": "per_task_eval/08_frypan_stand_pour/None/per_episode.jsonl",
+      "summaryFile": "per_task_eval/08_frypan_stand_pour/None/summary.json"
+     }
+    },
+    "Equi.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 0,
+     "lscr": 51.0,
+     "source": {
+      "runId": "pyrua-dex_r01_08_soy_fixed-cdfd94bffc",
+      "perEpisodeFile": "per_task_eval/08_frypan_stand_pour/Equi/per_episode.jsonl",
+      "summaryFile": "per_task_eval/08_frypan_stand_pour/Equi/summary.json"
+     }
+    },
+    "Inv.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 0,
+     "lscr": 43.0,
+     "source": {
+      "runId": "pyrua-dex_r01_08_soy_fixed-cdfd94bffc",
+      "perEpisodeFile": "per_task_eval/08_frypan_stand_pour/Inv/per_episode.jsonl",
+      "summaryFile": "per_task_eval/08_frypan_stand_pour/Inv/summary.json"
+     }
+    },
+    "Full": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 0,
+     "lscr": 40.0,
+     "source": {
+      "runId": "pyrua-dex_r01_08_soy_fixed-cdfd94bffc",
+      "perEpisodeFile": "per_task_eval/08_frypan_stand_pour/Full/per_episode.jsonl",
+      "summaryFile": "per_task_eval/08_frypan_stand_pour/Full/summary.json"
+     }
+    }
+   },
+   "mean": {
+    "status": "reported",
+    "sr": 0.0,
+    "srScope": "four-channel-mean",
+    "srEpisodes": 200,
+    "lscr": 46.25,
+    "lscrScope": "four-channel-mean",
+    "lscrEpisodes": 200,
+    "efficiency": null,
+    "efficiencyStatus": "no-success"
+   }
+  },
+  "09": {
+   "channels": {
+    "None": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 41,
+     "lscr": 88.0,
+     "source": {
+      "runId": "pyrua-dex_r01_09_cleaner55-5f88a39d99",
+      "perEpisodeFile": "per_task_eval/09_cleaner_moisturizer_box_loading/None/per_episode.jsonl",
+      "summaryFile": "per_task_eval/09_cleaner_moisturizer_box_loading/None/summary.json"
+     }
+    },
+    "Equi.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 33,
+     "lscr": 80.0,
+     "source": {
+      "runId": "pyrua-dex_r01_09_cleaner55-5f88a39d99",
+      "perEpisodeFile": "per_task_eval/09_cleaner_moisturizer_box_loading/Equi/per_episode.jsonl",
+      "summaryFile": "per_task_eval/09_cleaner_moisturizer_box_loading/Equi/summary.json"
+     }
+    },
+    "Inv.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 35,
+     "lscr": 81.0,
+     "source": {
+      "runId": "pyrua-dex_r01_09_cleaner55-5f88a39d99",
+      "perEpisodeFile": "per_task_eval/09_cleaner_moisturizer_box_loading/Inv/per_episode.jsonl",
+      "summaryFile": "per_task_eval/09_cleaner_moisturizer_box_loading/Inv/summary.json"
+     }
+    },
+    "Full": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 36,
+     "lscr": 83.0,
+     "source": {
+      "runId": "pyrua-dex_r01_09_cleaner55-5f88a39d99",
+      "perEpisodeFile": "per_task_eval/09_cleaner_moisturizer_box_loading/Full/per_episode.jsonl",
+      "summaryFile": "per_task_eval/09_cleaner_moisturizer_box_loading/Full/summary.json"
+     }
+    }
+   },
+   "mean": {
+    "status": "reported",
+    "sr": 72.5,
+    "srScope": "four-channel-mean",
+    "srEpisodes": 200,
+    "lscr": 83.0,
+    "lscrScope": "four-channel-mean",
+    "lscrEpisodes": 200,
+    "efficiency": 0.8321740258462199,
+    "efficiencyStatus": "reported"
+   }
+  },
+  "12": {
+   "channels": {
+    "None": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 0,
+     "lscr": 52.5,
+     "source": {
+      "runId": "pyrua-dex_r01_12_measured_tools-adce3bd7ad",
+      "perEpisodeFile": "per_task_eval/12_screwdriver_box_and_hammer/None/per_episode.jsonl",
+      "summaryFile": "per_task_eval/12_screwdriver_box_and_hammer/None/summary.json"
+     }
+    },
+    "Equi.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 0,
+     "lscr": 53.5,
+     "source": {
+      "runId": "pyrua-dex_r01_12_measured_tools-adce3bd7ad",
+      "perEpisodeFile": "per_task_eval/12_screwdriver_box_and_hammer/Equi/per_episode.jsonl",
+      "summaryFile": "per_task_eval/12_screwdriver_box_and_hammer/Equi/summary.json"
+     }
+    },
+    "Inv.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 0,
+     "lscr": 53.0,
+     "source": {
+      "runId": "pyrua-dex_r01_12_measured_tools-adce3bd7ad",
+      "perEpisodeFile": "per_task_eval/12_screwdriver_box_and_hammer/Inv/per_episode.jsonl",
+      "summaryFile": "per_task_eval/12_screwdriver_box_and_hammer/Inv/summary.json"
+     }
+    },
+    "Full": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 0,
+     "lscr": 55.50000000000001,
+     "source": {
+      "runId": "pyrua-dex_r01_12_measured_tools-adce3bd7ad",
+      "perEpisodeFile": "per_task_eval/12_screwdriver_box_and_hammer/Full/per_episode.jsonl",
+      "summaryFile": "per_task_eval/12_screwdriver_box_and_hammer/Full/summary.json"
+     }
+    }
+   },
+   "mean": {
+    "status": "reported",
+    "sr": 0.0,
+    "srScope": "four-channel-mean",
+    "srEpisodes": 200,
+    "lscr": 53.625,
+    "lscrScope": "four-channel-mean",
+    "lscrEpisodes": 200,
+    "efficiency": null,
+    "efficiencyStatus": "no-success"
+   }
+  },
+  "21": {
+   "channels": {
+    "None": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 8,
+     "lscr": 45.33333333333333,
+     "source": {
+      "runId": "pyrua-dex_r01_21_round_fallback-33066e1d92",
+      "perEpisodeFile": "per_task_eval/21_condiment_box_loading/None/per_episode.jsonl",
+      "summaryFile": "per_task_eval/21_condiment_box_loading/None/summary.json"
+     }
+    },
+    "Equi.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 10,
+     "lscr": 40.666666666666664,
+     "source": {
+      "runId": "pyrua-dex_r01_21_round_fallback-33066e1d92",
+      "perEpisodeFile": "per_task_eval/21_condiment_box_loading/Equi/per_episode.jsonl",
+      "summaryFile": "per_task_eval/21_condiment_box_loading/Equi/summary.json"
+     }
+    },
+    "Inv.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 9,
+     "lscr": 46.0,
+     "source": {
+      "runId": "pyrua-dex_r01_21_round_fallback-33066e1d92",
+      "perEpisodeFile": "per_task_eval/21_condiment_box_loading/Inv/per_episode.jsonl",
+      "summaryFile": "per_task_eval/21_condiment_box_loading/Inv/summary.json"
+     }
+    },
+    "Full": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 14,
+     "lscr": 50.0,
+     "source": {
+      "runId": "pyrua-dex_r01_21_round_fallback-33066e1d92",
+      "perEpisodeFile": "per_task_eval/21_condiment_box_loading/Full/per_episode.jsonl",
+      "summaryFile": "per_task_eval/21_condiment_box_loading/Full/summary.json"
+     }
+    }
+   },
+   "mean": {
+    "status": "reported",
+    "sr": 20.5,
+    "srScope": "four-channel-mean",
+    "srEpisodes": 200,
+    "lscr": 45.5,
+    "lscrScope": "four-channel-mean",
+    "lscrEpisodes": 200,
+    "efficiency": 0.7647390500248095,
+    "efficiencyStatus": "reported"
+   }
+  },
+  "22": {
+   "channels": {
+    "None": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 20,
+     "lscr": 70.5,
+     "source": {
+      "runId": "pyrua-dex_r01_22_toolbox-59184eb3a0",
+      "perEpisodeFile": "per_task_eval/22_tool_box_loading/None/per_episode.jsonl",
+      "summaryFile": "per_task_eval/22_tool_box_loading/None/summary.json"
+     }
+    },
+    "Equi.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 26,
+     "lscr": 82.0,
+     "source": {
+      "runId": "pyrua-dex_r01_22_toolbox-59184eb3a0",
+      "perEpisodeFile": "per_task_eval/22_tool_box_loading/Equi/per_episode.jsonl",
+      "summaryFile": "per_task_eval/22_tool_box_loading/Equi/summary.json"
+     }
+    },
+    "Inv.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 25,
+     "lscr": 78.0,
+     "source": {
+      "runId": "pyrua-dex_r01_22_toolbox-59184eb3a0",
+      "perEpisodeFile": "per_task_eval/22_tool_box_loading/Inv/per_episode.jsonl",
+      "summaryFile": "per_task_eval/22_tool_box_loading/Inv/summary.json"
+     }
+    },
+    "Full": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 23,
+     "lscr": 76.5,
+     "source": {
+      "runId": "pyrua-dex_r01_22_toolbox-59184eb3a0",
+      "perEpisodeFile": "per_task_eval/22_tool_box_loading/Full/per_episode.jsonl",
+      "summaryFile": "per_task_eval/22_tool_box_loading/Full/summary.json"
+     }
+    }
+   },
+   "mean": {
+    "status": "reported",
+    "sr": 47.0,
+    "srScope": "four-channel-mean",
+    "srEpisodes": 200,
+    "lscr": 76.75,
+    "lscrScope": "four-channel-mean",
+    "lscrEpisodes": 200,
+    "efficiency": 0.7255332301183569,
+    "efficiencyStatus": "reported"
+   }
+  },
+  "24": {
+   "channels": {
+    "None": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 2,
+     "lscr": 40.0,
+     "source": {
+      "runId": "pyrua-dex_r01_24_stationery_full-fc6bd676a0",
+      "perEpisodeFile": "per_task_eval/24_stationery_category_sorting/None/per_episode.jsonl",
+      "summaryFile": "per_task_eval/24_stationery_category_sorting/None/summary.json"
+     }
+    },
+    "Equi.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 4,
+     "lscr": 45.0,
+     "source": {
+      "runId": "pyrua-dex_r01_24_stationery_full-fc6bd676a0",
+      "perEpisodeFile": "per_task_eval/24_stationery_category_sorting/Equi/per_episode.jsonl",
+      "summaryFile": "per_task_eval/24_stationery_category_sorting/Equi/summary.json"
+     }
+    },
+    "Inv.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 4,
+     "lscr": 43.0,
+     "source": {
+      "runId": "pyrua-dex_r01_24_stationery_full-fc6bd676a0",
+      "perEpisodeFile": "per_task_eval/24_stationery_category_sorting/Inv/per_episode.jsonl",
+      "summaryFile": "per_task_eval/24_stationery_category_sorting/Inv/summary.json"
+     }
+    },
+    "Full": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 3,
+     "lscr": 42.5,
+     "source": {
+      "runId": "pyrua-dex_r01_24_stationery_full-fc6bd676a0",
+      "perEpisodeFile": "per_task_eval/24_stationery_category_sorting/Full/per_episode.jsonl",
+      "summaryFile": "per_task_eval/24_stationery_category_sorting/Full/summary.json"
+     }
+    }
+   },
+   "mean": {
+    "status": "reported",
+    "sr": 6.5,
+    "srScope": "four-channel-mean",
+    "srEpisodes": 200,
+    "lscr": 42.625,
+    "lscrScope": "four-channel-mean",
+    "lscrEpisodes": 200,
+    "efficiency": 0.903758991589059,
+    "efficiencyStatus": "reported"
+   }
+  },
+  "26": {
+   "channels": {
+    "None": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 21,
+     "lscr": 83.5,
+     "source": {
+      "runId": "pyrua-dex_r01_26_tray_round-c2ad9643b5",
+      "perEpisodeFile": "per_task_eval/26_canned_food_tray_line_arrangement/None/per_episode.jsonl",
+      "summaryFile": "per_task_eval/26_canned_food_tray_line_arrangement/None/summary.json"
+     }
+    },
+    "Equi.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 20,
+     "lscr": 79.0,
+     "source": {
+      "runId": "pyrua-dex_r01_26_tray_round-c2ad9643b5",
+      "perEpisodeFile": "per_task_eval/26_canned_food_tray_line_arrangement/Equi/per_episode.jsonl",
+      "summaryFile": "per_task_eval/26_canned_food_tray_line_arrangement/Equi/summary.json"
+     }
+    },
+    "Inv.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 20,
+     "lscr": 78.5,
+     "source": {
+      "runId": "pyrua-dex_r01_26_tray_round-c2ad9643b5",
+      "perEpisodeFile": "per_task_eval/26_canned_food_tray_line_arrangement/Inv/per_episode.jsonl",
+      "summaryFile": "per_task_eval/26_canned_food_tray_line_arrangement/Inv/summary.json"
+     }
+    },
+    "Full": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 22,
+     "lscr": 80.0,
+     "source": {
+      "runId": "pyrua-dex_r01_26_tray_round-c2ad9643b5",
+      "perEpisodeFile": "per_task_eval/26_canned_food_tray_line_arrangement/Full/per_episode.jsonl",
+      "summaryFile": "per_task_eval/26_canned_food_tray_line_arrangement/Full/summary.json"
+     }
+    }
+   },
+   "mean": {
+    "status": "reported",
+    "sr": 41.5,
+    "srScope": "four-channel-mean",
+    "srEpisodes": 200,
+    "lscr": 80.25,
+    "lscrScope": "four-channel-mean",
+    "lscrEpisodes": 200,
+    "efficiency": 1.0564904460925797,
+    "efficiencyStatus": "reported"
+   }
+  },
+  "27": {
+   "channels": {
+    "None": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 41,
+     "lscr": 93.5,
+     "source": {
+      "runId": "pyrua-dex_r01_27_ring_prefix_thumb_release-f1ac959cf9",
+      "perEpisodeFile": "per_task_eval/27_ball_box_loading/None/per_episode.jsonl",
+      "summaryFile": "per_task_eval/27_ball_box_loading/None/summary.json"
+     }
+    },
+    "Equi.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 39,
+     "lscr": 92.5,
+     "source": {
+      "runId": "pyrua-dex_r01_27_ring_prefix_thumb_release-f1ac959cf9",
+      "perEpisodeFile": "per_task_eval/27_ball_box_loading/Equi/per_episode.jsonl",
+      "summaryFile": "per_task_eval/27_ball_box_loading/Equi/summary.json"
+     }
+    },
+    "Inv.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 34,
+     "lscr": 90.5,
+     "source": {
+      "runId": "pyrua-dex_r01_27_ring_prefix_thumb_release-f1ac959cf9",
+      "perEpisodeFile": "per_task_eval/27_ball_box_loading/Inv/per_episode.jsonl",
+      "summaryFile": "per_task_eval/27_ball_box_loading/Inv/summary.json"
+     }
+    },
+    "Full": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 35,
+     "lscr": 89.0,
+     "source": {
+      "runId": "pyrua-dex_r01_27_ring_prefix_thumb_release-f1ac959cf9",
+      "perEpisodeFile": "per_task_eval/27_ball_box_loading/Full/per_episode.jsonl",
+      "summaryFile": "per_task_eval/27_ball_box_loading/Full/summary.json"
+     }
+    }
+   },
+   "mean": {
+    "status": "reported",
+    "sr": 74.5,
+    "srScope": "four-channel-mean",
+    "srEpisodes": 200,
+    "lscr": 91.375,
+    "lscrScope": "four-channel-mean",
+    "lscrEpisodes": 200,
+    "efficiency": 0.7555346288480345,
+    "efficiencyStatus": "reported"
+   }
+  },
+  "32": {
+   "channels": {
+    "None": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 13,
+     "lscr": 72.5,
+     "source": {
+      "runId": "pyrua-dex_r01_32_tray_hybrid-c636840313",
+      "perEpisodeFile": "per_task_eval/32_baking_tray_prep_with_tools/None/per_episode.jsonl",
+      "summaryFile": "per_task_eval/32_baking_tray_prep_with_tools/None/summary.json"
+     }
+    },
+    "Equi.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 9,
+     "lscr": 62.5,
+     "source": {
+      "runId": "pyrua-dex_r01_32_tray_hybrid-c636840313",
+      "perEpisodeFile": "per_task_eval/32_baking_tray_prep_with_tools/Equi/per_episode.jsonl",
+      "summaryFile": "per_task_eval/32_baking_tray_prep_with_tools/Equi/summary.json"
+     }
+    },
+    "Inv.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 19,
+     "lscr": 78.0,
+     "source": {
+      "runId": "pyrua-dex_r01_32_tray_hybrid-c636840313",
+      "perEpisodeFile": "per_task_eval/32_baking_tray_prep_with_tools/Inv/per_episode.jsonl",
+      "summaryFile": "per_task_eval/32_baking_tray_prep_with_tools/Inv/summary.json"
+     }
+    },
+    "Full": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 11,
+     "lscr": 70.5,
+     "source": {
+      "runId": "pyrua-dex_r01_32_tray_hybrid-c636840313",
+      "perEpisodeFile": "per_task_eval/32_baking_tray_prep_with_tools/Full/per_episode.jsonl",
+      "summaryFile": "per_task_eval/32_baking_tray_prep_with_tools/Full/summary.json"
+     }
+    }
+   },
+   "mean": {
+    "status": "reported",
+    "sr": 26.0,
+    "srScope": "four-channel-mean",
+    "srEpisodes": 200,
+    "lscr": 70.875,
+    "lscrScope": "four-channel-mean",
+    "lscrEpisodes": 200,
+    "efficiency": 0.740657723060453,
+    "efficiencyStatus": "reported"
+   }
+  },
+  "34": {
+   "channels": {
+    "None": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 0,
+     "lscr": 40.800000000000004,
+     "source": {
+      "runId": "pyrua-dex_r01_34_retensioned_service-3cc32133ca",
+      "perEpisodeFile": "per_task_eval/34_fridge_wine_interhand_pour/None/per_episode.jsonl",
+      "summaryFile": "per_task_eval/34_fridge_wine_interhand_pour/None/summary.json"
+     }
+    },
+    "Equi.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 0,
+     "lscr": 40.800000000000004,
+     "source": {
+      "runId": "pyrua-dex_r01_34_retensioned_service-3cc32133ca",
+      "perEpisodeFile": "per_task_eval/34_fridge_wine_interhand_pour/Equi/per_episode.jsonl",
+      "summaryFile": "per_task_eval/34_fridge_wine_interhand_pour/Equi/summary.json"
+     }
+    },
+    "Inv.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 0,
+     "lscr": 40.0,
+     "source": {
+      "runId": "pyrua-dex_r01_34_retensioned_service-3cc32133ca",
+      "perEpisodeFile": "per_task_eval/34_fridge_wine_interhand_pour/Inv/per_episode.jsonl",
+      "summaryFile": "per_task_eval/34_fridge_wine_interhand_pour/Inv/summary.json"
+     }
+    },
+    "Full": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 0,
+     "lscr": 39.6,
+     "source": {
+      "runId": "pyrua-dex_r01_34_retensioned_service-3cc32133ca",
+      "perEpisodeFile": "per_task_eval/34_fridge_wine_interhand_pour/Full/per_episode.jsonl",
+      "summaryFile": "per_task_eval/34_fridge_wine_interhand_pour/Full/summary.json"
+     }
+    }
+   },
+   "mean": {
+    "status": "reported",
+    "sr": 0.0,
+    "srScope": "four-channel-mean",
+    "srEpisodes": 200,
+    "lscr": 40.300000000000004,
+    "lscrScope": "four-channel-mean",
+    "lscrEpisodes": 200,
+    "efficiency": null,
+    "efficiencyStatus": "no-success"
+   }
+  },
+  "42": {
+   "channels": {
+    "None": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 22,
+     "lscr": 66.66666666666666,
+     "source": {
+      "runId": "pyrua-dex_r01_42_trash-f39e0082b0",
+      "perEpisodeFile": "per_task_eval/42_trash_disposal/None/per_episode.jsonl",
+      "summaryFile": "per_task_eval/42_trash_disposal/None/summary.json"
+     }
+    },
+    "Equi.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 20,
+     "lscr": 69.33333333333334,
+     "source": {
+      "runId": "pyrua-dex_r01_42_trash-f39e0082b0",
+      "perEpisodeFile": "per_task_eval/42_trash_disposal/Equi/per_episode.jsonl",
+      "summaryFile": "per_task_eval/42_trash_disposal/Equi/summary.json"
+     }
+    },
+    "Inv.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 20,
+     "lscr": 63.33333333333333,
+     "source": {
+      "runId": "pyrua-dex_r01_42_trash-f39e0082b0",
+      "perEpisodeFile": "per_task_eval/42_trash_disposal/Inv/per_episode.jsonl",
+      "summaryFile": "per_task_eval/42_trash_disposal/Inv/summary.json"
+     }
+    },
+    "Full": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 17,
+     "lscr": 67.33333333333333,
+     "source": {
+      "runId": "pyrua-dex_r01_42_trash-f39e0082b0",
+      "perEpisodeFile": "per_task_eval/42_trash_disposal/Full/per_episode.jsonl",
+      "summaryFile": "per_task_eval/42_trash_disposal/Full/summary.json"
+     }
+    }
+   },
+   "mean": {
+    "status": "reported",
+    "sr": 39.5,
+    "srScope": "four-channel-mean",
+    "srEpisodes": 200,
+    "lscr": 66.66666666666666,
+    "lscrScope": "four-channel-mean",
+    "lscrEpisodes": 200,
+    "efficiency": 0.7852041423640043,
+    "efficiencyStatus": "reported"
+   }
+  },
+  "43": {
+   "channels": {
+    "None": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 2,
+     "lscr": 44.5,
+     "source": {
+      "runId": "pyrua-dex_r01_43_fridge_round-c4e0b828aa",
+      "perEpisodeFile": "per_task_eval/43_fridge_fruit_shelf_sorting/None/per_episode.jsonl",
+      "summaryFile": "per_task_eval/43_fridge_fruit_shelf_sorting/None/summary.json"
+     }
+    },
+    "Equi.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 7,
+     "lscr": 49.5,
+     "source": {
+      "runId": "pyrua-dex_r01_43_fridge_round-c4e0b828aa",
+      "perEpisodeFile": "per_task_eval/43_fridge_fruit_shelf_sorting/Equi/per_episode.jsonl",
+      "summaryFile": "per_task_eval/43_fridge_fruit_shelf_sorting/Equi/summary.json"
+     }
+    },
+    "Inv.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 2,
+     "lscr": 38.5,
+     "source": {
+      "runId": "pyrua-dex_r01_43_fridge_round-c4e0b828aa",
+      "perEpisodeFile": "per_task_eval/43_fridge_fruit_shelf_sorting/Inv/per_episode.jsonl",
+      "summaryFile": "per_task_eval/43_fridge_fruit_shelf_sorting/Inv/summary.json"
+     }
+    },
+    "Full": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 4,
+     "lscr": 45.0,
+     "source": {
+      "runId": "pyrua-dex_r01_43_fridge_round-c4e0b828aa",
+      "perEpisodeFile": "per_task_eval/43_fridge_fruit_shelf_sorting/Full/per_episode.jsonl",
+      "summaryFile": "per_task_eval/43_fridge_fruit_shelf_sorting/Full/summary.json"
+     }
+    }
+   },
+   "mean": {
+    "status": "reported",
+    "sr": 7.5,
+    "srScope": "four-channel-mean",
+    "srEpisodes": 200,
+    "lscr": 44.375,
+    "lscrScope": "four-channel-mean",
+    "lscrEpisodes": 200,
+    "efficiency": 0.7212042800195818,
+    "efficiencyStatus": "reported"
+   }
+  },
+  "44": {
+   "channels": {
+    "None": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 32,
+     "lscr": 74.5,
+     "source": {
+      "runId": "pyrua-dex_r01_44_reliable-a666046e78",
+      "perEpisodeFile": "per_task_eval/44_microwave_bowl_loading/None/per_episode.jsonl",
+      "summaryFile": "per_task_eval/44_microwave_bowl_loading/None/summary.json"
+     }
+    },
+    "Equi.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 33,
+     "lscr": 77.0,
+     "source": {
+      "runId": "pyrua-dex_r01_44_reliable-a666046e78",
+      "perEpisodeFile": "per_task_eval/44_microwave_bowl_loading/Equi/per_episode.jsonl",
+      "summaryFile": "per_task_eval/44_microwave_bowl_loading/Equi/summary.json"
+     }
+    },
+    "Inv.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 31,
+     "lscr": 74.5,
+     "source": {
+      "runId": "pyrua-dex_r01_44_reliable-a666046e78",
+      "perEpisodeFile": "per_task_eval/44_microwave_bowl_loading/Inv/per_episode.jsonl",
+      "summaryFile": "per_task_eval/44_microwave_bowl_loading/Inv/summary.json"
+     }
+    },
+    "Full": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 34,
+     "lscr": 78.5,
+     "source": {
+      "runId": "pyrua-dex_r01_44_reliable-a666046e78",
+      "perEpisodeFile": "per_task_eval/44_microwave_bowl_loading/Full/per_episode.jsonl",
+      "summaryFile": "per_task_eval/44_microwave_bowl_loading/Full/summary.json"
+     }
+    }
+   },
+   "mean": {
+    "status": "reported",
+    "sr": 65.0,
+    "srScope": "four-channel-mean",
+    "srEpisodes": 200,
+    "lscr": 76.125,
+    "lscrScope": "four-channel-mean",
+    "lscrEpisodes": 200,
+    "efficiency": 0.8862630195783616,
+    "efficiencyStatus": "reported"
+   }
+  },
+  "51": {
+   "channels": {
+    "None": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 42,
+     "lscr": 89.33333333333333,
+     "source": {
+      "runId": "pyrua-dex_r01_51_toilet_final-4a83db3920",
+      "perEpisodeFile": "per_task_eval/51_toilet_lid_cleaner_pour/None/per_episode.jsonl",
+      "summaryFile": "per_task_eval/51_toilet_lid_cleaner_pour/None/summary.json"
+     }
+    },
+    "Equi.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 45,
+     "lscr": 92.66666666666666,
+     "source": {
+      "runId": "pyrua-dex_r01_51_toilet_final-4a83db3920",
+      "perEpisodeFile": "per_task_eval/51_toilet_lid_cleaner_pour/Equi/per_episode.jsonl",
+      "summaryFile": "per_task_eval/51_toilet_lid_cleaner_pour/Equi/summary.json"
+     }
+    },
+    "Inv.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 44,
+     "lscr": 90.66666666666666,
+     "source": {
+      "runId": "pyrua-dex_r01_51_toilet_final-4a83db3920",
+      "perEpisodeFile": "per_task_eval/51_toilet_lid_cleaner_pour/Inv/per_episode.jsonl",
+      "summaryFile": "per_task_eval/51_toilet_lid_cleaner_pour/Inv/summary.json"
+     }
+    },
+    "Full": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 40,
+     "lscr": 87.33333333333333,
+     "source": {
+      "runId": "pyrua-dex_r01_51_toilet_final-4a83db3920",
+      "perEpisodeFile": "per_task_eval/51_toilet_lid_cleaner_pour/Full/per_episode.jsonl",
+      "summaryFile": "per_task_eval/51_toilet_lid_cleaner_pour/Full/summary.json"
+     }
+    }
+   },
+   "mean": {
+    "status": "reported",
+    "sr": 85.5,
+    "srScope": "four-channel-mean",
+    "srEpisodes": 200,
+    "lscr": 90.0,
+    "lscrScope": "four-channel-mean",
+    "lscrEpisodes": 200,
+    "efficiency": 1.4939918524907978,
+    "efficiencyStatus": "reported"
+   }
+  },
+  "60": {
+   "channels": {
+    "None": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 26,
+     "lscr": 61.0,
+     "source": {
+      "runId": "pyrua-dex_r01_60_meal-560f17c29a",
+      "perEpisodeFile": "per_task_eval/60_breadbasket_fast_food_loading/None/per_episode.jsonl",
+      "summaryFile": "per_task_eval/60_breadbasket_fast_food_loading/None/summary.json"
+     }
+    },
+    "Equi.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 22,
+     "lscr": 50.0,
+     "source": {
+      "runId": "pyrua-dex_r01_60_meal-560f17c29a",
+      "perEpisodeFile": "per_task_eval/60_breadbasket_fast_food_loading/Equi/per_episode.jsonl",
+      "summaryFile": "per_task_eval/60_breadbasket_fast_food_loading/Equi/summary.json"
+     }
+    },
+    "Inv.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 24,
+     "lscr": 52.5,
+     "source": {
+      "runId": "pyrua-dex_r01_60_meal-560f17c29a",
+      "perEpisodeFile": "per_task_eval/60_breadbasket_fast_food_loading/Inv/per_episode.jsonl",
+      "summaryFile": "per_task_eval/60_breadbasket_fast_food_loading/Inv/summary.json"
+     }
+    },
+    "Full": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 20,
+     "lscr": 52.0,
+     "source": {
+      "runId": "pyrua-dex_r01_60_meal-560f17c29a",
+      "perEpisodeFile": "per_task_eval/60_breadbasket_fast_food_loading/Full/per_episode.jsonl",
+      "summaryFile": "per_task_eval/60_breadbasket_fast_food_loading/Full/summary.json"
+     }
+    }
+   },
+   "mean": {
+    "status": "reported",
+    "sr": 46.0,
+    "srScope": "four-channel-mean",
+    "srEpisodes": 200,
+    "lscr": 53.875,
+    "lscrScope": "four-channel-mean",
+    "lscrEpisodes": 200,
+    "efficiency": 0.8785377868037851,
+    "efficiencyStatus": "reported"
+   }
+  },
+  "61": {
+   "channels": {
+    "None": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 41,
+     "lscr": 88.0,
+     "source": {
+      "runId": "pyrua-dex_r01_61_medicine_point_v2-06e06faffc",
+      "perEpisodeFile": "per_task_eval/61_medicine_shoebox_pack/None/per_episode.jsonl",
+      "summaryFile": "per_task_eval/61_medicine_shoebox_pack/None/summary.json"
+     }
+    },
+    "Equi.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 38,
+     "lscr": 86.0,
+     "source": {
+      "runId": "pyrua-dex_r01_61_medicine_point_v2-06e06faffc",
+      "perEpisodeFile": "per_task_eval/61_medicine_shoebox_pack/Equi/per_episode.jsonl",
+      "summaryFile": "per_task_eval/61_medicine_shoebox_pack/Equi/summary.json"
+     }
+    },
+    "Inv.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 42,
+     "lscr": 90.0,
+     "source": {
+      "runId": "pyrua-dex_r01_61_medicine_point_v2-06e06faffc",
+      "perEpisodeFile": "per_task_eval/61_medicine_shoebox_pack/Inv/per_episode.jsonl",
+      "summaryFile": "per_task_eval/61_medicine_shoebox_pack/Inv/summary.json"
+     }
+    },
+    "Full": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 38,
+     "lscr": 87.33333333333333,
+     "source": {
+      "runId": "pyrua-dex_r01_61_medicine_point_v2-06e06faffc",
+      "perEpisodeFile": "per_task_eval/61_medicine_shoebox_pack/Full/per_episode.jsonl",
+      "summaryFile": "per_task_eval/61_medicine_shoebox_pack/Full/summary.json"
+     }
+    }
+   },
+   "mean": {
+    "status": "reported",
+    "sr": 79.5,
+    "srScope": "four-channel-mean",
+    "srEpisodes": 200,
+    "lscr": 87.83333333333333,
+    "lscrScope": "four-channel-mean",
+    "lscrEpisodes": 200,
+    "efficiency": 0.9014564704591584,
+    "efficiencyStatus": "reported"
+   }
+  },
+  "62": {
+   "channels": {
+    "None": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 26,
+     "lscr": 65.33333333333333,
+     "source": {
+      "runId": "pyrua-dex_r01_62_shoebox-8b45ce4db8",
+      "perEpisodeFile": "per_task_eval/62_shoebox_accessory_pack/None/per_episode.jsonl",
+      "summaryFile": "per_task_eval/62_shoebox_accessory_pack/None/summary.json"
+     }
+    },
+    "Equi.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 32,
+     "lscr": 76.66666666666666,
+     "source": {
+      "runId": "pyrua-dex_r01_62_shoebox-8b45ce4db8",
+      "perEpisodeFile": "per_task_eval/62_shoebox_accessory_pack/Equi/per_episode.jsonl",
+      "summaryFile": "per_task_eval/62_shoebox_accessory_pack/Equi/summary.json"
+     }
+    },
+    "Inv.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 23,
+     "lscr": 64.66666666666666,
+     "source": {
+      "runId": "pyrua-dex_r01_62_shoebox-8b45ce4db8",
+      "perEpisodeFile": "per_task_eval/62_shoebox_accessory_pack/Inv/per_episode.jsonl",
+      "summaryFile": "per_task_eval/62_shoebox_accessory_pack/Inv/summary.json"
+     }
+    },
+    "Full": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 29,
+     "lscr": 66.0,
+     "source": {
+      "runId": "pyrua-dex_r01_62_shoebox-8b45ce4db8",
+      "perEpisodeFile": "per_task_eval/62_shoebox_accessory_pack/Full/per_episode.jsonl",
+      "summaryFile": "per_task_eval/62_shoebox_accessory_pack/Full/summary.json"
+     }
+    }
+   },
+   "mean": {
+    "status": "reported",
+    "sr": 55.0,
+    "srScope": "four-channel-mean",
+    "srEpisodes": 200,
+    "lscr": 68.16666666666666,
+    "lscrScope": "four-channel-mean",
+    "lscrEpisodes": 200,
+    "efficiency": 0.770143373952161,
+    "efficiencyStatus": "reported"
+   }
+  },
+  "64": {
+   "channels": {
+    "None": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 21,
+     "lscr": 53.5,
+     "source": {
+      "runId": "pyrua-dex_r01_64_ball_sort-7a836c8a10",
+      "perEpisodeFile": "per_task_eval/64_sports_ball_cup_sort/None/per_episode.jsonl",
+      "summaryFile": "per_task_eval/64_sports_ball_cup_sort/None/summary.json"
+     }
+    },
+    "Equi.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 26,
+     "lscr": 64.0,
+     "source": {
+      "runId": "pyrua-dex_r01_64_ball_sort-7a836c8a10",
+      "perEpisodeFile": "per_task_eval/64_sports_ball_cup_sort/Equi/per_episode.jsonl",
+      "summaryFile": "per_task_eval/64_sports_ball_cup_sort/Equi/summary.json"
+     }
+    },
+    "Inv.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 28,
+     "lscr": 64.5,
+     "source": {
+      "runId": "pyrua-dex_r01_64_ball_sort-7a836c8a10",
+      "perEpisodeFile": "per_task_eval/64_sports_ball_cup_sort/Inv/per_episode.jsonl",
+      "summaryFile": "per_task_eval/64_sports_ball_cup_sort/Inv/summary.json"
+     }
+    },
+    "Full": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 19,
+     "lscr": 53.0,
+     "source": {
+      "runId": "pyrua-dex_r01_64_ball_sort-7a836c8a10",
+      "perEpisodeFile": "per_task_eval/64_sports_ball_cup_sort/Full/per_episode.jsonl",
+      "summaryFile": "per_task_eval/64_sports_ball_cup_sort/Full/summary.json"
+     }
+    }
+   },
+   "mean": {
+    "status": "reported",
+    "sr": 47.0,
+    "srScope": "four-channel-mean",
+    "srEpisodes": 200,
+    "lscr": 58.75,
+    "lscrScope": "four-channel-mean",
+    "lscrEpisodes": 200,
+    "efficiency": 0.792743056216566,
+    "efficiencyStatus": "reported"
+   }
+  },
+  "67": {
+   "channels": {
+    "None": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 28,
+     "lscr": 72.0,
+     "source": {
+      "runId": "pyrua-dex_r01_67_faucet_recovery-ee8f8b886b",
+      "perEpisodeFile": "per_task_eval/67_faucet_cup_water_fill/None/per_episode.jsonl",
+      "summaryFile": "per_task_eval/67_faucet_cup_water_fill/None/summary.json"
+     }
+    },
+    "Equi.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 36,
+     "lscr": 84.0,
+     "source": {
+      "runId": "pyrua-dex_r01_67_faucet_recovery-ee8f8b886b",
+      "perEpisodeFile": "per_task_eval/67_faucet_cup_water_fill/Equi/per_episode.jsonl",
+      "summaryFile": "per_task_eval/67_faucet_cup_water_fill/Equi/summary.json"
+     }
+    },
+    "Inv.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 31,
+     "lscr": 74.0,
+     "source": {
+      "runId": "pyrua-dex_r01_67_faucet_recovery-ee8f8b886b",
+      "perEpisodeFile": "per_task_eval/67_faucet_cup_water_fill/Inv/per_episode.jsonl",
+      "summaryFile": "per_task_eval/67_faucet_cup_water_fill/Inv/summary.json"
+     }
+    },
+    "Full": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 26,
+     "lscr": 67.5,
+     "source": {
+      "runId": "pyrua-dex_r01_67_faucet_recovery-ee8f8b886b",
+      "perEpisodeFile": "per_task_eval/67_faucet_cup_water_fill/Full/per_episode.jsonl",
+      "summaryFile": "per_task_eval/67_faucet_cup_water_fill/Full/summary.json"
+     }
+    }
+   },
+   "mean": {
+    "status": "reported",
+    "sr": 60.5,
+    "srScope": "four-channel-mean",
+    "srEpisodes": 200,
+    "lscr": 74.375,
+    "lscrScope": "four-channel-mean",
+    "lscrEpisodes": 200,
+    "efficiency": 0.7813877463524431,
+    "efficiencyStatus": "reported"
+   }
+  },
+  "73": {
+   "channels": {
+    "None": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 0,
+     "lscr": 36.0,
+     "source": {
+      "runId": "pyrua-dex_r01_73_yellowbounds-df764f33e4",
+      "perEpisodeFile": "per_task_eval/73_jigsaw_puzzle_assembly/None/per_episode.jsonl",
+      "summaryFile": "per_task_eval/73_jigsaw_puzzle_assembly/None/summary.json"
+     }
+    },
+    "Equi.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 0,
+     "lscr": 37.0,
+     "source": {
+      "runId": "pyrua-dex_r01_73_yellowbounds-df764f33e4",
+      "perEpisodeFile": "per_task_eval/73_jigsaw_puzzle_assembly/Equi/per_episode.jsonl",
+      "summaryFile": "per_task_eval/73_jigsaw_puzzle_assembly/Equi/summary.json"
+     }
+    },
+    "Inv.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 0,
+     "lscr": 38.0,
+     "source": {
+      "runId": "pyrua-dex_r01_73_yellowbounds-df764f33e4",
+      "perEpisodeFile": "per_task_eval/73_jigsaw_puzzle_assembly/Inv/per_episode.jsonl",
+      "summaryFile": "per_task_eval/73_jigsaw_puzzle_assembly/Inv/summary.json"
+     }
+    },
+    "Full": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 0,
+     "lscr": 37.0,
+     "source": {
+      "runId": "pyrua-dex_r01_73_yellowbounds-df764f33e4",
+      "perEpisodeFile": "per_task_eval/73_jigsaw_puzzle_assembly/Full/per_episode.jsonl",
+      "summaryFile": "per_task_eval/73_jigsaw_puzzle_assembly/Full/summary.json"
+     }
+    }
+   },
+   "mean": {
+    "status": "reported",
+    "sr": 0.0,
+    "srScope": "four-channel-mean",
+    "srEpisodes": 200,
+    "lscr": 37.0,
+    "lscrScope": "four-channel-mean",
+    "lscrEpisodes": 200,
+    "efficiency": null,
+    "efficiencyStatus": "no-success"
+   }
+  },
+  "76": {
+   "channels": {
+    "None": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 9,
+     "lscr": 27.0,
+     "source": {
+      "runId": "pyrua-dex_r01_76_serving_palm-139449a835",
+      "perEpisodeFile": "per_task_eval/76_soup_serving/None/per_episode.jsonl",
+      "summaryFile": "per_task_eval/76_soup_serving/None/summary.json"
+     }
+    },
+    "Equi.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 6,
+     "lscr": 22.5,
+     "source": {
+      "runId": "pyrua-dex_r01_76_serving_palm-139449a835",
+      "perEpisodeFile": "per_task_eval/76_soup_serving/Equi/per_episode.jsonl",
+      "summaryFile": "per_task_eval/76_soup_serving/Equi/summary.json"
+     }
+    },
+    "Inv.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 5,
+     "lscr": 27.500000000000004,
+     "source": {
+      "runId": "pyrua-dex_r01_76_serving_palm-139449a835",
+      "perEpisodeFile": "per_task_eval/76_soup_serving/Inv/per_episode.jsonl",
+      "summaryFile": "per_task_eval/76_soup_serving/Inv/summary.json"
+     }
+    },
+    "Full": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 8,
+     "lscr": 23.0,
+     "source": {
+      "runId": "pyrua-dex_r01_76_serving_palm-139449a835",
+      "perEpisodeFile": "per_task_eval/76_soup_serving/Full/per_episode.jsonl",
+      "summaryFile": "per_task_eval/76_soup_serving/Full/summary.json"
+     }
+    }
+   },
+   "mean": {
+    "status": "reported",
+    "sr": 14.0,
+    "srScope": "four-channel-mean",
+    "srEpisodes": 200,
+    "lscr": 25.0,
+    "lscrScope": "four-channel-mean",
+    "lscrEpisodes": 200,
+    "efficiency": 1.1727624145108535,
+    "efficiencyStatus": "reported"
+   }
+  },
+  "79": {
+   "channels": {
+    "None": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 42,
+     "lscr": 84.0,
+     "source": {
+      "runId": "pyrua-dex_r01_79_piano_player-562b0d928f",
+      "perEpisodeFile": "per_task_eval/79_bimanual_piano_melody/None/per_episode.jsonl",
+      "summaryFile": "per_task_eval/79_bimanual_piano_melody/None/summary.json"
+     }
+    },
+    "Equi.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 41,
+     "lscr": 82.0,
+     "source": {
+      "runId": "pyrua-dex_r01_79_piano_player-562b0d928f",
+      "perEpisodeFile": "per_task_eval/79_bimanual_piano_melody/Equi/per_episode.jsonl",
+      "summaryFile": "per_task_eval/79_bimanual_piano_melody/Equi/summary.json"
+     }
+    },
+    "Inv.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 43,
+     "lscr": 86.0,
+     "source": {
+      "runId": "pyrua-dex_r01_79_piano_player-562b0d928f",
+      "perEpisodeFile": "per_task_eval/79_bimanual_piano_melody/Inv/per_episode.jsonl",
+      "summaryFile": "per_task_eval/79_bimanual_piano_melody/Inv/summary.json"
+     }
+    },
+    "Full": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 40,
+     "lscr": 80.0,
+     "source": {
+      "runId": "pyrua-dex_r01_79_piano_player-562b0d928f",
+      "perEpisodeFile": "per_task_eval/79_bimanual_piano_melody/Full/per_episode.jsonl",
+      "summaryFile": "per_task_eval/79_bimanual_piano_melody/Full/summary.json"
+     }
+    }
+   },
+   "mean": {
+    "status": "reported",
+    "sr": 83.0,
+    "srScope": "four-channel-mean",
+    "srEpisodes": 200,
+    "lscr": 83.0,
+    "lscrScope": "four-channel-mean",
+    "lscrEpisodes": 200,
+    "efficiency": 1.1754075860921644,
+    "efficiencyStatus": "reported"
+   }
+  },
+  "80": {
+   "channels": {
+    "None": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 47,
+     "lscr": 95.33333333333334,
+     "source": {
+      "runId": "pyrua-dex_r01_80_desk_final-3302cc8020",
+      "perEpisodeFile": "per_task_eval/80_gaming_desk_setup/None/per_episode.jsonl",
+      "summaryFile": "per_task_eval/80_gaming_desk_setup/None/summary.json"
+     }
+    },
+    "Equi.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 41,
+     "lscr": 85.33333333333333,
+     "source": {
+      "runId": "pyrua-dex_r01_80_desk_final-3302cc8020",
+      "perEpisodeFile": "per_task_eval/80_gaming_desk_setup/Equi/per_episode.jsonl",
+      "summaryFile": "per_task_eval/80_gaming_desk_setup/Equi/summary.json"
+     }
+    },
+    "Inv.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 41,
+     "lscr": 86.66666666666667,
+     "source": {
+      "runId": "pyrua-dex_r01_80_desk_final-3302cc8020",
+      "perEpisodeFile": "per_task_eval/80_gaming_desk_setup/Inv/per_episode.jsonl",
+      "summaryFile": "per_task_eval/80_gaming_desk_setup/Inv/summary.json"
+     }
+    },
+    "Full": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 38,
+     "lscr": 80.0,
+     "source": {
+      "runId": "pyrua-dex_r01_80_desk_final-3302cc8020",
+      "perEpisodeFile": "per_task_eval/80_gaming_desk_setup/Full/per_episode.jsonl",
+      "summaryFile": "per_task_eval/80_gaming_desk_setup/Full/summary.json"
+     }
+    }
+   },
+   "mean": {
+    "status": "reported",
+    "sr": 83.5,
+    "srScope": "four-channel-mean",
+    "srEpisodes": 200,
+    "lscr": 86.83333333333334,
+    "lscrScope": "four-channel-mean",
+    "lscrEpisodes": 200,
+    "efficiency": 0.8471351212516856,
+    "efficiencyStatus": "reported"
+   }
+  }
+ },
+ "evaluation": {
+  "schemaVersion": "1.0",
+  "isTemplate": false,
+  "protocol": {
+   "benchmarkCommit": "ae870fb0e1f6237f20c8302198ee3850118892e1",
+   "taskCount": 26,
+   "channels": [
+    "None",
+    "Equi.",
+    "Inv.",
+    "Full"
+   ],
+   "episodesPerChannel": 50,
+   "seeds": {
+    "03": {
+     "None": {
+      "base": 100300000,
+      "first": 1,
+      "last": 50
+     },
+     "Equi.": {
+      "base": 100300000,
+      "first": 1,
+      "last": 50
+     },
+     "Inv.": {
+      "base": 100300000,
+      "first": 1,
+      "last": 50
+     },
+     "Full": {
+      "base": 200300000,
+      "first": 1,
+      "last": 50
+     }
+    },
+    "06": {
+     "None": {
+      "base": 100600000,
+      "first": 1,
+      "last": 50
+     },
+     "Equi.": {
+      "base": 100600000,
+      "first": 1,
+      "last": 50
+     },
+     "Inv.": {
+      "base": 100600000,
+      "first": 1,
+      "last": 50
+     },
+     "Full": {
+      "base": 200600000,
+      "first": 1,
+      "last": 50
+     }
+    },
+    "07": {
+     "None": {
+      "base": 100700000,
+      "first": 1,
+      "last": 50
+     },
+     "Equi.": {
+      "base": 100700000,
+      "first": 1,
+      "last": 50
+     },
+     "Inv.": {
+      "base": 100700000,
+      "first": 1,
+      "last": 50
+     },
+     "Full": {
+      "base": 200700000,
+      "first": 1,
+      "last": 50
+     }
+    },
+    "08": {
+     "None": {
+      "base": 100800000,
+      "first": 1,
+      "last": 50
+     },
+     "Equi.": {
+      "base": 100800000,
+      "first": 1,
+      "last": 50
+     },
+     "Inv.": {
+      "base": 100800000,
+      "first": 1,
+      "last": 50
+     },
+     "Full": {
+      "base": 200800000,
+      "first": 1,
+      "last": 50
+     }
+    },
+    "09": {
+     "None": {
+      "base": 100900000,
+      "first": 1,
+      "last": 50
+     },
+     "Equi.": {
+      "base": 100900000,
+      "first": 1,
+      "last": 50
+     },
+     "Inv.": {
+      "base": 100900000,
+      "first": 1,
+      "last": 50
+     },
+     "Full": {
+      "base": 200900000,
+      "first": 1,
+      "last": 50
+     }
+    },
+    "12": {
+     "None": {
+      "base": 101200000,
+      "first": 1,
+      "last": 50
+     },
+     "Equi.": {
+      "base": 101200000,
+      "first": 1,
+      "last": 50
+     },
+     "Inv.": {
+      "base": 101200000,
+      "first": 1,
+      "last": 50
+     },
+     "Full": {
+      "base": 201200000,
+      "first": 1,
+      "last": 50
+     }
+    },
+    "21": {
+     "None": {
+      "base": 102100000,
+      "first": 1,
+      "last": 50
+     },
+     "Equi.": {
+      "base": 102100000,
+      "first": 1,
+      "last": 50
+     },
+     "Inv.": {
+      "base": 102100000,
+      "first": 1,
+      "last": 50
+     },
+     "Full": {
+      "base": 202100000,
+      "first": 1,
+      "last": 50
+     }
+    },
+    "22": {
+     "None": {
+      "base": 102200000,
+      "first": 1,
+      "last": 50
+     },
+     "Equi.": {
+      "base": 102200000,
+      "first": 1,
+      "last": 50
+     },
+     "Inv.": {
+      "base": 102200000,
+      "first": 1,
+      "last": 50
+     },
+     "Full": {
+      "base": 202200000,
+      "first": 1,
+      "last": 50
+     }
+    },
+    "24": {
+     "None": {
+      "base": 102400000,
+      "first": 1,
+      "last": 50
+     },
+     "Equi.": {
+      "base": 102400000,
+      "first": 1,
+      "last": 50
+     },
+     "Inv.": {
+      "base": 102400000,
+      "first": 1,
+      "last": 50
+     },
+     "Full": {
+      "base": 202400000,
+      "first": 1,
+      "last": 50
+     }
+    },
+    "26": {
+     "None": {
+      "base": 102600000,
+      "first": 1,
+      "last": 50
+     },
+     "Equi.": {
+      "base": 102600000,
+      "first": 1,
+      "last": 50
+     },
+     "Inv.": {
+      "base": 102600000,
+      "first": 1,
+      "last": 50
+     },
+     "Full": {
+      "base": 202600000,
+      "first": 1,
+      "last": 50
+     }
+    },
+    "27": {
+     "None": {
+      "base": 102700000,
+      "first": 1,
+      "last": 50
+     },
+     "Equi.": {
+      "base": 102700000,
+      "first": 1,
+      "last": 50
+     },
+     "Inv.": {
+      "base": 102700000,
+      "first": 1,
+      "last": 50
+     },
+     "Full": {
+      "base": 202700000,
+      "first": 1,
+      "last": 50
+     }
+    },
+    "32": {
+     "None": {
+      "base": 103200000,
+      "first": 1,
+      "last": 50
+     },
+     "Equi.": {
+      "base": 103200000,
+      "first": 1,
+      "last": 50
+     },
+     "Inv.": {
+      "base": 103200000,
+      "first": 1,
+      "last": 50
+     },
+     "Full": {
+      "base": 203200000,
+      "first": 1,
+      "last": 50
+     }
+    },
+    "34": {
+     "None": {
+      "base": 103400000,
+      "first": 1,
+      "last": 50
+     },
+     "Equi.": {
+      "base": 103400000,
+      "first": 1,
+      "last": 50
+     },
+     "Inv.": {
+      "base": 103400000,
+      "first": 1,
+      "last": 50
+     },
+     "Full": {
+      "base": 203400000,
+      "first": 1,
+      "last": 50
+     }
+    },
+    "42": {
+     "None": {
+      "base": 104200000,
+      "first": 1,
+      "last": 50
+     },
+     "Equi.": {
+      "base": 104200000,
+      "first": 1,
+      "last": 50
+     },
+     "Inv.": {
+      "base": 104200000,
+      "first": 1,
+      "last": 50
+     },
+     "Full": {
+      "base": 204200000,
+      "first": 1,
+      "last": 50
+     }
+    },
+    "43": {
+     "None": {
+      "base": 104300000,
+      "first": 1,
+      "last": 50
+     },
+     "Equi.": {
+      "base": 104300000,
+      "first": 1,
+      "last": 50
+     },
+     "Inv.": {
+      "base": 104300000,
+      "first": 1,
+      "last": 50
+     },
+     "Full": {
+      "base": 204300000,
+      "first": 1,
+      "last": 50
+     }
+    },
+    "44": {
+     "None": {
+      "base": 104400000,
+      "first": 1,
+      "last": 50
+     },
+     "Equi.": {
+      "base": 104400000,
+      "first": 1,
+      "last": 50
+     },
+     "Inv.": {
+      "base": 104400000,
+      "first": 1,
+      "last": 50
+     },
+     "Full": {
+      "base": 204400000,
+      "first": 1,
+      "last": 50
+     }
+    },
+    "51": {
+     "None": {
+      "base": 105100000,
+      "first": 1,
+      "last": 50
+     },
+     "Equi.": {
+      "base": 105100000,
+      "first": 1,
+      "last": 50
+     },
+     "Inv.": {
+      "base": 105100000,
+      "first": 1,
+      "last": 50
+     },
+     "Full": {
+      "base": 205100000,
+      "first": 1,
+      "last": 50
+     }
+    },
+    "60": {
+     "None": {
+      "base": 106000000,
+      "first": 1,
+      "last": 50
+     },
+     "Equi.": {
+      "base": 106000000,
+      "first": 1,
+      "last": 50
+     },
+     "Inv.": {
+      "base": 106000000,
+      "first": 1,
+      "last": 50
+     },
+     "Full": {
+      "base": 206000000,
+      "first": 1,
+      "last": 50
+     }
+    },
+    "61": {
+     "None": {
+      "base": 106100000,
+      "first": 1,
+      "last": 50
+     },
+     "Equi.": {
+      "base": 106100000,
+      "first": 1,
+      "last": 50
+     },
+     "Inv.": {
+      "base": 106100000,
+      "first": 1,
+      "last": 50
+     },
+     "Full": {
+      "base": 206100000,
+      "first": 1,
+      "last": 50
+     }
+    },
+    "62": {
+     "None": {
+      "base": 106200000,
+      "first": 1,
+      "last": 50
+     },
+     "Equi.": {
+      "base": 106200000,
+      "first": 1,
+      "last": 50
+     },
+     "Inv.": {
+      "base": 106200000,
+      "first": 1,
+      "last": 50
+     },
+     "Full": {
+      "base": 206200000,
+      "first": 1,
+      "last": 50
+     }
+    },
+    "64": {
+     "None": {
+      "base": 106400000,
+      "first": 1,
+      "last": 50
+     },
+     "Equi.": {
+      "base": 106400000,
+      "first": 1,
+      "last": 50
+     },
+     "Inv.": {
+      "base": 106400000,
+      "first": 1,
+      "last": 50
+     },
+     "Full": {
+      "base": 206400000,
+      "first": 1,
+      "last": 50
+     }
+    },
+    "67": {
+     "None": {
+      "base": 106700000,
+      "first": 1,
+      "last": 50
+     },
+     "Equi.": {
+      "base": 106700000,
+      "first": 1,
+      "last": 50
+     },
+     "Inv.": {
+      "base": 106700000,
+      "first": 1,
+      "last": 50
+     },
+     "Full": {
+      "base": 206700000,
+      "first": 1,
+      "last": 50
+     }
+    },
+    "73": {
+     "None": {
+      "base": 107300000,
+      "first": 1,
+      "last": 50
+     },
+     "Equi.": {
+      "base": 107300000,
+      "first": 1,
+      "last": 50
+     },
+     "Inv.": {
+      "base": 107300000,
+      "first": 1,
+      "last": 50
+     },
+     "Full": {
+      "base": 207300000,
+      "first": 1,
+      "last": 50
+     }
+    },
+    "76": {
+     "None": {
+      "base": 107600000,
+      "first": 1,
+      "last": 50
+     },
+     "Equi.": {
+      "base": 107600000,
+      "first": 1,
+      "last": 50
+     },
+     "Inv.": {
+      "base": 107600000,
+      "first": 1,
+      "last": 50
+     },
+     "Full": {
+      "base": 207600000,
+      "first": 1,
+      "last": 50
+     }
+    },
+    "79": {
+     "None": {
+      "base": 107900000,
+      "first": 1,
+      "last": 50
+     },
+     "Equi.": {
+      "base": 107900000,
+      "first": 1,
+      "last": 50
+     },
+     "Inv.": {
+      "base": 107900000,
+      "first": 1,
+      "last": 50
+     },
+     "Full": {
+      "base": 207900000,
+      "first": 1,
+      "last": 50
+     }
+    },
+    "80": {
+     "None": {
+      "base": 108000000,
+      "first": 1,
+      "last": 50
+     },
+     "Equi.": {
+      "base": 108000000,
+      "first": 1,
+      "last": 50
+     },
+     "Inv.": {
+      "base": 108000000,
+      "first": 1,
+      "last": 50
+     },
+     "Full": {
+      "base": 208000000,
+      "first": 1,
+      "last": 50
+     }
+    }
+   },
+   "stepUnit": "physics_steps",
+   "physicsHz": 60,
+   "controlHz": 20,
+   "evaluationProtocol": "reach_and_stop",
+   "earlyStop": true,
+   "executionStepBudget": {
+    "rule": "3 * ceil(1.5 * expert_time_step / 3) physics steps (the benchmark's own episode limit, 1x)",
+    "perTaskPhysicsSteps": {
+     "03": 3246,
+     "06": 1920,
+     "07": 1806,
+     "08": 3432,
+     "09": 1926,
+     "12": 3447,
+     "21": 2481,
+     "22": 2043,
+     "24": 4626,
+     "26": 2613,
+     "27": 3570,
+     "32": 2556,
+     "34": 3240,
+     "42": 2004,
+     "43": 4125,
+     "44": 3183,
+     "51": 3069,
+     "60": 2985,
+     "61": 3102,
+     "62": 3231,
+     "64": 1995,
+     "67": 2892,
+     "73": 3639,
+     "76": 2958,
+     "79": 2043,
+     "80": 1779
+    },
+    "perTaskPolicySteps": {
+     "03": 1082,
+     "06": 640,
+     "07": 602,
+     "08": 1144,
+     "09": 642,
+     "12": 1149,
+     "21": 827,
+     "22": 681,
+     "24": 1542,
+     "26": 871,
+     "27": 1190,
+     "32": 852,
+     "34": 1080,
+     "42": 668,
+     "43": 1375,
+     "44": 1061,
+     "51": 1023,
+     "60": 995,
+     "61": 1034,
+     "62": 1077,
+     "64": 665,
+     "67": 964,
+     "73": 1213,
+     "76": 986,
+     "79": 681,
+     "80": 593
+    }
+   },
+   "dwellTimeSecondsByTask": {
+    "03": 0.5,
+    "06": 0.5,
+    "07": 0.5,
+    "08": 0.5,
+    "09": 0.5,
+    "12": 0.5,
+    "21": 0.5,
+    "22": 0.5,
+    "24": 0.5,
+    "26": 0.5,
+    "27": 0.5,
+    "32": 0.5,
+    "34": 0.5,
+    "42": 0.5,
+    "43": 0.5,
+    "44": 0.5,
+    "51": 0.5,
+    "60": 0.5,
+    "61": 0.5,
+    "62": 0.5,
+    "64": 0.5,
+    "67": 3.0,
+    "73": 0.5,
+    "76": 0.5,
+    "79": 0.5,
+    "80": 0.5
+   },
+   "expertTimeStepByTask": {
+    "03": 2164,
+    "06": 1280,
+    "07": 1203,
+    "08": 2288,
+    "09": 1283,
+    "12": 2297,
+    "21": 1654,
+    "22": 1361,
+    "24": 3083,
+    "26": 1742,
+    "27": 2380,
+    "32": 1703,
+    "34": 2160,
+    "42": 1336,
+    "43": 2750,
+    "44": 2122,
+    "51": 2046,
+    "60": 1989,
+    "61": 2067,
+    "62": 2154,
+    "64": 1329,
+    "67": 1928,
+    "73": 2426,
+    "76": 1972,
+    "79": 1362,
+    "80": 1185
+   },
+   "expertReference": "paper-expert-reference (expert_time_step of the scene files at the benchmark commit)",
+   "protocolChanges": [
+    "Method: one frozen program per task, written and tested by GPT-6 Astra coding agents on development layouts (seeds disjoint from the evaluation seeds, with the simulator's stage feedback). No human demonstration data, no trained weights, no language-model calls during evaluation.",
+    "Task description: the benchmark's instruction together with a goal text saying in words what completing the task means.",
+    "Inputs at evaluation: besides RGB cameras, joint positions and tactile, the program uses the episode's camera calibration, forward kinematics and a segmentation model (SAM3); no simulator state or success/stage signals."
+   ]
+  },
+  "coverage": {
+   "evaluatedTaskCount": 26,
+   "evaluatedEpisodeCount": 5200,
+   "completedTaskCount": {
+    "None": 26,
+    "Equi.": 26,
+    "Inv.": 26,
+    "Full": 26,
+    "mean": 26
+   },
+   "expectedFullEpisodeCount": 1300,
+   "expectedFourChannelEpisodeCount": 5200,
+   "missingTaskChannels": {}
+  },
+  "aggregation": {
+   "units": {
+    "sr": "percent",
+    "lscr": "percent",
+    "efficiency": "ratio",
+    "steps": "physics_steps"
+   },
+   "sr": "100 * successes / episodes per task/channel; equal channel mean per task; equal task mean over all 26 settings.",
+   "lscr": "100 * mean episode latched_stage_completion_rate, including failures; equal channel mean per task; equal task mean over all 26 settings.",
+   "efficiency": "expert_time_step / mean successful steps_to_stable_success. Pool successful episodes across all four channels before calculating task mean efficiency. Overall values average task efficiencies over tasks with success; report valid-task counts.",
+   "missing": "null means unreported (NR). Efficiency without successes is null with no-success status. Valid-task counts are null when unreported, and 0 for an evaluated scope without successes.",
+   "scope": "Overall channel aggregates require all 26 settings. Four-channel means require all four channels. Never substitute Full-only scores for means or include duplicate reruns."
+  },
+  "logs": {
+   "repository": "Bench2Dex/Leaderboard",
+   "policyPath": "pyrua-dex",
+   "revision": null,
+   "status": "not-archived"
+  },
+  "selectedPrograms": {
+   "03": {
+    "program": "wine_fast-e9124b6af8",
+    "devComplete": "22/32"
+   },
+   "06": {
+    "program": "fruit_controller-429ffea065",
+    "devComplete": "17/32"
+   },
+   "07": {
+    "program": "citrus_policy-3695867c40",
+    "devComplete": "20/32"
+   },
+   "08": {
+    "program": "soy_fixed-cdfd94bffc",
+    "devComplete": "0/32"
+   },
+   "09": {
+    "program": "cleaner55-5f88a39d99",
+    "devComplete": "16/32"
+   },
+   "12": {
+    "program": "measured_tools-adce3bd7ad",
+    "devComplete": "0/32"
+   },
+   "21": {
+    "program": "round_fallback-33066e1d92",
+    "devComplete": "5/32"
+   },
+   "22": {
+    "program": "toolbox-59184eb3a0",
+    "devComplete": "15/32"
+   },
+   "24": {
+    "program": "stationery_full-fc6bd676a0",
+    "devComplete": "10/32"
+   },
+   "26": {
+    "program": "tray_round-c2ad9643b5",
+    "devComplete": "12/32"
+   },
+   "27": {
+    "program": "ring_prefix_thumb_release-f1ac959cf9",
+    "devComplete": "21/32"
+   },
+   "32": {
+    "program": "tray_hybrid-c636840313",
+    "devComplete": "10/32"
+   },
+   "34": {
+    "program": "retensioned_service-3cc32133ca",
+    "devComplete": "0/32"
+   },
+   "42": {
+    "program": "trash-f39e0082b0",
+    "devComplete": "10/32"
+   },
+   "43": {
+    "program": "fridge_round-c4e0b828aa",
+    "devComplete": "5/32"
+   },
+   "44": {
+    "program": "reliable-a666046e78",
+    "devComplete": "19/32"
+   },
+   "51": {
+    "program": "toilet_final-4a83db3920",
+    "devComplete": "28/32"
+   },
+   "60": {
+    "program": "meal-560f17c29a",
+    "devComplete": "15/32"
+   },
+   "61": {
+    "program": "medicine_point_v2-06e06faffc",
+    "devComplete": "27/32"
+   },
+   "62": {
+    "program": "shoebox-8b45ce4db8",
+    "devComplete": "14/32"
+   },
+   "64": {
+    "program": "ball_sort-7a836c8a10",
+    "devComplete": "19/32"
+   },
+   "67": {
+    "program": "faucet_recovery-ee8f8b886b",
+    "devComplete": "17/32"
+   },
+   "73": {
+    "program": "yellowbounds-df764f33e4",
+    "devComplete": "0/32"
+   },
+   "76": {
+    "program": "serving_palm-139449a835",
+    "devComplete": "5/32"
+   },
+   "79": {
+    "program": "piano_player-562b0d928f",
+    "devComplete": "27/32"
+   },
+   "80": {
+    "program": "desk_final-3302cc8020",
+    "devComplete": "29/32"
+   }
+  }
+ }
+}
