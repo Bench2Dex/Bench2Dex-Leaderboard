@@ -24,6 +24,22 @@ const sharedAssetVersions = Object.fromEntries(await Promise.all(["results-model
 await writeFile(join(output, "assets/js/evaluations.js"), runtimeScript(data)+"window.BenchLeaderboardAssetVersions="+JSON.stringify(sharedAssetVersions)+";\n");
 // Version local assets by content so a publication update cannot reuse stale scripts.
 let html = await readFile(join(output, "index.html"), "utf8");
+const news = JSON.parse(await readFile(join(root, "assets/data/news.json"), "utf8"));
+const newestFirst = news.sort((a, b) => b.date.localeCompare(a.date));
+const dateFormat = new Intl.DateTimeFormat("en-US", {
+  month: "short", day: "numeric", year: "numeric", timeZone: "UTC",
+});
+const { escape } = context.window.BenchResults;
+if (newestFirst.length) {
+  const rows = newestFirst.map(({ date, action = "Added", model, contributor, url, contributorUrl, metric, value }) => {
+    const dateLabel = dateFormat.format(new Date(date + "T00:00:00Z"));
+    const score = metric === "Score" ? value.toFixed(2) : value.toFixed(1) + "%";
+    return `<li class="news-entry"><time datetime="${escape(date)}">${dateLabel}</time><p>${escape(action)} <a href="${escape(url)}">${escape(model)}</a> <span class="news-contributor">(<a href="${escape(contributorUrl)}">${escape(contributor)}</a>)</span> <span class="news-metric">· ${escape(metric)} ${score}</span></p></li>`;
+  });
+  const timeline = `<div class="news-scroll" role="region" aria-label="Policy update history" tabindex="0"><ol class="news-list" role="list">${rows.join("\n")}</ol></div>`;
+  html = html.replace('aria-labelledby="news-title" hidden', 'aria-labelledby="news-title"');
+  html = html.replace("<!-- Policy news -->", () => timeline);
+}
 const urls = [...new Set([...html.matchAll(/(?:src|href)="(assets\/(?:js|css)\/[^"?]+\.(?:js|css))"/g)].map(match => match[1]))];
 for (const url of urls) {
   const hash = createHash("sha256").update(await readFile(join(output, url))).digest("hex").slice(0,12);

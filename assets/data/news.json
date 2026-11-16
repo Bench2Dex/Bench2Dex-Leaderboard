@@ -1,0 +1,15 @@
+[
+  {"date":"2026-11-16","model":"PyRUA-Dex","contributor":"PKU DAGroup","url":"https://github.com/Bench2Dex/Bench2Dex-Leaderboard/pull/7","contributorUrl":"https://github.com/DAGroup-PKU","metric":"Score","value":59.13},
+  {"date":"2026-11-14","model":"MXI","contributor":"1011.ai","url":"https://github.com/Bench2Dex/Bench2Dex-Leaderboard/pull/6","contributorUrl":"https://github.com/Bench2Dex/Bench2Dex-Leaderboard/pull/6","metric":"Score","value":50.95},
+  {"date":"2026-11-14","model":"Phoenix-MWA","contributor":"Anyverse & OpenPhoenix","url":"https://github.com/Bench2Dex/Bench2Dex-Leaderboard/pull/5","contributorUrl":"https://openphoenix-team.github.io/Phoenix-pages/#contributions-heading","metric":"Score","value":59.07},
+  {"date":"2026-11-11","model":"Mora V0","contributor":"Morphi Robot","url":"https://github.com/Bench2Dex/Bench2Dex-Leaderboard/pull/4","contributorUrl":"https://www.morphi.com/","metric":"Score","value":48.23},
+  {"date":"2026-11-04","model":"GPT-6 Astra 1× + ICL","contributor":"SenseNova-RoboRSI","url":"https://github.com/Bench2Dex/Bench2Dex-Leaderboard/pull/2","contributorUrl":"https://github.com/OpenSenseNova/SenseNova-RoboRSI","metric":"Full SR","value":26.2},
+  {"date":"2026-11-04","model":"GPT-6 Astra 10× + ICL","contributor":"SenseNova-RoboRSI","url":"https://github.com/Bench2Dex/Bench2Dex-Leaderboard/pull/1","contributorUrl":"https://github.com/OpenSenseNova/SenseNova-RoboRSI","metric":"Full SR","value":61.5},
+  {"date":"2026-10-27","model":"GR00T N1.7 w/ Tactile","contributor":"Bench2Dex Team","url":"https://github.com/Bench2Dex/Bench2Dex.github.io/commit/9ea9a9f0b654938d85c8489dec1b50777199698a","contributorUrl":"https://bench2dex.github.io/","metric":"Score","value":44.6},
+  {"date":"2026-10-22","model":"GR00T N1.7 w/o Tactile","contributor":"Bench2Dex Team","url":"https://github.com/Bench2Dex/Bench2Dex.github.io/commit/846a4ab29553d0b2276440b29512579af7c71a61","contributorUrl":"https://bench2dex.github.io/","metric":"Score","value":42.13},
+  {"date":"2026-10-21","model":"GR00T N1.5 w/ Tactile","contributor":"Bench2Dex Team","url":"https://github.com/Bench2Dex/Bench2Dex.github.io/commit/b83e41bbb47b07d6e13405f1b6be7e962ed544ad","contributorUrl":"https://bench2dex.github.io/","metric":"Score","value":41.86},
+  {"date":"2026-10-21","model":"π₀.₅","contributor":"Bench2Dex Team","url":"https://arxiv.org/abs/2609.15726","contributorUrl":"https://bench2dex.github.io/","metric":"Score","value":42.05},
+  {"date":"2026-10-21","model":"GR00T N1.5 w/o Tactile","contributor":"Bench2Dex Team","url":"https://arxiv.org/abs/2609.15726","contributorUrl":"https://bench2dex.github.io/","metric":"Score","value":40.84},
+  {"date":"2026-10-21","model":"ACT","contributor":"Bench2Dex Team","url":"https://arxiv.org/abs/2609.15726","contributorUrl":"https://bench2dex.github.io/","metric":"Score","value":33.52},
+  {"date":"2026-10-21","model":"DP","contributor":"Bench2Dex Team","url":"https://arxiv.org/abs/2609.15726","contributorUrl":"https://bench2dex.github.io/","metric":"Score","value":18.96}
+]

@@ -246,6 +246,38 @@
 .task-detail h3{display:flex;align-items:baseline;flex-wrap:wrap;gap:6px 14px;margin-bottom:14px;}
 .task-detail h3 span{display:inline;margin:0;font-size:12px;}
 .task-detail h3 .task-detail-name{font:inherit;color:inherit;white-space:nowrap;overflow-wrap:normal;}
+.policy-news{--news-inset:22px;--news-row-height:36px;padding-bottom:12px;}
+.policy-news .section-toolbar{min-height:0;padding:16px var(--news-inset) 12px;}
+.news-scroll{
+  max-block-size:calc(3 * var(--news-row-height) + 6px);
+  margin:0 var(--news-inset);
+  padding:3px 10px 3px 0;
+  overflow-y:auto;
+  scrollbar-gutter:stable;
+  scrollbar-width:thin;
+  scrollbar-color:#8fa7c5 #edf2f7;
+}
+.news-list{list-style:none;margin:0;padding:0;}
+.news-entry{display:grid;grid-template-columns:104px minmax(0,1fr);gap:12px;position:relative;min-block-size:var(--news-row-height);padding:8px 0 7px 16px;border-left:1px solid #dae3ee;margin-left:4px;font-size:13px;line-height:1.5;}
+.news-entry::before{content:"";position:absolute;top:14px;left:-4px;width:7px;height:7px;border:1px solid #a3b2c5;border-radius:50%;background:var(--surface);}
+.news-entry:first-child::before{border-color:var(--cyan);background:var(--cyan);box-shadow:0 0 0 3px #e5edf8;}
+.news-entry time{color:#526179;font:12px/1.65 var(--mono);white-space:nowrap;}
+.news-entry p{margin:0;overflow-wrap:anywhere;}
+.news-entry a{color:var(--cyan);font-weight:600;text-underline-offset:3px;}
+.news-entry a:hover{text-decoration:underline;}
+.news-contributor{color:var(--text-dim);}
+.news-contributor a{color:inherit;font-weight:500;text-decoration:underline;text-decoration-color:#acb8c8;}
+.news-contributor a:hover{color:var(--cyan);}
+.news-metric{white-space:nowrap;font-variant-numeric:tabular-nums;}
+.news-entry a:focus-visible{outline:2px solid var(--cyan);outline-offset:2px;}
+.news-scroll:focus-visible{outline:2px solid var(--cyan);outline-offset:2px;border-radius:3px;}
+@media(max-width:600px){
+  .policy-news{--news-inset:14px;--news-row-height:54px;}
+  .news-entry{grid-template-columns:minmax(0,1fr);grid-template-rows:auto 1fr;gap:2px;padding-block:6px;}
+  .news-entry time{font-size:11px;}
+  .news-entry::before{top:11px;}
+}
+
 #protocol-notes{border:1px solid #dce2e8;border-radius:10px;padding:0 20px;background:#ffffff70;}
 #protocol-notes > summary{display:flex;align-items:center;justify-content:space-between;width:100%;padding:17px 0;list-style:none;font-size:14px;font-weight:600;}
 #protocol-notes > summary::-webkit-details-marker{display:none;}
