@@ -24,8 +24,11 @@
     <nav class="board-breadcrumb" aria-label="Breadcrumb"><a href="https://bench2dex.github.io/">Bench2Dex</a><span aria-hidden="true">/</span><span aria-current="page">Leaderboard</span></nav>
   </div>
   <div class="board-nav-tools">
-    <nav class="board-section-nav" aria-label="Leaderboard Sections"><a href="#policy-leaderboard">Overall Performance</a><a href="#per-task-scores">Per-Task Scores</a></nav>
-    <button type="button" class="btn btn-primary board-copy-bib" data-copy-bib>Copy BibTeX</button>
+    <nav class="board-section-nav" aria-label="Leaderboard Sections"><a href="#policy-news">News</a><a href="#policy-leaderboard">Overall Performance</a><a href="#per-task-scores">Per-Task Scores</a></nav>
+    <div class="board-nav-actions board-action-group">
+      <button type="button" class="board-action board-copy-bib" data-copy-bib>Copy BibTeX</button>
+      <a class="board-action results-submit" href="https://github.com/Bench2Dex/Bench2Dex-Leaderboard#readme" target="_blank" rel="noopener noreferrer">Submit Results<span class="board-action-icon" aria-hidden="true">↗</span></a>
+    </div>
   </div>
 </div></header>
 <main class="board-container">
@@ -40,23 +43,27 @@
     <div class="moonshot-footer"><div class="moonshot-footer-info"><span class="moonshot-scope">Ranked by Score</span><span id="moonshot-coverage"></span></div><a href="#protocol-notes">Protocol &amp; metrics ↗</a></div>
   </section>
   <div id="results-explorer" class="results-explorer results-stack">
-    <div class="board-global-tools">
-      <label class="results-field" id="results-group-control" hidden>Evaluation Group<select id="results-group"></select></label>
-      <div class="results-downloads"><button type="button" id="results-export-all" title="Download all policies, tasks, four-channel scores and evaluation metadata">All Policies CSV ↓</button><a class="results-submit" href="https://github.com/Bench2Dex/Bench2Dex-Leaderboard#readme" target="_blank" rel="noopener noreferrer" aria-label="How to submit results via pull request">Submit Results <span aria-hidden="true">↗</span></a></div>
-    </div>
-
-    <section id="policy-leaderboard" class="board-section" aria-labelledby="ranking-title">
-      <div class="section-toolbar">
-        <div class="section-intro"><div class="section-heading"><h2 id="ranking-title">Overall Performance</h2><span class="section-count" id="ranking-count"></span></div><p id="ranking-label" class="table-sort-status" aria-live="polite"></p></div>
-        <div class="section-meta"><p class="table-updated" id="ranking-updated"></p><div class="section-actions"><button type="button" class="table-reset" id="ranking-reset" aria-label="Reset Overall Performance to defaults" hidden>Reset</button></div></div>
-      </div>
-      <div id="overview-table"></div>
-      <div class="table-footer"><p class="table-note" id="ranking-caption"></p><div class="table-legend-compact"><strong class="best-value" title="Highest reported SR, LSCR, efficiency or Score, including ties">Best</strong><span class="heat-key" aria-label="Color scale: 0 to 100 percent"><span>0</span><span class="heat-swatch" aria-hidden="true"></span><span>100%</span></span></div></div>
-    </section>
-
     <section id="policy-news" class="board-section policy-news" aria-labelledby="news-title" hidden>
       <div class="section-toolbar"><h2 id="news-title">News</h2></div>
       <!-- Policy news -->
+    </section>
+
+    <section id="policy-leaderboard" class="board-section" aria-labelledby="ranking-title">
+      <div class="section-toolbar">
+        <div class="section-intro"><div class="section-heading"><h2 id="ranking-title">Overall Performance</h2><span class="section-count" id="ranking-count"></span></div><p id="ranking-label" class="table-sort-status" aria-live="polite"></p><label class="results-field" id="results-group-control" hidden>Evaluation Group<select id="results-group"></select></label></div>
+        <div class="section-meta ranking-meta">
+          <p class="table-updated" id="ranking-updated"></p>
+          <div class="ranking-tools">
+            <div class="section-actions"><button type="button" class="table-reset" id="ranking-reset" aria-label="Reset Overall Performance to defaults" hidden>Reset</button></div>
+            <div class="board-action-group">
+              <button type="button" class="board-action" id="results-export-all" title="Download all policies, tasks, four-channel scores and evaluation metadata">All Policies CSV<span class="board-action-icon" aria-hidden="true">↓</span></button>
+              <a class="board-action results-submit" href="https://github.com/Bench2Dex/Bench2Dex-Leaderboard#readme" target="_blank" rel="noopener noreferrer">Submit Results<span class="board-action-icon" aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="overview-table"></div>
+      <div class="table-footer"><p class="table-note" id="ranking-caption"></p><div class="table-legend-compact"><strong class="best-value" title="Highest reported SR, LSCR, efficiency or Score, including ties">Best</strong><span class="heat-key" aria-label="Color scale: 0 to 100 percent"><span>0</span><span class="heat-swatch" aria-hidden="true"></span><span>100%</span></span></div></div>
     </section>
 
     <section id="per-task-scores" class="board-section" aria-labelledby="task-title">

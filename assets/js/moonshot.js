@@ -23,18 +23,26 @@
     const minX=Math.min(...corners.map(c=>c.x))*scale,maxX=Math.max(...corners.map(c=>c.x))*scale,minY=Math.min(...corners.map(c=>c.y))*scale,maxY=Math.max(...corners.map(c=>c.y))*scale;
     return {...point,angle,width:width*scale,height:height*scale,noseY:noseY*scale,box:{x:point.x+minX,y:point.y+minY,w:maxX-minX,h:maxY-minY}};
   }
+  function rocketClearance(box,rocket,margin,slope){
+    if(!overlap(box,pad(rocket.box,Math.SQRT2*margin)))return 0;
+    // Check the rotated sprite bounds so empty space above the tail can hold labels.
+    const left=box.x-rocket.x,right=left+box.w,top=box.y-rocket.y,bottom=top+box.h;
+    const near=left*tangent.x+bottom*tangent.y,far=right*tangent.x+top*tangent.y;
+    const upper=left*normal.x+top*normal.y,lower=right*normal.x+bottom*normal.y;
+    if(near>=margin||far<=-rocket.width-margin||upper>=rocket.height-rocket.noseY+margin)return 0;
+    return Math.max(0,(lower+rocket.noseY+margin)/(normal.y-slope*normal.x));
+  }
   function layout(entries,viewport=1200){
     // Scores use a 0–100 reference scale; faster-than-expert results stay uncapped.
     const maximum=Math.max(100,Math.ceil((entries[0]?.score||0)/10)*10);
     const point=score=>({x:start.x+(end.x-start.x)*score/maximum,y:start.y+(end.y-start.y)*score/maximum});
     const points=entries.map(e=>({...e,...point(e.score),rank:M.aggregateRank(e.policy.id,"score"),variant:e.policy.variantLabel==="w/ Tactile"?" + Tactile":e.policy.variantLabel&&e.policy.variantLabel!=="w/o Tactile"?" "+e.policy.variantLabel:""}));
     const rocket=points.length?rocketAt(points[0]):null;
-    const initialScale=Math.min(1.05,Math.max(1,frame.width/Math.max(320,viewport)*.85));
+    const initialScale=Math.min(1,Math.max(.96,frame.width/Math.max(320,viewport)*.85));
     const axisSlope=tangent.y/tangent.x,connectorSlopes=[0,-normal.x/normal.y];
     let placed=[];
     for(let attempt=0;attempt<16;attempt++){
-      const scale=initialScale*.94**attempt,gap=2*scale,h=labelHeight*scale;
-      const ship=rocket?pad(rocket.box,6*scale):null;
+      const scale=initialScale*.94**attempt,gap=1.5*scale,h=labelHeight*scale;
       placed=[];
       // Place lower ranks first and find the shortest clear path on either ray.
       for(const p of [...points].reverse()){
@@ -43,24 +51,24 @@
         const logoOffset=35*scale,xAtPoint=p.x-logoOffset;
         const minX=below?.x??14,maxX=frame.width-14-w;
         const obstacles=placed.map(label=>pad(label.box,gap));
-        if(ship)obstacles.push(ship);
         let best;
         for(const slope of connectorSlopes){
           // Keep the right edge of the label above the axis as the box moves up.
           let rise=Math.max(14*scale,(5*scale-(w-logoOffset)*axisSlope)/(1+slope*axisSlope));
           if(below)rise=Math.max(rise,p.y-h-below.y+gap);
           if(slope<0)rise=Math.max(rise,(maxX-xAtPoint)/slope);
-          for(let step=0;step<=obstacles.length;step++){
+          for(let step=0;step<=obstacles.length+1;step++){
             const box={x:xAtPoint+rise*slope,y:p.y-h-rise,w,h};
             if(box.x<minX-1e-8||box.x>maxX+1e-8||box.y<14)break;
             const hits=obstacles.filter(obstacle=>overlap(box,obstacle)>1e-8);
-            if(!hits.length){
+            const shipRise=rocket?rocketClearance(box,rocket,6*scale,slope):0;
+            if(!hits.length&&shipRise<=1e-8){
               const distance=rise*Math.hypot(1,slope);
               if(!best||distance<best.distance)best={box,distance};
               break;
             }
             // Clear each obstacle by passing above it or to its left.
-            rise+=Math.max(...hits.map(obstacle=>{
+            rise+=Math.max(shipRise,...hits.map(obstacle=>{
               const above=box.y+h-obstacle.y;
               const left=slope<0?(box.x+w-obstacle.x)/-slope:Infinity;
               return Math.min(above,left);

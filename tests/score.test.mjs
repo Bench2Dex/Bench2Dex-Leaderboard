@@ -34,11 +34,11 @@ test('finite summaries cannot hide incomplete task evidence',()=>{
 });
 test('default composite order, ranks, best cell and table column agree',()=>{
  const R=api(),M=R.model,rows=R.overall.ordered(M.group('standard'),state);
- assert.deepEqual(Array.from(rows.slice(0,11),p=>p.id),['pyrua-dex','phoenix-mwa','MXI','mora_v0','GR00T_N17_TACTILE','GR00T_N17','PI05','GR00T_N15_TACTILE','GR00T_N15','ACT','DPC']);
- assert.equal(M.aggregateRank('pyrua-dex','score'),1);assert.equal(M.aggregateRank('phoenix-mwa','score'),2);assert.equal(M.aggregateRank('MXI','score'),3);assert.equal(M.aggregateRank('PI05','score'),7);
+ assert.deepEqual(Array.from(rows.slice(0,12),p=>p.id),['gigaworld-policy-06','pyrua-dex','phoenix-mwa','MXI','mora_v0','GR00T_N17_TACTILE','GR00T_N17','PI05','GR00T_N15_TACTILE','GR00T_N15','ACT','DPC']);
+ assert.equal(M.aggregateRank('gigaworld-policy-06','score'),1);assert.equal(M.aggregateRank('pyrua-dex','score'),2);assert.equal(M.aggregateRank('phoenix-mwa','score'),3);assert.equal(M.aggregateRank('PI05','score'),8);
  const html=R.overall.markup(rows,state);
  assert.equal(R.overall.columns.at(-1).id,'score');assert.match(html,/colspan="4" class="summary-group"/);
- assert.match(html,/data-rank-column="score"/);assert.match(html,/<strong class="best-value">59\.13<\/strong>/);
+ assert.match(html,/data-rank-column="score"/);assert.match(html,/<strong class="best-value">64\.64<\/strong>/);
  assert.equal(R.overall.label(state),'Sorted by Score ↓');
  assert.match(R.overall.caption,/0\.45×SR.*0\.45×LSCR.*10×Eff/);
 });

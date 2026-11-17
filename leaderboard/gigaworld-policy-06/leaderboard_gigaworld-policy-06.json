@@ -2614,9 +2614,10 @@
     "logs": {
       "repository": "Bench2Dex/Leaderboard",
       "policyPath": "gigaworld-policy-06",
-      "revision": null,
-      "status": "pending-review"
+      "revision": "400e0670f79f40b90ec8bf3ddc11374edc759681",
+      "status": "archived"
     },
+    "publishedAt": "2026-11-17",
     "checkpoint": {
       "epoch": 5,
       "step": 12870,
