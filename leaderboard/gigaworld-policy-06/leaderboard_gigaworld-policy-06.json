@@ -1,0 +1,2626 @@
+{
+  "model": {
+    "id": "gigaworld-policy-06",
+    "label": "GigaWorld-Policy-0.6",
+    "variantLabel": "",
+    "family": "GigaWorld-Policy",
+    "modelVersion": "GigaWorld-Policy-0.6",
+    "checkpoint": "epoch5 / step12870; SHA256 afed58631710411829692e0f9d5ce618a5f2866c2d239482c7315eb1113be56b",
+    "inputs": "RGB + proprioception + task instruction",
+    "protocolId": "standard",
+    "displayOrder": 140,
+    "trainingSetting": "Multi-task fine-tuned checkpoint, epoch 5 / step 12870",
+    "evaluationSetting": "26 tasks, four channels, 50 episodes per task/channel; fixed checkpoint across all tasks",
+    "resultVersion": "2026-10-28 evaluation",
+    "updatedAt": "2026-11-17",
+    "sourceLabel": "GigaAI Bench2Dex evaluation",
+    "sourceUrl": "https://open-gigaai.github.io/giga-world-policy/",
+    "resultDetailsUrl": null,
+    "contributor": "GigaAI",
+    "contributorUrl": "https://gigaai.cc/",
+    "type": "WAM",
+    "modelUrl": "https://open-gigaai.github.io/giga-world-policy/",
+    "logoPath": "leaderboard/gigaworld-policy-06/logo.png",
+    "logoAlt": "GigaAI",
+    "weightsUrl": null,
+    "codeUrl": null
+  },
+  "overall": {
+    "status": "reported",
+    "taskCount": 26,
+    "scope": "task-macro",
+    "sr": 51.36538461538461,
+    "lscr": 70.9099358974359,
+    "efficiency": 0.961797457000364,
+    "efficiencyStatus": "reported",
+    "efficiencyTaskCount": 26,
+    "channelSr": {
+      "None": 55.38461538461539,
+      "Equi.": 48.23076923076923,
+      "Inv.": 51.38461538461539,
+      "Full": 50.46153846153846
+    },
+    "channelLscr": {
+      "None": 73.81794871794872,
+      "Equi.": 68.9448717948718,
+      "Inv.": 71.1,
+      "Full": 69.77692307692308
+    },
+    "channelTaskCounts": {
+      "None": 26,
+      "Equi.": 26,
+      "Inv.": 26,
+      "Full": 26
+    }
+  },
+  "per_task": {
+    "03": {
+      "channels": {
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 30,
+          "lscr": 88.66666666666666,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_xarm7_with_ability",
+            "perEpisodeFile": "per_task_eval/03_wine_glass_plate_balance/cov_only/per_episode.jsonl",
+            "perEpisodeSha256": "d6fed1a145a56acec35383f9368c308967d94f28144cec274ed8acfac1ed5935",
+            "summaryFile": "per_task_eval/03_wine_glass_plate_balance/cov_only/summary.json",
+            "summarySha256": "f22c4f8e5c8e091778568b15607e85e85aef5f7ce6a8c338ee5bef7ee9be4072"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 27,
+          "lscr": 89.33333333333333,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_xarm7_with_ability",
+            "perEpisodeFile": "per_task_eval/03_wine_glass_plate_balance/inv_cov/per_episode.jsonl",
+            "perEpisodeSha256": "0f86425b83ad558eaba050e47fbafe98425c16c848390108f4c55cb874ea707e",
+            "summaryFile": "per_task_eval/03_wine_glass_plate_balance/inv_cov/summary.json",
+            "summarySha256": "2a14fc8fc7cc04778d250943c02ba74d09e103d9e4eb586d006d649691711326"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 31,
+          "lscr": 95.33333333333334,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_xarm7_with_ability",
+            "perEpisodeFile": "per_task_eval/03_wine_glass_plate_balance/inv_only/per_episode.jsonl",
+            "perEpisodeSha256": "df12b982cc17762e6f2054d08bec3dac6f223cf60b665970afb976c9fd9a53b6",
+            "summaryFile": "per_task_eval/03_wine_glass_plate_balance/inv_only/summary.json",
+            "summarySha256": "572b19c68c2ff1b3908d085982f1a714567a823cc459f4d117ff01eedfec2f36"
+          }
+        },
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 31,
+          "lscr": 91.33333333333333,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_xarm7_with_ability",
+            "perEpisodeFile": "per_task_eval/03_wine_glass_plate_balance/none/per_episode.jsonl",
+            "perEpisodeSha256": "4f4a2be5c63f37630d59a05907de982a90cf53255a304fa5ed331e721d59df03",
+            "summaryFile": "per_task_eval/03_wine_glass_plate_balance/none/summary.json",
+            "summarySha256": "7db6af9bd4eadcf8e73a10d1949ad592e92cef471dd3f773d76bb213adfe5789"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "srScope": "four-channel-mean",
+        "lscrScope": "four-channel-mean",
+        "sr": 59.5,
+        "lscr": 91.16666666666666,
+        "efficiency": 1.0797859850390796,
+        "efficiencyStatus": "reported",
+        "srEpisodes": 200,
+        "lscrEpisodes": 200
+      }
+    },
+    "06": {
+      "channels": {
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 38,
+          "lscr": 91.0,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_rh56dfx",
+            "perEpisodeFile": "per_task_eval/06_fruit_bowl_loading/cov_only/per_episode.jsonl",
+            "perEpisodeSha256": "a1528d7c53dc05819f680e6707e60fe2d95b0f348f3577887197715c21b2b507",
+            "summaryFile": "per_task_eval/06_fruit_bowl_loading/cov_only/summary.json",
+            "summarySha256": "07e8bbdde4e64002f4855b9ff4b359496ce08bb03f0bf31a17016ffc0a0bd3ee"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 35,
+          "lscr": 96.0,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_rh56dfx",
+            "perEpisodeFile": "per_task_eval/06_fruit_bowl_loading/inv_cov/per_episode.jsonl",
+            "perEpisodeSha256": "60f9f60bb33d96128284ac40f8337f6ec3e451a4bb24b8fd717b1d59d8b4e213",
+            "summaryFile": "per_task_eval/06_fruit_bowl_loading/inv_cov/summary.json",
+            "summarySha256": "e0711b090438219ef961f10ea15c537f1625f28d8d91ebb118dab70faf2b62ef"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 41,
+          "lscr": 93.0,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_rh56dfx",
+            "perEpisodeFile": "per_task_eval/06_fruit_bowl_loading/inv_only/per_episode.jsonl",
+            "perEpisodeSha256": "432dbe1740fddd1e786ab1fc220de89aadb72ee7880b17b8f12a8307168173ff",
+            "summaryFile": "per_task_eval/06_fruit_bowl_loading/inv_only/summary.json",
+            "summarySha256": "8ec1d20333b562121aad84c48c900d31a80257409bd97d0af35563b529e1929e"
+          }
+        },
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 44,
+          "lscr": 95.5,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_rh56dfx",
+            "perEpisodeFile": "per_task_eval/06_fruit_bowl_loading/none/per_episode.jsonl",
+            "perEpisodeSha256": "cdbb56c2cc5cfcdbcc507de52efe0b61a2f84256ccb989ba9635bf529f878da0",
+            "summaryFile": "per_task_eval/06_fruit_bowl_loading/none/summary.json",
+            "summarySha256": "f3e43d7e8d17095c6f220bda2dd89f98c4358f8788e7c5a33c256e87a744e299"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "srScope": "four-channel-mean",
+        "lscrScope": "four-channel-mean",
+        "sr": 79.0,
+        "lscr": 93.875,
+        "efficiency": 0.9312434383806384,
+        "efficiencyStatus": "reported",
+        "srEpisodes": 200,
+        "lscrEpisodes": 200
+      }
+    },
+    "07": {
+      "channels": {
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 43,
+          "lscr": 98.0,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_rh5dg2",
+            "perEpisodeFile": "per_task_eval/07_citrus_plate_loading/cov_only/per_episode.jsonl",
+            "perEpisodeSha256": "35bbb7e0e5ff4b05ec9d60af2b4ed59d6bfcd62d3681d98be439a157a0fe3c1a",
+            "summaryFile": "per_task_eval/07_citrus_plate_loading/cov_only/summary.json",
+            "summarySha256": "9d8d9b1f638315c49972b08d0928da875053b941f31380b00866c1fcd7b33738"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 43,
+          "lscr": 92.0,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_rh5dg2",
+            "perEpisodeFile": "per_task_eval/07_citrus_plate_loading/inv_cov/per_episode.jsonl",
+            "perEpisodeSha256": "a35c1c904fe9edeabce230e63bf02b1b58d261b6560aad389fce19a4ff399e1a",
+            "summaryFile": "per_task_eval/07_citrus_plate_loading/inv_cov/summary.json",
+            "summarySha256": "de2e9bac49ea3b291d955f86c6354898bce5dfd2db4899284e17866ef46958b4"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 44,
+          "lscr": 94.5,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_rh5dg2",
+            "perEpisodeFile": "per_task_eval/07_citrus_plate_loading/inv_only/per_episode.jsonl",
+            "perEpisodeSha256": "a316f73cb351fbdee5fef2f81a7984e98483b917fef83865bb59cc06a210cad9",
+            "summaryFile": "per_task_eval/07_citrus_plate_loading/inv_only/summary.json",
+            "summarySha256": "28491ce0a26bac7f852c3fcfcd4c6026295a7c8c53636b85658a400898ddd441"
+          }
+        },
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 45,
+          "lscr": 98.0,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_rh5dg2",
+            "perEpisodeFile": "per_task_eval/07_citrus_plate_loading/none/per_episode.jsonl",
+            "perEpisodeSha256": "8cc687916a4c203e14ee45082302684f0f7b1d913f184d1c97dfe4c2fb279c86",
+            "summaryFile": "per_task_eval/07_citrus_plate_loading/none/summary.json",
+            "summarySha256": "be473140eb01d7f2af1648649d23f1fdade796bfce1b343710be7053fd0e9bd4"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "srScope": "four-channel-mean",
+        "lscrScope": "four-channel-mean",
+        "sr": 87.5,
+        "lscr": 95.625,
+        "efficiency": 0.8419888574708139,
+        "efficiencyStatus": "reported",
+        "srEpisodes": 200,
+        "lscrEpisodes": 200
+      }
+    },
+    "08": {
+      "channels": {
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 46,
+          "lscr": 94.0,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_schunk_hand",
+            "perEpisodeFile": "per_task_eval/08_frypan_stand_pour/cov_only/per_episode.jsonl",
+            "perEpisodeSha256": "ec084d07e414d05bbf5dae3ea88bff588debc19d2fcb684fab2262b2dccf44ea",
+            "summaryFile": "per_task_eval/08_frypan_stand_pour/cov_only/summary.json",
+            "summarySha256": "1a55b9a44ac882fae78484059764a54fea6b089ab3e32941ee2d5c4e80353185"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 42,
+          "lscr": 90.0,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_schunk_hand",
+            "perEpisodeFile": "per_task_eval/08_frypan_stand_pour/inv_cov/per_episode.jsonl",
+            "perEpisodeSha256": "c0463790147a6c4ff670f23d6ef556a33cefa7a3e534dce635b2fcea92bfb06f",
+            "summaryFile": "per_task_eval/08_frypan_stand_pour/inv_cov/summary.json",
+            "summarySha256": "755524d5d5333649dc6ce4c965d96bc710840f0cbf7dd5452451140eb0eedac5"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 46,
+          "lscr": 97.0,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_schunk_hand",
+            "perEpisodeFile": "per_task_eval/08_frypan_stand_pour/inv_only/per_episode.jsonl",
+            "perEpisodeSha256": "f11db4ed6407af3d610d0092f312b269cdec53db9dd3e72f1dbce1ec490facea",
+            "summaryFile": "per_task_eval/08_frypan_stand_pour/inv_only/summary.json",
+            "summarySha256": "9c4eeed5294a2e8c2a4d7b35e76c85b96138e353d141a93888e1c72bce59fd8c"
+          }
+        },
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 46,
+          "lscr": 95.0,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_schunk_hand",
+            "perEpisodeFile": "per_task_eval/08_frypan_stand_pour/none/per_episode.jsonl",
+            "perEpisodeSha256": "44aad2322ae487de7a233841f5429a25093c214b45162c25886232f081257df5",
+            "summaryFile": "per_task_eval/08_frypan_stand_pour/none/summary.json",
+            "summarySha256": "e29eff97524218ee63f627353596a25db07a4fc8bc1f4a3180eefdf8a1106cb2"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "srScope": "four-channel-mean",
+        "lscrScope": "four-channel-mean",
+        "sr": 90.0,
+        "lscr": 94.0,
+        "efficiency": 1.2919700472756133,
+        "efficiencyStatus": "reported",
+        "srEpisodes": 200,
+        "lscrEpisodes": 200
+      }
+    },
+    "09": {
+      "channels": {
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 39,
+          "lscr": 98.0,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_xarm7",
+            "perEpisodeFile": "per_task_eval/09_cleaner_moisturizer_box_loading/cov_only/per_episode.jsonl",
+            "perEpisodeSha256": "295ac5f7d7a08689639202cc1d10b7aea171650ae56f40dec6276b0993044008",
+            "summaryFile": "per_task_eval/09_cleaner_moisturizer_box_loading/cov_only/summary.json",
+            "summarySha256": "c35c1506148ed35c9cbe1f5332b21597982e804bbc17be24285f1b5dc2320336"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 37,
+          "lscr": 96.0,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_xarm7",
+            "perEpisodeFile": "per_task_eval/09_cleaner_moisturizer_box_loading/inv_cov/per_episode.jsonl",
+            "perEpisodeSha256": "b1644c3d2d02927ff959162096cab165516f15d4d398078bdba4cf849b608289",
+            "summaryFile": "per_task_eval/09_cleaner_moisturizer_box_loading/inv_cov/summary.json",
+            "summarySha256": "cd694428dae64e857943b8c43db60ed2747b9a8b172bfab8841e446cd11c001e"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 36,
+          "lscr": 98.0,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_xarm7",
+            "perEpisodeFile": "per_task_eval/09_cleaner_moisturizer_box_loading/inv_only/per_episode.jsonl",
+            "perEpisodeSha256": "5c400781e3efb77258e7d18a18920af8befbe08f2939146a431bed92e39fb215",
+            "summaryFile": "per_task_eval/09_cleaner_moisturizer_box_loading/inv_only/summary.json",
+            "summarySha256": "69633aa6214598fbdcaf734efc9ee93fb792f58074156cd68d3fdb375ebd39fe"
+          }
+        },
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 42,
+          "lscr": 98.0,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_xarm7",
+            "perEpisodeFile": "per_task_eval/09_cleaner_moisturizer_box_loading/none/per_episode.jsonl",
+            "perEpisodeSha256": "c4e28d99a963ca069857611dff690f723832023f16fb7b218bcde3ec410b6ad8",
+            "summaryFile": "per_task_eval/09_cleaner_moisturizer_box_loading/none/summary.json",
+            "summarySha256": "3d6ed7656e381d63c77f38760fad615655a1d9715e0ae142c094638060fb7d68"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "srScope": "four-channel-mean",
+        "lscrScope": "four-channel-mean",
+        "sr": 77.0,
+        "lscr": 97.5,
+        "efficiency": 0.9249617294989491,
+        "efficiencyStatus": "reported",
+        "srEpisodes": 200,
+        "lscrEpisodes": 200
+      }
+    },
+    "12": {
+      "channels": {
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 26,
+          "lscr": 85.0,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_rh56dfx",
+            "perEpisodeFile": "per_task_eval/12_screwdriver_box_and_hammer/cov_only/per_episode.jsonl",
+            "perEpisodeSha256": "74ef81f67213282710a64c6439e253ccf4e37e90a5a5b8e98f2489dc9a1ba1f1",
+            "summaryFile": "per_task_eval/12_screwdriver_box_and_hammer/cov_only/summary.json",
+            "summarySha256": "db3db531404074f1de8f68a9aaa19158f8a1e8d039a4069c7c907127a3105331"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 30,
+          "lscr": 83.0,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_rh56dfx",
+            "perEpisodeFile": "per_task_eval/12_screwdriver_box_and_hammer/inv_cov/per_episode.jsonl",
+            "perEpisodeSha256": "67c03d7845ce035b5a076daca538f389e21fd01dc449eb512744f23495dcaefd",
+            "summaryFile": "per_task_eval/12_screwdriver_box_and_hammer/inv_cov/summary.json",
+            "summarySha256": "b4b741b3c147c6a3ab9b8ca5b25e5763fd61f52daa68480c6fac82b5ec7e9f5d"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 40,
+          "lscr": 90.5,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_rh56dfx",
+            "perEpisodeFile": "per_task_eval/12_screwdriver_box_and_hammer/inv_only/per_episode.jsonl",
+            "perEpisodeSha256": "836540412ca739eee839a6a646302f493946c2c14b3bf78bf6585b9fda301231",
+            "summaryFile": "per_task_eval/12_screwdriver_box_and_hammer/inv_only/summary.json",
+            "summarySha256": "7954672a0433f1013cd6e755b2baf95776e82b79e3a16133a26e74487f5bf693"
+          }
+        },
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 35,
+          "lscr": 91.0,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_rh56dfx",
+            "perEpisodeFile": "per_task_eval/12_screwdriver_box_and_hammer/none/per_episode.jsonl",
+            "perEpisodeSha256": "e6a1dbdb11429d66fd2fc4a244739778094fc9dccd71f7ae6fbcc8dd85c5c3f6",
+            "summaryFile": "per_task_eval/12_screwdriver_box_and_hammer/none/summary.json",
+            "summarySha256": "ecec0842be75cfbd5be42980a26d89339b0e720e513faae2c9aabc3e294b745d"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "srScope": "four-channel-mean",
+        "lscrScope": "four-channel-mean",
+        "sr": 65.5,
+        "lscr": 87.375,
+        "efficiency": 0.9687895402783636,
+        "efficiencyStatus": "reported",
+        "srEpisodes": 200,
+        "lscrEpisodes": 200
+      }
+    },
+    "21": {
+      "channels": {
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 36,
+          "lscr": 97.33333333333334,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_wuji",
+            "perEpisodeFile": "per_task_eval/21_condiment_box_loading/cov_only/per_episode.jsonl",
+            "perEpisodeSha256": "44b40ece67cf36899ccd74e78b3f0b5e5642f5f0c1e1e51050061e855d30dee3",
+            "summaryFile": "per_task_eval/21_condiment_box_loading/cov_only/summary.json",
+            "summarySha256": "80314b57774a54a7f8064149d4ffd72c0ffb29e5cf127144158e46f102d2c502"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 36,
+          "lscr": 94.0,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_wuji",
+            "perEpisodeFile": "per_task_eval/21_condiment_box_loading/inv_cov/per_episode.jsonl",
+            "perEpisodeSha256": "20469b08eb0eaca46889d63d4b4f2f7de176e79735faa920332b6f1dfa36c47d",
+            "summaryFile": "per_task_eval/21_condiment_box_loading/inv_cov/summary.json",
+            "summarySha256": "4691f5b354fd1c6aebf36dec5e0c9860ff896daf19acb7d57e30dd7e952e8b36"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 33,
+          "lscr": 90.66666666666666,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_wuji",
+            "perEpisodeFile": "per_task_eval/21_condiment_box_loading/inv_only/per_episode.jsonl",
+            "perEpisodeSha256": "d6659d5c0cc9a9e9d847e1a44ae65137f0bb79b6f0ff3a3c1ea4eca6ffda7679",
+            "summaryFile": "per_task_eval/21_condiment_box_loading/inv_only/summary.json",
+            "summarySha256": "f0fa007fe15bc27766d00daea39f993079e244e5f49b2c29526e020e6bc354d6"
+          }
+        },
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 38,
+          "lscr": 97.33333333333334,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_wuji",
+            "perEpisodeFile": "per_task_eval/21_condiment_box_loading/none/per_episode.jsonl",
+            "perEpisodeSha256": "3b8eea84a9aa96621c98c4b9d7647e07a040d02ffb58278c849640521298fb92",
+            "summaryFile": "per_task_eval/21_condiment_box_loading/none/summary.json",
+            "summarySha256": "06b1df715e5c8eef6d4f61a93797381b4cdea2b7314c4ee06a6016fc1b3b61eb"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "srScope": "four-channel-mean",
+        "lscrScope": "four-channel-mean",
+        "sr": 71.5,
+        "lscr": 94.83333333333334,
+        "efficiency": 0.9274499654934437,
+        "efficiencyStatus": "reported",
+        "srEpisodes": 200,
+        "lscrEpisodes": 200
+      }
+    },
+    "22": {
+      "channels": {
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 8,
+          "lscr": 39.0,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_panda_with_orca",
+            "perEpisodeFile": "per_task_eval/22_tool_box_loading/cov_only/per_episode.jsonl",
+            "perEpisodeSha256": "62eb49bcb7a3e1fa2d719b5e8db43d76e99d7364a04090da2b6ba8dcd13f07fa",
+            "summaryFile": "per_task_eval/22_tool_box_loading/cov_only/summary.json",
+            "summarySha256": "1239495b8c0f04f876b37bec1d71695161e9235d9137a58f6870634fd6493c66"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 13,
+          "lscr": 43.0,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_panda_with_orca",
+            "perEpisodeFile": "per_task_eval/22_tool_box_loading/inv_cov/per_episode.jsonl",
+            "perEpisodeSha256": "186ba40ea3f17b63eef080d4111ac8dff9e2743b98a80ce036c72463f6977355",
+            "summaryFile": "per_task_eval/22_tool_box_loading/inv_cov/summary.json",
+            "summarySha256": "3c76347ededfb2626cf48243c0e99e9081a91819aca58d9177b009e549c7fa20"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 11,
+          "lscr": 38.5,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_panda_with_orca",
+            "perEpisodeFile": "per_task_eval/22_tool_box_loading/inv_only/per_episode.jsonl",
+            "perEpisodeSha256": "667b4100e21697e83fb371d75d34cb6f5ccaddd0204f2b8b121b50b4261326ea",
+            "summaryFile": "per_task_eval/22_tool_box_loading/inv_only/summary.json",
+            "summarySha256": "fc454c8a93e4208afd3a8f21a931c717d41d31fbfbb14092177208fffa01a870"
+          }
+        },
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 13,
+          "lscr": 42.0,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_panda_with_orca",
+            "perEpisodeFile": "per_task_eval/22_tool_box_loading/none/per_episode.jsonl",
+            "perEpisodeSha256": "4df94bb6f70a91ec9302be8d98c6cad52bc353fd7377af27ea8b4c4f994467e1",
+            "summaryFile": "per_task_eval/22_tool_box_loading/none/summary.json",
+            "summarySha256": "35c9525dde92c7eef0d9a7b8f4f33794d3064410a2f18e6da94ef87faf583f79"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "srScope": "four-channel-mean",
+        "lscrScope": "four-channel-mean",
+        "sr": 22.5,
+        "lscr": 40.625,
+        "efficiency": 0.8941789671937278,
+        "efficiencyStatus": "reported",
+        "srEpisodes": 200,
+        "lscrEpisodes": 200
+      }
+    },
+    "24": {
+      "channels": {
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 17,
+          "lscr": 68.0,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_rm_65_with_revo2",
+            "perEpisodeFile": "per_task_eval/24_stationery_category_sorting/cov_only/per_episode.jsonl",
+            "perEpisodeSha256": "1ed7eccbd2b9fc5883402117282bcb623cc697d317a4114abe9b8614452cd867",
+            "summaryFile": "per_task_eval/24_stationery_category_sorting/cov_only/summary.json",
+            "summarySha256": "7264e270719491d491a7ecd1306b5740effee9147a9cf24bbd542d65922d4f69"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 28,
+          "lscr": 72.5,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_rm_65_with_revo2",
+            "perEpisodeFile": "per_task_eval/24_stationery_category_sorting/inv_cov/per_episode.jsonl",
+            "perEpisodeSha256": "84f9bd3665efad2eaa632c4127e36bbab715cf8e10d1c1122c3292b5b8bf4933",
+            "summaryFile": "per_task_eval/24_stationery_category_sorting/inv_cov/summary.json",
+            "summarySha256": "7e09728dc15081510d66f5d34d829f6b85ad8d4100bb8c2126f2b4df6ca05351"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 20,
+          "lscr": 62.5,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_rm_65_with_revo2",
+            "perEpisodeFile": "per_task_eval/24_stationery_category_sorting/inv_only/per_episode.jsonl",
+            "perEpisodeSha256": "6e4c3657070b5f1bba56cd1862c29b89fe851e8e2a4872b9b34de79bb8de6f0a",
+            "summaryFile": "per_task_eval/24_stationery_category_sorting/inv_only/summary.json",
+            "summarySha256": "7ea8fca41a5f815f67e7510906274174c90102b889c9a1214c344bb68827debe"
+          }
+        },
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 27,
+          "lscr": 82.0,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_rm_65_with_revo2",
+            "perEpisodeFile": "per_task_eval/24_stationery_category_sorting/none/per_episode.jsonl",
+            "perEpisodeSha256": "949a6708bfbb9e6f5c39929f42ae9957850b1eceb5769754eb46e55ec0bfc320",
+            "summaryFile": "per_task_eval/24_stationery_category_sorting/none/summary.json",
+            "summarySha256": "1347b5bd04171be4b24f40d06c90944548fee0ea9352f7496c54fa9a906a3155"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "srScope": "four-channel-mean",
+        "lscrScope": "four-channel-mean",
+        "sr": 46.0,
+        "lscr": 71.25,
+        "efficiency": 1.047794959696784,
+        "efficiencyStatus": "reported",
+        "srEpisodes": 200,
+        "lscrEpisodes": 200
+      }
+    },
+    "26": {
+      "channels": {
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 18,
+          "lscr": 64.5,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_iiwa7_with_sharpa",
+            "perEpisodeFile": "per_task_eval/26_canned_food_tray_line_arrangement/cov_only/per_episode.jsonl",
+            "perEpisodeSha256": "f14ad81eef62cec48f445b809671039ea7d6e72d538c6efc9daf3321e29b3760",
+            "summaryFile": "per_task_eval/26_canned_food_tray_line_arrangement/cov_only/summary.json",
+            "summarySha256": "55fb2d263ea6bb75a4ed21fc30e80c4a72704d52c7c2b04548dfd06b2b520e9f"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 24,
+          "lscr": 71.5,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_iiwa7_with_sharpa",
+            "perEpisodeFile": "per_task_eval/26_canned_food_tray_line_arrangement/inv_cov/per_episode.jsonl",
+            "perEpisodeSha256": "0bb0a52759fa793131405e71e51c6cf5d68b908d49fa9a7bf3069dc6b7c56558",
+            "summaryFile": "per_task_eval/26_canned_food_tray_line_arrangement/inv_cov/summary.json",
+            "summarySha256": "43b16e3652d6fd2c32d16832e8eb448b7fd100cef58ef8f235081897dc10c3ef"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 21,
+          "lscr": 72.5,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_iiwa7_with_sharpa",
+            "perEpisodeFile": "per_task_eval/26_canned_food_tray_line_arrangement/inv_only/per_episode.jsonl",
+            "perEpisodeSha256": "60c9763e139e329b6f0872c5ebcd7e55db7d43a18b952e74e1838f4186c182c7",
+            "summaryFile": "per_task_eval/26_canned_food_tray_line_arrangement/inv_only/summary.json",
+            "summarySha256": "7810b52d485c1c40f89eed4baacc4034919210ea6c4398b90141bec9e7d0028a"
+          }
+        },
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 17,
+          "lscr": 62.5,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_iiwa7_with_sharpa",
+            "perEpisodeFile": "per_task_eval/26_canned_food_tray_line_arrangement/none/per_episode.jsonl",
+            "perEpisodeSha256": "c468fc7896c1858c814c512e26f58b82ef9c333cde38b657acc45aa2f70c42b8",
+            "summaryFile": "per_task_eval/26_canned_food_tray_line_arrangement/none/summary.json",
+            "summarySha256": "5c31ca39b1c942e52d19cd665d8e5a087cf530bf7f23af88e9c3516644e79bcf"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "srScope": "four-channel-mean",
+        "lscrScope": "four-channel-mean",
+        "sr": 40.0,
+        "lscr": 67.75,
+        "efficiency": 0.9435469674606292,
+        "efficiencyStatus": "reported",
+        "srEpisodes": 200,
+        "lscrEpisodes": 200
+      }
+    },
+    "27": {
+      "channels": {
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 30,
+          "lscr": 80.0,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_wuji",
+            "perEpisodeFile": "per_task_eval/27_ball_box_loading/cov_only/per_episode.jsonl",
+            "perEpisodeSha256": "7aed108637e4aa1fb7d69dd873c65a241ccc9f379425982d6009d862155b68f5",
+            "summaryFile": "per_task_eval/27_ball_box_loading/cov_only/summary.json",
+            "summarySha256": "7d5db98065424c62602ad7b73227ef63b682598ec5ddbea0db4e5a686db2d00c"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 30,
+          "lscr": 83.0,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_wuji",
+            "perEpisodeFile": "per_task_eval/27_ball_box_loading/inv_cov/per_episode.jsonl",
+            "perEpisodeSha256": "acaa6cd38dad2c4cdac9b01a01a8a765fa1990a1f4e54c109a0e74ec5490fb43",
+            "summaryFile": "per_task_eval/27_ball_box_loading/inv_cov/summary.json",
+            "summarySha256": "3065d3d608eb399aab98fb963c898548defae9741ad5838b81dbf5887cbd1a74"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 33,
+          "lscr": 85.0,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_wuji",
+            "perEpisodeFile": "per_task_eval/27_ball_box_loading/inv_only/per_episode.jsonl",
+            "perEpisodeSha256": "aafd978c5033634d96b3bce82e7ca7315587649192e83949678764f6c557ac31",
+            "summaryFile": "per_task_eval/27_ball_box_loading/inv_only/summary.json",
+            "summarySha256": "ae355019ab7ccabc52063b1e95dbb4ff91b55f6539bec345d86adc9f4c2052c0"
+          }
+        },
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 39,
+          "lscr": 86.5,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_wuji",
+            "perEpisodeFile": "per_task_eval/27_ball_box_loading/none/per_episode.jsonl",
+            "perEpisodeSha256": "fafcdf7ed23ed6ea49dd2886bc67d35b7d7998c4ae87ed5e3e526c2df3921f8a",
+            "summaryFile": "per_task_eval/27_ball_box_loading/none/summary.json",
+            "summarySha256": "6fd93a21eae83a801f2d5043700add56f1c3d0a620d66c54a0a191fc3c1c8528"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "srScope": "four-channel-mean",
+        "lscrScope": "four-channel-mean",
+        "sr": 66.0,
+        "lscr": 83.625,
+        "efficiency": 0.9758127890615537,
+        "efficiencyStatus": "reported",
+        "srEpisodes": 200,
+        "lscrEpisodes": 200
+      }
+    },
+    "32": {
+      "channels": {
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 8,
+          "lscr": 55.00000000000001,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_iiwa7_with_sharpa",
+            "perEpisodeFile": "per_task_eval/32_baking_tray_prep_with_tools/cov_only/per_episode.jsonl",
+            "perEpisodeSha256": "15d557ac5af327f269aef0b556aab9ac31c35eaa83453b8067813de9bc932555",
+            "summaryFile": "per_task_eval/32_baking_tray_prep_with_tools/cov_only/summary.json",
+            "summarySha256": "7810e5240e89e4f0f5668e6a9db3068b5e4e6ad860c9062bc46e002992e547ee"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 7,
+          "lscr": 57.99999999999999,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_iiwa7_with_sharpa",
+            "perEpisodeFile": "per_task_eval/32_baking_tray_prep_with_tools/inv_cov/per_episode.jsonl",
+            "perEpisodeSha256": "7b627bc63946e353a4f0942a044925f62a08f59b85a6a52860e480d905660e30",
+            "summaryFile": "per_task_eval/32_baking_tray_prep_with_tools/inv_cov/summary.json",
+            "summarySha256": "38009ca9a8406993dad302e9bce4ba49f30290af5bf02dc4a8e4bfa96c8fe40a"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 14,
+          "lscr": 72.0,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_iiwa7_with_sharpa",
+            "perEpisodeFile": "per_task_eval/32_baking_tray_prep_with_tools/inv_only/per_episode.jsonl",
+            "perEpisodeSha256": "f5668c4cb8bf3038e186f848b324229fe065c49d53ce00c6dfff74a034865e8f",
+            "summaryFile": "per_task_eval/32_baking_tray_prep_with_tools/inv_only/summary.json",
+            "summarySha256": "c6a531d02ad10ab45b5a402d2945c4e6f37415ddc0cd4c321c4f20a2391e88f8"
+          }
+        },
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 13,
+          "lscr": 67.5,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_iiwa7_with_sharpa",
+            "perEpisodeFile": "per_task_eval/32_baking_tray_prep_with_tools/none/per_episode.jsonl",
+            "perEpisodeSha256": "0d4d247f2172afb6deedbb93fe39030e2596a570d6ccff8ec8c22b807c8ce9e1",
+            "summaryFile": "per_task_eval/32_baking_tray_prep_with_tools/none/summary.json",
+            "summarySha256": "677b00c6de4093fd3d26b026f5e09c9062b748df337d2f6f88b6075cb5498e17"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "srScope": "four-channel-mean",
+        "lscrScope": "four-channel-mean",
+        "sr": 21.0,
+        "lscr": 63.125,
+        "efficiency": 0.8586039253346137,
+        "efficiencyStatus": "reported",
+        "srEpisodes": 200,
+        "lscrEpisodes": 200
+      }
+    },
+    "34": {
+      "channels": {
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 31,
+          "lscr": 80.4,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_rh5dg2",
+            "perEpisodeFile": "per_task_eval/34_fridge_wine_interhand_pour/cov_only/per_episode.jsonl",
+            "perEpisodeSha256": "d66862ea6fe68303863050ed959badd97d005bea7e901e1421bbf7b7fdaaae42",
+            "summaryFile": "per_task_eval/34_fridge_wine_interhand_pour/cov_only/summary.json",
+            "summarySha256": "13bf8d7689f51d6d3200e0d84890d29bcef1e79f7c6bb154dae52d311d9034ff"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 36,
+          "lscr": 85.2,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_rh5dg2",
+            "perEpisodeFile": "per_task_eval/34_fridge_wine_interhand_pour/inv_cov/per_episode.jsonl",
+            "perEpisodeSha256": "f3ae033404f0402e587c944d33b655a07c8369a6ee73da8286103da71230cb60",
+            "summaryFile": "per_task_eval/34_fridge_wine_interhand_pour/inv_cov/summary.json",
+            "summarySha256": "35d81e38f244efe45be3f7b74059384da264c676fc664d466a3e732acef0a2fb"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 34,
+          "lscr": 83.6,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_rh5dg2",
+            "perEpisodeFile": "per_task_eval/34_fridge_wine_interhand_pour/inv_only/per_episode.jsonl",
+            "perEpisodeSha256": "d28b3ba37c3386851c66eac6535841419b97ffdea9053eea3bd5ee9d330bc1e8",
+            "summaryFile": "per_task_eval/34_fridge_wine_interhand_pour/inv_only/summary.json",
+            "summarySha256": "027c2d171ea610659200b98c4aa0dc944cfc020998a4fd182e125ff627f0cce2"
+          }
+        },
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 32,
+          "lscr": 83.6,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_rh5dg2",
+            "perEpisodeFile": "per_task_eval/34_fridge_wine_interhand_pour/none/per_episode.jsonl",
+            "perEpisodeSha256": "9eeb5d48a2afd179c20b4b96d1ef4f8284da58e1abf31507f599cb15456773b3",
+            "summaryFile": "per_task_eval/34_fridge_wine_interhand_pour/none/summary.json",
+            "summarySha256": "6fa5ea4d0b37b36f7fdd980742f770c2d2cf5e6a025975acc75021846c065db4"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "srScope": "four-channel-mean",
+        "lscrScope": "four-channel-mean",
+        "sr": 66.5,
+        "lscr": 83.2,
+        "efficiency": 1.0229749170310654,
+        "efficiencyStatus": "reported",
+        "srEpisodes": 200,
+        "lscrEpisodes": 200
+      }
+    },
+    "42": {
+      "channels": {
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 27,
+          "lscr": 90.0,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_rh56dfx",
+            "perEpisodeFile": "per_task_eval/42_trash_disposal/cov_only/per_episode.jsonl",
+            "perEpisodeSha256": "5ba0b5069f0a45c0db0c45527830c0b966e304ff47a622ca353983e9882de382",
+            "summaryFile": "per_task_eval/42_trash_disposal/cov_only/summary.json",
+            "summarySha256": "b0fc2300aef0df19fd85f0946833504b739996608aabaf1d308f16666eb75f18"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 28,
+          "lscr": 88.66666666666667,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_rh56dfx",
+            "perEpisodeFile": "per_task_eval/42_trash_disposal/inv_cov/per_episode.jsonl",
+            "perEpisodeSha256": "efb3234f609005b95ca2a6164cd795788ca689281d51dc022004a24eef2dd790",
+            "summaryFile": "per_task_eval/42_trash_disposal/inv_cov/summary.json",
+            "summarySha256": "b7217c8a4de5420781a5053b424e49b5511426995b77c294698167283856b1ca"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 32,
+          "lscr": 86.66666666666667,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_rh56dfx",
+            "perEpisodeFile": "per_task_eval/42_trash_disposal/inv_only/per_episode.jsonl",
+            "perEpisodeSha256": "2a9a1194859b8ffc9935466d7b4495ffd71224080c820ab0ebb0361b2ffe8b36",
+            "summaryFile": "per_task_eval/42_trash_disposal/inv_only/summary.json",
+            "summarySha256": "3d3ed27fcd3b82b65dd0cba38c91f1d57f4ce01ab81884a47526d5efd792a786"
+          }
+        },
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 30,
+          "lscr": 87.33333333333333,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_rh56dfx",
+            "perEpisodeFile": "per_task_eval/42_trash_disposal/none/per_episode.jsonl",
+            "perEpisodeSha256": "cfff3f6189a5bdc1ba7e9bc40a624dd36048b7dbe4764b84f3686c7045f11453",
+            "summaryFile": "per_task_eval/42_trash_disposal/none/summary.json",
+            "summarySha256": "08ebe6b1fd74ef1758cfec6487142c1cedd0d151e597786ec037b1b322b3d3c5"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "srScope": "four-channel-mean",
+        "lscrScope": "four-channel-mean",
+        "sr": 58.5,
+        "lscr": 88.16666666666667,
+        "efficiency": 0.918423464711274,
+        "efficiencyStatus": "reported",
+        "srEpisodes": 200,
+        "lscrEpisodes": 200
+      }
+    },
+    "43": {
+      "channels": {
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 17,
+          "lscr": 56.99999999999999,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_shadow_hand",
+            "perEpisodeFile": "per_task_eval/43_fridge_fruit_shelf_sorting/cov_only/per_episode.jsonl",
+            "perEpisodeSha256": "3181526abfe9ea3645a0f8a1d1e7a857af66887ac353654492df60257f031100",
+            "summaryFile": "per_task_eval/43_fridge_fruit_shelf_sorting/cov_only/summary.json",
+            "summarySha256": "f65f5f75d1971f948353961c7aab34030656371cba9406369c63a982ee427098"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 5,
+          "lscr": 41.5,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_shadow_hand",
+            "perEpisodeFile": "per_task_eval/43_fridge_fruit_shelf_sorting/inv_cov/per_episode.jsonl",
+            "perEpisodeSha256": "be6bd84da21a35a3e3188c6ac9c088a3782e90de831e58668b6e8816b03a6284",
+            "summaryFile": "per_task_eval/43_fridge_fruit_shelf_sorting/inv_cov/summary.json",
+            "summarySha256": "186f91060a4990e2282156de9ed1312c5be316119c68af79081a99a8e0d493b3"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 6,
+          "lscr": 39.5,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_shadow_hand",
+            "perEpisodeFile": "per_task_eval/43_fridge_fruit_shelf_sorting/inv_only/per_episode.jsonl",
+            "perEpisodeSha256": "dff42e1632b518189bf4b580544aae6da73a0858af11c9c3ec0dbcd17d4e471f",
+            "summaryFile": "per_task_eval/43_fridge_fruit_shelf_sorting/inv_only/summary.json",
+            "summarySha256": "b8aee49f4b697d6abe0cbc2e47299f6571abd513cc3db010b149de123c0ea2d4"
+          }
+        },
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 18,
+          "lscr": 60.5,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_shadow_hand",
+            "perEpisodeFile": "per_task_eval/43_fridge_fruit_shelf_sorting/none/per_episode.jsonl",
+            "perEpisodeSha256": "7bb03cbd644710751bd0cbdd536fcc80a96c615b5777bd5ddfa0c4d2f222f211",
+            "summaryFile": "per_task_eval/43_fridge_fruit_shelf_sorting/none/summary.json",
+            "summarySha256": "dead0fa82f87516a76404a18c055622c019b91a188dcad00dedd6477b4a694a2"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "srScope": "four-channel-mean",
+        "lscrScope": "four-channel-mean",
+        "sr": 23.0,
+        "lscr": 49.625,
+        "efficiency": 0.9464241626203604,
+        "efficiencyStatus": "reported",
+        "srEpisodes": 200,
+        "lscrEpisodes": 200
+      }
+    },
+    "44": {
+      "channels": {
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 48,
+          "lscr": 97.5,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_schunk_hand",
+            "perEpisodeFile": "per_task_eval/44_microwave_bowl_loading/cov_only/per_episode.jsonl",
+            "perEpisodeSha256": "3269fe348b7320dee36cb2cc9d661dca23ab492d16d9bab0ca5f71a2f5ff3c26",
+            "summaryFile": "per_task_eval/44_microwave_bowl_loading/cov_only/summary.json",
+            "summarySha256": "ffef5b8b07facb1f0aeddd8282e8fa0b6b043670efbe673d873511be6988c719"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 47,
+          "lscr": 96.0,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_schunk_hand",
+            "perEpisodeFile": "per_task_eval/44_microwave_bowl_loading/inv_cov/per_episode.jsonl",
+            "perEpisodeSha256": "7e0a07a8be79cfaae91491a7272de94d3b3ff114354c9a2873c9ef090fcf0f08",
+            "summaryFile": "per_task_eval/44_microwave_bowl_loading/inv_cov/summary.json",
+            "summarySha256": "8fdfa7064059756444c85c817c5db9ff01dd4f53d308c63b1c2d953fe27bb724"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 48,
+          "lscr": 98.0,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_schunk_hand",
+            "perEpisodeFile": "per_task_eval/44_microwave_bowl_loading/inv_only/per_episode.jsonl",
+            "perEpisodeSha256": "ebbe6c27b40cdca31da9f84c1b8e2abe3de896a04295da07ae165965aa4a2456",
+            "summaryFile": "per_task_eval/44_microwave_bowl_loading/inv_only/summary.json",
+            "summarySha256": "9a344c0ce091efdfb7bd676d01ee7ae9daf6421fd7867f3f8bba3fd79bdc591f"
+          }
+        },
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 48,
+          "lscr": 98.0,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_schunk_hand",
+            "perEpisodeFile": "per_task_eval/44_microwave_bowl_loading/none/per_episode.jsonl",
+            "perEpisodeSha256": "dc464e365d4b0a61093bdf6dbebcb6b26587dbd341e2450abfd4dcbe03baaad4",
+            "summaryFile": "per_task_eval/44_microwave_bowl_loading/none/summary.json",
+            "summarySha256": "aacf4f227f0667a579f825e6cbcd2a1f0c5e89c179b49d4601cebfcb4abe9e95"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "srScope": "four-channel-mean",
+        "lscrScope": "four-channel-mean",
+        "sr": 95.5,
+        "lscr": 97.375,
+        "efficiency": 1.0128473289500977,
+        "efficiencyStatus": "reported",
+        "srEpisodes": 200,
+        "lscrEpisodes": 200
+      }
+    },
+    "51": {
+      "channels": {
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 14,
+          "lscr": 55.333333333333336,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_xarm7",
+            "perEpisodeFile": "per_task_eval/51_toilet_lid_cleaner_pour/cov_only/per_episode.jsonl",
+            "perEpisodeSha256": "2d5c187f15ddf001d81279c5ef201869b4456aa47314bd3a298a623dc04fa927",
+            "summaryFile": "per_task_eval/51_toilet_lid_cleaner_pour/cov_only/summary.json",
+            "summarySha256": "b270a62e134e68b8d331040085f403109feb4038137e9706eff10f13b03df1cb"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 12,
+          "lscr": 44.666666666666664,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_xarm7",
+            "perEpisodeFile": "per_task_eval/51_toilet_lid_cleaner_pour/inv_cov/per_episode.jsonl",
+            "perEpisodeSha256": "fc29958d04158f1a68fdc082ecc99087ac8bfaa183e10d378271fcbc6eda1190",
+            "summaryFile": "per_task_eval/51_toilet_lid_cleaner_pour/inv_cov/summary.json",
+            "summarySha256": "74cd67fe8aba65f20030302c3edc97f565bb233546cf4aded0fe21cce3cb38d6"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 8,
+          "lscr": 44.666666666666664,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_xarm7",
+            "perEpisodeFile": "per_task_eval/51_toilet_lid_cleaner_pour/inv_only/per_episode.jsonl",
+            "perEpisodeSha256": "053e646acebf544c18aeadaf85f7909930939380bb166c3c43979f7581f2bbd1",
+            "summaryFile": "per_task_eval/51_toilet_lid_cleaner_pour/inv_only/summary.json",
+            "summarySha256": "69dce6ab0439c4257dab7bf777086aeaaa06e30accad982cc5305a7af11f1cdb"
+          }
+        },
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 14,
+          "lscr": 58.666666666666664,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_xarm7",
+            "perEpisodeFile": "per_task_eval/51_toilet_lid_cleaner_pour/none/per_episode.jsonl",
+            "perEpisodeSha256": "0841964692b46f10460646032fe0a3ced5e76345c012d739a0ed2e34784c2d0e",
+            "summaryFile": "per_task_eval/51_toilet_lid_cleaner_pour/none/summary.json",
+            "summarySha256": "70b5fbeac88632bb40ab67956c2809ff9b5962b52a60136d3cca83335a615e1c"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "srScope": "four-channel-mean",
+        "lscrScope": "four-channel-mean",
+        "sr": 24.0,
+        "lscr": 50.83333333333333,
+        "efficiency": 0.9908390169094798,
+        "efficiencyStatus": "reported",
+        "srEpisodes": 200,
+        "lscrEpisodes": 200
+      }
+    },
+    "60": {
+      "channels": {
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 29,
+          "lscr": 66.0,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_rh5dg2",
+            "perEpisodeFile": "per_task_eval/60_breadbasket_fast_food_loading/cov_only/per_episode.jsonl",
+            "perEpisodeSha256": "bca012e15a414c42445b4f01e3dc0606fc62ac00ce6721b25c4f2e23ee6158ed",
+            "summaryFile": "per_task_eval/60_breadbasket_fast_food_loading/cov_only/summary.json",
+            "summarySha256": "f27ed8e5021b0b19bebcec478332b88ef8f6dbaa2554324260d6aac313457181"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 32,
+          "lscr": 68.5,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_rh5dg2",
+            "perEpisodeFile": "per_task_eval/60_breadbasket_fast_food_loading/inv_cov/per_episode.jsonl",
+            "perEpisodeSha256": "767a6a7c5c85df2b0fd5543550f0e6372e9b1c10a095fb25bff255c83d4de730",
+            "summaryFile": "per_task_eval/60_breadbasket_fast_food_loading/inv_cov/summary.json",
+            "summarySha256": "4bb0c0d204e767d12e21d07245da0f0aa854f536ca50d1507a7046384d47fc3e"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 39,
+          "lscr": 84.5,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_rh5dg2",
+            "perEpisodeFile": "per_task_eval/60_breadbasket_fast_food_loading/inv_only/per_episode.jsonl",
+            "perEpisodeSha256": "5a0a9afe0a2a2b0c911ce77387a1a72b2ebd3ecd3d152ecdd365b81a5cbde117",
+            "summaryFile": "per_task_eval/60_breadbasket_fast_food_loading/inv_only/summary.json",
+            "summarySha256": "82a17c79b3aad4fe4037891f0483b588396787042af57e96bd32dcd001b3e96b"
+          }
+        },
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 32,
+          "lscr": 67.5,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_rh5dg2",
+            "perEpisodeFile": "per_task_eval/60_breadbasket_fast_food_loading/none/per_episode.jsonl",
+            "perEpisodeSha256": "5a867cafc4a1cce1d486bbb63bb0242bad705db979c462e22466ed622689423f",
+            "summaryFile": "per_task_eval/60_breadbasket_fast_food_loading/none/summary.json",
+            "summarySha256": "afa0facfbc0d7ebae62c5329cba1dcd10dddfa86fad6f9cb7212cdff25749e4b"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "srScope": "four-channel-mean",
+        "lscrScope": "four-channel-mean",
+        "sr": 66.0,
+        "lscr": 71.625,
+        "efficiency": 0.9715292219566166,
+        "efficiencyStatus": "reported",
+        "srEpisodes": 200,
+        "lscrEpisodes": 200
+      }
+    },
+    "61": {
+      "channels": {
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 16,
+          "lscr": 60.0,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_panda_with_orca",
+            "perEpisodeFile": "per_task_eval/61_medicine_shoebox_pack/cov_only/per_episode.jsonl",
+            "perEpisodeSha256": "423b1bd3dc09674407dd2d52fbde81a807460228ebafa1b536919c8b99e8e996",
+            "summaryFile": "per_task_eval/61_medicine_shoebox_pack/cov_only/summary.json",
+            "summarySha256": "e2a4b020106e305bfddf06580eed9109ce0843bbee290a22ee3887f3c675b9bf"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 28,
+          "lscr": 75.33333333333333,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_panda_with_orca",
+            "perEpisodeFile": "per_task_eval/61_medicine_shoebox_pack/inv_cov/per_episode.jsonl",
+            "perEpisodeSha256": "54a8126e8c08782054aa3a6b88c35ea6315cca2eb819cd5aeb56c20483d8ab8c",
+            "summaryFile": "per_task_eval/61_medicine_shoebox_pack/inv_cov/summary.json",
+            "summarySha256": "a30e73eafecee62a0ea62fc1eeaec0eafd6dd51f26fc8bd22d99532c77dabf69"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 20,
+          "lscr": 68.66666666666667,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_panda_with_orca",
+            "perEpisodeFile": "per_task_eval/61_medicine_shoebox_pack/inv_only/per_episode.jsonl",
+            "perEpisodeSha256": "d07ab99192b22913df93709f65137db7cad0303c221912b4153bf6e4a42a46e2",
+            "summaryFile": "per_task_eval/61_medicine_shoebox_pack/inv_only/summary.json",
+            "summarySha256": "7c674141240b77bc9053687fd6092c5fbf67b3af18df1b4941e9042af45f3531"
+          }
+        },
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 31,
+          "lscr": 78.0,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_panda_with_orca",
+            "perEpisodeFile": "per_task_eval/61_medicine_shoebox_pack/none/per_episode.jsonl",
+            "perEpisodeSha256": "95ef8132de5aaca64d5071cbaaeaaafac0a295fe8122266d41cb1c9247f0a8c9",
+            "summaryFile": "per_task_eval/61_medicine_shoebox_pack/none/summary.json",
+            "summarySha256": "f18f74f3e806d620c0620813ebf738fac85470ac9fcb54fa8e353bf360058d0c"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "srScope": "four-channel-mean",
+        "lscrScope": "four-channel-mean",
+        "sr": 47.5,
+        "lscr": 70.5,
+        "efficiency": 0.9606287271357496,
+        "efficiencyStatus": "reported",
+        "srEpisodes": 200,
+        "lscrEpisodes": 200
+      }
+    },
+    "62": {
+      "channels": {
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 43,
+          "lscr": 91.33333333333333,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_xarm7",
+            "perEpisodeFile": "per_task_eval/62_shoebox_accessory_pack/cov_only/per_episode.jsonl",
+            "perEpisodeSha256": "3453467722f1831ff749c3b78a810ec2e44ca29b88e60750fff82d5ff9198cd5",
+            "summaryFile": "per_task_eval/62_shoebox_accessory_pack/cov_only/summary.json",
+            "summarySha256": "7d396986372b9502076c53bf811356d5939f332b412e4fd4a2b1b3cf081b2eed"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 43,
+          "lscr": 91.33333333333333,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_xarm7",
+            "perEpisodeFile": "per_task_eval/62_shoebox_accessory_pack/inv_cov/per_episode.jsonl",
+            "perEpisodeSha256": "e5df1f7f3560ff3d412c97991a4a15955c59ac0be3c103f6ed63d4d99c5d5e79",
+            "summaryFile": "per_task_eval/62_shoebox_accessory_pack/inv_cov/summary.json",
+            "summarySha256": "06b3c7daacd9b900e798a6faf1556848414dec82a12104ed361054f48ca76dd0"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 43,
+          "lscr": 90.66666666666666,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_xarm7",
+            "perEpisodeFile": "per_task_eval/62_shoebox_accessory_pack/inv_only/per_episode.jsonl",
+            "perEpisodeSha256": "047c555d3bdb639f9e32916dadbbfce122abb1f7ce70122bdbd50f55b35bc523",
+            "summaryFile": "per_task_eval/62_shoebox_accessory_pack/inv_only/summary.json",
+            "summarySha256": "da60737a2f09fc1981e7c01b4ba96b9349806a147b742488f839153e0c7eb799"
+          }
+        },
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 45,
+          "lscr": 92.0,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_xarm7",
+            "perEpisodeFile": "per_task_eval/62_shoebox_accessory_pack/none/per_episode.jsonl",
+            "perEpisodeSha256": "ad953ac83b7921193a7496ad0c2d08f8977a32e50ba9c05d19079a20329eaa79",
+            "summaryFile": "per_task_eval/62_shoebox_accessory_pack/none/summary.json",
+            "summarySha256": "64a7ddbc789e20683ca35996537a60d3aa853c4fc0d202fd12dd14b19e176f5d"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "srScope": "four-channel-mean",
+        "lscrScope": "four-channel-mean",
+        "sr": 87.0,
+        "lscr": 91.33333333333333,
+        "efficiency": 0.9812184202947876,
+        "efficiencyStatus": "reported",
+        "srEpisodes": 200,
+        "lscrEpisodes": 200
+      }
+    },
+    "64": {
+      "channels": {
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 14,
+          "lscr": 49.0,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_panda_with_allegro",
+            "perEpisodeFile": "per_task_eval/64_sports_ball_cup_sort/cov_only/per_episode.jsonl",
+            "perEpisodeSha256": "5d6589292776d64f1b0bf7787fa71e6219ef75dd02520772ce413ec13b7b645a",
+            "summaryFile": "per_task_eval/64_sports_ball_cup_sort/cov_only/summary.json",
+            "summarySha256": "f822feaa6c6901e0441b7c9eed5437848e2fee2451152e4a47024e342c0c4369"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 17,
+          "lscr": 49.5,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_panda_with_allegro",
+            "perEpisodeFile": "per_task_eval/64_sports_ball_cup_sort/inv_cov/per_episode.jsonl",
+            "perEpisodeSha256": "f5c68ca55c35c6f18357a29a4f86d1e04eabc55537b01b51ca746d1fb66a34e6",
+            "summaryFile": "per_task_eval/64_sports_ball_cup_sort/inv_cov/summary.json",
+            "summarySha256": "15725735ecc274f1822f1b82ed0b3c35450ba99eca95e1c563841eadbfb4ddb1"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 14,
+          "lscr": 48.0,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_panda_with_allegro",
+            "perEpisodeFile": "per_task_eval/64_sports_ball_cup_sort/inv_only/per_episode.jsonl",
+            "perEpisodeSha256": "934efd61803f01bf32a807715e28f12703336cd781b76ede3614d6d35054e3b0",
+            "summaryFile": "per_task_eval/64_sports_ball_cup_sort/inv_only/summary.json",
+            "summarySha256": "28cc147c03e310f7eca4d321779949b33fe5f93fe6315fdc43189f98200af7ba"
+          }
+        },
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 15,
+          "lscr": 48.5,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_panda_with_allegro",
+            "perEpisodeFile": "per_task_eval/64_sports_ball_cup_sort/none/per_episode.jsonl",
+            "perEpisodeSha256": "57dcacd5b73301362a8f80ff114f93c126443f60ba6a19c6209ad8b3dc8cbfa0",
+            "summaryFile": "per_task_eval/64_sports_ball_cup_sort/none/summary.json",
+            "summarySha256": "3d0142b7283cd83db629c2fd2a21d8304791d8b82518ca2bbc006cd31ecf8f7f"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "srScope": "four-channel-mean",
+        "lscrScope": "four-channel-mean",
+        "sr": 30.0,
+        "lscr": 48.75,
+        "efficiency": 0.772247886341846,
+        "efficiencyStatus": "reported",
+        "srEpisodes": 200,
+        "lscrEpisodes": 200
+      }
+    },
+    "67": {
+      "channels": {
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 26,
+          "lscr": 65.5,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_rm_65_with_revo2",
+            "perEpisodeFile": "per_task_eval/67_faucet_cup_water_fill/cov_only/per_episode.jsonl",
+            "perEpisodeSha256": "aebde177450ec358896a6d11f84e2639246f0fa1563c63dc7fc1607adc2ce423",
+            "summaryFile": "per_task_eval/67_faucet_cup_water_fill/cov_only/summary.json",
+            "summarySha256": "9aca09644d997fe1a7fdef0c130d32eed718a32f95f2c7b67c0ce7c4e49a8639"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 29,
+          "lscr": 78.0,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_rm_65_with_revo2",
+            "perEpisodeFile": "per_task_eval/67_faucet_cup_water_fill/inv_cov/per_episode.jsonl",
+            "perEpisodeSha256": "bc76e24a3c9442a09d5c1c361b3cf63013309aa634fc2187748fc6a1b1e3e29a",
+            "summaryFile": "per_task_eval/67_faucet_cup_water_fill/inv_cov/summary.json",
+            "summarySha256": "58092bc194495b3d9d86e7ac15376fee6429e2329a1590b7d13d0738aabc0e70"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 26,
+          "lscr": 74.5,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_rm_65_with_revo2",
+            "perEpisodeFile": "per_task_eval/67_faucet_cup_water_fill/inv_only/per_episode.jsonl",
+            "perEpisodeSha256": "1c2a8e167764cf6e4acf1c8ad0d85a0cee348d9c821ea3c30c77d19b6bf470e8",
+            "summaryFile": "per_task_eval/67_faucet_cup_water_fill/inv_only/summary.json",
+            "summarySha256": "83a5e1a1d20c917a0ad4baf571d24b814d624b634a9237eb1f68e087975c272a"
+          }
+        },
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 29,
+          "lscr": 74.5,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_rm_65_with_revo2",
+            "perEpisodeFile": "per_task_eval/67_faucet_cup_water_fill/none/per_episode.jsonl",
+            "perEpisodeSha256": "81d94128f3c1f7988dd4ef11ecdc01a4bc6ada9f83c7c216605e7d141f1ede2f",
+            "summaryFile": "per_task_eval/67_faucet_cup_water_fill/none/summary.json",
+            "summarySha256": "fced09500df25dabfaa112cf55b7be19c19427cb7bde14681709a58825b8f387"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "srScope": "four-channel-mean",
+        "lscrScope": "four-channel-mean",
+        "sr": 55.0,
+        "lscr": 73.125,
+        "efficiency": 0.9688353692519941,
+        "efficiencyStatus": "reported",
+        "srEpisodes": 200,
+        "lscrEpisodes": 200
+      }
+    },
+    "73": {
+      "channels": {
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 1,
+          "lscr": 36.0,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_iiwa7_with_sharpa",
+            "perEpisodeFile": "per_task_eval/73_jigsaw_puzzle_assembly/cov_only/per_episode.jsonl",
+            "perEpisodeSha256": "07111590f588f7f5f6226648cbcd68be997c1b9b3c2dae141f0a5d14e6115415",
+            "summaryFile": "per_task_eval/73_jigsaw_puzzle_assembly/cov_only/summary.json",
+            "summarySha256": "a02550d1c0305659baaa49151530aa7482407e761b69265573a839db3a31e49e"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 1,
+          "lscr": 39.0,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_iiwa7_with_sharpa",
+            "perEpisodeFile": "per_task_eval/73_jigsaw_puzzle_assembly/inv_cov/per_episode.jsonl",
+            "perEpisodeSha256": "3419b15230dcbbc030728bd19105a15e1b28bdd1c191397a09e496dead90f271",
+            "summaryFile": "per_task_eval/73_jigsaw_puzzle_assembly/inv_cov/summary.json",
+            "summarySha256": "5d0a0208813ef5816b6b1bcf09a318dbd84964b895bfbdb9e73308bb0a604500"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 2,
+          "lscr": 50.5,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_iiwa7_with_sharpa",
+            "perEpisodeFile": "per_task_eval/73_jigsaw_puzzle_assembly/inv_only/per_episode.jsonl",
+            "perEpisodeSha256": "d405d05b3b14a6bd0d195bc450c660e3cf4896b0d328c61314c88df4ea775c6b",
+            "summaryFile": "per_task_eval/73_jigsaw_puzzle_assembly/inv_only/summary.json",
+            "summarySha256": "11ce4a1db18502b451b09f4ed36dec7a8a7815d26ffbf11f3cff206a67bb2548"
+          }
+        },
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 1,
+          "lscr": 62.0,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_iiwa7_with_sharpa",
+            "perEpisodeFile": "per_task_eval/73_jigsaw_puzzle_assembly/none/per_episode.jsonl",
+            "perEpisodeSha256": "188697847762a7660f7fdb398b77341c91c6180e1a9d6e1eb9107a8a6060c83c",
+            "summaryFile": "per_task_eval/73_jigsaw_puzzle_assembly/none/summary.json",
+            "summarySha256": "dd4b1157ffc84215c70777d6b6fd13484d4ccde236b4bb8d9446d5e87200d311"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "srScope": "four-channel-mean",
+        "lscrScope": "four-channel-mean",
+        "sr": 2.5,
+        "lscr": 46.875,
+        "efficiency": 0.9288613216938509,
+        "efficiencyStatus": "reported",
+        "srEpisodes": 200,
+        "lscrEpisodes": 200
+      }
+    },
+    "76": {
+      "channels": {
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 3,
+          "lscr": 35.0,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_shadow_hand",
+            "perEpisodeFile": "per_task_eval/76_soup_serving/cov_only/per_episode.jsonl",
+            "perEpisodeSha256": "efc8631e3f6949337f9b797c9d7eba796ef343ec53f704a003e1ac7819987453",
+            "summaryFile": "per_task_eval/76_soup_serving/cov_only/summary.json",
+            "summarySha256": "1cd60c2fd6770c59a9ac17b7c90190aa4ff26364e9098876d4fdbb0669da494e"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 2,
+          "lscr": 28.499999999999996,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_shadow_hand",
+            "perEpisodeFile": "per_task_eval/76_soup_serving/inv_cov/per_episode.jsonl",
+            "perEpisodeSha256": "e4c14a84716f172a0f905ac78dc2ac3759f87ce6366953d41516d85f796177bc",
+            "summaryFile": "per_task_eval/76_soup_serving/inv_cov/summary.json",
+            "summarySha256": "e5f0847c0d63c6c00c815dbda8aeb8196d716cbb5c35eb721c3e7072d14bbcea"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 4,
+          "lscr": 36.5,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_shadow_hand",
+            "perEpisodeFile": "per_task_eval/76_soup_serving/inv_only/per_episode.jsonl",
+            "perEpisodeSha256": "d7b36366a571f2c54fc5a279bba2cf895da4a26d1b7818417724511403dd71f0",
+            "summaryFile": "per_task_eval/76_soup_serving/inv_only/summary.json",
+            "summarySha256": "90edf666561835ea4bcb701480c1651f30c5cdb9302f0b1f0efd2b36e524c8c1"
+          }
+        },
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 3,
+          "lscr": 28.999999999999996,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_shadow_hand",
+            "perEpisodeFile": "per_task_eval/76_soup_serving/none/per_episode.jsonl",
+            "perEpisodeSha256": "66f95c5a070248e9794e1358ae7c5b24f543c69db39a00651c18749758ed3a75",
+            "summaryFile": "per_task_eval/76_soup_serving/none/summary.json",
+            "summarySha256": "b327ddbab6ec3c1677a15a41e43dd9f8721b5475c5254ad9a2569a44d93df4aa"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "srScope": "four-channel-mean",
+        "lscrScope": "four-channel-mean",
+        "sr": 6.0,
+        "lscr": 32.25,
+        "efficiency": 0.9847280595896967,
+        "efficiencyStatus": "reported",
+        "srEpisodes": 200,
+        "lscrEpisodes": 200
+      }
+    },
+    "79": {
+      "channels": {
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 2,
+          "lscr": 7.000000000000001,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_xarm7_with_ability",
+            "perEpisodeFile": "per_task_eval/79_bimanual_piano_melody/cov_only/per_episode.jsonl",
+            "perEpisodeSha256": "5257fa2e5bae19c4cd5f261175f46cfa058c63c2628d16499808dd63f1a941a0",
+            "summaryFile": "per_task_eval/79_bimanual_piano_melody/cov_only/summary.json",
+            "summarySha256": "70a7972772e32c18594d54572e10ef0dd5aec3063c4e2c99187d4574edea07d5"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 4,
+          "lscr": 15.0,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_xarm7_with_ability",
+            "perEpisodeFile": "per_task_eval/79_bimanual_piano_melody/inv_cov/per_episode.jsonl",
+            "perEpisodeSha256": "598e811874a0c32c092706016515a5eca4eaa76670d983ef4012c24767dff06a",
+            "summaryFile": "per_task_eval/79_bimanual_piano_melody/inv_cov/summary.json",
+            "summarySha256": "68284bd4b93242e83b5ba4da4755484db86fb507643510b7d3c3d0249e2e8eec"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 5,
+          "lscr": 12.0,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_xarm7_with_ability",
+            "perEpisodeFile": "per_task_eval/79_bimanual_piano_melody/inv_only/per_episode.jsonl",
+            "perEpisodeSha256": "64d2ad27ea87efa9ddf6f61aad02c022ad8eb750ec930223e046b6d59b37c0df",
+            "summaryFile": "per_task_eval/79_bimanual_piano_melody/inv_only/summary.json",
+            "summarySha256": "c926c08a439c453efe7c2844fc983a716c7fcdc6017180ada62d2d7e55369573"
+          }
+        },
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 5,
+          "lscr": 15.0,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_xarm7_with_ability",
+            "perEpisodeFile": "per_task_eval/79_bimanual_piano_melody/none/per_episode.jsonl",
+            "perEpisodeSha256": "d03aed23e960ee858e3e70c3ec7de141597b23767f68c5066fbc7e3ef56d792a",
+            "summaryFile": "per_task_eval/79_bimanual_piano_melody/none/summary.json",
+            "summarySha256": "4fc0b76179370220e8c96ac0eafc2bdb8aa10c78cee4ab73ffcc297a0686d8ea"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "srScope": "four-channel-mean",
+        "lscrScope": "four-channel-mean",
+        "sr": 8.0,
+        "lscr": 12.25,
+        "efficiency": 0.8285301497984944,
+        "efficiencyStatus": "reported",
+        "srEpisodes": 200,
+        "lscrEpisodes": 200
+      }
+    },
+    "80": {
+      "channels": {
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 17,
+          "lscr": 44.0,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_jaka_zu7_dexhand021",
+            "perEpisodeFile": "per_task_eval/80_gaming_desk_setup/cov_only/per_episode.jsonl",
+            "perEpisodeSha256": "33b407307d2d0918f733e3c76682ba9957676c766fd75497e195fb725a951bda",
+            "summaryFile": "per_task_eval/80_gaming_desk_setup/cov_only/summary.json",
+            "summarySha256": "26f154002fac61984b1750f6f8676dec084bf5f134868248f7ab019359b5742e"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 20,
+          "lscr": 44.666666666666664,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_jaka_zu7_dexhand021",
+            "perEpisodeFile": "per_task_eval/80_gaming_desk_setup/inv_cov/per_episode.jsonl",
+            "perEpisodeSha256": "779f99fa5b2f9a4ccc1293cab6064366ce16c7e9299460724e1bb84cb6884292",
+            "summaryFile": "per_task_eval/80_gaming_desk_setup/inv_cov/summary.json",
+            "summarySha256": "b28a8ad57966c2818c5d5eeade034d25bd1e856b06a6fbd6a2c487bff09b9e1f"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 17,
+          "lscr": 41.333333333333336,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_jaka_zu7_dexhand021",
+            "perEpisodeFile": "per_task_eval/80_gaming_desk_setup/inv_only/per_episode.jsonl",
+            "perEpisodeSha256": "3eb58c46d8e9ff52b81001533a1b213a152578a849d026fe7530fed3f8346254",
+            "summaryFile": "per_task_eval/80_gaming_desk_setup/inv_only/summary.json",
+            "summarySha256": "ff5f521cc0b6cae1924b849cf219ce86293428c3f2e63990737c2ca7ab229b88"
+          }
+        },
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 27,
+          "lscr": 57.99999999999999,
+          "source": {
+            "runId": "GigaWorld-Policy-0.6_all_1028_0600_jaka_zu7_dexhand021",
+            "perEpisodeFile": "per_task_eval/80_gaming_desk_setup/none/per_episode.jsonl",
+            "perEpisodeSha256": "83bea52330c68699b387c308a63cabec3078c8fe76d223e8c6ac1a10ca03aad9",
+            "summaryFile": "per_task_eval/80_gaming_desk_setup/none/summary.json",
+            "summarySha256": "fc40a4571fef3d94544314e9881f39c7f98dba298eed2c3eb532933b0a8d5efb"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "srScope": "four-channel-mean",
+        "lscrScope": "four-channel-mean",
+        "sr": 40.5,
+        "lscr": 47.0,
+        "efficiency": 1.032518663539941,
+        "efficiencyStatus": "reported",
+        "srEpisodes": 200,
+        "lscrEpisodes": 200
+      }
+    }
+  },
+  "evaluation": {
+    "schemaVersion": "1.0",
+    "isTemplate": false,
+    "protocol": {
+      "benchmarkCommit": null,
+      "taskCount": 26,
+      "channels": [
+        "None",
+        "Equi.",
+        "Inv.",
+        "Full"
+      ],
+      "episodesPerChannel": 50,
+      "metricSchemaVersion": "core-v1.8-policy-step-query-split",
+      "seeds": {
+        "03": {
+          "Equi.": {
+            "base": 100300000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 200300000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 100300000,
+            "first": 1,
+            "last": 50
+          },
+          "None": {
+            "base": 100300000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "06": {
+          "Equi.": {
+            "base": 100600000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 200600000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 100600000,
+            "first": 1,
+            "last": 50
+          },
+          "None": {
+            "base": 100600000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "07": {
+          "Equi.": {
+            "base": 100700000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 200700000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 100700000,
+            "first": 1,
+            "last": 50
+          },
+          "None": {
+            "base": 100700000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "08": {
+          "Equi.": {
+            "base": 100800000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 200800000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 100800000,
+            "first": 1,
+            "last": 50
+          },
+          "None": {
+            "base": 100800000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "09": {
+          "Equi.": {
+            "base": 100900000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 200900000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 100900000,
+            "first": 1,
+            "last": 50
+          },
+          "None": {
+            "base": 100900000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "12": {
+          "Equi.": {
+            "base": 101200000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 201200000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 101200000,
+            "first": 1,
+            "last": 50
+          },
+          "None": {
+            "base": 101200000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "21": {
+          "Equi.": {
+            "base": 102100000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 202100000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 102100000,
+            "first": 1,
+            "last": 50
+          },
+          "None": {
+            "base": 102100000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "22": {
+          "Equi.": {
+            "base": 102200000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 202200000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 102200000,
+            "first": 1,
+            "last": 50
+          },
+          "None": {
+            "base": 102200000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "24": {
+          "Equi.": {
+            "base": 102400000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 202400000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 102400000,
+            "first": 1,
+            "last": 50
+          },
+          "None": {
+            "base": 102400000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "26": {
+          "Equi.": {
+            "base": 102600000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 202600000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 102600000,
+            "first": 1,
+            "last": 50
+          },
+          "None": {
+            "base": 102600000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "27": {
+          "Equi.": {
+            "base": 102700000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 202700000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 102700000,
+            "first": 1,
+            "last": 50
+          },
+          "None": {
+            "base": 102700000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "32": {
+          "Equi.": {
+            "base": 103200000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 203200000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 103200000,
+            "first": 1,
+            "last": 50
+          },
+          "None": {
+            "base": 103200000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "34": {
+          "Equi.": {
+            "base": 103400000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 203400000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 103400000,
+            "first": 1,
+            "last": 50
+          },
+          "None": {
+            "base": 103400000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "42": {
+          "Equi.": {
+            "base": 104200000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 204200000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 104200000,
+            "first": 1,
+            "last": 50
+          },
+          "None": {
+            "base": 104200000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "43": {
+          "Equi.": {
+            "base": 104300000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 204300000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 104300000,
+            "first": 1,
+            "last": 50
+          },
+          "None": {
+            "base": 104300000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "44": {
+          "Equi.": {
+            "base": 104400000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 204400000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 104400000,
+            "first": 1,
+            "last": 50
+          },
+          "None": {
+            "base": 104400000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "51": {
+          "Equi.": {
+            "base": 105100000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 205100000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 105100000,
+            "first": 1,
+            "last": 50
+          },
+          "None": {
+            "base": 105100000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "60": {
+          "Equi.": {
+            "base": 106000000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 206000000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 106000000,
+            "first": 1,
+            "last": 50
+          },
+          "None": {
+            "base": 106000000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "61": {
+          "Equi.": {
+            "base": 106100000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 206100000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 106100000,
+            "first": 1,
+            "last": 50
+          },
+          "None": {
+            "base": 106100000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "62": {
+          "Equi.": {
+            "base": 106200000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 206200000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 106200000,
+            "first": 1,
+            "last": 50
+          },
+          "None": {
+            "base": 106200000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "64": {
+          "Equi.": {
+            "base": 106400000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 206400000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 106400000,
+            "first": 1,
+            "last": 50
+          },
+          "None": {
+            "base": 106400000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "67": {
+          "Equi.": {
+            "base": 106700000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 206700000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 106700000,
+            "first": 1,
+            "last": 50
+          },
+          "None": {
+            "base": 106700000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "73": {
+          "Equi.": {
+            "base": 107300000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 207300000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 107300000,
+            "first": 1,
+            "last": 50
+          },
+          "None": {
+            "base": 107300000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "76": {
+          "Equi.": {
+            "base": 107600000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 207600000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 107600000,
+            "first": 1,
+            "last": 50
+          },
+          "None": {
+            "base": 107600000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "79": {
+          "Equi.": {
+            "base": 107900000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 207900000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 107900000,
+            "first": 1,
+            "last": 50
+          },
+          "None": {
+            "base": 107900000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "80": {
+          "Equi.": {
+            "base": 108000000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 208000000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 108000000,
+            "first": 1,
+            "last": 50
+          },
+          "None": {
+            "base": 108000000,
+            "first": 1,
+            "last": 50
+          }
+        }
+      },
+      "generalizationSplit": "unseen",
+      "stepUnit": "physics_steps",
+      "physicsHz": 60,
+      "controlHz": 20,
+      "physicsStepsPerPolicyAction": 3,
+      "executionStepBudget": {
+        "03": {
+          "Equi.": 3246,
+          "Full": 3246,
+          "Inv.": 3246,
+          "None": 3246
+        },
+        "06": {
+          "Equi.": 1920,
+          "Full": 1920,
+          "Inv.": 1920,
+          "None": 1920
+        },
+        "07": {
+          "Equi.": 1806,
+          "Full": 1806,
+          "Inv.": 1806,
+          "None": 1806
+        },
+        "08": {
+          "Equi.": 3432,
+          "Full": 3432,
+          "Inv.": 3432,
+          "None": 3432
+        },
+        "09": {
+          "Equi.": 1926,
+          "Full": 1926,
+          "Inv.": 1926,
+          "None": 1926
+        },
+        "12": {
+          "Equi.": 3447,
+          "Full": 3447,
+          "Inv.": 3447,
+          "None": 3447
+        },
+        "21": {
+          "Equi.": 2481,
+          "Full": 2481,
+          "Inv.": 2481,
+          "None": 2481
+        },
+        "22": {
+          "Equi.": 2043,
+          "Full": 2043,
+          "Inv.": 2043,
+          "None": 2043
+        },
+        "24": {
+          "Equi.": 4626,
+          "Full": 4626,
+          "Inv.": 4626,
+          "None": 4626
+        },
+        "26": {
+          "Equi.": 2613,
+          "Full": 2613,
+          "Inv.": 2613,
+          "None": 2613
+        },
+        "27": {
+          "Equi.": 3570,
+          "Full": 3570,
+          "Inv.": 3570,
+          "None": 3570
+        },
+        "32": {
+          "Equi.": 2556,
+          "Full": 2556,
+          "Inv.": 2556,
+          "None": 2556
+        },
+        "34": {
+          "Equi.": 3240,
+          "Full": 3240,
+          "Inv.": 3240,
+          "None": 3240
+        },
+        "42": {
+          "Equi.": 2004,
+          "Full": 2004,
+          "Inv.": 2004,
+          "None": 2004
+        },
+        "43": {
+          "Equi.": 4125,
+          "Full": 4125,
+          "Inv.": 4125,
+          "None": 4125
+        },
+        "44": {
+          "Equi.": 3183,
+          "Full": 3183,
+          "Inv.": 3183,
+          "None": 3183
+        },
+        "51": {
+          "Equi.": 3069,
+          "Full": 3069,
+          "Inv.": 3069,
+          "None": 3069
+        },
+        "60": {
+          "Equi.": 2985,
+          "Full": 2985,
+          "Inv.": 2985,
+          "None": 2985
+        },
+        "61": {
+          "Equi.": 3102,
+          "Full": 3102,
+          "Inv.": 3102,
+          "None": 3102
+        },
+        "62": {
+          "Equi.": 3231,
+          "Full": 3231,
+          "Inv.": 3231,
+          "None": 3231
+        },
+        "64": {
+          "Equi.": 1995,
+          "Full": 1995,
+          "Inv.": 1995,
+          "None": 1995
+        },
+        "67": {
+          "Equi.": 2892,
+          "Full": 2892,
+          "Inv.": 2892,
+          "None": 2892
+        },
+        "73": {
+          "Equi.": 3639,
+          "Full": 3639,
+          "Inv.": 3639,
+          "None": 3639
+        },
+        "76": {
+          "Equi.": 2958,
+          "Full": 2958,
+          "Inv.": 2958,
+          "None": 2958
+        },
+        "79": {
+          "Equi.": 2043,
+          "Full": 2043,
+          "Inv.": 2043,
+          "None": 2043
+        },
+        "80": {
+          "Equi.": 1779,
+          "Full": 1779,
+          "Inv.": 1779,
+          "None": 1779
+        }
+      },
+      "successDwellTimeSByTask": {
+        "03": 0.5,
+        "06": 0.5,
+        "07": 0.5,
+        "08": 0.5,
+        "09": 0.5,
+        "12": 0.5,
+        "21": 0.5,
+        "22": 0.5,
+        "24": 0.5,
+        "26": 0.5,
+        "27": 0.5,
+        "32": 0.5,
+        "34": 0.5,
+        "42": 0.5,
+        "43": 0.5,
+        "44": 0.5,
+        "51": 0.5,
+        "60": 0.5,
+        "61": 0.5,
+        "62": 0.5,
+        "64": 0.5,
+        "67": 3.0,
+        "73": 0.5,
+        "76": 0.5,
+        "79": 0.5,
+        "80": 0.5
+      },
+      "successProtocol": "reach_and_stop",
+      "predictionHorizon": 32,
+      "executionHorizon": 32,
+      "denoiseSteps": 10,
+      "flowSteps": 5,
+      "cfg": 1,
+      "expertReference": "Native per-episode expert_time_step, in physics steps.",
+      "protocolChanges": "Custom GWP model integration and Drive v5 IK/execution adapter; robot_base EEF80 actions; prediction/execution horizon 32. Native physics budgets, seeds and stable-success dwell recorded in logs. All 60 scored IK failures remain in denominators; no scored episodes replaced. Native shards were merged into 50-episode task/channel outputs for the original submission export. Exact historical worker benchmark commits are not asserted."
+    },
+    "coverage": {
+      "evaluatedTaskCount": 26,
+      "evaluatedEpisodeCount": 5200,
+      "completedTaskCount": {
+        "None": 26,
+        "Equi.": 26,
+        "Inv.": 26,
+        "Full": 26,
+        "mean": 26
+      },
+      "expectedFullEpisodeCount": 1300,
+      "expectedFourChannelEpisodeCount": 5200,
+      "missingTaskChannels": {}
+    },
+    "aggregation": {
+      "units": {
+        "sr": "percent",
+        "lscr": "percent",
+        "efficiency": "ratio",
+        "steps": "physics_steps"
+      },
+      "sr": "100 * successes / episodes per task/channel; equal channel mean per task; equal task mean over all 26 tasks.",
+      "lscr": "100 * mean native latched_stage_completion_rate including failures; equal channel and task means.",
+      "efficiency": "Per task, expert_time_step divided by mean steps_to_stable_success pooled over successful episodes from all four channels. Overall is the mean of valid task efficiencies.",
+      "errors": "All 60 scored IK errors retained; 5200 episodes, 2671 successes."
+    },
+    "logs": {
+      "repository": "Bench2Dex/Leaderboard",
+      "policyPath": "gigaworld-policy-06",
+      "revision": null,
+      "status": "pending-review"
+    },
+    "checkpoint": {
+      "epoch": 5,
+      "step": 12870,
+      "sha256": "afed58631710411829692e0f9d5ce618a5f2866c2d239482c7315eb1113be56b"
+    }
+  }
+}
