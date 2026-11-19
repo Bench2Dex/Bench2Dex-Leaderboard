@@ -1,0 +1,2456 @@
+{
+  "model": {
+    "id": "me-dex-1-5",
+    "label": "ME-Dex 1.5",
+    "variantLabel": "",
+    "family": "ME-Dex",
+    "modelVersion": "1.5",
+    "checkpoint": "Per-task step-20,000 checkpoints initialized from the shared step-60,000 model",
+    "inputs": "Four RGB views, proprioception and official scene language. Physical force is fixed at zero before tactile normalization and AE encoding.",
+    "protocolId": "standard",
+    "displayOrder": 141,
+    "trainingSetting": "60,000 mixed-task updates followed by 20,000 updates per task",
+    "resultVersion": "Official scene evaluation, 2026-11-19",
+    "updatedAt": "2026-11-19",
+    "evaluationSetting": "Task-specific checkpoint selection across 26 tasks and four channels with 50 episodes per task/channel.",
+    "sourceLabel": "Evaluation logs",
+    "sourceUrl": null,
+    "resultDetailsUrl": null,
+    "contributor": "Li Auto.",
+    "contributorUrl": null,
+    "type": "Visuo-tactile action model",
+    "modelUrl": null,
+    "logoPath": "leaderboard/me-dex-1-5/logo.png",
+    "logoAlt": null,
+    "weightsUrl": null,
+    "codeUrl": null
+  },
+  "overall": {
+    "taskCount": 26,
+    "scope": "task-macro",
+    "status": "reported",
+    "sr": 58.59615384615385,
+    "lscr": 76.3125,
+    "efficiency": 0.979472924297274,
+    "efficiencyStatus": "reported",
+    "efficiencyTaskCount": 26,
+    "channelSr": {
+      "None": 65.3076923076923,
+      "Equi.": 55.76923076923077,
+      "Inv.": 57.23076923076923,
+      "Full": 56.07692307692308
+    },
+    "channelLscr": {
+      "None": 80.57179487179486,
+      "Equi.": 73.72307692307692,
+      "Inv.": 76.03717948717949,
+      "Full": 74.91794871794872
+    },
+    "channelTaskCounts": {
+      "None": 26,
+      "Equi.": 26,
+      "Inv.": 26,
+      "Full": 26
+    }
+  },
+  "per_task": {
+    "12": {
+      "channels": {
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 32,
+          "lscr": 79.0,
+          "source": {
+            "runId": "medex15-official-scene-20261118-12-none",
+            "perEpisodeFile": "per_task_eval/12_screwdriver_box_and_hammer/None/per_episode.jsonl",
+            "perEpisodeSha256": "5269a0ea408fa003dc2ba41623001145822dd364f89a3ce7f22e3afc2637254e",
+            "summaryFile": "per_task_eval/12_screwdriver_box_and_hammer/None/summary.json",
+            "summarySha256": "fbee417cdd921cd532b89fab4a3812631ca84b44429ff09630bb3770d2e70c58"
+          }
+        },
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 29,
+          "lscr": 78.0,
+          "source": {
+            "runId": "medex15-official-scene-20261118-12-cov_only",
+            "perEpisodeFile": "per_task_eval/12_screwdriver_box_and_hammer/Equi/per_episode.jsonl",
+            "perEpisodeSha256": "440b78f8bc46b39926b1e6d62838c2ca4b43b55b658c592f40fd5f777597ed4d",
+            "summaryFile": "per_task_eval/12_screwdriver_box_and_hammer/Equi/summary.json",
+            "summarySha256": "57dc59618027ccdc76c6992b3ebdaf261c07485d41c817f57900536a0a2e0394"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 34,
+          "lscr": 81.5,
+          "source": {
+            "runId": "medex15-official-scene-20261118-12-inv_only",
+            "perEpisodeFile": "per_task_eval/12_screwdriver_box_and_hammer/Inv/per_episode.jsonl",
+            "perEpisodeSha256": "70d478b203e81a6c3bc08abe8062077482047184cecdd644f0c383a2da3ac8fb",
+            "summaryFile": "per_task_eval/12_screwdriver_box_and_hammer/Inv/summary.json",
+            "summarySha256": "bc68b6c3e016ecee16ee1079c4cd015dbc3b03326224291d5f7fdc58331bd847"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 37,
+          "lscr": 83.5,
+          "source": {
+            "runId": "medex15-official-scene-20261118-12-inv_cov",
+            "perEpisodeFile": "per_task_eval/12_screwdriver_box_and_hammer/Full/per_episode.jsonl",
+            "perEpisodeSha256": "8c595f98f15e50af28a4a0bdc00dbaa4f57d970cb027b1853414f794417a5b25",
+            "summaryFile": "per_task_eval/12_screwdriver_box_and_hammer/Full/summary.json",
+            "summarySha256": "82b64450a81c7a714ffa5e583029d87413799bd008aed582f0effa1538f2db9c"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "sr": 66,
+        "srScope": "four-channel-mean",
+        "srEpisodes": 200,
+        "lscr": 80.5,
+        "lscrScope": "four-channel-mean",
+        "lscrEpisodes": 200,
+        "efficiency": 0.9800976852285841,
+        "efficiencyStatus": "reported"
+      }
+    },
+    "21": {
+      "channels": {
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 44,
+          "lscr": 99.33333333333333,
+          "source": {
+            "runId": "medex15-official-scene-20261118-21-none",
+            "perEpisodeFile": "per_task_eval/21_condiment_box_loading/None/per_episode.jsonl",
+            "perEpisodeSha256": "31408d41f6aa241ea3005f93323bb65d45a58b5611f445184d777d18584d8be7",
+            "summaryFile": "per_task_eval/21_condiment_box_loading/None/summary.json",
+            "summarySha256": "7b885988902d7279e67f81b97c837fc5efcb7cb3b54b3e26c91ddf8c0a7e89c5"
+          }
+        },
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 38,
+          "lscr": 92.0,
+          "source": {
+            "runId": "medex15-official-scene-20261118-21-cov_only",
+            "perEpisodeFile": "per_task_eval/21_condiment_box_loading/Equi/per_episode.jsonl",
+            "perEpisodeSha256": "c5c6722cdf96ea65d760f34eb4c07b80faf952a90038e6d2242b0440a930372f",
+            "summaryFile": "per_task_eval/21_condiment_box_loading/Equi/summary.json",
+            "summarySha256": "51dbf519fa0c7092c9559e556c12511e2b5eec84ba9760b2d550099327d7f200"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 41,
+          "lscr": 94.66666666666667,
+          "source": {
+            "runId": "medex15-official-scene-20261118-21-inv_only",
+            "perEpisodeFile": "per_task_eval/21_condiment_box_loading/Inv/per_episode.jsonl",
+            "perEpisodeSha256": "6331bfe284b47dcb91e05525694ab960134d7d33abe6a05de73396b38b130dd8",
+            "summaryFile": "per_task_eval/21_condiment_box_loading/Inv/summary.json",
+            "summarySha256": "c342919718cc4e21d7ab4195d3a2a0c4d8f7ac7aca43bad4c5bc66480b6962bf"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 34,
+          "lscr": 94.0,
+          "source": {
+            "runId": "medex15-official-scene-20261118-21-inv_cov",
+            "perEpisodeFile": "per_task_eval/21_condiment_box_loading/Full/per_episode.jsonl",
+            "perEpisodeSha256": "04242e7916337626801176750ef8c9c08b29b7f7d6366ad5c0593530592b383e",
+            "summaryFile": "per_task_eval/21_condiment_box_loading/Full/summary.json",
+            "summarySha256": "93ccc5e3d9f0297f4646266ff69a311de2e71c4c32cb49d0dd80b72105d62f88"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "sr": 78.5,
+        "srScope": "four-channel-mean",
+        "srEpisodes": 200,
+        "lscr": 95.0,
+        "lscrScope": "four-channel-mean",
+        "lscrEpisodes": 200,
+        "efficiency": 0.928140737643102,
+        "efficiencyStatus": "reported"
+      }
+    },
+    "22": {
+      "channels": {
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 42,
+          "lscr": 90.5,
+          "source": {
+            "runId": "medex15-official-scene-20261118-22-none",
+            "perEpisodeFile": "per_task_eval/22_tool_box_loading/None/per_episode.jsonl",
+            "perEpisodeSha256": "5487e3e3e6042fc1b536d283a2a40a1e1be0a4a0f3bec0573515c4c899e690f0",
+            "summaryFile": "per_task_eval/22_tool_box_loading/None/summary.json",
+            "summarySha256": "f054969e037ac4e547fdbcd7c03b7826f0da3cf6da7ab19a3cc90f678a40e0d9"
+          }
+        },
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 37,
+          "lscr": 86.5,
+          "source": {
+            "runId": "medex15-official-scene-20261118-22-cov_only",
+            "perEpisodeFile": "per_task_eval/22_tool_box_loading/Equi/per_episode.jsonl",
+            "perEpisodeSha256": "96db8f8a7d99d4ac1f11beeb7f39ac29c446e1fb7c16a0cf0bc66fea8bbc327f",
+            "summaryFile": "per_task_eval/22_tool_box_loading/Equi/summary.json",
+            "summarySha256": "94c6ab9c1837398cd7b2bad010b7a0dacedc17be2f821fd858c90f397367033c"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 31,
+          "lscr": 75.5,
+          "source": {
+            "runId": "medex15-official-scene-20261118-22-inv_only",
+            "perEpisodeFile": "per_task_eval/22_tool_box_loading/Inv/per_episode.jsonl",
+            "perEpisodeSha256": "7e06d1e6590aed9d27132cffb5f08ede0b68773957118913bdf8cfc03a7b057d",
+            "summaryFile": "per_task_eval/22_tool_box_loading/Inv/summary.json",
+            "summarySha256": "aa4ddfba045ef3405b4855f29efc13c2cfef25f6fa1610856fa955bf6fa96d9f"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 32,
+          "lscr": 78.0,
+          "source": {
+            "runId": "medex15-official-scene-20261118-22-inv_cov",
+            "perEpisodeFile": "per_task_eval/22_tool_box_loading/Full/per_episode.jsonl",
+            "perEpisodeSha256": "21e762b45657bbb63531549ab5e496ef9aa649ec39c172e1022cd6f4fd22da44",
+            "summaryFile": "per_task_eval/22_tool_box_loading/Full/summary.json",
+            "summarySha256": "424f956ff33322de380823ed42d0679bbc4e4dd21aee385fbbb48d62f2ea4883"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "sr": 71,
+        "srScope": "four-channel-mean",
+        "srEpisodes": 200,
+        "lscr": 82.625,
+        "lscrScope": "four-channel-mean",
+        "lscrEpisodes": 200,
+        "efficiency": 0.9416390567140909,
+        "efficiencyStatus": "reported"
+      }
+    },
+    "24": {
+      "channels": {
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 18,
+          "lscr": 57.49999999999999,
+          "source": {
+            "runId": "medex15-official-scene-20261118-24-none",
+            "perEpisodeFile": "per_task_eval/24_stationery_category_sorting/None/per_episode.jsonl",
+            "perEpisodeSha256": "6262d310d13f5e3cab2f14e6b5edf97913330e8707c192c2c1ecb31b74933b7e",
+            "summaryFile": "per_task_eval/24_stationery_category_sorting/None/summary.json",
+            "summarySha256": "5813ea49ae1e00539d9ccc5d29144108c6fab8cd5210c76e681c37976f9e4178"
+          }
+        },
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 14,
+          "lscr": 56.49999999999999,
+          "source": {
+            "runId": "medex15-official-scene-20261118-24-cov_only",
+            "perEpisodeFile": "per_task_eval/24_stationery_category_sorting/Equi/per_episode.jsonl",
+            "perEpisodeSha256": "8d704587860f3fd43e06abf1abbb4d2c3a094bd4f4fb3325cb50572352f9dd4c",
+            "summaryFile": "per_task_eval/24_stationery_category_sorting/Equi/summary.json",
+            "summarySha256": "1543dee6a7bc984452fbf66521703f8195792eec669b7b8d8d7198f09a871b0b"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 12,
+          "lscr": 59.0,
+          "source": {
+            "runId": "medex15-official-scene-20261118-24-inv_only",
+            "perEpisodeFile": "per_task_eval/24_stationery_category_sorting/Inv/per_episode.jsonl",
+            "perEpisodeSha256": "96373e85cf218d700622d009a45851e09d2023b722791547f2a9d4f99ea2379e",
+            "summaryFile": "per_task_eval/24_stationery_category_sorting/Inv/summary.json",
+            "summarySha256": "65076cc41902ed8248dcd176fdf3a4c2075e93f11bea11bfc363ea89226d4905"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 17,
+          "lscr": 61.0,
+          "source": {
+            "runId": "medex15-official-scene-20261118-24-inv_cov",
+            "perEpisodeFile": "per_task_eval/24_stationery_category_sorting/Full/per_episode.jsonl",
+            "perEpisodeSha256": "2b289bf6b5f7adbe9d7438a39391e8cd60cfbe0f83dc51391265306757d57561",
+            "summaryFile": "per_task_eval/24_stationery_category_sorting/Full/summary.json",
+            "summarySha256": "23d9707f0c49c46615292339a6e563653cea943cfb5b8a24b861142d9a4989d2"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "sr": 30.5,
+        "srScope": "four-channel-mean",
+        "srEpisodes": 200,
+        "lscr": 58.5,
+        "lscrScope": "four-channel-mean",
+        "lscrEpisodes": 200,
+        "efficiency": 0.999484481292517,
+        "efficiencyStatus": "reported"
+      }
+    },
+    "26": {
+      "channels": {
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 32,
+          "lscr": 88.5,
+          "source": {
+            "runId": "medex15-official-scene-20261118-26-none",
+            "perEpisodeFile": "per_task_eval/26_canned_food_tray_line_arrangement/None/per_episode.jsonl",
+            "perEpisodeSha256": "cd657d02667f3a1ab3f9fe3f2d352310e09e4b95f85874b369ade685e18a0e77",
+            "summaryFile": "per_task_eval/26_canned_food_tray_line_arrangement/None/summary.json",
+            "summarySha256": "63766888f8378e2f0741a16ae8ac464c9c50733fa893bcef13783fb38ecb86e3"
+          }
+        },
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 25,
+          "lscr": 65.0,
+          "source": {
+            "runId": "medex15-official-scene-20261118-26-cov_only",
+            "perEpisodeFile": "per_task_eval/26_canned_food_tray_line_arrangement/Equi/per_episode.jsonl",
+            "perEpisodeSha256": "9626906d873a05481ab9e5a1ace43456766926cf35b8369f2376ab56f6984745",
+            "summaryFile": "per_task_eval/26_canned_food_tray_line_arrangement/Equi/summary.json",
+            "summarySha256": "461e3033b23ffff5a5eacfbe224477e9330148f51d77137bfd01afcd8509cefd"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 26,
+          "lscr": 74.0,
+          "source": {
+            "runId": "medex15-official-scene-20261118-26-inv_only",
+            "perEpisodeFile": "per_task_eval/26_canned_food_tray_line_arrangement/Inv/per_episode.jsonl",
+            "perEpisodeSha256": "ef2197aad19a8ff0101c2954b3c82ead751ddd4328dbe2eae79f1439bb758826",
+            "summaryFile": "per_task_eval/26_canned_food_tray_line_arrangement/Inv/summary.json",
+            "summarySha256": "099df81c8b11db83bcc247264afd9331408057d64173bddb46c9b68c1a96a52c"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 28,
+          "lscr": 75.5,
+          "source": {
+            "runId": "medex15-official-scene-20261118-26-inv_cov",
+            "perEpisodeFile": "per_task_eval/26_canned_food_tray_line_arrangement/Full/per_episode.jsonl",
+            "perEpisodeSha256": "b98d1e891514de1f07c2d741497c108e1fbcfaefb5d333e21a7e7767cc01a864",
+            "summaryFile": "per_task_eval/26_canned_food_tray_line_arrangement/Full/summary.json",
+            "summarySha256": "cf13a9f0080cb79292fa8e632edb6808acb8b05aacec6587a84fc21109c9498d"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "sr": 55.5,
+        "srScope": "four-channel-mean",
+        "srEpisodes": 200,
+        "lscr": 75.75,
+        "lscrScope": "four-channel-mean",
+        "lscrEpisodes": 200,
+        "efficiency": 0.9313623489971677,
+        "efficiencyStatus": "reported"
+      }
+    },
+    "27": {
+      "channels": {
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 30,
+          "lscr": 71.0,
+          "source": {
+            "runId": "medex15-official-scene-20261118-27-none",
+            "perEpisodeFile": "per_task_eval/27_ball_box_loading/None/per_episode.jsonl",
+            "perEpisodeSha256": "a36ce63c2f780710a38bb598d9ebe20d3955cbd1ed91d97300de8ebebfdf530f",
+            "summaryFile": "per_task_eval/27_ball_box_loading/None/summary.json",
+            "summarySha256": "c83b94e706e5ec7ed4ddc15a1e7bf5df78eed1b20ffdd2f9b32ffa133b377197"
+          }
+        },
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 17,
+          "lscr": 50.0,
+          "source": {
+            "runId": "medex15-official-scene-20261118-27-cov_only",
+            "perEpisodeFile": "per_task_eval/27_ball_box_loading/Equi/per_episode.jsonl",
+            "perEpisodeSha256": "c833afcd63723832d5756ec85452929c7bd1935ea1b0e3971fd5c580e8c45dea",
+            "summaryFile": "per_task_eval/27_ball_box_loading/Equi/summary.json",
+            "summarySha256": "a1ba37a9484085d491f22b37edbe10191897c9c8da04c31c2cbe342e62c4ea14"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 29,
+          "lscr": 69.5,
+          "source": {
+            "runId": "medex15-official-scene-20261118-27-inv_only",
+            "perEpisodeFile": "per_task_eval/27_ball_box_loading/Inv/per_episode.jsonl",
+            "perEpisodeSha256": "cc8a258ccac7d7b589e53c03cc491f8f434cd3519e1a573d2ce50c79304afcc8",
+            "summaryFile": "per_task_eval/27_ball_box_loading/Inv/summary.json",
+            "summarySha256": "fd2793318a1f946225bfb28561f1ff1c8912337d0e585e8c1979079f13c67d43"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 21,
+          "lscr": 60.5,
+          "source": {
+            "runId": "medex15-official-scene-20261118-27-inv_cov",
+            "perEpisodeFile": "per_task_eval/27_ball_box_loading/Full/per_episode.jsonl",
+            "perEpisodeSha256": "8d11eeb92ceb831dde34b456a7ec9b1e7007ad9261f0f7e65aac7aead16f4cf8",
+            "summaryFile": "per_task_eval/27_ball_box_loading/Full/summary.json",
+            "summarySha256": "8896a531a0914a89c8ea0e3b9f48318d23a6969cc0900f6c7f0098b65293183c"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "sr": 48.5,
+        "srScope": "four-channel-mean",
+        "srEpisodes": 200,
+        "lscr": 62.75,
+        "lscrScope": "four-channel-mean",
+        "lscrEpisodes": 200,
+        "efficiency": 0.9204944178628389,
+        "efficiencyStatus": "reported"
+      }
+    },
+    "32": {
+      "channels": {
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 25,
+          "lscr": 65.0,
+          "source": {
+            "runId": "medex15-official-scene-20261118-32-none",
+            "perEpisodeFile": "per_task_eval/32_baking_tray_prep_with_tools/None/per_episode.jsonl",
+            "perEpisodeSha256": "aba8d70babe0b68b77b23ceb324d9f01e0494c603828e2d19ca37a7bf73c56fe",
+            "summaryFile": "per_task_eval/32_baking_tray_prep_with_tools/None/summary.json",
+            "summarySha256": "cd73d96b0589a34d509d211ea0707227de4c1721c19691c5c9ce756e57cd21c8"
+          }
+        },
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 15,
+          "lscr": 46.5,
+          "source": {
+            "runId": "medex15-official-scene-20261118-32-cov_only",
+            "perEpisodeFile": "per_task_eval/32_baking_tray_prep_with_tools/Equi/per_episode.jsonl",
+            "perEpisodeSha256": "77d0084bf73d376da20c4a31573e526a3cdfea18cef9281c085c4140f82aa3be",
+            "summaryFile": "per_task_eval/32_baking_tray_prep_with_tools/Equi/summary.json",
+            "summarySha256": "a83e8cdfc79303c1782e83d11acd6da0b0acb178192a4e32c683c04828763851"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 20,
+          "lscr": 55.00000000000001,
+          "source": {
+            "runId": "medex15-official-scene-20261118-32-inv_only",
+            "perEpisodeFile": "per_task_eval/32_baking_tray_prep_with_tools/Inv/per_episode.jsonl",
+            "perEpisodeSha256": "f7bdb14a035b9d589e2a72bc82b4f8666b3bad19491bcdc6cf847d8c05e67737",
+            "summaryFile": "per_task_eval/32_baking_tray_prep_with_tools/Inv/summary.json",
+            "summarySha256": "7ffd569ff4ce476f22cb3cbc665f0c0f2a3f01ea9ac43b74485abec09e64b8df"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 19,
+          "lscr": 52.5,
+          "source": {
+            "runId": "medex15-official-scene-20261118-32-inv_cov",
+            "perEpisodeFile": "per_task_eval/32_baking_tray_prep_with_tools/Full/per_episode.jsonl",
+            "perEpisodeSha256": "6da9522577fd7f4fe0c46755ed39d160b151b371dc0d4a3a25e1908fc5410c3c",
+            "summaryFile": "per_task_eval/32_baking_tray_prep_with_tools/Full/summary.json",
+            "summarySha256": "7b79ba53173d838508f1920d2a2efc02493cff1f927cb7d77794d2b4627a6bd7"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "sr": 39.5,
+        "srScope": "four-channel-mean",
+        "srEpisodes": 200,
+        "lscr": 54.75,
+        "lscrScope": "four-channel-mean",
+        "lscrEpisodes": 200,
+        "efficiency": 0.9709165963035932,
+        "efficiencyStatus": "reported"
+      }
+    },
+    "34": {
+      "channels": {
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 30,
+          "lscr": 81.19999999999999,
+          "source": {
+            "runId": "medex15-official-scene-20261118-34-none",
+            "perEpisodeFile": "per_task_eval/34_fridge_wine_interhand_pour/None/per_episode.jsonl",
+            "perEpisodeSha256": "1e9fea8ebe3652bff2a1d71c5ca9fd4eb176c0a842343415ff89009883efb235",
+            "summaryFile": "per_task_eval/34_fridge_wine_interhand_pour/None/summary.json",
+            "summarySha256": "aeb4c6b2e5e4309689ee536cc065147f38a1d3fb119e6903655c6fa7c2bf0360"
+          }
+        },
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 20,
+          "lscr": 70.8,
+          "source": {
+            "runId": "medex15-official-scene-20261118-34-cov_only",
+            "perEpisodeFile": "per_task_eval/34_fridge_wine_interhand_pour/Equi/per_episode.jsonl",
+            "perEpisodeSha256": "809b4626d7f3194411b5bd850725ea7a6b12889d16616cc309781aae63054cfe",
+            "summaryFile": "per_task_eval/34_fridge_wine_interhand_pour/Equi/summary.json",
+            "summarySha256": "53a172faeaa20d205bd020c80becc32767b66a3d8b4679c6940a1aae819b904a"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 29,
+          "lscr": 80.8,
+          "source": {
+            "runId": "medex15-official-scene-20261118-34-inv_only",
+            "perEpisodeFile": "per_task_eval/34_fridge_wine_interhand_pour/Inv/per_episode.jsonl",
+            "perEpisodeSha256": "71821f96f463064ec2ecac90f965231c0268073a85e61028b4e35bb297597f60",
+            "summaryFile": "per_task_eval/34_fridge_wine_interhand_pour/Inv/summary.json",
+            "summarySha256": "efe6149c4995cb4dfc189cdb32267aa02cc5f2a4c6822f8d80dee651190d3409"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 20,
+          "lscr": 71.2,
+          "source": {
+            "runId": "medex15-official-scene-20261118-34-inv_cov",
+            "perEpisodeFile": "per_task_eval/34_fridge_wine_interhand_pour/Full/per_episode.jsonl",
+            "perEpisodeSha256": "e70bc9bdfc0aca8921b62173ac0d7193157d1322e60efd364b0e10637bf2db3f",
+            "summaryFile": "per_task_eval/34_fridge_wine_interhand_pour/Full/summary.json",
+            "summarySha256": "06c11d19aebb7b29cd2155098b549540cb29517ac32f0f3d7db338557add0ad7"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "sr": 49.5,
+        "srScope": "four-channel-mean",
+        "srEpisodes": 200,
+        "lscr": 76.0,
+        "lscrScope": "four-channel-mean",
+        "lscrEpisodes": 200,
+        "efficiency": 1.0121932747652227,
+        "efficiencyStatus": "reported"
+      }
+    },
+    "42": {
+      "channels": {
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 28,
+          "lscr": 87.33333333333333,
+          "source": {
+            "runId": "medex15-official-scene-20261118-42-none",
+            "perEpisodeFile": "per_task_eval/42_trash_disposal/None/per_episode.jsonl",
+            "perEpisodeSha256": "21d615772f300bfd124435b6d6efb1d7f56877511703fc9bd98c4b0f5f63e2e9",
+            "summaryFile": "per_task_eval/42_trash_disposal/None/summary.json",
+            "summarySha256": "51d7cc71334899b33bd20be0b690c2ebdf87adb87778b3349b21cf6edf7e8eab"
+          }
+        },
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 27,
+          "lscr": 82.0,
+          "source": {
+            "runId": "medex15-official-scene-20261118-42-cov_only",
+            "perEpisodeFile": "per_task_eval/42_trash_disposal/Equi/per_episode.jsonl",
+            "perEpisodeSha256": "f6b351348de6a1d729f03b7a03c02b08daf2807cd97c75391b95bbc57c345da2",
+            "summaryFile": "per_task_eval/42_trash_disposal/Equi/summary.json",
+            "summarySha256": "0897d6d7fa46401995886b6ab2d0c0caa160a4e44065becd4aefc4ed64d1eb7b"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 25,
+          "lscr": 83.33333333333334,
+          "source": {
+            "runId": "medex15-official-scene-20261118-42-inv_only",
+            "perEpisodeFile": "per_task_eval/42_trash_disposal/Inv/per_episode.jsonl",
+            "perEpisodeSha256": "bf40e887143b3dd6e21d8282b048342930d200f068b117ec965e26070dd8421f",
+            "summaryFile": "per_task_eval/42_trash_disposal/Inv/summary.json",
+            "summarySha256": "e4fb0e0939e6dfcacc5393f7480b111d9ee9202916bb738257595f763746fbf5"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 25,
+          "lscr": 89.33333333333333,
+          "source": {
+            "runId": "medex15-official-scene-20261118-42-inv_cov",
+            "perEpisodeFile": "per_task_eval/42_trash_disposal/Full/per_episode.jsonl",
+            "perEpisodeSha256": "558d8548bf88e6da7b4274a5dcc47d50de2c56126e651de3006a34c2d5a8ea18",
+            "summaryFile": "per_task_eval/42_trash_disposal/Full/summary.json",
+            "summarySha256": "de70911cdea5552f52278dced445ee6eb767013c783e7db19189e9cd3b1c3d06"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "sr": 52.5,
+        "srScope": "four-channel-mean",
+        "srEpisodes": 200,
+        "lscr": 85.5,
+        "lscrScope": "four-channel-mean",
+        "lscrEpisodes": 200,
+        "efficiency": 0.9387987284590932,
+        "efficiencyStatus": "reported"
+      }
+    },
+    "43": {
+      "channels": {
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 23,
+          "lscr": 61.5,
+          "source": {
+            "runId": "medex15-official-scene-20261118-43-none",
+            "perEpisodeFile": "per_task_eval/43_fridge_fruit_shelf_sorting/None/per_episode.jsonl",
+            "perEpisodeSha256": "9705b79cda52e24ebfbe3d85b6cc0d49965322ce6fa7eb286ccbc7533945a149",
+            "summaryFile": "per_task_eval/43_fridge_fruit_shelf_sorting/None/summary.json",
+            "summarySha256": "3f9179ef7ed4952a3f4985845ca5d5668b6e5e893a1e2d88c3475ed9cf8aca4b"
+          }
+        },
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 20,
+          "lscr": 56.99999999999999,
+          "source": {
+            "runId": "medex15-official-scene-20261118-43-cov_only",
+            "perEpisodeFile": "per_task_eval/43_fridge_fruit_shelf_sorting/Equi/per_episode.jsonl",
+            "perEpisodeSha256": "9f3e83a25a3b9d71eb5282fbe0a867ac6233235213ac77d0d620fe310cfbf75d",
+            "summaryFile": "per_task_eval/43_fridge_fruit_shelf_sorting/Equi/summary.json",
+            "summarySha256": "dc93b2175f31537512336879c45a0353a485429f3c1fd4233371b1fbcd3dda98"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 24,
+          "lscr": 67.5,
+          "source": {
+            "runId": "medex15-official-scene-20261118-43-inv_only",
+            "perEpisodeFile": "per_task_eval/43_fridge_fruit_shelf_sorting/Inv/per_episode.jsonl",
+            "perEpisodeSha256": "ed797bdd000b907073007fab767c4c30b3c23f406cf7f0c0290ce71ba3610f88",
+            "summaryFile": "per_task_eval/43_fridge_fruit_shelf_sorting/Inv/summary.json",
+            "summarySha256": "c5219d3913cfc857de3e39e1c4c8179cb613c6939527c8fe9123a589081e7e97"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 22,
+          "lscr": 66.0,
+          "source": {
+            "runId": "medex15-official-scene-20261118-43-inv_cov",
+            "perEpisodeFile": "per_task_eval/43_fridge_fruit_shelf_sorting/Full/per_episode.jsonl",
+            "perEpisodeSha256": "d9a71fd7de9051c1f81918ef7b90b470e8be2c37f057c7676b904215cc909b70",
+            "summaryFile": "per_task_eval/43_fridge_fruit_shelf_sorting/Full/summary.json",
+            "summarySha256": "f530561b0b0894a8f479c4ab4102bc262b55acc0ce0f88ab9654bda9b979b5c9"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "sr": 44.5,
+        "srScope": "four-channel-mean",
+        "srEpisodes": 200,
+        "lscr": 63.0,
+        "lscrScope": "four-channel-mean",
+        "lscrEpisodes": 200,
+        "efficiency": 0.9714383240853198,
+        "efficiencyStatus": "reported"
+      }
+    },
+    "44": {
+      "channels": {
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 47,
+          "lscr": 96.5,
+          "source": {
+            "runId": "medex15-official-scene-20261118-44-none",
+            "perEpisodeFile": "per_task_eval/44_microwave_bowl_loading/None/per_episode.jsonl",
+            "perEpisodeSha256": "0623cc26ba4d7773fa19b3dd1b3d2a2ed6cd9e487e31f5386b3d86e81ae3f54c",
+            "summaryFile": "per_task_eval/44_microwave_bowl_loading/None/summary.json",
+            "summarySha256": "7a3ffbc3719269037947d8916a484d07feb99706c18566308895c02dfe3e24f3"
+          }
+        },
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 49,
+          "lscr": 99.0,
+          "source": {
+            "runId": "medex15-official-scene-20261118-44-cov_only",
+            "perEpisodeFile": "per_task_eval/44_microwave_bowl_loading/Equi/per_episode.jsonl",
+            "perEpisodeSha256": "3e8041397b95cdfb7cf8a637dd1c58c6c7b72373089269b1df53dd7eb3bf3032",
+            "summaryFile": "per_task_eval/44_microwave_bowl_loading/Equi/summary.json",
+            "summarySha256": "71e4d66628f74e8d193cb701d9c199add0b42b6b52d9da06582e46deaa2416be"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 43,
+          "lscr": 93.5,
+          "source": {
+            "runId": "medex15-official-scene-20261118-44-inv_only",
+            "perEpisodeFile": "per_task_eval/44_microwave_bowl_loading/Inv/per_episode.jsonl",
+            "perEpisodeSha256": "82678c093bf53e56428f49e06216635a2ef808e7a7e1ef4bc809cb1882cd3e1f",
+            "summaryFile": "per_task_eval/44_microwave_bowl_loading/Inv/summary.json",
+            "summarySha256": "5678fb8e3146de548ea4ace1f0365287fc9f7e230202adf721b57fd7d108ab8f"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 42,
+          "lscr": 91.0,
+          "source": {
+            "runId": "medex15-official-scene-20261118-44-inv_cov",
+            "perEpisodeFile": "per_task_eval/44_microwave_bowl_loading/Full/per_episode.jsonl",
+            "perEpisodeSha256": "82d25163a4e28a4099620452953cb12d62fcb9c3e48026458b06f971b854a61e",
+            "summaryFile": "per_task_eval/44_microwave_bowl_loading/Full/summary.json",
+            "summarySha256": "405efc26a0f0db1fe9594c373a666d88a8a1388c3dece127dae28b7b5936d643"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "sr": 90.5,
+        "srScope": "four-channel-mean",
+        "srEpisodes": 200,
+        "lscr": 95.0,
+        "lscrScope": "four-channel-mean",
+        "lscrEpisodes": 200,
+        "efficiency": 1.0187878482436292,
+        "efficiencyStatus": "reported"
+      }
+    },
+    "51": {
+      "channels": {
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 41,
+          "lscr": 86.66666666666667,
+          "source": {
+            "runId": "medex15-official-scene-20261118-51-none",
+            "perEpisodeFile": "per_task_eval/51_toilet_lid_cleaner_pour/None/per_episode.jsonl",
+            "perEpisodeSha256": "3ef37f536aeb3c3e71477172ac93fba92b4b5c5740d3bd3cad1826bde44201b0",
+            "summaryFile": "per_task_eval/51_toilet_lid_cleaner_pour/None/summary.json",
+            "summarySha256": "c2a974e92630d71c4820f4239d5550d7497df6f5b48a0a2ae1672e9c608ce386"
+          }
+        },
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 42,
+          "lscr": 88.0,
+          "source": {
+            "runId": "medex15-official-scene-20261118-51-cov_only",
+            "perEpisodeFile": "per_task_eval/51_toilet_lid_cleaner_pour/Equi/per_episode.jsonl",
+            "perEpisodeSha256": "bbe16b151553b61b9eb655fdf54bb2bb069da527d852aa360bb420866b3f0a79",
+            "summaryFile": "per_task_eval/51_toilet_lid_cleaner_pour/Equi/summary.json",
+            "summarySha256": "6de5f134cae5218432e24a65f7bc8fa38d391b2bf7d41d6d6f5c575b5a491558"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 36,
+          "lscr": 79.33333333333333,
+          "source": {
+            "runId": "medex15-official-scene-20261118-51-inv_only",
+            "perEpisodeFile": "per_task_eval/51_toilet_lid_cleaner_pour/Inv/per_episode.jsonl",
+            "perEpisodeSha256": "2effef9c39a195405963a6b8150ee3eec49fe1b5e8137da1c008dbf956833b16",
+            "summaryFile": "per_task_eval/51_toilet_lid_cleaner_pour/Inv/summary.json",
+            "summarySha256": "0653ab2cc2b90927b8e71c1672577a828c81329c440fb79de05061f21678e974"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 39,
+          "lscr": 82.0,
+          "source": {
+            "runId": "medex15-official-scene-20261118-51-inv_cov",
+            "perEpisodeFile": "per_task_eval/51_toilet_lid_cleaner_pour/Full/per_episode.jsonl",
+            "perEpisodeSha256": "e31aaf29fb8c4315d87b3c04ca30d3436854110406b6c44e1649adae96e2db9d",
+            "summaryFile": "per_task_eval/51_toilet_lid_cleaner_pour/Full/summary.json",
+            "summarySha256": "6bd4decccd86c5bd6fd4196c4f6a90db078e48a9015721306b528a3dd1ed86af"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "sr": 79,
+        "srScope": "four-channel-mean",
+        "srEpisodes": 200,
+        "lscr": 84.0,
+        "lscrScope": "four-channel-mean",
+        "lscrEpisodes": 200,
+        "efficiency": 1.1066880289212062,
+        "efficiencyStatus": "reported"
+      }
+    },
+    "60": {
+      "channels": {
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 35,
+          "lscr": 93.5,
+          "source": {
+            "runId": "medex15-official-scene-20261118-60-none",
+            "perEpisodeFile": "per_task_eval/60_breadbasket_fast_food_loading/None/per_episode.jsonl",
+            "perEpisodeSha256": "0606ad0817bf2958e7826d45ec6f92f591f3d6f2058306c2df211c3e31f55bff",
+            "summaryFile": "per_task_eval/60_breadbasket_fast_food_loading/None/summary.json",
+            "summarySha256": "efdda1170e1a772895de6073c223c53f3d24bc6a7188031cef8b6cc717154a60"
+          }
+        },
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 32,
+          "lscr": 89.5,
+          "source": {
+            "runId": "medex15-official-scene-20261118-60-cov_only",
+            "perEpisodeFile": "per_task_eval/60_breadbasket_fast_food_loading/Equi/per_episode.jsonl",
+            "perEpisodeSha256": "30010bd5394db5820bb8a83fe9e2d6cc3b06a8f7b37e94f5028e959058d578a4",
+            "summaryFile": "per_task_eval/60_breadbasket_fast_food_loading/Equi/summary.json",
+            "summarySha256": "aaea0504b13b2991b3f65541dc50352bfe900b93449007e48d7e2681f6a6a7ed"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 34,
+          "lscr": 85.5,
+          "source": {
+            "runId": "medex15-official-scene-20261118-60-inv_only",
+            "perEpisodeFile": "per_task_eval/60_breadbasket_fast_food_loading/Inv/per_episode.jsonl",
+            "perEpisodeSha256": "a0d8fde9e1cdc3a1022a68fc9df73187c6c2c55c4cab9dc77a2f3449a184bd20",
+            "summaryFile": "per_task_eval/60_breadbasket_fast_food_loading/Inv/summary.json",
+            "summarySha256": "408857cbfa50eab4211f88ce7c6a47a574278604b143950f9cce1c183fb34050"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 32,
+          "lscr": 86.0,
+          "source": {
+            "runId": "medex15-official-scene-20261118-60-inv_cov",
+            "perEpisodeFile": "per_task_eval/60_breadbasket_fast_food_loading/Full/per_episode.jsonl",
+            "perEpisodeSha256": "d75c7c3bf39a538992f782bf7f40bc2b9060693bc509bd500663c881912ab5af",
+            "summaryFile": "per_task_eval/60_breadbasket_fast_food_loading/Full/summary.json",
+            "summarySha256": "c1c95f9e4fa1e4841c2753ed58b1533e37376e994153c46d7f86249040926e2e"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "sr": 66.5,
+        "srScope": "four-channel-mean",
+        "srEpisodes": 200,
+        "lscr": 88.625,
+        "lscrScope": "four-channel-mean",
+        "lscrEpisodes": 200,
+        "efficiency": 0.9466209107760132,
+        "efficiencyStatus": "reported"
+      }
+    },
+    "61": {
+      "channels": {
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 35,
+          "lscr": 81.33333333333333,
+          "source": {
+            "runId": "medex15-official-scene-20261118-61-none",
+            "perEpisodeFile": "per_task_eval/61_medicine_shoebox_pack/None/per_episode.jsonl",
+            "perEpisodeSha256": "ed23fdeb412679fa3b86d40569bb2296f1104d0c1c199879817926a8cb873a34",
+            "summaryFile": "per_task_eval/61_medicine_shoebox_pack/None/summary.json",
+            "summarySha256": "d29bd91d4482b1b35ff114286831624003c13665f1769a4490dbd404ce94d603"
+          }
+        },
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 27,
+          "lscr": 71.33333333333334,
+          "source": {
+            "runId": "medex15-official-scene-20261118-61-cov_only",
+            "perEpisodeFile": "per_task_eval/61_medicine_shoebox_pack/Equi/per_episode.jsonl",
+            "perEpisodeSha256": "2056bc5f8fdc6b3eb0fcff7cdfb801dc6626558e1b4a6da9be927d5f7c1b6140",
+            "summaryFile": "per_task_eval/61_medicine_shoebox_pack/Equi/summary.json",
+            "summarySha256": "251e78b88c778a6131804de9814c0c489f2fc681e77a03feeb8a53341cc91b8a"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 33,
+          "lscr": 76.66666666666666,
+          "source": {
+            "runId": "medex15-official-scene-20261118-61-inv_only",
+            "perEpisodeFile": "per_task_eval/61_medicine_shoebox_pack/Inv/per_episode.jsonl",
+            "perEpisodeSha256": "3d0988fb2b485c301e82602a06cc30847d89763e3eb96bbd3f8b31a440aaf461",
+            "summaryFile": "per_task_eval/61_medicine_shoebox_pack/Inv/summary.json",
+            "summarySha256": "6f2fcf48f873d4e52bb4ff28f7b3d682cf654ec7f097a37d0d946465dbb0d996"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 30,
+          "lscr": 73.33333333333333,
+          "source": {
+            "runId": "medex15-official-scene-20261118-61-inv_cov",
+            "perEpisodeFile": "per_task_eval/61_medicine_shoebox_pack/Full/per_episode.jsonl",
+            "perEpisodeSha256": "bb4e3be9cd4d3d703e6a1db303bc861c8ec77b295705c2db41ea17ef3e8a404b",
+            "summaryFile": "per_task_eval/61_medicine_shoebox_pack/Full/summary.json",
+            "summarySha256": "dbc74bc7c8a2b76ec7b1d76b4a47ef5243fda2281b5cdd6a5b0efcb2d3f5155e"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "sr": 62.5,
+        "srScope": "four-channel-mean",
+        "srEpisodes": 200,
+        "lscr": 75.66666666666666,
+        "lscrScope": "four-channel-mean",
+        "lscrEpisodes": 200,
+        "efficiency": 1.0519854890129352,
+        "efficiencyStatus": "reported"
+      }
+    },
+    "62": {
+      "channels": {
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 42,
+          "lscr": 90.66666666666666,
+          "source": {
+            "runId": "medex15-official-scene-20261118-62-none",
+            "perEpisodeFile": "per_task_eval/62_shoebox_accessory_pack/None/per_episode.jsonl",
+            "perEpisodeSha256": "2e31143dea46a448f08b63f8f66c30e54261eb5abaf39ce80fddc90c8560e54e",
+            "summaryFile": "per_task_eval/62_shoebox_accessory_pack/None/summary.json",
+            "summarySha256": "474fbcf4e72974d0f06f14653a8ff95d8196ab47d847049418318ea49d9cb3f0"
+          }
+        },
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 36,
+          "lscr": 78.0,
+          "source": {
+            "runId": "medex15-official-scene-20261118-62-cov_only",
+            "perEpisodeFile": "per_task_eval/62_shoebox_accessory_pack/Equi/per_episode.jsonl",
+            "perEpisodeSha256": "f6f475f348c6b8d9976204f16270a20bf9209b60a2a85459409aa6f7af230857",
+            "summaryFile": "per_task_eval/62_shoebox_accessory_pack/Equi/summary.json",
+            "summarySha256": "b287820efe583db8d57f467540e86e4eb1d98fe79cc3a4e198faa3cddece70f6"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 39,
+          "lscr": 83.33333333333334,
+          "source": {
+            "runId": "medex15-official-scene-20261118-62-inv_only",
+            "perEpisodeFile": "per_task_eval/62_shoebox_accessory_pack/Inv/per_episode.jsonl",
+            "perEpisodeSha256": "02ceea2f5b7eaf74f1ce41d09b7ffd10ed94533385ef636cfa8b8d8e4cb3ade9",
+            "summaryFile": "per_task_eval/62_shoebox_accessory_pack/Inv/summary.json",
+            "summarySha256": "208ba3a4e1ae74541673b52ad2809b0dc6d0e14d4f21bd96c3cc69e56a984e96"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 37,
+          "lscr": 80.66666666666666,
+          "source": {
+            "runId": "medex15-official-scene-20261118-62-inv_cov",
+            "perEpisodeFile": "per_task_eval/62_shoebox_accessory_pack/Full/per_episode.jsonl",
+            "perEpisodeSha256": "337cec933c0082aff078077eccbfac0cb0960d3abe2377589c1c6d0cee7a2d3d",
+            "summaryFile": "per_task_eval/62_shoebox_accessory_pack/Full/summary.json",
+            "summarySha256": "4098700e118e15e45e9da82a43f6f8b090baf7e91985b8029c6f3ca26c3cc708"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "sr": 77,
+        "srScope": "four-channel-mean",
+        "srEpisodes": 200,
+        "lscr": 83.16666666666666,
+        "lscrScope": "four-channel-mean",
+        "lscrEpisodes": 200,
+        "efficiency": 0.9705257614324585,
+        "efficiencyStatus": "reported"
+      }
+    },
+    "64": {
+      "channels": {
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 36,
+          "lscr": 88.5,
+          "source": {
+            "runId": "medex15-official-scene-20261118-64-none",
+            "perEpisodeFile": "per_task_eval/64_sports_ball_cup_sort/None/per_episode.jsonl",
+            "perEpisodeSha256": "26096b771a42c57c630417112232befd1b4a963bbc9fcc1538af632e660a21db",
+            "summaryFile": "per_task_eval/64_sports_ball_cup_sort/None/summary.json",
+            "summarySha256": "6352cf8c407d8e7ab144a2ea5d1e53f411ef3a71d2489788621338d8385f2c92"
+          }
+        },
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 16,
+          "lscr": 59.5,
+          "source": {
+            "runId": "medex15-official-scene-20261118-64-cov_only",
+            "perEpisodeFile": "per_task_eval/64_sports_ball_cup_sort/Equi/per_episode.jsonl",
+            "perEpisodeSha256": "c808b1205201ece83366702b81c904461111ad91dcbd5524f64ab60e081ac685",
+            "summaryFile": "per_task_eval/64_sports_ball_cup_sort/Equi/summary.json",
+            "summarySha256": "3e1034d5ac16e891d24494119405ddc1b4e5ff4259f4a67b20f83703c863eb7b"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 12,
+          "lscr": 65.5,
+          "source": {
+            "runId": "medex15-official-scene-20261118-64-inv_only",
+            "perEpisodeFile": "per_task_eval/64_sports_ball_cup_sort/Inv/per_episode.jsonl",
+            "perEpisodeSha256": "cb377e5c9903b83192ad23f77d3d8df36f39680b9458599b9dd770b2b88faf82",
+            "summaryFile": "per_task_eval/64_sports_ball_cup_sort/Inv/summary.json",
+            "summarySha256": "b9b38278585f5d99ae324eb795c31a6873ad7a37c5796303e238ed457a37cb53"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 11,
+          "lscr": 57.99999999999999,
+          "source": {
+            "runId": "medex15-official-scene-20261118-64-inv_cov",
+            "perEpisodeFile": "per_task_eval/64_sports_ball_cup_sort/Full/per_episode.jsonl",
+            "perEpisodeSha256": "07ffa7cf7ece69335fd35833a9f92db3b2db10107df689826553979e225fb2c2",
+            "summaryFile": "per_task_eval/64_sports_ball_cup_sort/Full/summary.json",
+            "summarySha256": "df0aaed3bf748c4cd811dc3716b8853e6488c17557a05296080f1484b9c5f8b5"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "sr": 37.5,
+        "srScope": "four-channel-mean",
+        "srEpisodes": 200,
+        "lscr": 67.875,
+        "lscrScope": "four-channel-mean",
+        "lscrEpisodes": 200,
+        "efficiency": 0.7726265037827111,
+        "efficiencyStatus": "reported"
+      }
+    },
+    "67": {
+      "channels": {
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 37,
+          "lscr": 84.5,
+          "source": {
+            "runId": "medex15-official-scene-20261118-67-none",
+            "perEpisodeFile": "per_task_eval/67_faucet_cup_water_fill/None/per_episode.jsonl",
+            "perEpisodeSha256": "799a7154c64e83a51738f22b0d8f47d6cce94a0f50002bddf4a01c87b6ffb4ed",
+            "summaryFile": "per_task_eval/67_faucet_cup_water_fill/None/summary.json",
+            "summarySha256": "19ba5dae940d1c4a61f1c4b2f1a4d46902ad889704ee6456a7ec68a4191c32ac"
+          }
+        },
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 36,
+          "lscr": 85.5,
+          "source": {
+            "runId": "medex15-official-scene-20261118-67-cov_only",
+            "perEpisodeFile": "per_task_eval/67_faucet_cup_water_fill/Equi/per_episode.jsonl",
+            "perEpisodeSha256": "e63e3f8c595333e2f5fb7b37f0c7d00af234103aec56ff4f244be8b1d245c92a",
+            "summaryFile": "per_task_eval/67_faucet_cup_water_fill/Equi/summary.json",
+            "summarySha256": "e93162da019157d874d1a0a82fce777e644442b015e07810e8e221774699e4b9"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 37,
+          "lscr": 81.0,
+          "source": {
+            "runId": "medex15-official-scene-20261118-67-inv_only",
+            "perEpisodeFile": "per_task_eval/67_faucet_cup_water_fill/Inv/per_episode.jsonl",
+            "perEpisodeSha256": "917a32b463c87672f97dbae517177106cb727b283182056c23c7103168e1b6e2",
+            "summaryFile": "per_task_eval/67_faucet_cup_water_fill/Inv/summary.json",
+            "summarySha256": "3af47091eda5552dfbcbc24f3ba5d58e4f0210adb25aaf00e8b28cba0e1a697c"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 36,
+          "lscr": 83.5,
+          "source": {
+            "runId": "medex15-official-scene-20261118-67-inv_cov",
+            "perEpisodeFile": "per_task_eval/67_faucet_cup_water_fill/Full/per_episode.jsonl",
+            "perEpisodeSha256": "92b476bfe7ba468940e38c0647fb4bf33510e4aca4fca6a029e5f1eecb5c049d",
+            "summaryFile": "per_task_eval/67_faucet_cup_water_fill/Full/summary.json",
+            "summarySha256": "007e2430b62ebb573fd610877a36dd090d30cf8152bcd9f87dd8fa5a289fffe3"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "sr": 73,
+        "srScope": "four-channel-mean",
+        "srEpisodes": 200,
+        "lscr": 83.625,
+        "lscrScope": "four-channel-mean",
+        "lscrEpisodes": 200,
+        "efficiency": 0.8926039143063712,
+        "efficiencyStatus": "reported"
+      }
+    },
+    "73": {
+      "channels": {
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 0,
+          "lscr": 58.5,
+          "source": {
+            "runId": "medex15-official-scene-20261118-73-none",
+            "perEpisodeFile": "per_task_eval/73_jigsaw_puzzle_assembly/None/per_episode.jsonl",
+            "perEpisodeSha256": "c6046e081e1edd464adbac00b98c3280175aea0de8a7533d55145e1c77db1c5d",
+            "summaryFile": "per_task_eval/73_jigsaw_puzzle_assembly/None/summary.json",
+            "summarySha256": "fe47ba18ae645d3757324d9454fc7d4d5e20f1b36c0d6ff82fe467c73688c8c2"
+          }
+        },
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 0,
+          "lscr": 42.5,
+          "source": {
+            "runId": "medex15-official-scene-20261118-73-cov_only",
+            "perEpisodeFile": "per_task_eval/73_jigsaw_puzzle_assembly/Equi/per_episode.jsonl",
+            "perEpisodeSha256": "b12505716d8cf14270f0e3769d41b01d8c296d5e54e07a2441183b494bdcd968",
+            "summaryFile": "per_task_eval/73_jigsaw_puzzle_assembly/Equi/summary.json",
+            "summarySha256": "c40bea6bf9a6aab0575b6a933bf0486f5061bade8e1a63715496e702d10a664f"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 0,
+          "lscr": 56.99999999999999,
+          "source": {
+            "runId": "medex15-official-scene-20261118-73-inv_only",
+            "perEpisodeFile": "per_task_eval/73_jigsaw_puzzle_assembly/Inv/per_episode.jsonl",
+            "perEpisodeSha256": "dcdc98b573bd2a6b79a4f65a6bab3721df66baedbe9050da8b0e54e9b3420f47",
+            "summaryFile": "per_task_eval/73_jigsaw_puzzle_assembly/Inv/summary.json",
+            "summarySha256": "b30d2c430062af4e620473465884de08fe90f727024efe9346202c61901e309b"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 1,
+          "lscr": 42.0,
+          "source": {
+            "runId": "medex15-official-scene-20261118-73-inv_cov",
+            "perEpisodeFile": "per_task_eval/73_jigsaw_puzzle_assembly/Full/per_episode.jsonl",
+            "perEpisodeSha256": "1a660c52a7a3cef2e19434fc8ae786cc5c3f438e593c1f706cf5eaac5b42f1b5",
+            "summaryFile": "per_task_eval/73_jigsaw_puzzle_assembly/Full/summary.json",
+            "summarySha256": "132a66a2726bbafb9419b0c48beefc1ecf05c6eeff94034d10567f9d1b8c8e7d"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "sr": 0.5,
+        "srScope": "four-channel-mean",
+        "srEpisodes": 200,
+        "lscr": 50.0,
+        "lscrScope": "four-channel-mean",
+        "lscrEpisodes": 200,
+        "efficiency": 1.114889705882353,
+        "efficiencyStatus": "reported"
+      }
+    },
+    "76": {
+      "channels": {
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 9,
+          "lscr": 45.0,
+          "source": {
+            "runId": "medex15-official-scene-20261118-76-none",
+            "perEpisodeFile": "per_task_eval/76_soup_serving/None/per_episode.jsonl",
+            "perEpisodeSha256": "f3315cb007065bd76bc2dc364f7f47b3ce61c9beb8a26640e3bef60f0156e51c",
+            "summaryFile": "per_task_eval/76_soup_serving/None/summary.json",
+            "summarySha256": "494f50579edb5c3e699ba97489f85625a4dbad478eef808f61162f39e4711e94"
+          }
+        },
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 7,
+          "lscr": 38.5,
+          "source": {
+            "runId": "medex15-official-scene-20261118-76-cov_only",
+            "perEpisodeFile": "per_task_eval/76_soup_serving/Equi/per_episode.jsonl",
+            "perEpisodeSha256": "0a116d0670c8e7939826b4b051f4b7028ef02c5bfef24c20d5e7420ea399cb08",
+            "summaryFile": "per_task_eval/76_soup_serving/Equi/summary.json",
+            "summarySha256": "a2d31101f6c25bffbe71c21ea68e271ee7c95c0251b7eedc932d3bab35d10e26"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 7,
+          "lscr": 44.5,
+          "source": {
+            "runId": "medex15-official-scene-20261118-76-inv_only",
+            "perEpisodeFile": "per_task_eval/76_soup_serving/Inv/per_episode.jsonl",
+            "perEpisodeSha256": "34eedd0fbfd9cd17148bbaf51cfaea39383952137f893596c97d1f21ddf6a270",
+            "summaryFile": "per_task_eval/76_soup_serving/Inv/summary.json",
+            "summarySha256": "e1aea70561bade18dafe0b4f67d36aea7c729517219af664bcc786892cfae0b2"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 2,
+          "lscr": 38.0,
+          "source": {
+            "runId": "medex15-official-scene-20261118-76-inv_cov",
+            "perEpisodeFile": "per_task_eval/76_soup_serving/Full/per_episode.jsonl",
+            "perEpisodeSha256": "e91b0aa8ab7290d55f526082f23533602a9d3f6d4da15cebe9398ff790654a1d",
+            "summaryFile": "per_task_eval/76_soup_serving/Full/summary.json",
+            "summarySha256": "2f88cd308ae8cee78c0f67ac916cb81ef1b44f15fd0783d8f14f41d2436dc973"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "sr": 12.5,
+        "srScope": "four-channel-mean",
+        "srEpisodes": 200,
+        "lscr": 41.5,
+        "lscrScope": "four-channel-mean",
+        "lscrEpisodes": 200,
+        "efficiency": 0.9734810339039947,
+        "efficiencyStatus": "reported"
+      }
+    },
+    "79": {
+      "channels": {
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 14,
+          "lscr": 35.0,
+          "source": {
+            "runId": "medex15-official-scene-20261118-79-none",
+            "perEpisodeFile": "per_task_eval/79_bimanual_piano_melody/None/per_episode.jsonl",
+            "perEpisodeSha256": "0642a16790714467ce38dee49b32f2ab74ce679a4ab5efd36e70bea624f7a3d0",
+            "summaryFile": "per_task_eval/79_bimanual_piano_melody/None/summary.json",
+            "summarySha256": "bf100795b41ebedde2921b741aa7b326dd44f7b1068b0d03e93fb86e19815a76"
+          }
+        },
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 17,
+          "lscr": 36.0,
+          "source": {
+            "runId": "medex15-official-scene-20261118-79-cov_only",
+            "perEpisodeFile": "per_task_eval/79_bimanual_piano_melody/Equi/per_episode.jsonl",
+            "perEpisodeSha256": "0620accdb134d8b6cb84bda77d4519f7cee07d296daa3416a3bffc4fd3b7f605",
+            "summaryFile": "per_task_eval/79_bimanual_piano_melody/Equi/summary.json",
+            "summarySha256": "af8016b1263eeadb4e7645a11e21197ba5bb0dec83238a72cb73714267d6b27f"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 14,
+          "lscr": 28.999999999999996,
+          "source": {
+            "runId": "medex15-official-scene-20261118-79-inv_only",
+            "perEpisodeFile": "per_task_eval/79_bimanual_piano_melody/Inv/per_episode.jsonl",
+            "perEpisodeSha256": "0940c0488b6f07c61151b16c2a1d76d091add838490f9047c5602e5c011565b6",
+            "summaryFile": "per_task_eval/79_bimanual_piano_melody/Inv/summary.json",
+            "summarySha256": "b1228b6d673b2081b602a3335ff104259732ff44b17b98962405c9b17b28d64e"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 19,
+          "lscr": 41.0,
+          "source": {
+            "runId": "medex15-official-scene-20261118-79-inv_cov",
+            "perEpisodeFile": "per_task_eval/79_bimanual_piano_melody/Full/per_episode.jsonl",
+            "perEpisodeSha256": "65a5f671f8eaf2b6b4765654b62f9dd10bdf6090cc530a8444ff78a1ab674c75",
+            "summaryFile": "per_task_eval/79_bimanual_piano_melody/Full/summary.json",
+            "summarySha256": "cac8991b8821ddc1750fab0ab18210a0625a7478e3b6988f34392a61ea195873"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "sr": 32,
+        "srScope": "four-channel-mean",
+        "srEpisodes": 200,
+        "lscr": 35.25,
+        "lscrScope": "four-channel-mean",
+        "lscrEpisodes": 200,
+        "efficiency": 0.9377037188437913,
+        "efficiencyStatus": "reported"
+      }
+    },
+    "80": {
+      "channels": {
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 36,
+          "lscr": 74.66666666666667,
+          "source": {
+            "runId": "medex15-official-scene-20261118-80-none",
+            "perEpisodeFile": "per_task_eval/80_gaming_desk_setup/None/per_episode.jsonl",
+            "perEpisodeSha256": "e991f5417b7a1a25dc7bbe70b53497ef6b5f57fe6bca1168cb4da0059480f058",
+            "summaryFile": "per_task_eval/80_gaming_desk_setup/None/summary.json",
+            "summarySha256": "bcc60923dc3a25ec1f497f89aabc5519fa3e265a6e9d74a7c127187eac3b29c3"
+          }
+        },
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 34,
+          "lscr": 73.33333333333333,
+          "source": {
+            "runId": "medex15-official-scene-20261118-80-cov_only",
+            "perEpisodeFile": "per_task_eval/80_gaming_desk_setup/Equi/per_episode.jsonl",
+            "perEpisodeSha256": "f9aaa314dc628ef4fbed620261d4b1f09bf2e213c83db88c9e68359aa98dd6df",
+            "summaryFile": "per_task_eval/80_gaming_desk_setup/Equi/summary.json",
+            "summarySha256": "3677acb3df004c2e484f816b8f76b6efba3b29ded9811f38f48e332272ceddba"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 33,
+          "lscr": 71.33333333333334,
+          "source": {
+            "runId": "medex15-official-scene-20261118-80-inv_only",
+            "perEpisodeFile": "per_task_eval/80_gaming_desk_setup/Inv/per_episode.jsonl",
+            "perEpisodeSha256": "f2d1233d30148e51d23b8f0833389bada07d30f236179eb5733710c73b456211",
+            "summaryFile": "per_task_eval/80_gaming_desk_setup/Inv/summary.json",
+            "summarySha256": "2970d90d411a7045e7d9e12d16a3b5a92705f96561ef2a4e2e604a58991e6b8b"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 30,
+          "lscr": 68.0,
+          "source": {
+            "runId": "medex15-official-scene-20261118-80-inv_cov",
+            "perEpisodeFile": "per_task_eval/80_gaming_desk_setup/Full/per_episode.jsonl",
+            "perEpisodeSha256": "cfa1caf4f079bbe2b5968a5d9011998e0052274a297ca8bb9fcd83013a817a51",
+            "summaryFile": "per_task_eval/80_gaming_desk_setup/Full/summary.json",
+            "summarySha256": "326c83b40aecc02382a4a59d886f803f98230a331bc4350ff91c6b6e30fc90ee"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "sr": 66.5,
+        "srScope": "four-channel-mean",
+        "srEpisodes": 200,
+        "lscr": 71.83333333333334,
+        "lscrScope": "four-channel-mean",
+        "lscrEpisodes": 200,
+        "efficiency": 1.047898617695361,
+        "efficiencyStatus": "reported"
+      }
+    },
+    "03": {
+      "channels": {
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 25,
+          "lscr": 88.66666666666666,
+          "source": {
+            "runId": "medex15-official-scene-20261118-03-none",
+            "perEpisodeFile": "per_task_eval/03_wine_glass_plate_balance/None/per_episode.jsonl",
+            "perEpisodeSha256": "33a7110be3d06a81a9b127fb0aac430977cca6526859ea17f24a81be81ffc67d",
+            "summaryFile": "per_task_eval/03_wine_glass_plate_balance/None/summary.json",
+            "summarySha256": "7170e7c40009e33a53cae47e4ee370ffbf632781036dc478299b8b84081e51bd"
+          }
+        },
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 21,
+          "lscr": 87.33333333333333,
+          "source": {
+            "runId": "medex15-official-scene-20261118-03-cov_only",
+            "perEpisodeFile": "per_task_eval/03_wine_glass_plate_balance/Equi/per_episode.jsonl",
+            "perEpisodeSha256": "7033d5814181bf90dd69d0f869aba48cc4a98e19877d061a05978772394939ec",
+            "summaryFile": "per_task_eval/03_wine_glass_plate_balance/Equi/summary.json",
+            "summarySha256": "39624a8789b98eaa7790d256f956831ad0eb6e340ca21b5f3c0cd416a82e614c"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 18,
+          "lscr": 86.0,
+          "source": {
+            "runId": "medex15-official-scene-20261118-03-inv_only",
+            "perEpisodeFile": "per_task_eval/03_wine_glass_plate_balance/Inv/per_episode.jsonl",
+            "perEpisodeSha256": "6b4b39a8db429e336961f002b276b35586c7f4beb74d97aa9fe726f2f74ddd9e",
+            "summaryFile": "per_task_eval/03_wine_glass_plate_balance/Inv/summary.json",
+            "summarySha256": "590a53205d186cb1fb4a9ed196fa9e23b7cbac69fc44e213cfcf95dad96d88f8"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 26,
+          "lscr": 89.33333333333333,
+          "source": {
+            "runId": "medex15-official-scene-20261118-03-inv_cov",
+            "perEpisodeFile": "per_task_eval/03_wine_glass_plate_balance/Full/per_episode.jsonl",
+            "perEpisodeSha256": "3d5594e6b76ef17b39aaff5eefb8c84ec90b1a780199d4808b0a586b978d643b",
+            "summaryFile": "per_task_eval/03_wine_glass_plate_balance/Full/summary.json",
+            "summarySha256": "e8cb1d34851e0ddd13ef70ba4b4505ed8e4a7f3a416d3fc6b7200a6ce594f301"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "sr": 45,
+        "srScope": "four-channel-mean",
+        "srEpisodes": 200,
+        "lscr": 87.83333333333333,
+        "lscrScope": "four-channel-mean",
+        "lscrEpisodes": 200,
+        "efficiency": 1.0480828736714651,
+        "efficiencyStatus": "reported"
+      }
+    },
+    "06": {
+      "channels": {
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 49,
+          "lscr": 100.0,
+          "source": {
+            "runId": "medex15-official-scene-20261118-06-none",
+            "perEpisodeFile": "per_task_eval/06_fruit_bowl_loading/None/per_episode.jsonl",
+            "perEpisodeSha256": "052505e35b9f6c2a8f877c18e4ce46d7aced29785701fd085a1579f2c3d594a0",
+            "summaryFile": "per_task_eval/06_fruit_bowl_loading/None/summary.json",
+            "summarySha256": "7b3e28566d6dd9de0450690e83ff102de2a780084495eacd9a65ee0e9dd7af03"
+          }
+        },
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 39,
+          "lscr": 96.0,
+          "source": {
+            "runId": "medex15-official-scene-20261118-06-cov_only",
+            "perEpisodeFile": "per_task_eval/06_fruit_bowl_loading/Equi/per_episode.jsonl",
+            "perEpisodeSha256": "1450ca73dafe8fcaf81fce3336609152eb0f24d5a46f016cf4cbab72c2ccfb80",
+            "summaryFile": "per_task_eval/06_fruit_bowl_loading/Equi/summary.json",
+            "summarySha256": "83a287cc367cfa84e8f4bf8b8a37efb00803469a5268d21e58eeb20a7cd0c097"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 41,
+          "lscr": 97.5,
+          "source": {
+            "runId": "medex15-official-scene-20261118-06-inv_only",
+            "perEpisodeFile": "per_task_eval/06_fruit_bowl_loading/Inv/per_episode.jsonl",
+            "perEpisodeSha256": "eeeb82a4bfb36eb95a9d73940c8fa66eb346e89c06f19ea9dec5d11876f7d8ef",
+            "summaryFile": "per_task_eval/06_fruit_bowl_loading/Inv/summary.json",
+            "summarySha256": "e98429f99643980b481bd8a3ea345b7ee4e823c2f1d85b12ce1e60c514cc28a4"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 45,
+          "lscr": 98.0,
+          "source": {
+            "runId": "medex15-official-scene-20261118-06-inv_cov",
+            "perEpisodeFile": "per_task_eval/06_fruit_bowl_loading/Full/per_episode.jsonl",
+            "perEpisodeSha256": "05b9d18ffa5343cacc10315cc9d0239912913f9ba3974e792a618417b5db7b1b",
+            "summaryFile": "per_task_eval/06_fruit_bowl_loading/Full/summary.json",
+            "summarySha256": "463f2881771df3038680797e402d1a532536f00d5b63415c60cc3f4839a10829"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "sr": 87,
+        "srScope": "four-channel-mean",
+        "srEpisodes": 200,
+        "lscr": 97.875,
+        "lscrScope": "four-channel-mean",
+        "lscrEpisodes": 200,
+        "efficiency": 0.9300577527780214,
+        "efficiencyStatus": "reported"
+      }
+    },
+    "07": {
+      "channels": {
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 46,
+          "lscr": 98.5,
+          "source": {
+            "runId": "medex15-official-scene-20261118-07-none",
+            "perEpisodeFile": "per_task_eval/07_citrus_plate_loading/None/per_episode.jsonl",
+            "perEpisodeSha256": "9779abf2d409bb90478b5ed4fb8c72d2c5c5feb38f93bf3b09929353f80f4043",
+            "summaryFile": "per_task_eval/07_citrus_plate_loading/None/summary.json",
+            "summarySha256": "126c9f0054f18f73a4b9772b69f3ae01a5089e0fca8ba8f4f8715a78748c9786"
+          }
+        },
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 46,
+          "lscr": 97.0,
+          "source": {
+            "runId": "medex15-official-scene-20261118-07-cov_only",
+            "perEpisodeFile": "per_task_eval/07_citrus_plate_loading/Equi/per_episode.jsonl",
+            "perEpisodeSha256": "0afff7b34b7f983d95cfb774d57d09ce8c1b79c07a354e0eeb42814bf61b804b",
+            "summaryFile": "per_task_eval/07_citrus_plate_loading/Equi/summary.json",
+            "summarySha256": "b6fa3cecf2b98dde83235c55caf6bb9a67f8221375feac8b54618587ff186240"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 44,
+          "lscr": 96.0,
+          "source": {
+            "runId": "medex15-official-scene-20261118-07-inv_only",
+            "perEpisodeFile": "per_task_eval/07_citrus_plate_loading/Inv/per_episode.jsonl",
+            "perEpisodeSha256": "17652b7c77cd61054603a0ddbb62abd7ed0a268dedf2a779c9324d5f5b69e8e0",
+            "summaryFile": "per_task_eval/07_citrus_plate_loading/Inv/summary.json",
+            "summarySha256": "cd0d9b2b693be5873e00c30dd76c89efe7cedb26a9a7d06745008e81f4036110"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 47,
+          "lscr": 98.5,
+          "source": {
+            "runId": "medex15-official-scene-20261118-07-inv_cov",
+            "perEpisodeFile": "per_task_eval/07_citrus_plate_loading/Full/per_episode.jsonl",
+            "perEpisodeSha256": "4fd3274652ce8a441cd7b1f645a81e4c3e8e486d8b54e5b884ebcc104b3f5ad8",
+            "summaryFile": "per_task_eval/07_citrus_plate_loading/Full/summary.json",
+            "summarySha256": "0dab0041de2ea4c394edcd4799d6be33087e4432cf439512486d6c4df555b18b"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "sr": 91.5,
+        "srScope": "four-channel-mean",
+        "srEpisodes": 200,
+        "lscr": 97.5,
+        "lscrScope": "four-channel-mean",
+        "lscrEpisodes": 200,
+        "efficiency": 0.8370779894827698,
+        "efficiencyStatus": "reported"
+      }
+    },
+    "08": {
+      "channels": {
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 48,
+          "lscr": 97.0,
+          "source": {
+            "runId": "medex15-official-scene-20261118-08-none",
+            "perEpisodeFile": "per_task_eval/08_frypan_stand_pour/None/per_episode.jsonl",
+            "perEpisodeSha256": "d5012a7cc83892d75cd6231063fe8fd3ffd57c8927ec54ca4283568e3a2e79dd",
+            "summaryFile": "per_task_eval/08_frypan_stand_pour/None/summary.json",
+            "summarySha256": "e6977117f1f5961cda6c1069d1a63b5c41f07d12cbdd2ffbf4c1e21e108db9fa"
+          }
+        },
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 46,
+          "lscr": 96.0,
+          "source": {
+            "runId": "medex15-official-scene-20261118-08-cov_only",
+            "perEpisodeFile": "per_task_eval/08_frypan_stand_pour/Equi/per_episode.jsonl",
+            "perEpisodeSha256": "074990a5bdccff1d290bed4f6b32d11c1c89106827a492d5731a19403a9feebd",
+            "summaryFile": "per_task_eval/08_frypan_stand_pour/Equi/summary.json",
+            "summarySha256": "173e1075fb41c296aa7c645558d667f576224ab4e513ff4cb00688250fa9c092"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 48,
+          "lscr": 97.0,
+          "source": {
+            "runId": "medex15-official-scene-20261118-08-inv_only",
+            "perEpisodeFile": "per_task_eval/08_frypan_stand_pour/Inv/per_episode.jsonl",
+            "perEpisodeSha256": "72b749e35e520706c2185918d664c450f741a906ee09ca389051afe449a93c4b",
+            "summaryFile": "per_task_eval/08_frypan_stand_pour/Inv/summary.json",
+            "summarySha256": "e0b8ce4d01ab2c09c041c09801c0dd40440d5e76c27512955fa72ae854573377"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 46,
+          "lscr": 95.0,
+          "source": {
+            "runId": "medex15-official-scene-20261118-08-inv_cov",
+            "perEpisodeFile": "per_task_eval/08_frypan_stand_pour/Full/per_episode.jsonl",
+            "perEpisodeSha256": "ae0ee903d6f49a8a5c80afd755ca86f15609e594cb3e02ca7a3a7c345af7f10c",
+            "summaryFile": "per_task_eval/08_frypan_stand_pour/Full/summary.json",
+            "summarySha256": "636a9f382fa4a0a35c4b7d519d3aba138c900d0e53f280d0c2a464e0a37e45aa"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "sr": 94,
+        "srScope": "four-channel-mean",
+        "srEpisodes": 200,
+        "lscr": 96.25,
+        "lscrScope": "four-channel-mean",
+        "lscrEpisodes": 200,
+        "efficiency": 1.3134649208520617,
+        "efficiencyStatus": "reported"
+      }
+    },
+    "09": {
+      "channels": {
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 45,
+          "lscr": 95.0,
+          "source": {
+            "runId": "medex15-official-scene-20261118-09-none",
+            "perEpisodeFile": "per_task_eval/09_cleaner_moisturizer_box_loading/None/per_episode.jsonl",
+            "perEpisodeSha256": "a8859faf448cc5a086cac513c4c0f6e8367936a2054032bf7bb2325faa557eec",
+            "summaryFile": "per_task_eval/09_cleaner_moisturizer_box_loading/None/summary.json",
+            "summarySha256": "59defadc7b2d385646b5526032f4426e2b1b3025557ce2f7d9cea4dad3fa8c34"
+          }
+        },
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 35,
+          "lscr": 95.0,
+          "source": {
+            "runId": "medex15-official-scene-20261118-09-cov_only",
+            "perEpisodeFile": "per_task_eval/09_cleaner_moisturizer_box_loading/Equi/per_episode.jsonl",
+            "perEpisodeSha256": "b119a2294f51193b68870884056b0beae83ce47a81e7ab40cfd5c6f1eef773a7",
+            "summaryFile": "per_task_eval/09_cleaner_moisturizer_box_loading/Equi/summary.json",
+            "summarySha256": "6954d4b2cf1b592924c689574a482709c68257a7f59ef969c2bd3ecc4f3be35f"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 34,
+          "lscr": 93.0,
+          "source": {
+            "runId": "medex15-official-scene-20261118-09-inv_only",
+            "perEpisodeFile": "per_task_eval/09_cleaner_moisturizer_box_loading/Inv/per_episode.jsonl",
+            "perEpisodeSha256": "30cd5e71ce920f9e5d26297c666cea407d79a2f5b4629c1f041996ff8f08dc9c",
+            "summaryFile": "per_task_eval/09_cleaner_moisturizer_box_loading/Inv/summary.json",
+            "summarySha256": "f866327165df8fa27c5574eadaf477da64cd194ff8d4680db4c5a20dbc4b944e"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 31,
+          "lscr": 92.0,
+          "source": {
+            "runId": "medex15-official-scene-20261118-09-inv_cov",
+            "perEpisodeFile": "per_task_eval/09_cleaner_moisturizer_box_loading/Full/per_episode.jsonl",
+            "perEpisodeSha256": "4ba0af2e4b34fbb4ba6ea6b54dcfc2c21a148582222cc1bf26c8ae270796950d",
+            "summaryFile": "per_task_eval/09_cleaner_moisturizer_box_loading/Full/summary.json",
+            "summarySha256": "9254606bc1830892fd8a37b4f9cb497b8f204e99fdb416b4f86fd6a8c73668dd"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "sr": 72.5,
+        "srScope": "four-channel-mean",
+        "srEpisodes": 200,
+        "lscr": 93.75,
+        "lscrScope": "four-channel-mean",
+        "lscrEpisodes": 200,
+        "efficiency": 0.9092353107924499,
+        "efficiencyStatus": "reported"
+      }
+    }
+  },
+  "evaluation": {
+    "schemaVersion": "1.0",
+    "isTemplate": false,
+    "protocol": {
+      "benchmarkCommit": "c269f24bd39bd973e157a16c3c9c666cf5f43efc",
+      "taskCount": 26,
+      "channels": [
+        "None",
+        "Equi.",
+        "Inv.",
+        "Full"
+      ],
+      "episodesPerChannel": 50,
+      "seeds": {
+        "03": {
+          "None": {
+            "base": 100300000,
+            "first": 1,
+            "last": 50
+          },
+          "Equi.": {
+            "base": 100300000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 100300000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 200300000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "06": {
+          "None": {
+            "base": 100600000,
+            "first": 1,
+            "last": 50
+          },
+          "Equi.": {
+            "base": 100600000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 100600000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 200600000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "07": {
+          "None": {
+            "base": 100700000,
+            "first": 1,
+            "last": 50
+          },
+          "Equi.": {
+            "base": 100700000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 100700000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 200700000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "08": {
+          "None": {
+            "base": 100800000,
+            "first": 1,
+            "last": 50
+          },
+          "Equi.": {
+            "base": 100800000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 100800000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 200800000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "09": {
+          "None": {
+            "base": 100900000,
+            "first": 1,
+            "last": 50
+          },
+          "Equi.": {
+            "base": 100900000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 100900000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 200900000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "12": {
+          "None": {
+            "base": 101200000,
+            "first": 1,
+            "last": 50
+          },
+          "Equi.": {
+            "base": 101200000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 101200000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 201200000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "21": {
+          "None": {
+            "base": 102100000,
+            "first": 1,
+            "last": 50
+          },
+          "Equi.": {
+            "base": 102100000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 102100000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 202100000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "22": {
+          "None": {
+            "base": 102200000,
+            "first": 1,
+            "last": 50
+          },
+          "Equi.": {
+            "base": 102200000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 102200000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 202200000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "24": {
+          "None": {
+            "base": 102400000,
+            "first": 1,
+            "last": 50
+          },
+          "Equi.": {
+            "base": 102400000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 102400000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 202400000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "26": {
+          "None": {
+            "base": 102600000,
+            "first": 1,
+            "last": 50
+          },
+          "Equi.": {
+            "base": 102600000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 102600000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 202600000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "27": {
+          "None": {
+            "base": 102700000,
+            "first": 1,
+            "last": 50
+          },
+          "Equi.": {
+            "base": 102700000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 102700000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 202700000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "32": {
+          "None": {
+            "base": 103200000,
+            "first": 1,
+            "last": 50
+          },
+          "Equi.": {
+            "base": 103200000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 103200000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 203200000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "34": {
+          "None": {
+            "base": 103400000,
+            "first": 1,
+            "last": 50
+          },
+          "Equi.": {
+            "base": 103400000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 103400000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 203400000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "42": {
+          "None": {
+            "base": 104200000,
+            "first": 1,
+            "last": 50
+          },
+          "Equi.": {
+            "base": 104200000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 104200000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 204200000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "43": {
+          "None": {
+            "base": 104300000,
+            "first": 1,
+            "last": 50
+          },
+          "Equi.": {
+            "base": 104300000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 104300000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 204300000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "44": {
+          "None": {
+            "base": 104400000,
+            "first": 1,
+            "last": 50
+          },
+          "Equi.": {
+            "base": 104400000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 104400000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 204400000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "51": {
+          "None": {
+            "base": 105100000,
+            "first": 1,
+            "last": 50
+          },
+          "Equi.": {
+            "base": 105100000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 105100000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 205100000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "60": {
+          "None": {
+            "base": 106000000,
+            "first": 1,
+            "last": 50
+          },
+          "Equi.": {
+            "base": 106000000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 106000000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 206000000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "61": {
+          "None": {
+            "base": 106100000,
+            "first": 1,
+            "last": 50
+          },
+          "Equi.": {
+            "base": 106100000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 106100000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 206100000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "62": {
+          "None": {
+            "base": 106200000,
+            "first": 1,
+            "last": 50
+          },
+          "Equi.": {
+            "base": 106200000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 106200000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 206200000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "64": {
+          "None": {
+            "base": 106400000,
+            "first": 1,
+            "last": 50
+          },
+          "Equi.": {
+            "base": 106400000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 106400000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 206400000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "67": {
+          "None": {
+            "base": 106700000,
+            "first": 1,
+            "last": 50
+          },
+          "Equi.": {
+            "base": 106700000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 106700000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 206700000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "73": {
+          "None": {
+            "base": 107300000,
+            "first": 1,
+            "last": 50
+          },
+          "Equi.": {
+            "base": 107300000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 107300000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 207300000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "76": {
+          "None": {
+            "base": 107600000,
+            "first": 1,
+            "last": 50
+          },
+          "Equi.": {
+            "base": 107600000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 107600000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 207600000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "79": {
+          "None": {
+            "base": 107900000,
+            "first": 1,
+            "last": 50
+          },
+          "Equi.": {
+            "base": 107900000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 107900000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 207900000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "80": {
+          "None": {
+            "base": 108000000,
+            "first": 1,
+            "last": 50
+          },
+          "Equi.": {
+            "base": 108000000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 108000000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 208000000,
+            "first": 1,
+            "last": 50
+          }
+        }
+      },
+      "stepUnit": "physics_steps",
+      "physicsHz": 60,
+      "controlHz": 20,
+      "executionStepBudget": {
+        "03": 3246,
+        "06": 1920,
+        "07": 1806,
+        "08": 3432,
+        "09": 1926,
+        "12": 3447,
+        "21": 2481,
+        "22": 2043,
+        "24": 4626,
+        "26": 2613,
+        "27": 3570,
+        "32": 2556,
+        "34": 3240,
+        "42": 2004,
+        "43": 4125,
+        "44": 3183,
+        "51": 3069,
+        "60": 2985,
+        "61": 3102,
+        "62": 3231,
+        "64": 1995,
+        "67": 2892,
+        "73": 3639,
+        "76": 2958,
+        "79": 2043,
+        "80": 1779
+      },
+      "expertReference": "Official scene expert_time_step, in physics steps.",
+      "protocolChanges": "Official reach_and_stop evaluation with native scene instructions, execution budgets and dwell times. One task-specialized checkpoint per task. Physical tactile force is set to zero at evaluation while the tactile encoder and expert remain active.",
+      "metricSchemaVersion": "core-v1.8-policy-step-query-split"
+    },
+    "coverage": {
+      "evaluatedTaskCount": 26,
+      "evaluatedEpisodeCount": 5200,
+      "completedTaskCount": {
+        "None": 26,
+        "Equi.": 26,
+        "Inv.": 26,
+        "Full": 26,
+        "mean": 26
+      },
+      "expectedFullEpisodeCount": 1300,
+      "expectedFourChannelEpisodeCount": 5200,
+      "missingTaskChannels": {}
+    },
+    "aggregation": {
+      "units": {
+        "sr": "percent",
+        "lscr": "percent",
+        "efficiency": "ratio",
+        "steps": "physics_steps"
+      },
+      "sr": "100 * successes / episodes per task/channel; equal channel mean per task; equal task mean over all 26 settings.",
+      "lscr": "100 * mean episode latched_stage_completion_rate, including failures; equal channel mean per task; equal task mean over all 26 settings.",
+      "efficiency": "expert_time_step / mean successful steps_to_stable_success. Pool successful episodes across all four channels before calculating task mean efficiency. Overall values average task efficiencies over tasks with success; report valid-task counts.",
+      "missing": "null means unreported (NR). Efficiency without successes is null with no-success status. Valid-task counts are null when unreported, and 0 for an evaluated scope without successes.",
+      "scope": "Overall channel aggregates require all 26 settings. Four-channel means require all four channels. Never substitute Full-only scores for means or include duplicate reruns."
+    },
+    "logs": {
+      "repository": "Bench2Dex/Leaderboard",
+      "policyPath": "me-dex-1-5",
+      "revision": null,
+      "status": "not-archived"
+    }
+  }
+}
