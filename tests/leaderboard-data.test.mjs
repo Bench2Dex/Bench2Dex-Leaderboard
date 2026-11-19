@@ -28,6 +28,13 @@ test("the registry supplies every policy, task, and named channel", () => {
   assert.deepEqual(data.CHANNEL_LABEL, { none: "None", equi: "Equi.", inv: "Inv.", full: "Full" });
 });
 
+test("archived community entries can link to their results before a project page is published", () => {
+  const policy = toRuntimeData(registry).EVALUATION_POLICIES.find(policy => policy.id === "me-dex-1-5");
+  assert.equal(policy.modelUrl, "https://huggingface.co/datasets/Bench2Dex/Leaderboard/tree/22996849b6f929e1b860ac90e409695b1233a833/me-dex-1-5");
+  assert.equal(policy.contributorUrl, "https://github.com/Bench2Dex/Bench2Dex-Leaderboard/pull/9");
+  assert.equal(policy.logoAlt, "");
+});
+
 test("Full-only results keep their reported channel score and no four-channel rank", () => {
   const data = toRuntimeData(fullOnlyFixture()), M = model(data);
   assert.equal(M.metric("TEST_FULL_HIGH", "32", "sr", "full").value, 100);

@@ -58,8 +58,14 @@ export function toRuntimeData(registry) {
       model.label = model.modelVersion;
       model.variantLabel = "";
     }
+    const { logs, submission } = entry.evaluation ?? {};
     model.modelUrl ??= model.resultDetailsUrl ?? model.sourceUrl;
-    model.contributorUrl ??= entry.evaluation?.submission?.githubPullRequestUrl ?? model.modelUrl;
+    if (model.modelUrl == null && logs?.status === "archived") {
+      model.modelUrl = `https://huggingface.co/datasets/${logs.repository}/tree/${logs.revision}/${logs.policyPath}`;
+    }
+    model.modelUrl ??= submission?.githubPullRequestUrl;
+    model.contributorUrl ??= submission?.githubPullRequestUrl ?? model.modelUrl;
+    model.logoAlt ??= "";
     model.updatedAt = [model.updatedAt, entry.evaluation?.publishedAt].filter(Boolean).sort().at(-1) ?? null;
     requireValue(protocolIds.has(model.protocolId), `unknown protocol for ${model.id}`);
     requireValue(isObject(entry.per_task), `per_task must be an object for ${model.id}`);

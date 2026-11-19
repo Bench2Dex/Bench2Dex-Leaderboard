@@ -2449,8 +2449,14 @@
     "logs": {
       "repository": "Bench2Dex/Leaderboard",
       "policyPath": "me-dex-1-5",
-      "revision": null,
-      "status": "not-archived"
+      "revision": "22996849b6f929e1b860ac90e409695b1233a833",
+      "status": "archived"
+    },
+    "publishedAt": "2026-11-19",
+    "submission": {
+      "githubPullRequestUrl": "https://github.com/Bench2Dex/Bench2Dex-Leaderboard/pull/9",
+      "huggingFacePullRequestUrl": "https://huggingface.co/datasets/Bench2Dex/Leaderboard/discussions/9",
+      "status": "accepted"
     }
   }
 }
