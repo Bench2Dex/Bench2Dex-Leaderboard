@@ -2333,8 +2333,14 @@
   "logs": {
    "repository": "Bench2Dex/Leaderboard",
    "policyPath": "pyrua-dex",
-   "revision": null,
-   "status": "not-archived"
+   "revision": "85f11bf8638cd01a065b80219b5e160a6b86a017",
+   "status": "archived"
+  },
+  "publishedAt": "2026-11-19",
+  "submission": {
+   "githubPullRequestUrl": "https://github.com/Bench2Dex/Bench2Dex-Leaderboard/pull/10",
+   "huggingFacePullRequestUrl": "https://huggingface.co/datasets/Bench2Dex/Leaderboard/discussions/10",
+   "status": "accepted"
   },
   "selectedPrograms": {
    "03": {

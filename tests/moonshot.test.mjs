@@ -12,13 +12,13 @@ test('the orbit uses the same thirteen complete Score results as the table',()=>
   const e=r.plotted[i];assert.equal(e.score,R.model.score(e.policy.id).value);assert.equal(R.model.aggregateRank(e.policy.id,'score'),i+1);
   if(i)assert.ok(r.plotted[i-1].score>=e.score);
  }
- assert.deepEqual(Array.from(r.plotted.slice(0,6),e=>e.policy.id),['me-dex-1-5','gigaworld-policy-06','pyrua-dex','phoenix-mwa','MXI','mora_v0']);
+ assert.deepEqual(Array.from(r.plotted.slice(0,6),e=>e.policy.id),['pyrua-dex','me-dex-1-5','gigaworld-policy-06','phoenix-mwa','MXI','mora_v0']);
 });
 test('Full-only reports remain separate and cannot move the rocket',()=>{
  const R=api(),r=R.moonshot.data('standard');
  assert.deepEqual(Array.from(r.unplotted,e=>e.policy.id),['gpt6_astra_10x_icl','gpt6_astra_1x_icl']);
  for(const e of r.unplotted){assert.equal(e.score,null);assert.equal(e.sr,null);assert.ok(e.fullSr>0);}
- assert.equal(R.moonshot.leader('standard').policy.id,'me-dex-1-5');
+ assert.equal(R.moonshot.leader('standard').policy.id,'pyrua-dex');
 });
 test('high SR and LSCR cannot rank without Eff., while a complete higher Score advances the rocket',()=>{
  const fixture=structuredClone(registry),p=fixture.policies.find(p=>p.model.id==='ACT');p.overall.sr=90;p.overall.lscr=90;p.overall.efficiency=null;

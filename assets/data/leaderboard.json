@@ -24884,14 +24884,14 @@
         "label": "PyRUA-Dex",
         "variantLabel": "",
         "family": "PyRUA",
-        "modelVersion": "PyRUA-Dex round 1 (coding agents: GPT-6 Astra)",
+        "modelVersion": "PyRUA-Dex round 2 (coding agents: GPT-6 Astra)",
         "checkpoint": null,
         "inputs": "RGB cameras + proprioception + tactile + camera calibration + task description with goal text",
         "protocolId": "standard",
         "displayOrder": 130,
         "trainingSetting": "No human demonstration data and no weight updates: coding agents write and test controller programs on development layouts (seeds disjoint from the evaluation seeds); the best program per task is frozen",
-        "resultVersion": "Round 1 (2026-11-15)",
-        "updatedAt": "2026-11-16",
+        "resultVersion": "Round 2 (2026-11-19)",
+        "updatedAt": "2026-11-19",
         "evaluationSetting": "One frozen program per task; 26 tasks x 4 channels x 50 episodes; no language-model calls during evaluation",
         "sourceLabel": "PyRUA-Dex project",
         "sourceUrl": "https://vme0522.github.io/PyRUA-Dex/",
@@ -24908,22 +24908,22 @@
       "overall": {
         "taskCount": 26,
         "scope": "task-macro",
-        "sr": 44.61538461538461,
-        "lscr": 67.02115384615385,
-        "efficiency": 0.8889243062360126,
+        "sr": 60.57692307692308,
+        "lscr": 82.32339743589743,
+        "efficiency": 0.8585595908328898,
         "efficiencyStatus": "reported",
-        "efficiencyTaskCount": 22,
+        "efficiencyTaskCount": 24,
         "channelSr": {
-          "None": 44.92307692307692,
-          "Equi.": 45.84615384615385,
-          "Inv.": 44.30769230769231,
-          "Full": 43.38461538461539
+          "None": 60.76923076923077,
+          "Equi.": 62.07692307692308,
+          "Inv.": 58.0,
+          "Full": 61.46153846153846
         },
         "channelLscr": {
-          "None": 67.6525641025641,
-          "Equi.": 67.85128205128206,
-          "Inv.": 66.68589743589743,
-          "Full": 65.89487179487179
+          "None": 82.38461538461539,
+          "Equi.": 83.14871794871794,
+          "Inv.": 81.38846153846154,
+          "Full": 82.37179487179488
         },
         "channelTaskCounts": {
           "None": 26,
@@ -24939,10 +24939,10 @@
             "None": {
               "status": "reported",
               "episodes": 50,
-              "successes": 39,
-              "lscr": 94.66666666666667,
+              "successes": 36,
+              "lscr": 94.0,
               "source": {
-                "runId": "pyrua-dex_r01_03_wine_fast-e9124b6af8",
+                "runId": "pyrua-dex_r02_03_wine_release_sense-880c17616e",
                 "perEpisodeFile": "per_task_eval/03_wine_glass_plate_balance/None/per_episode.jsonl",
                 "summaryFile": "per_task_eval/03_wine_glass_plate_balance/None/summary.json"
               }
@@ -24950,10 +24950,10 @@
             "Equi.": {
               "status": "reported",
               "episodes": 50,
-              "successes": 38,
-              "lscr": 90.66666666666666,
+              "successes": 42,
+              "lscr": 95.33333333333334,
               "source": {
-                "runId": "pyrua-dex_r01_03_wine_fast-e9124b6af8",
+                "runId": "pyrua-dex_r02_03_wine_release_sense-880c17616e",
                 "perEpisodeFile": "per_task_eval/03_wine_glass_plate_balance/Equi/per_episode.jsonl",
                 "summaryFile": "per_task_eval/03_wine_glass_plate_balance/Equi/summary.json"
               }
@@ -24961,10 +24961,10 @@
             "Inv.": {
               "status": "reported",
               "episodes": 50,
-              "successes": 37,
-              "lscr": 92.0,
+              "successes": 36,
+              "lscr": 92.66666666666666,
               "source": {
-                "runId": "pyrua-dex_r01_03_wine_fast-e9124b6af8",
+                "runId": "pyrua-dex_r02_03_wine_release_sense-880c17616e",
                 "perEpisodeFile": "per_task_eval/03_wine_glass_plate_balance/Inv/per_episode.jsonl",
                 "summaryFile": "per_task_eval/03_wine_glass_plate_balance/Inv/summary.json"
               }
@@ -24975,7 +24975,7 @@
               "successes": 40,
               "lscr": 92.66666666666666,
               "source": {
-                "runId": "pyrua-dex_r01_03_wine_fast-e9124b6af8",
+                "runId": "pyrua-dex_r02_03_wine_release_sense-880c17616e",
                 "perEpisodeFile": "per_task_eval/03_wine_glass_plate_balance/Full/per_episode.jsonl",
                 "summaryFile": "per_task_eval/03_wine_glass_plate_balance/Full/summary.json"
               }
@@ -24986,10 +24986,10 @@
             "sr": 77.0,
             "srScope": "four-channel-mean",
             "srEpisodes": 200,
-            "lscr": 92.5,
+            "lscr": 93.66666666666666,
             "lscrScope": "four-channel-mean",
             "lscrEpisodes": 200,
-            "efficiency": 1.0444244564859706,
+            "efficiency": 1.0418547650905998,
             "efficiencyStatus": "reported"
           }
         },
@@ -24998,10 +24998,10 @@
             "None": {
               "status": "reported",
               "episodes": 50,
-              "successes": 26,
-              "lscr": 87.0,
+              "successes": 36,
+              "lscr": 95.0,
               "source": {
-                "runId": "pyrua-dex_r01_06_fruit_controller-429ffea065",
+                "runId": "pyrua-dex_r02_06_fruit_final-ff7bf8e5cc",
                 "perEpisodeFile": "per_task_eval/06_fruit_bowl_loading/None/per_episode.jsonl",
                 "summaryFile": "per_task_eval/06_fruit_bowl_loading/None/summary.json"
               }
@@ -25009,10 +25009,10 @@
             "Equi.": {
               "status": "reported",
               "episodes": 50,
-              "successes": 29,
-              "lscr": 80.5,
+              "successes": 38,
+              "lscr": 95.0,
               "source": {
-                "runId": "pyrua-dex_r01_06_fruit_controller-429ffea065",
+                "runId": "pyrua-dex_r02_06_fruit_final-ff7bf8e5cc",
                 "perEpisodeFile": "per_task_eval/06_fruit_bowl_loading/Equi/per_episode.jsonl",
                 "summaryFile": "per_task_eval/06_fruit_bowl_loading/Equi/summary.json"
               }
@@ -25020,10 +25020,10 @@
             "Inv.": {
               "status": "reported",
               "episodes": 50,
-              "successes": 21,
-              "lscr": 78.5,
+              "successes": 37,
+              "lscr": 92.5,
               "source": {
-                "runId": "pyrua-dex_r01_06_fruit_controller-429ffea065",
+                "runId": "pyrua-dex_r02_06_fruit_final-ff7bf8e5cc",
                 "perEpisodeFile": "per_task_eval/06_fruit_bowl_loading/Inv/per_episode.jsonl",
                 "summaryFile": "per_task_eval/06_fruit_bowl_loading/Inv/summary.json"
               }
@@ -25031,10 +25031,10 @@
             "Full": {
               "status": "reported",
               "episodes": 50,
-              "successes": 26,
-              "lscr": 79.5,
+              "successes": 39,
+              "lscr": 94.5,
               "source": {
-                "runId": "pyrua-dex_r01_06_fruit_controller-429ffea065",
+                "runId": "pyrua-dex_r02_06_fruit_final-ff7bf8e5cc",
                 "perEpisodeFile": "per_task_eval/06_fruit_bowl_loading/Full/per_episode.jsonl",
                 "summaryFile": "per_task_eval/06_fruit_bowl_loading/Full/summary.json"
               }
@@ -25042,13 +25042,13 @@
           },
           "mean": {
             "status": "reported",
-            "sr": 51.0,
+            "sr": 75.0,
             "srScope": "four-channel-mean",
             "srEpisodes": 200,
-            "lscr": 81.375,
+            "lscr": 94.25,
             "lscrScope": "four-channel-mean",
             "lscrEpisodes": 200,
-            "efficiency": 0.7053789466859723,
+            "efficiency": 0.7183074879814437,
             "efficiencyStatus": "reported"
           }
         },
@@ -25057,10 +25057,10 @@
             "None": {
               "status": "reported",
               "episodes": 50,
-              "successes": 35,
-              "lscr": 82.5,
+              "successes": 48,
+              "lscr": 99.0,
               "source": {
-                "runId": "pyrua-dex_r01_07_citrus_policy-3695867c40",
+                "runId": "pyrua-dex_r02_07_citrus_release-765e067582",
                 "perEpisodeFile": "per_task_eval/07_citrus_plate_loading/None/per_episode.jsonl",
                 "summaryFile": "per_task_eval/07_citrus_plate_loading/None/summary.json"
               }
@@ -25068,10 +25068,10 @@
             "Equi.": {
               "status": "reported",
               "episodes": 50,
-              "successes": 41,
-              "lscr": 90.0,
+              "successes": 46,
+              "lscr": 97.0,
               "source": {
-                "runId": "pyrua-dex_r01_07_citrus_policy-3695867c40",
+                "runId": "pyrua-dex_r02_07_citrus_release-765e067582",
                 "perEpisodeFile": "per_task_eval/07_citrus_plate_loading/Equi/per_episode.jsonl",
                 "summaryFile": "per_task_eval/07_citrus_plate_loading/Equi/summary.json"
               }
@@ -25079,10 +25079,10 @@
             "Inv.": {
               "status": "reported",
               "episodes": 50,
-              "successes": 38,
-              "lscr": 81.5,
+              "successes": 43,
+              "lscr": 95.5,
               "source": {
-                "runId": "pyrua-dex_r01_07_citrus_policy-3695867c40",
+                "runId": "pyrua-dex_r02_07_citrus_release-765e067582",
                 "perEpisodeFile": "per_task_eval/07_citrus_plate_loading/Inv/per_episode.jsonl",
                 "summaryFile": "per_task_eval/07_citrus_plate_loading/Inv/summary.json"
               }
@@ -25090,10 +25090,10 @@
             "Full": {
               "status": "reported",
               "episodes": 50,
-              "successes": 41,
-              "lscr": 90.5,
+              "successes": 49,
+              "lscr": 99.5,
               "source": {
-                "runId": "pyrua-dex_r01_07_citrus_policy-3695867c40",
+                "runId": "pyrua-dex_r02_07_citrus_release-765e067582",
                 "perEpisodeFile": "per_task_eval/07_citrus_plate_loading/Full/per_episode.jsonl",
                 "summaryFile": "per_task_eval/07_citrus_plate_loading/Full/summary.json"
               }
@@ -25101,13 +25101,13 @@
           },
           "mean": {
             "status": "reported",
-            "sr": 77.5,
+            "sr": 93.0,
             "srScope": "four-channel-mean",
             "srEpisodes": 200,
-            "lscr": 86.125,
+            "lscr": 97.75,
             "lscrScope": "four-channel-mean",
             "lscrEpisodes": 200,
-            "efficiency": 0.8214063883492579,
+            "efficiency": 0.8024170267701852,
             "efficiencyStatus": "reported"
           }
         },
@@ -25116,10 +25116,10 @@
             "None": {
               "status": "reported",
               "episodes": 50,
-              "successes": 0,
-              "lscr": 51.0,
+              "successes": 1,
+              "lscr": 59.0,
               "source": {
-                "runId": "pyrua-dex_r01_08_soy_fixed-cdfd94bffc",
+                "runId": "pyrua-dex_r02_08_full_body_association-7de2bb38d4",
                 "perEpisodeFile": "per_task_eval/08_frypan_stand_pour/None/per_episode.jsonl",
                 "summaryFile": "per_task_eval/08_frypan_stand_pour/None/summary.json"
               }
@@ -25127,10 +25127,10 @@
             "Equi.": {
               "status": "reported",
               "episodes": 50,
-              "successes": 0,
-              "lscr": 51.0,
+              "successes": 2,
+              "lscr": 62.0,
               "source": {
-                "runId": "pyrua-dex_r01_08_soy_fixed-cdfd94bffc",
+                "runId": "pyrua-dex_r02_08_full_body_association-7de2bb38d4",
                 "perEpisodeFile": "per_task_eval/08_frypan_stand_pour/Equi/per_episode.jsonl",
                 "summaryFile": "per_task_eval/08_frypan_stand_pour/Equi/summary.json"
               }
@@ -25138,10 +25138,10 @@
             "Inv.": {
               "status": "reported",
               "episodes": 50,
-              "successes": 0,
-              "lscr": 43.0,
+              "successes": 2,
+              "lscr": 64.0,
               "source": {
-                "runId": "pyrua-dex_r01_08_soy_fixed-cdfd94bffc",
+                "runId": "pyrua-dex_r02_08_full_body_association-7de2bb38d4",
                 "perEpisodeFile": "per_task_eval/08_frypan_stand_pour/Inv/per_episode.jsonl",
                 "summaryFile": "per_task_eval/08_frypan_stand_pour/Inv/summary.json"
               }
@@ -25150,9 +25150,9 @@
               "status": "reported",
               "episodes": 50,
               "successes": 0,
-              "lscr": 40.0,
+              "lscr": 56.00000000000001,
               "source": {
-                "runId": "pyrua-dex_r01_08_soy_fixed-cdfd94bffc",
+                "runId": "pyrua-dex_r02_08_full_body_association-7de2bb38d4",
                 "perEpisodeFile": "per_task_eval/08_frypan_stand_pour/Full/per_episode.jsonl",
                 "summaryFile": "per_task_eval/08_frypan_stand_pour/Full/summary.json"
               }
@@ -25160,14 +25160,14 @@
           },
           "mean": {
             "status": "reported",
-            "sr": 0.0,
+            "sr": 2.5,
             "srScope": "four-channel-mean",
             "srEpisodes": 200,
-            "lscr": 46.25,
+            "lscr": 60.25,
             "lscrScope": "four-channel-mean",
             "lscrEpisodes": 200,
-            "efficiency": null,
-            "efficiencyStatus": "no-success"
+            "efficiency": 0.6758832565284179,
+            "efficiencyStatus": "reported"
           }
         },
         "09": {
@@ -25175,10 +25175,10 @@
             "None": {
               "status": "reported",
               "episodes": 50,
-              "successes": 41,
-              "lscr": 88.0,
+              "successes": 48,
+              "lscr": 98.0,
               "source": {
-                "runId": "pyrua-dex_r01_09_cleaner55-5f88a39d99",
+                "runId": "pyrua-dex_r02_09_cleaner_recover-84c1ca1b0e",
                 "perEpisodeFile": "per_task_eval/09_cleaner_moisturizer_box_loading/None/per_episode.jsonl",
                 "summaryFile": "per_task_eval/09_cleaner_moisturizer_box_loading/None/summary.json"
               }
@@ -25186,10 +25186,10 @@
             "Equi.": {
               "status": "reported",
               "episodes": 50,
-              "successes": 33,
-              "lscr": 80.0,
+              "successes": 46,
+              "lscr": 97.0,
               "source": {
-                "runId": "pyrua-dex_r01_09_cleaner55-5f88a39d99",
+                "runId": "pyrua-dex_r02_09_cleaner_recover-84c1ca1b0e",
                 "perEpisodeFile": "per_task_eval/09_cleaner_moisturizer_box_loading/Equi/per_episode.jsonl",
                 "summaryFile": "per_task_eval/09_cleaner_moisturizer_box_loading/Equi/summary.json"
               }
@@ -25197,10 +25197,10 @@
             "Inv.": {
               "status": "reported",
               "episodes": 50,
-              "successes": 35,
-              "lscr": 81.0,
+              "successes": 45,
+              "lscr": 95.0,
               "source": {
-                "runId": "pyrua-dex_r01_09_cleaner55-5f88a39d99",
+                "runId": "pyrua-dex_r02_09_cleaner_recover-84c1ca1b0e",
                 "perEpisodeFile": "per_task_eval/09_cleaner_moisturizer_box_loading/Inv/per_episode.jsonl",
                 "summaryFile": "per_task_eval/09_cleaner_moisturizer_box_loading/Inv/summary.json"
               }
@@ -25208,10 +25208,10 @@
             "Full": {
               "status": "reported",
               "episodes": 50,
-              "successes": 36,
-              "lscr": 83.0,
+              "successes": 45,
+              "lscr": 93.0,
               "source": {
-                "runId": "pyrua-dex_r01_09_cleaner55-5f88a39d99",
+                "runId": "pyrua-dex_r02_09_cleaner_recover-84c1ca1b0e",
                 "perEpisodeFile": "per_task_eval/09_cleaner_moisturizer_box_loading/Full/per_episode.jsonl",
                 "summaryFile": "per_task_eval/09_cleaner_moisturizer_box_loading/Full/summary.json"
               }
@@ -25219,13 +25219,13 @@
           },
           "mean": {
             "status": "reported",
-            "sr": 72.5,
+            "sr": 92.0,
             "srScope": "four-channel-mean",
             "srEpisodes": 200,
-            "lscr": 83.0,
+            "lscr": 95.75,
             "lscrScope": "four-channel-mean",
             "lscrEpisodes": 200,
-            "efficiency": 0.8321740258462199,
+            "efficiency": 0.8266260482868498,
             "efficiencyStatus": "reported"
           }
         },
@@ -25234,10 +25234,10 @@
             "None": {
               "status": "reported",
               "episodes": 50,
-              "successes": 0,
-              "lscr": 52.5,
+              "successes": 19,
+              "lscr": 76.5,
               "source": {
-                "runId": "pyrua-dex_r01_12_measured_tools-adce3bd7ad",
+                "runId": "pyrua-dex_r02_12_tools_inboard-517e9d182e",
                 "perEpisodeFile": "per_task_eval/12_screwdriver_box_and_hammer/None/per_episode.jsonl",
                 "summaryFile": "per_task_eval/12_screwdriver_box_and_hammer/None/summary.json"
               }
@@ -25245,10 +25245,10 @@
             "Equi.": {
               "status": "reported",
               "episodes": 50,
-              "successes": 0,
-              "lscr": 53.5,
+              "successes": 22,
+              "lscr": 73.5,
               "source": {
-                "runId": "pyrua-dex_r01_12_measured_tools-adce3bd7ad",
+                "runId": "pyrua-dex_r02_12_tools_inboard-517e9d182e",
                 "perEpisodeFile": "per_task_eval/12_screwdriver_box_and_hammer/Equi/per_episode.jsonl",
                 "summaryFile": "per_task_eval/12_screwdriver_box_and_hammer/Equi/summary.json"
               }
@@ -25256,10 +25256,10 @@
             "Inv.": {
               "status": "reported",
               "episodes": 50,
-              "successes": 0,
-              "lscr": 53.0,
+              "successes": 16,
+              "lscr": 73.5,
               "source": {
-                "runId": "pyrua-dex_r01_12_measured_tools-adce3bd7ad",
+                "runId": "pyrua-dex_r02_12_tools_inboard-517e9d182e",
                 "perEpisodeFile": "per_task_eval/12_screwdriver_box_and_hammer/Inv/per_episode.jsonl",
                 "summaryFile": "per_task_eval/12_screwdriver_box_and_hammer/Inv/summary.json"
               }
@@ -25267,10 +25267,10 @@
             "Full": {
               "status": "reported",
               "episodes": 50,
-              "successes": 0,
-              "lscr": 55.50000000000001,
+              "successes": 17,
+              "lscr": 73.0,
               "source": {
-                "runId": "pyrua-dex_r01_12_measured_tools-adce3bd7ad",
+                "runId": "pyrua-dex_r02_12_tools_inboard-517e9d182e",
                 "perEpisodeFile": "per_task_eval/12_screwdriver_box_and_hammer/Full/per_episode.jsonl",
                 "summaryFile": "per_task_eval/12_screwdriver_box_and_hammer/Full/summary.json"
               }
@@ -25278,14 +25278,14 @@
           },
           "mean": {
             "status": "reported",
-            "sr": 0.0,
+            "sr": 37.0,
             "srScope": "four-channel-mean",
             "srEpisodes": 200,
-            "lscr": 53.625,
+            "lscr": 74.125,
             "lscrScope": "four-channel-mean",
             "lscrEpisodes": 200,
-            "efficiency": null,
-            "efficiencyStatus": "no-success"
+            "efficiency": 0.8458342248916446,
+            "efficiencyStatus": "reported"
           }
         },
         "21": {
@@ -25293,10 +25293,10 @@
             "None": {
               "status": "reported",
               "episodes": 50,
-              "successes": 8,
-              "lscr": 45.33333333333333,
+              "successes": 25,
+              "lscr": 76.66666666666666,
               "source": {
-                "runId": "pyrua-dex_r01_21_round_fallback-33066e1d92",
+                "runId": "pyrua-dex_r02_21_early_open-78fcb93c0c",
                 "perEpisodeFile": "per_task_eval/21_condiment_box_loading/None/per_episode.jsonl",
                 "summaryFile": "per_task_eval/21_condiment_box_loading/None/summary.json"
               }
@@ -25304,10 +25304,10 @@
             "Equi.": {
               "status": "reported",
               "episodes": 50,
-              "successes": 10,
-              "lscr": 40.666666666666664,
+              "successes": 24,
+              "lscr": 77.33333333333333,
               "source": {
-                "runId": "pyrua-dex_r01_21_round_fallback-33066e1d92",
+                "runId": "pyrua-dex_r02_21_early_open-78fcb93c0c",
                 "perEpisodeFile": "per_task_eval/21_condiment_box_loading/Equi/per_episode.jsonl",
                 "summaryFile": "per_task_eval/21_condiment_box_loading/Equi/summary.json"
               }
@@ -25315,10 +25315,10 @@
             "Inv.": {
               "status": "reported",
               "episodes": 50,
-              "successes": 9,
-              "lscr": 46.0,
+              "successes": 26,
+              "lscr": 73.33333333333333,
               "source": {
-                "runId": "pyrua-dex_r01_21_round_fallback-33066e1d92",
+                "runId": "pyrua-dex_r02_21_early_open-78fcb93c0c",
                 "perEpisodeFile": "per_task_eval/21_condiment_box_loading/Inv/per_episode.jsonl",
                 "summaryFile": "per_task_eval/21_condiment_box_loading/Inv/summary.json"
               }
@@ -25326,10 +25326,10 @@
             "Full": {
               "status": "reported",
               "episodes": 50,
-              "successes": 14,
-              "lscr": 50.0,
+              "successes": 22,
+              "lscr": 74.0,
               "source": {
-                "runId": "pyrua-dex_r01_21_round_fallback-33066e1d92",
+                "runId": "pyrua-dex_r02_21_early_open-78fcb93c0c",
                 "perEpisodeFile": "per_task_eval/21_condiment_box_loading/Full/per_episode.jsonl",
                 "summaryFile": "per_task_eval/21_condiment_box_loading/Full/summary.json"
               }
@@ -25337,13 +25337,13 @@
           },
           "mean": {
             "status": "reported",
-            "sr": 20.5,
+            "sr": 48.5,
             "srScope": "four-channel-mean",
             "srEpisodes": 200,
-            "lscr": 45.5,
+            "lscr": 75.33333333333333,
             "lscrScope": "four-channel-mean",
             "lscrEpisodes": 200,
-            "efficiency": 0.7647390500248095,
+            "efficiency": 0.7487550928021729,
             "efficiencyStatus": "reported"
           }
         },
@@ -25411,10 +25411,10 @@
             "None": {
               "status": "reported",
               "episodes": 50,
-              "successes": 2,
-              "lscr": 40.0,
+              "successes": 25,
+              "lscr": 85.5,
               "source": {
-                "runId": "pyrua-dex_r01_24_stationery_full-fc6bd676a0",
+                "runId": "pyrua-dex_r02_24_guided_grasp-33aab69e66",
                 "perEpisodeFile": "per_task_eval/24_stationery_category_sorting/None/per_episode.jsonl",
                 "summaryFile": "per_task_eval/24_stationery_category_sorting/None/summary.json"
               }
@@ -25422,10 +25422,10 @@
             "Equi.": {
               "status": "reported",
               "episodes": 50,
-              "successes": 4,
-              "lscr": 45.0,
+              "successes": 23,
+              "lscr": 81.0,
               "source": {
-                "runId": "pyrua-dex_r01_24_stationery_full-fc6bd676a0",
+                "runId": "pyrua-dex_r02_24_guided_grasp-33aab69e66",
                 "perEpisodeFile": "per_task_eval/24_stationery_category_sorting/Equi/per_episode.jsonl",
                 "summaryFile": "per_task_eval/24_stationery_category_sorting/Equi/summary.json"
               }
@@ -25433,10 +25433,10 @@
             "Inv.": {
               "status": "reported",
               "episodes": 50,
-              "successes": 4,
-              "lscr": 43.0,
+              "successes": 23,
+              "lscr": 78.5,
               "source": {
-                "runId": "pyrua-dex_r01_24_stationery_full-fc6bd676a0",
+                "runId": "pyrua-dex_r02_24_guided_grasp-33aab69e66",
                 "perEpisodeFile": "per_task_eval/24_stationery_category_sorting/Inv/per_episode.jsonl",
                 "summaryFile": "per_task_eval/24_stationery_category_sorting/Inv/summary.json"
               }
@@ -25444,10 +25444,10 @@
             "Full": {
               "status": "reported",
               "episodes": 50,
-              "successes": 3,
-              "lscr": 42.5,
+              "successes": 27,
+              "lscr": 79.0,
               "source": {
-                "runId": "pyrua-dex_r01_24_stationery_full-fc6bd676a0",
+                "runId": "pyrua-dex_r02_24_guided_grasp-33aab69e66",
                 "perEpisodeFile": "per_task_eval/24_stationery_category_sorting/Full/per_episode.jsonl",
                 "summaryFile": "per_task_eval/24_stationery_category_sorting/Full/summary.json"
               }
@@ -25455,13 +25455,13 @@
           },
           "mean": {
             "status": "reported",
-            "sr": 6.5,
+            "sr": 49.0,
             "srScope": "four-channel-mean",
             "srEpisodes": 200,
-            "lscr": 42.625,
+            "lscr": 81.0,
             "lscrScope": "four-channel-mean",
             "lscrEpisodes": 200,
-            "efficiency": 0.903758991589059,
+            "efficiency": 0.7743491432115599,
             "efficiencyStatus": "reported"
           }
         },
@@ -25470,10 +25470,10 @@
             "None": {
               "status": "reported",
               "episodes": 50,
-              "successes": 21,
-              "lscr": 83.5,
+              "successes": 30,
+              "lscr": 89.0,
               "source": {
-                "runId": "pyrua-dex_r01_26_tray_round-c2ad9643b5",
+                "runId": "pyrua-dex_r02_26_tray_final-db7e493729",
                 "perEpisodeFile": "per_task_eval/26_canned_food_tray_line_arrangement/None/per_episode.jsonl",
                 "summaryFile": "per_task_eval/26_canned_food_tray_line_arrangement/None/summary.json"
               }
@@ -25481,10 +25481,10 @@
             "Equi.": {
               "status": "reported",
               "episodes": 50,
-              "successes": 20,
-              "lscr": 79.0,
+              "successes": 31,
+              "lscr": 88.5,
               "source": {
-                "runId": "pyrua-dex_r01_26_tray_round-c2ad9643b5",
+                "runId": "pyrua-dex_r02_26_tray_final-db7e493729",
                 "perEpisodeFile": "per_task_eval/26_canned_food_tray_line_arrangement/Equi/per_episode.jsonl",
                 "summaryFile": "per_task_eval/26_canned_food_tray_line_arrangement/Equi/summary.json"
               }
@@ -25492,10 +25492,10 @@
             "Inv.": {
               "status": "reported",
               "episodes": 50,
-              "successes": 20,
-              "lscr": 78.5,
+              "successes": 27,
+              "lscr": 90.5,
               "source": {
-                "runId": "pyrua-dex_r01_26_tray_round-c2ad9643b5",
+                "runId": "pyrua-dex_r02_26_tray_final-db7e493729",
                 "perEpisodeFile": "per_task_eval/26_canned_food_tray_line_arrangement/Inv/per_episode.jsonl",
                 "summaryFile": "per_task_eval/26_canned_food_tray_line_arrangement/Inv/summary.json"
               }
@@ -25503,10 +25503,10 @@
             "Full": {
               "status": "reported",
               "episodes": 50,
-              "successes": 22,
-              "lscr": 80.0,
+              "successes": 31,
+              "lscr": 90.5,
               "source": {
-                "runId": "pyrua-dex_r01_26_tray_round-c2ad9643b5",
+                "runId": "pyrua-dex_r02_26_tray_final-db7e493729",
                 "perEpisodeFile": "per_task_eval/26_canned_food_tray_line_arrangement/Full/per_episode.jsonl",
                 "summaryFile": "per_task_eval/26_canned_food_tray_line_arrangement/Full/summary.json"
               }
@@ -25514,13 +25514,13 @@
           },
           "mean": {
             "status": "reported",
-            "sr": 41.5,
+            "sr": 59.5,
             "srScope": "four-channel-mean",
             "srEpisodes": 200,
-            "lscr": 80.25,
+            "lscr": 89.625,
             "lscrScope": "four-channel-mean",
             "lscrEpisodes": 200,
-            "efficiency": 1.0564904460925797,
+            "efficiency": 1.0379275296285355,
             "efficiencyStatus": "reported"
           }
         },
@@ -25529,10 +25529,10 @@
             "None": {
               "status": "reported",
               "episodes": 50,
-              "successes": 41,
-              "lscr": 93.5,
+              "successes": 37,
+              "lscr": 91.0,
               "source": {
-                "runId": "pyrua-dex_r01_27_ring_prefix_thumb_release-f1ac959cf9",
+                "runId": "pyrua-dex_r02_27_release_clearance-d6a47d2e04",
                 "perEpisodeFile": "per_task_eval/27_ball_box_loading/None/per_episode.jsonl",
                 "summaryFile": "per_task_eval/27_ball_box_loading/None/summary.json"
               }
@@ -25540,10 +25540,10 @@
             "Equi.": {
               "status": "reported",
               "episodes": 50,
-              "successes": 39,
-              "lscr": 92.5,
+              "successes": 40,
+              "lscr": 94.0,
               "source": {
-                "runId": "pyrua-dex_r01_27_ring_prefix_thumb_release-f1ac959cf9",
+                "runId": "pyrua-dex_r02_27_release_clearance-d6a47d2e04",
                 "perEpisodeFile": "per_task_eval/27_ball_box_loading/Equi/per_episode.jsonl",
                 "summaryFile": "per_task_eval/27_ball_box_loading/Equi/summary.json"
               }
@@ -25551,10 +25551,10 @@
             "Inv.": {
               "status": "reported",
               "episodes": 50,
-              "successes": 34,
-              "lscr": 90.5,
+              "successes": 29,
+              "lscr": 86.5,
               "source": {
-                "runId": "pyrua-dex_r01_27_ring_prefix_thumb_release-f1ac959cf9",
+                "runId": "pyrua-dex_r02_27_release_clearance-d6a47d2e04",
                 "perEpisodeFile": "per_task_eval/27_ball_box_loading/Inv/per_episode.jsonl",
                 "summaryFile": "per_task_eval/27_ball_box_loading/Inv/summary.json"
               }
@@ -25563,9 +25563,9 @@
               "status": "reported",
               "episodes": 50,
               "successes": 35,
-              "lscr": 89.0,
+              "lscr": 90.0,
               "source": {
-                "runId": "pyrua-dex_r01_27_ring_prefix_thumb_release-f1ac959cf9",
+                "runId": "pyrua-dex_r02_27_release_clearance-d6a47d2e04",
                 "perEpisodeFile": "per_task_eval/27_ball_box_loading/Full/per_episode.jsonl",
                 "summaryFile": "per_task_eval/27_ball_box_loading/Full/summary.json"
               }
@@ -25573,13 +25573,13 @@
           },
           "mean": {
             "status": "reported",
-            "sr": 74.5,
+            "sr": 70.5,
             "srScope": "four-channel-mean",
             "srEpisodes": 200,
-            "lscr": 91.375,
+            "lscr": 90.375,
             "lscrScope": "four-channel-mean",
             "lscrEpisodes": 200,
-            "efficiency": 0.7555346288480345,
+            "efficiency": 0.7511819060921887,
             "efficiencyStatus": "reported"
           }
         },
@@ -25588,10 +25588,10 @@
             "None": {
               "status": "reported",
               "episodes": 50,
-              "successes": 13,
-              "lscr": 72.5,
+              "successes": 35,
+              "lscr": 91.0,
               "source": {
-                "runId": "pyrua-dex_r01_32_tray_hybrid-c636840313",
+                "runId": "pyrua-dex_r02_32_tray_head_visible-2f926902a0",
                 "perEpisodeFile": "per_task_eval/32_baking_tray_prep_with_tools/None/per_episode.jsonl",
                 "summaryFile": "per_task_eval/32_baking_tray_prep_with_tools/None/summary.json"
               }
@@ -25599,10 +25599,10 @@
             "Equi.": {
               "status": "reported",
               "episodes": 50,
-              "successes": 9,
-              "lscr": 62.5,
+              "successes": 33,
+              "lscr": 90.5,
               "source": {
-                "runId": "pyrua-dex_r01_32_tray_hybrid-c636840313",
+                "runId": "pyrua-dex_r02_32_tray_head_visible-2f926902a0",
                 "perEpisodeFile": "per_task_eval/32_baking_tray_prep_with_tools/Equi/per_episode.jsonl",
                 "summaryFile": "per_task_eval/32_baking_tray_prep_with_tools/Equi/summary.json"
               }
@@ -25610,10 +25610,10 @@
             "Inv.": {
               "status": "reported",
               "episodes": 50,
-              "successes": 19,
-              "lscr": 78.0,
+              "successes": 32,
+              "lscr": 86.0,
               "source": {
-                "runId": "pyrua-dex_r01_32_tray_hybrid-c636840313",
+                "runId": "pyrua-dex_r02_32_tray_head_visible-2f926902a0",
                 "perEpisodeFile": "per_task_eval/32_baking_tray_prep_with_tools/Inv/per_episode.jsonl",
                 "summaryFile": "per_task_eval/32_baking_tray_prep_with_tools/Inv/summary.json"
               }
@@ -25621,10 +25621,10 @@
             "Full": {
               "status": "reported",
               "episodes": 50,
-              "successes": 11,
-              "lscr": 70.5,
+              "successes": 36,
+              "lscr": 89.0,
               "source": {
-                "runId": "pyrua-dex_r01_32_tray_hybrid-c636840313",
+                "runId": "pyrua-dex_r02_32_tray_head_visible-2f926902a0",
                 "perEpisodeFile": "per_task_eval/32_baking_tray_prep_with_tools/Full/per_episode.jsonl",
                 "summaryFile": "per_task_eval/32_baking_tray_prep_with_tools/Full/summary.json"
               }
@@ -25632,13 +25632,13 @@
           },
           "mean": {
             "status": "reported",
-            "sr": 26.0,
+            "sr": 68.0,
             "srScope": "four-channel-mean",
             "srEpisodes": 200,
-            "lscr": 70.875,
+            "lscr": 89.125,
             "lscrScope": "four-channel-mean",
             "lscrEpisodes": 200,
-            "efficiency": 0.740657723060453,
+            "efficiency": 0.7469611406566968,
             "efficiencyStatus": "reported"
           }
         },
@@ -25648,9 +25648,9 @@
               "status": "reported",
               "episodes": 50,
               "successes": 0,
-              "lscr": 40.800000000000004,
+              "lscr": 48.0,
               "source": {
-                "runId": "pyrua-dex_r01_34_retensioned_service-3cc32133ca",
+                "runId": "pyrua-dex_r02_34_final_service-ad9a14fee6",
                 "perEpisodeFile": "per_task_eval/34_fridge_wine_interhand_pour/None/per_episode.jsonl",
                 "summaryFile": "per_task_eval/34_fridge_wine_interhand_pour/None/summary.json"
               }
@@ -25659,9 +25659,9 @@
               "status": "reported",
               "episodes": 50,
               "successes": 0,
-              "lscr": 40.800000000000004,
+              "lscr": 49.2,
               "source": {
-                "runId": "pyrua-dex_r01_34_retensioned_service-3cc32133ca",
+                "runId": "pyrua-dex_r02_34_final_service-ad9a14fee6",
                 "perEpisodeFile": "per_task_eval/34_fridge_wine_interhand_pour/Equi/per_episode.jsonl",
                 "summaryFile": "per_task_eval/34_fridge_wine_interhand_pour/Equi/summary.json"
               }
@@ -25670,9 +25670,9 @@
               "status": "reported",
               "episodes": 50,
               "successes": 0,
-              "lscr": 40.0,
+              "lscr": 49.6,
               "source": {
-                "runId": "pyrua-dex_r01_34_retensioned_service-3cc32133ca",
+                "runId": "pyrua-dex_r02_34_final_service-ad9a14fee6",
                 "perEpisodeFile": "per_task_eval/34_fridge_wine_interhand_pour/Inv/per_episode.jsonl",
                 "summaryFile": "per_task_eval/34_fridge_wine_interhand_pour/Inv/summary.json"
               }
@@ -25681,9 +25681,9 @@
               "status": "reported",
               "episodes": 50,
               "successes": 0,
-              "lscr": 39.6,
+              "lscr": 48.0,
               "source": {
-                "runId": "pyrua-dex_r01_34_retensioned_service-3cc32133ca",
+                "runId": "pyrua-dex_r02_34_final_service-ad9a14fee6",
                 "perEpisodeFile": "per_task_eval/34_fridge_wine_interhand_pour/Full/per_episode.jsonl",
                 "summaryFile": "per_task_eval/34_fridge_wine_interhand_pour/Full/summary.json"
               }
@@ -25694,7 +25694,7 @@
             "sr": 0.0,
             "srScope": "four-channel-mean",
             "srEpisodes": 200,
-            "lscr": 40.300000000000004,
+            "lscr": 48.7,
             "lscrScope": "four-channel-mean",
             "lscrEpisodes": 200,
             "efficiency": null,
@@ -25706,10 +25706,10 @@
             "None": {
               "status": "reported",
               "episodes": 50,
-              "successes": 22,
-              "lscr": 66.66666666666666,
+              "successes": 38,
+              "lscr": 90.66666666666666,
               "source": {
-                "runId": "pyrua-dex_r01_42_trash-f39e0082b0",
+                "runId": "pyrua-dex_r02_42_handling_arc-4a68ac3ad5",
                 "perEpisodeFile": "per_task_eval/42_trash_disposal/None/per_episode.jsonl",
                 "summaryFile": "per_task_eval/42_trash_disposal/None/summary.json"
               }
@@ -25717,10 +25717,10 @@
             "Equi.": {
               "status": "reported",
               "episodes": 50,
-              "successes": 20,
-              "lscr": 69.33333333333334,
+              "successes": 31,
+              "lscr": 81.33333333333333,
               "source": {
-                "runId": "pyrua-dex_r01_42_trash-f39e0082b0",
+                "runId": "pyrua-dex_r02_42_handling_arc-4a68ac3ad5",
                 "perEpisodeFile": "per_task_eval/42_trash_disposal/Equi/per_episode.jsonl",
                 "summaryFile": "per_task_eval/42_trash_disposal/Equi/summary.json"
               }
@@ -25728,10 +25728,10 @@
             "Inv.": {
               "status": "reported",
               "episodes": 50,
-              "successes": 20,
-              "lscr": 63.33333333333333,
+              "successes": 30,
+              "lscr": 88.0,
               "source": {
-                "runId": "pyrua-dex_r01_42_trash-f39e0082b0",
+                "runId": "pyrua-dex_r02_42_handling_arc-4a68ac3ad5",
                 "perEpisodeFile": "per_task_eval/42_trash_disposal/Inv/per_episode.jsonl",
                 "summaryFile": "per_task_eval/42_trash_disposal/Inv/summary.json"
               }
@@ -25739,10 +25739,10 @@
             "Full": {
               "status": "reported",
               "episodes": 50,
-              "successes": 17,
-              "lscr": 67.33333333333333,
+              "successes": 29,
+              "lscr": 86.66666666666667,
               "source": {
-                "runId": "pyrua-dex_r01_42_trash-f39e0082b0",
+                "runId": "pyrua-dex_r02_42_handling_arc-4a68ac3ad5",
                 "perEpisodeFile": "per_task_eval/42_trash_disposal/Full/per_episode.jsonl",
                 "summaryFile": "per_task_eval/42_trash_disposal/Full/summary.json"
               }
@@ -25750,13 +25750,13 @@
           },
           "mean": {
             "status": "reported",
-            "sr": 39.5,
+            "sr": 64.0,
             "srScope": "four-channel-mean",
             "srEpisodes": 200,
-            "lscr": 66.66666666666666,
+            "lscr": 86.66666666666666,
             "lscrScope": "four-channel-mean",
             "lscrEpisodes": 200,
-            "efficiency": 0.7852041423640043,
+            "efficiency": 0.8,
             "efficiencyStatus": "reported"
           }
         },
@@ -25765,10 +25765,10 @@
             "None": {
               "status": "reported",
               "episodes": 50,
-              "successes": 2,
-              "lscr": 44.5,
+              "successes": 16,
+              "lscr": 76.0,
               "source": {
-                "runId": "pyrua-dex_r01_43_fridge_round-c4e0b828aa",
+                "runId": "pyrua-dex_r02_43_fridge_checked-da634569f5",
                 "perEpisodeFile": "per_task_eval/43_fridge_fruit_shelf_sorting/None/per_episode.jsonl",
                 "summaryFile": "per_task_eval/43_fridge_fruit_shelf_sorting/None/summary.json"
               }
@@ -25776,10 +25776,10 @@
             "Equi.": {
               "status": "reported",
               "episodes": 50,
-              "successes": 7,
-              "lscr": 49.5,
+              "successes": 9,
+              "lscr": 70.5,
               "source": {
-                "runId": "pyrua-dex_r01_43_fridge_round-c4e0b828aa",
+                "runId": "pyrua-dex_r02_43_fridge_checked-da634569f5",
                 "perEpisodeFile": "per_task_eval/43_fridge_fruit_shelf_sorting/Equi/per_episode.jsonl",
                 "summaryFile": "per_task_eval/43_fridge_fruit_shelf_sorting/Equi/summary.json"
               }
@@ -25787,10 +25787,10 @@
             "Inv.": {
               "status": "reported",
               "episodes": 50,
-              "successes": 2,
-              "lscr": 38.5,
+              "successes": 7,
+              "lscr": 64.5,
               "source": {
-                "runId": "pyrua-dex_r01_43_fridge_round-c4e0b828aa",
+                "runId": "pyrua-dex_r02_43_fridge_checked-da634569f5",
                 "perEpisodeFile": "per_task_eval/43_fridge_fruit_shelf_sorting/Inv/per_episode.jsonl",
                 "summaryFile": "per_task_eval/43_fridge_fruit_shelf_sorting/Inv/summary.json"
               }
@@ -25798,10 +25798,10 @@
             "Full": {
               "status": "reported",
               "episodes": 50,
-              "successes": 4,
-              "lscr": 45.0,
+              "successes": 9,
+              "lscr": 68.5,
               "source": {
-                "runId": "pyrua-dex_r01_43_fridge_round-c4e0b828aa",
+                "runId": "pyrua-dex_r02_43_fridge_checked-da634569f5",
                 "perEpisodeFile": "per_task_eval/43_fridge_fruit_shelf_sorting/Full/per_episode.jsonl",
                 "summaryFile": "per_task_eval/43_fridge_fruit_shelf_sorting/Full/summary.json"
               }
@@ -25809,13 +25809,13 @@
           },
           "mean": {
             "status": "reported",
-            "sr": 7.5,
+            "sr": 20.5,
             "srScope": "four-channel-mean",
             "srEpisodes": 200,
-            "lscr": 44.375,
+            "lscr": 69.875,
             "lscrScope": "four-channel-mean",
             "lscrEpisodes": 200,
-            "efficiency": 0.7212042800195818,
+            "efficiency": 0.7850304612706701,
             "efficiencyStatus": "reported"
           }
         },
@@ -25824,10 +25824,10 @@
             "None": {
               "status": "reported",
               "episodes": 50,
-              "successes": 32,
-              "lscr": 74.5,
+              "successes": 35,
+              "lscr": 86.5,
               "source": {
-                "runId": "pyrua-dex_r01_44_reliable-a666046e78",
+                "runId": "pyrua-dex_r02_44_adaptive_seat-3f1ddcde85",
                 "perEpisodeFile": "per_task_eval/44_microwave_bowl_loading/None/per_episode.jsonl",
                 "summaryFile": "per_task_eval/44_microwave_bowl_loading/None/summary.json"
               }
@@ -25835,10 +25835,10 @@
             "Equi.": {
               "status": "reported",
               "episodes": 50,
-              "successes": 33,
-              "lscr": 77.0,
+              "successes": 43,
+              "lscr": 93.0,
               "source": {
-                "runId": "pyrua-dex_r01_44_reliable-a666046e78",
+                "runId": "pyrua-dex_r02_44_adaptive_seat-3f1ddcde85",
                 "perEpisodeFile": "per_task_eval/44_microwave_bowl_loading/Equi/per_episode.jsonl",
                 "summaryFile": "per_task_eval/44_microwave_bowl_loading/Equi/summary.json"
               }
@@ -25846,10 +25846,10 @@
             "Inv.": {
               "status": "reported",
               "episodes": 50,
-              "successes": 31,
-              "lscr": 74.5,
+              "successes": 40,
+              "lscr": 89.5,
               "source": {
-                "runId": "pyrua-dex_r01_44_reliable-a666046e78",
+                "runId": "pyrua-dex_r02_44_adaptive_seat-3f1ddcde85",
                 "perEpisodeFile": "per_task_eval/44_microwave_bowl_loading/Inv/per_episode.jsonl",
                 "summaryFile": "per_task_eval/44_microwave_bowl_loading/Inv/summary.json"
               }
@@ -25857,10 +25857,10 @@
             "Full": {
               "status": "reported",
               "episodes": 50,
-              "successes": 34,
-              "lscr": 78.5,
+              "successes": 44,
+              "lscr": 95.0,
               "source": {
-                "runId": "pyrua-dex_r01_44_reliable-a666046e78",
+                "runId": "pyrua-dex_r02_44_adaptive_seat-3f1ddcde85",
                 "perEpisodeFile": "per_task_eval/44_microwave_bowl_loading/Full/per_episode.jsonl",
                 "summaryFile": "per_task_eval/44_microwave_bowl_loading/Full/summary.json"
               }
@@ -25868,13 +25868,13 @@
           },
           "mean": {
             "status": "reported",
-            "sr": 65.0,
+            "sr": 81.0,
             "srScope": "four-channel-mean",
             "srEpisodes": 200,
-            "lscr": 76.125,
+            "lscr": 91.0,
             "lscrScope": "four-channel-mean",
             "lscrEpisodes": 200,
-            "efficiency": 0.8862630195783616,
+            "efficiency": 0.8476614128183378,
             "efficiencyStatus": "reported"
           }
         },
@@ -25883,10 +25883,10 @@
             "None": {
               "status": "reported",
               "episodes": 50,
-              "successes": 42,
-              "lscr": 89.33333333333333,
+              "successes": 50,
+              "lscr": 100.0,
               "source": {
-                "runId": "pyrua-dex_r01_51_toilet_final-4a83db3920",
+                "runId": "pyrua-dex_r02_51_toilet_vision-80cb121553",
                 "perEpisodeFile": "per_task_eval/51_toilet_lid_cleaner_pour/None/per_episode.jsonl",
                 "summaryFile": "per_task_eval/51_toilet_lid_cleaner_pour/None/summary.json"
               }
@@ -25894,10 +25894,10 @@
             "Equi.": {
               "status": "reported",
               "episodes": 50,
-              "successes": 45,
-              "lscr": 92.66666666666666,
+              "successes": 47,
+              "lscr": 95.33333333333334,
               "source": {
-                "runId": "pyrua-dex_r01_51_toilet_final-4a83db3920",
+                "runId": "pyrua-dex_r02_51_toilet_vision-80cb121553",
                 "perEpisodeFile": "per_task_eval/51_toilet_lid_cleaner_pour/Equi/per_episode.jsonl",
                 "summaryFile": "per_task_eval/51_toilet_lid_cleaner_pour/Equi/summary.json"
               }
@@ -25905,10 +25905,10 @@
             "Inv.": {
               "status": "reported",
               "episodes": 50,
-              "successes": 44,
-              "lscr": 90.66666666666666,
+              "successes": 50,
+              "lscr": 100.0,
               "source": {
-                "runId": "pyrua-dex_r01_51_toilet_final-4a83db3920",
+                "runId": "pyrua-dex_r02_51_toilet_vision-80cb121553",
                 "perEpisodeFile": "per_task_eval/51_toilet_lid_cleaner_pour/Inv/per_episode.jsonl",
                 "summaryFile": "per_task_eval/51_toilet_lid_cleaner_pour/Inv/summary.json"
               }
@@ -25916,10 +25916,10 @@
             "Full": {
               "status": "reported",
               "episodes": 50,
-              "successes": 40,
-              "lscr": 87.33333333333333,
+              "successes": 48,
+              "lscr": 98.0,
               "source": {
-                "runId": "pyrua-dex_r01_51_toilet_final-4a83db3920",
+                "runId": "pyrua-dex_r02_51_toilet_vision-80cb121553",
                 "perEpisodeFile": "per_task_eval/51_toilet_lid_cleaner_pour/Full/per_episode.jsonl",
                 "summaryFile": "per_task_eval/51_toilet_lid_cleaner_pour/Full/summary.json"
               }
@@ -25927,13 +25927,13 @@
           },
           "mean": {
             "status": "reported",
-            "sr": 85.5,
+            "sr": 97.5,
             "srScope": "four-channel-mean",
             "srEpisodes": 200,
-            "lscr": 90.0,
+            "lscr": 98.33333333333334,
             "lscrScope": "four-channel-mean",
             "lscrEpisodes": 200,
-            "efficiency": 1.4939918524907978,
+            "efficiency": 1.3931489629164049,
             "efficiencyStatus": "reported"
           }
         },
@@ -25942,10 +25942,10 @@
             "None": {
               "status": "reported",
               "episodes": 50,
-              "successes": 26,
-              "lscr": 61.0,
+              "successes": 36,
+              "lscr": 76.5,
               "source": {
-                "runId": "pyrua-dex_r01_60_meal-560f17c29a",
+                "runId": "pyrua-dex_r02_60_measuredmeal-7a16876c6e",
                 "perEpisodeFile": "per_task_eval/60_breadbasket_fast_food_loading/None/per_episode.jsonl",
                 "summaryFile": "per_task_eval/60_breadbasket_fast_food_loading/None/summary.json"
               }
@@ -25953,10 +25953,10 @@
             "Equi.": {
               "status": "reported",
               "episodes": 50,
-              "successes": 22,
-              "lscr": 50.0,
+              "successes": 37,
+              "lscr": 81.0,
               "source": {
-                "runId": "pyrua-dex_r01_60_meal-560f17c29a",
+                "runId": "pyrua-dex_r02_60_measuredmeal-7a16876c6e",
                 "perEpisodeFile": "per_task_eval/60_breadbasket_fast_food_loading/Equi/per_episode.jsonl",
                 "summaryFile": "per_task_eval/60_breadbasket_fast_food_loading/Equi/summary.json"
               }
@@ -25964,10 +25964,10 @@
             "Inv.": {
               "status": "reported",
               "episodes": 50,
-              "successes": 24,
-              "lscr": 52.5,
+              "successes": 30,
+              "lscr": 71.5,
               "source": {
-                "runId": "pyrua-dex_r01_60_meal-560f17c29a",
+                "runId": "pyrua-dex_r02_60_measuredmeal-7a16876c6e",
                 "perEpisodeFile": "per_task_eval/60_breadbasket_fast_food_loading/Inv/per_episode.jsonl",
                 "summaryFile": "per_task_eval/60_breadbasket_fast_food_loading/Inv/summary.json"
               }
@@ -25975,10 +25975,10 @@
             "Full": {
               "status": "reported",
               "episodes": 50,
-              "successes": 20,
-              "lscr": 52.0,
+              "successes": 41,
+              "lscr": 92.0,
               "source": {
-                "runId": "pyrua-dex_r01_60_meal-560f17c29a",
+                "runId": "pyrua-dex_r02_60_measuredmeal-7a16876c6e",
                 "perEpisodeFile": "per_task_eval/60_breadbasket_fast_food_loading/Full/per_episode.jsonl",
                 "summaryFile": "per_task_eval/60_breadbasket_fast_food_loading/Full/summary.json"
               }
@@ -25986,13 +25986,13 @@
           },
           "mean": {
             "status": "reported",
-            "sr": 46.0,
+            "sr": 72.0,
             "srScope": "four-channel-mean",
             "srEpisodes": 200,
-            "lscr": 53.875,
+            "lscr": 80.25,
             "lscrScope": "four-channel-mean",
             "lscrEpisodes": 200,
-            "efficiency": 0.8785377868037851,
+            "efficiency": 0.8222169911524748,
             "efficiencyStatus": "reported"
           }
         },
@@ -26001,10 +26001,10 @@
             "None": {
               "status": "reported",
               "episodes": 50,
-              "successes": 41,
-              "lscr": 88.0,
+              "successes": 47,
+              "lscr": 97.33333333333334,
               "source": {
-                "runId": "pyrua-dex_r01_61_medicine_point_v2-06e06faffc",
+                "runId": "pyrua-dex_r02_61_medicine_pill_planned-83d32b7037",
                 "perEpisodeFile": "per_task_eval/61_medicine_shoebox_pack/None/per_episode.jsonl",
                 "summaryFile": "per_task_eval/61_medicine_shoebox_pack/None/summary.json"
               }
@@ -26012,10 +26012,10 @@
             "Equi.": {
               "status": "reported",
               "episodes": 50,
-              "successes": 38,
-              "lscr": 86.0,
+              "successes": 45,
+              "lscr": 96.66666666666667,
               "source": {
-                "runId": "pyrua-dex_r01_61_medicine_point_v2-06e06faffc",
+                "runId": "pyrua-dex_r02_61_medicine_pill_planned-83d32b7037",
                 "perEpisodeFile": "per_task_eval/61_medicine_shoebox_pack/Equi/per_episode.jsonl",
                 "summaryFile": "per_task_eval/61_medicine_shoebox_pack/Equi/summary.json"
               }
@@ -26023,10 +26023,10 @@
             "Inv.": {
               "status": "reported",
               "episodes": 50,
-              "successes": 42,
-              "lscr": 90.0,
+              "successes": 47,
+              "lscr": 96.66666666666667,
               "source": {
-                "runId": "pyrua-dex_r01_61_medicine_point_v2-06e06faffc",
+                "runId": "pyrua-dex_r02_61_medicine_pill_planned-83d32b7037",
                 "perEpisodeFile": "per_task_eval/61_medicine_shoebox_pack/Inv/per_episode.jsonl",
                 "summaryFile": "per_task_eval/61_medicine_shoebox_pack/Inv/summary.json"
               }
@@ -26034,10 +26034,10 @@
             "Full": {
               "status": "reported",
               "episodes": 50,
-              "successes": 38,
-              "lscr": 87.33333333333333,
+              "successes": 42,
+              "lscr": 96.66666666666667,
               "source": {
-                "runId": "pyrua-dex_r01_61_medicine_point_v2-06e06faffc",
+                "runId": "pyrua-dex_r02_61_medicine_pill_planned-83d32b7037",
                 "perEpisodeFile": "per_task_eval/61_medicine_shoebox_pack/Full/per_episode.jsonl",
                 "summaryFile": "per_task_eval/61_medicine_shoebox_pack/Full/summary.json"
               }
@@ -26045,13 +26045,13 @@
           },
           "mean": {
             "status": "reported",
-            "sr": 79.5,
+            "sr": 90.5,
             "srScope": "four-channel-mean",
             "srEpisodes": 200,
-            "lscr": 87.83333333333333,
+            "lscr": 96.83333333333334,
             "lscrScope": "four-channel-mean",
             "lscrEpisodes": 200,
-            "efficiency": 0.9014564704591584,
+            "efficiency": 0.8821274217849235,
             "efficiencyStatus": "reported"
           }
         },
@@ -26060,10 +26060,10 @@
             "None": {
               "status": "reported",
               "episodes": 50,
-              "successes": 26,
-              "lscr": 65.33333333333333,
+              "successes": 34,
+              "lscr": 90.0,
               "source": {
-                "runId": "pyrua-dex_r01_62_shoebox-8b45ce4db8",
+                "runId": "pyrua-dex_r02_62_shoebox_releasefix-e6d3833a94",
                 "perEpisodeFile": "per_task_eval/62_shoebox_accessory_pack/None/per_episode.jsonl",
                 "summaryFile": "per_task_eval/62_shoebox_accessory_pack/None/summary.json"
               }
@@ -26071,10 +26071,10 @@
             "Equi.": {
               "status": "reported",
               "episodes": 50,
-              "successes": 32,
-              "lscr": 76.66666666666666,
+              "successes": 37,
+              "lscr": 93.33333333333333,
               "source": {
-                "runId": "pyrua-dex_r01_62_shoebox-8b45ce4db8",
+                "runId": "pyrua-dex_r02_62_shoebox_releasefix-e6d3833a94",
                 "perEpisodeFile": "per_task_eval/62_shoebox_accessory_pack/Equi/per_episode.jsonl",
                 "summaryFile": "per_task_eval/62_shoebox_accessory_pack/Equi/summary.json"
               }
@@ -26082,10 +26082,10 @@
             "Inv.": {
               "status": "reported",
               "episodes": 50,
-              "successes": 23,
-              "lscr": 64.66666666666666,
+              "successes": 37,
+              "lscr": 94.66666666666667,
               "source": {
-                "runId": "pyrua-dex_r01_62_shoebox-8b45ce4db8",
+                "runId": "pyrua-dex_r02_62_shoebox_releasefix-e6d3833a94",
                 "perEpisodeFile": "per_task_eval/62_shoebox_accessory_pack/Inv/per_episode.jsonl",
                 "summaryFile": "per_task_eval/62_shoebox_accessory_pack/Inv/summary.json"
               }
@@ -26093,10 +26093,10 @@
             "Full": {
               "status": "reported",
               "episodes": 50,
-              "successes": 29,
-              "lscr": 66.0,
+              "successes": 42,
+              "lscr": 94.66666666666667,
               "source": {
-                "runId": "pyrua-dex_r01_62_shoebox-8b45ce4db8",
+                "runId": "pyrua-dex_r02_62_shoebox_releasefix-e6d3833a94",
                 "perEpisodeFile": "per_task_eval/62_shoebox_accessory_pack/Full/per_episode.jsonl",
                 "summaryFile": "per_task_eval/62_shoebox_accessory_pack/Full/summary.json"
               }
@@ -26104,13 +26104,13 @@
           },
           "mean": {
             "status": "reported",
-            "sr": 55.0,
+            "sr": 75.0,
             "srScope": "four-channel-mean",
             "srEpisodes": 200,
-            "lscr": 68.16666666666666,
+            "lscr": 93.16666666666667,
             "lscrScope": "four-channel-mean",
             "lscrEpisodes": 200,
-            "efficiency": 0.770143373952161,
+            "efficiency": 0.8236967694566814,
             "efficiencyStatus": "reported"
           }
         },
@@ -26119,10 +26119,10 @@
             "None": {
               "status": "reported",
               "episodes": 50,
-              "successes": 21,
-              "lscr": 53.5,
+              "successes": 41,
+              "lscr": 85.5,
               "source": {
-                "runId": "pyrua-dex_r01_64_ball_sort-7a836c8a10",
+                "runId": "pyrua-dex_r02_64_ball_sort_resume-0b5aa9653b",
                 "perEpisodeFile": "per_task_eval/64_sports_ball_cup_sort/None/per_episode.jsonl",
                 "summaryFile": "per_task_eval/64_sports_ball_cup_sort/None/summary.json"
               }
@@ -26130,10 +26130,10 @@
             "Equi.": {
               "status": "reported",
               "episodes": 50,
-              "successes": 26,
-              "lscr": 64.0,
+              "successes": 44,
+              "lscr": 92.5,
               "source": {
-                "runId": "pyrua-dex_r01_64_ball_sort-7a836c8a10",
+                "runId": "pyrua-dex_r02_64_ball_sort_resume-0b5aa9653b",
                 "perEpisodeFile": "per_task_eval/64_sports_ball_cup_sort/Equi/per_episode.jsonl",
                 "summaryFile": "per_task_eval/64_sports_ball_cup_sort/Equi/summary.json"
               }
@@ -26141,10 +26141,10 @@
             "Inv.": {
               "status": "reported",
               "episodes": 50,
-              "successes": 28,
-              "lscr": 64.5,
+              "successes": 40,
+              "lscr": 85.5,
               "source": {
-                "runId": "pyrua-dex_r01_64_ball_sort-7a836c8a10",
+                "runId": "pyrua-dex_r02_64_ball_sort_resume-0b5aa9653b",
                 "perEpisodeFile": "per_task_eval/64_sports_ball_cup_sort/Inv/per_episode.jsonl",
                 "summaryFile": "per_task_eval/64_sports_ball_cup_sort/Inv/summary.json"
               }
@@ -26152,10 +26152,10 @@
             "Full": {
               "status": "reported",
               "episodes": 50,
-              "successes": 19,
-              "lscr": 53.0,
+              "successes": 38,
+              "lscr": 81.5,
               "source": {
-                "runId": "pyrua-dex_r01_64_ball_sort-7a836c8a10",
+                "runId": "pyrua-dex_r02_64_ball_sort_resume-0b5aa9653b",
                 "perEpisodeFile": "per_task_eval/64_sports_ball_cup_sort/Full/per_episode.jsonl",
                 "summaryFile": "per_task_eval/64_sports_ball_cup_sort/Full/summary.json"
               }
@@ -26163,13 +26163,13 @@
           },
           "mean": {
             "status": "reported",
-            "sr": 47.0,
+            "sr": 81.5,
             "srScope": "four-channel-mean",
             "srEpisodes": 200,
-            "lscr": 58.75,
+            "lscr": 86.25,
             "lscrScope": "four-channel-mean",
             "lscrEpisodes": 200,
-            "efficiency": 0.792743056216566,
+            "efficiency": 0.7820243458672673,
             "efficiencyStatus": "reported"
           }
         },
@@ -26179,9 +26179,9 @@
               "status": "reported",
               "episodes": 50,
               "successes": 28,
-              "lscr": 72.0,
+              "lscr": 74.0,
               "source": {
-                "runId": "pyrua-dex_r01_67_faucet_recovery-ee8f8b886b",
+                "runId": "pyrua-dex_r02_67_faucet_gentle_finish-c3e0f6e49a",
                 "perEpisodeFile": "per_task_eval/67_faucet_cup_water_fill/None/per_episode.jsonl",
                 "summaryFile": "per_task_eval/67_faucet_cup_water_fill/None/summary.json"
               }
@@ -26189,10 +26189,10 @@
             "Equi.": {
               "status": "reported",
               "episodes": 50,
-              "successes": 36,
-              "lscr": 84.0,
+              "successes": 35,
+              "lscr": 87.5,
               "source": {
-                "runId": "pyrua-dex_r01_67_faucet_recovery-ee8f8b886b",
+                "runId": "pyrua-dex_r02_67_faucet_gentle_finish-c3e0f6e49a",
                 "perEpisodeFile": "per_task_eval/67_faucet_cup_water_fill/Equi/per_episode.jsonl",
                 "summaryFile": "per_task_eval/67_faucet_cup_water_fill/Equi/summary.json"
               }
@@ -26200,10 +26200,10 @@
             "Inv.": {
               "status": "reported",
               "episodes": 50,
-              "successes": 31,
+              "successes": 29,
               "lscr": 74.0,
               "source": {
-                "runId": "pyrua-dex_r01_67_faucet_recovery-ee8f8b886b",
+                "runId": "pyrua-dex_r02_67_faucet_gentle_finish-c3e0f6e49a",
                 "perEpisodeFile": "per_task_eval/67_faucet_cup_water_fill/Inv/per_episode.jsonl",
                 "summaryFile": "per_task_eval/67_faucet_cup_water_fill/Inv/summary.json"
               }
@@ -26211,10 +26211,10 @@
             "Full": {
               "status": "reported",
               "episodes": 50,
-              "successes": 26,
-              "lscr": 67.5,
+              "successes": 41,
+              "lscr": 87.5,
               "source": {
-                "runId": "pyrua-dex_r01_67_faucet_recovery-ee8f8b886b",
+                "runId": "pyrua-dex_r02_67_faucet_gentle_finish-c3e0f6e49a",
                 "perEpisodeFile": "per_task_eval/67_faucet_cup_water_fill/Full/per_episode.jsonl",
                 "summaryFile": "per_task_eval/67_faucet_cup_water_fill/Full/summary.json"
               }
@@ -26222,13 +26222,13 @@
           },
           "mean": {
             "status": "reported",
-            "sr": 60.5,
+            "sr": 66.5,
             "srScope": "four-channel-mean",
             "srEpisodes": 200,
-            "lscr": 74.375,
+            "lscr": 80.75,
             "lscrScope": "four-channel-mean",
             "lscrEpisodes": 200,
-            "efficiency": 0.7813877463524431,
+            "efficiency": 0.7917595548776346,
             "efficiencyStatus": "reported"
           }
         },
@@ -26238,9 +26238,9 @@
               "status": "reported",
               "episodes": 50,
               "successes": 0,
-              "lscr": 36.0,
+              "lscr": 42.0,
               "source": {
-                "runId": "pyrua-dex_r01_73_yellowbounds-df764f33e4",
+                "runId": "pyrua-dex_r02_73_edge_recovery-ecd47cf95d",
                 "perEpisodeFile": "per_task_eval/73_jigsaw_puzzle_assembly/None/per_episode.jsonl",
                 "summaryFile": "per_task_eval/73_jigsaw_puzzle_assembly/None/summary.json"
               }
@@ -26249,9 +26249,9 @@
               "status": "reported",
               "episodes": 50,
               "successes": 0,
-              "lscr": 37.0,
+              "lscr": 46.0,
               "source": {
-                "runId": "pyrua-dex_r01_73_yellowbounds-df764f33e4",
+                "runId": "pyrua-dex_r02_73_edge_recovery-ecd47cf95d",
                 "perEpisodeFile": "per_task_eval/73_jigsaw_puzzle_assembly/Equi/per_episode.jsonl",
                 "summaryFile": "per_task_eval/73_jigsaw_puzzle_assembly/Equi/summary.json"
               }
@@ -26260,9 +26260,9 @@
               "status": "reported",
               "episodes": 50,
               "successes": 0,
-              "lscr": 38.0,
+              "lscr": 42.0,
               "source": {
-                "runId": "pyrua-dex_r01_73_yellowbounds-df764f33e4",
+                "runId": "pyrua-dex_r02_73_edge_recovery-ecd47cf95d",
                 "perEpisodeFile": "per_task_eval/73_jigsaw_puzzle_assembly/Inv/per_episode.jsonl",
                 "summaryFile": "per_task_eval/73_jigsaw_puzzle_assembly/Inv/summary.json"
               }
@@ -26271,9 +26271,9 @@
               "status": "reported",
               "episodes": 50,
               "successes": 0,
-              "lscr": 37.0,
+              "lscr": 46.5,
               "source": {
-                "runId": "pyrua-dex_r01_73_yellowbounds-df764f33e4",
+                "runId": "pyrua-dex_r02_73_edge_recovery-ecd47cf95d",
                 "perEpisodeFile": "per_task_eval/73_jigsaw_puzzle_assembly/Full/per_episode.jsonl",
                 "summaryFile": "per_task_eval/73_jigsaw_puzzle_assembly/Full/summary.json"
               }
@@ -26284,7 +26284,7 @@
             "sr": 0.0,
             "srScope": "four-channel-mean",
             "srEpisodes": 200,
-            "lscr": 37.0,
+            "lscr": 44.125,
             "lscrScope": "four-channel-mean",
             "lscrEpisodes": 200,
             "efficiency": null,
@@ -26297,9 +26297,9 @@
               "status": "reported",
               "episodes": 50,
               "successes": 9,
-              "lscr": 27.0,
+              "lscr": 56.00000000000001,
               "source": {
-                "runId": "pyrua-dex_r01_76_serving_palm-139449a835",
+                "runId": "pyrua-dex_r02_76_verified_setup-8c654cb2b4",
                 "perEpisodeFile": "per_task_eval/76_soup_serving/None/per_episode.jsonl",
                 "summaryFile": "per_task_eval/76_soup_serving/None/summary.json"
               }
@@ -26307,10 +26307,10 @@
             "Equi.": {
               "status": "reported",
               "episodes": 50,
-              "successes": 6,
-              "lscr": 22.5,
+              "successes": 15,
+              "lscr": 56.99999999999999,
               "source": {
-                "runId": "pyrua-dex_r01_76_serving_palm-139449a835",
+                "runId": "pyrua-dex_r02_76_verified_setup-8c654cb2b4",
                 "perEpisodeFile": "per_task_eval/76_soup_serving/Equi/per_episode.jsonl",
                 "summaryFile": "per_task_eval/76_soup_serving/Equi/summary.json"
               }
@@ -26318,10 +26318,10 @@
             "Inv.": {
               "status": "reported",
               "episodes": 50,
-              "successes": 5,
-              "lscr": 27.500000000000004,
+              "successes": 12,
+              "lscr": 67.5,
               "source": {
-                "runId": "pyrua-dex_r01_76_serving_palm-139449a835",
+                "runId": "pyrua-dex_r02_76_verified_setup-8c654cb2b4",
                 "perEpisodeFile": "per_task_eval/76_soup_serving/Inv/per_episode.jsonl",
                 "summaryFile": "per_task_eval/76_soup_serving/Inv/summary.json"
               }
@@ -26329,10 +26329,10 @@
             "Full": {
               "status": "reported",
               "episodes": 50,
-              "successes": 8,
-              "lscr": 23.0,
+              "successes": 13,
+              "lscr": 59.0,
               "source": {
-                "runId": "pyrua-dex_r01_76_serving_palm-139449a835",
+                "runId": "pyrua-dex_r02_76_verified_setup-8c654cb2b4",
                 "perEpisodeFile": "per_task_eval/76_soup_serving/Full/per_episode.jsonl",
                 "summaryFile": "per_task_eval/76_soup_serving/Full/summary.json"
               }
@@ -26340,13 +26340,13 @@
           },
           "mean": {
             "status": "reported",
-            "sr": 14.0,
+            "sr": 24.5,
             "srScope": "four-channel-mean",
             "srEpisodes": 200,
-            "lscr": 25.0,
+            "lscr": 59.875,
             "lscrScope": "four-channel-mean",
             "lscrEpisodes": 200,
-            "efficiency": 1.1727624145108535,
+            "efficiency": 0.9633322034574203,
             "efficiencyStatus": "reported"
           }
         },
@@ -26355,10 +26355,10 @@
             "None": {
               "status": "reported",
               "episodes": 50,
-              "successes": 42,
-              "lscr": 84.0,
+              "successes": 49,
+              "lscr": 99.0,
               "source": {
-                "runId": "pyrua-dex_r01_79_piano_player-562b0d928f",
+                "runId": "pyrua-dex_r02_79_piano_guarded-9b0ea05eb9",
                 "perEpisodeFile": "per_task_eval/79_bimanual_piano_melody/None/per_episode.jsonl",
                 "summaryFile": "per_task_eval/79_bimanual_piano_melody/None/summary.json"
               }
@@ -26366,10 +26366,10 @@
             "Equi.": {
               "status": "reported",
               "episodes": 50,
-              "successes": 41,
-              "lscr": 82.0,
+              "successes": 50,
+              "lscr": 100.0,
               "source": {
-                "runId": "pyrua-dex_r01_79_piano_player-562b0d928f",
+                "runId": "pyrua-dex_r02_79_piano_guarded-9b0ea05eb9",
                 "perEpisodeFile": "per_task_eval/79_bimanual_piano_melody/Equi/per_episode.jsonl",
                 "summaryFile": "per_task_eval/79_bimanual_piano_melody/Equi/summary.json"
               }
@@ -26377,10 +26377,10 @@
             "Inv.": {
               "status": "reported",
               "episodes": 50,
-              "successes": 43,
-              "lscr": 86.0,
+              "successes": 50,
+              "lscr": 100.0,
               "source": {
-                "runId": "pyrua-dex_r01_79_piano_player-562b0d928f",
+                "runId": "pyrua-dex_r02_79_piano_guarded-9b0ea05eb9",
                 "perEpisodeFile": "per_task_eval/79_bimanual_piano_melody/Inv/per_episode.jsonl",
                 "summaryFile": "per_task_eval/79_bimanual_piano_melody/Inv/summary.json"
               }
@@ -26388,10 +26388,10 @@
             "Full": {
               "status": "reported",
               "episodes": 50,
-              "successes": 40,
-              "lscr": 80.0,
+              "successes": 50,
+              "lscr": 100.0,
               "source": {
-                "runId": "pyrua-dex_r01_79_piano_player-562b0d928f",
+                "runId": "pyrua-dex_r02_79_piano_guarded-9b0ea05eb9",
                 "perEpisodeFile": "per_task_eval/79_bimanual_piano_melody/Full/per_episode.jsonl",
                 "summaryFile": "per_task_eval/79_bimanual_piano_melody/Full/summary.json"
               }
@@ -26399,13 +26399,13 @@
           },
           "mean": {
             "status": "reported",
-            "sr": 83.0,
+            "sr": 99.5,
             "srScope": "four-channel-mean",
             "srEpisodes": 200,
-            "lscr": 83.0,
+            "lscr": 99.75,
             "lscrScope": "four-channel-mean",
             "lscrEpisodes": 200,
-            "efficiency": 1.1754075860921644,
+            "efficiency": 1.1716660830772023,
             "efficiencyStatus": "reported"
           }
         },
@@ -27213,113 +27213,144 @@
         "logs": {
           "repository": "Bench2Dex/Leaderboard",
           "policyPath": "pyrua-dex",
-          "revision": "b9796c224a84f3a860e2e0c205655c27a72b5b6f",
+          "revision": "85f11bf8638cd01a065b80219b5e160a6b86a017",
           "status": "archived"
         },
-        "publishedAt": "2026-11-16",
+        "publishedAt": "2026-11-19",
+        "submission": {
+          "githubPullRequestUrl": "https://github.com/Bench2Dex/Bench2Dex-Leaderboard/pull/10",
+          "huggingFacePullRequestUrl": "https://huggingface.co/datasets/Bench2Dex/Leaderboard/discussions/10",
+          "status": "accepted"
+        },
         "selectedPrograms": {
           "03": {
-            "program": "wine_fast-e9124b6af8",
-            "devComplete": "22/32"
+            "program": "wine_release_sense-880c17616e",
+            "round": "r02",
+            "devComplete": "26/32"
           },
           "06": {
-            "program": "fruit_controller-429ffea065",
-            "devComplete": "17/32"
+            "program": "fruit_final-ff7bf8e5cc",
+            "round": "r02",
+            "devComplete": "21/32"
           },
           "07": {
-            "program": "citrus_policy-3695867c40",
-            "devComplete": "20/32"
+            "program": "citrus_release-765e067582",
+            "round": "r02",
+            "devComplete": "30/32"
           },
           "08": {
-            "program": "soy_fixed-cdfd94bffc",
+            "program": "full_body_association-7de2bb38d4",
+            "round": "r02",
             "devComplete": "0/32"
           },
           "09": {
-            "program": "cleaner55-5f88a39d99",
-            "devComplete": "16/32"
+            "program": "cleaner_recover-84c1ca1b0e",
+            "round": "r02",
+            "devComplete": "27/32"
           },
           "12": {
-            "program": "measured_tools-adce3bd7ad",
-            "devComplete": "0/32"
+            "program": "tools_inboard-517e9d182e",
+            "round": "r02",
+            "devComplete": "12/32"
           },
           "21": {
-            "program": "round_fallback-33066e1d92",
-            "devComplete": "5/32"
+            "program": "early_open-78fcb93c0c",
+            "round": "r02",
+            "devComplete": "17/32"
           },
           "22": {
             "program": "toolbox-59184eb3a0",
+            "round": "r01",
             "devComplete": "15/32"
           },
           "24": {
-            "program": "stationery_full-fc6bd676a0",
-            "devComplete": "10/32"
+            "program": "guided_grasp-33aab69e66",
+            "round": "r02",
+            "devComplete": "13/32"
           },
           "26": {
-            "program": "tray_round-c2ad9643b5",
-            "devComplete": "12/32"
+            "program": "tray_final-db7e493729",
+            "round": "r02",
+            "devComplete": "26/32"
           },
           "27": {
-            "program": "ring_prefix_thumb_release-f1ac959cf9",
+            "program": "release_clearance-d6a47d2e04",
+            "round": "r02",
             "devComplete": "21/32"
           },
           "32": {
-            "program": "tray_hybrid-c636840313",
-            "devComplete": "10/32"
+            "program": "tray_head_visible-2f926902a0",
+            "round": "r02",
+            "devComplete": "18/32"
           },
           "34": {
-            "program": "retensioned_service-3cc32133ca",
+            "program": "final_service-ad9a14fee6",
+            "round": "r02",
             "devComplete": "0/32"
           },
           "42": {
-            "program": "trash-f39e0082b0",
-            "devComplete": "10/32"
+            "program": "handling_arc-4a68ac3ad5",
+            "round": "r02",
+            "devComplete": "26/32"
           },
           "43": {
-            "program": "fridge_round-c4e0b828aa",
-            "devComplete": "5/32"
+            "program": "fridge_checked-da634569f5",
+            "round": "r02",
+            "devComplete": "11/32"
           },
           "44": {
-            "program": "reliable-a666046e78",
-            "devComplete": "19/32"
+            "program": "adaptive_seat-3f1ddcde85",
+            "round": "r02",
+            "devComplete": "25/32"
           },
           "51": {
-            "program": "toilet_final-4a83db3920",
-            "devComplete": "28/32"
+            "program": "toilet_vision-80cb121553",
+            "round": "r02",
+            "devComplete": "32/32"
           },
           "60": {
-            "program": "meal-560f17c29a",
-            "devComplete": "15/32"
+            "program": "measuredmeal-7a16876c6e",
+            "round": "r02",
+            "devComplete": "21/32"
           },
           "61": {
-            "program": "medicine_point_v2-06e06faffc",
+            "program": "medicine_pill_planned-83d32b7037",
+            "round": "r02",
             "devComplete": "27/32"
           },
           "62": {
-            "program": "shoebox-8b45ce4db8",
-            "devComplete": "14/32"
+            "program": "shoebox_releasefix-e6d3833a94",
+            "round": "r02",
+            "devComplete": "23/32"
           },
           "64": {
-            "program": "ball_sort-7a836c8a10",
-            "devComplete": "19/32"
+            "program": "ball_sort_resume-0b5aa9653b",
+            "round": "r02",
+            "devComplete": "25/32"
           },
           "67": {
-            "program": "faucet_recovery-ee8f8b886b",
-            "devComplete": "17/32"
+            "program": "faucet_gentle_finish-c3e0f6e49a",
+            "round": "r02",
+            "devComplete": "28/32"
           },
           "73": {
-            "program": "yellowbounds-df764f33e4",
+            "program": "edge_recovery-ecd47cf95d",
+            "round": "r02",
             "devComplete": "0/32"
           },
           "76": {
-            "program": "serving_palm-139449a835",
-            "devComplete": "5/32"
+            "program": "verified_setup-8c654cb2b4",
+            "round": "r02",
+            "devComplete": "9/32"
           },
           "79": {
-            "program": "piano_player-562b0d928f",
-            "devComplete": "27/32"
+            "program": "piano_guarded-9b0ea05eb9",
+            "round": "r02",
+            "devComplete": "31/32"
           },
           "80": {
             "program": "desk_final-3302cc8020",
+            "round": "r01",
             "devComplete": "29/32"
           }
         }
