@@ -9,7 +9,7 @@
   "inputs": "RGB + proprioception + tactile + action history + task instruction",
   "protocolId": "standard",
   "displayOrder": 150,
-  "trainingSetting": "Unified visuo-tactile world action model (one model for parallel grippers and dexterous hands, unified action space). Multi-task fine-tuned from the OpenWAM-Alpha foundation on all 26 tasks: 5 window epochs, global batch 640, LR 1e-4 cosine; single checkpoint step 25738",
+  "trainingSetting": "Unified visuo-tactile world action model (one model for parallel grippers and dexterous hands, unified action space). Multi-task fine-tuned from a pretrained foundation model on all 26 tasks: 5 window epochs, global batch 640, LR 1e-4 cosine; single checkpoint step 25738",
   "evaluationSetting": "26 tasks, four channels, 50 episodes per task/channel; fixed checkpoint across all tasks; IK: default bridge IK, GWP-style IK on the 11 tasks with 7-DoF arms (03 09 22 26 32 51 61 62 64 73 79)",
   "resultVersion": "2026-11-20 evaluation",
   "updatedAt": "2026-11-20",
@@ -2583,7 +2583,7 @@
    "flowSteps": null,
    "cfg": 1,
    "expertReference": "Native per-episode expert_time_step, in physics steps.",
-   "protocolChanges": "OpenWAM-Tactile policy server + Bench2Dex policy bridge (absolute EEF targets in robot base -> IK). One checkpoint for all 26 tasks. IK: default bridge IK on 15 tasks; on the 11 tasks with 7-DoF arms (03 09 22 26 32 51 61 62 64 73 79) the bridge IK runs in a GWP-style mode (joint-limit preference + re-solve on large joint jumps). Native physics budgets, seeds and stable-success dwell recorded in logs. Episodes interrupted by infrastructure were resumed with the same seeds; no scored episode replaced; all failures kept in the denominators."
+   "protocolChanges": "UniTacWAM policy server + Bench2Dex policy bridge (absolute EEF targets in robot base -> IK). One checkpoint for all 26 tasks. IK: default bridge IK on 15 tasks; on the 11 tasks with 7-DoF arms (03 09 22 26 32 51 61 62 64 73 79) the bridge IK runs in a GWP-style mode (joint-limit preference + re-solve on large joint jumps). Native physics budgets, seeds and stable-success dwell recorded in logs. Episodes interrupted by infrastructure were resumed with the same seeds; no scored episode replaced; all failures kept in the denominators."
   },
   "coverage": {
    "evaluatedTaskCount": 26,
