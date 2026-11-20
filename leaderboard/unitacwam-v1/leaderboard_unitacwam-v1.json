@@ -2626,7 +2626,7 @@
    "sha256": "523a5976a7a2449556f063ce840e33aa616091b12c5abb5c5a9fe7fdef68a50f"
   },
   "submission": {
-   "githubPullRequestUrl": null,
+   "githubPullRequestUrl": "https://github.com/Bench2Dex/Bench2Dex-Leaderboard/pull/11",
    "huggingFacePullRequestUrl": "https://huggingface.co/datasets/Bench2Dex/Leaderboard/discussions/12",
    "status": "submitted"
   }
