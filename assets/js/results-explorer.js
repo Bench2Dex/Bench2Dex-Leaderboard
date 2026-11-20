@@ -19,6 +19,7 @@
   function readLocation(){
     const q=new URLSearchParams(location.search);
     state.group=enumValue(q.get("group"),M.protocols.map(p=>p.id),M.protocols[0].id);
+    state.moonshotTrack=enumValue(q.get("moonshot"),["policy","agent"],"policy");
     state.rankMetric=enumValue(q.get("rank_metric")||q.get("sort"),[...Object.keys(labels),"score"],"score");
     state.rankChannel=state.rankMetric==="sr" ? enumValue(q.get("rank_channel"),["mean",...B.CHANNELS],"mean") : "mean";
     state.rankDir=enumValue(q.get("rank_dir"),["ascending","descending"],"descending");
@@ -45,10 +46,13 @@
     $("#task-reset").hidden=state.metric==="sr" && state.channel==="mean" && !state.emb && state.taskSort==="paper" && state.policyShow==="all" && !state.taskDetail;
     root.querySelectorAll('[data-task-metric]').forEach(b=>b.setAttribute("aria-pressed",b.dataset.taskMetric===state.metric));
   }
-  function saveLocation(){
+  function saveLocation(push=false){
     const q=new URLSearchParams({group:state.group,rank_metric:state.rankMetric,rank_channel:state.rankChannel,rank_dir:state.rankDir,metric:state.metric,channel:state.channel});
     for(const [key,value] of [["emb",state.emb],["task_sort",state.taskSort!=="paper" ? state.taskSort : ""],["task_dir",state.taskSort!=="paper" ? state.taskDir : ""],["policy_show",state.policyShow!=="all" ? state.policyShow : ""],["policies",state.policies.join(",")],["task_detail",state.taskDetail]]) if(value) q.set(key,value);
-    history.replaceState(null,"",location.pathname+"?"+q+location.hash);
+    if(state.moonshotTrack==="agent")q.set("moonshot","agent");
+    const url=location.pathname+"?"+q+location.hash;
+    if(push)history.pushState(null,"",url);
+    else history.replaceState(null,"",url);
   }
   function orderedPolicies(list,key,cid,direction="descending"){
     return R.overall.ordered(list,{rankMetric:key,rankChannel:cid,rankDir:direction});
@@ -99,7 +103,8 @@
     const headers=`<th scope="col" class="rank-cell" title="Rank within this task by ${summaryTitle}">Rank</th><th scope="col" class="policy-name">Model</th>`+channels.map(c=>`<th scope="col" class="${c==="mean" ? "detail-summary " : ""}${c===state.channel ? "detail-channel-active" : ""}"${c==="mean" ? ` title="${summaryTitle}" aria-label="${summaryTitle}" aria-sort="descending"` : ""}>${heading(c)}${c==="mean" ? ' <span class="sort-indicator" aria-hidden="true">↓</span>' : ""}</th>`).join("");
     const rows=ordered.map(p=>{
       const rank=M.taskRank(p.id,t.id,key),medals=["🥇","🥈","🥉"],metal=["gold","silver","bronze"],medal=rank!==null && rank<=3;
-      const rankLabel=rank===null ? "Unranked: task metric unavailable" : `Rank ${rank}${medal ? ": "+metal[rank-1]+" medal" : ""}`;
+      const unrankedLabel=R.isAgent(p) ? "Agent track" : "Unranked: task metric unavailable";
+      const rankLabel=rank===null ? unrankedLabel : `Rank ${rank}${medal ? ": "+metal[rank-1]+" medal" : ""}`;
       return `<tr data-policy-row="${esc(p.id)}"><td class="rank-cell"><span class="rank-number${medal ? " rank-medal" : ""}" aria-label="${esc(rankLabel)}">${rank===null ? "—" : medal ? medals[rank-1] : rank}</span></td><th scope="row" class="policy-name"><div class="model-identity"><img class="model-logo" src="${esc(p.logoPath)}" alt="${esc(p.logoAlt)}" width="20" height="20" decoding="async"><a class="model-name" href="${esc(p.modelUrl)}" target="_blank" rel="noopener noreferrer">${policyTitle(p)}</a></div></th>${channels.map(c=>metricCell(p,t,key,c,null,c==="mean")).join("")}</tr>`;
     }).join("");
     return `<tr class="task-detail-row" id="task-detail-${esc(t.id)}"><td colspan="${policies.length+1}"><div class="task-detail"><h3><span class="task-detail-name">${esc(t.name)}</span> <span>${longLabels[key]}</span></h3>${table("task-metric-results",longLabels[key],headers,rows,"task-metric-table")}</div></td></tr>`;
@@ -136,7 +141,7 @@
     const positions=new Map([...root.querySelectorAll('.explorer-table-wrap > table[id]')].map(t=>[t.id,{top:t.parentElement.scrollTop,left:t.parentElement.scrollLeft}]));
     const anchor=anchorSelector ? $(anchorSelector) : null;
     const anchorTop=anchor ? anchor.getBoundingClientRect().top-anchor.closest("table").parentElement.getBoundingClientRect().top : null;
-    syncControls();renderRanking();renderMatrix();R.moonshot?.render(state.group);saveLocation();
+    syncControls();renderRanking();renderMatrix();R.moonshot?.render(state.group,state.moonshotTrack);saveLocation();
     for(const [id,pos] of positions){
       const wrap=$("#"+id)?.parentElement;
       if(wrap){wrap.scrollTop=id===resetTable ? 0 : pos.top;wrap.scrollLeft=pos.left;}
@@ -194,7 +199,19 @@
     $(".policy-picker").open=false;
     resetTable("per-task-results","Per-Task Scores reset to defaults.");
   });
-  $("#results-group").addEventListener("change",e=>{history.replaceState(null,"",location.pathname+"?group="+encodeURIComponent(e.target.value));readLocation();render();});
+  $("#results-group").addEventListener("change",e=>{
+    const q=new URLSearchParams({group:e.target.value});
+    if(state.moonshotTrack==="agent")q.set("moonshot","agent");
+    history.replaceState(null,"",location.pathname+"?"+q);
+    readLocation();render();
+  });
+  document.querySelector("#moonshot-tracks")?.addEventListener("click",event=>{
+    const track=event.target.closest("[data-moonshot-track]")?.dataset.moonshotTrack;
+    if(!track || track===state.moonshotTrack)return;
+    state.moonshotTrack=track;
+    R.moonshot?.render(state.group,track);
+    saveLocation(true);
+  });
   function download(csv,name){
     const url=URL.createObjectURL(new Blob([csv],{type:"text/csv;charset=utf-8"})),a=document.createElement("a");a.href=url;a.download=`bench2dex-${name}.csv`;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);announce("CSV exported.");
   }

@@ -2,6 +2,7 @@
 (function(){
   "use strict";
   const finite = Number.isFinite;
+  const isAgent = policy => policy?.type?.trim().toLowerCase() === "agent";
   const policyName=p=>p.label && (!p.variantLabel || p.externalReport && !p.label.includes(p.variantLabel)) ? p.label : p.modelVersion||p.label;
   const statusLabels = { "not-evaluated":"Not evaluated", "not-reported":"NR", "not-applicable":"N/A", "no-success":"—" };
   const reading = (record,key)=>{
@@ -117,9 +118,11 @@
       return group(protocolId).filter(p=>comparable(p.id,tid,key,cid))
         .map(p=>metric(p.id,tid,key,cid));
     }
-    const rank=(pid,key="sr")=>!eligible(pid,key) ? null : 1+group(protocolFor(pid).id).filter(p=>eligible(p.id,key) && metric(p.id,null,key).value>metric(pid,null,key).value).length;
-    const taskRank=(pid,tid,key="sr")=>metric(pid,tid,key).value===null || !comparable(pid,tid,key) ? null
-      : 1+group(protocolFor(pid).id).filter(p=>comparable(p.id,tid,key) && metric(p.id,tid,key).value>metric(pid,tid,key).value).length;
+    const rankPeers=pid=>group(protocolFor(pid).id).filter(p=>!isAgent(p));
+    const rank=(pid,key="sr")=>isAgent(policyFor(pid)) || !eligible(pid,key) ? null
+      : 1+rankPeers(pid).filter(p=>eligible(p.id,key) && metric(p.id,null,key).value>metric(pid,null,key).value).length;
+    const taskRank=(pid,tid,key="sr")=>isAgent(policyFor(pid)) || metric(pid,tid,key).value===null || !comparable(pid,tid,key) ? null
+      : 1+rankPeers(pid).filter(p=>comparable(p.id,tid,key) && metric(p.id,tid,key).value>metric(pid,tid,key).value).length;
     // Channel rankings use reported task-macro summaries, never rounded row averages.
     const aggregateMetric=(pid,key="sr",cid="mean")=>{
       if(cid==="mean") return metric(pid,null,key);
@@ -142,7 +145,8 @@
       const ok=key!=="efficiency" && protocolReady(pid) && s.scope==="task-macro" && s.taskCount===n && aggregateCoverage(pid,key,cid)===n && value!==null && value>=0 && value<=100;
       eligibleCache.set(cacheKey,ok);return ok;
     };
-    const aggregateRank=(pid,key="sr",cid="mean")=>!aggregateEligible(pid,key,cid) ? null : 1+group(protocolFor(pid).id).filter(p=>aggregateEligible(p.id,key,cid) && aggregateMetric(p.id,key,cid).value>aggregateMetric(pid,key,cid).value).length;
+    const aggregateRank=(pid,key="sr",cid="mean")=>isAgent(policyFor(pid)) || !aggregateEligible(pid,key,cid) ? null
+      : 1+rankPeers(pid).filter(p=>aggregateEligible(p.id,key,cid) && aggregateMetric(p.id,key,cid).value>aggregateMetric(pid,key,cid).value).length;
     function sorted(list,sort,get){
       if(!sort.key) return [...list].sort((a,b)=>a.displayOrder-b.displayOrder);
       return [...list].sort((a,b)=>{
@@ -197,6 +201,6 @@
       score,totalEpisodes:data.EVALUATION_CHANNELS.reduce((sum,r)=>sum+(reading(r,"episodes").value||0),0) };
   }
   const scoreFormula="Score = 0.45×SR + 0.45×LSCR + 10×Eff.";
-  window.BenchResults={create,reading,format,heat,escape,best,marked,policyName,scoreFormula};
+  window.BenchResults={create,reading,format,heat,escape,best,marked,policyName,isAgent,scoreFormula};
   window.BenchResults.model=create(window.BenchLeaderboardData||window.BENCH);
 })();

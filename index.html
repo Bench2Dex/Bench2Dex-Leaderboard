@@ -36,7 +36,14 @@
   <section id="moonshot" class="moonshot" aria-labelledby="moonshot-title" hidden>
     <div class="moonshot-header">
       <a class="moonshot-brand" href="https://bench2dex.github.io/" aria-label="Bench2Dex project homepage"><img src="assets/img/figures/overview_logo.png" alt="Bench2Dex" width="1774" height="887"></a>
-      <div class="moonshot-tools"><h2 id="moonshot-title">The Moonshot of Dexterity</h2><p class="moonshot-updated" id="moonshot-updated"></p></div>
+      <div class="moonshot-tools">
+        <h2 id="moonshot-title">The Moonshot of Dexterity</h2>
+        <p class="moonshot-updated" id="moonshot-updated"></p>
+        <div id="moonshot-tracks" class="moonshot-track-switch" role="group" aria-label="Moonshot track">
+          <button type="button" data-moonshot-track="policy" aria-pressed="true" aria-controls="moonshot-chart">Policy</button>
+          <button type="button" data-moonshot-track="agent" aria-pressed="false" aria-controls="moonshot-chart">Agent</button>
+        </div>
+      </div>
     </div>
     <div class="moonshot-stage"><div id="moonshot-chart"></div><div class="moonshot-inspector" id="moonshot-inspector" aria-live="polite" hidden></div></div>
     <div class="moonshot-unplotted" id="moonshot-unplotted"></div>
@@ -87,7 +94,7 @@
         <div><dt>LSCR <span>Latched Stage Completion Rate</span></dt><dd>Dependency-valid task stages ever reached (%), averaged equally across tasks and four channels.</dd></div>
         <div><dt>Eff. <span>Success-Conditioned Efficiency</span></dt><dd>Mean expert completion steps / mean policy steps to stable success, pooled across successful episodes. Averaged over tasks with success.</dd></div>
       </dl>
-      <p>Ranking requires complete Overall SR, LSCR and Eff.; Eff. is uncapped.</p>
+      <p>Overall ranks cover non-Agent entries with complete SR, LSCR and Eff. Agent scores appear in the table and on the Agent Moonshot track. Eff. is uncapped.</p>
       <p>The reference protocol uses 50 episodes per task and channel. Contributions must report actual episode counts, execution budgets, and protocol differences. GPT-6 Astra reports Full only: 1× + ICL uses 10 episodes/task with disclosed replacements and a same-seed rerun; 10× + ICL uses 3 episodes/task with replay extensions. Four-channel means are NR. <a href="https://github.com/Bench2Dex/Bench2Dex-Leaderboard#readme">Submit results ↗</a> · <a href="https://huggingface.co/datasets/Bench2Dex/Leaderboard">Evaluation logs ↗</a></p>
     </details>
     <details class="table-notes results-notes" id="citation-fallback" hidden><summary>BibTeX Citation</summary><pre id="bibtex" tabindex="0"></pre></details>

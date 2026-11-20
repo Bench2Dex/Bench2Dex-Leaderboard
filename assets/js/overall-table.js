@@ -10,11 +10,12 @@
     {id:"score",key:"score",cid:"mean",label:"Score",unit:"Composite"}
   ];
   const policyTitle=p=>esc(R.policyName(p))+(p.variantLabel ? `<span class="policy-variant">${esc(p.variantLabel)}</span>` : "");
-  const rankable=(p,state)=>M.eligible(p.id,"score") && M.aggregateEligible(p.id,state.rankMetric,state.rankChannel);
+  const hasSortableScore=(p,state)=>M.eligible(p.id,"score") && M.aggregateEligible(p.id,state.rankMetric,state.rankChannel);
+  const rankable=(p,state)=>!R.isAgent(p) && hasSortableScore(p,state);
   function ordered(list,state){
     const value=p=>M.aggregateMetric(p.id,state.rankMetric,state.rankChannel);
-    const scored=M.sorted(list.filter(p=>rankable(p,state)),{key:state.rankMetric,direction:state.rankDir},value);
-    const unranked=list.filter(p=>!rankable(p,state));
+    const scored=M.sorted(list.filter(p=>hasSortableScore(p,state)),{key:state.rankMetric,direction:state.rankDir},value);
+    const unranked=list.filter(p=>!hasSortableScore(p,state));
     const reported=M.sorted(unranked.filter(p=>value(p).value!==null),{key:state.rankMetric,direction:state.rankDir},value);
     const missing=M.sorted(unranked.filter(p=>value(p).value===null),{key:"sr",direction:"descending"},p=>M.aggregateMetric(p.id,"sr","full"));
     return [...scored,...reported,...missing];
@@ -44,8 +45,9 @@
       const type=p.type==="Visuo-tactile action model" ? "WAM" : p.type;
       const typeTitle=type!==p.type ? ' title="World Action Model with visuo-tactile modeling"' : "";
       const medals=["🥇","🥈","🥉"],metal=["gold","silver","bronze"],medal=position!==null && position<=3;
-      const rankLabel=position===null ? "Unranked: complete SR, LSCR and efficiency required" : `Rank ${position}${medal ? ": "+metal[position-1]+" medal" : ""}`;
-      return `<tr data-policy-row="${esc(p.id)}"><td class="rank-cell"><span class="rank-number${medal ? " rank-medal" : ""}" aria-label="${esc(rankLabel)}">${position===null ? "—" : medal ? medals[position-1] : position}</span></td><th scope="row" class="policy-name"><div class="model-identity"><img class="model-logo" src="${esc(assetPrefix+p.logoPath)}" alt="${esc(p.logoAlt)}" width="26" height="26" decoding="async"><div><a class="model-name policy-label" href="${esc(p.modelUrl)}" target="_blank" rel="noopener noreferrer">${policyTitle(p)}</a></div></div></th><td class="type-cell"><span class="policy-type type-${esc(type.toLowerCase())}"${typeTitle}>${esc(type)}</span></td><td class="contributor-cell"><a href="${esc(p.contributorUrl)}" target="_blank" rel="noopener noreferrer">${esc(p.contributor)}</a></td>${columns.map(c=>aggregateCell(p,c,state)).join("")}</tr>`;
+      const unrankedLabel=R.isAgent(p) ? "Agent track" : "Unranked: complete SR, LSCR and efficiency required";
+      const rankLabel=position===null ? unrankedLabel : `Rank ${position}${medal ? ": "+metal[position-1]+" medal" : ""}`;
+      return `<tr data-policy-row="${esc(p.id)}"><td class="rank-cell"><span class="rank-number${medal ? " rank-medal" : ""}" aria-label="${esc(rankLabel)}"${position===null ? ` title="${esc(unrankedLabel)}"` : ""}>${position===null ? "—" : medal ? medals[position-1] : position}</span></td><th scope="row" class="policy-name"><div class="model-identity"><img class="model-logo" src="${esc(assetPrefix+p.logoPath)}" alt="${esc(p.logoAlt)}" width="26" height="26" decoding="async"><div><a class="model-name policy-label" href="${esc(p.modelUrl)}" target="_blank" rel="noopener noreferrer">${policyTitle(p)}</a></div></div></th><td class="type-cell"><span class="policy-type type-${esc(type.toLowerCase())}"${typeTitle}>${esc(type)}</span></td><td class="contributor-cell"><a href="${esc(p.contributorUrl)}" target="_blank" rel="noopener noreferrer">${esc(p.contributor)}</a></td>${columns.map(c=>aggregateCell(p,c,state)).join("")}</tr>`;
     }).join("");
     return `<caption class="sr-only">Policy Leaderboard</caption><thead><tr class="ranking-groups">${identity}<th scope="colgroup" colspan="4" class="channel-group">SR by channel (%)</th><th scope="colgroup" colspan="4" class="summary-group">Overall</th></tr><tr class="ranking-columns">${headers}</tr></thead><tbody>${rows}</tbody>`;
   }

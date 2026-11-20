@@ -8,15 +8,15 @@ const sources=await Promise.all(['results-model','overall-table','moonshot-model
 const attr=(tag,name)=>tag.match(new RegExp(`${name}="([^"]*)"`))?.[1];
 const close=(a,b)=>assert.ok(Math.abs(a-b)<1e-8,`${a} != ${b}`);
 const overlap=(a,b)=>Math.max(0,Math.min(a.x+a.w,b.x+b.w)-Math.max(a.x,b.x))*Math.max(0,Math.min(a.y+a.h,b.y+b.h)-Math.max(a.y,b.y));
-export function renderer(fixture=registry,width=1200){
+export function renderer(fixture=registry,width=1200,track='policy'){
  const nodes=new Map(),document={getElementById(id){if(!nodes.has(id))nodes.set(id,{innerHTML:'',textContent:'',style:{},getBoundingClientRect:()=>id==='moonshot'||id==='moonshot-chart'?{width}:{width:190,height:82},events:{},addEventListener(t,h){this.events[t]=h;},querySelectorAll:()=>[]});return nodes.get(id);}};
  const context=vm.createContext({window:{BENCH:toRuntimeData(fixture)},document});for(const source of sources)vm.runInContext(source,context);
- const R=context.window.BenchResults;R.moonshot.render('standard');
+ const R=context.window.BenchResults;R.moonshot.render('standard',track);
  const chart=document.getElementById('moonshot-chart').innerHTML;
- return {R,nodes,chart,geometry:R.moonshot.layout(R.moonshot.data('standard').plotted,width),models:Array.from(chart.matchAll(/<g class="moonshot-label\b[^>]*>/g),m=>m[0]),rocket:chart.match(/<g class="moonshot-rocket"[^>]*>/)?.[0],reports:document.getElementById('moonshot-unplotted').innerHTML};
+ return {R,nodes,chart,geometry:R.moonshot.layout(R.moonshot.data('standard',track).plotted,width),models:Array.from(chart.matchAll(/<g class="moonshot-label\b[^>]*>/g),m=>m[0]),rocket:chart.match(/<g class="moonshot-rocket"[^>]*>/)?.[0],reports:document.getElementById('moonshot-unplotted').innerHTML};
 }
 test('the figure has one Score axis and no Cartesian axes or grid',()=>{
- const r=renderer();assert.equal(r.models.length,13);assert.match(r.chart,/One diagonal Score axis/);
+ const r=renderer();assert.equal(r.models.length,11);assert.match(r.chart,/One diagonal Score axis/);
  assert.equal(Array.from(r.chart.matchAll(/class="moonshot-score-axis"/g)).length,1);
  assert.doesNotMatch(r.chart,/class="moonshot-axis"|class="moonshot-grid"|data-plot-axis=/);
  assert.match(r.chart,/aria-label="Policy ranking along the Score orbit"/);assert.match(r.chart,/Efficiency is uncapped/);
@@ -36,7 +36,7 @@ test('the rocket nose is exactly at the highest Score point and remains inside t
 });
 test('labels stay visible, clear of each other and the rocket at narrow and wide widths',()=>{
  for(const width of [320,390,645,840,1200]){
-  const r=renderer(registry,width),g=r.geometry;assert.equal(g.labels.length,13,`missing labels at ${width}`);
+  const r=renderer(registry,width),g=r.geometry;assert.equal(g.labels.length,11,`missing labels at ${width}`);
   for(let i=0;i<g.labels.length;i++){
    const a=g.labels[i].box;assert.ok(a.x>=14&&a.y>=12&&a.x+a.w<=1186&&a.y+a.h<=668);
    const ship=g.rocket,angle=ship.angle*Math.PI/180;
@@ -53,7 +53,7 @@ test('labels stay visible, clear of each other and the rocket at narrow and wide
 test('scores above 100 remain uncapped and the orbit expands its numeric scale',()=>{
  const fixture=structuredClone(registry),p=fixture.policies.find(p=>p.model.id==='ACT');Object.assign(p.overall,{sr:100,lscr:100,efficiency:3});
  const r=renderer(fixture);assert.equal(attr(r.rocket,'data-rocket-policy'),'ACT');close(Number(attr(r.rocket,'data-rocket-score')),120);
- assert.ok(r.geometry.maximum>=120);assert.equal(r.geometry.labels.length,13);assert.doesNotMatch(r.chart,/NaN|undefined|Infinity/);
+ assert.ok(r.geometry.maximum>=120);assert.equal(r.geometry.labels.length,11);assert.doesNotMatch(r.chart,/NaN|undefined|Infinity/);
 });
 test('top three Score labels share podium treatment and model links remain accessible',()=>{
  const r=renderer();assert.equal(r.models.filter(t=>t.includes('is-podium')).length,3);
@@ -61,7 +61,10 @@ test('top three Score labels share podium treatment and model links remain acces
  assert.match(r.chart,/target="_blank" rel="noopener noreferrer"/);assert.match(r.chart,/label-score/);
 });
 test('partial cards preserve both settings, their Full results and left-to-right budget order',()=>{
- const r=renderer();assert.ok(r.reports.indexOf('gpt6_astra_1x_icl')<r.reports.indexOf('gpt6_astra_10x_icl'));
+ const r=renderer(registry,1200,'agent');
+ assert.match(r.chart,/aria-label="Agent ranking along the Score orbit"/);
+ assert.equal(r.models.length,1);assert.equal(attr(r.rocket,'data-rocket-policy'),'pyrua-dex');
+ assert.ok(r.reports.indexOf('gpt6_astra_1x_icl')<r.reports.indexOf('gpt6_astra_10x_icl'));
  assert.match(r.reports,/Score: NR/);for(const value of ['26.2%','48.8%','61.5%','72.5%'])assert.ok(r.reports.includes(value));
  assert.doesNotMatch(r.reports,/\stitle=/);assert.doesNotMatch(r.chart,/data-plot-policy="gpt6_astra/);
 });

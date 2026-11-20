@@ -2,7 +2,7 @@
 (function(){
   "use strict";
   const root=document.getElementById("moonshot");if(!root)return;
-  const R=window.BenchResults,M=R.model,esc=R.escape,api=R.moonshot,$=id=>document.getElementById(id);
+  const R=window.BenchResults,esc=R.escape,api=R.moonshot,$=id=>document.getElementById(id);
   const frame={width:1200,height:690},start={x:78,y:630},end={x:1088,y:82};
   const labelHeight=26;
   const length=Math.hypot(end.x-start.x,end.y-start.y),tangent={x:(end.x-start.x)/length,y:(end.y-start.y)/length};
@@ -11,7 +11,7 @@
   const title=p=>R.policyName(p)+(p.variantLabel?" · "+p.variantLabel:"");
   const overlap=(a,b)=>Math.max(0,Math.min(a.x+a.w,b.x+b.w)-Math.max(a.x,b.x))*Math.max(0,Math.min(a.y+a.h,b.y+b.h)-Math.max(a.y,b.y));
   const pad=(b,n)=>({x:b.x-n,y:b.y-n,w:b.w+2*n,h:b.h+2*n});
-  let current=null,geometry=null,groupKey="",activeId=null;
+  let current=null,geometry=null,groupKey="",trackKey="policy",activeId=null;
   function rocketAt(point){
     const width=100,height=28.125,noseY=16.09375,radians=angle*Math.PI/180;
     const corners=[-width,0].flatMap(x=>[-noseY,height-noseY].map(y=>({x:x*Math.cos(radians)-y*Math.sin(radians),y:x*Math.sin(radians)+y*Math.cos(radians)})));
@@ -36,7 +36,7 @@
     // Scores use a 0–100 reference scale; faster-than-expert results stay uncapped.
     const maximum=Math.max(100,Math.ceil((entries[0]?.score||0)/10)*10);
     const point=score=>({x:start.x+(end.x-start.x)*score/maximum,y:start.y+(end.y-start.y)*score/maximum});
-    const points=entries.map(e=>({...e,...point(e.score),rank:M.aggregateRank(e.policy.id,"score"),variant:e.policy.variantLabel==="w/ Tactile"?" + Tactile":e.policy.variantLabel&&e.policy.variantLabel!=="w/o Tactile"?" "+e.policy.variantLabel:""}));
+    const points=entries.map(e=>({...e,...point(e.score),variant:e.policy.variantLabel==="w/ Tactile"?" + Tactile":e.policy.variantLabel&&e.policy.variantLabel!=="w/o Tactile"?" "+e.policy.variantLabel:""}));
     const rocket=points.length?rocketAt(points[0]):null;
     const initialScale=Math.min(1,Math.max(.96,frame.width/Math.max(320,viewport)*.85));
     const axisSlope=tangent.y/tangent.x,connectorSlopes=[0,-normal.x/normal.y];
@@ -101,7 +101,7 @@
     const flight=rocket?`<path class="moonshot-path" d="M ${start.x} ${start.y} L ${rocket.x} ${rocket.y}"/><path class="moonshot-path-future" d="M ${rocket.x} ${rocket.y} L ${end.x} ${end.y}"/>`:"";
     const ship=rocket?`<g class="moonshot-rocket" data-rocket-policy="${esc(points[0].policy.id)}" data-rocket-score="${points[0].score}" data-rocket-anchor="nose" data-rocket-x="${rocket.x}" data-rocket-y="${rocket.y}" transform="translate(${rocket.x} ${rocket.y}) rotate(${angle})" role="img" aria-label="Rocket nose marks the highest eligible Score"><image href="assets/img/moonshot-rocket-premium.webp" x="${-rocket.width}" y="${-rocket.noseY}" width="${rocket.width}" height="${rocket.height}"/></g>`:"";
     const zeroTick={x:start.x+normal.x*21,y:start.y+normal.y*21+4};
-    return `<p class="sr-only" id="moonshot-plot-desc">One diagonal Score axis runs from Earth to the Moon. ${esc(R.scoreFormula)} Efficiency is uncapped. Higher scores are farther along the orbit. All three complete Overall metrics are required. Missing scores remain unranked. The rocket nose marks the highest eligible Score.</p><svg viewBox="0 0 ${frame.width} ${frame.height}" role="group" aria-label="Policy ranking along the Score orbit" aria-describedby="moonshot-plot-desc"><defs><marker id="score-arrow" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="5" markerHeight="5" orient="auto"><path d="M1 1 L6 4 L1 7" fill="none" stroke="#916b32" stroke-width="1.3" stroke-linecap="round"/></marker><linearGradient id="moonshot-trail" x1="0" y1="1" x2="1" y2="0"><stop stop-color="#bf9143"/><stop offset="1" stop-color="#956326"/></linearGradient></defs><path class="moonshot-score-axis" d="M ${start.x} ${start.y} L ${end.x} ${end.y}" marker-end="url(#score-arrow)"/>${flight}<g class="moonshot-score-ticks">${ticks}</g><text class="moonshot-score-axis-label" x="${zeroTick.x-16}" y="${zeroTick.y}" text-anchor="end">Score</text>${links}${ship}<g class="moonshot-points">${markers}</g><g class="moonshot-target" aria-hidden="true"><circle cx="${end.x}" cy="${end.y}" r="3" fill="#b9852e"/><circle cx="${end.x}" cy="${end.y}" r="7" fill="none" stroke="#a4732c" stroke-opacity=".9"/><text x="1051" y="52" text-anchor="end">THE MOON</text><text class="target-value" x="1051" y="72" text-anchor="end">${maximum.toFixed(0)}</text></g><g class="moonshot-labels">${callouts}</g>${points.length?"":'<text class="moonshot-chart-empty" x="600" y="340">No complete Score results.</text>'}</svg>`;
+    return `<p class="sr-only" id="moonshot-plot-desc">One diagonal Score axis runs from Earth to the Moon. ${esc(R.scoreFormula)} Efficiency is uncapped. Higher scores are farther along the orbit. All three complete Overall metrics are required. Missing scores remain unranked. The rocket nose marks the highest eligible Score.</p><svg viewBox="0 0 ${frame.width} ${frame.height}" role="group" aria-label="${trackKey==="agent" ? "Agent" : "Policy"} ranking along the Score orbit" aria-describedby="moonshot-plot-desc"><defs><marker id="score-arrow" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="5" markerHeight="5" orient="auto"><path d="M1 1 L6 4 L1 7" fill="none" stroke="#916b32" stroke-width="1.3" stroke-linecap="round"/></marker><linearGradient id="moonshot-trail" x1="0" y1="1" x2="1" y2="0"><stop stop-color="#bf9143"/><stop offset="1" stop-color="#956326"/></linearGradient></defs><path class="moonshot-score-axis" d="M ${start.x} ${start.y} L ${end.x} ${end.y}" marker-end="url(#score-arrow)"/>${flight}<g class="moonshot-score-ticks">${ticks}</g><text class="moonshot-score-axis-label" x="${zeroTick.x-16}" y="${zeroTick.y}" text-anchor="end">Score</text>${links}${ship}<g class="moonshot-points">${markers}</g><g class="moonshot-target" aria-hidden="true"><circle cx="${end.x}" cy="${end.y}" r="3" fill="#b9852e"/><circle cx="${end.x}" cy="${end.y}" r="7" fill="none" stroke="#a4732c" stroke-opacity=".9"/><text x="1051" y="52" text-anchor="end">THE MOON</text><text class="target-value" x="1051" y="72" text-anchor="end">${maximum.toFixed(0)}</text></g><g class="moonshot-labels">${callouts}</g>${points.length?"":'<text class="moonshot-chart-empty" x="600" y="340">No complete Score results.</text>'}</svg>`;
   }
   function inspect(id){
     activeId=id;
@@ -131,10 +131,12 @@
     if(p){if(p.dataset.plotPolicy!==activeId)inspect(p.dataset.plotPolicy);}
     else if(!target.closest('#moonshot-inspector'))inspect(null);
   }
-  function render(group){
-    if(group===groupKey)return;
-    current=api.data(group);groupKey=group;activeId=null;
-    root.hidden=false;$("moonshot-updated").innerHTML=R.overall.updated(M.group(group));
+  function render(group,track="policy"){
+    if(group===groupKey&&track===trackKey)return;
+    current=api.data(group,track);groupKey=group;trackKey=track;activeId=null;
+    root.querySelectorAll("[data-moonshot-track]").forEach(button=>button.setAttribute("aria-pressed",button.dataset.moonshotTrack===track));
+    root.hidden=false;
+    $("moonshot-updated").innerHTML=R.overall.updated([...current.plotted,...current.unplotted].map(entry=>entry.policy));
     $("moonshot-chart").innerHTML=scene();
     const reports=[...current.unplotted].sort((a,b)=>title(a.policy).localeCompare(title(b.policy),"en",{numeric:true}));
     const unplotted=$("moonshot-unplotted");unplotted.hidden=!reports.length;
@@ -152,6 +154,6 @@
   root.addEventListener("focusout",e=>{if(!root.contains(e.relatedTarget))inspect(null);});
   root.addEventListener("click",e=>{const p=e.target.closest('.moonshot-point');if(p)inspect(p.dataset.plotPolicy);});
   root.addEventListener("keydown",e=>{if(e.key==="Escape")inspect(null);});
-  window.addEventListener?.("resize",()=>{if(groupKey){const group=groupKey;groupKey="";render(group);}});
+  window.addEventListener?.("resize",()=>{if(groupKey){const group=groupKey;groupKey="";render(group,trackKey);}});
   api.render=render;api.layout=layout;
 })();

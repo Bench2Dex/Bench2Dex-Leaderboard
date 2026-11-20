@@ -5,9 +5,21 @@
 .moonshot-brand{display:flex;align-items:center;flex-shrink:0;}
 .moonshot-brand img{width:170px;height:85px;object-fit:contain;}
 .moonshot h2{margin:0;color:#19334a;font:600 clamp(19px,2.3vw,28px)/1.18 var(--display);letter-spacing:-.028em;text-wrap:balance;text-align:right;}
-.moonshot-tools{display:flex;flex-direction:column;align-items:flex-end;gap:10px;}
+.moonshot-tools{display:flex;flex-direction:column;align-items:flex-end;gap:8px;}
+.moonshot-track-switch{
+  display:inline-flex;gap:3px;padding:3px;border:1px solid #cddce9;
+  border-radius:8px;background:#dce8f3a3;
+}
+.moonshot-track-switch button{
+  border:0;border-radius:5px;background:transparent;padding:5px 13px;
+  color:#405b74;cursor:pointer;font:550 11px/1.4 var(--body);
+}
+.moonshot-track-switch button[aria-pressed="true"]{background:#f9fcff;color:#244c71;box-shadow:0 1px 3px #20394e17;}
+.moonshot-track-switch button:hover{color:#173b5c;background:#f9fcffa6;}
+.moonshot-track-switch button:focus-visible{outline:2px solid #387997;outline-offset:1px;}
 .moonshot-scope,.moonshot-updated{color:#667f94;font:11px/1.5 var(--body);letter-spacing:.015em;}
 .moonshot-updated{margin:0;}
+.moonshot-updated:empty{display:none;}
 .moonshot-updated span{white-space:nowrap;}
 .moonshot-stage{position:relative;isolation:isolate;}
 .moonshot-stage::before{position:absolute;z-index:-2;content:"";inset:0;background:url('../img/moonshot-space-natural.webp') center/cover no-repeat;opacity:.8;}
