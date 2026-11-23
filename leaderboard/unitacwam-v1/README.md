@@ -19,3 +19,7 @@ UniTacWAM is a unified visuo-tactile world action model: one model, with a unifi
 
 Logs: `per_task_eval/<task>/<channel>/{per_episode.jsonl, summary.json}` (original Bench2Dex outputs; private absolute asset
 paths rewritten to the relative `dex2bench_dataset/...`).
+
+The native logs use the `gr00t_n15_tactile_cross` runner label. The runner's policy bridge forwarded observations to the UniTacWAM inference server for checkpoint step 25738. [Author clarification](https://github.com/Bench2Dex/Bench2Dex-Leaderboard/pull/11)
+
+Tasks 21, 22, 27, 32, 60, and 64 report LSCR under the stage rules in `cf83e86`, before [the stage rule update](https://github.com/Bench2Dex/Bench2Dex/commit/05d3657eb5075f288433b8f6aec2751ac620dc6c).

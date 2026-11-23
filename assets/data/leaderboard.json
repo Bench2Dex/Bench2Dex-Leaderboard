@@ -28699,6 +28699,2640 @@
           "status": "accepted"
         }
       }
+    },
+    {
+      "model": {
+        "id": "unitacwam-v1",
+        "label": "UniTacWAM",
+        "variantLabel": "",
+        "family": "UniTacWAM",
+        "modelVersion": "UniTacWAM v1",
+        "checkpoint": "multi26 step 25738 (5 window epochs); SHA256 523a5976a7a2449556f063ce840e33aa616091b12c5abb5c5a9fe7fdef68a50f",
+        "inputs": "RGB + proprioception + tactile + action history + task instruction",
+        "protocolId": "standard",
+        "displayOrder": 150,
+        "trainingSetting": "Unified visuo-tactile world action model (one model for parallel grippers and dexterous hands, unified action space). Multi-task fine-tuned from a pretrained foundation model on all 26 tasks: 5 window epochs, global batch 640, LR 1e-4 cosine; single checkpoint step 25738",
+        "evaluationSetting": "26 tasks, four channels, 50 episodes per task/channel; fixed checkpoint across all tasks; IK: default bridge IK, GWP-style IK on the 11 tasks with 7-DoF arms (03 09 22 26 32 51 61 62 64 73 79)",
+        "resultVersion": "2026-11-20 evaluation",
+        "updatedAt": "2026-11-20",
+        "sourceLabel": "NTU Space Lab Bench2Dex evaluation",
+        "sourceUrl": "https://spacelab-ntu.com/UniTacWAM/",
+        "resultDetailsUrl": null,
+        "contributor": "NTU Space Lab",
+        "contributorUrl": "https://spacelab-ntu.com/",
+        "type": "WAM",
+        "modelUrl": "https://spacelab-ntu.com/UniTacWAM/",
+        "logoPath": "leaderboard/unitacwam-v1/logo.png",
+        "logoAlt": "NTU Space Lab",
+        "weightsUrl": null,
+        "codeUrl": "https://github.com/NTU-SPACE-Lab/UniTacWAM"
+      },
+      "overall": {
+        "status": "reported",
+        "taskCount": 26,
+        "scope": "task-macro",
+        "sr": 65.4423076923077,
+        "lscr": 83.54455128205129,
+        "efficiency": 0.9849784024292838,
+        "efficiencyStatus": "reported",
+        "efficiencyTaskCount": 26,
+        "channelSr": {
+          "None": 68.53846153846153,
+          "Equi.": 61.30769230769231,
+          "Inv.": 66.0,
+          "Full": 65.92307692307692
+        },
+        "channelLscr": {
+          "None": 85.31666666666666,
+          "Equi.": 81.59871794871795,
+          "Inv.": 83.90769230769232,
+          "Full": 83.3551282051282
+        },
+        "channelTaskCounts": {
+          "None": 26,
+          "Equi.": 26,
+          "Inv.": 26,
+          "Full": 26
+        }
+      },
+      "per_task": {
+        "03": {
+          "channels": {
+            "Equi.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 23,
+              "lscr": 84.66666666666667,
+              "source": {
+                "runId": "gr00t_cov_only_1118_1019_xarm7_with_ability",
+                "perEpisodeFile": "per_task_eval/03_wine_glass_plate_balance/Equi/per_episode.jsonl",
+                "perEpisodeSha256": "e5dd7108ba705d39b280dd464217ab0d88962f90484ffe83f028cde81c291c7a",
+                "summaryFile": "per_task_eval/03_wine_glass_plate_balance/Equi/summary.json",
+                "summarySha256": "3ba7793795f1582402ab728b1ff08c15ca35b98d206d12911c8b3b8c202a47de"
+              }
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 27,
+              "lscr": 92.0,
+              "source": {
+                "runId": "gr00t_inv_cov_1118_1038_xarm7_with_ability",
+                "perEpisodeFile": "per_task_eval/03_wine_glass_plate_balance/Full/per_episode.jsonl",
+                "perEpisodeSha256": "07eb4ab178c1288d50f5a7fe076c81f39327d8c492d260db8a4dffc556c89978",
+                "summaryFile": "per_task_eval/03_wine_glass_plate_balance/Full/summary.json",
+                "summarySha256": "b827b0f5b0e41b014046f9f4b57f617900ad7a999bc80bca221f3828462e8931"
+              }
+            },
+            "Inv.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 23,
+              "lscr": 86.0,
+              "source": {
+                "runId": "gr00t_inv_only_1118_1023_xarm7_with_ability",
+                "perEpisodeFile": "per_task_eval/03_wine_glass_plate_balance/Inv/per_episode.jsonl",
+                "perEpisodeSha256": "e2a330aa9ff03cb74bf273d3fc91728c120a3686801e0bd3ccd222345bd9671d",
+                "summaryFile": "per_task_eval/03_wine_glass_plate_balance/Inv/summary.json",
+                "summarySha256": "9a1f003b8ad263c5e90a5e60aaeff804307bbf47d43ef8605269314cd7f68729"
+              }
+            },
+            "None": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 29,
+              "lscr": 89.33333333333333,
+              "source": {
+                "runId": "gr00t_none_1118_0950_xarm7_with_ability",
+                "perEpisodeFile": "per_task_eval/03_wine_glass_plate_balance/None/per_episode.jsonl",
+                "perEpisodeSha256": "07800b63cecaa2cf43deb867a480caf089aa6cf28b08cc41e9a914f141490f48",
+                "summaryFile": "per_task_eval/03_wine_glass_plate_balance/None/summary.json",
+                "summarySha256": "d7740c5760f2b56bda07701f639e169a20f2205c61080566d9ba8577597c9cd9"
+              }
+            }
+          },
+          "mean": {
+            "status": "reported",
+            "srScope": "four-channel-mean",
+            "lscrScope": "four-channel-mean",
+            "sr": 51.0,
+            "lscr": 88.0,
+            "efficiency": 1.0410175870509688,
+            "efficiencyStatus": "reported",
+            "srEpisodes": 200,
+            "lscrEpisodes": 200
+          }
+        },
+        "06": {
+          "channels": {
+            "Equi.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 39,
+              "lscr": 96.5,
+              "source": {
+                "runId": "gr00t_cov_only_1111_0914_rh56dfx",
+                "perEpisodeFile": "per_task_eval/06_fruit_bowl_loading/Equi/per_episode.jsonl",
+                "perEpisodeSha256": "a4bb7dd022c9d9c9dcf6a25a85eb1bf56129a7506676a89166d4cd787fbfe4c3",
+                "summaryFile": "per_task_eval/06_fruit_bowl_loading/Equi/summary.json",
+                "summarySha256": "dc6889cbc7d2acd99b35d07add1ee4445c1b89af65c209595ad099ca06dd5d35"
+              }
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 44,
+              "lscr": 96.5,
+              "source": {
+                "runId": "gr00t_inv_cov_1112_1441_rh56dfx",
+                "perEpisodeFile": "per_task_eval/06_fruit_bowl_loading/Full/per_episode.jsonl",
+                "perEpisodeSha256": "1c9ab6f430ce77b6e782eb706e2da604ffb07c0df48a8532a3225f6e0d24f86f",
+                "summaryFile": "per_task_eval/06_fruit_bowl_loading/Full/summary.json",
+                "summarySha256": "31d1482d73bbf99ce110e85b03182a98a3f4a7ca3a41dcdcf329e18db1be39a0"
+              }
+            },
+            "Inv.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 42,
+              "lscr": 98.0,
+              "source": {
+                "runId": "gr00t_inv_only_1111_0914_rh56dfx",
+                "perEpisodeFile": "per_task_eval/06_fruit_bowl_loading/Inv/per_episode.jsonl",
+                "perEpisodeSha256": "e7f5b859bb8ac74030ba698af368d774284d8d6cc43294d6b0850e491f4bb88e",
+                "summaryFile": "per_task_eval/06_fruit_bowl_loading/Inv/summary.json",
+                "summarySha256": "e94cf74c1e6e80e325653b309790557f3e3a47a08f1de160ba5eb87bcda96d6e"
+              }
+            },
+            "None": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 47,
+              "lscr": 98.5,
+              "source": {
+                "runId": "gr00t_none_1111_0914_rh56dfx",
+                "perEpisodeFile": "per_task_eval/06_fruit_bowl_loading/None/per_episode.jsonl",
+                "perEpisodeSha256": "3cec441c152b1245d228fe02955192df573564e84886e78444cda1b4537439cd",
+                "summaryFile": "per_task_eval/06_fruit_bowl_loading/None/summary.json",
+                "summarySha256": "1c3e04cd456c898956e11cb107b93b45f0e4cf831f4143688c21f0d9a1d7808d"
+              }
+            }
+          },
+          "mean": {
+            "status": "reported",
+            "srScope": "four-channel-mean",
+            "lscrScope": "four-channel-mean",
+            "sr": 86.0,
+            "lscr": 97.375,
+            "efficiency": 0.9314841297375998,
+            "efficiencyStatus": "reported",
+            "srEpisodes": 200,
+            "lscrEpisodes": 200
+          }
+        },
+        "07": {
+          "channels": {
+            "Equi.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 48,
+              "lscr": 99.5,
+              "source": {
+                "runId": "gr00t_cov_only_1111_0914_rh5dg2",
+                "perEpisodeFile": "per_task_eval/07_citrus_plate_loading/Equi/per_episode.jsonl",
+                "perEpisodeSha256": "a88ecddd85cef923fc965ed7b6463ed09d26fd0ed6d92e0cc6a13094926665b5",
+                "summaryFile": "per_task_eval/07_citrus_plate_loading/Equi/summary.json",
+                "summarySha256": "ba7fe92df13094cd2ce5c430ac10108ab4dfbc5157d375b16e61e6b9a4fc60b8"
+              }
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 47,
+              "lscr": 98.0,
+              "source": {
+                "runId": "gr00t_inv_cov_1111_1706_rh5dg2",
+                "perEpisodeFile": "per_task_eval/07_citrus_plate_loading/Full/per_episode.jsonl",
+                "perEpisodeSha256": "a57f21ede679cfeaad620c5aa76f8bb248b1bbbc9b8e5d3aebacb5e3e3efdf51",
+                "summaryFile": "per_task_eval/07_citrus_plate_loading/Full/summary.json",
+                "summarySha256": "cc7cc398233638515a46b4e6f92ffff017482540f72978c3d97fe52802c4b349"
+              }
+            },
+            "Inv.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 44,
+              "lscr": 97.5,
+              "source": {
+                "runId": "gr00t_inv_only_1111_0914_rh5dg2",
+                "perEpisodeFile": "per_task_eval/07_citrus_plate_loading/Inv/per_episode.jsonl",
+                "perEpisodeSha256": "8569fd032ab1c85d903311770d5c075fac3fcd1344c2a5ebf554d61b348a37aa",
+                "summaryFile": "per_task_eval/07_citrus_plate_loading/Inv/summary.json",
+                "summarySha256": "b884e19285a8b7db5eab63806f4a76d330117a98cb0997f88f0f4d9b94d5f036"
+              }
+            },
+            "None": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 50,
+              "lscr": 100.0,
+              "source": {
+                "runId": "gr00t_none_1111_0914_rh5dg2",
+                "perEpisodeFile": "per_task_eval/07_citrus_plate_loading/None/per_episode.jsonl",
+                "perEpisodeSha256": "a147d850db08c3b6aa39ebd756a57c05821a6a7d81d6b2da17418f6f43b14724",
+                "summaryFile": "per_task_eval/07_citrus_plate_loading/None/summary.json",
+                "summarySha256": "cba28844798846362338a0efb41f3d4493be0ca1ad7af75c34c115833c009491"
+              }
+            }
+          },
+          "mean": {
+            "status": "reported",
+            "srScope": "four-channel-mean",
+            "lscrScope": "four-channel-mean",
+            "sr": 94.5,
+            "lscr": 98.75,
+            "efficiency": 0.8480014620264779,
+            "efficiencyStatus": "reported",
+            "srEpisodes": 200,
+            "lscrEpisodes": 200
+          }
+        },
+        "08": {
+          "channels": {
+            "Equi.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 46,
+              "lscr": 96.0,
+              "source": {
+                "runId": "gr00t_cov_only_1111_1712_schunk_hand",
+                "perEpisodeFile": "per_task_eval/08_frypan_stand_pour/Equi/per_episode.jsonl",
+                "perEpisodeSha256": "5dd7581ad2b84ee6f80a23de531e3a9704631c859cc87bd448aa8b30e44013ba",
+                "summaryFile": "per_task_eval/08_frypan_stand_pour/Equi/summary.json",
+                "summarySha256": "17e76f2b8e138ea729e28991cc07f5f92abb521dc704ad3045d5320eaa8a4ef8"
+              }
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 45,
+              "lscr": 94.0,
+              "source": {
+                "runId": "gr00t_inv_cov_1111_1938_schunk_hand",
+                "perEpisodeFile": "per_task_eval/08_frypan_stand_pour/Full/per_episode.jsonl",
+                "perEpisodeSha256": "f031bf9c9f7fa2dcb6500d1c565dfa8f64c08c7f6e59a082020af9019a6d8839",
+                "summaryFile": "per_task_eval/08_frypan_stand_pour/Full/summary.json",
+                "summarySha256": "78722a818abb9c25a3fd007c681a92ae1ae56753eaf0530f0395d56d9f90997e"
+              }
+            },
+            "Inv.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 46,
+              "lscr": 96.0,
+              "source": {
+                "runId": "gr00t_inv_only_1111_1937_schunk_hand",
+                "perEpisodeFile": "per_task_eval/08_frypan_stand_pour/Inv/per_episode.jsonl",
+                "perEpisodeSha256": "4772047b46ae4db14ed6d7335f8505c5bf8aa62bcdeb1143009f931001f35a31",
+                "summaryFile": "per_task_eval/08_frypan_stand_pour/Inv/summary.json",
+                "summarySha256": "c89f224c9cd221dd44ba6152803af391986fe7e2005f99dd26caceb176367b0f"
+              }
+            },
+            "None": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 47,
+              "lscr": 96.0,
+              "source": {
+                "runId": "gr00t_none_1111_1712_schunk_hand",
+                "perEpisodeFile": "per_task_eval/08_frypan_stand_pour/None/per_episode.jsonl",
+                "perEpisodeSha256": "fab196c829b0538baffd99335f3f472197c51313e00ad12840047bd930b2af6f",
+                "summaryFile": "per_task_eval/08_frypan_stand_pour/None/summary.json",
+                "summarySha256": "ac749755e71a3eddfc445cd623573ff2c55b4c18c791a27ca564fdc9b86fba59"
+              }
+            }
+          },
+          "mean": {
+            "status": "reported",
+            "srScope": "four-channel-mean",
+            "lscrScope": "four-channel-mean",
+            "sr": 92.0,
+            "lscr": 95.5,
+            "efficiency": 1.2840093572816456,
+            "efficiencyStatus": "reported",
+            "srEpisodes": 200,
+            "lscrEpisodes": 200
+          }
+        },
+        "09": {
+          "channels": {
+            "Equi.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 25,
+              "lscr": 92.0,
+              "source": {
+                "runId": "gr00t_cov_only_1117_1150_xarm7",
+                "perEpisodeFile": "per_task_eval/09_cleaner_moisturizer_box_loading/Equi/per_episode.jsonl",
+                "perEpisodeSha256": "eb5cd6c7b55434414cf9c62ca9b67c6930ad95d93272faae43968a574d0f35c0",
+                "summaryFile": "per_task_eval/09_cleaner_moisturizer_box_loading/Equi/summary.json",
+                "summarySha256": "db5c6faaa2e817f3080509cc3d68daae3befe0f558db2e7a30452b2f7c7cb5b7"
+              }
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 38,
+              "lscr": 96.0,
+              "source": {
+                "runId": "gr00t_inv_cov_1117_1322_xarm7",
+                "perEpisodeFile": "per_task_eval/09_cleaner_moisturizer_box_loading/Full/per_episode.jsonl",
+                "perEpisodeSha256": "a915d6d7b17b1c121b9f2cfd9e9d5f647e68d100c5cf0ea67de0c081daf2b02e",
+                "summaryFile": "per_task_eval/09_cleaner_moisturizer_box_loading/Full/summary.json",
+                "summarySha256": "5cae36fcfe315b7a7f431220c5e631c435b75f2166dc099e256d8cb80e1b290c"
+              }
+            },
+            "Inv.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 37,
+              "lscr": 96.0,
+              "source": {
+                "runId": "gr00t_inv_only_1118_1115_xarm7",
+                "perEpisodeFile": "per_task_eval/09_cleaner_moisturizer_box_loading/Inv/per_episode.jsonl",
+                "perEpisodeSha256": "ca69ff7ff9afdcfdae4631e3ea3d59dca872b3d8ba267d65cdbf7082e24c2d43",
+                "summaryFile": "per_task_eval/09_cleaner_moisturizer_box_loading/Inv/summary.json",
+                "summarySha256": "da586084a7f3bbb8aef6b6c1b71a4ae8959b056a47f86de248ae2b0ec33b4beb"
+              }
+            },
+            "None": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 37,
+              "lscr": 96.0,
+              "source": {
+                "runId": "gr00t_none_1118_1039_xarm7",
+                "perEpisodeFile": "per_task_eval/09_cleaner_moisturizer_box_loading/None/per_episode.jsonl",
+                "perEpisodeSha256": "b9131afd5f2ae9822a38fad32dc7be40b43f0a7d621ba95a2f42c9931996b3f6",
+                "summaryFile": "per_task_eval/09_cleaner_moisturizer_box_loading/None/summary.json",
+                "summarySha256": "0f6066fa43a0a18c32708ca8a97cf8ce7a3700983422cb607d8d688fec779ddb"
+              }
+            }
+          },
+          "mean": {
+            "status": "reported",
+            "srScope": "four-channel-mean",
+            "lscrScope": "four-channel-mean",
+            "sr": 68.5,
+            "lscr": 95.0,
+            "efficiency": 0.9175336301802496,
+            "efficiencyStatus": "reported",
+            "srEpisodes": 200,
+            "lscrEpisodes": 200
+          }
+        },
+        "12": {
+          "channels": {
+            "Equi.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 36,
+              "lscr": 88.5,
+              "source": {
+                "runId": "gr00t_cov_only_1111_2222_rh56dfx",
+                "perEpisodeFile": "per_task_eval/12_screwdriver_box_and_hammer/Equi/per_episode.jsonl",
+                "perEpisodeSha256": "1440ff3d80bacc41c7ae111e9dedd13662a328580e0ac5f156ae9d1349b5dbc4",
+                "summaryFile": "per_task_eval/12_screwdriver_box_and_hammer/Equi/summary.json",
+                "summarySha256": "39de116fa1389682d1306687a012de692b9eb9f49bd166481a0803e36eafa3a8"
+              }
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 35,
+              "lscr": 85.0,
+              "source": {
+                "runId": "gr00t_inv_cov_1112_1900_rh56dfx",
+                "perEpisodeFile": "per_task_eval/12_screwdriver_box_and_hammer/Full/per_episode.jsonl",
+                "perEpisodeSha256": "5656c44948527826497058c6be00205f78157e32231d20ecddf25e0b88901d5c",
+                "summaryFile": "per_task_eval/12_screwdriver_box_and_hammer/Full/summary.json",
+                "summarySha256": "04fd1ff7cf00b86fde7a584f95c1996fff17a2a4e68be4f1dac8d5f821515677"
+              }
+            },
+            "Inv.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 38,
+              "lscr": 92.0,
+              "source": {
+                "runId": "gr00t_inv_only_1112_1903_rh56dfx",
+                "perEpisodeFile": "per_task_eval/12_screwdriver_box_and_hammer/Inv/per_episode.jsonl",
+                "perEpisodeSha256": "9922f7aaef8694db768bfa9e37e3976e2dbd94dbaf3a4df465a637484ebe6cb2",
+                "summaryFile": "per_task_eval/12_screwdriver_box_and_hammer/Inv/summary.json",
+                "summarySha256": "e052851fbf2e3aaf78f0f1b9f1af22923842d9534c717a99a96ec48cd16b0218"
+              }
+            },
+            "None": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 44,
+              "lscr": 97.5,
+              "source": {
+                "runId": "gr00t_none_1111_2216_rh56dfx",
+                "perEpisodeFile": "per_task_eval/12_screwdriver_box_and_hammer/None/per_episode.jsonl",
+                "perEpisodeSha256": "f79ba755a3c9c16db9886945fa27f013c094618059021e28856c98a5bbfaf24c",
+                "summaryFile": "per_task_eval/12_screwdriver_box_and_hammer/None/summary.json",
+                "summarySha256": "713ae71b0b034e8b603059be3265e97db1d862e04b95df43b338872c4f5afc02"
+              }
+            }
+          },
+          "mean": {
+            "status": "reported",
+            "srScope": "four-channel-mean",
+            "lscrScope": "four-channel-mean",
+            "sr": 76.5,
+            "lscr": 90.75,
+            "efficiency": 0.9820271437074307,
+            "efficiencyStatus": "reported",
+            "srEpisodes": 200,
+            "lscrEpisodes": 200
+          }
+        },
+        "21": {
+          "channels": {
+            "Equi.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 42,
+              "lscr": 94.0,
+              "source": {
+                "runId": "gr00t_cov_only_1111_2249_wuji",
+                "perEpisodeFile": "per_task_eval/21_condiment_box_loading/Equi/per_episode.jsonl",
+                "perEpisodeSha256": "1928b02564e26caac252e149f9c8f8d177fa423d52de7c5c41fb0dbc0775a4fd",
+                "summaryFile": "per_task_eval/21_condiment_box_loading/Equi/summary.json",
+                "summarySha256": "a40765b9a5e0ba2bd534ff49b751789aced01cab2ea75013de724de6c1965a1f"
+              }
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 44,
+              "lscr": 97.33333333333334,
+              "source": {
+                "runId": "gr00t_inv_cov_1111_2329_wuji",
+                "perEpisodeFile": "per_task_eval/21_condiment_box_loading/Full/per_episode.jsonl",
+                "perEpisodeSha256": "891a889218fb341d0ab833af9024b82b4d018d7ac3a9165748d02d442087760d",
+                "summaryFile": "per_task_eval/21_condiment_box_loading/Full/summary.json",
+                "summarySha256": "82fa202e5a0a07604fc2b89a5ae527558ba17277cd3dd27d7628873756287da9"
+              }
+            },
+            "Inv.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 39,
+              "lscr": 91.33333333333333,
+              "source": {
+                "runId": "gr00t_inv_only_1113_0638_wuji",
+                "perEpisodeFile": "per_task_eval/21_condiment_box_loading/Inv/per_episode.jsonl",
+                "perEpisodeSha256": "8f707c1e49c38f852c2c936b98c157a326edeb68a19443a52c252acd81cd564f",
+                "summaryFile": "per_task_eval/21_condiment_box_loading/Inv/summary.json",
+                "summarySha256": "0a3d6d90c076e22f73426869e274f32db12126a6afc28bbbcc13c273bc57c141"
+              }
+            },
+            "None": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 43,
+              "lscr": 97.33333333333334,
+              "source": {
+                "runId": "gr00t_none_1111_2240_wuji",
+                "perEpisodeFile": "per_task_eval/21_condiment_box_loading/None/per_episode.jsonl",
+                "perEpisodeSha256": "91e435690e237a606b7b45dc85c6b43889c65f7abf0e48c563a6558aa76a9cde",
+                "summaryFile": "per_task_eval/21_condiment_box_loading/None/summary.json",
+                "summarySha256": "6cbcab65ec43419b838b95d8ddc38c551f4dc843cce8fbb248abb4fc8e1c3adb"
+              }
+            }
+          },
+          "mean": {
+            "status": "reported",
+            "srScope": "four-channel-mean",
+            "lscrScope": "four-channel-mean",
+            "sr": 84.0,
+            "lscr": 95.0,
+            "efficiency": 0.9241268299821191,
+            "efficiencyStatus": "reported",
+            "srEpisodes": 200,
+            "lscrEpisodes": 200
+          }
+        },
+        "22": {
+          "channels": {
+            "Equi.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 14,
+              "lscr": 51.0,
+              "source": {
+                "runId": "gr00t_cov_only_1118_1128_panda_with_orca",
+                "perEpisodeFile": "per_task_eval/22_tool_box_loading/Equi/per_episode.jsonl",
+                "perEpisodeSha256": "602fce7e43bc2502d2ca31b4993738e9292d43ea981ed22311183fab59f3702d",
+                "summaryFile": "per_task_eval/22_tool_box_loading/Equi/summary.json",
+                "summarySha256": "1ac0bfb5234f5e01f71357b55ab3e1ec9a25cb72171f32f1d74cae23a14fbe8a"
+              }
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 26,
+              "lscr": 71.0,
+              "source": {
+                "runId": "gr00t_inv_cov_1118_1128_panda_with_orca",
+                "perEpisodeFile": "per_task_eval/22_tool_box_loading/Full/per_episode.jsonl",
+                "perEpisodeSha256": "0df110e099664f17e44032ae89c93ba8bd942213977b7fa67113e1bdca6ff3ab",
+                "summaryFile": "per_task_eval/22_tool_box_loading/Full/summary.json",
+                "summarySha256": "f84d0839ae476a6060127bc139e75708078283a7b8e93251fbba48a449ca2f67"
+              }
+            },
+            "Inv.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 17,
+              "lscr": 57.49999999999999,
+              "source": {
+                "runId": "gr00t_inv_only_1118_1128_panda_with_orca",
+                "perEpisodeFile": "per_task_eval/22_tool_box_loading/Inv/per_episode.jsonl",
+                "perEpisodeSha256": "903d8c7f444d291154ed056078e8edb89e4e50a5ab0db6a7999564f7c5c6ebfc",
+                "summaryFile": "per_task_eval/22_tool_box_loading/Inv/summary.json",
+                "summarySha256": "67d3f1044695c80b163d06ed5107171313732d16b5c72d9c81a837f8207bb8d7"
+              }
+            },
+            "None": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 21,
+              "lscr": 60.0,
+              "source": {
+                "runId": "gr00t_none_1118_1126_panda_with_orca",
+                "perEpisodeFile": "per_task_eval/22_tool_box_loading/None/per_episode.jsonl",
+                "perEpisodeSha256": "60aa6005a14fd9fda35abc83e3c27f0e641599cdf6a41acb77ba1e6bf915e994",
+                "summaryFile": "per_task_eval/22_tool_box_loading/None/summary.json",
+                "summarySha256": "3ac7915569f77e60f2557d710e49aa57cf6ca81e952e75c620647eaa69169f6b"
+              }
+            }
+          },
+          "mean": {
+            "status": "reported",
+            "srScope": "four-channel-mean",
+            "lscrScope": "four-channel-mean",
+            "sr": 39.0,
+            "lscr": 59.875,
+            "efficiency": 0.9240692542718159,
+            "efficiencyStatus": "reported",
+            "srEpisodes": 200,
+            "lscrEpisodes": 200
+          }
+        },
+        "24": {
+          "channels": {
+            "Equi.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 22,
+              "lscr": 71.5,
+              "source": {
+                "runId": "gr00t_cov_only_1112_0547_rm_65_with_revo2",
+                "perEpisodeFile": "per_task_eval/24_stationery_category_sorting/Equi/per_episode.jsonl",
+                "perEpisodeSha256": "6ce6cb095a25dd1401d384fe4eecf746f455eacfce19aca10f1b59bd940c237c",
+                "summaryFile": "per_task_eval/24_stationery_category_sorting/Equi/summary.json",
+                "summarySha256": "b48ac7c7e694469880da3198acabfef3107e8e93e150e0e48bc4c7a953fab3cd"
+              }
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 26,
+              "lscr": 77.5,
+              "source": {
+                "runId": "gr00t_inv_cov_1112_0022_rm_65_with_revo2",
+                "perEpisodeFile": "per_task_eval/24_stationery_category_sorting/Full/per_episode.jsonl",
+                "perEpisodeSha256": "31358a96eb7a35cc20300e3454d1b29e669adf02c7da4957ef772bf035422d53",
+                "summaryFile": "per_task_eval/24_stationery_category_sorting/Full/summary.json",
+                "summarySha256": "095d3bfa1b3b1ecd72dd88892df01ec6bd47d408ed51f0cd5d0a3f34990ec367"
+              }
+            },
+            "Inv.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 23,
+              "lscr": 71.5,
+              "source": {
+                "runId": "gr00t_inv_only_1112_0004_rm_65_with_revo2",
+                "perEpisodeFile": "per_task_eval/24_stationery_category_sorting/Inv/per_episode.jsonl",
+                "perEpisodeSha256": "f60973e2b41647519a422c9adc0367811f950c4b9d66d28ed26712f750bf0d90",
+                "summaryFile": "per_task_eval/24_stationery_category_sorting/Inv/summary.json",
+                "summarySha256": "dd9b6de9b44f01c74155ff3e65061fd90cc4d5ac1c8031f62f60f22022773aba"
+              }
+            },
+            "None": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 26,
+              "lscr": 80.5,
+              "source": {
+                "runId": "gr00t_none_1111_2349_rm_65_with_revo2",
+                "perEpisodeFile": "per_task_eval/24_stationery_category_sorting/None/per_episode.jsonl",
+                "perEpisodeSha256": "a952c14ccecf72d4aa47dcb0d91ccb791d34d820b2e456d7c5ff45c151e21d1c",
+                "summaryFile": "per_task_eval/24_stationery_category_sorting/None/summary.json",
+                "summarySha256": "fa9aea9d3de10fb402f86501fc6e76b445874d8f89b5aeff553dcd461d47d8fc"
+              }
+            }
+          },
+          "mean": {
+            "status": "reported",
+            "srScope": "four-channel-mean",
+            "lscrScope": "four-channel-mean",
+            "sr": 48.5,
+            "lscr": 75.25,
+            "efficiency": 1.0385662589513616,
+            "efficiencyStatus": "reported",
+            "srEpisodes": 200,
+            "lscrEpisodes": 200
+          }
+        },
+        "26": {
+          "channels": {
+            "Equi.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 26,
+              "lscr": 75.0,
+              "source": {
+                "runId": "gr00t_cov_only_1118_1130_iiwa7_with_sharpa",
+                "perEpisodeFile": "per_task_eval/26_canned_food_tray_line_arrangement/Equi/per_episode.jsonl",
+                "perEpisodeSha256": "512ede022c26288a9732853bc57113f3f2d598ca935695012584d6fa9fd543eb",
+                "summaryFile": "per_task_eval/26_canned_food_tray_line_arrangement/Equi/summary.json",
+                "summarySha256": "983c75ea697d87bb2d386d9f531138feeca3938505641ff0a1f060e2816fa949"
+              }
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 21,
+              "lscr": 65.5,
+              "source": {
+                "runId": "gr00t_inv_cov_1118_1130_iiwa7_with_sharpa",
+                "perEpisodeFile": "per_task_eval/26_canned_food_tray_line_arrangement/Full/per_episode.jsonl",
+                "perEpisodeSha256": "ee857d10d4794bb8c9a8992913ccf4bb926aae50ddb2747a951ca274db7b9ff0",
+                "summaryFile": "per_task_eval/26_canned_food_tray_line_arrangement/Full/summary.json",
+                "summarySha256": "09b63f3d8b7daec35a077373683615a5ce2d21d621b7451e70ef9e0ccb43de0b"
+              }
+            },
+            "Inv.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 25,
+              "lscr": 70.0,
+              "source": {
+                "runId": "gr00t_inv_only_1118_1130_iiwa7_with_sharpa",
+                "perEpisodeFile": "per_task_eval/26_canned_food_tray_line_arrangement/Inv/per_episode.jsonl",
+                "perEpisodeSha256": "d947084607c937b17279ad9f6ef4b55383134f301cbfce3be5a9ecf0d57b739e",
+                "summaryFile": "per_task_eval/26_canned_food_tray_line_arrangement/Inv/summary.json",
+                "summarySha256": "9d00714bccb00a903a06fbef38e2eae5acebfec4fdb8d624124b28cc886d9f21"
+              }
+            },
+            "None": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 24,
+              "lscr": 68.5,
+              "source": {
+                "runId": "gr00t_none_1118_1130_iiwa7_with_sharpa",
+                "perEpisodeFile": "per_task_eval/26_canned_food_tray_line_arrangement/None/per_episode.jsonl",
+                "perEpisodeSha256": "27e4b3845c79b2395e32e3afd8ed66a7613f3d271828a7452580c2db5e168d97",
+                "summaryFile": "per_task_eval/26_canned_food_tray_line_arrangement/None/summary.json",
+                "summarySha256": "98707c07da58de16c4f58e3e4e708f2cf272c64e700f7ce7e8d0d70c6f10b1c2"
+              }
+            }
+          },
+          "mean": {
+            "status": "reported",
+            "srScope": "four-channel-mean",
+            "lscrScope": "four-channel-mean",
+            "sr": 48.0,
+            "lscr": 69.75,
+            "efficiency": 0.9524113265143539,
+            "efficiencyStatus": "reported",
+            "srEpisodes": 200,
+            "lscrEpisodes": 200
+          }
+        },
+        "27": {
+          "channels": {
+            "Equi.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 27,
+              "lscr": 85.5,
+              "source": {
+                "runId": "gr00t_cov_only_1112_0900_wuji",
+                "perEpisodeFile": "per_task_eval/27_ball_box_loading/Equi/per_episode.jsonl",
+                "perEpisodeSha256": "866b57e472261425e64ef33bc7ada4a8bf7289c6deb1834f80f4d590bda0c199",
+                "summaryFile": "per_task_eval/27_ball_box_loading/Equi/summary.json",
+                "summarySha256": "2bf1b53fb328a53a5f5a5bd4cda432f0712857020bbbcfb406286258f46670c1"
+              }
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 33,
+              "lscr": 89.0,
+              "source": {
+                "runId": "gr00t_inv_cov_1112_2051_wuji",
+                "perEpisodeFile": "per_task_eval/27_ball_box_loading/Full/per_episode.jsonl",
+                "perEpisodeSha256": "d2a9374f0a46d3277c4254525cd6f6a1cdfe31867a918947848592c96b42f207",
+                "summaryFile": "per_task_eval/27_ball_box_loading/Full/summary.json",
+                "summarySha256": "68a7508f2a00a675e43bf7d7b98790d82f794180fc2d1e04b705d7239bb7c715"
+              }
+            },
+            "Inv.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 38,
+              "lscr": 93.0,
+              "source": {
+                "runId": "gr00t_inv_only_1112_0140_wuji",
+                "perEpisodeFile": "per_task_eval/27_ball_box_loading/Inv/per_episode.jsonl",
+                "perEpisodeSha256": "0b2fb4acc0607620f1f694247ac28fa30a1ce2ba8b811497bd5d7803ecee2cc3",
+                "summaryFile": "per_task_eval/27_ball_box_loading/Inv/summary.json",
+                "summarySha256": "f63c46e1d8be0167bb3f980351eaeeab6e60527dca7f997a7eb6571ff0b01393"
+              }
+            },
+            "None": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 34,
+              "lscr": 91.0,
+              "source": {
+                "runId": "gr00t_none_1112_0135_wuji",
+                "perEpisodeFile": "per_task_eval/27_ball_box_loading/None/per_episode.jsonl",
+                "perEpisodeSha256": "be7a29d55d44ac3093d6f7393b890b2b18ec2aa7fe1f3c046e9f40bef376fbe2",
+                "summaryFile": "per_task_eval/27_ball_box_loading/None/summary.json",
+                "summarySha256": "d7a7aab153d97a3c8ba7a2275e2759e4e66634b079fb6c1a45f9de5ec4f33551"
+              }
+            }
+          },
+          "mean": {
+            "status": "reported",
+            "srScope": "four-channel-mean",
+            "lscrScope": "four-channel-mean",
+            "sr": 66.0,
+            "lscr": 89.625,
+            "efficiency": 1.0030907558303142,
+            "efficiencyStatus": "reported",
+            "srEpisodes": 200,
+            "lscrEpisodes": 200
+          }
+        },
+        "32": {
+          "channels": {
+            "Equi.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 9,
+              "lscr": 72.5,
+              "source": {
+                "runId": "gr00t_cov_only_1118_1213_iiwa7_with_sharpa",
+                "perEpisodeFile": "per_task_eval/32_baking_tray_prep_with_tools/Equi/per_episode.jsonl",
+                "perEpisodeSha256": "880495aee43016a96eaa14769c326b650d14d90beab665b803473697ce163068",
+                "summaryFile": "per_task_eval/32_baking_tray_prep_with_tools/Equi/summary.json",
+                "summarySha256": "22641ff33d9048585122e8a1344be042f0fcff44c473a3440de6f4d1306e4e46"
+              }
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 5,
+              "lscr": 75.5,
+              "source": {
+                "runId": "gr00t_inv_cov_1118_1228_iiwa7_with_sharpa",
+                "perEpisodeFile": "per_task_eval/32_baking_tray_prep_with_tools/Full/per_episode.jsonl",
+                "perEpisodeSha256": "6ca48a2bb1c9f417eda2cf03309af7c077cb4b113585ec82200e551254978577",
+                "summaryFile": "per_task_eval/32_baking_tray_prep_with_tools/Full/summary.json",
+                "summarySha256": "03dc292297a9123f14ac2ad1b1ef04b736d0da51bbffc07f25cfa68be8b56ab9"
+              }
+            },
+            "Inv.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 4,
+              "lscr": 73.0,
+              "source": {
+                "runId": "gr00t_inv_only_1118_1223_iiwa7_with_sharpa",
+                "perEpisodeFile": "per_task_eval/32_baking_tray_prep_with_tools/Inv/per_episode.jsonl",
+                "perEpisodeSha256": "37dd9727793e8ab09bef1f692f56ce3c8dcd7e69db0ca70833a6d2d0b24384de",
+                "summaryFile": "per_task_eval/32_baking_tray_prep_with_tools/Inv/summary.json",
+                "summarySha256": "ed6671cd077bc1c2e31f3f3a803af5e3d9aadf8b5d310ca4465a9991f4ea11da"
+              }
+            },
+            "None": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 15,
+              "lscr": 77.0,
+              "source": {
+                "runId": "gr00t_none_1118_1130_iiwa7_with_sharpa",
+                "perEpisodeFile": "per_task_eval/32_baking_tray_prep_with_tools/None/per_episode.jsonl",
+                "perEpisodeSha256": "3bc76b230fa50fbe90909ebbf5b3f175dce4c3eb82ac76c57728115e45b1924c",
+                "summaryFile": "per_task_eval/32_baking_tray_prep_with_tools/None/summary.json",
+                "summarySha256": "841505f51d028acfb496163a9f098fe056c7330ff39d09e8f3924f62a45903a2"
+              }
+            }
+          },
+          "mean": {
+            "status": "reported",
+            "srScope": "four-channel-mean",
+            "lscrScope": "four-channel-mean",
+            "sr": 16.5,
+            "lscr": 74.5,
+            "efficiency": 0.961570707502793,
+            "efficiencyStatus": "reported",
+            "srEpisodes": 200,
+            "lscrEpisodes": 200
+          }
+        },
+        "34": {
+          "channels": {
+            "Equi.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 39,
+              "lscr": 88.4,
+              "source": {
+                "runId": "gr00t_cov_only_1112_2127_rh5dg2",
+                "perEpisodeFile": "per_task_eval/34_fridge_wine_interhand_pour/Equi/per_episode.jsonl",
+                "perEpisodeSha256": "c4803d097c0c349cf395ad90f1b99fe9e388a97554fdc77f5244ea0adef4168c",
+                "summaryFile": "per_task_eval/34_fridge_wine_interhand_pour/Equi/summary.json",
+                "summarySha256": "b035cbe2c1d2a1c6cc9f97cf0146d062b4ddebbd4dbdb0f4d62229e7a1a2aae6"
+              }
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 41,
+              "lscr": 90.4,
+              "source": {
+                "runId": "gr00t_inv_cov_1112_0912_rh5dg2",
+                "perEpisodeFile": "per_task_eval/34_fridge_wine_interhand_pour/Full/per_episode.jsonl",
+                "perEpisodeSha256": "bf1b3edc9eee978b31960ddd6232fbf624fe17dfc911d0e97ce73e7925dd19c6",
+                "summaryFile": "per_task_eval/34_fridge_wine_interhand_pour/Full/summary.json",
+                "summarySha256": "428ae81ff319bc04bd47211512e94b6a36d905dc6480c90be5e490e91a191cbf"
+              }
+            },
+            "Inv.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 40,
+              "lscr": 89.60000000000001,
+              "source": {
+                "runId": "gr00t_inv_only_1112_0159_rh5dg2",
+                "perEpisodeFile": "per_task_eval/34_fridge_wine_interhand_pour/Inv/per_episode.jsonl",
+                "perEpisodeSha256": "a06689aae19d83ce08d15ff71c0934780c025a1eaaaa4af83fce2774454f6c1d",
+                "summaryFile": "per_task_eval/34_fridge_wine_interhand_pour/Inv/summary.json",
+                "summarySha256": "e3b4a167f7ff32364f1f27c4506dcdeb3604786d00454f097fa40e5621f3c1bb"
+              }
+            },
+            "None": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 34,
+              "lscr": 84.39999999999999,
+              "source": {
+                "runId": "gr00t_none_1113_2043_",
+                "perEpisodeFile": "per_task_eval/34_fridge_wine_interhand_pour/None/per_episode.jsonl",
+                "perEpisodeSha256": "e0b3576ba8199db4bd8879455082227ae6c9eb985262683ba4e0be713c34528f",
+                "summaryFile": "per_task_eval/34_fridge_wine_interhand_pour/None/summary.json",
+                "summarySha256": "a80e00644fa13378388a1e56054782d683280bc871c0a966c58e787e48fb2e51"
+              }
+            }
+          },
+          "mean": {
+            "status": "reported",
+            "srScope": "four-channel-mean",
+            "lscrScope": "four-channel-mean",
+            "sr": 77.0,
+            "lscr": 88.20000000000002,
+            "efficiency": 1.0288132028553614,
+            "efficiencyStatus": "reported",
+            "srEpisodes": 200,
+            "lscrEpisodes": 200
+          }
+        },
+        "42": {
+          "channels": {
+            "Equi.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 25,
+              "lscr": 89.33333333333333,
+              "source": {
+                "runId": "gr00t_cov_only_1112_0638_rh56dfx",
+                "perEpisodeFile": "per_task_eval/42_trash_disposal/Equi/per_episode.jsonl",
+                "perEpisodeSha256": "332b71f27e2121acdd99f12d69b979d047eda62968b515a323093f6a88cd48bd",
+                "summaryFile": "per_task_eval/42_trash_disposal/Equi/summary.json",
+                "summarySha256": "f2b320271469016c8ac893f30a25fb6bf17e36bea87b8c9ed524deb0b8d707d0"
+              }
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 32,
+              "lscr": 91.33333333333333,
+              "source": {
+                "runId": "gr00t_inv_cov_1112_0207_rh56dfx",
+                "perEpisodeFile": "per_task_eval/42_trash_disposal/Full/per_episode.jsonl",
+                "perEpisodeSha256": "f5603e31df62bde883d0b2de9cf34cd5037cdc16df4a477abfde126911d1181c",
+                "summaryFile": "per_task_eval/42_trash_disposal/Full/summary.json",
+                "summarySha256": "d0c1e3b45e96b2a9315ed32d0ab148ea47f559ded673f14cd95c64bddf545379"
+              }
+            },
+            "Inv.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 37,
+              "lscr": 90.0,
+              "source": {
+                "runId": "gr00t_inv_only_1112_0207_rh56dfx",
+                "perEpisodeFile": "per_task_eval/42_trash_disposal/Inv/per_episode.jsonl",
+                "perEpisodeSha256": "f648adbd43fc89ac551cbc91a2df14e75d8d07dbc59bf8f7c6326d3ace220e11",
+                "summaryFile": "per_task_eval/42_trash_disposal/Inv/summary.json",
+                "summarySha256": "51230a62fd7303e66892a9a158e50e07026f818beefd814636716e0d744f2b0d"
+              }
+            },
+            "None": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 32,
+              "lscr": 90.0,
+              "source": {
+                "runId": "gr00t_none_1112_0631_rh56dfx",
+                "perEpisodeFile": "per_task_eval/42_trash_disposal/None/per_episode.jsonl",
+                "perEpisodeSha256": "3d9a3fc43c029ed375135d903e04cbccab252bb532d51a80cf68d87d366e497a",
+                "summaryFile": "per_task_eval/42_trash_disposal/None/summary.json",
+                "summarySha256": "414a1816cd695b51ea92d0ffbbdb2d47d5c55f49454bed7648163283606c81fd"
+              }
+            }
+          },
+          "mean": {
+            "status": "reported",
+            "srScope": "four-channel-mean",
+            "lscrScope": "four-channel-mean",
+            "sr": 63.0,
+            "lscr": 90.16666666666666,
+            "efficiency": 0.9551358068121891,
+            "efficiencyStatus": "reported",
+            "srEpisodes": 200,
+            "lscrEpisodes": 200
+          }
+        },
+        "43": {
+          "channels": {
+            "Equi.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 22,
+              "lscr": 71.5,
+              "source": {
+                "runId": "gr00t_cov_only_1112_0641_shadow_hand",
+                "perEpisodeFile": "per_task_eval/43_fridge_fruit_shelf_sorting/Equi/per_episode.jsonl",
+                "perEpisodeSha256": "653382f27effb8b41617240b6354e09fa72eb2f7cfeadb6d452eb021c8d126cd",
+                "summaryFile": "per_task_eval/43_fridge_fruit_shelf_sorting/Equi/summary.json",
+                "summarySha256": "8a081a13cdd348f86acd39413c6acca43aeb095cf5e0048b04d5db694c4c9c90"
+              }
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 23,
+              "lscr": 75.0,
+              "source": {
+                "runId": "gr00t_inv_cov_1112_0643_shadow_hand",
+                "perEpisodeFile": "per_task_eval/43_fridge_fruit_shelf_sorting/Full/per_episode.jsonl",
+                "perEpisodeSha256": "c612f18796aa00bc42c6e15d62ef04073cdff9995a822f53860777db9dabc954",
+                "summaryFile": "per_task_eval/43_fridge_fruit_shelf_sorting/Full/summary.json",
+                "summarySha256": "99dea595a6001863652c9fd2867996dd1239475163a0cb058fc00db62b713b7b"
+              }
+            },
+            "Inv.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 23,
+              "lscr": 73.0,
+              "source": {
+                "runId": "gr00t_inv_only_1112_0641_shadow_hand",
+                "perEpisodeFile": "per_task_eval/43_fridge_fruit_shelf_sorting/Inv/per_episode.jsonl",
+                "perEpisodeSha256": "7c119d55945c101bfc5f3bf6eef0c933884550ffd1b595e4b253483d5369c9e9",
+                "summaryFile": "per_task_eval/43_fridge_fruit_shelf_sorting/Inv/summary.json",
+                "summarySha256": "7919b9e79e066f094e6ca23d30a26331f2ca6106a0a117c7487e60cc729cd8ee"
+              }
+            },
+            "None": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 30,
+              "lscr": 79.0,
+              "source": {
+                "runId": "gr00t_none_1112_0207_shadow_hand",
+                "perEpisodeFile": "per_task_eval/43_fridge_fruit_shelf_sorting/None/per_episode.jsonl",
+                "perEpisodeSha256": "f4957c7be164aaa68417afc62bfcdfb4d198455639a4d40d91aa6e8e53d6fd9d",
+                "summaryFile": "per_task_eval/43_fridge_fruit_shelf_sorting/None/summary.json",
+                "summarySha256": "e604575a90d6f24b371bb2926a1667ec3d169527a08062acf2675b33adb7b4b7"
+              }
+            }
+          },
+          "mean": {
+            "status": "reported",
+            "srScope": "four-channel-mean",
+            "lscrScope": "four-channel-mean",
+            "sr": 49.0,
+            "lscr": 74.625,
+            "efficiency": 0.9733669466978055,
+            "efficiencyStatus": "reported",
+            "srEpisodes": 200,
+            "lscrEpisodes": 200
+          }
+        },
+        "44": {
+          "channels": {
+            "Equi.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 49,
+              "lscr": 99.0,
+              "source": {
+                "runId": "gr00t_cov_only_1112_0719_schunk_hand",
+                "perEpisodeFile": "per_task_eval/44_microwave_bowl_loading/Equi/per_episode.jsonl",
+                "perEpisodeSha256": "14374f077aa3dda2f63b6e7d16c72981b03b4bc711f209dfec6cd04b0ab81dea",
+                "summaryFile": "per_task_eval/44_microwave_bowl_loading/Equi/summary.json",
+                "summarySha256": "0e01c1e38d6085730b764c70ce4035a59d05c9c08c4189635ac58c5c51b0052d"
+              }
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 48,
+              "lscr": 97.5,
+              "source": {
+                "runId": "gr00t_inv_cov_1112_0734_schunk_hand",
+                "perEpisodeFile": "per_task_eval/44_microwave_bowl_loading/Full/per_episode.jsonl",
+                "perEpisodeSha256": "8426f00d90ae95c6c8ac2a3856d93ea6106d63e75849eeccc6cbd444e0b48ad5",
+                "summaryFile": "per_task_eval/44_microwave_bowl_loading/Full/summary.json",
+                "summarySha256": "510878041453e04967ec7ae210f1bf209130626b4c1169afa1476bf280eb41e1"
+              }
+            },
+            "Inv.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 50,
+              "lscr": 100.0,
+              "source": {
+                "runId": "gr00t_inv_only_1112_0911_schunk_hand",
+                "perEpisodeFile": "per_task_eval/44_microwave_bowl_loading/Inv/per_episode.jsonl",
+                "perEpisodeSha256": "6a001b06a516d08edc9af5b97c7812bf27bde732bf54c829a6a4ac286c581661",
+                "summaryFile": "per_task_eval/44_microwave_bowl_loading/Inv/summary.json",
+                "summarySha256": "3fcb3611f0c62ba6a2dcfebd4cee2a826380e4871f75b63c6ce0eb77768d67ca"
+              }
+            },
+            "None": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 49,
+              "lscr": 99.0,
+              "source": {
+                "runId": "gr00t_none_1112_0645_schunk_hand",
+                "perEpisodeFile": "per_task_eval/44_microwave_bowl_loading/None/per_episode.jsonl",
+                "perEpisodeSha256": "20b2b7c53b0246823fab76c3ddc76a686f6e1685feaed9932ef686fb93ad8f44",
+                "summaryFile": "per_task_eval/44_microwave_bowl_loading/None/summary.json",
+                "summarySha256": "0a35df8f8f1fcea7e253e415529882e80d752ea979fa8eff91ff167dfd5dcdd1"
+              }
+            }
+          },
+          "mean": {
+            "status": "reported",
+            "srScope": "four-channel-mean",
+            "lscrScope": "four-channel-mean",
+            "sr": 98.0,
+            "lscr": 98.875,
+            "efficiency": 1.0277501840951881,
+            "efficiencyStatus": "reported",
+            "srEpisodes": 200,
+            "lscrEpisodes": 200
+          }
+        },
+        "51": {
+          "channels": {
+            "Equi.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 32,
+              "lscr": 72.66666666666667,
+              "source": {
+                "runId": "gr00t_cov_only_1118_1234_xarm7",
+                "perEpisodeFile": "per_task_eval/51_toilet_lid_cleaner_pour/Equi/per_episode.jsonl",
+                "perEpisodeSha256": "b77383a70605495037a9611c198e1bc7029018262460f0085d0c5216fe6c9f71",
+                "summaryFile": "per_task_eval/51_toilet_lid_cleaner_pour/Equi/summary.json",
+                "summarySha256": "a5a4b7aaff7fad65e201948246b12bdfbfd52a8e5a5d61658b621fd6f245aff1"
+              }
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 37,
+              "lscr": 78.66666666666666,
+              "source": {
+                "runId": "gr00t_inv_cov_1118_1250_xarm7",
+                "perEpisodeFile": "per_task_eval/51_toilet_lid_cleaner_pour/Full/per_episode.jsonl",
+                "perEpisodeSha256": "4f2b678062139fd6277cb301a7c808524687ca2a9800cae02fcc465959a264de",
+                "summaryFile": "per_task_eval/51_toilet_lid_cleaner_pour/Full/summary.json",
+                "summarySha256": "907f11523421fa01f553c24835ef6a3a51805f0b7d4106e7e767f8bf23479b22"
+              }
+            },
+            "Inv.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 37,
+              "lscr": 78.66666666666666,
+              "source": {
+                "runId": "gr00t_inv_only_1118_1240_xarm7",
+                "perEpisodeFile": "per_task_eval/51_toilet_lid_cleaner_pour/Inv/per_episode.jsonl",
+                "perEpisodeSha256": "01d7a403e2a515ace4978396f274a461f70817df5a327b0dadb2eee6ded6d46b",
+                "summaryFile": "per_task_eval/51_toilet_lid_cleaner_pour/Inv/summary.json",
+                "summarySha256": "0e9e6a6d28657c33d2f588704d08925cc2a5b3d01a73593029efb391a1719adc"
+              }
+            },
+            "None": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 35,
+              "lscr": 76.66666666666666,
+              "source": {
+                "runId": "gr00t_none_1118_1234_xarm7",
+                "perEpisodeFile": "per_task_eval/51_toilet_lid_cleaner_pour/None/per_episode.jsonl",
+                "perEpisodeSha256": "3c11ff367159a20a8a5e21c971c8d4601ff34142dc69625b50e777974f4bd3ad",
+                "summaryFile": "per_task_eval/51_toilet_lid_cleaner_pour/None/summary.json",
+                "summarySha256": "b6dc5c22bdd1c9c2a86f07256c05f69350eb0551e0bae95eff5f4f2a77e2c550"
+              }
+            }
+          },
+          "mean": {
+            "status": "reported",
+            "srScope": "four-channel-mean",
+            "lscrScope": "four-channel-mean",
+            "sr": 70.5,
+            "lscr": 76.66666666666666,
+            "efficiency": 1.1429714738510452,
+            "efficiencyStatus": "reported",
+            "srEpisodes": 200,
+            "lscrEpisodes": 200
+          }
+        },
+        "60": {
+          "channels": {
+            "Equi.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 38,
+              "lscr": 82.0,
+              "source": {
+                "runId": "gr00t_cov_only_1112_2228_rh5dg2",
+                "perEpisodeFile": "per_task_eval/60_breadbasket_fast_food_loading/Equi/per_episode.jsonl",
+                "perEpisodeSha256": "c212804285e741e57b7fa2b10b46a46e757d73c6e16602ad9d356ca3057f9448",
+                "summaryFile": "per_task_eval/60_breadbasket_fast_food_loading/Equi/summary.json",
+                "summarySha256": "326a09a749da74f287e5193fe5801351982c3d58416436ec31003147b45bf0de"
+              }
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 34,
+              "lscr": 72.0,
+              "source": {
+                "runId": "gr00t_inv_cov_1112_1006_rh5dg2",
+                "perEpisodeFile": "per_task_eval/60_breadbasket_fast_food_loading/Full/per_episode.jsonl",
+                "perEpisodeSha256": "d299d208a058edd43e0abf77dc8d7b7bcbdd68063a7cc7ceb98078b926e453c7",
+                "summaryFile": "per_task_eval/60_breadbasket_fast_food_loading/Full/summary.json",
+                "summarySha256": "c068f8163835151cb65fde7aaa42f8da9c825580ec5858ce19dddd730655b689"
+              }
+            },
+            "Inv.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 42,
+              "lscr": 89.5,
+              "source": {
+                "runId": "gr00t_inv_only_1112_1001_rh5dg2",
+                "perEpisodeFile": "per_task_eval/60_breadbasket_fast_food_loading/Inv/per_episode.jsonl",
+                "perEpisodeSha256": "e05fcd6998acc33713dfd213ef87f64480eea8909be48ae37a9c5677b93f2247",
+                "summaryFile": "per_task_eval/60_breadbasket_fast_food_loading/Inv/summary.json",
+                "summarySha256": "04a1530c35fb5faba36880429e276b8905bd040a748d1c7787a7d0819ac08a1b"
+              }
+            },
+            "None": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 40,
+              "lscr": 85.5,
+              "source": {
+                "runId": "gr00t_none_1112_2233_rh5dg2",
+                "perEpisodeFile": "per_task_eval/60_breadbasket_fast_food_loading/None/per_episode.jsonl",
+                "perEpisodeSha256": "08313a07233dbd37de5e40d99aeee1f8b58125111c97be2cb31b836885a763c2",
+                "summaryFile": "per_task_eval/60_breadbasket_fast_food_loading/None/summary.json",
+                "summarySha256": "98cf2f5e7806cf58f021d6e7b3428c82097e136a6eb8256345276011b96e923b"
+              }
+            }
+          },
+          "mean": {
+            "status": "reported",
+            "srScope": "four-channel-mean",
+            "lscrScope": "four-channel-mean",
+            "sr": 77.0,
+            "lscr": 82.25,
+            "efficiency": 0.97003496237746,
+            "efficiencyStatus": "reported",
+            "srEpisodes": 200,
+            "lscrEpisodes": 200
+          }
+        },
+        "61": {
+          "channels": {
+            "Equi.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 32,
+              "lscr": 76.66666666666666,
+              "source": {
+                "runId": "gr00t_cov_only_1116_0538_panda_with_orca",
+                "perEpisodeFile": "per_task_eval/61_medicine_shoebox_pack/Equi/per_episode.jsonl",
+                "perEpisodeSha256": "97a674bb013ec4af732745bf8f5dd49c2291a9345ad172379fa99f7986324143",
+                "summaryFile": "per_task_eval/61_medicine_shoebox_pack/Equi/summary.json",
+                "summarySha256": "c8590d00b56e0d5c873c3e3728359fc3fbfcafee37b5bdf0bb255af09470cc70"
+              }
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 37,
+              "lscr": 83.33333333333334,
+              "source": {
+                "runId": "gr00t_inv_cov_1116_0602_panda_with_orca",
+                "perEpisodeFile": "per_task_eval/61_medicine_shoebox_pack/Full/per_episode.jsonl",
+                "perEpisodeSha256": "3b278e1cb87ff02b29e7b831fd6c83704d6e23c5a671403f1a2efa0ed45984ae",
+                "summaryFile": "per_task_eval/61_medicine_shoebox_pack/Full/summary.json",
+                "summarySha256": "406e4a60d416496aed3c12876d5400a8f8d270da25019627226b54c3b3254d76"
+              }
+            },
+            "Inv.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 35,
+              "lscr": 80.66666666666666,
+              "source": {
+                "runId": "gr00t_inv_only_1116_0539_panda_with_orca",
+                "perEpisodeFile": "per_task_eval/61_medicine_shoebox_pack/Inv/per_episode.jsonl",
+                "perEpisodeSha256": "c4c1cab9b7b77b44359cfd319bad29f4aa5acaeb7b7390a12cf5cd554f881b39",
+                "summaryFile": "per_task_eval/61_medicine_shoebox_pack/Inv/summary.json",
+                "summarySha256": "27f3e35e628a6b00a6eb5e930709fd9c36e1385cadfec62195245edae108b73d"
+              }
+            },
+            "None": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 35,
+              "lscr": 82.66666666666667,
+              "source": {
+                "runId": "gr00t_none_1116_0500_panda_with_orca",
+                "perEpisodeFile": "per_task_eval/61_medicine_shoebox_pack/None/per_episode.jsonl",
+                "perEpisodeSha256": "9aa37cc7d4db382915afbb28b451e8f3614dece0d85dd719e644f89c99df3cbd",
+                "summaryFile": "per_task_eval/61_medicine_shoebox_pack/None/summary.json",
+                "summarySha256": "2f8dd7b8de56fee73be378aeb8e2c1ba8ee3e4dd7ebd2f69ba616b84ad302e75"
+              }
+            }
+          },
+          "mean": {
+            "status": "reported",
+            "srScope": "four-channel-mean",
+            "lscrScope": "four-channel-mean",
+            "sr": 69.5,
+            "lscr": 80.83333333333333,
+            "efficiency": 0.9789866430421325,
+            "efficiencyStatus": "reported",
+            "srEpisodes": 200,
+            "lscrEpisodes": 200
+          }
+        },
+        "62": {
+          "channels": {
+            "Equi.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 42,
+              "lscr": 91.33333333333333,
+              "source": {
+                "runId": "gr00t_cov_only_1118_1306_xarm7",
+                "perEpisodeFile": "per_task_eval/62_shoebox_accessory_pack/Equi/per_episode.jsonl",
+                "perEpisodeSha256": "1625c4c09167a049566322322b9aa79044cd5e1380db1707cfed978a32253834",
+                "summaryFile": "per_task_eval/62_shoebox_accessory_pack/Equi/summary.json",
+                "summarySha256": "dc0450d591d08078185423bfc9f9b200dbdea6cfa44db26795234fe3df739c33"
+              }
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 43,
+              "lscr": 90.0,
+              "source": {
+                "runId": "gr00t_inv_cov_1118_1311_xarm7",
+                "perEpisodeFile": "per_task_eval/62_shoebox_accessory_pack/Full/per_episode.jsonl",
+                "perEpisodeSha256": "81f2cec3335907e9d9e83e0851cfe9a654ce6e87521152efcd2f67dc143701c1",
+                "summaryFile": "per_task_eval/62_shoebox_accessory_pack/Full/summary.json",
+                "summarySha256": "4a66773822a3700418429ee24ed00c98c3784a1a8a57191918e68dfe71ed8cee"
+              }
+            },
+            "Inv.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 47,
+              "lscr": 97.33333333333334,
+              "source": {
+                "runId": "gr00t_inv_only_1118_1308_xarm7",
+                "perEpisodeFile": "per_task_eval/62_shoebox_accessory_pack/Inv/per_episode.jsonl",
+                "perEpisodeSha256": "c9e2527cba38b5fca2ed0b5e34cb20cbec9ba67e107e9d90cff5c67d41eaa0a7",
+                "summaryFile": "per_task_eval/62_shoebox_accessory_pack/Inv/summary.json",
+                "summarySha256": "1dd30991669c6fd258e453059676f9548bcf193815830dae5a7d4ee766953855"
+              }
+            },
+            "None": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 46,
+              "lscr": 94.66666666666667,
+              "source": {
+                "runId": "gr00t_none_1118_1300_xarm7",
+                "perEpisodeFile": "per_task_eval/62_shoebox_accessory_pack/None/per_episode.jsonl",
+                "perEpisodeSha256": "39581f415e4b2667550fe6b18fca15daf9d85feb61ade3b324e32a5d68e0b5cc",
+                "summaryFile": "per_task_eval/62_shoebox_accessory_pack/None/summary.json",
+                "summarySha256": "8aa805d15cfeb6b281baed5a0ef59dad10a968bf67943adb43975d5f6a29a639"
+              }
+            }
+          },
+          "mean": {
+            "status": "reported",
+            "srScope": "four-channel-mean",
+            "lscrScope": "four-channel-mean",
+            "sr": 89.0,
+            "lscr": 93.33333333333334,
+            "efficiency": 0.9915049767647729,
+            "efficiencyStatus": "reported",
+            "srEpisodes": 200,
+            "lscrEpisodes": 200
+          }
+        },
+        "64": {
+          "channels": {
+            "Equi.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 33,
+              "lscr": 75.5,
+              "source": {
+                "runId": "gr00t_cov_only_1118_1404_panda_with_allegro",
+                "perEpisodeFile": "per_task_eval/64_sports_ball_cup_sort/Equi/per_episode.jsonl",
+                "perEpisodeSha256": "f39207eda70049e26fc0be653d159d62ab9fad45f42f8f3619410c2a3d1d90a5",
+                "summaryFile": "per_task_eval/64_sports_ball_cup_sort/Equi/summary.json",
+                "summarySha256": "e21ffbc248a8b0ad69ab77122ea42d6e8d2a7d37c2277e73bc40b1b8d94a6e33"
+              }
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 39,
+              "lscr": 81.5,
+              "source": {
+                "runId": "gr00t_inv_cov_1118_1603_panda_with_allegro",
+                "perEpisodeFile": "per_task_eval/64_sports_ball_cup_sort/Full/per_episode.jsonl",
+                "perEpisodeSha256": "574f6c6a23246e980e1b1ca776c856f7151179b0c4e72055559b1cc116693a79",
+                "summaryFile": "per_task_eval/64_sports_ball_cup_sort/Full/summary.json",
+                "summarySha256": "6dd37815b5f0a4798943c5607077d26d7a4272ade0fc98a87e11218466716979"
+              }
+            },
+            "Inv.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 34,
+              "lscr": 77.0,
+              "source": {
+                "runId": "gr00t_inv_only_1118_1603_panda_with_allegro",
+                "perEpisodeFile": "per_task_eval/64_sports_ball_cup_sort/Inv/per_episode.jsonl",
+                "perEpisodeSha256": "ef0e281d4db2bf7754d4f7f4a45fae1cd2c5d8f6d9cd8c143c72aaefd09918dd",
+                "summaryFile": "per_task_eval/64_sports_ball_cup_sort/Inv/summary.json",
+                "summarySha256": "992eb0036583e7efc6f151e3706803afdb8bb63e7daaddb507b5ae6417c03879"
+              }
+            },
+            "None": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 38,
+              "lscr": 88.5,
+              "source": {
+                "runId": "gr00t_none_1118_1336_panda_with_allegro",
+                "perEpisodeFile": "per_task_eval/64_sports_ball_cup_sort/None/per_episode.jsonl",
+                "perEpisodeSha256": "53004378833c5915c47efe11cbd358bf903ccf2417eb7403ed455c3882a2bee9",
+                "summaryFile": "per_task_eval/64_sports_ball_cup_sort/None/summary.json",
+                "summarySha256": "c61e9f59fee93a9d2f4d8eb5a812e98df867e71e23d856bf8a0f4c5f502d5400"
+              }
+            }
+          },
+          "mean": {
+            "status": "reported",
+            "srScope": "four-channel-mean",
+            "lscrScope": "four-channel-mean",
+            "sr": 72.0,
+            "lscr": 80.625,
+            "efficiency": 0.7872510222383218,
+            "efficiencyStatus": "reported",
+            "srEpisodes": 200,
+            "lscrEpisodes": 200
+          }
+        },
+        "67": {
+          "channels": {
+            "Equi.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 35,
+              "lscr": 76.0,
+              "source": {
+                "runId": "gr00t_cov_only_1113_0433_rm_65_with_revo2",
+                "perEpisodeFile": "per_task_eval/67_faucet_cup_water_fill/Equi/per_episode.jsonl",
+                "perEpisodeSha256": "2a0e96ff8688e0f50b678f9fbb4562dffb43cddd6021a612fc661c9df809ddbd",
+                "summaryFile": "per_task_eval/67_faucet_cup_water_fill/Equi/summary.json",
+                "summarySha256": "d4b5c49c020feb343c3622b08a5740241a87df7c32207117ff34ce98adcd234f"
+              }
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 30,
+              "lscr": 74.5,
+              "source": {
+                "runId": "gr00t_inv_cov_1113_0115_rm_65_with_revo2",
+                "perEpisodeFile": "per_task_eval/67_faucet_cup_water_fill/Full/per_episode.jsonl",
+                "perEpisodeSha256": "08859f41e1c1da60266708f2531a5800f7ca113324cad46821d67ef89230bf90",
+                "summaryFile": "per_task_eval/67_faucet_cup_water_fill/Full/summary.json",
+                "summarySha256": "f254547ad3a9a1d49d1b31aee2aecfebbac2087534899214bc6c374f67549b20"
+              }
+            },
+            "Inv.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 37,
+              "lscr": 86.0,
+              "source": {
+                "runId": "gr00t_inv_only_1113_0607_rm_65_with_revo2",
+                "perEpisodeFile": "per_task_eval/67_faucet_cup_water_fill/Inv/per_episode.jsonl",
+                "perEpisodeSha256": "18d5c2ce220611f4ecd6401954495a31023f4a96061b7d2484c8fd114cca270f",
+                "summaryFile": "per_task_eval/67_faucet_cup_water_fill/Inv/summary.json",
+                "summarySha256": "69327f4da9d5f34dc84f6904bbba8fefae2e108ebef1d2fb89f903332dfa255b"
+              }
+            },
+            "None": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 37,
+              "lscr": 80.0,
+              "source": {
+                "runId": "gr00t_none_1113_2049_65_with_revo2",
+                "perEpisodeFile": "per_task_eval/67_faucet_cup_water_fill/None/per_episode.jsonl",
+                "perEpisodeSha256": "811dfe8843893ed3e895ab82adfcbc6515e2f4473f576c5d4d33c8f045b4b188",
+                "summaryFile": "per_task_eval/67_faucet_cup_water_fill/None/summary.json",
+                "summarySha256": "9258ceb7581d98c7094e941918b3ec4062bec191a7d8b54d4be02a87d82e2a8a"
+              }
+            }
+          },
+          "mean": {
+            "status": "reported",
+            "srScope": "four-channel-mean",
+            "lscrScope": "four-channel-mean",
+            "sr": 69.5,
+            "lscr": 79.125,
+            "efficiency": 0.9685045914993281,
+            "efficiencyStatus": "reported",
+            "srEpisodes": 200,
+            "lscrEpisodes": 200
+          }
+        },
+        "73": {
+          "channels": {
+            "Equi.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 2,
+              "lscr": 59.5,
+              "source": {
+                "runId": "gr00t_cov_only_1118_1604_iiwa7_with_sharpa",
+                "perEpisodeFile": "per_task_eval/73_jigsaw_puzzle_assembly/Equi/per_episode.jsonl",
+                "perEpisodeSha256": "711cbc1dfeba5fd2e0fa99b7fa5d7dc216926bc88e1b3b06fbfd4b4b4adcaa4c",
+                "summaryFile": "per_task_eval/73_jigsaw_puzzle_assembly/Equi/summary.json",
+                "summarySha256": "d6c37c6c8b70abfcdf16bfd6130c315c966544bc09c1bdb735eed2c80218a585"
+              }
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 0,
+              "lscr": 43.5,
+              "source": {
+                "runId": "gr00t_inv_cov_1118_1603_iiwa7_with_sharpa",
+                "perEpisodeFile": "per_task_eval/73_jigsaw_puzzle_assembly/Full/per_episode.jsonl",
+                "perEpisodeSha256": "93b3defc01587e6907ea2e4b4526120ec1fe04596c88dad8813217ddaeb72093",
+                "summaryFile": "per_task_eval/73_jigsaw_puzzle_assembly/Full/summary.json",
+                "summarySha256": "2e02bcbcc790878178ba6e7f76552325db0fae2bee6691bd755a9631e14dee1e"
+              }
+            },
+            "Inv.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 1,
+              "lscr": 56.00000000000001,
+              "source": {
+                "runId": "gr00t_inv_only_1118_1533_iiwa7_with_sharpa",
+                "perEpisodeFile": "per_task_eval/73_jigsaw_puzzle_assembly/Inv/per_episode.jsonl",
+                "perEpisodeSha256": "b2832139ef7beb84591364d3a54e38d7aefeb0b1846ce9db03c5532e2342b6ea",
+                "summaryFile": "per_task_eval/73_jigsaw_puzzle_assembly/Inv/summary.json",
+                "summarySha256": "5a8e79b1d83cf4abc6bdbdb1ecb417cb3b6cae9064685c506b34172726a41ec5"
+              }
+            },
+            "None": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 3,
+              "lscr": 68.0,
+              "source": {
+                "runId": "gr00t_none_1118_1604_iiwa7_with_sharpa",
+                "perEpisodeFile": "per_task_eval/73_jigsaw_puzzle_assembly/None/per_episode.jsonl",
+                "perEpisodeSha256": "3394358f83841f89f2582d61103d360a71a08dbfaa7db3bb90a7789b23b0cd97",
+                "summaryFile": "per_task_eval/73_jigsaw_puzzle_assembly/None/summary.json",
+                "summarySha256": "7dbff2293b7466d09c5a14dcf39e0d3f567a08599de10091651b5b4ac0bcb7d7"
+              }
+            }
+          },
+          "mean": {
+            "status": "reported",
+            "srScope": "four-channel-mean",
+            "lscrScope": "four-channel-mean",
+            "sr": 3.0,
+            "lscr": 56.75,
+            "efficiency": 0.9278429372769248,
+            "efficiencyStatus": "reported",
+            "srEpisodes": 200,
+            "lscrEpisodes": 200
+          }
+        },
+        "76": {
+          "channels": {
+            "Equi.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 10,
+              "lscr": 60.0,
+              "source": {
+                "runId": "gr00t_cov_only_1113_0218_shadow_hand",
+                "perEpisodeFile": "per_task_eval/76_soup_serving/Equi/per_episode.jsonl",
+                "perEpisodeSha256": "79ee671f809a501adf125dd462e0990c471823a0b0e620e6f9a1524112f9bcfc",
+                "summaryFile": "per_task_eval/76_soup_serving/Equi/summary.json",
+                "summarySha256": "c7e31a062f5809f560e1a6cabca89eba125f37ff6900cc1cf0b0bb7379572947"
+              }
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 23,
+              "lscr": 77.5,
+              "source": {
+                "runId": "gr00t_inv_cov_1113_0218_shadow_hand",
+                "perEpisodeFile": "per_task_eval/76_soup_serving/Full/per_episode.jsonl",
+                "perEpisodeSha256": "c36fd69b0d6ee6fa9dca13032404fb7641e790654134bc34d11738dc196d342f",
+                "summaryFile": "per_task_eval/76_soup_serving/Full/summary.json",
+                "summarySha256": "fe7ee57aa2e53eef9e58ba6b6f55c98e561d36fafce0509d04add9cbe0fa603e"
+              }
+            },
+            "Inv.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 21,
+              "lscr": 71.0,
+              "source": {
+                "runId": "gr00t_inv_only_1113_0237_shadow_hand",
+                "perEpisodeFile": "per_task_eval/76_soup_serving/Inv/per_episode.jsonl",
+                "perEpisodeSha256": "debe0645f6e6458dbf071cd5cc4613fc276f572950efee45993804dfc364829f",
+                "summaryFile": "per_task_eval/76_soup_serving/Inv/summary.json",
+                "summarySha256": "b8adf8aa0b9b4ed5b3e1e149e765ae45411db0534f67c7969aceefb901884982"
+              }
+            },
+            "None": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 13,
+              "lscr": 63.5,
+              "source": {
+                "runId": "gr00t_none_1113_2055_hand",
+                "perEpisodeFile": "per_task_eval/76_soup_serving/None/per_episode.jsonl",
+                "perEpisodeSha256": "2e238051946943b2b964815a1e79a4e7ec7648df706b2426a4d5a906f1a4bb75",
+                "summaryFile": "per_task_eval/76_soup_serving/None/summary.json",
+                "summarySha256": "d7bc9f0b04187649788d3da4c3620932efbf0df5c56b6e4fddc55205937903df"
+              }
+            }
+          },
+          "mean": {
+            "status": "reported",
+            "srScope": "four-channel-mean",
+            "lscrScope": "four-channel-mean",
+            "sr": 33.5,
+            "lscr": 68.0,
+            "efficiency": 1.0283783994147018,
+            "efficiencyStatus": "reported",
+            "srEpisodes": 200,
+            "lscrEpisodes": 200
+          }
+        },
+        "79": {
+          "channels": {
+            "Equi.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 45,
+              "lscr": 95.0,
+              "source": {
+                "runId": "gr00t_cov_only_1118_1533_xarm7_with_ability",
+                "perEpisodeFile": "per_task_eval/79_bimanual_piano_melody/Equi/per_episode.jsonl",
+                "perEpisodeSha256": "576cffbac12838fd8e2a11329b9c2a0bd18d239eeb759f7be4271a4da73f037d",
+                "summaryFile": "per_task_eval/79_bimanual_piano_melody/Equi/summary.json",
+                "summarySha256": "7508ed073b374c5b49c3fc2000c6adb8c24f97c2be014fb4937ce408f30ba703"
+              }
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 44,
+              "lscr": 94.0,
+              "source": {
+                "runId": "gr00t_inv_cov_1118_0559_xarm7_with_ability",
+                "perEpisodeFile": "per_task_eval/79_bimanual_piano_melody/Full/per_episode.jsonl",
+                "perEpisodeSha256": "247bff93c842315a92ed3fe14ae8be2f83725b5cfb7af2b7c394b43a1dffb97b",
+                "summaryFile": "per_task_eval/79_bimanual_piano_melody/Full/summary.json",
+                "summarySha256": "7f11adf46f5f56f4709a761bf2649d2ec29e350b56a2d0e1904a493db29b99c0"
+              }
+            },
+            "Inv.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 46,
+              "lscr": 95.0,
+              "source": {
+                "runId": "gr00t_inv_only_1118_0531_xarm7_with_ability",
+                "perEpisodeFile": "per_task_eval/79_bimanual_piano_melody/Inv/per_episode.jsonl",
+                "perEpisodeSha256": "78486953d791d39625470cbcd64edc058c28dedd200946b1d39abd0b17dbb93a",
+                "summaryFile": "per_task_eval/79_bimanual_piano_melody/Inv/summary.json",
+                "summarySha256": "1086e857efa5f3783087a1de16d361338aed3a2f22ffb8bfdae5a416f57c98cd"
+              }
+            },
+            "None": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 43,
+              "lscr": 92.0,
+              "source": {
+                "runId": "gr00t_none_1118_1533_xarm7_with_ability",
+                "perEpisodeFile": "per_task_eval/79_bimanual_piano_melody/None/per_episode.jsonl",
+                "perEpisodeSha256": "93db5d87fab6c3ea713ec56388ff632b6a012f63e5011e0c582af2fb7f41fbd0",
+                "summaryFile": "per_task_eval/79_bimanual_piano_melody/None/summary.json",
+                "summarySha256": "4a012eb6cf6a0f915ab71f4dc3d20a465579bf08f25b06310f0069fc7df7e4ca"
+              }
+            }
+          },
+          "mean": {
+            "status": "reported",
+            "srScope": "four-channel-mean",
+            "lscrScope": "four-channel-mean",
+            "sr": 89.0,
+            "lscr": 94.0,
+            "efficiency": 0.9740062513559319,
+            "efficiencyStatus": "reported",
+            "srEpisodes": 200,
+            "lscrEpisodes": 200
+          }
+        },
+        "80": {
+          "channels": {
+            "Equi.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 36,
+              "lscr": 78.0,
+              "source": {
+                "runId": "gr00t_cov_only_1113_2056_zu7_dexhand021",
+                "perEpisodeFile": "per_task_eval/80_gaming_desk_setup/Equi/per_episode.jsonl",
+                "perEpisodeSha256": "2fcd7fa0dd51023857c88cfb39f70599bcf3f73b8f7e32350e0f7fdbbe0ab49e",
+                "summaryFile": "per_task_eval/80_gaming_desk_setup/Equi/summary.json",
+                "summarySha256": "d9602c7efab902bc0fdcfcbd2fcc12e0c86aaa5cc838efd7c05450ec6adbd29f"
+              }
+            },
+            "Full": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 35,
+              "lscr": 80.66666666666666,
+              "source": {
+                "runId": "gr00t_inv_cov_1113_0326_jaka_zu7_dexhand021",
+                "perEpisodeFile": "per_task_eval/80_gaming_desk_setup/Full/per_episode.jsonl",
+                "perEpisodeSha256": "1cbcf51691a6a9e341450dc4fecda9e3386c48873127795bb8f3fcf7caf3e095",
+                "summaryFile": "per_task_eval/80_gaming_desk_setup/Full/summary.json",
+                "summarySha256": "c6d5569671fa9a82e4e9eed7a877c9b1b8083ae308a8a15c1c46409fb221a60c"
+              }
+            },
+            "Inv.": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 32,
+              "lscr": 76.0,
+              "source": {
+                "runId": "gr00t_inv_only_1113_0903_jaka_zu7_dexhand021",
+                "perEpisodeFile": "per_task_eval/80_gaming_desk_setup/Inv/per_episode.jsonl",
+                "perEpisodeSha256": "b9e9f3aee522fe69268ab4854d0ebb4d9b01e7f82fa044c3f5110f690d73f183",
+                "summaryFile": "per_task_eval/80_gaming_desk_setup/Inv/summary.json",
+                "summarySha256": "0bdc51d7ab96973713b5bed4b83ba8b2c7fbe4452a9c51d0603502b3beaac47c"
+              }
+            },
+            "None": {
+              "status": "reported",
+              "episodes": 50,
+              "successes": 39,
+              "lscr": 82.66666666666667,
+              "source": {
+                "runId": "gr00t_none_1112_0404_jaka_zu7_dexhand021",
+                "perEpisodeFile": "per_task_eval/80_gaming_desk_setup/None/per_episode.jsonl",
+                "perEpisodeSha256": "5a5410dbbeb41c445697359c44769976947a5e372a519e08a95a64dda264e239",
+                "summaryFile": "per_task_eval/80_gaming_desk_setup/None/summary.json",
+                "summarySha256": "3277473f94f28e755aa9e7d0f818288c53a492dfbc56be6e3f00bf7f284368ec"
+              }
+            }
+          },
+          "mean": {
+            "status": "reported",
+            "srScope": "four-channel-mean",
+            "lscrScope": "four-channel-mean",
+            "sr": 71.0,
+            "lscr": 79.33333333333334,
+            "efficiency": 1.0469826218430802,
+            "efficiencyStatus": "reported",
+            "srEpisodes": 200,
+            "lscrEpisodes": 200
+          }
+        }
+      },
+      "evaluation": {
+        "schemaVersion": "1.0",
+        "isTemplate": false,
+        "protocol": {
+          "benchmarkCommit": "cf83e869e722c67f032d7db17ad0e628e248eee4",
+          "taskCount": 26,
+          "channels": [
+            "None",
+            "Equi.",
+            "Inv.",
+            "Full"
+          ],
+          "episodesPerChannel": 50,
+          "metricSchemaVersion": "core-v1.8-policy-step-query-split",
+          "seeds": {
+            "03": {
+              "None": {
+                "base": 100300000,
+                "first": 1,
+                "last": 50
+              },
+              "Equi.": {
+                "base": 100300000,
+                "first": 1,
+                "last": 50
+              },
+              "Inv.": {
+                "base": 100300000,
+                "first": 1,
+                "last": 50
+              },
+              "Full": {
+                "base": 200300000,
+                "first": 1,
+                "last": 50
+              }
+            },
+            "06": {
+              "None": {
+                "base": 100600000,
+                "first": 1,
+                "last": 50
+              },
+              "Equi.": {
+                "base": 100600000,
+                "first": 1,
+                "last": 50
+              },
+              "Inv.": {
+                "base": 100600000,
+                "first": 1,
+                "last": 50
+              },
+              "Full": {
+                "base": 200600000,
+                "first": 1,
+                "last": 50
+              }
+            },
+            "07": {
+              "None": {
+                "base": 100700000,
+                "first": 1,
+                "last": 50
+              },
+              "Equi.": {
+                "base": 100700000,
+                "first": 1,
+                "last": 50
+              },
+              "Inv.": {
+                "base": 100700000,
+                "first": 1,
+                "last": 50
+              },
+              "Full": {
+                "base": 200700000,
+                "first": 1,
+                "last": 50
+              }
+            },
+            "08": {
+              "None": {
+                "base": 100800000,
+                "first": 1,
+                "last": 50
+              },
+              "Equi.": {
+                "base": 100800000,
+                "first": 1,
+                "last": 50
+              },
+              "Inv.": {
+                "base": 100800000,
+                "first": 1,
+                "last": 50
+              },
+              "Full": {
+                "base": 200800000,
+                "first": 1,
+                "last": 50
+              }
+            },
+            "09": {
+              "None": {
+                "base": 100900000,
+                "first": 1,
+                "last": 50
+              },
+              "Equi.": {
+                "base": 100900000,
+                "first": 1,
+                "last": 50
+              },
+              "Inv.": {
+                "base": 100900000,
+                "first": 1,
+                "last": 50
+              },
+              "Full": {
+                "base": 200900000,
+                "first": 1,
+                "last": 50
+              }
+            },
+            "12": {
+              "None": {
+                "base": 101200000,
+                "first": 1,
+                "last": 50
+              },
+              "Equi.": {
+                "base": 101200000,
+                "first": 1,
+                "last": 50
+              },
+              "Inv.": {
+                "base": 101200000,
+                "first": 1,
+                "last": 50
+              },
+              "Full": {
+                "base": 201200000,
+                "first": 1,
+                "last": 50
+              }
+            },
+            "21": {
+              "None": {
+                "base": 102100000,
+                "first": 1,
+                "last": 50
+              },
+              "Equi.": {
+                "base": 102100000,
+                "first": 1,
+                "last": 50
+              },
+              "Inv.": {
+                "base": 102100000,
+                "first": 1,
+                "last": 50
+              },
+              "Full": {
+                "base": 202100000,
+                "first": 1,
+                "last": 50
+              }
+            },
+            "22": {
+              "None": {
+                "base": 102200000,
+                "first": 1,
+                "last": 50
+              },
+              "Equi.": {
+                "base": 102200000,
+                "first": 1,
+                "last": 50
+              },
+              "Inv.": {
+                "base": 102200000,
+                "first": 1,
+                "last": 50
+              },
+              "Full": {
+                "base": 202200000,
+                "first": 1,
+                "last": 50
+              }
+            },
+            "24": {
+              "None": {
+                "base": 102400000,
+                "first": 1,
+                "last": 50
+              },
+              "Equi.": {
+                "base": 102400000,
+                "first": 1,
+                "last": 50
+              },
+              "Inv.": {
+                "base": 102400000,
+                "first": 1,
+                "last": 50
+              },
+              "Full": {
+                "base": 202400000,
+                "first": 1,
+                "last": 50
+              }
+            },
+            "26": {
+              "None": {
+                "base": 102600000,
+                "first": 1,
+                "last": 50
+              },
+              "Equi.": {
+                "base": 102600000,
+                "first": 1,
+                "last": 50
+              },
+              "Inv.": {
+                "base": 102600000,
+                "first": 1,
+                "last": 50
+              },
+              "Full": {
+                "base": 202600000,
+                "first": 1,
+                "last": 50
+              }
+            },
+            "27": {
+              "None": {
+                "base": 102700000,
+                "first": 1,
+                "last": 50
+              },
+              "Equi.": {
+                "base": 102700000,
+                "first": 1,
+                "last": 50
+              },
+              "Inv.": {
+                "base": 102700000,
+                "first": 1,
+                "last": 50
+              },
+              "Full": {
+                "base": 202700000,
+                "first": 1,
+                "last": 50
+              }
+            },
+            "32": {
+              "None": {
+                "base": 103200000,
+                "first": 1,
+                "last": 50
+              },
+              "Equi.": {
+                "base": 103200000,
+                "first": 1,
+                "last": 50
+              },
+              "Inv.": {
+                "base": 103200000,
+                "first": 1,
+                "last": 50
+              },
+              "Full": {
+                "base": 203200000,
+                "first": 1,
+                "last": 50
+              }
+            },
+            "34": {
+              "None": {
+                "base": 103400000,
+                "first": 1,
+                "last": 50
+              },
+              "Equi.": {
+                "base": 103400000,
+                "first": 1,
+                "last": 50
+              },
+              "Inv.": {
+                "base": 103400000,
+                "first": 1,
+                "last": 50
+              },
+              "Full": {
+                "base": 203400000,
+                "first": 1,
+                "last": 50
+              }
+            },
+            "42": {
+              "None": {
+                "base": 104200000,
+                "first": 1,
+                "last": 50
+              },
+              "Equi.": {
+                "base": 104200000,
+                "first": 1,
+                "last": 50
+              },
+              "Inv.": {
+                "base": 104200000,
+                "first": 1,
+                "last": 50
+              },
+              "Full": {
+                "base": 204200000,
+                "first": 1,
+                "last": 50
+              }
+            },
+            "43": {
+              "None": {
+                "base": 104300000,
+                "first": 1,
+                "last": 50
+              },
+              "Equi.": {
+                "base": 104300000,
+                "first": 1,
+                "last": 50
+              },
+              "Inv.": {
+                "base": 104300000,
+                "first": 1,
+                "last": 50
+              },
+              "Full": {
+                "base": 204300000,
+                "first": 1,
+                "last": 50
+              }
+            },
+            "44": {
+              "None": {
+                "base": 104400000,
+                "first": 1,
+                "last": 50
+              },
+              "Equi.": {
+                "base": 104400000,
+                "first": 1,
+                "last": 50
+              },
+              "Inv.": {
+                "base": 104400000,
+                "first": 1,
+                "last": 50
+              },
+              "Full": {
+                "base": 204400000,
+                "first": 1,
+                "last": 50
+              }
+            },
+            "51": {
+              "None": {
+                "base": 105100000,
+                "first": 1,
+                "last": 50
+              },
+              "Equi.": {
+                "base": 105100000,
+                "first": 1,
+                "last": 50
+              },
+              "Inv.": {
+                "base": 105100000,
+                "first": 1,
+                "last": 50
+              },
+              "Full": {
+                "base": 205100000,
+                "first": 1,
+                "last": 50
+              }
+            },
+            "60": {
+              "None": {
+                "base": 106000000,
+                "first": 1,
+                "last": 50
+              },
+              "Equi.": {
+                "base": 106000000,
+                "first": 1,
+                "last": 50
+              },
+              "Inv.": {
+                "base": 106000000,
+                "first": 1,
+                "last": 50
+              },
+              "Full": {
+                "base": 206000000,
+                "first": 1,
+                "last": 50
+              }
+            },
+            "61": {
+              "None": {
+                "base": 106100000,
+                "first": 1,
+                "last": 50
+              },
+              "Equi.": {
+                "base": 106100000,
+                "first": 1,
+                "last": 50
+              },
+              "Inv.": {
+                "base": 106100000,
+                "first": 1,
+                "last": 50
+              },
+              "Full": {
+                "base": 206100000,
+                "first": 1,
+                "last": 50
+              }
+            },
+            "62": {
+              "None": {
+                "base": 106200000,
+                "first": 1,
+                "last": 50
+              },
+              "Equi.": {
+                "base": 106200000,
+                "first": 1,
+                "last": 50
+              },
+              "Inv.": {
+                "base": 106200000,
+                "first": 1,
+                "last": 50
+              },
+              "Full": {
+                "base": 206200000,
+                "first": 1,
+                "last": 50
+              }
+            },
+            "64": {
+              "None": {
+                "base": 106400000,
+                "first": 1,
+                "last": 50
+              },
+              "Equi.": {
+                "base": 106400000,
+                "first": 1,
+                "last": 50
+              },
+              "Inv.": {
+                "base": 106400000,
+                "first": 1,
+                "last": 50
+              },
+              "Full": {
+                "base": 206400000,
+                "first": 1,
+                "last": 50
+              }
+            },
+            "67": {
+              "None": {
+                "base": 106700000,
+                "first": 1,
+                "last": 50
+              },
+              "Equi.": {
+                "base": 106700000,
+                "first": 1,
+                "last": 50
+              },
+              "Inv.": {
+                "base": 106700000,
+                "first": 1,
+                "last": 50
+              },
+              "Full": {
+                "base": 206700000,
+                "first": 1,
+                "last": 50
+              }
+            },
+            "73": {
+              "None": {
+                "base": 107300000,
+                "first": 1,
+                "last": 50
+              },
+              "Equi.": {
+                "base": 107300000,
+                "first": 1,
+                "last": 50
+              },
+              "Inv.": {
+                "base": 107300000,
+                "first": 1,
+                "last": 50
+              },
+              "Full": {
+                "base": 207300000,
+                "first": 1,
+                "last": 50
+              }
+            },
+            "76": {
+              "None": {
+                "base": 107600000,
+                "first": 1,
+                "last": 50
+              },
+              "Equi.": {
+                "base": 107600000,
+                "first": 1,
+                "last": 50
+              },
+              "Inv.": {
+                "base": 107600000,
+                "first": 1,
+                "last": 50
+              },
+              "Full": {
+                "base": 207600000,
+                "first": 1,
+                "last": 50
+              }
+            },
+            "79": {
+              "None": {
+                "base": 107900000,
+                "first": 1,
+                "last": 50
+              },
+              "Equi.": {
+                "base": 107900000,
+                "first": 1,
+                "last": 50
+              },
+              "Inv.": {
+                "base": 107900000,
+                "first": 1,
+                "last": 50
+              },
+              "Full": {
+                "base": 207900000,
+                "first": 1,
+                "last": 50
+              }
+            },
+            "80": {
+              "None": {
+                "base": 108000000,
+                "first": 1,
+                "last": 50
+              },
+              "Equi.": {
+                "base": 108000000,
+                "first": 1,
+                "last": 50
+              },
+              "Inv.": {
+                "base": 108000000,
+                "first": 1,
+                "last": 50
+              },
+              "Full": {
+                "base": 208000000,
+                "first": 1,
+                "last": 50
+              }
+            }
+          },
+          "generalizationSplit": "unseen",
+          "stepUnit": "physics_steps",
+          "physicsHz": 60,
+          "controlHz": 20,
+          "physicsStepsPerPolicyAction": 3,
+          "executionStepBudget": {
+            "03": {
+              "None": 3246,
+              "Equi.": 3246,
+              "Inv.": 3246,
+              "Full": 3246
+            },
+            "06": {
+              "None": 1920,
+              "Equi.": 1920,
+              "Inv.": 1920,
+              "Full": 1920
+            },
+            "07": {
+              "None": 1806,
+              "Equi.": 1806,
+              "Inv.": 1806,
+              "Full": 1806
+            },
+            "08": {
+              "None": 3432,
+              "Equi.": 3432,
+              "Inv.": 3432,
+              "Full": 3432
+            },
+            "09": {
+              "None": 1926,
+              "Equi.": 1926,
+              "Inv.": 1926,
+              "Full": 1926
+            },
+            "12": {
+              "None": 3447,
+              "Equi.": 3447,
+              "Inv.": 3447,
+              "Full": 3447
+            },
+            "21": {
+              "None": 2481,
+              "Equi.": 2481,
+              "Inv.": 2481,
+              "Full": 2481
+            },
+            "22": {
+              "None": 2043,
+              "Equi.": 2043,
+              "Inv.": 2043,
+              "Full": 2043
+            },
+            "24": {
+              "None": 4626,
+              "Equi.": 4626,
+              "Inv.": 4626,
+              "Full": 4626
+            },
+            "26": {
+              "None": 2613,
+              "Equi.": 2613,
+              "Inv.": 2613,
+              "Full": 2613
+            },
+            "27": {
+              "None": 3570,
+              "Equi.": 3570,
+              "Inv.": 3570,
+              "Full": 3570
+            },
+            "32": {
+              "None": 2556,
+              "Equi.": 2556,
+              "Inv.": 2556,
+              "Full": 2556
+            },
+            "34": {
+              "None": 3240,
+              "Equi.": 3240,
+              "Inv.": 3240,
+              "Full": 3240
+            },
+            "42": {
+              "None": 2004,
+              "Equi.": 2004,
+              "Inv.": 2004,
+              "Full": 2004
+            },
+            "43": {
+              "None": 4125,
+              "Equi.": 4125,
+              "Inv.": 4125,
+              "Full": 4125
+            },
+            "44": {
+              "None": 3183,
+              "Equi.": 3183,
+              "Inv.": 3183,
+              "Full": 3183
+            },
+            "51": {
+              "None": 3069,
+              "Equi.": 3069,
+              "Inv.": 3069,
+              "Full": 3069
+            },
+            "60": {
+              "None": 2985,
+              "Equi.": 2985,
+              "Inv.": 2985,
+              "Full": 2985
+            },
+            "61": {
+              "None": 3102,
+              "Equi.": 3102,
+              "Inv.": 3102,
+              "Full": 3102
+            },
+            "62": {
+              "None": 3231,
+              "Equi.": 3231,
+              "Inv.": 3231,
+              "Full": 3231
+            },
+            "64": {
+              "None": 1995,
+              "Equi.": 1995,
+              "Inv.": 1995,
+              "Full": 1995
+            },
+            "67": {
+              "None": 2892,
+              "Equi.": 2892,
+              "Inv.": 2892,
+              "Full": 2892
+            },
+            "73": {
+              "None": 3639,
+              "Equi.": 3639,
+              "Inv.": 3639,
+              "Full": 3639
+            },
+            "76": {
+              "None": 2958,
+              "Equi.": 2958,
+              "Inv.": 2958,
+              "Full": 2958
+            },
+            "79": {
+              "None": 2043,
+              "Equi.": 2043,
+              "Inv.": 2043,
+              "Full": 2043
+            },
+            "80": {
+              "None": 1779,
+              "Equi.": 1779,
+              "Inv.": 1779,
+              "Full": 1779
+            }
+          },
+          "successDwellTimeSByTask": {
+            "03": 0.5,
+            "06": 0.5,
+            "07": 0.5,
+            "08": 0.5,
+            "09": 0.5,
+            "12": 0.5,
+            "21": 0.5,
+            "22": 0.5,
+            "24": 0.5,
+            "26": 0.5,
+            "27": 0.5,
+            "32": 0.5,
+            "34": 0.5,
+            "42": 0.5,
+            "43": 0.5,
+            "44": 0.5,
+            "51": 0.5,
+            "60": 0.5,
+            "61": 0.5,
+            "62": 0.5,
+            "64": 0.5,
+            "67": 3.0,
+            "73": 0.5,
+            "76": 0.5,
+            "79": 0.5,
+            "80": 0.5
+          },
+          "successProtocol": "reach_and_stop",
+          "predictionHorizon": 32,
+          "executionHorizon": 32,
+          "denoiseSteps": 10,
+          "flowSteps": null,
+          "cfg": 1,
+          "expertReference": "Native per-episode expert_time_step, in physics steps.",
+          "protocolChanges": "UniTacWAM policy server + Bench2Dex policy bridge (absolute EEF targets in robot base -> IK). One checkpoint for all 26 tasks. IK: default bridge IK on 15 tasks; on the 11 tasks with 7-DoF arms (03 09 22 26 32 51 61 62 64 73 79) the bridge IK runs in a GWP-style mode (joint-limit preference + re-solve on large joint jumps). Native physics budgets, seeds and stable-success dwell recorded in logs. Episodes interrupted by infrastructure were resumed with the same seeds; no scored episode replaced; all failures kept in the denominators."
+        },
+        "coverage": {
+          "evaluatedTaskCount": 26,
+          "evaluatedEpisodeCount": 5200,
+          "completedTaskCount": {
+            "None": 26,
+            "Equi.": 26,
+            "Inv.": 26,
+            "Full": 26,
+            "mean": 26
+          },
+          "expectedFullEpisodeCount": 1300,
+          "expectedFourChannelEpisodeCount": 5200,
+          "missingTaskChannels": {}
+        },
+        "aggregation": {
+          "units": {
+            "sr": "percent",
+            "lscr": "percent",
+            "efficiency": "ratio",
+            "steps": "physics_steps"
+          },
+          "sr": "100 * successes / episodes per task/channel; equal channel mean per task; equal task mean over all 26 tasks.",
+          "lscr": "100 * mean native latched_stage_completion_rate including failures; equal channel and task means.",
+          "efficiency": "Per task, expert time divided by mean time_to_stable_success pooled over successful episodes from all four channels. Overall is the mean of valid task efficiencies.",
+          "errors": "5200 episodes, 3403 successes, 0 error episodes; episodes with errors would count as failures.",
+          "missing": "null means unreported (NR). Efficiency without successes is null with no-success status. Valid-task counts are null when unreported, and 0 for an evaluated scope without successes.",
+          "scope": "Overall channel aggregates require all 26 settings. Four-channel means require all four channels. Never substitute Full-only scores for means or include duplicate reruns."
+        },
+        "logs": {
+          "repository": "Bench2Dex/Leaderboard",
+          "policyPath": "unitacwam-v1",
+          "revision": "1019ae29f46f2745f54ccf7ca8b6be6b0e9b5953",
+          "status": "archived"
+        },
+        "publishedAt": "2026-11-23",
+        "checkpoint": {
+          "epoch": 5,
+          "step": 25738,
+          "sha256": "523a5976a7a2449556f063ce840e33aa616091b12c5abb5c5a9fe7fdef68a50f"
+        },
+        "submission": {
+          "githubPullRequestUrl": "https://github.com/Bench2Dex/Bench2Dex-Leaderboard/pull/11",
+          "huggingFacePullRequestUrl": "https://huggingface.co/datasets/Bench2Dex/Leaderboard/discussions/12",
+          "status": "accepted"
+        }
+      }
     }
   ]
 }

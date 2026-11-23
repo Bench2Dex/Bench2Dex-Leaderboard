@@ -34,20 +34,21 @@ test('finite summaries cannot hide incomplete task evidence',()=>{
 });
 test('default composite order, ranks, best cell and table column agree',()=>{
  const R=api(),M=R.model,rows=R.overall.ordered(M.group('standard'),state);
- assert.deepEqual(Array.from(rows.slice(0,12),p=>p.id),['pyrua-dex','me-dex-1-5','gigaworld-policy-06','phoenix-mwa','mora_v0','GR00T_N17_TACTILE','GR00T_N17','PI05','GR00T_N15_TACTILE','GR00T_N15','ACT','DPC']);
+ assert.deepEqual(Array.from(rows.slice(0,13),p=>p.id),['unitacwam-v1','pyrua-dex','me-dex-1-5','gigaworld-policy-06','phoenix-mwa','mora_v0','GR00T_N17_TACTILE','GR00T_N17','PI05','GR00T_N15_TACTILE','GR00T_N15','ACT','DPC']);
  assert.equal(M.aggregateRank('pyrua-dex','score'),null);
- assert.equal(R.overall.rank(rows[0],state),null);
+ assert.equal(R.overall.rank(rows[1],state),null);
  assert.equal(M.taskRank('pyrua-dex','03','sr'),null);
- assert.equal(M.aggregateRank('me-dex-1-5','score'),1);
- assert.equal(R.overall.rank(rows[1],state),1);
- assert.equal(M.aggregateRank('gigaworld-policy-06','score'),2);
- assert.equal(M.aggregateRank('PI05','score'),7);
+ assert.equal(M.aggregateRank('unitacwam-v1','score'),1);
+ assert.equal(R.overall.rank(rows[0],state),1);
+ assert.equal(M.aggregateRank('me-dex-1-5','score'),2);
+ assert.equal(M.aggregateRank('gigaworld-policy-06','score'),3);
+ assert.equal(M.aggregateRank('PI05','score'),8);
  const html=R.overall.markup(rows,state);
  assert.match(html,/<tr data-policy-row="pyrua-dex"><td class="rank-cell"><span class="rank-number" aria-label="Agent track" title="Agent track">—<\/span>/);
  const meDexRow=html.match(/<tr data-policy-row="me-dex-1-5">.*?<\/tr>/)[0];
  assert.match(meDexRow,/<span class="policy-type type-wam" title="World Action Model with visuo-tactile modeling">WAM<\/span>/);
  assert.equal(R.overall.columns.at(-1).id,'score');assert.match(html,/colspan="4" class="summary-group"/);
- assert.match(html,/data-rank-column="score"/);assert.match(html,/<strong class="best-value">72\.89<\/strong>/);
+ assert.match(html,/data-rank-column="score"/);assert.match(html,/<strong class="best-value">76\.89<\/strong>/);
  assert.equal(R.overall.label(state),'Sorted by Score ↓');
  assert.match(R.overall.caption,/0\.45×SR.*0\.45×LSCR.*10×Eff/);
 });

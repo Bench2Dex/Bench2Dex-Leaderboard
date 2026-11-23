@@ -2616,10 +2616,10 @@
   "logs": {
    "repository": "Bench2Dex/Leaderboard",
    "policyPath": "unitacwam-v1",
-   "revision": null,
-   "status": "pending"
+   "revision": "1019ae29f46f2745f54ccf7ca8b6be6b0e9b5953",
+   "status": "archived"
   },
-  "publishedAt": null,
+  "publishedAt": "2026-11-23",
   "checkpoint": {
    "epoch": 5,
    "step": 25738,
@@ -2628,7 +2628,7 @@
   "submission": {
    "githubPullRequestUrl": "https://github.com/Bench2Dex/Bench2Dex-Leaderboard/pull/11",
    "huggingFacePullRequestUrl": "https://huggingface.co/datasets/Bench2Dex/Leaderboard/discussions/12",
-   "status": "submitted"
+   "status": "accepted"
   }
  }
 }
