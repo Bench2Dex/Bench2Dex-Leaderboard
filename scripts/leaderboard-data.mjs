@@ -55,6 +55,7 @@ export function toRuntimeData(registry) {
   for (const entry of registry.policies) {
     const model = structuredClone(entry.model);
     requireValue(typeof model.usesTactile === "boolean", `${model.id}.model.usesTactile must be a boolean`);
+    requireValue(!Object.hasOwn(model, "usesPerTaskCheckpoints") || typeof model.usesPerTaskCheckpoints === "boolean", `${model.id}.model.usesPerTaskCheckpoints must be a boolean`);
     if (model.id === "phoenix-mwa") {
       model.label = model.modelVersion;
       model.variantLabel = "";

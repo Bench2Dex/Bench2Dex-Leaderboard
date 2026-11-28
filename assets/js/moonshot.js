@@ -4,11 +4,14 @@
   const root=document.getElementById("moonshot");if(!root)return;
   const R=window.BenchResults,esc=R.escape,api=R.moonshot,$=id=>document.getElementById(id);
   const frame={width:1200,height:690},start={x:78,y:630},end={x:1088,y:82};
-  const labelHeight=26;
+  const labelHeight=26,logoCenterX=35,logoInset=2,tactileGap=7;
+  const logoSize=rank=>rank===1?30:rank<=3?28:labelHeight;
   const length=Math.hypot(end.x-start.x,end.y-start.y),tangent={x:(end.x-start.x)/length,y:(end.y-start.y)/length};
   const normal={x:-tangent.y,y:tangent.x},angle=Math.atan2(tangent.y,tangent.x)*180/Math.PI;
   const percent=v=>Number.isFinite(v)?`${v.toFixed(1)}%`:"NR",fixed=v=>Number.isFinite(v)?v.toFixed(2):"NR",ratio=v=>Number.isFinite(v)?v.toFixed(3):"NR";
-  const title=p=>R.policyName(p)+(p.variantLabel?" · "+p.variantLabel:"");
+  const variantLabel=p=>p.variantLabel && !/^w\/o? tactile$/i.test(p.variantLabel) ? p.variantLabel : "";
+  const tactileLabel=p=>p.usesTactile===true ? "+ Tactile" : "";
+  const title=p=>[R.policyName(p),variantLabel(p),tactileLabel(p)].filter(Boolean).join(" · ");
   const overlap=(a,b)=>Math.max(0,Math.min(a.x+a.w,b.x+b.w)-Math.max(a.x,b.x))*Math.max(0,Math.min(a.y+a.h,b.y+b.h)-Math.max(a.y,b.y));
   const pad=(b,n)=>({x:b.x-n,y:b.y-n,w:b.w+2*n,h:b.h+2*n});
   let current=null,geometry=null,groupKey="",trackKey="policy",scopeKey="all",activeId=null;
@@ -33,23 +36,26 @@
     return Math.max(0,(lower+rocket.noseY+margin)/(normal.y-slope*normal.x));
   }
   function layout(entries,viewport=1200,policyScope="all"){
-    const preferVertical=policyScope==="without-tactile";
+    const preferVertical=policyScope==="without-tactile"||policyScope==="tactile";
     // Scores use a 0–100 reference scale; faster-than-expert results stay uncapped.
     const maximum=Math.max(100,Math.ceil((entries[0]?.score||0)/10)*10);
     const point=score=>({x:start.x+(end.x-start.x)*score/maximum,y:start.y+(end.y-start.y)*score/maximum});
-    const points=entries.map(e=>({...e,...point(e.score),variant:e.policy.variantLabel==="w/ Tactile"?" + Tactile":e.policy.variantLabel&&e.policy.variantLabel!=="w/o Tactile"?" "+e.policy.variantLabel:""}));
+    const points=entries.map(e=>({...e,...point(e.score),variant:variantLabel(e.policy),tactile:tactileLabel(e.policy)}));
     const rocket=points.length?rocketAt(points[0]):null;
     const initialScale=Math.min(1,Math.max(.96,frame.width/Math.max(320,viewport)*.85));
     const axisSlope=tangent.y/tangent.x,connectorSlopes=[0,-normal.x/normal.y];
     let placed=[];
     for(let attempt=0;attempt<16;attempt++){
-      const scale=initialScale*.94**attempt,gap=1.5*scale,h=labelHeight*scale;
+      const scale=initialScale*.94**attempt,gap=1.5*scale;
       placed=[];
-      // Place lower ranks first. Vision-Only tries the vertical ray before the perpendicular one.
+      // Place lower ranks first. Modality views try the vertical ray before the perpendicular one.
       for(const p of [...points].reverse()){
         const below=placed.at(-1)?.box;
-        const w=(66+R.policyName(p.policy).length*6.8+p.variant.length*5.3)*scale;
-        const logoOffset=35*scale,xAtPoint=p.x-logoOffset;
+        const h=logoSize(p.rank)*scale,nameCharWidth=p.rank<=3?7.35:6.8;
+        const nameWidth=R.policyName(p.policy).length*nameCharWidth+(p.variant ? (p.variant.length+1)*5.3 : 0);
+        const scoreWidth=p.tactile ? fixed(p.score).length*6+tactileGap+p.tactile.length*5.3 : 0;
+        const w=(66+Math.max(nameWidth,scoreWidth))*scale;
+        const logoOffset=logoCenterX*scale,xAtPoint=p.x-logoOffset;
         const minX=below?.x??14,maxX=frame.width-14-w;
         const obstacles=placed.map(label=>pad(label.box,gap));
         let best;
@@ -85,7 +91,7 @@
       break;
     }
     for(const p of placed){
-      p.logo={x:p.box.x+35*p.scale,y:p.box.y+p.box.h/2};
+      p.logo={x:p.box.x+logoCenterX*p.scale,y:p.box.y+p.box.h/2};
       p.anchor={x:p.logo.x,y:p.box.y+p.box.h};
     }
     return {labels:placed,points,rocket,maximum,point};
@@ -98,7 +104,20 @@
       return `<g class="moonshot-score-tick"><line x1="${p.x-nx*5}" y1="${p.y-ny*5}" x2="${p.x+nx*5}" y2="${p.y+ny*5}"/><text x="${p.x+nx*21}" y="${p.y+ny*21+4}" text-anchor="middle">${value.toFixed(0)}</text></g>`;
     }).join("");
     const links=labels.map(p=>`<path class="moonshot-connector" data-link-policy="${esc(p.policy.id)}" d="M ${p.x} ${p.y} L ${p.anchor.x} ${p.anchor.y}"/>`).join("");
-    const callouts=labels.map(p=>`<g class="moonshot-label${p.rank<=3?" is-podium":""}${p.rank===1?" is-leading":""}" data-plot-policy="${esc(p.policy.id)}" data-rank="${p.rank}" data-score="${p.score}" data-score-x="${p.x}" data-score-y="${p.y}" data-label-x="${p.box.x}" data-label-y="${p.box.y}" data-label-width="${p.box.w}" data-label-height="${p.box.h}" transform="translate(${p.box.x} ${p.box.y}) scale(${p.scale})"><a href="${esc(p.policy.modelUrl)}" target="_blank" rel="noopener noreferrer" aria-label="Rank ${p.rank}. ${esc(title(p.policy))}: Score ${fixed(p.score)}. Open model website."><rect class="label-hit" width="${p.box.w/p.scale}" height="${labelHeight}"/><text class="label-rank" x="8" y="17" text-anchor="middle">#${p.rank}</text><rect class="label-logo-bg" x="22" y="0" width="26" height="26" rx="7"/><image class="label-logo-image" href="${esc(p.policy.logoPath)}" x="24" y="2" width="22" height="22"/><text class="label-name" x="55" y="10">${esc(R.policyName(p.policy))}${p.variant?`<tspan class="label-variant">${esc(p.variant)}</tspan>`:""}</text><text class="label-score" x="55" y="23">${fixed(p.score)}</text></a></g>`).join("");
+    const callouts=labels.map(p=>{
+      const size=logoSize(p.rank),x=logoCenterX-size/2,textOffset=(size-labelHeight)/2;
+      const classes="moonshot-label"+(p.rank<=3?" is-podium":"")+(p.rank===1?" is-leading":"");
+      return `<g class="${classes}" data-plot-policy="${esc(p.policy.id)}" data-rank="${p.rank}" data-score="${p.score}" data-score-x="${p.x}" data-score-y="${p.y}" data-label-x="${p.box.x}" data-label-y="${p.box.y}" data-label-width="${p.box.w}" data-label-height="${p.box.h}" transform="translate(${p.box.x} ${p.box.y}) scale(${p.scale})">
+        <a href="${esc(p.policy.modelUrl)}" target="_blank" rel="noopener noreferrer" aria-label="Rank ${p.rank}. ${esc(title(p.policy))}: Score ${fixed(p.score)}. Open model website.">
+          <rect class="label-hit" width="${p.box.w/p.scale}" height="${size}"/>
+          <text class="label-rank" x="8" y="${17+textOffset}" text-anchor="middle">#${p.rank}</text>
+          <rect class="label-logo-bg" x="${x}" y="0" width="${size}" height="${size}" rx="7"/>
+          <image class="label-logo-image" href="${esc(p.policy.logoPath)}" x="${x+logoInset}" y="${logoInset}" width="${size-2*logoInset}" height="${size-2*logoInset}"/>
+          <text class="label-name" x="55" y="${10+textOffset}">${esc(R.policyName(p.policy))}${p.variant?`<tspan class="label-variant"> ${esc(p.variant)}</tspan>`:""}</text>
+          <text class="label-score" x="55" y="${23+textOffset}">${fixed(p.score)}${p.tactile?`<tspan class="label-variant label-tactile" dx="${tactileGap}"> ${esc(p.tactile)}</tspan>`:""}</text>
+        </a>
+      </g>`;
+    }).join("");
     const markers=points.map(p=>`<g class="moonshot-point${p.rank<=3?" is-podium":""}" data-plot-policy="${esc(p.policy.id)}"><circle cx="${p.x}" cy="${p.y}" r="3"/></g>`).join("");
     const flight=rocket?`<path class="moonshot-path" d="M ${start.x} ${start.y} L ${rocket.x} ${rocket.y}"/><path class="moonshot-path-future" d="M ${rocket.x} ${rocket.y} L ${end.x} ${end.y}"/>`:"";
     const ship=rocket?`<g class="moonshot-rocket" data-rocket-policy="${esc(points[0].policy.id)}" data-rocket-score="${points[0].score}" data-rocket-anchor="nose" data-rocket-x="${rocket.x}" data-rocket-y="${rocket.y}" transform="translate(${rocket.x} ${rocket.y}) rotate(${angle})" role="img" aria-label="Rocket nose marks the highest eligible Score"><image href="assets/img/moonshot-rocket-premium.webp" x="${-rocket.width}" y="${-rocket.noseY}" width="${rocket.width}" height="${rocket.height}"/></g>`:"";
@@ -145,7 +164,8 @@
     const unplotted=$("moonshot-unplotted");unplotted.hidden=!reports.length;
     const cards=reports.map(e=>{
       const fullOnly=e.sr===null && e.fullSr!==null,scope=fullOnly?"Full":"Mean",sr=fullOnly?e.fullSr:e.sr,lscr=fullOnly?e.fullLscr:e.lscr;
-      return `<article class="moonshot-incomplete" data-report-policy="${esc(e.policy.id)}" aria-label="${esc(title(e.policy))}"><img src="${esc(e.policy.logoPath)}" alt="" width="32" height="32"><a href="${esc(e.policy.modelUrl)}" target="_blank" rel="noopener noreferrer">${esc(R.policyName(e.policy))} <span class="incomplete-variant">${esc(e.policy.variantLabel||"")}</span></a><div class="incomplete-metrics"><span class="incomplete-value">${scope} SR<strong>${percent(sr)}</strong></span>${lscr!==null?`<span class="incomplete-value">${scope} LSCR<strong>${percent(lscr)}</strong></span>`:""}</div></article>`;
+      const details=[variantLabel(e.policy),tactileLabel(e.policy)].filter(Boolean).join(" · ");
+      return `<article class="moonshot-incomplete" data-report-policy="${esc(e.policy.id)}" aria-label="${esc(title(e.policy))}"><img src="${esc(e.policy.logoPath)}" alt="" width="32" height="32"><a href="${esc(e.policy.modelUrl)}" target="_blank" rel="noopener noreferrer">${esc(R.policyName(e.policy))} <span class="incomplete-variant">${esc(details)}</span></a><div class="incomplete-metrics"><span class="incomplete-value">${scope} SR<strong>${percent(sr)}</strong></span>${lscr!==null?`<span class="incomplete-value">${scope} LSCR<strong>${percent(lscr)}</strong></span>`:""}</div></article>`;
     }).join("");
     unplotted.innerHTML=`<div class="moonshot-unplotted-intro"><h3>Unranked reports</h3><p>Score: NR</p></div><div class="moonshot-unplotted-models">${cards}</div>`;
     $("moonshot-coverage").textContent=`${current.plotted.length} ranked · ${current.totalTasks} tasks`;

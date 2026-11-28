@@ -101,20 +101,22 @@ class SourceTests(unittest.TestCase):
         audit.submission(self.github, self.registry, self.hf)
         self.assertEqual(audit.errors, [])
 
-    def test_accepts_tactile_metadata_added_after_the_hf_copy_was_archived(self):
-        self.policy['model']['usesTactile'] = False
+    def test_accepts_leaderboard_declarations_added_after_the_hf_copy_was_archived(self):
+        self.policy['model'].update(usesTactile=False, usesPerTaskCheckpoints=True)
         self.policy['evaluation']['logs']['status'] = 'archived'
         self.save(self.github, self.policy)
         audit = Audit()
         audit.submission(self.github, self.registry, self.hf)
         self.assertEqual(audit.errors, [])
 
-        changed = copy.deepcopy(self.policy)
-        changed['model']['usesTactile'] = True
-        self.save(self.logs, changed)
-        audit = Audit()
-        audit.submission(self.github, self.registry, self.hf)
-        self.assertTrue(any('GitHub/HF model differs' in error for error in audit.errors))
+        for field in ['usesTactile', 'usesPerTaskCheckpoints']:
+            with self.subTest(field=field):
+                changed = copy.deepcopy(self.policy)
+                changed['model'][field] = not changed['model'][field]
+                self.save(self.logs, changed)
+                audit = Audit()
+                audit.submission(self.github, self.registry, self.hf)
+                self.assertTrue(any('GitHub/HF model differs' in error for error in audit.errors))
 
     def test_rejects_native_channel_mislabeled_as_full(self):
         self.native_logs(axis='cov')

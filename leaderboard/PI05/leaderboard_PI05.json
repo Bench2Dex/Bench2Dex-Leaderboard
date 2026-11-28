@@ -2,6 +2,7 @@
   "model": {
     "id": "PI05",
     "usesTactile": false,
+    "usesPerTaskCheckpoints": true,
     "label": "π₀.₅",
     "variantLabel": "",
     "family": "PI05",

@@ -104,6 +104,7 @@ test("the submission template fits policies[] directly, retaining percent units 
   assert.deepEqual(Object.keys(policyTemplate), ["model", "overall", "per_task", "evaluation"]);
   assert.equal(policyTemplate.model.id, "policy_template");
   assert.equal(policyTemplate.model.usesTactile, null);
+  assert.equal(policyTemplate.model.usesPerTaskCheckpoints, null);
   assert.deepEqual(Object.keys(policyTemplate.per_task).sort(), registry.tasks.map(task => task.id).sort());
   assert.deepEqual(policyTemplate.evaluation.aggregation.units, { ...registry.units, steps: "physics_steps" });
   assert.equal(policyTemplate.evaluation.isTemplate, true);
@@ -121,6 +122,7 @@ test("the submission template fits policies[] directly, retaining percent units 
   const entry = structuredClone(policyTemplate);
   entry.evaluation.isTemplate = false;
   entry.model.usesTactile = false;
+  entry.model.usesPerTaskCheckpoints = false;
   entry.per_task["03"].channels.Full = {
     status: "reported", episodes: 50, successes: 10, lscr: 60,
     source: { runId: "reviewed-run", perEpisodeFile: "per_task_eval/03_wine_glass_plate_balance/Full/per_episode.jsonl", summaryFile: "per_task_eval/03_wine_glass_plate_balance/Full/summary.json" },
@@ -143,6 +145,19 @@ test("published entries require a boolean tactile declaration", () => {
     entry.model.usesTactile = value;
     assert.throws(() => toRuntimeData(fixture), /ACT.*usesTactile.*boolean/);
   }
+});
+
+test("checkpoint declarations are boolean when present and optional for legacy entries", () => {
+  const fixture = structuredClone(registry);
+  const entry = fixture.policies.find(policy => policy.model.id === "ACT");
+  const checkpointDeclaration = () => toRuntimeData(fixture).EVALUATION_POLICIES.find(policy => policy.id === "ACT").usesPerTaskCheckpoints;
+  assert.equal(checkpointDeclaration(), true);
+  delete entry.model.usesPerTaskCheckpoints;
+  assert.equal(checkpointDeclaration(), undefined);
+  entry.model.usesPerTaskCheckpoints = false;
+  assert.equal(checkpointDeclaration(), false);
+  entry.model.usesPerTaskCheckpoints = "false";
+  assert.throws(checkpointDeclaration, /ACT.*usesPerTaskCheckpoints.*boolean/);
 });
 
 test("unscored policies follow Full SR descending without receiving a mean rank", () => {

@@ -2,6 +2,7 @@
   "model": {
     "id": "ACT",
     "usesTactile": false,
+    "usesPerTaskCheckpoints": true,
     "label": "ACT",
     "variantLabel": "",
     "family": "ACT",

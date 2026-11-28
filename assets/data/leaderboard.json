@@ -237,6 +237,7 @@
       "model": {
         "id": "ACT",
         "usesTactile": false,
+        "usesPerTaskCheckpoints": true,
         "label": "ACT",
         "variantLabel": "",
         "family": "ACT",
@@ -1256,6 +1257,7 @@
       "model": {
         "id": "DPC",
         "usesTactile": false,
+        "usesPerTaskCheckpoints": true,
         "label": "DP",
         "variantLabel": "",
         "family": "DPC",
@@ -2275,6 +2277,7 @@
       "model": {
         "id": "PI05",
         "usesTactile": false,
+        "usesPerTaskCheckpoints": true,
         "label": "π₀.₅",
         "variantLabel": "",
         "family": "PI05",
@@ -3294,6 +3297,7 @@
       "model": {
         "id": "GR00T_N15",
         "usesTactile": false,
+        "usesPerTaskCheckpoints": true,
         "label": "GR00T N1.5 · w/o Tactile",
         "variantLabel": "w/o Tactile",
         "family": "GR00T",
@@ -4313,6 +4317,7 @@
       "model": {
         "id": "GR00T_N15_TACTILE",
         "usesTactile": true,
+        "usesPerTaskCheckpoints": true,
         "label": "GR00T N1.5 · w/ Tactile",
         "variantLabel": "w/ Tactile",
         "family": "GR00T",
@@ -5389,6 +5394,7 @@
       "model": {
         "id": "GR00T_N17",
         "usesTactile": false,
+        "usesPerTaskCheckpoints": true,
         "label": "GR00T N1.7 · w/o Tactile",
         "variantLabel": "w/o Tactile",
         "family": "GR00T",
@@ -6464,6 +6470,7 @@
       "model": {
         "id": "GR00T_N17_TACTILE",
         "usesTactile": true,
+        "usesPerTaskCheckpoints": true,
         "label": "GR00T N1.7 · w/ Tactile",
         "variantLabel": "w/ Tactile",
         "family": "GR00T",
@@ -11065,6 +11072,7 @@
       "model": {
         "id": "mora_v0",
         "usesTactile": false,
+        "usesPerTaskCheckpoints": true,
         "label": "Mora V0",
         "variantLabel": "",
         "family": "Mora",
@@ -13644,6 +13652,7 @@
       "model": {
         "id": "phoenix-mwa",
         "usesTactile": false,
+        "usesPerTaskCheckpoints": false,
         "label": "Phoenix-MWA (w. Pretrain)",
         "modelVersion": "Phoenix-MWA",
         "variantLabel": "w. Pretrain",
@@ -23627,6 +23636,7 @@
       "model": {
         "id": "gigaworld-policy-06",
         "usesTactile": false,
+        "usesPerTaskCheckpoints": false,
         "label": "GigaWorld-Policy-0.6",
         "variantLabel": "",
         "family": "GigaWorld-Policy",
@@ -26255,6 +26265,7 @@
       "model": {
         "id": "me-dex-1-5",
         "usesTactile": true,
+        "usesPerTaskCheckpoints": true,
         "label": "ME-Dex 1.5",
         "variantLabel": "",
         "family": "ME-Dex",
@@ -28718,6 +28729,7 @@
       "model": {
         "id": "unitacwam-v1",
         "usesTactile": true,
+        "usesPerTaskCheckpoints": false,
         "label": "UniTacWAM",
         "variantLabel": "",
         "family": "UniTacWAM",
@@ -31353,6 +31365,7 @@
       "model": {
         "id": "worldscape_policy_2_5-preview",
         "usesTactile": false,
+        "usesPerTaskCheckpoints": false,
         "label": "WorldScape Policy 2.5-Preview",
         "variantLabel": "",
         "family": "WorldScape Policy",

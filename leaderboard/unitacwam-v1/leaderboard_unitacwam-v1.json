@@ -2,6 +2,7 @@
  "model": {
   "id": "unitacwam-v1",
   "usesTactile": true,
+  "usesPerTaskCheckpoints": false,
   "label": "UniTacWAM",
   "variantLabel": "",
   "family": "UniTacWAM",

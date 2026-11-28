@@ -35,6 +35,31 @@ test('a new visit defaults to Score and the task matrix inherits its model order
  assert.ok(p.nodes.get('#task-sort-label').textContent.includes('Models: overall Score ↓'));
  assert.equal(p.nodes.get('#ranking-reset').hidden,true);
 });
+test('Overall labels tactile policies next to the model name',()=>{
+ const {nodes}=page(),html=nodes.get('#overview-table').innerHTML;
+ const names=Object.fromEntries(Array.from(html.matchAll(/<tr data-policy-row="([^"]+)">[\s\S]*?<a class="model-name policy-label"[^>]*>([\s\S]*?)<\/a>/g),
+  ([,id,name])=>[id,name.replace(/<[^>]+>/g,'')]));
+ assert.equal(names['me-dex-1-5'],'ME-Dex 1.5 w/ Tactile');
+ assert.deepEqual(Object.keys(names).filter(id=>names[id].includes('w/ Tactile')).sort(),
+  ['GR00T_N15_TACTILE','GR00T_N17_TACTILE','me-dex-1-5','unitacwam-v1']);
+ assert.equal(names.GR00T_N17_TACTILE,'GR00T N1.7 w/ Tactile');
+ assert.equal(names.GR00T_N17,'GR00T N1.7');
+ assert.equal(names['pyrua-dex'],'PyRUA-Dex');
+ assert.equal(names.gpt6_astra_1x_icl,'GPT-6 Astra 1× + ICL');
+ assert.doesNotMatch(html,/w\/o Tactile/i);
+ assert.equal(Object.values(names).filter(name=>name.includes('(Single Task)')).length,0);
+});
+test('Overall displays checkpoint setup after Type for every policy row',()=>{
+ const html=page().nodes.get('#overview-table').innerHTML;
+ assert.match(html,/>Type<\/th><th[^>]*>Checkpoint<\/th><th[^>]*>Contributor<\/th>/);
+ const rows=Array.from(html.matchAll(/<tr data-policy-row="([^"]+)">[\s\S]*?<td class="checkpoint-cell">([^<]+)<\/td>/g),
+  ([,id,setup])=>[id,setup]);
+ assert.equal(rows.length,16);
+ const ids=setup=>rows.filter(([,label])=>label===setup).map(([id])=>id).sort();
+ assert.deepEqual(ids('Single Task'),['ACT','DPC','GR00T_N15','GR00T_N15_TACTILE','GR00T_N17','GR00T_N17_TACTILE','PI05','me-dex-1-5','mora_v0']);
+ assert.deepEqual(ids('Multi-Task'),['gigaworld-policy-06','phoenix-mwa','unitacwam-v1','worldscape_policy_2_5-preview']);
+ assert.deepEqual(ids('—'),['gpt6_astra_10x_icl','gpt6_astra_1x_icl','pyrua-dex']);
+});
 test('Score sorting keeps Agent results in the default table without ranks',()=>{
  const p=page();p.click({rankColumn:'score'});
  assert.equal(p.nodes.get('#ranking-label').textContent,'Sorted by Score ↑');

@@ -72,7 +72,7 @@
 .board-section .ranking-table tbody tr{height:44px;}
 .ranking-table thead small{margin-top:2px;}
 .ranking-table tr > :nth-child(n+3){text-align:center;}
-.ranking-table tbody tr > :nth-child(5),.ranking-table .summary-start,.ranking-table .channel-group,.ranking-table .channel-start,.ranking-table .summary-group{border-left:1px solid #dce3eb;}
+.ranking-table .summary-start,.ranking-table .channel-group,.ranking-table .channel-start,.ranking-table .summary-group{border-left:1px solid #dce3eb;}
 .ranking-table .policy-name{width:var(--ranking-model-width);min-width:var(--ranking-model-width);text-align:left;border-right:0;background:var(--surface);position:sticky;left:40px;z-index:2;}
 .board-section .ranking-table .policy-name{padding-inline-end:16px;}
 .ranking-table thead .policy-name{z-index:5;background:#f0f3f7;}
@@ -92,6 +92,8 @@
 .ranking-table .model-name{flex-wrap:wrap;row-gap:0;white-space:normal;}
 .model-name:hover,.model-name:focus-visible{color:var(--cyan);text-decoration:underline;text-underline-offset:3px;}
 .ranking-table .type-cell{width:64px;}
+.ranking-table .checkpoint-cell{width:90px;white-space:nowrap;}
+.ranking-table td.checkpoint-cell{font-size:11px;color:var(--text-dim);}
 .ranking-table .contributor-cell{width:128px;font-size:11px;white-space:normal;overflow-wrap:anywhere;text-wrap:balance;}
 .contributor-cell a{color:var(--text-dim);}
 .contributor-cell a:hover{color:var(--cyan);text-decoration:underline;}
@@ -122,8 +124,10 @@
 .detail-actions button{font-size:11px;}
 .task-matrix-table{min-width:max(880px,calc(248px + var(--task-policy-count,5)*125px));table-layout:fixed;}
 #task-matrix .policy-table tr > :not(:first-child):not(.policy-name){text-align:center;}
-#task-matrix .policy-table thead th:not(:first-child) button{width:100%;text-align:center;}
+#task-matrix [data-task-sort]{position:relative;display:block;width:100%;text-align:center;}
+#task-matrix [data-task-sort] .sort-indicator{position:absolute;inset-inline-start:100%;top:50%;margin:0;transform:translateY(-50%);}
 .task-matrix-table thead th:not(:first-child){min-width:125px;max-width:220px;text-align:center;}
+.task-matrix-table > thead > tr > th:not(:first-child){vertical-align:middle;}
 .task-matrix-table thead th:not(:first-child) button{white-space:normal;overflow-wrap:anywhere;}
 .task-matrix-table .task-name{position:sticky;left:0;z-index:2;min-width:248px;width:248px;max-width:248px;background:var(--surface);border-right:1px solid var(--line);text-align:left;}
 .task-matrix-table thead .task-name{z-index:5;background:#f0f3f7;}
@@ -237,7 +241,7 @@
 .board-section .ranking-table thead .ranking-groups{height:30px;}
 .board-section .ranking-table thead .ranking-groups > :not([rowspan]){height:30px;padding:7px 9px 3px;font-size:11px;font-weight:500;letter-spacing:.02em;border-bottom:0;}
 .board-section .ranking-table thead [rowspan]{vertical-align:middle;}
-.board-section .ranking-table thead .ranking-columns > th{text-align:center;top:30px;height:34px;padding:4px 9px 9px;}
+.board-section .ranking-table thead .ranking-columns > th{text-align:center;top:30px;height:34px;padding:4px 4px 9px;}
 .board-section .ranking-table thead th button{font-size:12px;}
 .board-section .policy-table thead .sort-indicator{display:inline-block;width:10px;margin-left:4px;opacity:0;transition:opacity .15s;}
 .board-section .policy-table thead th:not([aria-sort="none"]) .sort-indicator,

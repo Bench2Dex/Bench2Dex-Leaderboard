@@ -2,6 +2,7 @@
   "model": {
     "id": "gigaworld-policy-06",
     "usesTactile": false,
+    "usesPerTaskCheckpoints": false,
     "label": "GigaWorld-Policy-0.6",
     "variantLabel": "",
     "family": "GigaWorld-Policy",

@@ -2,6 +2,7 @@
 
 - Policy ID:
 - Used tactile observations during training (`model.usesTactile`, `true` or `false`):
+- Policy checkpoint setup (`model.usesPerTaskCheckpoints`, `true` for one per task or `false` for shared across tasks):
 - Evaluator / organization:
 - HF episode logs PR:
 - Coverage, episode counts, and protocol differences:

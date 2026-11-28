@@ -2,6 +2,7 @@
   "model": {
     "id": "worldscape_policy_2_5-preview",
     "usesTactile": false,
+    "usesPerTaskCheckpoints": false,
     "label": "WorldScape Policy 2.5-Preview",
     "variantLabel": "",
     "family": "WorldScape Policy",

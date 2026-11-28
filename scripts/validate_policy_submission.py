@@ -321,9 +321,12 @@ class Audit:
             hf_copy = self.load(log_root / files[0].name)
             hf_model = hf_copy.get('model')
             expected_model = model
-            if log_reference.get('status') == 'archived' and isinstance(hf_model, dict) and 'usesTactile' not in hf_model:
-                # Older pinned HF copies predate the tactile declaration.
-                expected_model = {key: value for key, value in model.items() if key != 'usesTactile'}
+            if log_reference.get('status') == 'archived' and isinstance(hf_model, dict):
+                # Older pinned HF copies can predate these leaderboard declarations.
+                expected_model = {
+                    key: value for key, value in model.items()
+                    if key in hf_model or key not in ('usesTactile', 'usesPerTaskCheckpoints')
+                }
             self.check(hf_model == expected_model, str(root), "GitHub/HF model differs")
             for key in ['overall', 'per_task']:
                 self.check(hf_copy.get(key) == policy.get(key), str(root), f"GitHub/HF {key} differs")

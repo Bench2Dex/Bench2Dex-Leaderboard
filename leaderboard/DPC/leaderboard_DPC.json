@@ -2,6 +2,7 @@
   "model": {
     "id": "DPC",
     "usesTactile": false,
+    "usesPerTaskCheckpoints": true,
     "label": "DP",
     "variantLabel": "",
     "family": "DPC",

@@ -55,10 +55,26 @@ test('scores above 100 remain uncapped and the orbit expands its numeric scale',
  const r=renderer(fixture);assert.equal(attr(r.rocket,'data-rocket-policy'),'ACT');close(Number(attr(r.rocket,'data-rocket-score')),120);
  assert.ok(r.geometry.maximum>=120);assert.equal(r.geometry.labels.length,13);assert.doesNotMatch(r.chart,/NaN|undefined|Infinity/);
 });
-test('top three Score labels share podium treatment and model links remain accessible',()=>{
+test('top three Score labels have larger logos and model links remain accessible',()=>{
  const r=renderer();assert.equal(r.models.filter(t=>t.includes('is-podium')).length,3);
+ const badges=Array.from(r.chart.matchAll(/<rect class="label-logo-bg"[^>]*>/g),match=>match[0]);
+ assert.deepEqual(badges.slice(0,4).map(tag=>Number(attr(tag,'width'))),[30,28,28,26]);
+ for(const [index,p] of r.geometry.labels.entries()){
+  const tag=badges[index],height=Number(attr(tag,'height'));
+  close(p.box.x+(Number(attr(tag,'x'))+height/2)*p.scale,p.anchor.x);
+  close(p.box.y+height*p.scale,p.anchor.y);
+ }
  for(const tag of r.models){const id=attr(tag,'data-plot-policy');assert.match(r.chart,new RegExp('aria-label="Rank '+r.R.model.aggregateRank(id,'score')));}
  assert.match(r.chart,/target="_blank" rel="noopener noreferrer"/);assert.match(r.chart,/label-score/);
+});
+test('the orbit marks tactile entries from the modality field',()=>{
+ const chart=renderer().chart;
+ const callouts=Array.from(chart.matchAll(/<g class="moonshot-label\b[^>]*data-plot-policy="([^"]+)"[^>]*>([\s\S]*?)<\/g>/g));
+ const marked=callouts.filter(([, ,label])=>label.includes('class="label-variant label-tactile"')).map(([,id])=>id);
+ assert.deepEqual(marked.sort(),['GR00T_N15_TACTILE','GR00T_N17_TACTILE','me-dex-1-5','unitacwam-v1']);
+ assert.doesNotMatch(chart,/w\/o Tactile/i);
+ assert.doesNotMatch(renderer(registry,1200,'policy','without-tactile').chart,/label-tactile/);
+ assert.match(renderer(registry,1200,'agent').chart,/aria-label="Rank 1\. PyRUA-Dex[^"]*\+ Tactile/);
 });
 test('partial cards preserve both settings, their Full results and left-to-right budget order',()=>{
  const r=renderer(registry,1200,'agent');
@@ -95,16 +111,18 @@ test('each connector is vertical or perpendicular to the orbit and ends at its l
   assert.equal(directions.size,2);
  }
 });
-test('Vision-Only renders vertical connectors where labels fit and uses the orbit normal at the edge',()=>{
+test('modality views render vertical connectors where labels fit and use the orbit normal at the edge',()=>{
  const connectors=chart=>Array.from(chart.matchAll(/class="moonshot-connector"[^>]* d="M ([^ ]+) ([^ ]+) L ([^ ]+) ([^"]+)"/g),
   match=>match.slice(1).map(Number));
- for(const width of [390,1200]){
-  const r=renderer(registry,width,'policy','without-tactile');
-  const links=connectors(r.chart);
-  assert.equal(links.length,9);
-  for(const [x,y,anchorX,anchorY] of links.slice(0,3)){
-   close(x,anchorX);
-   assert.ok(anchorY<y);
+ for(const [scope,count] of [['without-tactile',9],['tactile',4]]){
+  for(const width of [390,1200]){
+   const r=renderer(registry,width,'policy',scope);
+   const links=connectors(r.chart);
+   assert.equal(links.length,count);
+   for(const [x,y,anchorX,anchorY] of links){
+    close(x,anchorX);
+    assert.ok(anchorY<y);
+   }
   }
  }
  const fixture=structuredClone(registry);

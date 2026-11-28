@@ -9,7 +9,12 @@
     {id:"efficiency",key:"efficiency",cid:"mean",label:"Eff.",unit:"Ratio"},
     {id:"score",key:"score",cid:"mean",label:"Score",unit:"Composite"}
   ];
-  const policyTitle=p=>esc(R.policyName(p))+(p.variantLabel ? `<span class="policy-variant">${esc(p.variantLabel)}</span>` : "");
+  function policyTitle(p){
+    const name=R.policyName(p);
+    const variant=p.variantLabel && !/^w\/o? tactile$/i.test(p.variantLabel) ? p.variantLabel : "";
+    const tactile=p.usesTactile===true && !R.isAgent(p) ? "w/ Tactile" : "";
+    return esc(name)+[variant,tactile].filter(Boolean).map(label=>` <span class="policy-variant">${esc(label)}</span>`).join("");
+  }
   const hasSortableScore=(p,state)=>M.eligible(p.id,"score") && M.aggregateEligible(p.id,state.rankMetric,state.rankChannel);
   const rankable=(p,state)=>!R.isAgent(p) && R.inPolicyScope(p,state.policyScope) && hasSortableScore(p,state);
   function ordered(list,state){
@@ -31,10 +36,10 @@
     const peers=cid==="mean" ? M.peers(state.group,null,key,cid,state.policyScope) : [];
     let value=cid==="mean" && M.eligible(p.id,key) ? R.marked(r,peers,key) : esc(R.format(r,key,cid!=="mean"));
     const heat=cid!=="mean" && r.value!==null;
-    return `<td class="${r.value===null ? "missing" : "value"}${id==="sr" ? " summary-start" : ""}${active ? " ranking-active" : ""}${heat ? " heat-cell" : ""}"${heat ? ` style="--cell-heat:${R.heat(r.value/100)}"` : ""}>${value}</td>`;
+    return `<td class="${r.value===null ? "missing" : "value"}${id==="sr" ? " summary-start" : id==="none" ? " channel-start" : ""}${active ? " ranking-active" : ""}${heat ? " heat-cell" : ""}"${heat ? ` style="--cell-heat:${R.heat(r.value/100)}"` : ""}>${value}</td>`;
   }
   function markup(policies,state,assetPrefix=""){
-    const identity='<th scope="col" rowspan="2" class="rank-cell">Rank</th><th scope="col" rowspan="2" class="policy-name">Model</th><th scope="col" rowspan="2" class="type-cell">Type</th><th scope="col" rowspan="2" class="contributor-cell">Contributor</th>';
+    const identity='<th scope="col" rowspan="2" class="rank-cell">Rank</th><th scope="col" rowspan="2" class="policy-name">Model</th><th scope="col" rowspan="2" class="type-cell">Type</th><th scope="col" rowspan="2" class="checkpoint-cell">Checkpoint</th><th scope="col" rowspan="2" class="contributor-cell">Contributor</th>';
     const headers=columns.map(c=>{
       const active=c.key===state.rankMetric && c.cid===state.rankChannel;
       const title=c.key==="score" ? R.scoreFormula : c.cid!=="mean" ? `${c.label} channel SR (%)` : c.key==="efficiency" ? "Success-conditioned efficiency" : `${c.label}: four-channel mean (%)`;
@@ -46,9 +51,12 @@
       const type=p.type==="Visuo-tactile action model" ? "WAM" : p.type;
       const typeTitle=type!==p.type ? ' title="World Action Model with visuo-tactile modeling"' : "";
       const medals=["🥇","🥈","🥉"],metal=["gold","silver","bronze"],medal=position!==null && position<=3;
-      const unrankedLabel=R.isAgent(p) ? "Agent track" : "Unranked: complete SR, LSCR and efficiency required";
+      const agent=R.isAgent(p);
+      const perTask=p.usesPerTaskCheckpoints;
+      const checkpointLabel=!agent && typeof perTask==="boolean" ? (perTask ? "Single Task" : "Multi-Task") : "—";
+      const unrankedLabel=agent ? "Agent track" : "Unranked: complete SR, LSCR and efficiency required";
       const rankLabel=position===null ? unrankedLabel : `Rank ${position}${medal ? ": "+metal[position-1]+" medal" : ""}`;
-      return `<tr data-policy-row="${esc(p.id)}"><td class="rank-cell"><span class="rank-number${medal ? " rank-medal" : ""}" aria-label="${esc(rankLabel)}"${position===null ? ` title="${esc(unrankedLabel)}"` : ""}>${position===null ? "—" : medal ? medals[position-1] : position}</span></td><th scope="row" class="policy-name"><div class="model-identity"><img class="model-logo" src="${esc(assetPrefix+p.logoPath)}" alt="${esc(p.logoAlt)}" width="26" height="26" decoding="async"><div><a class="model-name policy-label" href="${esc(p.modelUrl)}" target="_blank" rel="noopener noreferrer">${policyTitle(p)}</a></div></div></th><td class="type-cell"><span class="policy-type type-${esc(type.toLowerCase())}"${typeTitle}>${esc(type)}</span></td><td class="contributor-cell"><a href="${esc(p.contributorUrl)}" target="_blank" rel="noopener noreferrer">${esc(p.contributor)}</a></td>${columns.map(c=>aggregateCell(p,c,state)).join("")}</tr>`;
+      return `<tr data-policy-row="${esc(p.id)}"><td class="rank-cell"><span class="rank-number${medal ? " rank-medal" : ""}" aria-label="${esc(rankLabel)}"${position===null ? ` title="${esc(unrankedLabel)}"` : ""}>${position===null ? "—" : medal ? medals[position-1] : position}</span></td><th scope="row" class="policy-name"><div class="model-identity"><img class="model-logo" src="${esc(assetPrefix+p.logoPath)}" alt="${esc(p.logoAlt)}" width="26" height="26" decoding="async"><div><a class="model-name policy-label" href="${esc(p.modelUrl)}" target="_blank" rel="noopener noreferrer">${policyTitle(p)}</a></div></div></th><td class="type-cell"><span class="policy-type type-${esc(type.toLowerCase())}"${typeTitle}>${esc(type)}</span></td><td class="checkpoint-cell">${checkpointLabel}</td><td class="contributor-cell"><a href="${esc(p.contributorUrl)}" target="_blank" rel="noopener noreferrer">${esc(p.contributor)}</a></td>${columns.map(c=>aggregateCell(p,c,state)).join("")}</tr>`;
     }).join("");
     return `<caption class="sr-only">Policy Leaderboard</caption><thead><tr class="ranking-groups">${identity}<th scope="colgroup" colspan="4" class="channel-group">SR by channel (%)</th><th scope="colgroup" colspan="4" class="summary-group">Overall</th></tr><tr class="ranking-columns">${headers}</tr></thead><tbody>${rows}</tbody>`;
   }

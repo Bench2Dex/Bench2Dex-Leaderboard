@@ -2,6 +2,7 @@
   "model": {
     "id": "GR00T_N17",
     "usesTactile": false,
+    "usesPerTaskCheckpoints": true,
     "label": "GR00T N1.7 · w/o Tactile",
     "variantLabel": "w/o Tactile",
     "family": "GR00T",

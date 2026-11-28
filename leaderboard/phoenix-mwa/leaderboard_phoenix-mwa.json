@@ -2,6 +2,7 @@
   "model": {
     "id": "phoenix-mwa",
     "usesTactile": false,
+    "usesPerTaskCheckpoints": false,
     "label": "Phoenix-MWA (w. Pretrain)",
     "modelVersion": "Phoenix-MWA",
     "variantLabel": "w. Pretrain",
