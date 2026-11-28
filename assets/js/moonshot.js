@@ -32,7 +32,8 @@
     if(near>=margin||far<=-rocket.width-margin||upper>=rocket.height-rocket.noseY+margin)return 0;
     return Math.max(0,(lower+rocket.noseY+margin)/(normal.y-slope*normal.x));
   }
-  function layout(entries,viewport=1200){
+  function layout(entries,viewport=1200,policyScope="all"){
+    const preferVertical=policyScope==="without-tactile";
     // Scores use a 0–100 reference scale; faster-than-expert results stay uncapped.
     const maximum=Math.max(100,Math.ceil((entries[0]?.score||0)/10)*10);
     const point=score=>({x:start.x+(end.x-start.x)*score/maximum,y:start.y+(end.y-start.y)*score/maximum});
@@ -44,7 +45,7 @@
     for(let attempt=0;attempt<16;attempt++){
       const scale=initialScale*.94**attempt,gap=1.5*scale,h=labelHeight*scale;
       placed=[];
-      // Place lower ranks first and find the shortest clear path on either ray.
+      // Place lower ranks first. Vision-Only tries the vertical ray before the perpendicular one.
       for(const p of [...points].reverse()){
         const below=placed.at(-1)?.box;
         const w=(66+R.policyName(p.policy).length*6.8+p.variant.length*5.3)*scale;
@@ -53,6 +54,7 @@
         const obstacles=placed.map(label=>pad(label.box,gap));
         let best;
         for(const slope of connectorSlopes){
+          if(best&&preferVertical)break;
           // Keep the right edge of the label above the axis as the box moves up.
           let rise=Math.max(14*scale,(5*scale-(w-logoOffset)*axisSlope)/(1+slope*axisSlope));
           if(below)rise=Math.max(rise,p.y-h-below.y+gap);
@@ -89,7 +91,7 @@
     return {labels:placed,points,rocket,maximum,point};
   }
   function scene(){
-    geometry=layout(current.plotted,root.getBoundingClientRect?.().width||1200);
+    geometry=layout(current.plotted,root.getBoundingClientRect?.().width||1200,scopeKey);
     const {labels,points,rocket,maximum,point}=geometry;
     const ticks=Array.from({length:6},(_,i)=>{
       const value=i*maximum/5,p=point(value),nx=normal.x,ny=normal.y;

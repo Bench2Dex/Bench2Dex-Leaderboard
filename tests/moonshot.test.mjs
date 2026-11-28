@@ -7,12 +7,12 @@ import {toRuntimeData} from '../scripts/leaderboard-data.mjs';
 const sources=await Promise.all(['results-model','moonshot-model'].map(n=>readFile(new URL('../assets/js/'+n+'.js',import.meta.url),'utf8')));
 function api(fixture=registry){const context=vm.createContext({window:{BENCH:toRuntimeData(fixture)}});for(const source of sources)vm.runInContext(source,context);return context.window.BenchResults;}
 test('the policy orbit uses the complete non-Agent Score results',()=>{
- const R=api(),r=R.moonshot.data('standard');assert.equal(r.totalTasks,26);assert.equal(r.plotted.length,12);assert.equal(r.unplotted.length,0);
+ const R=api(),r=R.moonshot.data('standard');assert.equal(r.totalTasks,26);assert.equal(r.plotted.length,13);assert.equal(r.unplotted.length,0);
  for(let i=0;i<r.plotted.length;i++){
   const e=r.plotted[i];assert.equal(e.score,R.model.score(e.policy.id).value);assert.equal(e.rank,i+1);assert.equal(R.model.aggregateRank(e.policy.id,'score'),e.rank);
   if(i)assert.ok(r.plotted[i-1].score>=e.score);
  }
- assert.deepEqual(Array.from(r.plotted.slice(0,5),e=>e.policy.id),['unitacwam-v1','me-dex-1-5','gigaworld-policy-06','phoenix-mwa','mora_v0']);
+ assert.deepEqual(Array.from(r.plotted.slice(0,5),e=>e.policy.id),['unitacwam-v1','me-dex-1-5','worldscape_policy_2_5-preview','gigaworld-policy-06','phoenix-mwa']);
 });
 test('the Agent track ranks complete agents and keeps Full-only reports separate',()=>{
  const R=api(),r=R.moonshot.data('standard','agent');

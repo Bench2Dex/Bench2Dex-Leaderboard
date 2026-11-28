@@ -21,7 +21,7 @@ leaderboard/<policy_id>/
 
 - **README:** reuse your policy's project introduction or link to its homepage.
 - **JSON:** one policy object matching `policies[]` in [assets/data/leaderboard.json](assets/data/leaderboard.json), without an array wrapper. Keep the directory, filename, and `model.id` consistent; set `evaluation.isTemplate` to `false`.
-- **Tactile input:** set `model.usesTactile` to `true` if the policy uses live tactile sensor inputs during evaluation, or `false` if those inputs are absent, disabled, or fixed to zero.
+- Set `model.usesTactile` to `true` if the policy used tactile observations during training, or `false` otherwise.
 - **Logo:** your contributing organization's logo; set `model.logoPath` to `leaderboard/<policy_id>/logo.ext`.
 
 ### 2. Submit original evaluation logs to Hugging Face

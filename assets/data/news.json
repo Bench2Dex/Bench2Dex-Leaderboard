@@ -1,4 +1,5 @@
 [
+  {"date":"2026-11-28","model":"WorldScape Policy 2.5-Preview","contributor":"Manifold AI","url":"https://github.com/Bench2Dex/Bench2Dex-Leaderboard/pull/13","contributorUrl":"https://www.manifoldai.cn/","metric":"Score","value":66.39},
   {"date":"2026-11-23","model":"UniTacWAM","contributor":"NTU Space Lab","url":"https://github.com/Bench2Dex/Bench2Dex-Leaderboard/pull/11","contributorUrl":"https://spacelab-ntu.com/","metric":"Score","value":76.89},
   {"date":"2026-11-19","action":"Updated","model":"PyRUA-Dex","contributor":"PKU DAGroup","url":"https://github.com/Bench2Dex/Bench2Dex-Leaderboard/pull/10","contributorUrl":"https://github.com/DAGroup-PKU","metric":"Score","value":72.89},
   {"date":"2026-11-19","model":"ME-Dex 1.5","contributor":"Li Auto.","url":"https://github.com/Bench2Dex/Bench2Dex-Leaderboard/pull/9","contributorUrl":"https://github.com/Bench2Dex/Bench2Dex-Leaderboard/pull/9","metric":"Score","value":70.5},

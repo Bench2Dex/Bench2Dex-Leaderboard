@@ -1,7 +1,7 @@
 {
   "model": {
     "id": "me-dex-1-5",
-    "usesTactile": false,
+    "usesTactile": true,
     "label": "ME-Dex 1.5",
     "variantLabel": "",
     "family": "ME-Dex",

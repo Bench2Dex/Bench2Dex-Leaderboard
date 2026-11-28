@@ -64,13 +64,17 @@
 .board-section .policy-table small{display:block;font-size:10px;color:var(--text-faint);font-weight:400;margin-top:3px;}
 .board-section .policy-table tbody tr{cursor:default;}
 .board-section .policy-table .missing{font-size:10px;color:var(--text-faint);}
-.ranking-table{min-width:1160px;table-layout:fixed;}
+.ranking-table{
+  --ranking-model-width:clamp(188px,calc(100vw - 128px),264px);
+  min-width:1160px;table-layout:fixed;
+}
 .board-section .ranking-table th,.board-section .ranking-table td{padding:8px 9px;line-height:1.35;vertical-align:middle;}
 .board-section .ranking-table tbody tr{height:44px;}
 .ranking-table thead small{margin-top:2px;}
 .ranking-table tr > :nth-child(n+3){text-align:center;}
 .ranking-table tbody tr > :nth-child(5),.ranking-table .summary-start,.ranking-table .channel-group,.ranking-table .channel-start,.ranking-table .summary-group{border-left:1px solid #dce3eb;}
-.ranking-table .policy-name{width:224px;min-width:224px;text-align:left;border-right:0;background:var(--surface);position:sticky;left:40px;z-index:2;}
+.ranking-table .policy-name{width:var(--ranking-model-width);min-width:var(--ranking-model-width);text-align:left;border-right:0;background:var(--surface);position:sticky;left:40px;z-index:2;}
+.board-section .ranking-table .policy-name{padding-inline-end:16px;}
 .ranking-table thead .policy-name{z-index:5;background:#f0f3f7;}
 .ranking-table .policy-label{font-size:13px;}
 .ranking-table .policy-variant{margin-left:0;}
@@ -85,6 +89,7 @@
 .model-identity > div{min-width:0;}
 .model-logo{width:26px;height:26px;flex:0 0 26px;object-fit:contain;}
 .model-name{display:flex;align-items:baseline;gap:6px;color:var(--text);line-height:1.4;white-space:nowrap;}
+.ranking-table .model-name{flex-wrap:wrap;row-gap:0;white-space:normal;}
 .model-name:hover,.model-name:focus-visible{color:var(--cyan);text-decoration:underline;text-underline-offset:3px;}
 .ranking-table .type-cell{width:64px;}
 .ranking-table .contributor-cell{width:128px;font-size:11px;white-space:normal;overflow-wrap:anywhere;text-wrap:balance;}
@@ -184,8 +189,6 @@
   .board-controls .results-field select{font-size:11px;}
   .policy-picker-body{left:0;right:auto;width:min(300px,calc(100vw - 60px));}
   .board-section .policy-table th,.board-section .policy-table td{padding:7px 10px;}
-  .ranking-table{min-width:1160px;}
-  .ranking-table .policy-name{min-width:224px;width:224px;left:40px;}
   .ranking-table .policy-label{font-size:12px;}
   .ranking-table .policy-meta{font-size:9px;}
   .ranking-table .rank-cell{width:40px;min-width:40px;max-width:40px;}

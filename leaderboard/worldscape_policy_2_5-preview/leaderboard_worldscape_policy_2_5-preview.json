@@ -1,0 +1,2635 @@
+{
+  "model": {
+    "id": "worldscape_policy_2_5-preview",
+    "usesTactile": false,
+    "label": "WorldScape Policy 2.5-Preview",
+    "variantLabel": "",
+    "family": "WorldScape Policy",
+    "modelVersion": "WorldScape Policy 2.5-Preview",
+    "checkpoint": "Bench2Dex multitask checkpoint, step 60,000",
+    "inputs": "Overhead and wrist RGB, robot joint positions, and task instruction",
+    "protocolId": "standard",
+    "displayOrder": 160,
+    "trainingSetting": "One 60,000-step multitask checkpoint trained across all 26 Bench2Dex tasks.",
+    "resultVersion": "2026-11-28 evaluation",
+    "updatedAt": "2026-11-28",
+    "evaluationSetting": "26 tasks, four channels, 50 episodes per task/channel; fixed checkpoint; 60 Hz physics and 20 Hz policy control.",
+    "sourceLabel": "WorldScape Policy 2.5-Preview project",
+    "sourceUrl": "https://manifoldai-research.github.io/WorldScape-Policy/",
+    "resultDetailsUrl": null,
+    "contributor": "Manifold AI",
+    "contributorUrl": "https://www.manifoldai.cn/",
+    "type": "WAM",
+    "modelUrl": "https://manifoldai-research.github.io/WorldScape-Policy/",
+    "logoPath": "leaderboard/worldscape_policy_2_5-preview/logo.png",
+    "logoAlt": "Manifold AI",
+    "weightsUrl": null,
+    "codeUrl": "https://github.com/manifoldai-research/WorldScape-Policy"
+  },
+  "overall": {
+    "status": "reported",
+    "taskCount": 26,
+    "scope": "task-macro",
+    "sr": 51.82692307692308,
+    "lscr": 73.96217948717948,
+    "efficiency": 0.9781890305872757,
+    "efficiencyStatus": "reported",
+    "efficiencyTaskCount": 26,
+    "channelSr": {
+      "None": 63,
+      "Equi.": 46.84615384615385,
+      "Inv.": 48,
+      "Full": 49.46153846153846
+    },
+    "channelLscr": {
+      "None": 82.27435897435898,
+      "Equi.": 69.93461538461538,
+      "Inv.": 71.29615384615384,
+      "Full": 72.34358974358975
+    },
+    "channelTaskCounts": {
+      "None": 26,
+      "Equi.": 26,
+      "Inv.": 26,
+      "Full": 26
+    }
+  },
+  "per_task": {
+    "12": {
+      "channels": {
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 39,
+          "lscr": 93.5,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/12_screwdriver_box_and_hammer/None/per_episode.jsonl",
+            "perEpisodeSha256": "4494d454bb2c606af1ad3b5037eb25929514c465ca96a2ad76a1926fd58b4c79",
+            "summaryFile": "per_task_eval/12_screwdriver_box_and_hammer/None/summary.json",
+            "summarySha256": "64dcffdd7bbd0260d043cf23b79ecc43144170a692d944a20c52f2756d2febf5"
+          }
+        },
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 43,
+          "lscr": 95,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/12_screwdriver_box_and_hammer/Equi/per_episode.jsonl",
+            "perEpisodeSha256": "cc289b88bc0a700db5017534366b7095bbdd6033e8719f93c1a754d1f394ad91",
+            "summaryFile": "per_task_eval/12_screwdriver_box_and_hammer/Equi/summary.json",
+            "summarySha256": "4760802aa29338aa99a03be5ca1e23fdc963fe5ed7591647d84f718e0f56695c"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 35,
+          "lscr": 87,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/12_screwdriver_box_and_hammer/Inv/per_episode.jsonl",
+            "perEpisodeSha256": "149db63917486d429b615741b5386ec227b94f4000c256215beb18be59056768",
+            "summaryFile": "per_task_eval/12_screwdriver_box_and_hammer/Inv/summary.json",
+            "summarySha256": "6c68dd2b71e0a05232dd5bd96117b2830c2264b638b0e35bf9877bc00bd130d3"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 40,
+          "lscr": 93.5,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/12_screwdriver_box_and_hammer/Full/per_episode.jsonl",
+            "perEpisodeSha256": "de3dd9ae3ea8d35915dbee7b3f6de390df6acdbcd325cfe88ce47dc21a5b8129",
+            "summaryFile": "per_task_eval/12_screwdriver_box_and_hammer/Full/summary.json",
+            "summarySha256": "9751a6eac5e322f4ac931c7814012c4b39cc4bb466c2665ef9535c017f49d078"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "srScope": "four-channel-mean",
+        "lscrScope": "four-channel-mean",
+        "sr": 78.5,
+        "lscr": 92.25,
+        "efficiency": 0.9841232156355489,
+        "efficiencyStatus": "reported",
+        "srEpisodes": 200,
+        "lscrEpisodes": 200
+      }
+    },
+    "21": {
+      "channels": {
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 35,
+          "lscr": 94.66666666666667,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/21_condiment_box_loading/None/per_episode.jsonl",
+            "perEpisodeSha256": "97b975cdff35da4b8a769f9cb8b71637d8ca8e0cd02aaf824197f0b7818af6a2",
+            "summaryFile": "per_task_eval/21_condiment_box_loading/None/summary.json",
+            "summarySha256": "4db375ab1c3bc0ac1011986e938caf168be78280c2960a45d5afbcd51a681ecb"
+          }
+        },
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 18,
+          "lscr": 74.66666666666667,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/21_condiment_box_loading/Equi/per_episode.jsonl",
+            "perEpisodeSha256": "bcdbdd681d41f488d7bf93e22fd3102913673d73d6a91ceb3618e8031c763a73",
+            "summaryFile": "per_task_eval/21_condiment_box_loading/Equi/summary.json",
+            "summarySha256": "4f4499faafe201c6c214f7fb3398142a6fc3b3f68ea93f9179730ffba7cf985d"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 25,
+          "lscr": 78.66666666666666,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/21_condiment_box_loading/Inv/per_episode.jsonl",
+            "perEpisodeSha256": "047777bf674b9d81407d38ae689782596e16b899713d9a8ca89d1323a5ad34cc",
+            "summaryFile": "per_task_eval/21_condiment_box_loading/Inv/summary.json",
+            "summarySha256": "ca75ae7ce40ae66f693100c6132b1cb5414a682e61a3fd1d8a754118828a83e8"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 27,
+          "lscr": 85.33333333333333,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/21_condiment_box_loading/Full/per_episode.jsonl",
+            "perEpisodeSha256": "e23805d3787605f7caea253fd75d8714bfe2b763089ff204d9bebec4fa985447",
+            "summaryFile": "per_task_eval/21_condiment_box_loading/Full/summary.json",
+            "summarySha256": "35564fba9438943e7bd32e7f579d36e9e555855cff376c8ce94cec7dae005857"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "srScope": "four-channel-mean",
+        "lscrScope": "four-channel-mean",
+        "sr": 52.5,
+        "lscr": 83.33333333333333,
+        "efficiency": 0.9066420259667037,
+        "efficiencyStatus": "reported",
+        "srEpisodes": 200,
+        "lscrEpisodes": 200
+      }
+    },
+    "22": {
+      "channels": {
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 40,
+          "lscr": 88.5,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/22_tool_box_loading/None/per_episode.jsonl",
+            "perEpisodeSha256": "30c7dcc768dea17c604c28e317c84295ffd375c35271e159a976cb5498d3308d",
+            "summaryFile": "per_task_eval/22_tool_box_loading/None/summary.json",
+            "summarySha256": "cf6d092978c25432f33267458ab85450bd947bf71c92bb543541f3396bf655f6"
+          }
+        },
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 35,
+          "lscr": 80.5,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/22_tool_box_loading/Equi/per_episode.jsonl",
+            "perEpisodeSha256": "4752c4ae3539ac5f43715a5b962de538bc255e84f2305d26b622eaf4325fddd2",
+            "summaryFile": "per_task_eval/22_tool_box_loading/Equi/summary.json",
+            "summarySha256": "6a722f71f206a86293759d0b688b02490f6a0c6c42f65e8573ce27f302d55e2e"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 33,
+          "lscr": 77,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/22_tool_box_loading/Inv/per_episode.jsonl",
+            "perEpisodeSha256": "eab7c72a42433f0b2ca107bdafda800a1322164de19d1bc7afc6b0774f7a97bb",
+            "summaryFile": "per_task_eval/22_tool_box_loading/Inv/summary.json",
+            "summarySha256": "1e44395c5ddcd985ce929c218c5e765b512b16e3e0473eb21ac7d6db6a8014ca"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 33,
+          "lscr": 77,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/22_tool_box_loading/Full/per_episode.jsonl",
+            "perEpisodeSha256": "13148b13ff2520f65a2d3e55142da15b750b561165355dbe2aadc2edaebbc48d",
+            "summaryFile": "per_task_eval/22_tool_box_loading/Full/summary.json",
+            "summarySha256": "25c6c219217fc5b21961c31dde92f812b28726065bc871ce0c4e0bcb669ecc3f"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "srScope": "four-channel-mean",
+        "lscrScope": "four-channel-mean",
+        "sr": 70.5,
+        "lscr": 80.75,
+        "efficiency": 0.9588433980553418,
+        "efficiencyStatus": "reported",
+        "srEpisodes": 200,
+        "lscrEpisodes": 200
+      }
+    },
+    "24": {
+      "channels": {
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 21,
+          "lscr": 68.5,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/24_stationery_category_sorting/None/per_episode.jsonl",
+            "perEpisodeSha256": "bb8db58ee9bc8b8e7c597dcd33ffc1e32f49b34f2ba089031e7492258cb2d4e9",
+            "summaryFile": "per_task_eval/24_stationery_category_sorting/None/summary.json",
+            "summarySha256": "b2946194b69d8302e2a9cb4b94d0fdcfeeaffc7959dd60cc1d4956513e464d5f"
+          }
+        },
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 9,
+          "lscr": 53.5,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/24_stationery_category_sorting/Equi/per_episode.jsonl",
+            "perEpisodeSha256": "7fdd0f93c573c4db7e85d0c825e4aae6244cc26b2bc4ae0e9e98badf138ce99c",
+            "summaryFile": "per_task_eval/24_stationery_category_sorting/Equi/summary.json",
+            "summarySha256": "e4e86596c3c9419dae56d56eb22be06bbc0640a509b301787962bbb813a0049e"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 9,
+          "lscr": 50,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/24_stationery_category_sorting/Inv/per_episode.jsonl",
+            "perEpisodeSha256": "197b8d6ca78ac4913699b163120893aa0f61fb28f06bd14eeb3c28ffd534981f",
+            "summaryFile": "per_task_eval/24_stationery_category_sorting/Inv/summary.json",
+            "summarySha256": "d293dd40e414a1cd9214a8c94ed84e625c6d59ae28a4f021e2b1eb5c240bf986"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 14,
+          "lscr": 58.5,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/24_stationery_category_sorting/Full/per_episode.jsonl",
+            "perEpisodeSha256": "15b4e0d72bf8e41a1458ef69e14c4bd069597bb783c817f25965f558a7151410",
+            "summaryFile": "per_task_eval/24_stationery_category_sorting/Full/summary.json",
+            "summarySha256": "633d1c3a00dd9b51e59807611b36733e492eff3393fa5d90840ce6ee51c99538"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "srScope": "four-channel-mean",
+        "lscrScope": "four-channel-mean",
+        "sr": 26.5,
+        "lscr": 57.625,
+        "efficiency": 1.0422117475969666,
+        "efficiencyStatus": "reported",
+        "srEpisodes": 200,
+        "lscrEpisodes": 200
+      }
+    },
+    "26": {
+      "channels": {
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 30,
+          "lscr": 90,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/26_canned_food_tray_line_arrangement/None/per_episode.jsonl",
+            "perEpisodeSha256": "cdb9f5caa986aa30329c902c4f9921ecd9fd7748fe2c44ec4fbe92bd4855ef51",
+            "summaryFile": "per_task_eval/26_canned_food_tray_line_arrangement/None/summary.json",
+            "summarySha256": "b5309dcdaa541f316906129dac0dba598dc1eb3e67f68075978b0cb0e2ad7f13"
+          }
+        },
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 16,
+          "lscr": 69,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/26_canned_food_tray_line_arrangement/Equi/per_episode.jsonl",
+            "perEpisodeSha256": "6617aa64f0d59e7104e45ff5b09125553cf3a47bad1a07189c0ef2d37600be3b",
+            "summaryFile": "per_task_eval/26_canned_food_tray_line_arrangement/Equi/summary.json",
+            "summarySha256": "8c03ada0738da8d333de98b274a56ff80a42e808021058ffdd82973fa39dbb29"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 13,
+          "lscr": 69,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/26_canned_food_tray_line_arrangement/Inv/per_episode.jsonl",
+            "perEpisodeSha256": "567b7c3084ebfe81a2ef53ef612ce3f0b87ee233f969927b801bd1bb00f01805",
+            "summaryFile": "per_task_eval/26_canned_food_tray_line_arrangement/Inv/summary.json",
+            "summarySha256": "623d0fb713fbad4154a84320c99ad4dff88c264ec11b9fe992546f8d0e2cec5b"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 13,
+          "lscr": 67,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/26_canned_food_tray_line_arrangement/Full/per_episode.jsonl",
+            "perEpisodeSha256": "d29db9c9ad08eaabcfd10855d48ebb98f822de79011934fe51bcb240b7bf60a0",
+            "summaryFile": "per_task_eval/26_canned_food_tray_line_arrangement/Full/summary.json",
+            "summarySha256": "b0b76dd2199a3984689eb2cdefeb547cb46adfa3858da146ae2f421dc7b45bb3"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "srScope": "four-channel-mean",
+        "lscrScope": "four-channel-mean",
+        "sr": 36,
+        "lscr": 73.75,
+        "efficiency": 0.9460321770416129,
+        "efficiencyStatus": "reported",
+        "srEpisodes": 200,
+        "lscrEpisodes": 200
+      }
+    },
+    "27": {
+      "channels": {
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 29,
+          "lscr": 68,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/27_ball_box_loading/None/per_episode.jsonl",
+            "perEpisodeSha256": "31271c92aa891084da0da86bebdfeabc0323495a51391a12cb950807c63152fa",
+            "summaryFile": "per_task_eval/27_ball_box_loading/None/summary.json",
+            "summarySha256": "37c8b8fc0f1d08feb5df49714d18c0fb651ad56b72b1d8a4c2303fdac3de20b6"
+          }
+        },
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 17,
+          "lscr": 48,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/27_ball_box_loading/Equi/per_episode.jsonl",
+            "perEpisodeSha256": "1fc3bd9746a654ff38e9476575b78889f878e8370946b0187b6b2351ad457602",
+            "summaryFile": "per_task_eval/27_ball_box_loading/Equi/summary.json",
+            "summarySha256": "1cdd86511d750d049646b7e9e20591deb423f6b37b6c39da6765e53e57168099"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 23,
+          "lscr": 59.5,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/27_ball_box_loading/Inv/per_episode.jsonl",
+            "perEpisodeSha256": "be81428840db062036cd52df1569d7742c3a3309b08614326a076fc3a3091d3f",
+            "summaryFile": "per_task_eval/27_ball_box_loading/Inv/summary.json",
+            "summarySha256": "b6587c12a6855d65d15ed397d1ff9dbd4c10d8d8f7c637286180dadb99354043"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 17,
+          "lscr": 50,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/27_ball_box_loading/Full/per_episode.jsonl",
+            "perEpisodeSha256": "9cc0359d83e871115b87f65912f953f8d4e21b8f99d1ea203fd6ad12fe92186d",
+            "summaryFile": "per_task_eval/27_ball_box_loading/Full/summary.json",
+            "summarySha256": "a6a7b4c17c28002e05e0c867486ad7b2188defcb3725a82e44e46b1a645408b9"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "srScope": "four-channel-mean",
+        "lscrScope": "four-channel-mean",
+        "sr": 43,
+        "lscr": 56.375,
+        "efficiency": 0.9877091305669627,
+        "efficiencyStatus": "reported",
+        "srEpisodes": 200,
+        "lscrEpisodes": 200
+      }
+    },
+    "32": {
+      "channels": {
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 27,
+          "lscr": 73.5,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/32_baking_tray_prep_with_tools/None/per_episode.jsonl",
+            "perEpisodeSha256": "00bc6eccf778da45489ec1755b09e798797e44818b42c5f237b2be071e6416aa",
+            "summaryFile": "per_task_eval/32_baking_tray_prep_with_tools/None/summary.json",
+            "summarySha256": "f17624850e3b9fdc0b802efb34c497a738be544f414852613f7e3c8057607337"
+          }
+        },
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 15,
+          "lscr": 44.5,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/32_baking_tray_prep_with_tools/Equi/per_episode.jsonl",
+            "perEpisodeSha256": "844d84ec4d2013bc548bb09ef935169005a09bbfad1b21feec832664a93246aa",
+            "summaryFile": "per_task_eval/32_baking_tray_prep_with_tools/Equi/summary.json",
+            "summarySha256": "7fc4b706caf37517f1909f444871b38706e9a56998560892c3f4ac0c545229fa"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 20,
+          "lscr": 55.50000000000001,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/32_baking_tray_prep_with_tools/Inv/per_episode.jsonl",
+            "perEpisodeSha256": "dc4d682fc8c0c4bff6003597fa23402016d077f70664006efecc4a5067a0e3a8",
+            "summaryFile": "per_task_eval/32_baking_tray_prep_with_tools/Inv/summary.json",
+            "summarySha256": "0d2552836e11110ecbcc43fbba5c97d2d64019e7b183978e51f6bff18e86da09"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 15,
+          "lscr": 48.5,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/32_baking_tray_prep_with_tools/Full/per_episode.jsonl",
+            "perEpisodeSha256": "7c73e853de81c13c73c227e9b6f937dbbaac6c1cef9db62037c51b47e0c36a1d",
+            "summaryFile": "per_task_eval/32_baking_tray_prep_with_tools/Full/summary.json",
+            "summarySha256": "7679877947c9a1dcbd85eea1970cc0855c3d803bcff77eaddaa7658f967a255f"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "srScope": "four-channel-mean",
+        "lscrScope": "four-channel-mean",
+        "sr": 38.5,
+        "lscr": 55.5,
+        "efficiency": 0.9720535800327648,
+        "efficiencyStatus": "reported",
+        "srEpisodes": 200,
+        "lscrEpisodes": 200
+      }
+    },
+    "34": {
+      "channels": {
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 25,
+          "lscr": 76.8,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/34_fridge_wine_interhand_pour/None/per_episode.jsonl",
+            "perEpisodeSha256": "66e32d23ae538dbb2d9a8f3b0cc5dba89e240d56d5ebf08e299b1d61287bd995",
+            "summaryFile": "per_task_eval/34_fridge_wine_interhand_pour/None/summary.json",
+            "summarySha256": "15dc5cad9ef1b5b7343eddad52657e3f72ea772bde8132b2fb4e7b9aad25e93e"
+          }
+        },
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 19,
+          "lscr": 70.8,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/34_fridge_wine_interhand_pour/Equi/per_episode.jsonl",
+            "perEpisodeSha256": "e7ce641a2e07356dc5cc2493fe90b8d3838a8775942c9d7f8b78a87f71fe894a",
+            "summaryFile": "per_task_eval/34_fridge_wine_interhand_pour/Equi/summary.json",
+            "summarySha256": "2897d471e623374011232515162cb37f288bb5c24e83b1a781a8360f6da242f1"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 23,
+          "lscr": 75.2,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/34_fridge_wine_interhand_pour/Inv/per_episode.jsonl",
+            "perEpisodeSha256": "0c55119ed2f489dc46e72ee829a48dfe98727c8f4a358a4c5aba9060cf3d698f",
+            "summaryFile": "per_task_eval/34_fridge_wine_interhand_pour/Inv/summary.json",
+            "summarySha256": "ba3a5341208c6da35950d107703df1de021a45f17f5c4735c0e88f73451f853b"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 19,
+          "lscr": 69.6,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/34_fridge_wine_interhand_pour/Full/per_episode.jsonl",
+            "perEpisodeSha256": "b4895be7b1459f9d4bc1c87dc5c7c7bf697b6e68a73b5733c498509c1a871ce6",
+            "summaryFile": "per_task_eval/34_fridge_wine_interhand_pour/Full/summary.json",
+            "summarySha256": "d28d2ca3793cefc283571f0627f5a2339380cb6c8f53f3d2c1adc16e1fb3b3c3"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "srScope": "four-channel-mean",
+        "lscrScope": "four-channel-mean",
+        "sr": 43,
+        "lscr": 73.1,
+        "efficiency": 1.0235331066896616,
+        "efficiencyStatus": "reported",
+        "srEpisodes": 200,
+        "lscrEpisodes": 200
+      }
+    },
+    "42": {
+      "channels": {
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 25,
+          "lscr": 82.66666666666667,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/42_trash_disposal/None/per_episode.jsonl",
+            "perEpisodeSha256": "3d6cc61f6121af7c897c416d55a0503ae7e190a00d8a038c2040c47597f18504",
+            "summaryFile": "per_task_eval/42_trash_disposal/None/summary.json",
+            "summarySha256": "38820d3487a826d3ebdccefceffc8ffb761d949988162b6f59b0962b9447defb"
+          }
+        },
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 23,
+          "lscr": 86,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/42_trash_disposal/Equi/per_episode.jsonl",
+            "perEpisodeSha256": "bb5c9110eb3b267d325ee08cdc5fa7a45f2261dd299b8831840185f8cadf81d1",
+            "summaryFile": "per_task_eval/42_trash_disposal/Equi/summary.json",
+            "summarySha256": "8b01b0dbd9e6cdb5e387412b78fe25b9a37376b132bf287bfea65e249b441a78"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 18,
+          "lscr": 78.66666666666666,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/42_trash_disposal/Inv/per_episode.jsonl",
+            "perEpisodeSha256": "1ef8b395d888520566cb117336f9e0b1527bf4ee33fc305e478ec82c012dca8c",
+            "summaryFile": "per_task_eval/42_trash_disposal/Inv/summary.json",
+            "summarySha256": "adccc3a2a5ffb9d988d159fe600651e5cee9fb6d3c2433e1772a2bf8e65c2ead"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 24,
+          "lscr": 86.66666666666667,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/42_trash_disposal/Full/per_episode.jsonl",
+            "perEpisodeSha256": "f4ccb06b81dd8377f0dbe62217e0117d8d81e3a1118c36e784ef5411080765e7",
+            "summaryFile": "per_task_eval/42_trash_disposal/Full/summary.json",
+            "summarySha256": "adbafb76ba2493796d0350f4a6b2de80b8be3721160d95763a9dc9e45f93ab31"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "srScope": "four-channel-mean",
+        "lscrScope": "four-channel-mean",
+        "sr": 45,
+        "lscr": 83.5,
+        "efficiency": 0.9168757291769927,
+        "efficiencyStatus": "reported",
+        "srEpisodes": 200,
+        "lscrEpisodes": 200
+      }
+    },
+    "43": {
+      "channels": {
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 20,
+          "lscr": 65.5,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/43_fridge_fruit_shelf_sorting/None/per_episode.jsonl",
+            "perEpisodeSha256": "06991a8ac2d09090603a2f05ef532d37e7db4f447d33db7e4bad51896e7328d4",
+            "summaryFile": "per_task_eval/43_fridge_fruit_shelf_sorting/None/summary.json",
+            "summarySha256": "efaefb471bbe2b72445dcc3a2b0b94e89f6f3c70c8733b1f35c868184128b2bc"
+          }
+        },
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 5,
+          "lscr": 48,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/43_fridge_fruit_shelf_sorting/Equi/per_episode.jsonl",
+            "perEpisodeSha256": "56acaaebe314f7eda0c2507f60ad5726019eb59fc3a98b02265cf65374e3b629",
+            "summaryFile": "per_task_eval/43_fridge_fruit_shelf_sorting/Equi/summary.json",
+            "summarySha256": "5980910b4760584ec2e95e64cd033bec49a4bdaa392d11f4ccf700f13fcc590d"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 3,
+          "lscr": 44.5,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/43_fridge_fruit_shelf_sorting/Inv/per_episode.jsonl",
+            "perEpisodeSha256": "de645b00b4a99d16e7f50e66870836f49e407596a5264a6a73d0dd6c378e7ee6",
+            "summaryFile": "per_task_eval/43_fridge_fruit_shelf_sorting/Inv/summary.json",
+            "summarySha256": "75a727bceae286bb0c17384664d39122d6a4c880c9666b0cad59f855ce4923f6"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 7,
+          "lscr": 50.5,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/43_fridge_fruit_shelf_sorting/Full/per_episode.jsonl",
+            "perEpisodeSha256": "9cac9d69507198adb405b946c37e9e3d310125401aff6126f2ec3eef720005c2",
+            "summaryFile": "per_task_eval/43_fridge_fruit_shelf_sorting/Full/summary.json",
+            "summarySha256": "61e946e00d9803cb5f7f523394ac8892c9bf7a0abd1ce4684321d7fb391528da"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "srScope": "four-channel-mean",
+        "lscrScope": "four-channel-mean",
+        "sr": 17.5,
+        "lscr": 52.125,
+        "efficiency": 0.9407682533476689,
+        "efficiencyStatus": "reported",
+        "srEpisodes": 200,
+        "lscrEpisodes": 200
+      }
+    },
+    "44": {
+      "channels": {
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 48,
+          "lscr": 97.5,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/44_microwave_bowl_loading/None/per_episode.jsonl",
+            "perEpisodeSha256": "f09f2d92c0714ef482479306944c22f329190d49ee3dfbcda5b8d2a11348d5d4",
+            "summaryFile": "per_task_eval/44_microwave_bowl_loading/None/summary.json",
+            "summarySha256": "78e3d40172ba376e1f06f3bcbc479353f73ccf8d5cc49683b7db9fe840bcf01c"
+          }
+        },
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 48,
+          "lscr": 97,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/44_microwave_bowl_loading/Equi/per_episode.jsonl",
+            "perEpisodeSha256": "92083e1c761effe7de525b76a0e3b2f3a74ddc3e3577c7bbce238ee68b2891b1",
+            "summaryFile": "per_task_eval/44_microwave_bowl_loading/Equi/summary.json",
+            "summarySha256": "99672caae4be68bae0a9cdd04c0c86cf4bf7ec46e5badce026a19a9077ec914b"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 50,
+          "lscr": 100,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/44_microwave_bowl_loading/Inv/per_episode.jsonl",
+            "perEpisodeSha256": "369679ba54cd554165798d73b464c8e6fd07c47b626f841fb9379b9d639f6566",
+            "summaryFile": "per_task_eval/44_microwave_bowl_loading/Inv/summary.json",
+            "summarySha256": "47c0722ec4f0184e87a9f633a5b2977571fbeaa84a94942aa8b6c3e9c7a4dea8"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 47,
+          "lscr": 96.5,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/44_microwave_bowl_loading/Full/per_episode.jsonl",
+            "perEpisodeSha256": "7eba02a6598118721c522e4aee146eec46ffe50d0d8dec5ee116ce960d306ed4",
+            "summaryFile": "per_task_eval/44_microwave_bowl_loading/Full/summary.json",
+            "summarySha256": "59b7acd0e571401027661789924264f59818b551ec8eb17eff4508a33f6b7b14"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "srScope": "four-channel-mean",
+        "lscrScope": "four-channel-mean",
+        "sr": 96.5,
+        "lscr": 97.75,
+        "efficiency": 1.0019694623245528,
+        "efficiencyStatus": "reported",
+        "srEpisodes": 200,
+        "lscrEpisodes": 200
+      }
+    },
+    "51": {
+      "channels": {
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 32,
+          "lscr": 72,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/51_toilet_lid_cleaner_pour/None/per_episode.jsonl",
+            "perEpisodeSha256": "7b3d6b3ece113244b4c15bb3471ab1930ae91954b5a32d166459ddf3ebd9661c",
+            "summaryFile": "per_task_eval/51_toilet_lid_cleaner_pour/None/summary.json",
+            "summarySha256": "ff0b3c9951c990871df49a51969ea54831d490e43bd834371e616b4443a2a334"
+          }
+        },
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 33,
+          "lscr": 75.33333333333333,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/51_toilet_lid_cleaner_pour/Equi/per_episode.jsonl",
+            "perEpisodeSha256": "a0388f00e0264b5e2ff6d3599eb0926263f3b7009052a37e913f0062ca324301",
+            "summaryFile": "per_task_eval/51_toilet_lid_cleaner_pour/Equi/summary.json",
+            "summarySha256": "d4299afe6c954e576ccdef298c5e9c7704c2e06548373bb0c5dac4652a077b81"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 32,
+          "lscr": 72,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/51_toilet_lid_cleaner_pour/Inv/per_episode.jsonl",
+            "perEpisodeSha256": "75fbc3f2d44802eb41a0775aff1e670638b611a75820b7b7b70a4cf7f6fbf9cc",
+            "summaryFile": "per_task_eval/51_toilet_lid_cleaner_pour/Inv/summary.json",
+            "summarySha256": "b8710b1b762bc5f4f4097bd73d1d49cf369a1d920cf6c4026d57e4ec92bc2bb1"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 32,
+          "lscr": 70,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/51_toilet_lid_cleaner_pour/Full/per_episode.jsonl",
+            "perEpisodeSha256": "5168ab08d283efd515b94d3199177355e7b0da115ce9de6f323b364487a10aca",
+            "summaryFile": "per_task_eval/51_toilet_lid_cleaner_pour/Full/summary.json",
+            "summarySha256": "d2ed88a95d252c5ebc389aaab9a3a9d502f1b95fa9c3d1d430e08ed4d43232f5"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "srScope": "four-channel-mean",
+        "lscrScope": "four-channel-mean",
+        "sr": 64.5,
+        "lscr": 72.33333333333333,
+        "efficiency": 1.0253965663935478,
+        "efficiencyStatus": "reported",
+        "srEpisodes": 200,
+        "lscrEpisodes": 200
+      }
+    },
+    "60": {
+      "channels": {
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 32,
+          "lscr": 85,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/60_breadbasket_fast_food_loading/None/per_episode.jsonl",
+            "perEpisodeSha256": "febdb480d640df6d4f537525e105edb914579832eb455029243eb17f635e1816",
+            "summaryFile": "per_task_eval/60_breadbasket_fast_food_loading/None/summary.json",
+            "summarySha256": "8e632ccaf6258ef0d0c40728fb2fad45ac7153af2c8bd3506e527a0e461384bc"
+          }
+        },
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 21,
+          "lscr": 80.5,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/60_breadbasket_fast_food_loading/Equi/per_episode.jsonl",
+            "perEpisodeSha256": "fbd5b7041b78eda0c859d5462da64a5686391f9d3b4932644d8a09c2b360e093",
+            "summaryFile": "per_task_eval/60_breadbasket_fast_food_loading/Equi/summary.json",
+            "summarySha256": "cd51fb2cc75c1639e576406ae50d076d88b5b19be3a02c9cbb108fe0101b19f6"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 23,
+          "lscr": 74,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/60_breadbasket_fast_food_loading/Inv/per_episode.jsonl",
+            "perEpisodeSha256": "5c3bdc03f38f7b491798f3e7be871e572ac12e430c966f93acde0d20c2f879d8",
+            "summaryFile": "per_task_eval/60_breadbasket_fast_food_loading/Inv/summary.json",
+            "summarySha256": "68b10157d0b3beb103e239c48a5937c56897cb5a1c2c99bba41742e1f6573bc2"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 29,
+          "lscr": 87,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/60_breadbasket_fast_food_loading/Full/per_episode.jsonl",
+            "perEpisodeSha256": "69e3fdf5e243263ba254cea4d23f4828b91d4c11e6c2b68a77c53b35d9cd441e",
+            "summaryFile": "per_task_eval/60_breadbasket_fast_food_loading/Full/summary.json",
+            "summarySha256": "7f449424246158559b2c703f1d686fb232a48d0af66b92de3fb25176d9ec999b"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "srScope": "four-channel-mean",
+        "lscrScope": "four-channel-mean",
+        "sr": 52.5,
+        "lscr": 81.625,
+        "efficiency": 0.9636361119570334,
+        "efficiencyStatus": "reported",
+        "srEpisodes": 200,
+        "lscrEpisodes": 200
+      }
+    },
+    "61": {
+      "channels": {
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 34,
+          "lscr": 74,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/61_medicine_shoebox_pack/None/per_episode.jsonl",
+            "perEpisodeSha256": "99e38846a3f2113f6ab290da3253d5d1c7bcc1be5b8e125536c8c83622f03116",
+            "summaryFile": "per_task_eval/61_medicine_shoebox_pack/None/summary.json",
+            "summarySha256": "552856117ffe854c1f20c94431789bbe0083c07bb44c6a6c70c097125acf5901"
+          }
+        },
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 18,
+          "lscr": 50,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/61_medicine_shoebox_pack/Equi/per_episode.jsonl",
+            "perEpisodeSha256": "b83b4a556b0418e12ccb1af5db346c036e09721e5beb8ad2581dff10c91f7e80",
+            "summaryFile": "per_task_eval/61_medicine_shoebox_pack/Equi/summary.json",
+            "summarySha256": "e88462d2455bf114e1c74beb761121f4e340acf5a5ffdc6cf076996d1a9e4431"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 27,
+          "lscr": 66,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/61_medicine_shoebox_pack/Inv/per_episode.jsonl",
+            "perEpisodeSha256": "ae78fa3380aaf2332fe255cea5fb119ff0cf35711e6fc23bbd7ad0f0b2e958ec",
+            "summaryFile": "per_task_eval/61_medicine_shoebox_pack/Inv/summary.json",
+            "summarySha256": "caba042ce8dc07c127d0ec12f7c9f7b85a3b2b80749a2bfd2730fbe984465a9f"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 30,
+          "lscr": 71.33333333333334,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/61_medicine_shoebox_pack/Full/per_episode.jsonl",
+            "perEpisodeSha256": "8757f6152dcb2f90948d943d289a8d1565b476044a57aebc1fc259b7e9357683",
+            "summaryFile": "per_task_eval/61_medicine_shoebox_pack/Full/summary.json",
+            "summarySha256": "f06fe8c6ca638f812996621a5171661fd55a7bfd939ed118d803258cf148ea5e"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "srScope": "four-channel-mean",
+        "lscrScope": "four-channel-mean",
+        "sr": 54.5,
+        "lscr": 65.33333333333334,
+        "efficiency": 0.9840750560168422,
+        "efficiencyStatus": "reported",
+        "srEpisodes": 200,
+        "lscrEpisodes": 200
+      }
+    },
+    "62": {
+      "channels": {
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 32,
+          "lscr": 82.66666666666667,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/62_shoebox_accessory_pack/None/per_episode.jsonl",
+            "perEpisodeSha256": "9cc376854b03cc655460bb78134697be695e126df34fae31587dcee15a6dd48e",
+            "summaryFile": "per_task_eval/62_shoebox_accessory_pack/None/summary.json",
+            "summarySha256": "255fe4f1f6b6c227792172d7e26ff048b84b7688947fd61cedd50d931b7f4697"
+          }
+        },
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 30,
+          "lscr": 76,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/62_shoebox_accessory_pack/Equi/per_episode.jsonl",
+            "perEpisodeSha256": "f7fc3194c675408dee4d2898a7e203001d4ba86fabff361ddf420fa3a47a1615",
+            "summaryFile": "per_task_eval/62_shoebox_accessory_pack/Equi/summary.json",
+            "summarySha256": "b8b95dc535823f0bcad95d9e7c0353d2e84e02ad5e02d9b02a4bbb93debe4239"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 34,
+          "lscr": 80,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/62_shoebox_accessory_pack/Inv/per_episode.jsonl",
+            "perEpisodeSha256": "29ee05d6596474feec1b546dbd42eeabd8da72a9e5f59dbfc4a124a2ffba2bf2",
+            "summaryFile": "per_task_eval/62_shoebox_accessory_pack/Inv/summary.json",
+            "summarySha256": "47f49f655e4acd8ac7e54eb95c75aa7552ae8c9fff04eb5b731950b7aa319cdd"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 31,
+          "lscr": 74,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/62_shoebox_accessory_pack/Full/per_episode.jsonl",
+            "perEpisodeSha256": "1237c0026212c86fc335a06b67d54512e99031cc9817ff108c51c34605275048",
+            "summaryFile": "per_task_eval/62_shoebox_accessory_pack/Full/summary.json",
+            "summarySha256": "999026350a6995280aa015f9fa42c1833061229f3ae3c0f8058d5d9bcf8a0682"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "srScope": "four-channel-mean",
+        "lscrScope": "four-channel-mean",
+        "sr": 63.5,
+        "lscr": 78.16666666666667,
+        "efficiency": 1.00179442483191,
+        "efficiencyStatus": "reported",
+        "srEpisodes": 200,
+        "lscrEpisodes": 200
+      }
+    },
+    "64": {
+      "channels": {
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 26,
+          "lscr": 82.5,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/64_sports_ball_cup_sort/None/per_episode.jsonl",
+            "perEpisodeSha256": "faf3a9d70ef6e15b5c61d39fb5b4b700b0f283e33615b78cd0d6aa22900ac676",
+            "summaryFile": "per_task_eval/64_sports_ball_cup_sort/None/summary.json",
+            "summarySha256": "d439429c499a2faf1e30dee062fa32c50c7654e66479889d267caaedf64718fc"
+          }
+        },
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 13,
+          "lscr": 56.99999999999999,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/64_sports_ball_cup_sort/Equi/per_episode.jsonl",
+            "perEpisodeSha256": "977956ad93f37b45142e6b12f554d832379fb12a703f271420f2a35963bd155f",
+            "summaryFile": "per_task_eval/64_sports_ball_cup_sort/Equi/summary.json",
+            "summarySha256": "39e04c126f0e82bace45441cefd8c5ca7cc174725bc3921facade7a5df84ff31"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 4,
+          "lscr": 46.5,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/64_sports_ball_cup_sort/Inv/per_episode.jsonl",
+            "perEpisodeSha256": "680f9233977bf93193da55a5d7e15cc2eafd128628b0e8dac63366780a3620e4",
+            "summaryFile": "per_task_eval/64_sports_ball_cup_sort/Inv/summary.json",
+            "summarySha256": "27c7ab55d473c083612491ba4c9f96c58270f1cbb4944a5f9cbe2058930b52a9"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 4,
+          "lscr": 51,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/64_sports_ball_cup_sort/Full/per_episode.jsonl",
+            "perEpisodeSha256": "ad3e8b3b879b271e7d90edaae0e19c61d96e4946062755f7d2ab8589d15bfc9d",
+            "summaryFile": "per_task_eval/64_sports_ball_cup_sort/Full/summary.json",
+            "summarySha256": "593c834c9e596364ac111811122dadbeb18df144ce9d2f6571d1ed181a23c9c2"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "srScope": "four-channel-mean",
+        "lscrScope": "four-channel-mean",
+        "sr": 23.5,
+        "lscr": 59.25,
+        "efficiency": 0.7781418178194139,
+        "efficiencyStatus": "reported",
+        "srEpisodes": 200,
+        "lscrEpisodes": 200
+      }
+    },
+    "67": {
+      "channels": {
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 31,
+          "lscr": 74,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/67_faucet_cup_water_fill/None/per_episode.jsonl",
+            "perEpisodeSha256": "96b80530d7ab66a6a01e40736b03670811674f4247606c92b47d289cb59b4372",
+            "summaryFile": "per_task_eval/67_faucet_cup_water_fill/None/summary.json",
+            "summarySha256": "cb823b8c81e392cfe18a9910d47d949132feac380894407e9a5daf8c22df33eb"
+          }
+        },
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 21,
+          "lscr": 62,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/67_faucet_cup_water_fill/Equi/per_episode.jsonl",
+            "perEpisodeSha256": "3c32de6cd3df9d5540bd0537cca402540082b504905ae1b03b87ec7983b2cd88",
+            "summaryFile": "per_task_eval/67_faucet_cup_water_fill/Equi/summary.json",
+            "summarySha256": "1af6bc89739cc1e6981e47c547552b97580aab639447a5cce0ce3060c3046270"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 24,
+          "lscr": 67.5,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/67_faucet_cup_water_fill/Inv/per_episode.jsonl",
+            "perEpisodeSha256": "561c491d3d71e168a0cc81e6cf54e03bff88b9dee1080323a74f0eb3125d632d",
+            "summaryFile": "per_task_eval/67_faucet_cup_water_fill/Inv/summary.json",
+            "summarySha256": "30b5a11e30060b54c1be8c21c00914a9d34c78c4a3d9f22c610f1e8cf8349431"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 31,
+          "lscr": 79.5,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/67_faucet_cup_water_fill/Full/per_episode.jsonl",
+            "perEpisodeSha256": "7207781c3e6f6850e7a4871d48ca2287e58fd9fc96723a79eab27e181d9dea44",
+            "summaryFile": "per_task_eval/67_faucet_cup_water_fill/Full/summary.json",
+            "summarySha256": "a62e35007858e1a5aa013b127d0003e258567241dd137a8f81a06740f5592fd1"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "srScope": "four-channel-mean",
+        "lscrScope": "four-channel-mean",
+        "sr": 53.5,
+        "lscr": 70.75,
+        "efficiency": 0.9787591389789014,
+        "efficiencyStatus": "reported",
+        "srEpisodes": 200,
+        "lscrEpisodes": 200
+      }
+    },
+    "73": {
+      "channels": {
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 8,
+          "lscr": 74,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/73_jigsaw_puzzle_assembly/None/per_episode.jsonl",
+            "perEpisodeSha256": "fc369a07b80aa6bf25708b3fdfb792af76ef990cb7704ec1637e7a3001ddc4b2",
+            "summaryFile": "per_task_eval/73_jigsaw_puzzle_assembly/None/summary.json",
+            "summarySha256": "d5eb90d53bbf2174a485b2c9cf4241f23dcbec8ab3381f2934f5ad4875638448"
+          }
+        },
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 1,
+          "lscr": 37,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/73_jigsaw_puzzle_assembly/Equi/per_episode.jsonl",
+            "perEpisodeSha256": "7964cb1d3eb93293a398ea6b3ad4c74b33a483ca33bcb9e4fabd8f45a4384fda",
+            "summaryFile": "per_task_eval/73_jigsaw_puzzle_assembly/Equi/summary.json",
+            "summarySha256": "7bdbb0010eefa71a613addeea0cb71292dcffbc19517747e115681ed29878929"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 0,
+          "lscr": 47,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/73_jigsaw_puzzle_assembly/Inv/per_episode.jsonl",
+            "perEpisodeSha256": "ce815e0c67114e2e629c7694f86eca615211aae34228ebffc2290d0940151a3b",
+            "summaryFile": "per_task_eval/73_jigsaw_puzzle_assembly/Inv/summary.json",
+            "summarySha256": "d14b65c584d8c4d4b3ef0f737b453f76b9eb61bfe6a2e7b73238323f001d5ace"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 0,
+          "lscr": 29.5,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/73_jigsaw_puzzle_assembly/Full/per_episode.jsonl",
+            "perEpisodeSha256": "5921544992c81999d2fa9f50e5e7c062b801a6733883788d0117793ce05b4751",
+            "summaryFile": "per_task_eval/73_jigsaw_puzzle_assembly/Full/summary.json",
+            "summarySha256": "53aa73a759bebefef0f5f643e4a37c5f88480b47b5d56ad735c41753d526c82a"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "srScope": "four-channel-mean",
+        "lscrScope": "four-channel-mean",
+        "sr": 4.5,
+        "lscr": 46.875,
+        "efficiency": 0.936318023928985,
+        "efficiencyStatus": "reported",
+        "srEpisodes": 200,
+        "lscrEpisodes": 200
+      }
+    },
+    "76": {
+      "channels": {
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 15,
+          "lscr": 62,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/76_soup_serving/None/per_episode.jsonl",
+            "perEpisodeSha256": "03d15e4213ac597184bb809b24f25e9908f4967d544ec45d6d381c7725e14b4a",
+            "summaryFile": "per_task_eval/76_soup_serving/None/summary.json",
+            "summarySha256": "d8dd1a95da576b62e98d330c7ab58836a79732d40251fd6ac349b10551b9f063"
+          }
+        },
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 8,
+          "lscr": 39.5,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/76_soup_serving/Equi/per_episode.jsonl",
+            "perEpisodeSha256": "f91ad4dbd17ebd9f6b96b570cdbacde5e4045124178d174ff6db4ca3eed17b80",
+            "summaryFile": "per_task_eval/76_soup_serving/Equi/summary.json",
+            "summarySha256": "40f1b1227b8d82b8dc3223fea9c9bf9b0c5168aad21eb68b2c89bd3e583be71c"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 2,
+          "lscr": 49.5,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/76_soup_serving/Inv/per_episode.jsonl",
+            "perEpisodeSha256": "c9984175994527e5e5d266ef303f6832514d96e957c6697266ecfd7d9a7f42e5",
+            "summaryFile": "per_task_eval/76_soup_serving/Inv/summary.json",
+            "summarySha256": "2f14f0db78c0080a96825a86366bf6c04f5c23efeb186d79480179e0b3d524c9"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 4,
+          "lscr": 40.5,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/76_soup_serving/Full/per_episode.jsonl",
+            "perEpisodeSha256": "771cf185e822130d9ba95a1f934e1b29e40da43fca68d5489ad98bbb53a5d4c2",
+            "summaryFile": "per_task_eval/76_soup_serving/Full/summary.json",
+            "summarySha256": "109a77364daf20c6342f04ea1a0bdf16c4382558695bcc6155cdf894b76b73ac"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "srScope": "four-channel-mean",
+        "lscrScope": "four-channel-mean",
+        "sr": 14.5,
+        "lscr": 47.875,
+        "efficiency": 1.0213237132549917,
+        "efficiencyStatus": "reported",
+        "srEpisodes": 200,
+        "lscrEpisodes": 200
+      }
+    },
+    "79": {
+      "channels": {
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 29,
+          "lscr": 82,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/79_bimanual_piano_melody/None/per_episode.jsonl",
+            "perEpisodeSha256": "5ff4b71f45a07bc733a5967fcdce91c8961a1e86cf8e87a9f3d5118b4df65ad8",
+            "summaryFile": "per_task_eval/79_bimanual_piano_melody/None/summary.json",
+            "summarySha256": "daedc6f1a7d12831d68f2c25aced11973f9f48293e7d16f7177cf52d0709ea96"
+          }
+        },
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 12,
+          "lscr": 50,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/79_bimanual_piano_melody/Equi/per_episode.jsonl",
+            "perEpisodeSha256": "56607f56cecd23d921deec366d8c023daee49354ec5fdb3b66ad6458d8bd391d",
+            "summaryFile": "per_task_eval/79_bimanual_piano_melody/Equi/summary.json",
+            "summarySha256": "50fd533575551e9007c153e21d708d0fc4e5d534d1f93ad57fc241adbb849fa8"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 11,
+          "lscr": 48,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/79_bimanual_piano_melody/Inv/per_episode.jsonl",
+            "perEpisodeSha256": "18d41d95588e41492d766674ade68e399c904871a70f001d8a5fdb4ce766e916",
+            "summaryFile": "per_task_eval/79_bimanual_piano_melody/Inv/summary.json",
+            "summarySha256": "6f6da7254ecbd31c9f17a0065c62e00727c7556fee6bb0418c35b751bc707cda"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 24,
+          "lscr": 64,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/79_bimanual_piano_melody/Full/per_episode.jsonl",
+            "perEpisodeSha256": "0dcd1b19422d687ae0ec9cf2d717e59e30a63815ff4c82ef6f02dea9074deed5",
+            "summaryFile": "per_task_eval/79_bimanual_piano_melody/Full/summary.json",
+            "summarySha256": "643f1aed47b1baa6253eec28fd65b20a3b1e2af1a58c60e97022b9ddff632e58"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "srScope": "four-channel-mean",
+        "lscrScope": "four-channel-mean",
+        "sr": 38,
+        "lscr": 61,
+        "efficiency": 0.9929208633093525,
+        "efficiencyStatus": "reported",
+        "srEpisodes": 200,
+        "lscrEpisodes": 200
+      }
+    },
+    "80": {
+      "channels": {
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 39,
+          "lscr": 82,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/80_gaming_desk_setup/None/per_episode.jsonl",
+            "perEpisodeSha256": "3e2149a7138f7b9bfa0008b3d47c0ee19336a3b109e46b55f8eaaeea3e6cb38c",
+            "summaryFile": "per_task_eval/80_gaming_desk_setup/None/summary.json",
+            "summarySha256": "7f7590ddbfa612fbf1477161848acedaf6fda36f4ac8a6fe67242bbbc771a18c"
+          }
+        },
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 28,
+          "lscr": 66.66666666666666,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/80_gaming_desk_setup/Equi/per_episode.jsonl",
+            "perEpisodeSha256": "4ee7c2a25b4a96cfd2691057fe048735732a5407ceb366fbea962761e01f3573",
+            "summaryFile": "per_task_eval/80_gaming_desk_setup/Equi/summary.json",
+            "summarySha256": "610880b0f8411e4b2b73528074aa822b4a809f13224ea25fc1a0749ff5f20130"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 26,
+          "lscr": 60,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/80_gaming_desk_setup/Inv/per_episode.jsonl",
+            "perEpisodeSha256": "80c1cac26a71b93d18c3d97dcf826d6a66876d0f5598127389413d3de7acfaed",
+            "summaryFile": "per_task_eval/80_gaming_desk_setup/Inv/summary.json",
+            "summarySha256": "c58869269b81352e8ac36fa3e11b9c8b6638ab3536f09ada62e87af84585885d"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 27,
+          "lscr": 68.66666666666667,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/80_gaming_desk_setup/Full/per_episode.jsonl",
+            "perEpisodeSha256": "e570f0f3def9cff9bcf65e73ef4d808f35f81a5deb326580f99fcdad56338ef7",
+            "summaryFile": "per_task_eval/80_gaming_desk_setup/Full/summary.json",
+            "summarySha256": "67602332df41ce4b7ec96979233d092820d2147cf8ada93b8009487da3801165"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "srScope": "four-channel-mean",
+        "lscrScope": "four-channel-mean",
+        "sr": 60,
+        "lscr": 69.33333333333333,
+        "efficiency": 1.0652084347728379,
+        "efficiencyStatus": "reported",
+        "srEpisodes": 200,
+        "lscrEpisodes": 200
+      }
+    },
+    "03": {
+      "channels": {
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 26,
+          "lscr": 87.33333333333333,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/03_wine_glass_plate_balance/None/per_episode.jsonl",
+            "perEpisodeSha256": "212969b3964a9821ff0c84088ea63b1700b8b96fa586265bda58f6ffe2a3dba7",
+            "summaryFile": "per_task_eval/03_wine_glass_plate_balance/None/summary.json",
+            "summarySha256": "1a0a3752e2865ed28d7a64469bb5c738d21623f78f0b1ce159fb91926714eefc"
+          }
+        },
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 20,
+          "lscr": 81.33333333333333,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/03_wine_glass_plate_balance/Equi/per_episode.jsonl",
+            "perEpisodeSha256": "794e053596299255ce45a95fd5dc6e8b88c23a53cdb7205d37617846fa046d40",
+            "summaryFile": "per_task_eval/03_wine_glass_plate_balance/Equi/summary.json",
+            "summarySha256": "1f9346a78328ce5a27f32adc31ad8855487a8336c778cde8e52225c3174b5ee9"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 21,
+          "lscr": 86.66666666666667,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/03_wine_glass_plate_balance/Inv/per_episode.jsonl",
+            "perEpisodeSha256": "39b9aec8a16cd3379bc323861ec0773bad98a8e8367cf456f95ff445a8d0dc4b",
+            "summaryFile": "per_task_eval/03_wine_glass_plate_balance/Inv/summary.json",
+            "summarySha256": "2d2a2c5f542a3022f5df06df79099f2a3ba21ee5e2c18d6f09d9a8bad985029e"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 26,
+          "lscr": 87.33333333333333,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/03_wine_glass_plate_balance/Full/per_episode.jsonl",
+            "perEpisodeSha256": "50a51b159b2358d9f49af76b67e089909af5a41997b9186d4931e83aa2a19d72",
+            "summaryFile": "per_task_eval/03_wine_glass_plate_balance/Full/summary.json",
+            "summarySha256": "3133d39d6aaa76db38877f3a74d8e602979a3895c0d6eee6aff1ac355ba2005c"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "srScope": "four-channel-mean",
+        "lscrScope": "four-channel-mean",
+        "sr": 46.5,
+        "lscr": 85.66666666666666,
+        "efficiency": 1.0337314122813777,
+        "efficiencyStatus": "reported",
+        "srEpisodes": 200,
+        "lscrEpisodes": 200
+      }
+    },
+    "09": {
+      "channels": {
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 43,
+          "lscr": 95,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/09_cleaner_moisturizer_box_loading/None/per_episode.jsonl",
+            "perEpisodeSha256": "df2a2f1095bf0fbcbbd1536de7778c9f8902daf9356f67fa3cb2953d6459e933",
+            "summaryFile": "per_task_eval/09_cleaner_moisturizer_box_loading/None/summary.json",
+            "summarySha256": "7f95092b96c7963eb88941a28bb5e3b89701d1a4fb0ff1dfb8306cb933db6015"
+          }
+        },
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 33,
+          "lscr": 95,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/09_cleaner_moisturizer_box_loading/Equi/per_episode.jsonl",
+            "perEpisodeSha256": "aa61dcaa725b1a6ee98d9f5aa9207949b2cc60dee8d955b973f7ab5f15d00dba",
+            "summaryFile": "per_task_eval/09_cleaner_moisturizer_box_loading/Equi/summary.json",
+            "summarySha256": "9320fbeba98c541f7c24cf3a9c8e0f71f5b402180714c4cfb6b5907c95894f8d"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 40,
+          "lscr": 96,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/09_cleaner_moisturizer_box_loading/Inv/per_episode.jsonl",
+            "perEpisodeSha256": "ae6f7b5bfa30ed4cc0a1e9e5784a3fcbeb81a6df7e7e409d5a56915025edf230",
+            "summaryFile": "per_task_eval/09_cleaner_moisturizer_box_loading/Inv/summary.json",
+            "summarySha256": "cf8970c9705512df8b7bd788be56dad26c9b5fb59ea9704bd79d9ae70469732a"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 32,
+          "lscr": 94,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/09_cleaner_moisturizer_box_loading/Full/per_episode.jsonl",
+            "perEpisodeSha256": "b38af772584c5875ba0bc4f6da50fb1c9eafa4732135369461bb16cdf5bad98c",
+            "summaryFile": "per_task_eval/09_cleaner_moisturizer_box_loading/Full/summary.json",
+            "summarySha256": "42dee91b9a91c78df67054da02e3a1e505df19fb1e193f24a772e3f2406130be"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "srScope": "four-channel-mean",
+        "lscrScope": "four-channel-mean",
+        "sr": 74,
+        "lscr": 95,
+        "efficiency": 0.913496740673033,
+        "efficiencyStatus": "reported",
+        "srEpisodes": 200,
+        "lscrEpisodes": 200
+      }
+    },
+    "07": {
+      "channels": {
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 48,
+          "lscr": 100,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/07_citrus_plate_loading/None/per_episode.jsonl",
+            "perEpisodeSha256": "8cc8024e546236344516f7d16b81254c119a07bd5b5c74cf7f71a0c1d83a4b90",
+            "summaryFile": "per_task_eval/07_citrus_plate_loading/None/summary.json",
+            "summarySha256": "181f1a8b3b2545412c0b690e89fb8c3ac366d43375e43292f59c6c2af6788279"
+          }
+        },
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 47,
+          "lscr": 99.5,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/07_citrus_plate_loading/Equi/per_episode.jsonl",
+            "perEpisodeSha256": "1e1476c55c4db8a6253c4727967fa198aec42dd3a1a7cdb41c2559ebc7e4fa31",
+            "summaryFile": "per_task_eval/07_citrus_plate_loading/Equi/summary.json",
+            "summarySha256": "12d7878592fd0a5535521343b81378393c623445bc9b717aa6e5cf3959621bf3"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 48,
+          "lscr": 98,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/07_citrus_plate_loading/Inv/per_episode.jsonl",
+            "perEpisodeSha256": "bb5cb34f362b1f17972914a6126fe05558f5c1fe6952cc35436f89f169f59704",
+            "summaryFile": "per_task_eval/07_citrus_plate_loading/Inv/summary.json",
+            "summarySha256": "43650562e862b647d59029257ff7f64f777ddaa45d4f6f45de8d09f7b8b98a79"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 48,
+          "lscr": 98.5,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/07_citrus_plate_loading/Full/per_episode.jsonl",
+            "perEpisodeSha256": "c3ed5e89b5360d3bc7b4e52f961c9e7e87f3d6785473a5028ab22af91fa4dc17",
+            "summaryFile": "per_task_eval/07_citrus_plate_loading/Full/summary.json",
+            "summarySha256": "f3b4f1a841dd36b35a99686325880129e003a46cba76d3414bd3c603c5f9c44d"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "srScope": "four-channel-mean",
+        "lscrScope": "four-channel-mean",
+        "sr": 95.5,
+        "lscr": 99,
+        "efficiency": 0.8402712003247382,
+        "efficiencyStatus": "reported",
+        "srEpisodes": 200,
+        "lscrEpisodes": 200
+      }
+    },
+    "06": {
+      "channels": {
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 47,
+          "lscr": 97.5,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/06_fruit_bowl_loading/None/per_episode.jsonl",
+            "perEpisodeSha256": "6cc1ca92f6399fcea294bc8097b0d2199b457454c40e0e9c67a86f3901e52a86",
+            "summaryFile": "per_task_eval/06_fruit_bowl_loading/None/summary.json",
+            "summarySha256": "ff9e4bbfea33f073435046de6ccad6648eb52da7220f87175fdcfffc3421fae0"
+          }
+        },
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 34,
+          "lscr": 89.5,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/06_fruit_bowl_loading/Equi/per_episode.jsonl",
+            "perEpisodeSha256": "a11dd671131ecee97f52e343dabe62666f32873e7dd31562d9fca0a66856b8f8",
+            "summaryFile": "per_task_eval/06_fruit_bowl_loading/Equi/summary.json",
+            "summarySha256": "5aacd3f2d4768b5dcc7ffc2d320e12768e704583fd11f075b441d561700b32b7"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 37,
+          "lscr": 94.5,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/06_fruit_bowl_loading/Inv/per_episode.jsonl",
+            "perEpisodeSha256": "9a68d90dc8843c1d599d4d682a6742edf3601737eb88f5c25ac17245630261d9",
+            "summaryFile": "per_task_eval/06_fruit_bowl_loading/Inv/summary.json",
+            "summarySha256": "9ac5566ffc8d888e0fed922cd2ebaf6c0fbe6c0da7cc6ce9ae687916ce920380"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 25,
+          "lscr": 88.5,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/06_fruit_bowl_loading/Full/per_episode.jsonl",
+            "perEpisodeSha256": "cae23f0f08f9dec9770cdbc2aed0e9ace338db0a109b553cd78421804a55a73e",
+            "summaryFile": "per_task_eval/06_fruit_bowl_loading/Full/summary.json",
+            "summarySha256": "f3db18eddafe4838f8575f5eeffad0d28d1b1977ba1b685d444822c47e0b1323"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "srScope": "four-channel-mean",
+        "lscrScope": "four-channel-mean",
+        "sr": 71.5,
+        "lscr": 92.5,
+        "efficiency": 0.92257599508067,
+        "efficiencyStatus": "reported",
+        "srEpisodes": 200,
+        "lscrEpisodes": 200
+      }
+    },
+    "08": {
+      "channels": {
+        "None": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 38,
+          "lscr": 90,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/08_frypan_stand_pour/None/per_episode.jsonl",
+            "perEpisodeSha256": "86dd718e24c35fc253bda940b498bf5845a9866c0782464510db8897ab8fd7f0",
+            "summaryFile": "per_task_eval/08_frypan_stand_pour/None/summary.json",
+            "summarySha256": "fb72608671625fba13fb008ee6875a719087edf720346f703a77265bc1d94d4a"
+          }
+        },
+        "Equi.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 42,
+          "lscr": 92,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/08_frypan_stand_pour/Equi/per_episode.jsonl",
+            "perEpisodeSha256": "2555b156ce5bf6d920aa719d0504d1d852ab8041d52361fb236e013ee4032a97",
+            "summaryFile": "per_task_eval/08_frypan_stand_pour/Equi/summary.json",
+            "summarySha256": "25aca65ec0248271c9136c950d19acd4b04066ef3e7e8564a9082019160cc972"
+          }
+        },
+        "Inv.": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 43,
+          "lscr": 93,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/08_frypan_stand_pour/Inv/per_episode.jsonl",
+            "perEpisodeSha256": "7e6e6e67f72631fbe64d679997a9d3363124105ec65ae9522f1acc323c04824c",
+            "summaryFile": "per_task_eval/08_frypan_stand_pour/Inv/summary.json",
+            "summarySha256": "29914d55bfaa66eec4829c835e061e01dda3bae9cb09d5f2ccd8e064fcf4e1d5"
+          }
+        },
+        "Full": {
+          "status": "reported",
+          "episodes": 50,
+          "successes": 44,
+          "lscr": 94,
+          "source": {
+            "runId": "bench2dex-past8-vlm-60000-8gpu-full-rerun",
+            "perEpisodeFile": "per_task_eval/08_frypan_stand_pour/Full/per_episode.jsonl",
+            "perEpisodeSha256": "400b7ca237cd4962abc0ac7b604157318cc4beaa73739dae1240476c5d0d8b03",
+            "summaryFile": "per_task_eval/08_frypan_stand_pour/Full/summary.json",
+            "summarySha256": "1f4c0c4d1cea34c6a54629d84b22446fb186049c1b21ac9a1ceb9aa1560298eb"
+          }
+        }
+      },
+      "mean": {
+        "status": "reported",
+        "srScope": "four-channel-mean",
+        "lscrScope": "four-channel-mean",
+        "sr": 83.5,
+        "lscr": 92.25,
+        "efficiency": 1.2945034692107547,
+        "efficiencyStatus": "reported",
+        "srEpisodes": 200,
+        "lscrEpisodes": 200
+      }
+    }
+  },
+  "evaluation": {
+    "schemaVersion": "1.0",
+    "isTemplate": false,
+    "protocol": {
+      "benchmarkCommit": "c269f24bd39bd973e157a16c3c9c666cf5f43efc",
+      "taskCount": 26,
+      "channels": [
+        "None",
+        "Equi.",
+        "Inv.",
+        "Full"
+      ],
+      "episodesPerChannel": 50,
+      "metricSchemaVersion": "core-v1.8-policy-step-query-split",
+      "seeds": {
+        "12": {
+          "None": {
+            "base": 101200000,
+            "first": 1,
+            "last": 50
+          },
+          "Equi.": {
+            "base": 101200000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 101200000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 201200000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "21": {
+          "None": {
+            "base": 102100000,
+            "first": 1,
+            "last": 50
+          },
+          "Equi.": {
+            "base": 102100000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 102100000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 202100000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "22": {
+          "None": {
+            "base": 102200000,
+            "first": 1,
+            "last": 50
+          },
+          "Equi.": {
+            "base": 102200000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 102200000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 202200000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "24": {
+          "None": {
+            "base": 102400000,
+            "first": 1,
+            "last": 50
+          },
+          "Equi.": {
+            "base": 102400000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 102400000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 202400000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "26": {
+          "None": {
+            "base": 102600000,
+            "first": 1,
+            "last": 50
+          },
+          "Equi.": {
+            "base": 102600000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 102600000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 202600000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "27": {
+          "None": {
+            "base": 102700000,
+            "first": 1,
+            "last": 50
+          },
+          "Equi.": {
+            "base": 102700000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 102700000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 202700000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "32": {
+          "None": {
+            "base": 103200000,
+            "first": 1,
+            "last": 50
+          },
+          "Equi.": {
+            "base": 103200000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 103200000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 203200000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "34": {
+          "None": {
+            "base": 103400000,
+            "first": 1,
+            "last": 50
+          },
+          "Equi.": {
+            "base": 103400000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 103400000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 203400000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "42": {
+          "None": {
+            "base": 104200000,
+            "first": 1,
+            "last": 50
+          },
+          "Equi.": {
+            "base": 104200000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 104200000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 204200000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "43": {
+          "None": {
+            "base": 104300000,
+            "first": 1,
+            "last": 50
+          },
+          "Equi.": {
+            "base": 104300000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 104300000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 204300000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "44": {
+          "None": {
+            "base": 104400000,
+            "first": 1,
+            "last": 50
+          },
+          "Equi.": {
+            "base": 104400000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 104400000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 204400000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "51": {
+          "None": {
+            "base": 105100000,
+            "first": 1,
+            "last": 50
+          },
+          "Equi.": {
+            "base": 105100000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 105100000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 205100000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "60": {
+          "None": {
+            "base": 106000000,
+            "first": 1,
+            "last": 50
+          },
+          "Equi.": {
+            "base": 106000000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 106000000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 206000000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "61": {
+          "None": {
+            "base": 106100000,
+            "first": 1,
+            "last": 50
+          },
+          "Equi.": {
+            "base": 106100000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 106100000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 206100000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "62": {
+          "None": {
+            "base": 106200000,
+            "first": 1,
+            "last": 50
+          },
+          "Equi.": {
+            "base": 106200000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 106200000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 206200000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "64": {
+          "None": {
+            "base": 106400000,
+            "first": 1,
+            "last": 50
+          },
+          "Equi.": {
+            "base": 106400000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 106400000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 206400000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "67": {
+          "None": {
+            "base": 106700000,
+            "first": 1,
+            "last": 50
+          },
+          "Equi.": {
+            "base": 106700000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 106700000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 206700000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "73": {
+          "None": {
+            "base": 107300000,
+            "first": 1,
+            "last": 50
+          },
+          "Equi.": {
+            "base": 107300000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 107300000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 207300000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "76": {
+          "None": {
+            "base": 107600000,
+            "first": 1,
+            "last": 50
+          },
+          "Equi.": {
+            "base": 107600000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 107600000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 207600000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "79": {
+          "None": {
+            "base": 107900000,
+            "first": 1,
+            "last": 50
+          },
+          "Equi.": {
+            "base": 107900000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 107900000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 207900000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "80": {
+          "None": {
+            "base": 108000000,
+            "first": 1,
+            "last": 50
+          },
+          "Equi.": {
+            "base": 108000000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 108000000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 208000000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "03": {
+          "None": {
+            "base": 100300000,
+            "first": 1,
+            "last": 50
+          },
+          "Equi.": {
+            "base": 100300000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 100300000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 200300000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "09": {
+          "None": {
+            "base": 100900000,
+            "first": 1,
+            "last": 50
+          },
+          "Equi.": {
+            "base": 100900000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 100900000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 200900000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "07": {
+          "None": {
+            "base": 100700000,
+            "first": 1,
+            "last": 50
+          },
+          "Equi.": {
+            "base": 100700000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 100700000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 200700000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "06": {
+          "None": {
+            "base": 100600000,
+            "first": 1,
+            "last": 50
+          },
+          "Equi.": {
+            "base": 100600000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 100600000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 200600000,
+            "first": 1,
+            "last": 50
+          }
+        },
+        "08": {
+          "None": {
+            "base": 100800000,
+            "first": 1,
+            "last": 50
+          },
+          "Equi.": {
+            "base": 100800000,
+            "first": 1,
+            "last": 50
+          },
+          "Inv.": {
+            "base": 100800000,
+            "first": 1,
+            "last": 50
+          },
+          "Full": {
+            "base": 200800000,
+            "first": 1,
+            "last": 50
+          }
+        }
+      },
+      "generalizationSplitByChannel": {
+        "None": "seen",
+        "Equi.": "unseen",
+        "Inv.": "unseen",
+        "Full": "unseen"
+      },
+      "stepUnit": "physics_steps",
+      "physicsHz": 60,
+      "controlHz": 20,
+      "physicsStepsPerPolicyAction": 3,
+      "warmupPhysicsSteps": 60,
+      "executionStepBudget": {
+        "12": {
+          "None": 3447,
+          "Equi.": 3447,
+          "Inv.": 3447,
+          "Full": 3447
+        },
+        "21": {
+          "None": 2481,
+          "Equi.": 2481,
+          "Inv.": 2481,
+          "Full": 2481
+        },
+        "22": {
+          "None": 2043,
+          "Equi.": 2043,
+          "Inv.": 2043,
+          "Full": 2043
+        },
+        "24": {
+          "None": 4626,
+          "Equi.": 4626,
+          "Inv.": 4626,
+          "Full": 4626
+        },
+        "26": {
+          "None": 2613,
+          "Equi.": 2613,
+          "Inv.": 2613,
+          "Full": 2613
+        },
+        "27": {
+          "None": 3570,
+          "Equi.": 3570,
+          "Inv.": 3570,
+          "Full": 3570
+        },
+        "32": {
+          "None": 2556,
+          "Equi.": 2556,
+          "Inv.": 2556,
+          "Full": 2556
+        },
+        "34": {
+          "None": 3240,
+          "Equi.": 3240,
+          "Inv.": 3240,
+          "Full": 3240
+        },
+        "42": {
+          "None": 2004,
+          "Equi.": 2004,
+          "Inv.": 2004,
+          "Full": 2004
+        },
+        "43": {
+          "None": 4125,
+          "Equi.": 4125,
+          "Inv.": 4125,
+          "Full": 4125
+        },
+        "44": {
+          "None": 3183,
+          "Equi.": 3183,
+          "Inv.": 3183,
+          "Full": 3183
+        },
+        "51": {
+          "None": 3069,
+          "Equi.": 3069,
+          "Inv.": 3069,
+          "Full": 3069
+        },
+        "60": {
+          "None": 2985,
+          "Equi.": 2985,
+          "Inv.": 2985,
+          "Full": 2985
+        },
+        "61": {
+          "None": 3102,
+          "Equi.": 3102,
+          "Inv.": 3102,
+          "Full": 3102
+        },
+        "62": {
+          "None": 3231,
+          "Equi.": 3231,
+          "Inv.": 3231,
+          "Full": 3231
+        },
+        "64": {
+          "None": 1995,
+          "Equi.": 1995,
+          "Inv.": 1995,
+          "Full": 1995
+        },
+        "67": {
+          "None": 2892,
+          "Equi.": 2892,
+          "Inv.": 2892,
+          "Full": 2892
+        },
+        "73": {
+          "None": 3639,
+          "Equi.": 3639,
+          "Inv.": 3639,
+          "Full": 3639
+        },
+        "76": {
+          "None": 2958,
+          "Equi.": 2958,
+          "Inv.": 2958,
+          "Full": 2958
+        },
+        "79": {
+          "None": 2043,
+          "Equi.": 2043,
+          "Inv.": 2043,
+          "Full": 2043
+        },
+        "80": {
+          "None": 1779,
+          "Equi.": 1779,
+          "Inv.": 1779,
+          "Full": 1779
+        },
+        "03": {
+          "None": 3246,
+          "Equi.": 3246,
+          "Inv.": 3246,
+          "Full": 3246
+        },
+        "09": {
+          "None": 1926,
+          "Equi.": 1926,
+          "Inv.": 1926,
+          "Full": 1926
+        },
+        "07": {
+          "None": 1806,
+          "Equi.": 1806,
+          "Inv.": 1806,
+          "Full": 1806
+        },
+        "06": {
+          "None": 1920,
+          "Equi.": 1920,
+          "Inv.": 1920,
+          "Full": 1920
+        },
+        "08": {
+          "None": 3432,
+          "Equi.": 3432,
+          "Inv.": 3432,
+          "Full": 3432
+        }
+      },
+      "successDwellTimeSByTask": {
+        "12": 0.5,
+        "21": 0.5,
+        "22": 0.5,
+        "24": 0.5,
+        "26": 0.5,
+        "27": 0.5,
+        "32": 0.5,
+        "34": 0.5,
+        "42": 0.5,
+        "43": 0.5,
+        "44": 0.5,
+        "51": 0.5,
+        "60": 0.5,
+        "61": 0.5,
+        "62": 0.5,
+        "64": 0.5,
+        "67": 3,
+        "73": 0.5,
+        "76": 0.5,
+        "79": 0.5,
+        "80": 0.5,
+        "03": 0.5,
+        "09": 0.5,
+        "07": 0.5,
+        "06": 0.5,
+        "08": 0.5
+      },
+      "successProtocol": "reach_and_stop",
+      "predictionHorizon": 24,
+      "executionHorizon": 24,
+      "expertReference": "Native per-episode expert_time_step in physics steps.",
+      "protocolChanges": "The evaluator adds a remote WSP2 bridge for joint-position control, overhead and wrist RGB, and scene-level language instructions. GPU simulation ran with PhysX continuous collision detection (CCD) disabled. The xArm7 + Ability setup uses the enabled colliders authored in the robot USD. Local runtime changes also adjust camera resource cleanup and RPC framing. None, Equi., and Inv. use replay anchors, and Full samples initial states without replay anchors. Each task/channel runs in two 25-episode batches appended to the same native log."
+    },
+    "coverage": {
+      "evaluatedTaskCount": 26,
+      "evaluatedEpisodeCount": 5200,
+      "completedTaskCount": {
+        "None": 26,
+        "Equi.": 26,
+        "Inv.": 26,
+        "Full": 26,
+        "mean": 26
+      },
+      "expectedFullEpisodeCount": 1300,
+      "expectedFourChannelEpisodeCount": 5200,
+      "missingTaskChannels": {}
+    },
+    "aggregation": {
+      "units": {
+        "sr": "percent",
+        "lscr": "percent",
+        "efficiency": "ratio",
+        "steps": "physics_steps"
+      },
+      "sr": "Stable successes divided by scored episodes, averaged equally across channels and tasks.",
+      "lscr": "Mean native latched stage completion rate including failures, averaged equally across channels and tasks.",
+      "efficiency": "Per-task expert steps divided by mean steps over all successful episodes pooled across channels, then averaged across eligible tasks.",
+      "errors": "All 5,200 scored episodes retained, including failures. The native summaries report zero error episodes."
+    },
+    "logs": {
+      "repository": "Bench2Dex/Leaderboard",
+      "policyPath": "worldscape_policy_2_5-preview",
+      "revision": "8ef2bb40f6cb929c244e4258c78e644e8e0a5087",
+      "status": "archived"
+    },
+    "checkpoint": {
+      "step": 60000,
+      "sha256": "02030c5cb667b6f6f65d03a6879270dde22081300c5dc4c0161cc775d5d69cf6"
+    },
+    "publishedAt": "2026-11-28",
+    "submission": {
+      "githubPullRequestUrl": "https://github.com/Bench2Dex/Bench2Dex-Leaderboard/pull/13",
+      "huggingFacePullRequestUrl": "https://huggingface.co/datasets/Bench2Dex/Leaderboard/discussions/14",
+      "status": "accepted"
+    }
+  }
+}

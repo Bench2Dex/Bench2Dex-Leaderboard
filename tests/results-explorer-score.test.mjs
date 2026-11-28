@@ -25,7 +25,7 @@ function page(search=''){
 test('a new visit defaults to Score and the task matrix inherits its model order',()=>{
  const p=page(),html=p.nodes.get('#overview-table').innerHTML;
  assert.equal(p.nodes.get('#ranking-label').textContent,'Sorted by Score ↓');
- assert.equal(p.nodes.get('#ranking-count').textContent,'15 results');
+ assert.equal(p.nodes.get('#ranking-count').textContent,'16 results');
  assert.equal(p.nodes.get('#moonshot-input').value,'all');
  assert.equal(p.nodes.get('#table-input').value,'all');
  assert.match(html,/data-policy-row="pyrua-dex"[^<]*<td[^>]*><span[^>]*aria-label="Agent track"[^<]*>—/);
@@ -73,16 +73,19 @@ test('either scope control updates both views and reranks the selected policies'
  };
 
  selectScope('moonshot','tactile');
- assert.equal(Array.from(table().matchAll(/data-policy-row="([^"]+)"/g),m=>m[1]).length,3);
- assert.match(table(),/data-policy-row="GR00T_N17_TACTILE"[^<]*<td[^>]*><span[^>]*aria-label="Rank 2: silver medal"/);
- assert.match(chart(),/data-plot-policy="GR00T_N17_TACTILE" data-rank="2"/);
+ assert.equal(Array.from(table().matchAll(/data-policy-row="([^"]+)"/g),m=>m[1]).length,4);
+ assert.doesNotMatch(table(),/data-policy-row="worldscape_policy_2_5-preview"/);
+ assert.match(table(),/data-policy-row="me-dex-1-5"[^<]*<td[^>]*><span[^>]*aria-label="Rank 2: silver medal"/);
+ assert.match(chart(),/data-plot-policy="me-dex-1-5" data-rank="2"/);
  assert.equal(nodes.get('#table-input').value,'tactile');
  assert.doesNotMatch(chart(),/data-plot-policy="pyrua-dex"/);
 
  selectScope('table','without-tactile');
  assert.equal(Array.from(table().matchAll(/data-policy-row="([^"]+)"/g),m=>m[1]).length,9);
- assert.match(table(),/data-policy-row="me-dex-1-5"[^<]*<td[^>]*><span[^>]*aria-label="Rank 1: gold medal"/);
- assert.match(chart(),/data-rocket-policy="me-dex-1-5"/);
+ assert.doesNotMatch(table(),/data-policy-row="me-dex-1-5"/);
+ assert.doesNotMatch(chart(),/data-plot-policy="me-dex-1-5"/);
+ assert.match(table(),/data-policy-row="worldscape_policy_2_5-preview"[^<]*<td[^>]*><span[^>]*aria-label="Rank 1: gold medal"/);
+ assert.match(chart(),/data-rocket-policy="worldscape_policy_2_5-preview"/);
  assert.equal(nodes.get('#moonshot-input').value,'without-tactile');
  assert.match(context.history.url,/policy_scope=without-tactile/);
 });
@@ -103,12 +106,12 @@ test('entering the Agent chart preserves the table view and returning restores t
  const input=nodes.get('#table-input');
  input.value='without-tactile';
  input.events.change?.({target:input});
- assert.match(table(),/data-policy-row="me-dex-1-5"/);
+ assert.match(table(),/data-policy-row="worldscape_policy_2_5-preview"/);
  assert.doesNotMatch(table(),/data-policy-row="unitacwam-v1"/);
  assert.match(chart(),/data-rocket-policy="pyrua-dex"/);
 
  nodes.get('#moonshot-tracks').events.click?.({target:{closest:()=>({dataset:{moonshotTrack:'policy'}})}});
  assert.equal(nodes.get('#moonshot-scope').hidden,false);
  assert.equal(nodes.get('#moonshot-input').value,'without-tactile');
- assert.match(chart(),/data-rocket-policy="me-dex-1-5"/);
+ assert.match(chart(),/data-rocket-policy="worldscape_policy_2_5-preview"/);
 });

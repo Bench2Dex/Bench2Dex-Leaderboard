@@ -56,3 +56,5 @@ We evaluate a single multitask checkpoint trained for 60,000 steps across all 26
 
 - The evaluation used Bench2Dex base revision [c269f24](https://github.com/Bench2Dex/Bench2Dex/tree/c269f24bd39bd973e157a16c3c9c666cf5f43efc) with a local WorldScape Policy 2.5-Preview policy bridge.
 - We evaluated a single general-purpose checkpoint across all 26 tasks without using the TAC dataset or performing any additional per-task fine-tuning.
+
+[GitHub submission](https://github.com/Bench2Dex/Bench2Dex-Leaderboard/pull/13) · [Archived evaluation logs](https://huggingface.co/datasets/Bench2Dex/Leaderboard/tree/8ef2bb40f6cb929c244e4258c78e644e8e0a5087/worldscape_policy_2_5-preview)
