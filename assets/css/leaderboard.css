@@ -33,7 +33,6 @@
 .results-explorer.results-stack{padding:0;margin:0;border:0;border-radius:0;background:none;box-shadow:none;}
 #results-explorer [hidden]{display:none!important;}
 #results-group-control{display:inline-flex;margin-top:8px;}
-.ranking-tools{display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:8px;}
 .board-section{background:var(--surface);border:1px solid #dce2e8;border-radius:12px;margin-bottom:24px;overflow:clip;box-shadow:0 4px 24px #20394e05;}
 .section-toolbar{display:flex;align-items:center;justify-content:space-between;min-height:72px;gap:14px;padding:18px 22px;}
 .section-toolbar h2{font-size:22px;letter-spacing:-.035em;margin:0;line-height:1.2;}
@@ -308,6 +307,25 @@
 .section-toolbar{align-items:flex-start;}
 .section-intro{min-width:0;flex:1;}
 .table-sort-status{margin:8px 0 0;color:#657185;font-size:12px;line-height:1.6;}
+#policy-leaderboard > .section-toolbar{align-items:center;min-height:0;padding-block:17px;}
+.ranking-view-bar{
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 18px;
+  padding:8px 22px;border-top:1px solid #e5ebf0;background:#f8fafc;
+}
+.ranking-view-status{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;}
+.ranking-view-bar .table-sort-status{margin:0;}
+.ranking-filter{display:inline-flex;align-items:center;gap:9px;}
+.ranking-filter-label{color:#4b6077;font:700 10px/1 var(--body);letter-spacing:.08em;text-transform:uppercase;}
+.ranking-filter select{
+  appearance:none;min-height:34px;padding:4px 27px 4px 11px;
+  border:1px solid #cbd7e3;border-radius:8px;color:#23486a;
+  background:linear-gradient(45deg,transparent 50%,#587087 50%) right 14px center/4px 4px no-repeat,
+    linear-gradient(135deg,#587087 50%,transparent 50%) right 10px center/4px 4px no-repeat,#fff;
+  cursor:pointer;font:650 12px/1.4 var(--body);
+}
+.ranking-filter select:hover{border-color:#8da8bf;}
+.ranking-filter select:focus-visible{outline:2px solid #387997;outline-offset:2px;}
+@media(forced-colors:active){.ranking-filter select{appearance:auto;padding-inline-end:8px;}}
 .section-meta{display:flex;flex-direction:column;align-items:flex-end;gap:7px;flex-shrink:0;}
 .table-updated{margin:2px 0 0;color:#657185;font-size:11px;line-height:1.6;white-space:nowrap;font-variant-numeric:tabular-nums;}
 .table-updated time{color:#48566a;}
@@ -320,9 +338,10 @@
   .section-intro{flex-basis:100%;}
   .section-meta{width:100%;flex-direction:row;flex-wrap:wrap;justify-content:space-between;align-items:center;}
   .section-meta .section-actions{margin-left:auto;}
-  .ranking-meta{flex-direction:column;align-items:flex-end;}
   .table-updated{margin:0;font-size:10px;}
   .table-sort-status{margin-top:6px;font-size:11px;}
+  .ranking-view-bar{padding-inline:14px;}
+  .ranking-filter{gap:6px;}
 }
 
 /* Shared action pairs in the site header and ranking toolbar. */

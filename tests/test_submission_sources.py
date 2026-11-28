@@ -101,6 +101,21 @@ class SourceTests(unittest.TestCase):
         audit.submission(self.github, self.registry, self.hf)
         self.assertEqual(audit.errors, [])
 
+    def test_accepts_tactile_metadata_added_after_the_hf_copy_was_archived(self):
+        self.policy['model']['usesTactile'] = False
+        self.policy['evaluation']['logs']['status'] = 'archived'
+        self.save(self.github, self.policy)
+        audit = Audit()
+        audit.submission(self.github, self.registry, self.hf)
+        self.assertEqual(audit.errors, [])
+
+        changed = copy.deepcopy(self.policy)
+        changed['model']['usesTactile'] = True
+        self.save(self.logs, changed)
+        audit = Audit()
+        audit.submission(self.github, self.registry, self.hf)
+        self.assertTrue(any('GitHub/HF model differs' in error for error in audit.errors))
+
     def test_rejects_native_channel_mislabeled_as_full(self):
         self.native_logs(axis='cov')
         audit = Audit()

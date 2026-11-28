@@ -1,6 +1,7 @@
 {
   "model": {
     "id": "policy_template",
+    "usesTactile": null,
     "label": "MODEL_NAME",
     "variantLabel": "",
     "family": "MODEL_NAME",

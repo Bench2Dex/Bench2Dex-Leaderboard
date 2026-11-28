@@ -54,6 +54,7 @@ export function toRuntimeData(registry) {
   };
   for (const entry of registry.policies) {
     const model = structuredClone(entry.model);
+    requireValue(typeof model.usesTactile === "boolean", `${model.id}.model.usesTactile must be a boolean`);
     if (model.id === "phoenix-mwa") {
       model.label = model.modelVersion;
       model.variantLabel = "";

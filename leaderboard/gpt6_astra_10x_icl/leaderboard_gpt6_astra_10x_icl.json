@@ -1,6 +1,7 @@
 {
   "model": {
     "id": "gpt6_astra_10x_icl",
+    "usesTactile": false,
     "label": "GPT-6 Astra",
     "variantLabel": "10× + ICL",
     "family": "GPT-6 Astra",

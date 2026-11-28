@@ -1,6 +1,7 @@
 {
  "model": {
   "id": "unitacwam-v1",
+  "usesTactile": true,
   "label": "UniTacWAM",
   "variantLabel": "",
   "family": "UniTacWAM",

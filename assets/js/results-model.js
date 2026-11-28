@@ -3,6 +3,10 @@
   "use strict";
   const finite = Number.isFinite;
   const isAgent = policy => policy?.type?.trim().toLowerCase() === "agent";
+  const policyScopes = ["all", "tactile", "without-tactile"];
+  const inPolicyScope = (policy, scope="all") => scope==="all" || !isAgent(policy) && (
+    scope==="tactile" && policy.usesTactile===true || scope==="without-tactile" && policy.usesTactile===false
+  );
   const policyName=p=>p.label && (!p.variantLabel || p.externalReport && !p.label.includes(p.variantLabel)) ? p.label : p.modelVersion||p.label;
   const statusLabels = { "not-evaluated":"Not evaluated", "not-reported":"NR", "not-applicable":"N/A", "no-success":"—" };
   const reading = (record,key)=>{
@@ -114,8 +118,8 @@
       return {value:.45*metric(pid,null,"sr").value+.45*metric(pid,null,"lscr").value+10*metric(pid,null,"efficiency").value,status:"reported"};
     }
     const comparable=(pid,tid,key,cid="mean")=>tid===null ? eligible(pid,key) : cid==="mean" || key==="efficiency" ? completeTask(pid,tid,key) : completeChannel(pid,tid,cid,key);
-    function peers(protocolId,tid,key,cid="mean"){
-      return group(protocolId).filter(p=>comparable(p.id,tid,key,cid))
+    function peers(protocolId,tid,key,cid="mean",policyScope="all"){
+      return group(protocolId).filter(p=>inPolicyScope(p,policyScope) && comparable(p.id,tid,key,cid))
         .map(p=>metric(p.id,tid,key,cid));
     }
     const rankPeers=pid=>group(protocolFor(pid).id).filter(p=>!isAgent(p));
@@ -201,6 +205,6 @@
       score,totalEpisodes:data.EVALUATION_CHANNELS.reduce((sum,r)=>sum+(reading(r,"episodes").value||0),0) };
   }
   const scoreFormula="Score = 0.45×SR + 0.45×LSCR + 10×Eff.";
-  window.BenchResults={create,reading,format,heat,escape,best,marked,policyName,isAgent,scoreFormula};
+  window.BenchResults={create,reading,format,heat,escape,best,marked,policyName,isAgent,policyScopes,inPolicyScope,scoreFormula};
   window.BenchResults.model=create(window.BenchLeaderboardData||window.BENCH);
 })();

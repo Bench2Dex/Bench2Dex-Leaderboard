@@ -1,6 +1,7 @@
 {
   "model": {
     "id": "DPC",
+    "usesTactile": false,
     "label": "DP",
     "variantLabel": "",
     "family": "DPC",

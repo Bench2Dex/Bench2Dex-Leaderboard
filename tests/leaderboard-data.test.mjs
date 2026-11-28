@@ -103,6 +103,7 @@ test("the generated script initializes the standalone page without replacing the
 test("the submission template fits policies[] directly, retaining percent units and source paths", () => {
   assert.deepEqual(Object.keys(policyTemplate), ["model", "overall", "per_task", "evaluation"]);
   assert.equal(policyTemplate.model.id, "policy_template");
+  assert.equal(policyTemplate.model.usesTactile, null);
   assert.deepEqual(Object.keys(policyTemplate.per_task).sort(), registry.tasks.map(task => task.id).sort());
   assert.deepEqual(policyTemplate.evaluation.aggregation.units, { ...registry.units, steps: "physics_steps" });
   assert.equal(policyTemplate.evaluation.isTemplate, true);
@@ -119,6 +120,7 @@ test("the submission template fits policies[] directly, retaining percent units 
 
   const entry = structuredClone(policyTemplate);
   entry.evaluation.isTemplate = false;
+  entry.model.usesTactile = false;
   entry.per_task["03"].channels.Full = {
     status: "reported", episodes: 50, successes: 10, lscr: 60,
     source: { runId: "reviewed-run", perEpisodeFile: "per_task_eval/03_wine_glass_plate_balance/Full/per_episode.jsonl", summaryFile: "per_task_eval/03_wine_glass_plate_balance/Full/summary.json" },
@@ -132,6 +134,15 @@ test("the submission template fits policies[] directly, retaining percent units 
   assert.equal(M.aggregateEligible(entry.model.id, "sr", "mean"), false);
   assert.deepEqual(data.EVALUATION_CHANNELS.find(r => r.policyId === entry.model.id && r.taskId === "03" && r.channelId === "full").source, entry.per_task["03"].channels.Full.source);
   assert.equal(fixture.policies.at(-1).evaluation.isTemplate, false);
+});
+
+test("published entries require a boolean tactile declaration", () => {
+  const fixture = structuredClone(registry);
+  const entry = fixture.policies.find(policy => policy.model.id === "ACT");
+  for (const value of [undefined, null, "false"]) {
+    entry.model.usesTactile = value;
+    assert.throws(() => toRuntimeData(fixture), /ACT.*usesTactile.*boolean/);
+  }
 });
 
 test("unscored policies follow Full SR descending without receiving a mean rank", () => {

@@ -5,6 +5,8 @@
   if(!root) return;
   const B=window.BENCH,R=window.BenchResults,M=R.model,esc=R.escape;
   const $=s=>root.querySelector(s);
+  const scopeSelects=document.querySelectorAll("[data-policy-scope]");
+  const moonshotScope=document.getElementById("moonshot-scope");
   const labels={sr:"SR",lscr:"LSCR",efficiency:"Eff."};
   const longLabels={sr:"Stable Success Rate",lscr:"Latched Stage Completion Rate",efficiency:"Success-Conditioned Efficiency"};
   const state={};
@@ -20,6 +22,7 @@
     const q=new URLSearchParams(location.search);
     state.group=enumValue(q.get("group"),M.protocols.map(p=>p.id),M.protocols[0].id);
     state.moonshotTrack=enumValue(q.get("moonshot"),["policy","agent"],"policy");
+    state.policyScope=enumValue(q.get("policy_scope"),R.policyScopes,"all");
     state.rankMetric=enumValue(q.get("rank_metric")||q.get("sort"),[...Object.keys(labels),"score"],"score");
     state.rankChannel=state.rankMetric==="sr" ? enumValue(q.get("rank_channel"),["mean",...B.CHANNELS],"mean") : "mean";
     state.rankDir=enumValue(q.get("rank_dir"),["ascending","descending"],"descending");
@@ -42,7 +45,9 @@
     if(state.policyShow==="custom" && state.policies.length && !taskPolicies.some(p=>state.policies.includes(p.id))) state.policyShow="all";
     for(const [id,key] of [["results-group","group"],["task-channel","channel"],["task-embodiment","emb"]]) $("#"+id).value=state[key];
     $("#task-channel").closest("label").hidden=state.metric==="efficiency";
-    $("#ranking-reset").hidden=state.rankMetric==="score" && state.rankChannel==="mean" && state.rankDir==="descending";
+    $("#ranking-reset").hidden=state.policyScope==="all" && state.rankMetric==="score" && state.rankChannel==="mean" && state.rankDir==="descending";
+    scopeSelects.forEach(select=>{select.value=state.policyScope;});
+    if(moonshotScope)moonshotScope.hidden=state.moonshotTrack==="agent";
     $("#task-reset").hidden=state.metric==="sr" && state.channel==="mean" && !state.emb && state.taskSort==="paper" && state.policyShow==="all" && !state.taskDetail;
     root.querySelectorAll('[data-task-metric]').forEach(b=>b.setAttribute("aria-pressed",b.dataset.taskMetric===state.metric));
   }
@@ -50,17 +55,13 @@
     const q=new URLSearchParams({group:state.group,rank_metric:state.rankMetric,rank_channel:state.rankChannel,rank_dir:state.rankDir,metric:state.metric,channel:state.channel});
     for(const [key,value] of [["emb",state.emb],["task_sort",state.taskSort!=="paper" ? state.taskSort : ""],["task_dir",state.taskSort!=="paper" ? state.taskDir : ""],["policy_show",state.policyShow!=="all" ? state.policyShow : ""],["policies",state.policies.join(",")],["task_detail",state.taskDetail]]) if(value) q.set(key,value);
     if(state.moonshotTrack==="agent")q.set("moonshot","agent");
+    if(state.policyScope!=="all")q.set("policy_scope",state.policyScope);
     const url=location.pathname+"?"+q+location.hash;
     if(push)history.pushState(null,"",url);
     else history.replaceState(null,"",url);
   }
   function orderedPolicies(list,key,cid,direction="descending"){
     return R.overall.ordered(list,{rankMetric:key,rankChannel:cid,rankDir:direction});
-  }
-  function rankingPolicies(){
-    const list=group();
-    const ordered=orderedPolicies(list,state.rankMetric,state.rankChannel,state.rankDir);
-    return {all:ordered,visible:ordered};
   }
   function matrixPolicies(){
     const ordered=orderedPolicies(metricPolicies(state.metric),state.rankMetric,state.rankChannel,state.rankDir);
@@ -75,12 +76,11 @@
   }
   const empty=message=>`<p class="results-empty">${message}</p>`;
   function renderRanking(){
-    const {visible}=rankingPolicies();
-    $("#overview-table").innerHTML=`<div class="explorer-table-wrap" role="region" aria-label="Policy Leaderboard" tabindex="0"><table id="overview-results" class="policy-table ranking-table">${R.overall.markup(visible,state)}</table></div>`;
+    const visible=R.overall.ordered(group(),state);
+    $("#overview-table").innerHTML=visible.length ? `<div class="explorer-table-wrap" role="region" aria-label="Overall Performance" tabindex="0"><table id="overview-results" class="policy-table ranking-table">${R.overall.markup(visible,state)}</table></div>` : empty("No results for this view.");
     $("#ranking-label").textContent=R.overall.label(state);
-    $("#ranking-updated").innerHTML=R.overall.updated(group());
-    const total=group().length;
-    $("#ranking-count").textContent=`${visible.length} ${visible.length===1 ? "policy" : "policies"}${visible.length!==total ? " shown · "+total+" total" : ""}`;
+    $("#ranking-updated").innerHTML=R.overall.updated(visible);
+    $("#ranking-count").textContent=`${visible.length} ${visible.length===1 ? "result" : "results"}`;
     $("#ranking-caption").textContent=R.overall.caption;
   }
   function metricCell(p,t,key,cid="mean",peers=null,summary=false){
@@ -136,12 +136,12 @@
     $("#task-caption").textContent=state.metric==="efficiency" ? "NR: not reported · —: no successful rollout" : "NR: not reported";
     renderPicker();
   }
-  function render(resetTable="",anchorSelector=null){
+  function render(resetTable="",anchorSelector=null,pushLocation=false){
     // Keep the reader's position when metrics or inline details update.
     const positions=new Map([...root.querySelectorAll('.explorer-table-wrap > table[id]')].map(t=>[t.id,{top:t.parentElement.scrollTop,left:t.parentElement.scrollLeft}]));
     const anchor=anchorSelector ? $(anchorSelector) : null;
     const anchorTop=anchor ? anchor.getBoundingClientRect().top-anchor.closest("table").parentElement.getBoundingClientRect().top : null;
-    syncControls();renderRanking();renderMatrix();R.moonshot?.render(state.group,state.moonshotTrack);saveLocation();
+    syncControls();renderRanking();renderMatrix();R.moonshot?.render(state.group,state.moonshotTrack,state.policyScope);saveLocation(pushLocation);
     for(const [id,pos] of positions){
       const wrap=$("#"+id)?.parentElement;
       if(wrap){wrap.scrollTop=id===resetTable ? 0 : pos.top;wrap.scrollLeft=pos.left;}
@@ -191,7 +191,7 @@
   $("#policies-all").addEventListener("click",()=>{state.policies=[];state.policyShow="all";$(".policy-picker").open=false;render();});
   $("#policies-none").addEventListener("click",()=>{state.policies=[];state.policyShow="custom";render();});
   $("#ranking-reset").addEventListener("click",()=>{
-    Object.assign(state,{rankMetric:"score",rankChannel:"mean",rankDir:"descending"});
+    Object.assign(state,{policyScope:"all",rankMetric:"score",rankChannel:"mean",rankDir:"descending"});
     resetTable("overview-results","Overall Performance reset to defaults.");
   });
   $("#task-reset").addEventListener("click",()=>{
@@ -202,6 +202,7 @@
   $("#results-group").addEventListener("change",e=>{
     const q=new URLSearchParams({group:e.target.value});
     if(state.moonshotTrack==="agent")q.set("moonshot","agent");
+    if(state.policyScope!=="all")q.set("policy_scope",state.policyScope);
     history.replaceState(null,"",location.pathname+"?"+q);
     readLocation();render();
   });
@@ -209,13 +210,14 @@
     const track=event.target.closest("[data-moonshot-track]")?.dataset.moonshotTrack;
     if(!track || track===state.moonshotTrack)return;
     state.moonshotTrack=track;
-    R.moonshot?.render(state.group,track);
+    syncControls();R.moonshot?.render(state.group,track,state.policyScope);
     saveLocation(true);
   });
-  function download(csv,name){
-    const url=URL.createObjectURL(new Blob([csv],{type:"text/csv;charset=utf-8"})),a=document.createElement("a");a.href=url;a.download=`bench2dex-${name}.csv`;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);announce("CSV exported.");
-  }
-  $("#results-export-all").addEventListener("click",()=>download(M.csv(),"all-policies"));
+  scopeSelects.forEach(select=>select.addEventListener("change",()=>{
+    if(select.value===state.policyScope)return;
+    state.policyScope=select.value;
+    render("overview-results",null,true);
+  }));
   window.addEventListener("popstate",()=>{readLocation();render();});
   function revealSection(){const e=document.getElementById(location.hash.slice(1));if(e?.matches("details"))e.open=true;}
   document.querySelectorAll('a[href="#protocol-notes"]').forEach(a=>a.addEventListener("click",()=>{const e=document.getElementById(a.hash.slice(1));if(e?.matches("details"))e.open=true;}));

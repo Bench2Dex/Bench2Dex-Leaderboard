@@ -1,6 +1,7 @@
 {
   "model": {
     "id": "mora_v0",
+    "usesTactile": false,
     "label": "Mora V0",
     "variantLabel": "",
     "family": "Mora",

@@ -1,6 +1,7 @@
 {
  "model": {
   "id": "pyrua-dex",
+  "usesTactile": true,
   "label": "PyRUA-Dex",
   "variantLabel": "",
   "family": "PyRUA",

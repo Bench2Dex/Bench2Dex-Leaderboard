@@ -1,6 +1,7 @@
 {
   "model": {
     "id": "PI05",
+    "usesTactile": false,
     "label": "π₀.₅",
     "variantLabel": "",
     "family": "PI05",

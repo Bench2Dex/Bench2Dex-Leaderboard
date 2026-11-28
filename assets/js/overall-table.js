@@ -11,11 +11,12 @@
   ];
   const policyTitle=p=>esc(R.policyName(p))+(p.variantLabel ? `<span class="policy-variant">${esc(p.variantLabel)}</span>` : "");
   const hasSortableScore=(p,state)=>M.eligible(p.id,"score") && M.aggregateEligible(p.id,state.rankMetric,state.rankChannel);
-  const rankable=(p,state)=>!R.isAgent(p) && hasSortableScore(p,state);
+  const rankable=(p,state)=>!R.isAgent(p) && R.inPolicyScope(p,state.policyScope) && hasSortableScore(p,state);
   function ordered(list,state){
+    const scoped=list.filter(p=>R.inPolicyScope(p,state.policyScope));
     const value=p=>M.aggregateMetric(p.id,state.rankMetric,state.rankChannel);
-    const scored=M.sorted(list.filter(p=>hasSortableScore(p,state)),{key:state.rankMetric,direction:state.rankDir},value);
-    const unranked=list.filter(p=>!hasSortableScore(p,state));
+    const scored=M.sorted(scoped.filter(p=>hasSortableScore(p,state)),{key:state.rankMetric,direction:state.rankDir},value);
+    const unranked=scoped.filter(p=>!hasSortableScore(p,state));
     const reported=M.sorted(unranked.filter(p=>value(p).value!==null),{key:state.rankMetric,direction:state.rankDir},value);
     const missing=M.sorted(unranked.filter(p=>value(p).value===null),{key:"sr",direction:"descending"},p=>M.aggregateMetric(p.id,"sr","full"));
     return [...scored,...reported,...missing];
@@ -27,7 +28,7 @@
   }
   function aggregateCell(p,{id,key,cid},state){
     const r=M.aggregateMetric(p.id,key,cid),active=key===state.rankMetric && cid===state.rankChannel;
-    const peers=cid==="mean" ? M.peers(state.group,null,key) : [];
+    const peers=cid==="mean" ? M.peers(state.group,null,key,cid,state.policyScope) : [];
     let value=cid==="mean" && M.eligible(p.id,key) ? R.marked(r,peers,key) : esc(R.format(r,key,cid!=="mean"));
     const heat=cid!=="mean" && r.value!==null;
     return `<td class="${r.value===null ? "missing" : "value"}${id==="sr" ? " summary-start" : ""}${active ? " ranking-active" : ""}${heat ? " heat-cell" : ""}"${heat ? ` style="--cell-heat:${R.heat(r.value/100)}"` : ""}>${value}</td>`;

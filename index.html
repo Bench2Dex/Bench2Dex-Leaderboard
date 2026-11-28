@@ -39,10 +39,23 @@
       <div class="moonshot-tools">
         <h2 id="moonshot-title">The Moonshot of Dexterity</h2>
         <p class="moonshot-updated" id="moonshot-updated"></p>
-        <div id="moonshot-tracks" class="moonshot-track-switch" role="group" aria-label="Moonshot track">
-          <button type="button" data-moonshot-track="policy" aria-pressed="true" aria-controls="moonshot-chart">Policy</button>
-          <button type="button" data-moonshot-track="agent" aria-pressed="false" aria-controls="moonshot-chart">Agent</button>
+      </div>
+      <div class="moonshot-toolbar">
+        <div id="moonshot-tracks" class="ranking-filter" role="group" aria-label="Moonshot track">
+          <span class="ranking-filter-label" aria-hidden="true">Track</span>
+          <div class="moonshot-track-switch">
+            <button type="button" data-moonshot-track="policy" aria-pressed="true" aria-controls="moonshot-chart">Policy</button>
+            <button type="button" data-moonshot-track="agent" aria-pressed="false" aria-controls="moonshot-chart">Agent</button>
+          </div>
         </div>
+        <label id="moonshot-scope" class="ranking-filter">
+          <span class="ranking-filter-label">View</span>
+          <select data-policy-scope aria-label="Moonshot policy view" aria-controls="moonshot-chart overview-table">
+            <option value="all">All Policies</option>
+            <option value="without-tactile">Vision-Only</option>
+            <option value="tactile">Visuo-Tactile</option>
+          </select>
+        </label>
       </div>
     </div>
     <div class="moonshot-stage"><div id="moonshot-chart"></div><div class="moonshot-inspector" id="moonshot-inspector" aria-live="polite" hidden></div></div>
@@ -57,16 +70,24 @@
 
     <section id="policy-leaderboard" class="board-section" aria-labelledby="ranking-title">
       <div class="section-toolbar">
-        <div class="section-intro"><div class="section-heading"><h2 id="ranking-title">Overall Performance</h2><span class="section-count" id="ranking-count"></span></div><p id="ranking-label" class="table-sort-status" aria-live="polite"></p><label class="results-field" id="results-group-control" hidden>Evaluation Group<select id="results-group"></select></label></div>
-        <div class="section-meta ranking-meta">
-          <p class="table-updated" id="ranking-updated"></p>
-          <div class="ranking-tools">
-            <div class="section-actions"><button type="button" class="table-reset" id="ranking-reset" aria-label="Reset Overall Performance to defaults" hidden>Reset</button></div>
-            <div class="board-action-group">
-              <button type="button" class="board-action" id="results-export-all" title="Download all policies, tasks, four-channel scores and evaluation metadata">All Policies CSV<span class="board-action-icon" aria-hidden="true">↓</span></button>
-              <a class="board-action results-submit" href="https://github.com/Bench2Dex/Bench2Dex-Leaderboard#readme" target="_blank" rel="noopener noreferrer">Submit Results<span class="board-action-icon" aria-hidden="true">↗</span></a>
-            </div>
-          </div>
+        <div class="section-intro">
+          <div class="section-heading"><h2 id="ranking-title">Overall Performance</h2><span class="section-count" id="ranking-count"></span></div>
+          <label class="results-field" id="results-group-control" hidden>Evaluation Group<select id="results-group"></select></label>
+        </div>
+        <p class="table-updated" id="ranking-updated"></p>
+      </div>
+      <div class="ranking-view-bar">
+        <label class="ranking-filter">
+          <span class="ranking-filter-label">View</span>
+          <select data-policy-scope aria-label="Overall Performance view" aria-controls="overview-table moonshot-chart">
+            <option value="all">All Results</option>
+            <option value="without-tactile">Vision-Only</option>
+            <option value="tactile">Visuo-Tactile</option>
+          </select>
+        </label>
+        <div class="ranking-view-status">
+          <p id="ranking-label" class="table-sort-status" aria-live="polite"></p>
+          <button type="button" class="table-reset" id="ranking-reset" aria-label="Reset Overall Performance to defaults" hidden>Reset</button>
         </div>
       </div>
       <div id="overview-table"></div>
@@ -95,6 +116,7 @@
         <div><dt>Eff. <span>Success-Conditioned Efficiency</span></dt><dd>Mean expert completion steps / mean policy steps to stable success, pooled across successful episodes. Averaged over tasks with success.</dd></div>
       </dl>
       <p>Overall ranks cover non-Agent entries with complete SR, LSCR and Eff. Agent scores appear in the table and on the Agent Moonshot track. Eff. is uncapped.</p>
+      <p>Vision-Only and Visuo-Tactile distinguish whether live tactile sensor inputs were used during evaluation. Either group may also use proprioception and task instructions.</p>
       <p>The reference protocol uses 50 episodes per task and channel. Contributions must report actual episode counts, execution budgets, and protocol differences. GPT-6 Astra reports Full only: 1× + ICL uses 10 episodes/task with disclosed replacements and a same-seed rerun; 10× + ICL uses 3 episodes/task with replay extensions. Four-channel means are NR. <a href="https://github.com/Bench2Dex/Bench2Dex-Leaderboard#readme">Submit results ↗</a> · <a href="https://huggingface.co/datasets/Bench2Dex/Leaderboard">Evaluation logs ↗</a></p>
     </details>
     <details class="table-notes results-notes" id="citation-fallback" hidden><summary>BibTeX Citation</summary><pre id="bibtex" tabindex="0"></pre></details>

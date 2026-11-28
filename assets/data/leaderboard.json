@@ -236,6 +236,7 @@
     {
       "model": {
         "id": "ACT",
+        "usesTactile": false,
         "label": "ACT",
         "variantLabel": "",
         "family": "ACT",
@@ -1254,6 +1255,7 @@
     {
       "model": {
         "id": "DPC",
+        "usesTactile": false,
         "label": "DP",
         "variantLabel": "",
         "family": "DPC",
@@ -2272,6 +2274,7 @@
     {
       "model": {
         "id": "PI05",
+        "usesTactile": false,
         "label": "π₀.₅",
         "variantLabel": "",
         "family": "PI05",
@@ -3290,6 +3293,7 @@
     {
       "model": {
         "id": "GR00T_N15",
+        "usesTactile": false,
         "label": "GR00T N1.5 · w/o Tactile",
         "variantLabel": "w/o Tactile",
         "family": "GR00T",
@@ -4308,6 +4312,7 @@
     {
       "model": {
         "id": "GR00T_N15_TACTILE",
+        "usesTactile": true,
         "label": "GR00T N1.5 · w/ Tactile",
         "variantLabel": "w/ Tactile",
         "family": "GR00T",
@@ -5383,6 +5388,7 @@
     {
       "model": {
         "id": "GR00T_N17",
+        "usesTactile": false,
         "label": "GR00T N1.7 · w/o Tactile",
         "variantLabel": "w/o Tactile",
         "family": "GR00T",
@@ -6457,6 +6463,7 @@
     {
       "model": {
         "id": "GR00T_N17_TACTILE",
+        "usesTactile": true,
         "label": "GR00T N1.7 · w/ Tactile",
         "variantLabel": "w/ Tactile",
         "family": "GR00T",
@@ -7532,6 +7539,7 @@
     {
       "model": {
         "id": "gpt6_astra_10x_icl",
+        "usesTactile": false,
         "label": "GPT-6 Astra",
         "variantLabel": "10× + ICL",
         "family": "GPT-6 Astra",
@@ -9199,6 +9207,7 @@
     {
       "model": {
         "id": "gpt6_astra_1x_icl",
+        "usesTactile": false,
         "label": "GPT-6 Astra",
         "variantLabel": "1× + ICL",
         "family": "GPT-6 Astra",
@@ -11055,6 +11064,7 @@
     {
       "model": {
         "id": "mora_v0",
+        "usesTactile": false,
         "label": "Mora V0",
         "variantLabel": "",
         "family": "Mora",
@@ -13633,6 +13643,7 @@
     {
       "model": {
         "id": "phoenix-mwa",
+        "usesTactile": false,
         "label": "Phoenix-MWA (w. Pretrain)",
         "modelVersion": "Phoenix-MWA",
         "variantLabel": "w. Pretrain",
@@ -21136,6 +21147,7 @@
     {
       "model": {
         "id": "pyrua-dex",
+        "usesTactile": true,
         "label": "PyRUA-Dex",
         "variantLabel": "",
         "family": "PyRUA",
@@ -23614,6 +23626,7 @@
     {
       "model": {
         "id": "gigaworld-policy-06",
+        "usesTactile": false,
         "label": "GigaWorld-Policy-0.6",
         "variantLabel": "",
         "family": "GigaWorld-Policy",
@@ -26241,6 +26254,7 @@
     {
       "model": {
         "id": "me-dex-1-5",
+        "usesTactile": false,
         "label": "ME-Dex 1.5",
         "variantLabel": "",
         "family": "ME-Dex",
@@ -28703,6 +28717,7 @@
     {
       "model": {
         "id": "unitacwam-v1",
+        "usesTactile": true,
         "label": "UniTacWAM",
         "variantLabel": "",
         "family": "UniTacWAM",

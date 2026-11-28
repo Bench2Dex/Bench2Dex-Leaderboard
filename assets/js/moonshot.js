@@ -11,7 +11,7 @@
   const title=p=>R.policyName(p)+(p.variantLabel?" · "+p.variantLabel:"");
   const overlap=(a,b)=>Math.max(0,Math.min(a.x+a.w,b.x+b.w)-Math.max(a.x,b.x))*Math.max(0,Math.min(a.y+a.h,b.y+b.h)-Math.max(a.y,b.y));
   const pad=(b,n)=>({x:b.x-n,y:b.y-n,w:b.w+2*n,h:b.h+2*n});
-  let current=null,geometry=null,groupKey="",trackKey="policy",activeId=null;
+  let current=null,geometry=null,groupKey="",trackKey="policy",scopeKey="all",activeId=null;
   function rocketAt(point){
     const width=100,height=28.125,noseY=16.09375,radians=angle*Math.PI/180;
     const corners=[-width,0].flatMap(x=>[-noseY,height-noseY].map(y=>({x:x*Math.cos(radians)-y*Math.sin(radians),y:x*Math.sin(radians)+y*Math.cos(radians)})));
@@ -131,9 +131,10 @@
     if(p){if(p.dataset.plotPolicy!==activeId)inspect(p.dataset.plotPolicy);}
     else if(!target.closest('#moonshot-inspector'))inspect(null);
   }
-  function render(group,track="policy"){
-    if(group===groupKey&&track===trackKey)return;
-    current=api.data(group,track);groupKey=group;trackKey=track;activeId=null;
+  function render(group,track="policy",policyScope="all"){
+    const scope=track==="agent" ? "all" : policyScope;
+    if(group===groupKey&&track===trackKey&&scope===scopeKey)return;
+    current=api.data(group,track,scope);groupKey=group;trackKey=track;scopeKey=scope;activeId=null;
     root.querySelectorAll("[data-moonshot-track]").forEach(button=>button.setAttribute("aria-pressed",button.dataset.moonshotTrack===track));
     root.hidden=false;
     $("moonshot-updated").innerHTML=R.overall.updated([...current.plotted,...current.unplotted].map(entry=>entry.policy));
@@ -154,6 +155,6 @@
   root.addEventListener("focusout",e=>{if(!root.contains(e.relatedTarget))inspect(null);});
   root.addEventListener("click",e=>{const p=e.target.closest('.moonshot-point');if(p)inspect(p.dataset.plotPolicy);});
   root.addEventListener("keydown",e=>{if(e.key==="Escape")inspect(null);});
-  window.addEventListener?.("resize",()=>{if(groupKey){const group=groupKey;groupKey="";render(group,trackKey);}});
+  window.addEventListener?.("resize",()=>{if(groupKey){const group=groupKey;groupKey="";render(group,trackKey,scopeKey);}});
   api.render=render;api.layout=layout;
 })();

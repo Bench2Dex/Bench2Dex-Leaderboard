@@ -1,6 +1,7 @@
 {
   "model": {
     "id": "ACT",
+    "usesTactile": false,
     "label": "ACT",
     "variantLabel": "",
     "family": "ACT",

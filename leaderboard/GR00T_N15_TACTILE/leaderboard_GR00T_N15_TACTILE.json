@@ -1,6 +1,7 @@
 {
   "model": {
     "id": "GR00T_N15_TACTILE",
+    "usesTactile": true,
     "label": "GR00T N1.5 · w/ Tactile",
     "variantLabel": "w/ Tactile",
     "family": "GR00T",

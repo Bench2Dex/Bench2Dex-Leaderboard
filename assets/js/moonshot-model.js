@@ -3,9 +3,10 @@
   "use strict";
   const R=window.BenchResults,M=R.model;
   const byName=(a,b)=>R.policyName(a.policy).localeCompare(R.policyName(b.policy))||a.policy.id.localeCompare(b.policy.id);
-  function data(groupId,track="policy"){
+  function data(groupId,track="policy",policyScope="all"){
     if(!M.protocols.some(p=>p.id===groupId))throw new RangeError("Unknown moonshot evaluation group");
-    const entries=M.group(groupId).filter(policy=>R.isAgent(policy)===(track==="agent")).map(policy=>{
+    const entries=M.group(groupId).filter(policy=>track==="agent" ? R.isAgent(policy)
+      : !R.isAgent(policy) && R.inPolicyScope(policy,policyScope)).map(policy=>{
       const sr=M.aggregateMetric(policy.id,"sr").value,lscr=M.aggregateMetric(policy.id,"lscr").value,efficiency=M.aggregateMetric(policy.id,"efficiency").value;
       const score=M.score(policy.id).value;
       const missing=[["SR",sr],["LSCR",lscr],["Eff.",efficiency]].filter(([,v])=>v===null).map(([key])=>key);

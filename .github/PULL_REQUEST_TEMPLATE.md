@@ -1,6 +1,7 @@
 ## Policy results submission
 
 - Policy ID:
+- Uses live tactile input during evaluation (`model.usesTactile`, `true` or `false`):
 - Evaluator / organization:
 - HF episode logs PR:
 - Coverage, episode counts, and protocol differences:

@@ -311,16 +311,22 @@ class Audit:
         self.check(model.get('protocolId') == 'standard', str(root), "this auditor supports standard protocol only")
         if not self.check(isinstance(policy_id, str) and re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9_.-]*', policy_id) and root.name == policy_id, str(root), "invalid policy ID"):
             return TASK_IDS
+        evaluation = policy.get('evaluation', {})
+        log_reference = evaluation.get('logs', {})
         log_root = (logs_root / policy_id).resolve() if logs_root else root.resolve()
         self.check(log_root.is_dir(), str(root), "HF policy log directory does not exist; pass --logs-root HF_CHECKOUT")
         if logs_root:
             if not self.check(log_root.is_relative_to(logs_root.resolve()), str(root), "HF policy path escapes checkout"):
                 return TASK_IDS
             hf_copy = self.load(log_root / files[0].name)
-            for key in ['model', 'overall', 'per_task']:
+            hf_model = hf_copy.get('model')
+            expected_model = model
+            if log_reference.get('status') == 'archived' and isinstance(hf_model, dict) and 'usesTactile' not in hf_model:
+                # Older pinned HF copies predate the tactile declaration.
+                expected_model = {key: value for key, value in model.items() if key != 'usesTactile'}
+            self.check(hf_model == expected_model, str(root), "GitHub/HF model differs")
+            for key in ['overall', 'per_task']:
                 self.check(hf_copy.get(key) == policy.get(key), str(root), f"GitHub/HF {key} differs")
-        evaluation = policy.get('evaluation', {})
-        log_reference = evaluation.get('logs', {})
         self.check(log_reference.get('repository') == 'Bench2Dex/Leaderboard' and log_reference.get('policyPath') == policy_id, str(root), "invalid HF log reference")
         self.check(evaluation.get('isTemplate') is False, str(root), "evaluation.isTemplate must be false")
         task_ids = TASK_IDS
