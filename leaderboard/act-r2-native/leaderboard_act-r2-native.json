@@ -1,0 +1,1854 @@
+{
+ "model": {
+  "id": "act-r2-native",
+  "label": "ACT (r2 native)",
+  "variantLabel": "",
+  "family": "ACT",
+  "modelVersion": "ACT r2 native-embodiment",
+  "checkpoint": "24 per-task policy_best checkpoints (6000 epochs each); tasks 24/67 use official Revo2 ACT weights",
+  "inputs": "Vision + Proprioception",
+  "protocolId": "standard",
+  "displayOrder": 200,
+  "trainingSetting": "Behavior cloning trained from scratch on Bench2Dex teleoperation data, one policy per task on the task's native embodiment (r2); tasks 24/67 use the official baseline weights.",
+  "evaluationSetting": "26 tasks, four channels (None/Equi./Inv./Full), 50 episodes per task/channel. Each channel evaluated by two parallel environment workers (25 episodes each) merged into one 50-episode result.",
+  "resultVersion": "2026-11-26 r2 evaluation",
+  "updatedAt": "2026-11-27",
+  "sourceLabel": "Bench2Dex r2 native-embodiment evaluation",
+  "sourceUrl": null,
+  "resultDetailsUrl": null,
+  "contributor": "Termitech-Dex",
+  "contributorUrl": null,
+  "type": "IL",
+  "modelUrl": null,
+  "logoPath": "leaderboard/act-r2-native/logo.svg",
+  "logoAlt": "ACT r2 native",
+  "weightsUrl": null,
+  "codeUrl": null
+ },
+ "overall": {
+  "status": "reported",
+  "taskCount": 26,
+  "scope": "task-macro",
+  "sr": 7.519231,
+  "lscr": 25.792949,
+  "efficiency": 0.961821656,
+  "efficiencyStatus": "reported",
+  "efficiencyTaskCount": 21,
+  "channelSr": {
+   "None": 10.923077,
+   "Equi.": 7.769231,
+   "Inv.": 5.461538,
+   "Full": 5.923077
+  },
+  "channelLscr": {
+   "None": 29.312821,
+   "Equi.": 25.425641,
+   "Inv.": 24.415385,
+   "Full": 24.017949
+  },
+  "channelTaskCounts": {
+   "None": 26,
+   "Equi.": 26,
+   "Inv.": 26,
+   "Full": 26
+  }
+ },
+ "per_task": {
+  "03": {
+   "channels": {
+    "None": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 3,
+     "lscr": 34.0,
+     "source": {
+      "runId": "act_r2_none_03",
+      "perEpisodeFile": "per_task_eval/03_wine_glass_plate_balance/None/per_episode.jsonl",
+      "perEpisodeSha256": "c1929e2c655005d26bcb10363a90199509f95d520bf5c396c8cfb276e0e468a1",
+      "summaryFile": "per_task_eval/03_wine_glass_plate_balance/None/summary.json",
+      "summarySha256": "99e7deade51eab985bb5d917d76be0139542be9907316ab22aae92c36c3db100"
+     }
+    },
+    "Equi.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 3,
+     "lscr": 42.0,
+     "source": {
+      "runId": "act_r2_cov_only_03",
+      "perEpisodeFile": "per_task_eval/03_wine_glass_plate_balance/Equi/per_episode.jsonl",
+      "perEpisodeSha256": "e98e53b0fd67006cfe92f24a0d297bb265bce0a96209e73b538da05c74d15339",
+      "summaryFile": "per_task_eval/03_wine_glass_plate_balance/Equi/summary.json",
+      "summarySha256": "d158c2e89f749002e53350e6e291665e884e990df16b2f7b8f21aa9a4241181a"
+     }
+    },
+    "Inv.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 2,
+     "lscr": 42.666667,
+     "source": {
+      "runId": "act_r2_inv_only_03",
+      "perEpisodeFile": "per_task_eval/03_wine_glass_plate_balance/Inv/per_episode.jsonl",
+      "perEpisodeSha256": "29fff11808764379bcdae13ab2f33a56015b887584e592a4e3e57c9c4d725b20",
+      "summaryFile": "per_task_eval/03_wine_glass_plate_balance/Inv/summary.json",
+      "summarySha256": "c7074055c4e73dcc322702ba97acbfdc31e94efd7d2ab5b30a7d1e068c6b514a"
+     }
+    },
+    "Full": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 5,
+     "lscr": 44.0,
+     "source": {
+      "runId": "act_r2_inv_cov_03",
+      "perEpisodeFile": "per_task_eval/03_wine_glass_plate_balance/Full/per_episode.jsonl",
+      "perEpisodeSha256": "cf5eee4204b9d7fb31fa8b641c36b3037bd700ce95e8be2e12f7a6e2ff20dd27",
+      "summaryFile": "per_task_eval/03_wine_glass_plate_balance/Full/summary.json",
+      "summarySha256": "655ef493115a2fd5d3329a0d79a8e33d9e289ef30935eba5fcd1395863a88229"
+     }
+    }
+   },
+   "mean": {
+    "status": "reported",
+    "srScope": "four-channel-mean",
+    "lscrScope": "four-channel-mean",
+    "sr": 6.5,
+    "lscr": 40.666667,
+    "efficiency": 1.076987864,
+    "efficiencyStatus": "reported",
+    "srEpisodes": 200,
+    "lscrEpisodes": 200
+   }
+  },
+  "06": {
+   "channels": {
+    "None": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 13,
+     "lscr": 65.0,
+     "source": {
+      "runId": "act_r2_none_06",
+      "perEpisodeFile": "per_task_eval/06_fruit_bowl_loading/None/per_episode.jsonl",
+      "perEpisodeSha256": "2c69712c37c1b952d935e64df0c9850402e583d70c8634fddb60c1876296aa04",
+      "summaryFile": "per_task_eval/06_fruit_bowl_loading/None/summary.json",
+      "summarySha256": "fbdf739da4f849727e8b25dd71faf0bcc53e4dd0cbff6c1a667c72f64b3d8973"
+     }
+    },
+    "Equi.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 9,
+     "lscr": 52.5,
+     "source": {
+      "runId": "act_r2_cov_only_06",
+      "perEpisodeFile": "per_task_eval/06_fruit_bowl_loading/Equi/per_episode.jsonl",
+      "perEpisodeSha256": "15912741cd8ff42cdee0b80f8bf61fcdc1bd365b8c593e890ee6c634cc0101f0",
+      "summaryFile": "per_task_eval/06_fruit_bowl_loading/Equi/summary.json",
+      "summarySha256": "66a283447b7de08c2659d137f755b73fb51e02bb9365438e519b24ce8d3c61a0"
+     }
+    },
+    "Inv.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 5,
+     "lscr": 52.0,
+     "source": {
+      "runId": "act_r2_inv_only_06",
+      "perEpisodeFile": "per_task_eval/06_fruit_bowl_loading/Inv/per_episode.jsonl",
+      "perEpisodeSha256": "9f2f516f1c65761d74d1fb6967991199a377b9c9e5c2adbbd2a4fa86eaad66ac",
+      "summaryFile": "per_task_eval/06_fruit_bowl_loading/Inv/summary.json",
+      "summarySha256": "e39fac630a49d89196df7accb403f5d9420df413c4cf92046c836274a61d5290"
+     }
+    },
+    "Full": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 11,
+     "lscr": 51.5,
+     "source": {
+      "runId": "act_r2_inv_cov_06",
+      "perEpisodeFile": "per_task_eval/06_fruit_bowl_loading/Full/per_episode.jsonl",
+      "perEpisodeSha256": "ecdd81d8affabc6befc5cfbe990d6f218815fd9c5da548d3cb8389005441e535",
+      "summaryFile": "per_task_eval/06_fruit_bowl_loading/Full/summary.json",
+      "summarySha256": "bb78b980f83d93bbee152d546c2d4746db4e2764654faba9b6ac00cce5182ecf"
+     }
+    }
+   },
+   "mean": {
+    "status": "reported",
+    "srScope": "four-channel-mean",
+    "lscrScope": "four-channel-mean",
+    "sr": 19.0,
+    "lscr": 55.25,
+    "efficiency": 0.970780776,
+    "efficiencyStatus": "reported",
+    "srEpisodes": 200,
+    "lscrEpisodes": 200
+   }
+  },
+  "07": {
+   "channels": {
+    "None": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 26,
+     "lscr": 72.0,
+     "source": {
+      "runId": "act_r2_none_07",
+      "perEpisodeFile": "per_task_eval/07_citrus_plate_loading/None/per_episode.jsonl",
+      "perEpisodeSha256": "1927edf268a19c6666d58f98ad93c5538f8e5e8108c69acf6d03ea7f84a638d8",
+      "summaryFile": "per_task_eval/07_citrus_plate_loading/None/summary.json",
+      "summarySha256": "2c26f09513601742781629454e91b9f18f7c0b1d7a68b3df91c4c53478f3c168"
+     }
+    },
+    "Equi.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 15,
+     "lscr": 49.5,
+     "source": {
+      "runId": "act_r2_cov_only_07",
+      "perEpisodeFile": "per_task_eval/07_citrus_plate_loading/Equi/per_episode.jsonl",
+      "perEpisodeSha256": "1227509c7d8cbfb6f326f2afdbfacaa8f9a2e4d8a5b5ddeb467149bad20509b1",
+      "summaryFile": "per_task_eval/07_citrus_plate_loading/Equi/summary.json",
+      "summarySha256": "196be4d7317f4067a7949c37c7f355e805443d51c6372259b3586c779b695420"
+     }
+    },
+    "Inv.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 6,
+     "lscr": 39.0,
+     "source": {
+      "runId": "act_r2_inv_only_07",
+      "perEpisodeFile": "per_task_eval/07_citrus_plate_loading/Inv/per_episode.jsonl",
+      "perEpisodeSha256": "28664ff68d954ed80cde9746a631070544d045aabbceb57133666f149ce353bf",
+      "summaryFile": "per_task_eval/07_citrus_plate_loading/Inv/summary.json",
+      "summarySha256": "e1f49a2d4b603a471a8276fc8ce5df69b278154bbb65589f5ae8b98c722013ad"
+     }
+    },
+    "Full": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 11,
+     "lscr": 42.0,
+     "source": {
+      "runId": "act_r2_inv_cov_07",
+      "perEpisodeFile": "per_task_eval/07_citrus_plate_loading/Full/per_episode.jsonl",
+      "perEpisodeSha256": "9bac06649a7b5ebb2d35ee19c68047b8fe5a73c760bd738db1db47e3dc549a25",
+      "summaryFile": "per_task_eval/07_citrus_plate_loading/Full/summary.json",
+      "summarySha256": "4159118dbbff1b6d5bab7ecc431da3f5e32c3b439053f32edf9a8d8cbc0598df"
+     }
+    }
+   },
+   "mean": {
+    "status": "reported",
+    "srScope": "four-channel-mean",
+    "lscrScope": "four-channel-mean",
+    "sr": 29.0,
+    "lscr": 50.625,
+    "efficiency": 0.842976405,
+    "efficiencyStatus": "reported",
+    "srEpisodes": 200,
+    "lscrEpisodes": 200
+   }
+  },
+  "08": {
+   "channels": {
+    "None": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 1,
+     "lscr": 17.0,
+     "source": {
+      "runId": "act_r2_none_08",
+      "perEpisodeFile": "per_task_eval/08_frypan_stand_pour/None/per_episode.jsonl",
+      "perEpisodeSha256": "efa12b886f84cd9d96c7b00e31e83fc08f62166e371ef3dec2915140230a3763",
+      "summaryFile": "per_task_eval/08_frypan_stand_pour/None/summary.json",
+      "summarySha256": "361d48af48e8a2d5e353f01b197e5c3661ec7233912f9eb6f0e6c9292c674c03"
+     }
+    },
+    "Equi.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 3,
+     "lscr": 17.0,
+     "source": {
+      "runId": "act_r2_cov_only_08",
+      "perEpisodeFile": "per_task_eval/08_frypan_stand_pour/Equi/per_episode.jsonl",
+      "perEpisodeSha256": "11683de1b8aee503dbd356456d1798d502b3b15cc9dd3d57e7a9887f9123be27",
+      "summaryFile": "per_task_eval/08_frypan_stand_pour/Equi/summary.json",
+      "summarySha256": "f39e466f7577b4458a32d44170e52ae768bfae2065f47ae9075daf6dd24e63f1"
+     }
+    },
+    "Inv.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 0,
+     "lscr": 19.0,
+     "source": {
+      "runId": "act_r2_inv_only_08",
+      "perEpisodeFile": "per_task_eval/08_frypan_stand_pour/Inv/per_episode.jsonl",
+      "perEpisodeSha256": "18d03e5d8b3c5979cef25c84a7ec06c688bf455864b788cd7966beb951033faf",
+      "summaryFile": "per_task_eval/08_frypan_stand_pour/Inv/summary.json",
+      "summarySha256": "3570e96a513fad99f393d5d69c016a098574b346e18b72a37bd6488fffd3fb90"
+     }
+    },
+    "Full": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 2,
+     "lscr": 20.0,
+     "source": {
+      "runId": "act_r2_inv_cov_08",
+      "perEpisodeFile": "per_task_eval/08_frypan_stand_pour/Full/per_episode.jsonl",
+      "perEpisodeSha256": "73a9e1a5a8fb1998a8d5f07634f8fb868b950c5e52c0f51752d9cc0530054f01",
+      "summaryFile": "per_task_eval/08_frypan_stand_pour/Full/summary.json",
+      "summarySha256": "504ce4e2b4520e73d973b603eeed1f253ab1f6a1b876bfc525d0ad320c857098"
+     }
+    }
+   },
+   "mean": {
+    "status": "reported",
+    "srScope": "four-channel-mean",
+    "lscrScope": "four-channel-mean",
+    "sr": 3.0,
+    "lscr": 18.25,
+    "efficiency": 1.057953144,
+    "efficiencyStatus": "reported",
+    "srEpisodes": 200,
+    "lscrEpisodes": 200
+   }
+  },
+  "09": {
+   "channels": {
+    "None": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 21,
+     "lscr": 78.0,
+     "source": {
+      "runId": "act_r2_none_09",
+      "perEpisodeFile": "per_task_eval/09_cleaner_box_loading/None/per_episode.jsonl",
+      "perEpisodeSha256": "7394f60075d1e3d5d405664f4183ac9b3554a676d7cd8356b7e42d89e763e554",
+      "summaryFile": "per_task_eval/09_cleaner_box_loading/None/summary.json",
+      "summarySha256": "486423f33be44aea6416b495d7e40369925ef3e44e10c51e8b9dd0ad05e61598"
+     }
+    },
+    "Equi.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 14,
+     "lscr": 75.0,
+     "source": {
+      "runId": "act_r2_cov_only_09",
+      "perEpisodeFile": "per_task_eval/09_cleaner_box_loading/Equi/per_episode.jsonl",
+      "perEpisodeSha256": "ad6ec0fee9db28b66616f66f590eaa368af0a8ddd231b244c11e193f9dc361f4",
+      "summaryFile": "per_task_eval/09_cleaner_box_loading/Equi/summary.json",
+      "summarySha256": "dfa08196832d83c481ed9e7524ff7759760aa31f1ebf2952da5f9d6a4d14e412"
+     }
+    },
+    "Inv.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 2,
+     "lscr": 64.0,
+     "source": {
+      "runId": "act_r2_inv_only_09",
+      "perEpisodeFile": "per_task_eval/09_cleaner_box_loading/Inv/per_episode.jsonl",
+      "perEpisodeSha256": "e8873a27e8b7e5eb22ffb8b6042eee86eac3c42426cfc846edda7d175559855a",
+      "summaryFile": "per_task_eval/09_cleaner_box_loading/Inv/summary.json",
+      "summarySha256": "f9d3ecc21b3088745a845e4604f2fd84e94a8584e1d5893f4947b91ce6435887"
+     }
+    },
+    "Full": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 4,
+     "lscr": 66.0,
+     "source": {
+      "runId": "act_r2_inv_cov_09",
+      "perEpisodeFile": "per_task_eval/09_cleaner_box_loading/Full/per_episode.jsonl",
+      "perEpisodeSha256": "04b305f36ee2bf9df47286369284aa219379135a46475efbde501cb8c246683a",
+      "summaryFile": "per_task_eval/09_cleaner_box_loading/Full/summary.json",
+      "summarySha256": "abd57471a51bc9a526ecc9ca03ded8f26fb2c0f6cc1910be18bda837fe48314b"
+     }
+    }
+   },
+   "mean": {
+    "status": "reported",
+    "srScope": "four-channel-mean",
+    "lscrScope": "four-channel-mean",
+    "sr": 20.5,
+    "lscr": 70.75,
+    "efficiency": 0.946097122,
+    "efficiencyStatus": "reported",
+    "srEpisodes": 200,
+    "lscrEpisodes": 200
+   }
+  },
+  "12": {
+   "channels": {
+    "None": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 9,
+     "lscr": 55.0,
+     "source": {
+      "runId": "act_r2_none_12",
+      "perEpisodeFile": "per_task_eval/12_screwdriver_box_and_hammer/None/per_episode.jsonl",
+      "perEpisodeSha256": "8f49e41dfe3a7acab1945ca2dd52dbc8b7bba8268968c37df7421feefb37c6c4",
+      "summaryFile": "per_task_eval/12_screwdriver_box_and_hammer/None/summary.json",
+      "summarySha256": "25a0ef369eef25864b42887025e0cc96262e6bd4f94ea45b5606587076bcf8ef"
+     }
+    },
+    "Equi.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 7,
+     "lscr": 46.0,
+     "source": {
+      "runId": "act_r2_cov_only_12",
+      "perEpisodeFile": "per_task_eval/12_screwdriver_box_and_hammer/Equi/per_episode.jsonl",
+      "perEpisodeSha256": "d4e212444082ebc0337496e0122bd6bcc23163d6421da31737f9a40ec77f84df",
+      "summaryFile": "per_task_eval/12_screwdriver_box_and_hammer/Equi/summary.json",
+      "summarySha256": "f2829aca591778e0b92db23804917ca2107943d70e89db9d0f2b31155612c523"
+     }
+    },
+    "Inv.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 11,
+     "lscr": 46.0,
+     "source": {
+      "runId": "act_r2_inv_only_12",
+      "perEpisodeFile": "per_task_eval/12_screwdriver_box_and_hammer/Inv/per_episode.jsonl",
+      "perEpisodeSha256": "7358fa8ad31f73b2c241bd3536d639ad2dae917ee25cd653fc3e3b1ed7651608",
+      "summaryFile": "per_task_eval/12_screwdriver_box_and_hammer/Inv/summary.json",
+      "summarySha256": "855f9a9da24fcb9a4bddd8f5c23e21b3d3b9bcfed6e13160ade00ef38fa30b74"
+     }
+    },
+    "Full": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 9,
+     "lscr": 52.5,
+     "source": {
+      "runId": "act_r2_inv_cov_12",
+      "perEpisodeFile": "per_task_eval/12_screwdriver_box_and_hammer/Full/per_episode.jsonl",
+      "perEpisodeSha256": "f2809b2e3d719f0c196beeb0f7e2328b3c9eec71984e0e8e3c1c12a856c8e390",
+      "summaryFile": "per_task_eval/12_screwdriver_box_and_hammer/Full/summary.json",
+      "summarySha256": "c976e1830ee171362c6d807c525031efe3c30dfc24a98170468c7dcca3768b67"
+     }
+    }
+   },
+   "mean": {
+    "status": "reported",
+    "srScope": "four-channel-mean",
+    "lscrScope": "four-channel-mean",
+    "sr": 18.0,
+    "lscr": 49.875,
+    "efficiency": 0.985543174,
+    "efficiencyStatus": "reported",
+    "srEpisodes": 200,
+    "lscrEpisodes": 200
+   }
+  },
+  "21": {
+   "channels": {
+    "None": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 10,
+     "lscr": 47.333333,
+     "source": {
+      "runId": "act_r2_none_21",
+      "perEpisodeFile": "per_task_eval/21_condiment_box_loading/None/per_episode.jsonl",
+      "perEpisodeSha256": "7c9f0b31591762a02b54073f846cf007358d565602d7ca48808e439888c5f87d",
+      "summaryFile": "per_task_eval/21_condiment_box_loading/None/summary.json",
+      "summarySha256": "37b821e9bca0b9f381b0de67938b2f3006c4a859615965d6e7d6bcacd5002e77"
+     }
+    },
+    "Equi.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 0,
+     "lscr": 9.333333,
+     "source": {
+      "runId": "act_r2_cov_only_21",
+      "perEpisodeFile": "per_task_eval/21_condiment_box_loading/Equi/per_episode.jsonl",
+      "perEpisodeSha256": "3243d4391d7aa9e6dfb80c18b94ea5e5b22c4e541a37b30084abf7200a5ba260",
+      "summaryFile": "per_task_eval/21_condiment_box_loading/Equi/summary.json",
+      "summarySha256": "25c30c6fba9ecb709542131417fb5a252ddb9ef1d26ec48e1ac6dc56efe23393"
+     }
+    },
+    "Inv.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 2,
+     "lscr": 21.333333,
+     "source": {
+      "runId": "act_r2_inv_only_21",
+      "perEpisodeFile": "per_task_eval/21_condiment_box_loading/Inv/per_episode.jsonl",
+      "perEpisodeSha256": "aa88b3cad638c2e2a0515c6b2b136423cbfe4839afbd4595587b7459e18ec981",
+      "summaryFile": "per_task_eval/21_condiment_box_loading/Inv/summary.json",
+      "summarySha256": "0c8f10c7d029c2ca5dcf1c2f500db442fbdcb4fcb0a5bc07b5170defc1361b97"
+     }
+    },
+    "Full": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 2,
+     "lscr": 20.0,
+     "source": {
+      "runId": "act_r2_inv_cov_21",
+      "perEpisodeFile": "per_task_eval/21_condiment_box_loading/Full/per_episode.jsonl",
+      "perEpisodeSha256": "982a46be1879d469d01be2ad419696a1c00257601deec7f8fd88601cecd2ca9a",
+      "summaryFile": "per_task_eval/21_condiment_box_loading/Full/summary.json",
+      "summarySha256": "15b97858fdec9e1a4447aa9cfcb68fce37fdea06173131985e6e586d18b41203"
+     }
+    }
+   },
+   "mean": {
+    "status": "reported",
+    "srScope": "four-channel-mean",
+    "lscrScope": "four-channel-mean",
+    "sr": 7.0,
+    "lscr": 24.5,
+    "efficiency": 0.854969724,
+    "efficiencyStatus": "reported",
+    "srEpisodes": 200,
+    "lscrEpisodes": 200
+   }
+  },
+  "22": {
+   "channels": {
+    "None": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 3,
+     "lscr": 22.0,
+     "source": {
+      "runId": "act_r2_none_22",
+      "perEpisodeFile": "per_task_eval/22_tool_box_loading/None/per_episode.jsonl",
+      "perEpisodeSha256": "a19143e2a9d70fce81622b4b7eb94d60cf41d493b9130b8ad951500cd72f5592",
+      "summaryFile": "per_task_eval/22_tool_box_loading/None/summary.json",
+      "summarySha256": "876ce93db2e22c9706feced4c5510696313f2886eafc18e01ed889d9d9b3a88d"
+     }
+    },
+    "Equi.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 4,
+     "lscr": 27.5,
+     "source": {
+      "runId": "act_r2_cov_only_22",
+      "perEpisodeFile": "per_task_eval/22_tool_box_loading/Equi/per_episode.jsonl",
+      "perEpisodeSha256": "768b9ebc609e6e44346c0700ef23e7ddc2110b7d897bcadde9575c5906d69f1f",
+      "summaryFile": "per_task_eval/22_tool_box_loading/Equi/summary.json",
+      "summarySha256": "2b61b5472abfba7a2fef40cfdefce0c6aea267f350b2b7251aa3fc3c9e7daf38"
+     }
+    },
+    "Inv.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 3,
+     "lscr": 22.5,
+     "source": {
+      "runId": "act_r2_inv_only_22",
+      "perEpisodeFile": "per_task_eval/22_tool_box_loading/Inv/per_episode.jsonl",
+      "perEpisodeSha256": "2e44e07b99da9dd8dc5ca5f6358db4a219c3f9bb5aa2c683f4b78409ebb2d3ea",
+      "summaryFile": "per_task_eval/22_tool_box_loading/Inv/summary.json",
+      "summarySha256": "a8727ad8c0512f533c1031e7d29ecd3cccff5dd26ce0009534144f9128d2f94b"
+     }
+    },
+    "Full": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 2,
+     "lscr": 20.0,
+     "source": {
+      "runId": "act_r2_inv_cov_22",
+      "perEpisodeFile": "per_task_eval/22_tool_box_loading/Full/per_episode.jsonl",
+      "perEpisodeSha256": "9c65fa26b4156bed6d54ab7d19eb5e7a7b4baa2a5273fc650dc602ad94d9575a",
+      "summaryFile": "per_task_eval/22_tool_box_loading/Full/summary.json",
+      "summarySha256": "f82b7705ff117636b5c6ecc0590426fa5c0259e60c189c570f4e1673b24fcd5a"
+     }
+    }
+   },
+   "mean": {
+    "status": "reported",
+    "srScope": "four-channel-mean",
+    "lscrScope": "four-channel-mean",
+    "sr": 6.0,
+    "lscr": 23.0,
+    "efficiency": 0.985101635,
+    "efficiencyStatus": "reported",
+    "srEpisodes": 200,
+    "lscrEpisodes": 200
+   }
+  },
+  "24": {
+   "channels": {
+    "None": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 3,
+     "lscr": 28.5,
+     "source": {
+      "runId": "act_r2_none_24",
+      "perEpisodeFile": "per_task_eval/24_stationery_category_sorting/None/per_episode.jsonl",
+      "perEpisodeSha256": "837c09ddaf92c559a7f9fa3b437450362efd718545ddbc426681e60e7a08afe5",
+      "summaryFile": "per_task_eval/24_stationery_category_sorting/None/summary.json",
+      "summarySha256": "b131fdf84dd4198846e079b7b011e31bf16e135d806a353bff9b4960e32e9dba"
+     }
+    },
+    "Equi.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 1,
+     "lscr": 25.0,
+     "source": {
+      "runId": "act_r2_cov_only_24",
+      "perEpisodeFile": "per_task_eval/24_stationery_category_sorting/Equi/per_episode.jsonl",
+      "perEpisodeSha256": "d39dff2a9000d0c84130d9aa7d25e155fb8e1c8deb302a2a761628f157c1bbcd",
+      "summaryFile": "per_task_eval/24_stationery_category_sorting/Equi/summary.json",
+      "summarySha256": "ef715b1d0871a00629f98863c24b6867ad5a15f74d52473c98af4b757f1ad753"
+     }
+    },
+    "Inv.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 1,
+     "lscr": 20.0,
+     "source": {
+      "runId": "act_r2_inv_only_24",
+      "perEpisodeFile": "per_task_eval/24_stationery_category_sorting/Inv/per_episode.jsonl",
+      "perEpisodeSha256": "f95e5b7e3814eb16b56a019ad2df21fbe25634472f2920de5d38f0880216f289",
+      "summaryFile": "per_task_eval/24_stationery_category_sorting/Inv/summary.json",
+      "summarySha256": "86a5aa391a6b4c314bb5d41d9d11bc805c00bf1e703b60997533d4fdb9a80ea2"
+     }
+    },
+    "Full": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 0,
+     "lscr": 19.5,
+     "source": {
+      "runId": "act_r2_inv_cov_24",
+      "perEpisodeFile": "per_task_eval/24_stationery_category_sorting/Full/per_episode.jsonl",
+      "perEpisodeSha256": "fabb6bb6ec36e985cde83e3800708f1d1123dc739f5a92788393a6fa33baeb6b",
+      "summaryFile": "per_task_eval/24_stationery_category_sorting/Full/summary.json",
+      "summarySha256": "cbecf72e62b4607bcfd1b091528766052543a412e97b97329af92e42b862aab1"
+     }
+    }
+   },
+   "mean": {
+    "status": "reported",
+    "srScope": "four-channel-mean",
+    "lscrScope": "four-channel-mean",
+    "sr": 2.5,
+    "lscr": 23.25,
+    "efficiency": 1.033384729,
+    "efficiencyStatus": "reported",
+    "srEpisodes": 200,
+    "lscrEpisodes": 200
+   }
+  },
+  "26": {
+   "channels": {
+    "None": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 0,
+     "lscr": 15.0,
+     "source": {
+      "runId": "act_r2_none_26",
+      "perEpisodeFile": "per_task_eval/26_canned_food_tray_arrangement/None/per_episode.jsonl",
+      "perEpisodeSha256": "b1b5abbd2dd963f0681ee283c2f0649ec5273491ae77c7b5667fbc73089817c8",
+      "summaryFile": "per_task_eval/26_canned_food_tray_arrangement/None/summary.json",
+      "summarySha256": "51de6b6e4ad96cdd566750405d0899024111a9854a229fa5a7de8e814f500670"
+     }
+    },
+    "Equi.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 0,
+     "lscr": 12.0,
+     "source": {
+      "runId": "act_r2_cov_only_26",
+      "perEpisodeFile": "per_task_eval/26_canned_food_tray_arrangement/Equi/per_episode.jsonl",
+      "perEpisodeSha256": "251de7670704658423934a0889b50afc7dbc3ecbd492b41712eafc96ac4618e7",
+      "summaryFile": "per_task_eval/26_canned_food_tray_arrangement/Equi/summary.json",
+      "summarySha256": "9799e5ec40ac2b442909a2c16fe8cd47a091c363d1c084e6b7a7186698c2e5da"
+     }
+    },
+    "Inv.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 1,
+     "lscr": 19.5,
+     "source": {
+      "runId": "act_r2_inv_only_26",
+      "perEpisodeFile": "per_task_eval/26_canned_food_tray_arrangement/Inv/per_episode.jsonl",
+      "perEpisodeSha256": "790b9dcca70906e665aa2588020881be84b315f4cd15c3f55de4ec811b6facca",
+      "summaryFile": "per_task_eval/26_canned_food_tray_arrangement/Inv/summary.json",
+      "summarySha256": "fb8989c3d5239d0e7775eec8116632016e20cfd7afe343a59523ee5279ed2383"
+     }
+    },
+    "Full": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 0,
+     "lscr": 6.5,
+     "source": {
+      "runId": "act_r2_inv_cov_26",
+      "perEpisodeFile": "per_task_eval/26_canned_food_tray_arrangement/Full/per_episode.jsonl",
+      "perEpisodeSha256": "d1f572ca92d4dd10a7efc432a661abf8b56f9c4445667e41d7115a0ac6036fd3",
+      "summaryFile": "per_task_eval/26_canned_food_tray_arrangement/Full/summary.json",
+      "summarySha256": "496bf60742eb6d0e7c74d735a1be91cb793ff862a63b071d38e2df3c8297f32d"
+     }
+    }
+   },
+   "mean": {
+    "status": "reported",
+    "srScope": "four-channel-mean",
+    "lscrScope": "four-channel-mean",
+    "sr": 0.5,
+    "lscr": 13.25,
+    "efficiency": 0.856440511,
+    "efficiencyStatus": "reported",
+    "srEpisodes": 200,
+    "lscrEpisodes": 200
+   }
+  },
+  "27": {
+   "channels": {
+    "None": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 3,
+     "lscr": 16.0,
+     "source": {
+      "runId": "act_r2_none_27",
+      "perEpisodeFile": "per_task_eval/27_ball_box_loading/None/per_episode.jsonl",
+      "perEpisodeSha256": "7bedffc3f4bc084b650ebf6c2d4bea5b7ee29d2e26edca4acaad38b050884e6c",
+      "summaryFile": "per_task_eval/27_ball_box_loading/None/summary.json",
+      "summarySha256": "472f7340b1ae2912509c8323714217c5c8849304186bb59b86f89a97afed5ca5"
+     }
+    },
+    "Equi.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 3,
+     "lscr": 12.0,
+     "source": {
+      "runId": "act_r2_cov_only_27",
+      "perEpisodeFile": "per_task_eval/27_ball_box_loading/Equi/per_episode.jsonl",
+      "perEpisodeSha256": "48beee7e0387ab0941714101b777fe0d13f633fe53d5efbe55eead81138c2427",
+      "summaryFile": "per_task_eval/27_ball_box_loading/Equi/summary.json",
+      "summarySha256": "9e0bdc5e99c7c4e29500cec7c7b08fe7fccb316ab74c4af87fe76bfdbaea99ab"
+     }
+    },
+    "Inv.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 1,
+     "lscr": 9.0,
+     "source": {
+      "runId": "act_r2_inv_only_27",
+      "perEpisodeFile": "per_task_eval/27_ball_box_loading/Inv/per_episode.jsonl",
+      "perEpisodeSha256": "68aa650568750e509c4b0d9df40c10c8a1ffe66a0de0728d015307b87bb5672e",
+      "summaryFile": "per_task_eval/27_ball_box_loading/Inv/summary.json",
+      "summarySha256": "e553a4a28cd3242a53159102c8af9928b5d9a6d56ba8b59e22a6af09fc4fd2fc"
+     }
+    },
+    "Full": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 1,
+     "lscr": 5.5,
+     "source": {
+      "runId": "act_r2_inv_cov_27",
+      "perEpisodeFile": "per_task_eval/27_ball_box_loading/Full/per_episode.jsonl",
+      "perEpisodeSha256": "01afa38566715593d4fa3f7d58a8b5d5ea5b0dde8b70588aad66b1a6c95d6dc8",
+      "summaryFile": "per_task_eval/27_ball_box_loading/Full/summary.json",
+      "summarySha256": "6f170f290c5a87bbbbb0a76611a6c2bdb9d9a21842fbdb2fbff1bd8fcbd31c69"
+     }
+    }
+   },
+   "mean": {
+    "status": "reported",
+    "srScope": "four-channel-mean",
+    "lscrScope": "four-channel-mean",
+    "sr": 4.0,
+    "lscr": 10.625,
+    "efficiency": 0.967578006,
+    "efficiencyStatus": "reported",
+    "srEpisodes": 200,
+    "lscrEpisodes": 200
+   }
+  },
+  "32": {
+   "channels": {
+    "None": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 2,
+     "lscr": 6.0,
+     "source": {
+      "runId": "act_r2_none_32",
+      "perEpisodeFile": "per_task_eval/32_baking_tray_prep/None/per_episode.jsonl",
+      "perEpisodeSha256": "8f8220df386fa1afe956e6eb532745f72c5362f7b628499dbd1b9b771fa4cae2",
+      "summaryFile": "per_task_eval/32_baking_tray_prep/None/summary.json",
+      "summarySha256": "37fee27560504bbd08a0000c6a7b4b3c22b692785d0aff67080f513ab2df94e5"
+     }
+    },
+    "Equi.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 0,
+     "lscr": 1.5,
+     "source": {
+      "runId": "act_r2_cov_only_32",
+      "perEpisodeFile": "per_task_eval/32_baking_tray_prep/Equi/per_episode.jsonl",
+      "perEpisodeSha256": "a7e78dbcb552bd010202df89728d4be70c85bfc21c312f033ea472706e162c56",
+      "summaryFile": "per_task_eval/32_baking_tray_prep/Equi/summary.json",
+      "summarySha256": "4d8b573d1338d2e082a32d5b78c3d33c1e0e68bd09be8556c2430b1a02d55dc8"
+     }
+    },
+    "Inv.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 0,
+     "lscr": 2.0,
+     "source": {
+      "runId": "act_r2_inv_only_32",
+      "perEpisodeFile": "per_task_eval/32_baking_tray_prep/Inv/per_episode.jsonl",
+      "perEpisodeSha256": "738bb5118cbae8f32e8dca00681b60de2f6555d8cec95d2fbdfde3890865b8d5",
+      "summaryFile": "per_task_eval/32_baking_tray_prep/Inv/summary.json",
+      "summarySha256": "7668d6fa06a414b1e44a46c9e6503cb3ddc6485b78a051c0e9db28e1354a2dd9"
+     }
+    },
+    "Full": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 0,
+     "lscr": 2.5,
+     "source": {
+      "runId": "act_r2_inv_cov_32",
+      "perEpisodeFile": "per_task_eval/32_baking_tray_prep/Full/per_episode.jsonl",
+      "perEpisodeSha256": "9e9365ecfe1eb2ed0f5c542d451c76a2913c375fc0de30ba9d52679eee93a14f",
+      "summaryFile": "per_task_eval/32_baking_tray_prep/Full/summary.json",
+      "summarySha256": "4ebcfaae260a62358c7ae255238b49a14fc351f0990f74f1d3b18af5ecf22185"
+     }
+    }
+   },
+   "mean": {
+    "status": "reported",
+    "srScope": "four-channel-mean",
+    "lscrScope": "four-channel-mean",
+    "sr": 1.0,
+    "lscr": 3.0,
+    "efficiency": 0.97453505,
+    "efficiencyStatus": "reported",
+    "srEpisodes": 200,
+    "lscrEpisodes": 200
+   }
+  },
+  "34": {
+   "channels": {
+    "None": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 0,
+     "lscr": 36.8,
+     "source": {
+      "runId": "act_r2_none_34",
+      "perEpisodeFile": "per_task_eval/34_fridge_wine_interhand_pour/None/per_episode.jsonl",
+      "perEpisodeSha256": "b782d1744d7591b26ce8f5a064c1dd97af66581aeab689341d787730e39ec05a",
+      "summaryFile": "per_task_eval/34_fridge_wine_interhand_pour/None/summary.json",
+      "summarySha256": "38c4bb4a5c78a45aa7a793cb0e6a926c8d3966c5e15ac15722cfb5f31d3d6f1b"
+     }
+    },
+    "Equi.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 1,
+     "lscr": 38.4,
+     "source": {
+      "runId": "act_r2_cov_only_34",
+      "perEpisodeFile": "per_task_eval/34_fridge_wine_interhand_pour/Equi/per_episode.jsonl",
+      "perEpisodeSha256": "9445311f4ef87d904e341c7859c717a37f5a67974e09670693030a9369390662",
+      "summaryFile": "per_task_eval/34_fridge_wine_interhand_pour/Equi/summary.json",
+      "summarySha256": "b7b6f4d1c337c16f086d7b136bf8b9af705f4b6d86119e4042ee90a5b13fbf5f"
+     }
+    },
+    "Inv.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 1,
+     "lscr": 38.8,
+     "source": {
+      "runId": "act_r2_inv_only_34",
+      "perEpisodeFile": "per_task_eval/34_fridge_wine_interhand_pour/Inv/per_episode.jsonl",
+      "perEpisodeSha256": "714ec133cc05a4220216102d8b97af2ac8c9b58c4eec39a6c3687e14c20cc490",
+      "summaryFile": "per_task_eval/34_fridge_wine_interhand_pour/Inv/summary.json",
+      "summarySha256": "8dffae2fae4e2c21a274c09d9b333d276c97093c5c280df6b79b6c525fb56765"
+     }
+    },
+    "Full": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 0,
+     "lscr": 40.8,
+     "source": {
+      "runId": "act_r2_inv_cov_34",
+      "perEpisodeFile": "per_task_eval/34_fridge_wine_interhand_pour/Full/per_episode.jsonl",
+      "perEpisodeSha256": "e09f21ad85f9dab579b892fbd377220c79a3fc5096ad4a9cc98c81d5e946d785",
+      "summaryFile": "per_task_eval/34_fridge_wine_interhand_pour/Full/summary.json",
+      "summarySha256": "235c50cbc407e9905c08c5eb8fc478068862ae55748f6a79ffc3e2fb76e3abb4"
+     }
+    }
+   },
+   "mean": {
+    "status": "reported",
+    "srScope": "four-channel-mean",
+    "lscrScope": "four-channel-mean",
+    "sr": 1.0,
+    "lscr": 38.7,
+    "efficiency": 0.927237605,
+    "efficiencyStatus": "reported",
+    "srEpisodes": 200,
+    "lscrEpisodes": 200
+   }
+  },
+  "42": {
+   "channels": {
+    "None": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 2,
+     "lscr": 20.666667,
+     "source": {
+      "runId": "act_r2_none_42",
+      "perEpisodeFile": "per_task_eval/42_trash_disposal/None/per_episode.jsonl",
+      "perEpisodeSha256": "0f5c41b7b0f2b242d8c2669786d1c9985b85feeb81675a7f8a425449d9e946f0",
+      "summaryFile": "per_task_eval/42_trash_disposal/None/summary.json",
+      "summarySha256": "da72799d3dc0a4dfc451f13179fa7174a1b990d8104402fccb8743b65e01fb08"
+     }
+    },
+    "Equi.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 0,
+     "lscr": 20.0,
+     "source": {
+      "runId": "act_r2_cov_only_42",
+      "perEpisodeFile": "per_task_eval/42_trash_disposal/Equi/per_episode.jsonl",
+      "perEpisodeSha256": "bf333a22293e1e789218c45bd0f1269230105458b54c939a600fb8921cdff578",
+      "summaryFile": "per_task_eval/42_trash_disposal/Equi/summary.json",
+      "summarySha256": "276dd294ff59d4287750c5ebd52957dfc06cc1d62fa1018d33a333378f033832"
+     }
+    },
+    "Inv.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 2,
+     "lscr": 22.666667,
+     "source": {
+      "runId": "act_r2_inv_only_42",
+      "perEpisodeFile": "per_task_eval/42_trash_disposal/Inv/per_episode.jsonl",
+      "perEpisodeSha256": "12b3bcbe17898863e4d6a34404232bce822de6534e89085bae3ccd2b6be94f4f",
+      "summaryFile": "per_task_eval/42_trash_disposal/Inv/summary.json",
+      "summarySha256": "aecdb5297d649694cae672b3a61d3f43b284c9c95fafc4e9a77c1a4bd753abf6"
+     }
+    },
+    "Full": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 1,
+     "lscr": 22.0,
+     "source": {
+      "runId": "act_r2_inv_cov_42",
+      "perEpisodeFile": "per_task_eval/42_trash_disposal/Full/per_episode.jsonl",
+      "perEpisodeSha256": "700fc87c0226772b1203d4be6e40cde316cfb0fd5cdc3551286f8992046a81ad",
+      "summaryFile": "per_task_eval/42_trash_disposal/Full/summary.json",
+      "summarySha256": "8e631c748fc56876c1feab3ba3557794bf6b0dad9e996d0f2ab3c0f94749bb03"
+     }
+    }
+   },
+   "mean": {
+    "status": "reported",
+    "srScope": "four-channel-mean",
+    "lscrScope": "four-channel-mean",
+    "sr": 2.5,
+    "lscr": 21.333333,
+    "efficiency": 0.866856995,
+    "efficiencyStatus": "reported",
+    "srEpisodes": 200,
+    "lscrEpisodes": 200
+   }
+  },
+  "43": {
+   "channels": {
+    "None": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 0,
+     "lscr": 8.0,
+     "source": {
+      "runId": "act_r2_none_43",
+      "perEpisodeFile": "per_task_eval/43_fridge_fruit_shelf_sorting/None/per_episode.jsonl",
+      "perEpisodeSha256": "cecce5d84f463e35f908ed0b043ff778b3e1e2b5f1258a4e9db5237715ef39a2",
+      "summaryFile": "per_task_eval/43_fridge_fruit_shelf_sorting/None/summary.json",
+      "summarySha256": "e436bbc1ae1610e2a18e8caceffde5c26c118ff9ff98bcc4299803b311487eb6"
+     }
+    },
+    "Equi.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 0,
+     "lscr": 11.0,
+     "source": {
+      "runId": "act_r2_cov_only_43",
+      "perEpisodeFile": "per_task_eval/43_fridge_fruit_shelf_sorting/Equi/per_episode.jsonl",
+      "perEpisodeSha256": "38bd2d1445c0e3ba32638304fa1b2b68e4ba703636f8db5e653e01108297ead0",
+      "summaryFile": "per_task_eval/43_fridge_fruit_shelf_sorting/Equi/summary.json",
+      "summarySha256": "afbdb0ad5b9d7153ba9101f45fc55b12195ce57f97f91755df9870a4bed1c2ac"
+     }
+    },
+    "Inv.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 0,
+     "lscr": 8.0,
+     "source": {
+      "runId": "act_r2_inv_only_43",
+      "perEpisodeFile": "per_task_eval/43_fridge_fruit_shelf_sorting/Inv/per_episode.jsonl",
+      "perEpisodeSha256": "dfb0bfdc7fd7c427847cc10696d1d169da7a7cf4489e0b687cfab1142d30bd31",
+      "summaryFile": "per_task_eval/43_fridge_fruit_shelf_sorting/Inv/summary.json",
+      "summarySha256": "4d40df29677952bc7fd6a6b8ab36c56591c54be5ecee91e37baa739a19fbcac8"
+     }
+    },
+    "Full": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 0,
+     "lscr": 8.0,
+     "source": {
+      "runId": "act_r2_inv_cov_43",
+      "perEpisodeFile": "per_task_eval/43_fridge_fruit_shelf_sorting/Full/per_episode.jsonl",
+      "perEpisodeSha256": "fcd78bc0ddbd58c0b4f12df8be3e9595b808273cba7fc7ab4ad56c532e1be83e",
+      "summaryFile": "per_task_eval/43_fridge_fruit_shelf_sorting/Full/summary.json",
+      "summarySha256": "a67af8f99f635af5658ce1e2fda552f9a82a21fbc453cb4261ee17294fa11c10"
+     }
+    }
+   },
+   "mean": {
+    "status": "reported",
+    "srScope": "four-channel-mean",
+    "lscrScope": "four-channel-mean",
+    "sr": 0.0,
+    "lscr": 8.75,
+    "efficiency": null,
+    "efficiencyStatus": "no-success",
+    "srEpisodes": 200,
+    "lscrEpisodes": 200
+   }
+  },
+  "44": {
+   "channels": {
+    "None": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 20,
+     "lscr": 62.0,
+     "source": {
+      "runId": "act_r2_none_44",
+      "perEpisodeFile": "per_task_eval/44_microwave_bowl_loading/None/per_episode.jsonl",
+      "perEpisodeSha256": "8b1bda8770a7b43453ddb3bc11413535e4b67e0867f6b3516c041fdbb6145796",
+      "summaryFile": "per_task_eval/44_microwave_bowl_loading/None/summary.json",
+      "summarySha256": "a0b624aad57949484551aa63cbbb6190ceb11042755333a338a595992016a77c"
+     }
+    },
+    "Equi.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 17,
+     "lscr": 59.0,
+     "source": {
+      "runId": "act_r2_cov_only_44",
+      "perEpisodeFile": "per_task_eval/44_microwave_bowl_loading/Equi/per_episode.jsonl",
+      "perEpisodeSha256": "6dcc9a9720f001dfc3b781a3ba62370777d5e543ded40536f07d829f78bc601b",
+      "summaryFile": "per_task_eval/44_microwave_bowl_loading/Equi/summary.json",
+      "summarySha256": "d35415dbf5e2a7813208490dae05925542ff3344c94a2c25a1e01f2fc15b36b4"
+     }
+    },
+    "Inv.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 11,
+     "lscr": 48.5,
+     "source": {
+      "runId": "act_r2_inv_only_44",
+      "perEpisodeFile": "per_task_eval/44_microwave_bowl_loading/Inv/per_episode.jsonl",
+      "perEpisodeSha256": "08478e7563ae55e9306070dddb917ebf73fe03fa6dd3aa411500a1f4c714a5dc",
+      "summaryFile": "per_task_eval/44_microwave_bowl_loading/Inv/summary.json",
+      "summarySha256": "05057d8c480fe10c2b9b50c2d898545be904d61ff48070c2a61a58d549d968c9"
+     }
+    },
+    "Full": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 14,
+     "lscr": 54.0,
+     "source": {
+      "runId": "act_r2_inv_cov_44",
+      "perEpisodeFile": "per_task_eval/44_microwave_bowl_loading/Full/per_episode.jsonl",
+      "perEpisodeSha256": "a249b09cf0028be76843489335cb485c6c6121e334b04a77b6be739fa4e80b52",
+      "summaryFile": "per_task_eval/44_microwave_bowl_loading/Full/summary.json",
+      "summarySha256": "c9cdafd4919ebdb57e78feabda741448b136747b41bb14ae4d36d543df0f8583"
+     }
+    }
+   },
+   "mean": {
+    "status": "reported",
+    "srScope": "four-channel-mean",
+    "lscrScope": "four-channel-mean",
+    "sr": 31.0,
+    "lscr": 55.875,
+    "efficiency": 1.028382044,
+    "efficiencyStatus": "reported",
+    "srEpisodes": 200,
+    "lscrEpisodes": 200
+   }
+  },
+  "51": {
+   "channels": {
+    "None": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 2,
+     "lscr": 21.333333,
+     "source": {
+      "runId": "act_r2_none_51",
+      "perEpisodeFile": "per_task_eval/51_toilet_lid_cleaner_pour/None/per_episode.jsonl",
+      "perEpisodeSha256": "f75dcf1d256bfa6cb07fc733c77b4349163bcf824bc241f34cfcf115ef190439",
+      "summaryFile": "per_task_eval/51_toilet_lid_cleaner_pour/None/summary.json",
+      "summarySha256": "556f91640214010166f5b5f6608358785fdda8530fae1099a3c4d7ff1ba7c662"
+     }
+    },
+    "Equi.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 10,
+     "lscr": 37.333333,
+     "source": {
+      "runId": "act_r2_cov_only_51",
+      "perEpisodeFile": "per_task_eval/51_toilet_lid_cleaner_pour/Equi/per_episode.jsonl",
+      "perEpisodeSha256": "607874b2ec5f8832596306d06fa5bc80bc9d0fc0d7dc9ef39bc713dd85e34e6f",
+      "summaryFile": "per_task_eval/51_toilet_lid_cleaner_pour/Equi/summary.json",
+      "summarySha256": "6e858ba6e4ba42334bf459a7a637f12d8503b96d33eaab32d366727300b34c28"
+     }
+    },
+    "Inv.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 10,
+     "lscr": 37.333333,
+     "source": {
+      "runId": "act_r2_inv_only_51",
+      "perEpisodeFile": "per_task_eval/51_toilet_lid_cleaner_pour/Inv/per_episode.jsonl",
+      "perEpisodeSha256": "8e2e842f500cbda63d9f29820ef9cc51700bfdee858f5cfaada56a26e2fa74c3",
+      "summaryFile": "per_task_eval/51_toilet_lid_cleaner_pour/Inv/summary.json",
+      "summarySha256": "e4caa0ae5032d1ff6b9638e8d450c529bea48c5707f8fab11830fbad550564e6"
+     }
+    },
+    "Full": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 5,
+     "lscr": 32.0,
+     "source": {
+      "runId": "act_r2_inv_cov_51",
+      "perEpisodeFile": "per_task_eval/51_toilet_lid_cleaner_pour/Full/per_episode.jsonl",
+      "perEpisodeSha256": "4c02730037c76834a3e10d695d588b325cb2b1835ff87ce1f5ed65e96dbb9d2d",
+      "summaryFile": "per_task_eval/51_toilet_lid_cleaner_pour/Full/summary.json",
+      "summarySha256": "0332d39e47a17c2b785bbd291f22aceabc85b2127482d5f41d7561ac79cf7cf6"
+     }
+    }
+   },
+   "mean": {
+    "status": "reported",
+    "srScope": "four-channel-mean",
+    "lscrScope": "four-channel-mean",
+    "sr": 13.5,
+    "lscr": 32.0,
+    "efficiency": 1.006944824,
+    "efficiencyStatus": "reported",
+    "srEpisodes": 200,
+    "lscrEpisodes": 200
+   }
+  },
+  "60": {
+   "channels": {
+    "None": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 1,
+     "lscr": 6.0,
+     "source": {
+      "runId": "act_r2_none_60",
+      "perEpisodeFile": "per_task_eval/60_breadbasket_fast_food_loading/None/per_episode.jsonl",
+      "perEpisodeSha256": "b9182916847e0e8847939005c470aa10faf2b9c3aa601e8763bd41d1fce96dbc",
+      "summaryFile": "per_task_eval/60_breadbasket_fast_food_loading/None/summary.json",
+      "summarySha256": "bb4c4a343dfaca71919a76071eb7077d6df444d059a9c6fa8a8d350cf63c2bf6"
+     }
+    },
+    "Equi.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 0,
+     "lscr": 1.0,
+     "source": {
+      "runId": "act_r2_cov_only_60",
+      "perEpisodeFile": "per_task_eval/60_breadbasket_fast_food_loading/Equi/per_episode.jsonl",
+      "perEpisodeSha256": "6b433fd7b851bc5376642b2db02474355e5799777b730a72b61347af8745340a",
+      "summaryFile": "per_task_eval/60_breadbasket_fast_food_loading/Equi/summary.json",
+      "summarySha256": "a7740c36979254265c877fd0dff8ce9a9c3257c1166e13c2b189c0714c35f36c"
+     }
+    },
+    "Inv.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 0,
+     "lscr": 1.0,
+     "source": {
+      "runId": "act_r2_inv_only_60",
+      "perEpisodeFile": "per_task_eval/60_breadbasket_fast_food_loading/Inv/per_episode.jsonl",
+      "perEpisodeSha256": "26fd8e3d4e46eb59848741bb7a3796fc19393d5653bf4ac03f3c942c02b76cfd",
+      "summaryFile": "per_task_eval/60_breadbasket_fast_food_loading/Inv/summary.json",
+      "summarySha256": "e71766dc5fc1065f49f95e6ae1b64ba3f1c9ed27d9ed4ce99be19def97c420c6"
+     }
+    },
+    "Full": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 1,
+     "lscr": 2.5,
+     "source": {
+      "runId": "act_r2_inv_cov_60",
+      "perEpisodeFile": "per_task_eval/60_breadbasket_fast_food_loading/Full/per_episode.jsonl",
+      "perEpisodeSha256": "999277d4597ee0e2857c101bffddb03d2e4cb5046d0cc1cc6de1aa8d8067d293",
+      "summaryFile": "per_task_eval/60_breadbasket_fast_food_loading/Full/summary.json",
+      "summarySha256": "ab66f5200a1e509d55e11681c55d8757f037d70efd41576ea1635443f0b2a996"
+     }
+    }
+   },
+   "mean": {
+    "status": "reported",
+    "srScope": "four-channel-mean",
+    "lscrScope": "four-channel-mean",
+    "sr": 1.0,
+    "lscr": 2.625,
+    "efficiency": 0.932052484,
+    "efficiencyStatus": "reported",
+    "srEpisodes": 200,
+    "lscrEpisodes": 200
+   }
+  },
+  "61": {
+   "channels": {
+    "None": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 4,
+     "lscr": 24.0,
+     "source": {
+      "runId": "act_r2_none_61",
+      "perEpisodeFile": "per_task_eval/61_medicine_shoebox_pack/None/per_episode.jsonl",
+      "perEpisodeSha256": "33950b34c6f521ddc52571d1e1a1b7cc6b6a7558369e26d2151fae525b65a8ae",
+      "summaryFile": "per_task_eval/61_medicine_shoebox_pack/None/summary.json",
+      "summarySha256": "87d33b8705247d4334d2de0fe60b424acc7f5ba0f31d6f9a9638b154f911d6c0"
+     }
+    },
+    "Equi.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 1,
+     "lscr": 16.0,
+     "source": {
+      "runId": "act_r2_cov_only_61",
+      "perEpisodeFile": "per_task_eval/61_medicine_shoebox_pack/Equi/per_episode.jsonl",
+      "perEpisodeSha256": "f6ee773cc63cd5d740befb24f5a7de4492711fdbf2cbce2862d6f4d075b944e1",
+      "summaryFile": "per_task_eval/61_medicine_shoebox_pack/Equi/summary.json",
+      "summarySha256": "d424c7d1dd03f6b694ddf9f7268f4fea5821ce438ebe75fb9bed70c7389621f3"
+     }
+    },
+    "Inv.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 2,
+     "lscr": 12.666667,
+     "source": {
+      "runId": "act_r2_inv_only_61",
+      "perEpisodeFile": "per_task_eval/61_medicine_shoebox_pack/Inv/per_episode.jsonl",
+      "perEpisodeSha256": "2c046a9396a62d3383e713000e243d7671246c3fc70e2ec0dc281eba182377bd",
+      "summaryFile": "per_task_eval/61_medicine_shoebox_pack/Inv/summary.json",
+      "summarySha256": "57987406d80d9129746813e132b447b51ba9b9e60268f39e62686e52883b0af1"
+     }
+    },
+    "Full": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 0,
+     "lscr": 9.333333,
+     "source": {
+      "runId": "act_r2_inv_cov_61",
+      "perEpisodeFile": "per_task_eval/61_medicine_shoebox_pack/Full/per_episode.jsonl",
+      "perEpisodeSha256": "fe7b0521027ff690e950736e7149e73b60555fa8330c66c82acdb2ed589a57fe",
+      "summaryFile": "per_task_eval/61_medicine_shoebox_pack/Full/summary.json",
+      "summarySha256": "72baf50eecb6d11b2ca4a39aa3d34901de3af68927f958693d21cafef1e40b15"
+     }
+    }
+   },
+   "mean": {
+    "status": "reported",
+    "srScope": "four-channel-mean",
+    "lscrScope": "four-channel-mean",
+    "sr": 3.5,
+    "lscr": 15.5,
+    "efficiency": 1.025588319,
+    "efficiencyStatus": "reported",
+    "srEpisodes": 200,
+    "lscrEpisodes": 200
+   }
+  },
+  "62": {
+   "channels": {
+    "None": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 10,
+     "lscr": 47.333333,
+     "source": {
+      "runId": "act_r2_none_62",
+      "perEpisodeFile": "per_task_eval/62_shoebox_accessory_pack/None/per_episode.jsonl",
+      "perEpisodeSha256": "6bd769e64195f62042f571ffdee502f8fcbb86708d5a36d90d14962aa3f9f16d",
+      "summaryFile": "per_task_eval/62_shoebox_accessory_pack/None/summary.json",
+      "summarySha256": "81de9013eae73522980b32c59e16c6a4fbcf36ae2f851a1d5633ef25a5c973d5"
+     }
+    },
+    "Equi.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 8,
+     "lscr": 41.333333,
+     "source": {
+      "runId": "act_r2_cov_only_62",
+      "perEpisodeFile": "per_task_eval/62_shoebox_accessory_pack/Equi/per_episode.jsonl",
+      "perEpisodeSha256": "668f51585e2089ff2c7c3a2b338510580f5912d0c1bdaa12c312078d214155c4",
+      "summaryFile": "per_task_eval/62_shoebox_accessory_pack/Equi/summary.json",
+      "summarySha256": "4f069f0e826fcab85716f7fbebe8840d1625f69756fddcd7a0cbb18ba184936c"
+     }
+    },
+    "Inv.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 4,
+     "lscr": 31.333333,
+     "source": {
+      "runId": "act_r2_inv_only_62",
+      "perEpisodeFile": "per_task_eval/62_shoebox_accessory_pack/Inv/per_episode.jsonl",
+      "perEpisodeSha256": "977a9a5f3eee79483f2cd43c72823315190a0ff3c31798a9ff7228bbb4169a36",
+      "summaryFile": "per_task_eval/62_shoebox_accessory_pack/Inv/summary.json",
+      "summarySha256": "f4cad3ced0af2ea01e4fb7160f0a31d04d89bbfd29b1b7a49773b55fb71890a6"
+     }
+    },
+    "Full": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 4,
+     "lscr": 31.333333,
+     "source": {
+      "runId": "act_r2_inv_cov_62",
+      "perEpisodeFile": "per_task_eval/62_shoebox_accessory_pack/Full/per_episode.jsonl",
+      "perEpisodeSha256": "96a6458117148a394a5232f0dce2602f738db625eb19c0d2b72516eb6537f02e",
+      "summaryFile": "per_task_eval/62_shoebox_accessory_pack/Full/summary.json",
+      "summarySha256": "6f69aef7b4ebbc35d3cfdd466b71b86f17c4876a4fcb3d35391f764071e0e10d"
+     }
+    }
+   },
+   "mean": {
+    "status": "reported",
+    "srScope": "four-channel-mean",
+    "lscrScope": "four-channel-mean",
+    "sr": 13.0,
+    "lscr": 37.833333,
+    "efficiency": 0.951154891,
+    "efficiencyStatus": "reported",
+    "srEpisodes": 200,
+    "lscrEpisodes": 200
+   }
+  },
+  "64": {
+   "channels": {
+    "None": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 0,
+     "lscr": 0.5,
+     "source": {
+      "runId": "act_r2_none_64",
+      "perEpisodeFile": "per_task_eval/64_sports_ball_cup_sort/None/per_episode.jsonl",
+      "perEpisodeSha256": "47a75db3aaf9b0ba7bbf701189939d32d103bce7616143f531278639f656f1cb",
+      "summaryFile": "per_task_eval/64_sports_ball_cup_sort/None/summary.json",
+      "summarySha256": "9d5ae7914ba967fa4bb306324cdf89864fc3af534f465cc2d238f4622b1084e8"
+     }
+    },
+    "Equi.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 0,
+     "lscr": 0.0,
+     "source": {
+      "runId": "act_r2_cov_only_64",
+      "perEpisodeFile": "per_task_eval/64_sports_ball_cup_sort/Equi/per_episode.jsonl",
+      "perEpisodeSha256": "3b34f4880d17ff51c6cfe5aab340a6af90a2a995e6891051128a0529434dd8e2",
+      "summaryFile": "per_task_eval/64_sports_ball_cup_sort/Equi/summary.json",
+      "summarySha256": "2e74b7482d800bd01aa1a114bb83d9a5227077cad71ac3f014cd0a6748b3a1df"
+     }
+    },
+    "Inv.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 0,
+     "lscr": 0.0,
+     "source": {
+      "runId": "act_r2_inv_only_64",
+      "perEpisodeFile": "per_task_eval/64_sports_ball_cup_sort/Inv/per_episode.jsonl",
+      "perEpisodeSha256": "c2a8e221c147f97226c7d3e53a7f664c0613744e5f75549d11e501c56f0ddbbf",
+      "summaryFile": "per_task_eval/64_sports_ball_cup_sort/Inv/summary.json",
+      "summarySha256": "3c4361d5eeebacc0dbd69193db5550e337c64a9c730668b4f244afe8428859d3"
+     }
+    },
+    "Full": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 0,
+     "lscr": 0.0,
+     "source": {
+      "runId": "act_r2_inv_cov_64",
+      "perEpisodeFile": "per_task_eval/64_sports_ball_cup_sort/Full/per_episode.jsonl",
+      "perEpisodeSha256": "1160c8d52a4a1b1c8baeaa01195077f279b647591d7c4c4cb0ddbd8bb1372a46",
+      "summaryFile": "per_task_eval/64_sports_ball_cup_sort/Full/summary.json",
+      "summarySha256": "a4b908ef51a300145aa76412a179e0fc82d7b9063aaa95187d54baaf9a43fa1e"
+     }
+    }
+   },
+   "mean": {
+    "status": "reported",
+    "srScope": "four-channel-mean",
+    "lscrScope": "four-channel-mean",
+    "sr": 0.0,
+    "lscr": 0.125,
+    "efficiency": null,
+    "efficiencyStatus": "no-success",
+    "srEpisodes": 200,
+    "lscrEpisodes": 200
+   }
+  },
+  "67": {
+   "channels": {
+    "None": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 7,
+     "lscr": 39.0,
+     "source": {
+      "runId": "act_r2_none_67",
+      "perEpisodeFile": "per_task_eval/67_faucet_cup_water_fill/None/per_episode.jsonl",
+      "perEpisodeSha256": "72a97e351bd8f6f71c2b97a601b62198c71665f071ff2ec654a6b21127e0622c",
+      "summaryFile": "per_task_eval/67_faucet_cup_water_fill/None/summary.json",
+      "summarySha256": "f9d5894cd1128745d373ff0ec249f016a28777d422e178d0938269983e84794c"
+     }
+    },
+    "Equi.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 5,
+     "lscr": 41.0,
+     "source": {
+      "runId": "act_r2_cov_only_67",
+      "perEpisodeFile": "per_task_eval/67_faucet_cup_water_fill/Equi/per_episode.jsonl",
+      "perEpisodeSha256": "36be061b6276e2dd8b83e65d08814d743822b1fcf1d02fb2f09e5f3095547377",
+      "summaryFile": "per_task_eval/67_faucet_cup_water_fill/Equi/summary.json",
+      "summarySha256": "decb6cf8a6175bd5bf97dbd66f8333e582f8b2a002d4185996c9cef42ac84429"
+     }
+    },
+    "Inv.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 3,
+     "lscr": 36.0,
+     "source": {
+      "runId": "act_r2_inv_only_67",
+      "perEpisodeFile": "per_task_eval/67_faucet_cup_water_fill/Inv/per_episode.jsonl",
+      "perEpisodeSha256": "364f52ccbaf99ab5b97a8b8b759baab221edcdd9623eb2c0c2964d97db6e0632",
+      "summaryFile": "per_task_eval/67_faucet_cup_water_fill/Inv/summary.json",
+      "summarySha256": "e1012cca9a36bcb9ab8ce7d42ff7437de771ec9397e33dd61cd16ed67afee187"
+     }
+    },
+    "Full": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 4,
+     "lscr": 42.0,
+     "source": {
+      "runId": "act_r2_inv_cov_67",
+      "perEpisodeFile": "per_task_eval/67_faucet_cup_water_fill/Full/per_episode.jsonl",
+      "perEpisodeSha256": "0748b7a4418247396aa0c09971593cdd5624c55bc26815d9caace17ae7e30ed1",
+      "summaryFile": "per_task_eval/67_faucet_cup_water_fill/Full/summary.json",
+      "summarySha256": "9d297f8f89118a71e428f0227b1e469777db4c076d590ec42cb593b1f9a79acc"
+     }
+    }
+   },
+   "mean": {
+    "status": "reported",
+    "srScope": "four-channel-mean",
+    "lscrScope": "four-channel-mean",
+    "sr": 9.5,
+    "lscr": 39.5,
+    "efficiency": 0.926032661,
+    "efficiencyStatus": "reported",
+    "srEpisodes": 200,
+    "lscrEpisodes": 200
+   }
+  },
+  "73": {
+   "channels": {
+    "None": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 0,
+     "lscr": 2.0,
+     "source": {
+      "runId": "act_r2_none_73",
+      "perEpisodeFile": "per_task_eval/73_jigsaw_puzzle_assembly/None/per_episode.jsonl",
+      "perEpisodeSha256": "85900aa8209ceaa6fae2c541ae0588e9e33177006bb12d86ac0329956d1ac714",
+      "summaryFile": "per_task_eval/73_jigsaw_puzzle_assembly/None/summary.json",
+      "summarySha256": "a1d4e89f2225af0b16bfd1c467341234e2a04e09340f7c4cccb3f90dfd71bdb1"
+     }
+    },
+    "Equi.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 0,
+     "lscr": 1.5,
+     "source": {
+      "runId": "act_r2_cov_only_73",
+      "perEpisodeFile": "per_task_eval/73_jigsaw_puzzle_assembly/Equi/per_episode.jsonl",
+      "perEpisodeSha256": "4d3802830c580f8e636e7de857b32f55cee976d170512a1e0b17e7d3b72fc4ee",
+      "summaryFile": "per_task_eval/73_jigsaw_puzzle_assembly/Equi/summary.json",
+      "summarySha256": "d566d8b6ba9102d5b78a826cf6f7e404f2551be02dc422a9747980d1b65ed2b0"
+     }
+    },
+    "Inv.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 0,
+     "lscr": 4.5,
+     "source": {
+      "runId": "act_r2_inv_only_73",
+      "perEpisodeFile": "per_task_eval/73_jigsaw_puzzle_assembly/Inv/per_episode.jsonl",
+      "perEpisodeSha256": "5071b8aff89d7dd604850734877e6033596cac4a023e9c809345391124895f20",
+      "summaryFile": "per_task_eval/73_jigsaw_puzzle_assembly/Inv/summary.json",
+      "summarySha256": "b1150cda21836178d26f6e16fce3859e4883504ac192108b494cce59d257658c"
+     }
+    },
+    "Full": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 0,
+     "lscr": 3.5,
+     "source": {
+      "runId": "act_r2_inv_cov_73",
+      "perEpisodeFile": "per_task_eval/73_jigsaw_puzzle_assembly/Full/per_episode.jsonl",
+      "perEpisodeSha256": "2ab3977f04217e12711edc4effa6a42c3078a25deee2949489729a22e12aa421",
+      "summaryFile": "per_task_eval/73_jigsaw_puzzle_assembly/Full/summary.json",
+      "summarySha256": "04420e7479604288b931b194f7f497d153bef2498fb84d87f8b681461c3cecf3"
+     }
+    }
+   },
+   "mean": {
+    "status": "reported",
+    "srScope": "four-channel-mean",
+    "lscrScope": "four-channel-mean",
+    "sr": 0.0,
+    "lscr": 2.875,
+    "efficiency": null,
+    "efficiencyStatus": "no-success",
+    "srEpisodes": 200,
+    "lscrEpisodes": 200
+   }
+  },
+  "76": {
+   "channels": {
+    "None": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 0,
+     "lscr": 10.0,
+     "source": {
+      "runId": "act_r2_none_76",
+      "perEpisodeFile": "per_task_eval/76_soup_serving/None/per_episode.jsonl",
+      "perEpisodeSha256": "f195441232b24f74e1822ece9e1d50dd0065c793274636f81aef73e81f2ae1e9",
+      "summaryFile": "per_task_eval/76_soup_serving/None/summary.json",
+      "summarySha256": "82e20692c87c6ccf7e1f120879ec34a760b61c1f4e4197ed7271ddbcf3cd7f52"
+     }
+    },
+    "Equi.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 0,
+     "lscr": 4.5,
+     "source": {
+      "runId": "act_r2_cov_only_76",
+      "perEpisodeFile": "per_task_eval/76_soup_serving/Equi/per_episode.jsonl",
+      "perEpisodeSha256": "22a0e861d92ce963c3b6dc847154f07e474bfbed2f0b4761906ea12aabb7e9fc",
+      "summaryFile": "per_task_eval/76_soup_serving/Equi/summary.json",
+      "summarySha256": "48f53bb6bfbb1af36c75f7197670a9fe4a1652fff8906b82da8bf9031edb5387"
+     }
+    },
+    "Inv.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 0,
+     "lscr": 5.0,
+     "source": {
+      "runId": "act_r2_inv_only_76",
+      "perEpisodeFile": "per_task_eval/76_soup_serving/Inv/per_episode.jsonl",
+      "perEpisodeSha256": "a9c9b4e4176599331866962ad9ddba15705efc7c28ec735785f63d7a2500d0ae",
+      "summaryFile": "per_task_eval/76_soup_serving/Inv/summary.json",
+      "summarySha256": "282c79d3edaccefe319dce60ab460b9e9c3f24a827f89e6bf074d3512befb203"
+     }
+    },
+    "Full": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 0,
+     "lscr": 3.0,
+     "source": {
+      "runId": "act_r2_inv_cov_76",
+      "perEpisodeFile": "per_task_eval/76_soup_serving/Full/per_episode.jsonl",
+      "perEpisodeSha256": "2041bfb0b5aa81146a0a41d2070324c3a801f9a7576f4c9f4d273015a2373cfa",
+      "summaryFile": "per_task_eval/76_soup_serving/Full/summary.json",
+      "summarySha256": "eeaef31f4fc8277395e179613f58c7e6f23065c516bc4c7cd420504125899276"
+     }
+    }
+   },
+   "mean": {
+    "status": "reported",
+    "srScope": "four-channel-mean",
+    "lscrScope": "four-channel-mean",
+    "sr": 0.0,
+    "lscr": 5.625,
+    "efficiency": null,
+    "efficiencyStatus": "no-success",
+    "srEpisodes": 200,
+    "lscrEpisodes": 200
+   }
+  },
+  "79": {
+   "channels": {
+    "None": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 0,
+     "lscr": 0.0,
+     "source": {
+      "runId": "act_r2_none_79",
+      "perEpisodeFile": "per_task_eval/79_bimanual_piano_melody/None/per_episode.jsonl",
+      "perEpisodeSha256": "d69816c29324f15527aa165d75702fbe1d520e9f450671090f762ab6648e6031",
+      "summaryFile": "per_task_eval/79_bimanual_piano_melody/None/summary.json",
+      "summarySha256": "f5a83b326cb9a6ac71f69bf9c14c26127ff3896e0a9773510da5fb7b83fe8696"
+     }
+    },
+    "Equi.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 0,
+     "lscr": 0.0,
+     "source": {
+      "runId": "act_r2_cov_only_79",
+      "perEpisodeFile": "per_task_eval/79_bimanual_piano_melody/Equi/per_episode.jsonl",
+      "perEpisodeSha256": "ab63244077a13fa4f4bc7a4e988f04c2314b202cb90fdc25b92a2135386937ae",
+      "summaryFile": "per_task_eval/79_bimanual_piano_melody/Equi/summary.json",
+      "summarySha256": "253480c08a1ce87908b5de1eb4abfd1ffc2b581f3c42a6d983a97f283f1f8cdc"
+     }
+    },
+    "Inv.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 0,
+     "lscr": 0.0,
+     "source": {
+      "runId": "act_r2_inv_only_79",
+      "perEpisodeFile": "per_task_eval/79_bimanual_piano_melody/Inv/per_episode.jsonl",
+      "perEpisodeSha256": "8fb7e02b46861300a36698a4d432e862c5f186f4e6457757bd4dc463dbacba46",
+      "summaryFile": "per_task_eval/79_bimanual_piano_melody/Inv/summary.json",
+      "summarySha256": "9ace840bfa22c50511bcad812a0d957b71e469094364a3fbe23b588f5691e519"
+     }
+    },
+    "Full": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 0,
+     "lscr": 0.0,
+     "source": {
+      "runId": "act_r2_inv_cov_79",
+      "perEpisodeFile": "per_task_eval/79_bimanual_piano_melody/Full/per_episode.jsonl",
+      "perEpisodeSha256": "4e245664ee485bd03e80fa11354026e4d3709babc8e7267b0df611f1b3120c76",
+      "summaryFile": "per_task_eval/79_bimanual_piano_melody/Full/summary.json",
+      "summarySha256": "33d023b714943882c75524249292546fa035974422333e89fe736c23b1103563"
+     }
+    }
+   },
+   "mean": {
+    "status": "reported",
+    "srScope": "four-channel-mean",
+    "lscrScope": "four-channel-mean",
+    "sr": 0.0,
+    "lscr": 0.0,
+    "efficiency": null,
+    "efficiencyStatus": "no-success",
+    "srEpisodes": 200,
+    "lscrEpisodes": 200
+   }
+  },
+  "80": {
+   "channels": {
+    "None": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 2,
+     "lscr": 28.666667,
+     "source": {
+      "runId": "act_r2_none_80",
+      "perEpisodeFile": "per_task_eval/80_gaming_desk_setup/None/per_episode.jsonl",
+      "perEpisodeSha256": "851a6dd83683fd34fb8a66a8876f4e3d3541d61136946b67afbf70989bea3127",
+      "summaryFile": "per_task_eval/80_gaming_desk_setup/None/summary.json",
+      "summarySha256": "af5ff07a051713db1069fea770ba920b80f976a0cac9fe8e1e7c1df9b4007f5c"
+     }
+    },
+    "Equi.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 0,
+     "lscr": 20.666667,
+     "source": {
+      "runId": "act_r2_cov_only_80",
+      "perEpisodeFile": "per_task_eval/80_gaming_desk_setup/Equi/per_episode.jsonl",
+      "perEpisodeSha256": "08bf5ef6d909461ab89f52d494bdad0fd6f21282bcf4b78136cf9bd1329373ea",
+      "summaryFile": "per_task_eval/80_gaming_desk_setup/Equi/summary.json",
+      "summarySha256": "4c833df7853569e1f2b3a87e7532e12f8186ace5e7e2eab352f0534aea03a186"
+     }
+    },
+    "Inv.": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 4,
+     "lscr": 32.0,
+     "source": {
+      "runId": "act_r2_inv_only_80",
+      "perEpisodeFile": "per_task_eval/80_gaming_desk_setup/Inv/per_episode.jsonl",
+      "perEpisodeSha256": "bedc8306751a14e2a58afe8d5c660ee1bcca49d02744ba3204560685037cec8b",
+      "summaryFile": "per_task_eval/80_gaming_desk_setup/Inv/summary.json",
+      "summarySha256": "f90a9248223da6007e745f5c8394419611d80a36dadcc9d457d25cc91af1a1a4"
+     }
+    },
+    "Full": {
+     "status": "reported",
+     "episodes": 50,
+     "successes": 1,
+     "lscr": 26.0,
+     "source": {
+      "runId": "act_r2_inv_cov_80",
+      "perEpisodeFile": "per_task_eval/80_gaming_desk_setup/Full/per_episode.jsonl",
+      "perEpisodeSha256": "36aefb94329173fe501752ace421917281f9053d6d2a32dec533261c9ff4f430",
+      "summaryFile": "per_task_eval/80_gaming_desk_setup/Full/summary.json",
+      "summarySha256": "b6fdefc552c87c41721801d598c72e9c6cc571780cfce6dba43e996b2cf84cc0"
+     }
+    }
+   },
+   "mean": {
+    "status": "reported",
+    "srScope": "four-channel-mean",
+    "lscrScope": "four-channel-mean",
+    "sr": 3.5,
+    "lscr": 26.833333,
+    "efficiency": 0.981656805,
+    "efficiencyStatus": "reported",
+    "srEpisodes": 200,
+    "lscrEpisodes": 200
+   }
+  }
+ },
+ "evaluation": {
+  "schemaVersion": "1.0",
+  "isTemplate": false,
+  "protocol": {
+   "benchmarkCommit": "a06ee3e986df72e7faa846d3eb2afe6d5a88b48a",
+   "taskCount": 26,
+   "channels": [
+    "None",
+    "Equi.",
+    "Inv.",
+    "Full"
+   ],
+   "episodesPerChannel": 50,
+   "metricSchemaVersion": "core-v1.8-policy-step-query-split",
+   "successProtocol": "reach_and_stop",
+   "expertReference": "Native per-episode expert_time_s, in seconds.",
+   "protocolChanges": "Each task/channel was evaluated by two parallel environment workers of 25 episodes each, merged into one 50-episode result with continuous episode indices and seeds; no episodes were dropped or replaced. Tasks 24 and 67 use the official Revo2 ACT baseline weights; the other 24 tasks use ACT policies trained from scratch on their native embodiments. Efficiency is computed per Bench2Dex definition: expert_time_s divided by time_to_stable_success_s pooled over successful episodes from all four channels; the Overall efficiency is the mean over tasks with at least one success. All failures are kept in the SR/LSCR denominators."
+  },
+  "coverage": {
+   "evaluatedTaskCount": 26,
+   "evaluatedEpisodeCount": 5200,
+   "completedTaskCount": {
+    "None": 26,
+    "Equi.": 26,
+    "Inv.": 26,
+    "Full": 26,
+    "mean": 26
+   },
+   "expectedFullEpisodeCount": 1300,
+   "expectedFourChannelEpisodeCount": 5200,
+   "missingTaskChannels": {}
+  },
+  "aggregation": {
+   "units": {
+    "sr": "percent",
+    "lscr": "percent",
+    "efficiency": "ratio",
+    "steps": "physics_steps"
+   },
+   "sr": "100 * successes / episodes per task/channel; equal channel mean per task; equal task mean over all 26 tasks.",
+   "lscr": "100 * mean native latched_stage_completion_rate including failures; equal channel and task means.",
+   "efficiency": "Per task, expert time divided by mean time_to_stable_success pooled over successful episodes from all four channels. Overall is the mean of valid task efficiencies.",
+   "errors": "0 error episodes among 5200 evaluated episodes; error episodes would count as failures.",
+   "missing": "null means unreported (NR). Efficiency without successes is null with no-success status.",
+   "scope": "Overall channel aggregates require all 26 settings. Four-channel means require all four channels."
+  },
+  "logs": {
+   "repository": "Bench2Dex/Leaderboard",
+   "policyPath": "act-r2-native",
+   "revision": null,
+   "status": "not-submitted"
+  },
+  "publishedAt": null
+ }
+}
